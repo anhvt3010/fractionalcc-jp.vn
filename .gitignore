@@ -17,3 +17,4 @@
 #.vscode/
 #node_modules/
 #/release/artifacts/
+#/release/v*/*.zip

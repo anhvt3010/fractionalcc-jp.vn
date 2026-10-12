@@ -1,0 +1,154 @@
+/* WordPress integration only. Visual design stays in the supplied stylesheets. */
+.fcc-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.fcc-site [hidden] { display: none !important; }
+.pd-cocoon-old-price:empty, .pd-cocoon-save-pill:empty { display: none; }
+body.admin-bar .site-header { top: 32px; }
+@media (max-width: 782px) { body.admin-bar .site-header { top: 46px; } }
+
+/* The user-approved image decorates the entire hero; content/grid remain unchanged. */
+.fcc-site .hero-section.fcc-hero-background {
+	background-color: #FAF6EE;
+	background-image: var(--fcc-hero-background);
+	background-size: cover;
+	background-position: var(--fcc-hero-position, center center);
+	background-repeat: no-repeat;
+}
+
+/* Hero Title: strictly 2 lines with black line 1 & deep gold line 2 */
+.fcc-site .hero-title {
+	font-size: 28px;
+	line-height: 1.25;
+	margin-bottom: 20px;
+}
+.fcc-site .hero-title .hero-title-line {
+	display: block;
+}
+.fcc-site .hero-title .hero-title-line-1 {
+	color: #111111 !important;
+	font-weight: 700;
+}
+.fcc-site .hero-title .hero-title-line-2,
+.fcc-site .hero-title .hero-title-gold {
+	color: #9E6B0D !important;
+	font-weight: 700;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+@media (min-width: 576px) {
+	.fcc-site .hero-title {
+		font-size: 32px;
+		line-height: 1.24;
+	}
+}
+
+@media (min-width: 768px) {
+	.fcc-site .hero-title {
+		font-size: 36px;
+		line-height: 1.22;
+	}
+}
+
+@media (min-width: 992px) {
+	.fcc-site .hero-title {
+		font-size: 38px;
+		line-height: 1.2;
+	}
+	.fcc-site .hero-title .hero-title-line-2 {
+		white-space: nowrap;
+	}
+}
+
+@media (min-width: 1200px) {
+	.fcc-site .hero-title {
+		font-size: 44px;
+		line-height: 1.2;
+	}
+}
+
+@media (min-width: 1400px) {
+	.fcc-site .hero-title {
+		font-size: 50px;
+		line-height: 1.2;
+	}
+}
+
+/* Badge Icons in Hero Header */
+.fcc-site .badge-pill .badge-icon {
+	width: 14px;
+	height: 14px;
+	flex-shrink: 0;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+/* Widen Hero Banner container towards both sides */
+.fcc-site .hero-subtitle {
+	max-width: 680px;
+}
+
+@media (min-width: 992px) {
+	.fcc-site .hero-section .container.hero-grid {
+		max-width: 1400px;
+		width: 95%;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	.fcc-site .hero-grid {
+		grid-template-columns: 1.15fr 0.85fr;
+		gap: 40px;
+	}
+	.fcc-site .hero-visual {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.fcc-site .hero-card {
+		max-width: 520px;
+	}
+	.fcc-site .hero-visual::before {
+		width: 480px;
+		height: 480px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.fcc-site .hero-section .container.hero-grid {
+		max-width: 1480px;
+		width: 95%;
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+	.fcc-site .hero-grid {
+		grid-template-columns: 1.18fr 0.82fr;
+		gap: 52px;
+	}
+	.fcc-site .hero-card {
+		max-width: 550px;
+	}
+	.fcc-site .hero-visual::before {
+		width: 520px;
+		height: 520px;
+	}
+}
+
+@media (min-width: 1400px) {
+	.fcc-site .hero-section .container.hero-grid {
+		max-width: 1410px;
+		width: 96%;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	.fcc-site .hero-grid {
+		grid-template-columns: 1.18fr 0.82fr;
+		gap: 60px;
+	}
+	.fcc-site .hero-card {
+		max-width: 570px;
+	}
+	.fcc-site .hero-visual::before {
+		width: 550px;
+		height: 550px;
+	}
+}
+

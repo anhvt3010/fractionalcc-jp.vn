@@ -3,6 +3,7 @@
 | Tài liệu | Mục đích |
 | --- | --- |
 | [WEBSITE-BRIEF.md](WEBSITE-BRIEF.md) | Thông tin Fractional CC, nội dung từ template/brief/Excel, danh mục/giá và các mục chờ xác nhận |
+| [FRACTIONAL-WORDPRESS.md](FRACTIONAL-WORDPRESS.md) | Cấu trúc child theme/plugin, ACF/CMS, khởi tạo, build và trạng thái chuyển đổi |
 | [SETUP.md](SETUP.md) | Hiện trạng, thứ tự setup, checklist nghiệm thu |
 | [DOCKER.md](DOCKER.md) | Tham khảo môi trường cũ; Docker tạm thời không áp dụng |
 | [GIT-TEMPLATE.md](GIT-TEMPLATE.md) | Đưa toàn bộ code base mẫu lên Git và tách dự án mới |

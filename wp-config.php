@@ -91,6 +91,10 @@ define( 'WP_DEBUG', false );
 
 
 
+/* Local XAMPP URL for this installation; shared database URLs are unchanged. */
+define( 'WP_HOME', 'http://localhost/fractionalcc-jp.vn' );
+define( 'WP_SITEURL', 'http://localhost/fractionalcc-jp.vn' );
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */

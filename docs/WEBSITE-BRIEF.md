@@ -1,6 +1,6 @@
 # Thông tin ban đầu website Fractional CC
 
-Hồ sơ lập ngày 12/10/2026 từ `template/fractional-cc`, dùng làm nguồn nội dung và phạm vi cho website WordPress. Lần thiết lập này chỉ cập nhật tài liệu; chưa nhập nội dung vào database, cấu hình WordPress Admin, viết code hoặc phát hành ZIP.
+Hồ sơ lập ngày 12/10/2026 từ `template/fractional-cc`, dùng làm nguồn nội dung và phạm vi cho website WordPress. Lần lập hồ sơ ban đầu chỉ cập nhật tài liệu. Sau đó người dùng chỉ định dùng nội dung đã chuẩn bị ở trang index và danh sách sản phẩm làm mặc định active; nội dung đã được khởi tạo vào CMS và đặt trang chủ Fractional CC trên WordPress hiện tại. Các thông tin thiếu vẫn giữ dấu vết nguồn, không tự điền thêm. Xem [FRACTIONAL-WORDPRESS.md](FRACTIONAL-WORDPRESS.md) cho runtime và kiểm thử.
 
 Thông tin có nguồn được ghi lại theo tài liệu cung cấp. Các mục thiếu dữ liệu, khác nhau giữa các nguồn hoặc chỉ xuất hiện trong bản HTML được ghi riêng để xác nhận trước khi đưa lên website.
 

@@ -1,5 +1,7 @@
 # Setup và workflow XAMPP
 
+> Cập nhật chuyển template: source `0.3.0` đã có child theme Fractional CC, mô hình CMS/ACF và initializer/build scripts. Đã khởi tạo dữ liệu và đặt homepage trên WordPress hiện tại theo yêu cầu dùng thông tin index và danh sách sản phẩm làm mặc định. Database vẫn dùng chung với thư mục `wordpress` cũ, có bản sao lưu riêng trước thao tác. Xem [FRACTIONAL-WORDPRESS.md](FRACTIONAL-WORDPRESS.md) cho trạng thái hiện tại; phần mô tả chưa triển khai bên dưới là mốc trước chuyển đổi.
+
 ## Hiện trạng và phạm vi
 
 Ngày 12/10/2026, người dùng xác nhận XAMPP đã cài và dự án tại `C:\xampp\htdocs\fractionalcc-jp.vn` đã chạy được. Root là WordPress installation; code dự án nằm trực tiếp trong `wp-content/`.
@@ -10,7 +12,9 @@ Trên đĩa hiện có `project-child` (khai báo parent `kadence`) và `project
 
 ## 1. Dùng site đang chạy
 
-Dùng Apache và MySQL/MariaDB của XAMPP. Mở URL site đã cấu hình và `/wp-admin/`; nếu XAMPP ánh xạ thư mục mặc định thì dùng `http://localhost/fractionalcc-jp.vn/`. Nếu đã có virtual host, dùng URL đó.
+Dùng Apache và MySQL/MariaDB của XAMPP. URL hiện đã kiểm tra là `http://localhost/fractionalcc-jp.vn/`, quản trị tại `http://localhost/fractionalcc-jp.vn/wp-admin/`.
+
+Ngày 12/10/2026 đã sửa lỗi 404 do cấu hình kế thừa `/wordpress/`. File cấu hình riêng `wp-config.php` khai báo `WP_HOME` và `WP_SITEURL` là `http://localhost/fractionalcc-jp.vn`; `.htaccess` dùng `RewriteBase /fractionalcc-jp.vn/` và rewrite tới `/fractionalcc-jp.vn/index.php`. Đây là cấu hình local; khi đổi môi trường cần dùng URL và đường dẫn tương ứng. URL trong database dùng chung chưa được sửa. Homepage hiện là trang Fractional CC ID `30`, không còn danh sách bài viết starter; thay đổi homepage/nội dung có ảnh hưởng database của site cũ.
 
 Giữ `wp-config.php` và credentials riêng trên máy; không in nội dung cấu hình có secrets. Không tự đổi URL, database, tài khoản, homepage hoặc active theme/plugin. Sao lưu riêng trước thao tác migration hay thay đổi dữ liệu có rủi ro.
 

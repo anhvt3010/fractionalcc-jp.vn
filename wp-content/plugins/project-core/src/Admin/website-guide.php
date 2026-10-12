@@ -1,66 +1,69 @@
 <?php
 /**
- * Website content administration guide. No custom save endpoint is needed.
+ * CMS entry point. Editing uses native WordPress permissions, nonces and ACF.
  *
  * @package Project_Core
  */
-
 defined( 'ABSPATH' ) || exit;
 
 function project_core_register_website_guide() {
-	add_menu_page(
-		'Nội dung website',
-		'Nội dung website',
-		'edit_pages',
-		'project-website-content',
-		'project_core_render_website_guide',
-		'dashicons-welcome-write-blog',
-		21
-	);
+	add_menu_page( 'Nội dung website', 'Nội dung website', 'edit_pages', 'project-website-content', 'project_core_render_website_guide', 'dashicons-welcome-write-blog', 21 );
 }
 add_action( 'admin_menu', 'project_core_register_website_guide' );
 
 function project_core_render_website_guide() {
 	if ( ! current_user_can( 'edit_pages' ) ) {
-		wp_die( esc_html__( 'Bạn không có quyền truy cập trang này.', 'project-core' ) );
+		wp_die( esc_html__( 'Bạn không có quyền truy cập trang này.', 'project-core' ), '', array( 'response' => 403 ) );
 	}
-
-	$pages = get_posts(
-		array(
-			'post_type'      => 'page',
-			'post_status'    => array( 'publish', 'draft', 'private' ),
-			'posts_per_page' => 1,
-			'meta_key'       => '_project_core_sample_page',
-			'meta_value'     => '1',
-		)
-	);
+	$pages = get_option( 'project_core_fcc_pages', array() );
 	?>
 	<div class="wrap">
-		<h1><?php echo esc_html__( 'Nội dung website', 'project-core' ); ?></h1>
-		<p><?php echo esc_html__( 'Bắt đầu bằng trang mẫu. Bạn có thể đổi chữ, ảnh và thông tin liên hệ mà không cần sửa code.', 'project-core' ); ?></p>
-		<?php if ( ! function_exists( 'get_field' ) ) : ?>
-			<div class="notice notice-warning inline"><p><?php echo esc_html__( 'ACF chưa hoạt động. Nhờ quản trị viên kích hoạt Advanced Custom Fields để chỉnh sửa các trường nội dung.', 'project-core' ); ?></p></div>
+		<h1><?php echo esc_html__( 'Nội dung website Fractional CC', 'project-core' ); ?></h1>
+		<p><?php echo esc_html__( 'Chỉnh nội dung và ảnh bằng các trường có nhãn; bố cục được giữ theo thiết kế. Sản phẩm, combo và hoạt chất được quản lý riêng để tái sử dụng.', 'project-core' ); ?></p>
+		<?php if ( ! function_exists( 'acf_add_local_field_group' ) || 'project-child' !== get_stylesheet() ) : ?>
+			<div class="notice notice-warning inline"><p><?php echo esc_html__( 'Cần kích hoạt ACF và Fractional CC – Project Child.', 'project-core' ); ?></p></div>
 		<?php endif; ?>
-		<?php if ( 'project-child' !== get_stylesheet() ) : ?>
-			<div class="notice notice-warning inline"><p><?php echo esc_html__( 'Trang mẫu cần theme Project Child. Nhờ quản trị viên kích hoạt theme này trong mục Giao diện.', 'project-core' ); ?></p></div>
+		<?php if ( $pages && 'approved' !== project_core_fcc_site( 'content_status' ) ) : ?>
+			<div class="notice notice-warning inline"><p><?php echo esc_html__( 'Nội dung đang là dữ liệu mẫu local, chờ duyệt trước khi public. Các trang Fractional CC được đặt noindex. Kiểm tra đánh giá, giá gốc, ưu đãi, chính sách và quyền sử dụng media trước khi chọn trạng thái đã duyệt trong Thông tin chung.', 'project-core' ); ?></p></div>
 		<?php endif; ?>
-		<?php if ( $pages && current_user_can( 'edit_post', $pages[0]->ID ) ) : ?>
-			<p>
-				<a class="button button-primary" href="<?php echo esc_url( get_edit_post_link( $pages[0]->ID, 'raw' ) ); ?>"><?php echo esc_html__( 'Sửa trang mẫu', 'project-core' ); ?></a>
-				<a class="button" href="<?php echo esc_url( get_permalink( $pages[0]->ID ) ); ?>"><?php echo esc_html__( 'Xem trang mẫu', 'project-core' ); ?></a>
-			</p>
-		<?php else : ?>
-			<p><a class="button" href="<?php echo esc_url( admin_url( 'edit.php?post_type=page' ) ); ?>"><?php echo esc_html__( 'Mở danh sách trang', 'project-core' ); ?></a></p>
-		<?php endif; ?>
+		<table class="widefat striped">
+			<thead><tr><th><?php echo esc_html__( 'Nội dung', 'project-core' ); ?></th><th><?php echo esc_html__( 'Thao tác', 'project-core' ); ?></th></tr></thead>
+			<tbody>
+			<?php foreach ( array( 'shared' => 'Thông tin liên hệ, logo và giao diện chung', 'home' => 'Trang chủ', 'catalog' => 'Danh mục sản phẩm', 'policies' => 'Chính sách', 'thankyou' => 'Trang cảm ơn' ) as $kind => $label ) : ?>
+				<?php $id = isset( $pages[ $kind ] ) ? absint( $pages[ $kind ] ) : 0; ?>
+				<?php if ( ! $id || ! current_user_can( 'edit_post', $id ) ) { continue; } ?>
+				<tr><td><?php echo esc_html( $label ); ?></td><td><a class="button" href="<?php echo esc_url( get_edit_post_link( $id, 'raw' ) ); ?>"><?php echo esc_html__( 'Chỉnh sửa', 'project-core' ); ?></a><?php if ( 'shared' !== $kind ) : ?> <a class="button" href="<?php echo esc_url( get_permalink( $id ) ); ?>"><?php echo esc_html__( 'Xem trang', 'project-core' ); ?></a><?php endif; ?></td></tr>
+			<?php endforeach; ?>
+			<?php foreach ( array( 'fcc_product' => 'Sản phẩm', 'fcc_combo' => 'Combo', 'fcc_ingredient' => 'Hoạt chất', 'fcc_order' => 'Đơn hàng khách đặt' ) as $type => $label ) : ?>
+				<tr><td><?php echo esc_html( $label ); ?></td><td><a class="button" href="<?php echo esc_url( admin_url( 'edit.php?post_type=' . $type ) ); ?>"><?php echo esc_html__( 'Mở danh sách', 'project-core' ); ?></a></td></tr>
+			<?php endforeach; ?>
+			<?php if ( current_user_can( 'manage_options' ) ) : ?>
+				<tr><td><strong>Cài đặt SMTP & Email thông báo</strong></td><td><a class="button button-primary" href="<?php echo esc_url( admin_url( 'admin.php?page=fcc-smtp-settings' ) ); ?>">Cấu hình SMTP</a></td></tr>
+			<?php endif; ?>
+			</tbody>
+		</table>
 		<h2><?php echo esc_html__( 'Cách chỉnh sửa', 'project-core' ); ?></h2>
 		<ol>
-			<li><?php echo esc_html__( 'Nhấn Sửa trang mẫu. Cuộn xuống nhóm Nội dung trang giới thiệu.', 'project-core' ); ?></li>
-			<li><?php echo esc_html__( 'Chọn tab Mở đầu, Giới thiệu hoặc Liên hệ rồi sửa các trường có nhãn tiếng Việt.', 'project-core' ); ?></li>
-			<li><?php echo esc_html__( 'Phần soạn thảo Gutenberg phía trên dành cho nội dung bổ sung như đoạn văn, danh sách và ảnh.', 'project-core' ); ?></li>
-			<li><?php echo esc_html__( 'Nhấn Lưu/Cập nhật, sau đó Xem trang để kiểm tra kết quả.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Chọn nội dung ở trên. Với trang, mở tab theo section và sửa chữ/ảnh; không cần sửa HTML, CSS hoặc PHP.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Với sản phẩm, chỉnh giá và thông tin ở nhóm ACF; mỗi ý trong danh sách là một dòng. Để giá trống khi chưa có dữ liệu.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Thêm ảnh chi tiết bằng block Thư viện ảnh trong trình soạn thảo sản phẩm. Chọn hoạt chất trong trường liên kết, kéo để sắp xếp.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Nhấn Cập nhật rồi Xem trang. Không thay thiết kế hoặc thêm nội dung chưa được duyệt.', 'project-core' ); ?></li>
 		</ol>
-		<p><?php echo esc_html__( 'Địa chỉ hello@example.com chỉ là dữ liệu mẫu. Hãy thay bằng email của bạn trước khi dùng thực tế.', 'project-core' ); ?></p>
-		<p><?php echo esc_html__( 'Không cần chỉnh sửa nhóm field ACF, PHP, CSS hoặc trình sửa file theme/plugin. Cấu trúc trang đã được lập trình sẵn.', 'project-core' ); ?></p>
+		<?php if ( current_user_can( 'manage_options' ) ) : ?>
+		<h2><?php echo esc_html__( 'Khởi tạo dữ liệu mặc định', 'project-core' ); ?></h2>
+		<p><?php echo esc_html__( 'Chỉ tạo bản ghi/trường còn thiếu; chạy lại giữ nguyên nội dung đã sửa. Không tự đổi URL, homepage hoặc kích hoạt theme.', 'project-core' ); ?></p>
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+			<input type="hidden" name="action" value="project_core_fcc_setup">
+			<?php wp_nonce_field( 'project_core_fcc_setup' ); ?>
+			<?php submit_button( $pages ? 'Bổ sung dữ liệu còn thiếu' : 'Khởi tạo nội dung Fractional CC', 'secondary' ); ?>
+		</form>
+		<?php endif; ?>
+		<?php
+		$samples = get_posts( array( 'post_type' => 'page', 'post_status' => array( 'publish', 'draft', 'private' ), 'posts_per_page' => 1, 'meta_key' => '_project_core_sample_page', 'meta_value' => '1' ) );
+		if ( $samples && current_user_can( 'edit_post', $samples[0]->ID ) ) :
+		?>
+			<p><a href="<?php echo esc_url( get_edit_post_link( $samples[0]->ID, 'raw' ) ); ?>"><?php echo esc_html__( 'Sửa trang mẫu cũ', 'project-core' ); ?></a></p>
+		<?php endif; ?>
 	</div>
 	<?php
 }

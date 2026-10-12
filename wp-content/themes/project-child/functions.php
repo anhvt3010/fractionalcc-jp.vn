@@ -8,6 +8,8 @@
 defined( 'ABSPATH' ) || exit;
 
 require_once get_stylesheet_directory() . '/inc/sample-page.php';
+require_once get_stylesheet_directory() . '/inc/fractional.php';
+require_once get_stylesheet_directory() . '/inc/fractional-customizer.php';
 
 /**
  * Load project styles after Kadence's existing global stylesheet.

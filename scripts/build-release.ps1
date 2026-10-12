@@ -1,0 +1,38 @@
+param(
+    [Parameter(Mandatory=$true)]
+    [ValidatePattern('^\d+\.\d+\.\d+(?:-[a-zA-Z0-9.-]+)?$')]
+    [string]$Version
+)
+$ErrorActionPreference = 'Stop'
+$taskRoot = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
+$taskReleaseRoot = Join-Path $taskRoot 'release'
+$taskVersionRoot = [System.IO.Path]::GetFullPath((Join-Path $taskReleaseRoot ('v' + $Version)))
+if (-not $taskVersionRoot.StartsWith($taskReleaseRoot + [System.IO.Path]::DirectorySeparatorChar,[System.StringComparison]::OrdinalIgnoreCase)) { throw 'Release target is outside release/.' }
+New-Item -ItemType Directory -Path $taskVersionRoot -Force | Out-Null
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+Add-Type -AssemblyName System.IO.Compression
+$taskPackages = @(
+    @{Slug='project-core';Source=(Join-Path $taskRoot 'wp-content/plugins/project-core');Header='project-core.php'},
+    @{Slug='project-child';Source=(Join-Path $taskRoot 'wp-content/themes/project-child');Header='style.css'}
+)
+$taskChecksums = @()
+foreach($taskPackage in $taskPackages) {
+    $taskHeader = [System.IO.File]::ReadAllText((Join-Path $taskPackage.Source $taskPackage.Header))
+    if ($taskHeader -notmatch ('(?m)Version:\s*' + [regex]::Escape($Version) + '\s*$')) { throw "Source version differs for $($taskPackage.Slug)." }
+    $taskArchive = Join-Path $taskVersionRoot ($taskPackage.Slug + '-v' + $Version + '.zip')
+    if(Test-Path -LiteralPath $taskArchive) { throw "Archive already exists: $taskArchive. Use a new version or review the existing artifact." }
+    $taskZip = [System.IO.Compression.ZipFile]::Open($taskArchive,[System.IO.Compression.ZipArchiveMode]::Create)
+    try {
+        foreach($taskFile in Get-ChildItem -LiteralPath $taskPackage.Source -File -Recurse) {
+            $taskRelative = $taskFile.FullName.Substring($taskPackage.Source.Length + 1).Replace('\','/')
+            if($taskRelative -match '(^|/)(\.env[^/]*|wp-config\.php|node_modules|\.git|cache|backups)(/|$)|\.(log|sql|sql\.gz)$') { throw "Forbidden runtime/private file in package: $taskRelative" }
+            if($taskFile.Extension -eq '.php') {
+                $taskLint = & 'C:/xampp/php/php.exe' -l $taskFile.FullName 2>&1
+                if($LASTEXITCODE -ne 0) { throw ($taskLint -join [Environment]::NewLine) }
+            }
+            [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($taskZip,$taskFile.FullName,($taskPackage.Slug + '/' + $taskRelative),[System.IO.Compression.CompressionLevel]::Optimal) | Out-Null
+        }
+    } finally { $taskZip.Dispose() }
+    $taskChecksums += (Get-FileHash -LiteralPath $taskArchive -Algorithm SHA256)
+}
+$taskChecksums | Select-Object Path,Hash | Format-Table -AutoSize

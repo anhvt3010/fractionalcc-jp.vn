@@ -1,6 +1,12 @@
 # Website Fractional CC
 
-Website giới thiệu Fractional CC và tiếp nhận yêu cầu tư vấn/đặt hàng theo brief của Công ty TNHH BUI DANG-JP. [Hồ sơ thông tin website ban đầu](docs/WEBSITE-BRIEF.md) tổng hợp nội dung từ `template/fractional-cc`, danh mục 10 sản phẩm, giá có nguồn, tài nguyên thiết kế và các thông tin chờ xác nhận. Nội dung hồ sơ chưa được nhập vào WordPress trong lần thiết lập tài liệu này.
+Website giới thiệu Fractional CC và tiếp nhận yêu cầu tư vấn/đặt hàng theo brief của Công ty TNHH BUI DANG-JP. [Hồ sơ thông tin website ban đầu](docs/WEBSITE-BRIEF.md) tổng hợp nội dung từ `template/fractional-cc`, danh mục 10 sản phẩm, giá có nguồn, tài nguyên thiết kế và các thông tin chờ xác nhận.
+
+Đã áp dụng [bản chuyển template sang child theme + ACF/CMS](docs/FRACTIONAL-WORDPRESS.md), source version hiện tại `0.3.1`, vào WordPress theo yêu cầu dùng thông tin trang index và danh sách sản phẩm làm mặc định. Trang chủ đã dùng template Fractional CC; CMS có 10 sản phẩm, 1 combo, 39 bản ghi hoạt chất và media. Tên website là **Fractional CC**, slogan lấy từ dữ liệu template. Chỉnh sửa tại [Nội dung website](http://localhost/fractionalcc-jp.vn/wp-admin/admin.php?page=project-website-content).
+
+Database hiện vẫn dùng chung với thư mục `wordpress` cũ; việc khởi tạo và đặt homepage áp dụng vào database này, có bản sao lưu riêng trước thao tác. Các giá trị đã có được giữ nguyên. Site đang dùng chế độ local `noindex`; chưa nghiệm thu giao diện bằng trình duyệt hoặc hoàn thiện chức năng tiếp nhận đơn phía server.
+
+Bản `0.3.1` bổ sung [sửa nội dung trong Tùy biến](http://localhost/fractionalcc-jp.vn/wp-admin/customize.php?autofocus%5Bpanel%5D=fcc_content): bút chì ở bản xem trước mở ô sửa, **Xuất bản** lưu vào cùng ACF/CMS. Text của nút/liên kết/biểu mẫu được sửa trong panel; ảnh và thông tin sản phẩm/giá vẫn quản lý trong CMS. Công cụ sửa chỉ có trong preview cho người có quyền, không đổi thiết kế khách xem. Xem [hướng dẫn](docs/FRACTIONAL-WORDPRESS.md#sửa-trong-màn-tùy-biến-031) và [release 0.3.1](release/v0.3.1/RELEASE.md).
 
 Dự án theo kiến trúc developer-first: WordPress quản lý nội dung, child theme quản lý giao diện, custom plugin quản lý nghiệp vụ, Gutenberg/ACF cung cấp nội dung chỉnh sửa được.
 
@@ -8,7 +14,9 @@ Dự án theo kiến trúc developer-first: WordPress quản lý nội dung, chi
 
 Theo xác nhận của người dùng ngày 12/10/2026, XAMPP đã cài và dự án tại `C:\xampp\htdocs\fractionalcc-jp.vn` đã chạy được. **Tạm thời không dùng Docker** cho chạy local, phát triển, kiểm thử hoặc build.
 
-Dùng Apache và MySQL/MariaDB của XAMPP. Mở site bằng URL XAMPP/virtual host đang cấu hình; nếu dùng ánh xạ thư mục mặc định thì URL là `http://localhost/fractionalcc-jp.vn/`, admin thêm `wp-admin/`. Root chính là WordPress installation: dùng trực tiếp `wp-content/...`.
+Dùng Apache và MySQL/MariaDB của XAMPP. Site hiện truy cập tại [http://localhost/fractionalcc-jp.vn/](http://localhost/fractionalcc-jp.vn/), quản trị tại [wp-admin](http://localhost/fractionalcc-jp.vn/wp-admin/). Root chính là WordPress installation: dùng trực tiếp `wp-content/...`.
+
+Ngày 12/10/2026 đã sửa lỗi 404 do URL và rewrite còn trỏ `/wordpress/`: cấu hình riêng `wp-config.php` dùng `WP_HOME`/`WP_SITEURL` theo thư mục hiện tại, `.htaccess` dùng `/fractionalcc-jp.vn/`. Sau đó đã khởi tạo nội dung mặc định và đặt trang chủ Fractional CC (page ID `30`). Năm loại trang và 29 tài nguyên local được kiểm tra HTTP 200, không thấy lỗi PHP trong response. URL lưu trong database chưa thay đổi. `wp-config.php` được giữ trên máy và bỏ theo dõi Git theo quy tắc bảo mật.
 
 Cấu hình và tài liệu Docker cũ được giữ để tham khảo khi có yêu cầu dùng lại. Không tự khởi động Docker hoặc chuyển database/môi trường.
 
@@ -35,6 +43,7 @@ Chi tiết tại [release/README.md](release/README.md). Đây là quy trình y�
 ## Tài liệu
 
 - [Thông tin website và nội dung ban đầu](docs/WEBSITE-BRIEF.md)
+- [Bản chuyển WordPress, CMS và cách triển khai](docs/FRACTIONAL-WORDPRESS.md)
 - [Workflow XAMPP và setup](docs/SETUP.md)
 - [Kiến trúc và quy ước](docs/ARCHITECTURE.md)
 - [Skill của dự án](.agents/skills/wordpress-ai-development/SKILL.md)

@@ -1,0 +1,302 @@
+
+    .thankyou-page {
+      background-color: var(--color-bg-soft);
+      padding: 44px 0 80px;
+      min-height: 80vh;
+    }
+    .thankyou-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 52px 48px;
+      max-width: 1040px;
+      margin: 0 auto;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .thankyou-card {
+        padding: 32px 20px;
+      }
+    }
+    /* Animated Success Icon */
+    .thankyou-badge-icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: #EAF7EE;
+      color: #2E7D32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      margin: 0 auto 20px;
+      border: 2px solid rgba(46, 125, 50, 0.25);
+      box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+    }
+    .thankyou-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .thankyou-title {
+      font-size: 28px;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    @media (min-width: 768px) {
+      .thankyou-title { font-size: 34px; }
+    }
+    .thankyou-subtitle {
+      font-size: 15px;
+      color: var(--color-text-body);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    /* Order Receipt Box */
+    .receipt-box {
+      background: #FAF8F4;
+      border: 1px solid #EAE3D2;
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 600px) {
+      .receipt-box {
+        padding: 20px 16px;
+      }
+    }
+    .receipt-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #EAE3D2;
+      margin-bottom: 18px;
+    }
+    .receipt-id-tag {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--color-primary);
+      letter-spacing: 0.04em;
+    }
+    .receipt-status-badge {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8C6A28;
+      background: #F4EEDF;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+    }
+    .receipt-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      font-size: 14px;
+    }
+    @media (min-width: 540px) {
+      .receipt-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+    }
+    @media (min-width: 900px) {
+      .receipt-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+    }
+    .receipt-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .receipt-label {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+    .receipt-value {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 14.5px;
+    }
+    /* Product Summary inside Receipt */
+    .receipt-product-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: #FFFFFF;
+      border: 1px solid #EAE3D2;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 18px;
+    }
+    .receipt-product-thumb {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .receipt-product-info {
+      flex: 1;
+    }
+    .receipt-product-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+    .receipt-product-gift {
+      font-size: 13px;
+      color: #2E7D32;
+      font-weight: 600;
+    }
+
+    /* 3-Step Journey Timeline */
+    .timeline-wrap {
+      margin-bottom: 36px;
+      padding: 30px 28px;
+      background: #FAF9F6;
+      border: 1px solid #EAE3D2;
+      border-radius: var(--radius-md);
+    }
+    @media (max-width: 600px) {
+      .timeline-wrap {
+        padding: 22px 16px;
+      }
+    }
+    .timeline-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-text-muted);
+      margin-bottom: 22px;
+      text-align: center;
+    }
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .timeline-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    }
+    .fulfillment-card {
+      background: #FFFFFF;
+      border: 1px solid #ECE7DE;
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .fulfillment-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    }
+    @media (max-width: 767px) {
+      .fulfillment-card {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px 16px;
+      }
+    }
+    .step-icon-wrap {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 767px) {
+      .step-icon-wrap {
+        margin: 0;
+      }
+    }
+    .step-icon-done {
+      background: #2E7D32;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+    }
+    .step-icon-active {
+      background: #FAF3E3;
+      border: 2px solid var(--color-accent-gold);
+      color: #8C6A28;
+      box-shadow: 0 4px 12px rgba(197, 160, 89, 0.2);
+    }
+    .step-icon-next {
+      background: #F1EFEA;
+      color: #9E9E9E;
+      border: 1px solid #DDD8CE;
+    }
+    .step-card-body {
+      flex: 1;
+    }
+    .step-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+    .step-desc {
+      font-size: 13px;
+      color: var(--color-text-body);
+      line-height: 1.55;
+    }
+
+    /* Action Buttons */
+    .thankyou-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    @media (min-width: 576px) {
+      .thankyou-actions {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    .btn-zalo-priority {
+      background: #0068FF;
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 104, 255, 0.3);
+      transition: all var(--transition-fast);
+    }
+    .btn-zalo-priority:hover {
+      background: #0056D2;
+      transform: translateY(-2px);
+    }
+  

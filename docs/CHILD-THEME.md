@@ -1,5 +1,7 @@
 # Kadence child theme
 
+> Bản chuyển Fractional CC hiện là source version `0.3.0`, giữ slug `project-child` và parent `kadence`. Xem [FRACTIONAL-WORDPRESS.md](FRACTIONAL-WORDPRESS.md) cho template/CMS mới và trạng thái chưa áp dụng vào database chính. Phần bên dưới ghi lại starter/trang mẫu `0.1.0` và không xác nhận runtime hiện tại.
+
 ## Đã tạo
 
 Child theme: **Project Child**, slug `project-child`, version `0.1.0`, parent `kadence`. Đây là tên tạm theo cấu trúc dự án; có thể đổi tên hiển thị trong `style.css` khi chốt tên thương hiệu.
