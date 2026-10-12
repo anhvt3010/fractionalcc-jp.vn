@@ -1,0 +1,27 @@
+/* Intrinsic CMS list styling; WordPress controls responsive column visibility. */
+.fcc-admin-thumb { display: block; width: 48px; height: 48px; object-fit: contain; border: 1px solid #dcdcde; border-radius: 4px; background: #fff; }
+.fcc-admin-muted { display: block; margin-top: 4px; color: #646970; font-size: 12px; }
+.fcc-admin-related { display: block; margin-bottom: 4px; overflow-wrap: anywhere; }
+.fcc-admin-cbmp { overflow-wrap: anywhere; }
+.inline-edit-row .fcc-quick-edit-fields { width: 100%; clear: both; }
+.fcc-quick-edit-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
+.fcc-quick-edit-field-wide { grid-column: 1 / -1; }
+.inline-edit-row .fcc-quick-edit-field { display: flex; flex-direction: column; gap: 4px; margin: 0; }
+.inline-edit-row .fcc-quick-edit-field input,
+.inline-edit-row .fcc-quick-edit-field select { width: 100%; margin: 0; min-height: 32px; }
+.fcc-quick-edit-error { color: #b32d2e; }
+@media (min-width: 783px) {
+	.fcc-quick-edit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.wp-list-table .column-fcc_image { width: 64px; }
+	.wp-list-table .column-fcc_type { width: 125px; }
+	.wp-list-table .column-fcc_price { width: 115px; }
+	.wp-list-table .column-fcc_dossier { width: 175px; }
+	.wp-list-table .column-fcc_featured { width: 105px; }
+	.wp-list-table .column-fcc_code { width: 85px; }
+	.wp-list-table .column-fcc_combo_products { width: 210px; }
+	.wp-list-table .column-fcc_tag { width: 160px; }
+	.wp-list-table .column-fcc_description { width: 40%; }
+	.wp-list-table .column-fcc_brand { width: 150px; }
+	.wp-list-table .column-fcc_contact { width: 230px; }
+	.wp-list-table .column-fcc_content_status { width: 180px; }
+}

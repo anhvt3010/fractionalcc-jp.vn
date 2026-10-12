@@ -7,6 +7,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
+function project_core_fcc_product_category_choices() {
+	return array( 'peel' => 'Tẩy tế bào chết', 'serum' => 'Serum', 'mask' => 'Mặt nạ', 'lip' => 'Dưỡng môi' );
+}
+
 function project_core_fcc_register_content() {
 	$types = array(
 		'fcc_product'    => array( 'Sản phẩm', 'Sản phẩm', true ),
@@ -58,7 +62,7 @@ function project_core_fcc_product( $post_id, $with_details = true ) {
 		return array();
 	}
 	$data = array( 'id' => $post->ID, 'name' => get_the_title( $post ), 'slug' => $post->post_name, 'url' => get_permalink( $post ) );
-	$fields = array( 'shortName', 'category', 'categoryType', 'tagline', 'spiculeCount', 'volume', 'cbmp', 'legalStatus', 'notes', 'origin' );
+	$fields = array( 'brand', 'ingredientsText', 'shortName', 'category', 'categoryType', 'tagline', 'spiculeCount', 'volume', 'cbmp', 'legalStatus', 'notes', 'origin' );
 	foreach ( $fields as $field ) {
 		$data[ $field ] = (string) get_post_meta( $post->ID, 'fcc_' . $field, true );
 	}

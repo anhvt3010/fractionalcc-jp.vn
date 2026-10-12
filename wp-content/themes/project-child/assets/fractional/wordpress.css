@@ -5,6 +5,14 @@
 body.admin-bar .site-header { top: 32px; }
 @media (max-width: 782px) { body.admin-bar .site-header { top: 46px; } }
 
+/* Slightly widen desktop content while retaining the existing mobile gutters. */
+@media (min-width: 992px) {
+	.fcc-site {
+		--container-max: 1440px;
+		--container-narrow: 1020px;
+	}
+}
+
 /* The user-approved image decorates the entire hero; content/grid remain unchanged. */
 .fcc-site .hero-section.fcc-hero-background {
 	background-color: #FAF6EE;
@@ -50,8 +58,8 @@ body.admin-bar .site-header { top: 32px; }
 
 @media (min-width: 992px) {
 	.fcc-site .hero-title {
-		font-size: 38px;
-		line-height: 1.2;
+		font-size: 36px;
+		line-height: 1.22;
 	}
 	.fcc-site .hero-title .hero-title-line-2 {
 		white-space: nowrap;
@@ -60,15 +68,15 @@ body.admin-bar .site-header { top: 32px; }
 
 @media (min-width: 1200px) {
 	.fcc-site .hero-title {
-		font-size: 44px;
-		line-height: 1.2;
+		font-size: 40px;
+		line-height: 1.22;
 	}
 }
 
 @media (min-width: 1400px) {
 	.fcc-site .hero-title {
-		font-size: 50px;
-		line-height: 1.2;
+		font-size: 44px;
+		line-height: 1.22;
 	}
 }
 
@@ -82,73 +90,444 @@ body.admin-bar .site-header { top: 32px; }
 	margin-right: 2px;
 }
 
-/* Widen Hero Banner container towards both sides */
+/* Hero Subtitle */
 .fcc-site .hero-subtitle {
-	max-width: 680px;
+	max-width: 560px;
+	font-size: 15.5px;
+	line-height: 1.6;
+	margin-bottom: 24px;
 }
 
 @media (min-width: 992px) {
 	.fcc-site .hero-section .container.hero-grid {
-		max-width: 1400px;
-		width: 95%;
-		padding-left: 24px;
-		padding-right: 24px;
+		max-width: 1320px;
+		width: 94%;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 	.fcc-site .hero-grid {
-		grid-template-columns: 1.15fr 0.85fr;
-		gap: 40px;
+		grid-template-columns: 1fr 1fr;
+		gap: 36px;
+		align-items: center;
 	}
 	.fcc-site .hero-visual {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: center;
 		align-items: center;
 	}
 	.fcc-site .hero-card {
-		max-width: 520px;
+		width: 100%;
+		max-width: 530px;
 	}
 	.fcc-site .hero-visual::before {
-		width: 480px;
-		height: 480px;
+		width: 500px;
+		height: 500px;
 	}
 }
 
 @media (min-width: 1200px) {
 	.fcc-site .hero-section .container.hero-grid {
-		max-width: 1480px;
-		width: 95%;
-		padding-left: 32px;
-		padding-right: 32px;
+		max-width: 1420px;
+		width: 94%;
+		padding-left: 24px;
+		padding-right: 24px;
 	}
 	.fcc-site .hero-grid {
-		grid-template-columns: 1.18fr 0.82fr;
-		gap: 52px;
+		grid-template-columns: 1fr 1.05fr;
+		gap: 48px;
+		align-items: center;
 	}
 	.fcc-site .hero-card {
-		max-width: 550px;
+		max-width: 590px;
 	}
 	.fcc-site .hero-visual::before {
-		width: 520px;
-		height: 520px;
+		width: 560px;
+		height: 560px;
 	}
 }
 
 @media (min-width: 1400px) {
 	.fcc-site .hero-section .container.hero-grid {
-		max-width: 1410px;
-		width: 96%;
-		padding-left: 40px;
-		padding-right: 40px;
+		max-width: 1500px;
+		width: 94%;
+		padding-left: 32px;
+		padding-right: 32px;
 	}
 	.fcc-site .hero-grid {
-		grid-template-columns: 1.18fr 0.82fr;
-		gap: 60px;
+		grid-template-columns: 1fr 1.08fr;
+		gap: 54px;
+		align-items: center;
 	}
 	.fcc-site .hero-card {
-		max-width: 570px;
+		max-width: 630px;
 	}
 	.fcc-site .hero-visual::before {
-		width: 550px;
-		height: 550px;
+		width: 600px;
+		height: 600px;
 	}
 }
+
+/* Section 03: Brand Disclaimer Note */
+.fcc-site .brand-disclaimer {
+	font-size: 13px;
+	color: var(--color-text-muted);
+	font-style: italic;
+	line-height: 1.5;
+	margin: 2px 0 6px;
+}
+
+/* Keep the product image immediately above the single CTA group on mobile. */
+.fcc-site .fcc-hero-product-first {
+	grid-template-areas: "content" "visual" "conversion";
+	row-gap: 24px;
+}
+.fcc-site .fcc-hero-product-first .hero-content { grid-area: content; }
+.fcc-site .fcc-hero-product-first .hero-visual { grid-area: visual; }
+.fcc-site .fcc-hero-product-first .hero-conversion { grid-area: conversion; min-width: 0; }
+@media (max-width: 991px) {
+	.fcc-site .fcc-hero-product-first .hero-subtitle { margin-bottom: 0; }
+	.fcc-site .fcc-hero-product-first .hero-conversion { width: 100%; max-width: 530px; justify-self: center; display: flex; flex-direction: column; gap: 18px; }
+	.fcc-site .hero-conversion .hero-trust-micro { order: -1; }
+	.fcc-site .hero-conversion .hero-cta-group { flex-direction: column; margin-bottom: 0; }
+	.fcc-site .hero-conversion .hero-cta-group .btn { width: 100%; min-height: 48px; }
+}
+@media (min-width: 992px) {
+	.fcc-site .fcc-hero-product-first {
+		grid-template-areas: "content visual" "conversion visual";
+		row-gap: 0;
+	}
+	.fcc-site .fcc-hero-product-first .hero-content { align-self: end; }
+	.fcc-site .fcc-hero-product-first .hero-conversion { align-self: start; }
+}
+
+/* Comfortable mobile controls, with the menu at the outer right edge. */
+@media (max-width: 1023.98px) {
+	.fcc-site .header-inner-split { padding-left: 16px; padding-right: 16px; gap: 8px; }
+	.fcc-site .header-inner-split .brand-logo-center { padding: 0; min-width: 0; flex-shrink: 1; gap: 8px; }
+	.fcc-site .header-inner-split .brand-logo-main-img { min-width: 0; flex-shrink: 1; }
+	.fcc-site .site-header .nav-menu { position: absolute; top: 100%; max-height: calc(100dvh - 80px); }
+	body.admin-bar.fcc-site .site-header .nav-menu { max-height: calc(100dvh - 126px); }
+	.fcc-site .header-mobile-bar { flex-shrink: 0; gap: 6px; }
+	.fcc-site .mobile-nav-toggle { width: 44px; height: 44px; flex-shrink: 0; }
+	.fcc-site .header-mobile-bar > .btn-header-order,
+	.fcc-site .header-mobile-bar > .btn { min-height: 44px; }
+}
+
+/* Section 03: Brand Message Card */
+.fcc-site .brand-message-card {
+	background: linear-gradient(135deg, #FAF7F0 0%, #FFFDF9 100%);
+	border: 1px solid #EAE2D0;
+	border-left: 3.5px solid var(--color-accent-gold, #C5A059);
+	border-radius: var(--radius-md, 12px);
+	padding: 13px 18px;
+	margin: 6px 0 10px;
+	position: relative;
+}
+.fcc-site .brand-message-header {
+	margin-bottom: 6px;
+}
+.fcc-site .brand-message-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	color: #8C6A28;
+}
+.fcc-site .brand-message-badge svg {
+	color: var(--color-accent-gold, #C5A059);
+	flex-shrink: 0;
+}
+.fcc-site .brand-message-content {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.fcc-site .brand-message-line {
+	display: flex;
+	align-items: baseline;
+	gap: 8px;
+	font-size: 13.5px;
+	line-height: 1.55;
+	color: var(--color-text-main, #222222);
+	margin: 0;
+}
+.fcc-site .brand-message-line strong {
+	color: #1A1A1A;
+	font-weight: 700;
+}
+.fcc-site .brand-message-dot {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: var(--color-accent-gold, #C5A059);
+	flex-shrink: 0;
+	position: relative;
+	top: -2px;
+}
+
+/* Section 03: Brand Showcase Visual */
+.fcc-site .section-brand-story .section-header {
+	max-width: 1200px;
+}
+.fcc-site .section-brand-story .section-desc {
+	max-width: 1100px;
+	font-size: 15.5px;
+	line-height: 1.7;
+	color: var(--color-text-body, #444444);
+	margin-top: 14px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.fcc-site .brand-visual-wrap {
+	position: relative;
+	height: 100%;
+	background: #FFFFFF;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	border-top-left-radius: 22px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.fcc-site .brand-image-stage {
+	width: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	border-top-left-radius: 22px;
+	background: #F8F9FA;
+}
+.fcc-site .brand-visual-wrap .brand-lineup-img,
+.fcc-site .brand-image-stage img {
+	width: 100% !important;
+	height: auto !important;
+	max-height: none !important;
+	max-width: 100% !important;
+	display: block !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	object-fit: contain !important;
+	transition: transform 0.4s ease;
+}
+.fcc-site .brief-brand:hover .brand-lineup-img {
+	transform: scale(1.02);
+}
+.fcc-site .brand-visual-caption {
+	margin: 0;
+	padding: 14px 20px 20px;
+	font-size: 13px;
+	color: var(--color-text-muted, #666666);
+	line-height: 1.5;
+	text-align: center;
+	background: #FFFFFF;
+}
+@media (max-width: 920px) {
+	.fcc-site .brand-visual-wrap {
+		height: auto !important;
+		min-height: unset !important;
+		padding: 0 !important;
+		border-top-left-radius: 22px;
+		border-top-right-radius: 22px;
+	}
+	.fcc-site .brand-image-stage {
+		border-top-left-radius: 22px;
+		border-top-right-radius: 22px;
+	}
+	.fcc-site .brand-visual-caption {
+		padding: 12px 16px 16px;
+	}
+}
+
+/* ==========================================================================
+   PRODUCT DETAIL VIEW (TRANG CHI TIẾT SẢN PHẨM)
+   - Square, seamless canvas maximizing product imagery
+   - Price highlighted in brand red matching homepage
+   ========================================================================== */
+
+/* Product Gallery Stage - Square canvas */
+.pd-gallery-stage {
+	background-color: #FFFFFF !important;
+	border: 1px solid var(--color-border, #ECE7DE) !important;
+	border-radius: var(--radius-xl, 20px) !important;
+	aspect-ratio: 1 / 1 !important;
+	width: 100% !important;
+	min-height: unset !important;
+	padding: 32px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	position: relative !important;
+	overflow: hidden !important;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+@media (max-width: 768px) {
+	.pd-gallery-stage {
+		padding: 20px !important;
+		border-radius: var(--radius-lg, 16px) !important;
+	}
+}
+
+/* Enlarge product photo to fill square viewport gracefully */
+.pd-main-img {
+	width: 100% !important;
+	height: 100% !important;
+	max-height: 100% !important;
+	max-width: 100% !important;
+	object-fit: contain !important;
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+	filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.08)) !important;
+}
+
+.pd-gallery-stage:hover .pd-main-img {
+	transform: scale(1.05) !important;
+}
+
+/* Thumbnail button styling */
+.pd-thumb-btn {
+	width: 72px !important;
+	height: 72px !important;
+	aspect-ratio: 1 / 1 !important;
+	border-radius: 12px !important;
+	border: 1.5px solid var(--color-border, #ECE7DE) !important;
+	background: #FFFFFF !important;
+	padding: 6px !important;
+	cursor: pointer !important;
+	transition: all var(--transition-fast) !important;
+}
+
+.pd-thumb-btn.active,
+.pd-thumb-btn:hover {
+	border-color: var(--color-accent-gold, #C5A059) !important;
+	box-shadow: 0 2px 10px rgba(197, 160, 89, 0.25) !important;
+}
+
+.pd-thumb-btn img {
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: contain !important;
+}
+
+/* Price in Brand Accent Red (matching homepage) */
+.pd-cocoon-price {
+	color: var(--color-accent-red, #D32F2F) !important;
+	font-size: clamp(28px, 3.2vw, 34px) !important;
+	font-weight: 800 !important;
+	letter-spacing: -0.01em !important;
+}
+
+/* Product Detail Editorial Tabs (Thích hợp với / Thành phần chính) */
+.pd-tabs-section {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #EAE5DF;
+}
+
+.pd-tabs-nav {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	border-bottom: 1px solid #EAE5DF;
+	margin-bottom: 16px;
+	padding-bottom: 0;
+}
+
+.pd-tab-btn {
+	background: transparent;
+	border: none;
+	padding: 0 0 10px 0;
+	margin: 0;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #8C827A;
+	cursor: pointer;
+	position: relative;
+	transition: color 0.2s ease, border-color 0.2s ease;
+	border-bottom: 2.5px solid transparent;
+	margin-bottom: -1px;
+	white-space: nowrap;
+}
+
+.pd-tab-btn:hover {
+	color: #181614;
+}
+
+.pd-tab-btn.is-active,
+.pd-tab-btn[aria-selected="true"] {
+	color: #181614;
+	border-bottom-color: var(--color-accent-gold, #C5A059);
+}
+
+.pd-tab-pane {
+	display: none;
+}
+
+.pd-tab-pane.is-active,
+.pd-tab-pane:not([hidden]) {
+	display: block;
+	animation: pdTabFadeIn 0.22s ease-out;
+}
+
+@keyframes pdTabFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(3px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.pd-tab-bullet-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.pd-tab-bullet-list li {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #555048;
+}
+
+.pd-tab-bullet-list .pd-bullet-dash {
+	color: var(--color-accent-gold, #C5A059);
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.6;
+	flex-shrink: 0;
+	user-select: none;
+}
+
+.pd-tab-bullet-list .pd-bullet-text {
+	flex: 1;
+	min-width: 0;
+}
+
+@media (max-width: 480px) {
+	.pd-tabs-nav {
+		gap: 16px;
+	}
+	.pd-tab-btn {
+		font-size: 13px;
+	}
+}
+
 

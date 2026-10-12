@@ -4,6 +4,8 @@ param(
     [string]$Version
 )
 $ErrorActionPreference = 'Stop'
+$taskPhp = @('D:/xampp/php/php.exe', 'C:/xampp/php/php.exe') | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
+if (-not $taskPhp) { throw 'XAMPP PHP executable not found.' }
 $taskRoot = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $taskReleaseRoot = Join-Path $taskRoot 'release'
 $taskVersionRoot = [System.IO.Path]::GetFullPath((Join-Path $taskReleaseRoot ('v' + $Version)))
@@ -27,7 +29,7 @@ foreach($taskPackage in $taskPackages) {
             $taskRelative = $taskFile.FullName.Substring($taskPackage.Source.Length + 1).Replace('\','/')
             if($taskRelative -match '(^|/)(\.env[^/]*|wp-config\.php|node_modules|\.git|cache|backups)(/|$)|\.(log|sql|sql\.gz)$') { throw "Forbidden runtime/private file in package: $taskRelative" }
             if($taskFile.Extension -eq '.php') {
-                $taskLint = & 'C:/xampp/php/php.exe' -l $taskFile.FullName 2>&1
+                $taskLint = & $taskPhp -l $taskFile.FullName 2>&1
                 if($LASTEXITCODE -ne 0) { throw ($taskLint -join [Environment]::NewLine) }
             }
             [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($taskZip,$taskFile.FullName,($taskPackage.Slug + '/' + $taskRelative),[System.IO.Compression.CompressionLevel]::Optimal) | Out-Null

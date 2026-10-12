@@ -198,16 +198,28 @@
               </div>
             </div>
 
-            <!-- Section: Thích hợp với (Like Cocoon) -->
-            <div class="pd-cocoon-section">
-              <h3 class="pd-cocoon-heading">Thích hợp với</h3>
-              <p class="pd-cocoon-text" id="pd-target-summary"></p>
-            </div>
+            <!-- Section: Tabs (Thích hợp với / Thành phần chính) -->
+            <div class="pd-cocoon-section pd-tabs-section">
+              <div class="pd-tabs-nav" role="tablist" aria-label="Thông tin sản phẩm">
+                <button type="button" role="tab" class="pd-tab-btn is-active" id="pd-tab-targets-btn" aria-selected="true" aria-controls="pd-tab-targets-pane">
+                  Thích hợp với
+                </button>
+                <button type="button" role="tab" class="pd-tab-btn" id="pd-tab-actives-btn" aria-selected="false" aria-controls="pd-tab-actives-pane">
+                  Thành phần chính
+                </button>
+              </div>
 
-            <!-- Section: Thành phần chính (Like Cocoon) -->
-            <div class="pd-cocoon-section">
-              <h3 class="pd-cocoon-heading">Thành phần chính</h3>
-              <p class="pd-cocoon-text" id="pd-actives-summary"></p>
+              <div class="pd-tab-panes">
+                <div class="pd-tab-pane is-active" id="pd-tab-targets-pane" role="tabpanel" aria-labelledby="pd-tab-targets-btn">
+                  <ul class="pd-tab-bullet-list" id="pd-target-list-bullets"></ul>
+                  <p class="pd-cocoon-text sr-only" id="pd-target-summary" style="display:none;"></p>
+                </div>
+
+                <div class="pd-tab-pane" id="pd-tab-actives-pane" role="tabpanel" aria-labelledby="pd-tab-actives-btn" hidden>
+                  <ul class="pd-tab-bullet-list" id="pd-actives-list-bullets"></ul>
+                  <p class="pd-cocoon-text sr-only" id="pd-actives-summary" style="display:none;"></p>
+                </div>
+              </div>
             </div>
 
             <!-- Meta specs line -->

@@ -77,7 +77,7 @@
             "fcc_ui_487435027051ea": {
                 "key": "field_fcc_ui_487435027051ea",
                 "name": "fcc_ui_487435027051ea",
-                "label": "Đánh Thức Vẻ Đẹp Làn Da",
+                "label": "Đánh thức vẻ đẹp làn da",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -86,7 +86,7 @@
             "fcc_ui_7c4ad8cffee502": {
                 "key": "field_fcc_ui_7c4ad8cffee502",
                 "name": "fcc_ui_7c4ad8cffee502",
-                "label": "Với Công Nghệ Vi Kim Nhật Bản",
+                "label": "Với công nghệ chăm sóc da Nhật Bản",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -104,16 +104,7 @@
             "fcc_ui_88efa52705849b": {
                 "key": "field_fcc_ui_88efa52705849b",
                 "name": "fcc_ui_88efa52705849b",
-                "label": "Fractional CC – thương hiệu dược mỹ phẩm Nhật Bản",
-                "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
-                "fcc_inline": true,
-                "fcc_refresh": false
-            },
-            "fcc_ui_ea89cea6464acf": {
-                "key": "field_fcc_ui_ea89cea6464acf",
-                "name": "fcc_ui_ea89cea6464acf",
-                "label": ". Ứng dụng công nghệ vi kim Spicule tự nhiên, dưỡng sáng và hỗ trợ tái tạo làn da chu",
+                "label": "Fractional CC – thương hiệu mỹ phẩm Nhật Bản",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -584,7 +575,7 @@
             "fcc_ui_0b97909fa7b3d5": {
                 "key": "field_fcc_ui_0b97909fa7b3d5",
                 "name": "fcc_ui_0b97909fa7b3d5",
-                "label": "Triết Lý Thương Hiệu Nhật Bản",
+                "label": "GIỚI THIỆU THƯƠNG HIỆU FRACTIONAL CC",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -593,7 +584,7 @@
             "fcc_ui_9be413a8b6650e": {
                 "key": "field_fcc_ui_9be413a8b6650e",
                 "name": "fcc_ui_9be413a8b6650e",
-                "label": "Giới Thiệu Fractional CC",
+                "label": "Fractional CC – Thương hiệu chăm sóc da Nhật Bản ứng dụng công nghệ vi kim",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -602,7 +593,7 @@
             "fcc_ui_72e21cf4e1c4e6": {
                 "key": "field_fcc_ui_72e21cf4e1c4e6",
                 "name": "fcc_ui_72e21cf4e1c4e6",
-                "label": "Fractional CC là thương hiệu chăm sóc da Nhật Bản với các dòng sản phẩm ứng dụng công",
+                "label": "Mô tả phụ tiêu đề (tùy chọn)",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -613,7 +604,7 @@
             "fcc_ui_89f836dd883298": {
                 "key": "field_fcc_ui_89f836dd883298",
                 "name": "fcc_ui_89f836dd883298",
-                "label": "“Chăm sóc làn da khoa học – nâng niu vẻ đẹp tự nhiên.”",
+                "label": "Trích dẫn / Tiêu đề phụ trong thẻ (tùy chọn)",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -622,7 +613,7 @@
             "fcc_ui_69055d77ba802f": {
                 "key": "field_fcc_ui_69055d77ba802f",
                 "name": "fcc_ui_69055d77ba802f",
-                "label": "Fractional CC kết hợp tinh hoa làm đẹp Nhật Bản cùng công nghệ vi kim Spicule sinh họ",
+                "label": "Fractional CC mang đến các giải pháp chăm sóc da chuyên sâu, tập trung vào dưỡng sáng, cải thiện kết cấu da và chăm sóc các dấu hiệu lão hóa thông qua sự kết hợp giữa công nghệ vi kim và các thành phần chăm sóc da nổi bật. Tại Việt Nam, Fractional CC được phân phối độc quyền bởi BUI DANG-JP, hướng đến việc đưa các sản phẩm chăm sóc da Nhật Bản đến gần hơn với người tiêu dùng Việt.",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -633,7 +624,7 @@
             "fcc_ui_ea7adcd84f1a70": {
                 "key": "field_fcc_ui_ea7adcd84f1a70",
                 "name": "fcc_ui_ea7adcd84f1a70",
-                "label": "Công nghệ vi kim sinh học Spicule:",
+                "label": "Công nghệ vi kim:",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -642,7 +633,7 @@
             "fcc_ui_7a09e2d30042ba": {
                 "key": "field_fcc_ui_7a09e2d30042ba",
                 "name": "fcc_ui_7a09e2d30042ba",
-                "label": "Dẫn truyền hoạt chất vào biểu bì da một cách tự nhiên.",
+                "label": "Điểm nhấn nổi bật của dòng Needle Serum, hướng đến hỗ trợ chăm sóc da chuyên sâu và tăng cường trải nghiệm sử dụng sản phẩm.",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -651,7 +642,7 @@
             "fcc_ui_ec032b4fc66f48": {
                 "key": "field_fcc_ui_ec032b4fc66f48",
                 "name": "fcc_ui_ec032b4fc66f48",
-                "label": "Hoạt chất tinh khiết chuẩn Nhật:",
+                "label": "Thành phần chăm sóc da nổi bật:",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -660,7 +651,7 @@
             "fcc_ui_b40c9e76d5c677": {
                 "key": "field_fcc_ui_b40c9e76d5c677",
                 "name": "fcc_ui_b40c9e76d5c677",
-                "label": "Kết hợp Vitamin C, Glutathione, Retinol, NMN và PDRN cá hồi.",
+                "label": "Tùy từng sản phẩm, công thức có thể kết hợp các thành phần như PDRN cá hồi, Retinol, NMN và những hoạt chất chăm sóc da khác.",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -669,7 +660,7 @@
             "fcc_ui_a8a99c5a9a8606": {
                 "key": "field_fcc_ui_a8a99c5a9a8606",
                 "name": "fcc_ui_a8a99c5a9a8606",
-                "label": "BUI DANG-JP phân phối độc quyền:",
+                "label": "Đa dạng lựa chọn:",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -678,7 +669,91 @@
             "fcc_ui_4163196532ab03": {
                 "key": "field_fcc_ui_4163196532ab03",
                 "name": "fcc_ui_4163196532ab03",
-                "label": "Đảm bảo nguồn gốc xuất xứ, đủ số CBMP và tư vấn theo từng làn da.",
+                "label": "Các dòng serum và mặt nạ đáp ứng những nhu cầu chăm sóc da khác nhau, từ dưỡng sáng, chăm sóc độ đàn hồi đến cải thiện vẻ ngoài của làn da.",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_brand_feat4_strong": {
+                "key": "field_fcc_ui_brand_feat4_strong",
+                "name": "fcc_ui_brand_feat4_strong",
+                "label": "Trải nghiệm chăm sóc da tại nhà:",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_brand_feat4_text": {
+                "key": "field_fcc_ui_brand_feat4_text",
+                "name": "fcc_ui_brand_feat4_text",
+                "label": "Mang đến lựa chọn chăm sóc da chuyên sâu trong chu trình skincare cá nhân, với hướng dẫn sử dụng phù hợp cho từng dòng sản phẩm.",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_brand_disclaimer": {
+                "key": "field_fcc_ui_brand_disclaimer",
+                "name": "fcc_ui_brand_disclaimer",
+                "label": "Lưu ý: Thành phần, công nghệ và công dụng cụ thể cần được đối chiếu với thông tin chính thức của từng sản phẩm.",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_brand_message_tag": {
+                "key": "field_fcc_ui_brand_message_tag",
+                "name": "fcc_ui_brand_message_tag",
+                "label": "Nhãn thông điệp (vd: Thông Điệp)",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_brand_msg_line1": {
+                "key": "field_fcc_ui_brand_msg_line1",
+                "name": "fcc_ui_brand_msg_line1",
+                "label": "Thông điệp dòng 1 (Fractional CC)",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_brand_msg_line2": {
+                "key": "field_fcc_ui_brand_msg_line2",
+                "name": "fcc_ui_brand_msg_line2",
+                "label": "Thông điệp dòng 2 (BUI DANG-JP)",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_brand_image": {
+                "key": "field_fcc_ui_brand_image",
+                "name": "fcc_ui_brand_image",
+                "label": "Ảnh giới thiệu thương hiệu (Lineup sản phẩm)",
+                "type": "image",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "return_format": "id",
+                "preview_size": "medium",
+                "library": "all",
+                "fcc_inline": false,
+                "fcc_refresh": true
+            },
+            "fcc_ui_brand_image_alt": {
+                "key": "field_fcc_ui_brand_image_alt",
+                "name": "fcc_ui_brand_image_alt",
+                "label": "Mô tả ảnh thương hiệu (alt text)",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_brand_caption": {
+                "key": "field_fcc_ui_brand_caption",
+                "name": "fcc_ui_brand_caption",
+                "label": "Chú thích dưới ảnh thương hiệu",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,

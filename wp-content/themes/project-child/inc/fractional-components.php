@@ -4,6 +4,11 @@ defined( 'ABSPATH' ) || exit;
 
 function project_child_fcc_fragment( $name ) {
 	if ( 'catalog' === $name ) {
+		if ( function_exists( 'project_core_fcc_combos' ) ) {
+			foreach ( project_core_fcc_combos() as $combo ) {
+				get_template_part( 'template-parts/fractional/components/combo-card', null, array( 'combo' => $combo ) );
+			}
+		}
 		foreach ( project_core_fcc_posts( 'fcc_product' ) as $post ) {
 			get_template_part( 'template-parts/fractional/components/product-card', null, array( 'product' => project_core_fcc_product( $post->ID, false ) ) );
 		}
@@ -19,5 +24,5 @@ function project_child_fcc_check_icon() {
 }
 
 function project_child_fcc_clean_bullet( $value ) {
-	return trim( preg_replace( '/^[\s✅✓✔☑•*\-]+/u', '', $value ) );
+	return trim( preg_replace( '/^[\s✅✓✔☑•*–—\-]+/u', '', (string) $value ) );
 }

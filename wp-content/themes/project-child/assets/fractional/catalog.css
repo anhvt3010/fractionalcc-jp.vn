@@ -1,0 +1,457 @@
+/* ==========================================================================
+   FRACTIONAL CC - CATALOG PAGE (SẢN PHẨM) SPECIFIC STYLES
+   - Two-column layout: Sticky filter sidebar on the left, product grid on the right
+   - Properly centered and balanced section header
+   ========================================================================== */
+
+/* Catalog Hero Header (Section 01) */
+.catalog-hero-header {
+  padding: 36px 0 30px;
+  background: var(--color-bg-soft, #FAF8F5);
+  border-bottom: 1px solid var(--color-border, #E2DBD0);
+}
+
+.catalog-hero-header .breadcrumb-nav {
+  padding: 0;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--color-text-muted, #718096);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.catalog-hero-header .breadcrumb-nav a {
+  color: var(--color-text-muted, #718096);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.catalog-hero-header .breadcrumb-nav a:hover {
+  color: var(--color-primary, #181818);
+}
+
+.catalog-hero-header .breadcrumb-nav span {
+  margin: 0 8px;
+  color: var(--color-text-muted, #A0AEC0);
+}
+
+.catalog-hero-header .breadcrumb-nav strong {
+  color: var(--color-text-main, #181818);
+  font-weight: 600;
+}
+
+.catalog-hero-content {
+  max-width: 860px;
+}
+
+.catalog-hero-title {
+  font-size: clamp(26px, 3.2vw, 34px);
+  color: var(--color-text-main, #181818);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 10px 0;
+}
+
+.catalog-hero-desc {
+  font-size: 15px;
+  color: var(--color-text-body, #4A4A4A);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 780px;
+}
+
+/* Section Header alignment fix */
+#danh-sach-san-pham .section-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 36px;
+  padding: 0 16px;
+}
+
+#danh-sach-san-pham .section-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#danh-sach-san-pham .section-title {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+#danh-sach-san-pham .section-desc {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Two-column Catalog Layout */
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .catalog-layout {
+    grid-template-columns: 290px 1fr;
+    gap: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog-layout {
+    grid-template-columns: 310px 1fr;
+    gap: 36px;
+  }
+}
+
+/* Smooth anchor scrolling without header obstruction */
+#danh-sach-combo,
+#danh-sach-san-pham {
+  scroll-margin-top: 110px;
+}
+
+body.admin-bar #danh-sach-combo,
+body.admin-bar #danh-sach-san-pham {
+  scroll-margin-top: 142px;
+}
+
+/* Left Sidebar Filter */
+.catalog-sidebar {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .catalog-sidebar {
+    position: sticky;
+    top: 116px;
+    z-index: 10;
+  }
+
+  body.admin-bar .catalog-sidebar {
+    top: 148px;
+  }
+}
+
+.catalog-sidebar .catalog-filter-bar {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px 20px;
+  margin-bottom: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Filter Head with Title and Reset link */
+.catalog-filter-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.catalog-filter-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+}
+
+.catalog-filter-reset-link {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent-gold);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-family: inherit;
+}
+
+.catalog-filter-reset-link:hover {
+  color: var(--color-primary);
+}
+
+/* Filter Groups inside Sidebar */
+.catalog-sidebar .filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.catalog-sidebar .filter-group-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+.catalog-sidebar .filter-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.catalog-sidebar .filter-pill {
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-soft);
+  color: var(--color-text-body);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  line-height: 1.4;
+  font-family: inherit;
+  text-align: left;
+}
+
+.catalog-sidebar .filter-pill:hover {
+  border-color: var(--color-accent-gold);
+  color: var(--color-primary);
+  background: #FFFFFF;
+}
+
+.catalog-sidebar .filter-pill.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+}
+
+/* Search input inside Sidebar */
+.catalog-sidebar .search-input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.catalog-sidebar .search-input-wrap input {
+  font-size: 13px;
+  padding: 10px 14px 10px 38px;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  width: 100%;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.catalog-sidebar .search-input-wrap input:focus {
+  outline: none;
+  border-color: var(--color-accent-gold);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+}
+
+.catalog-sidebar .search-icon-placeholder {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--color-accent-gold);
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+
+.catalog-sidebar .search-input-wrap:focus-within .search-icon-placeholder {
+  color: var(--color-primary);
+}
+
+/* Combo Card in Catalog Grid */
+.product-card-combo {
+  border: 1.5px solid rgba(197, 160, 89, 0.4) !important;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FDFCF9 100%);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.product-card-combo:hover {
+  border-color: var(--color-accent-gold) !important;
+  box-shadow: 0 16px 36px rgba(197, 160, 89, 0.2) !important;
+}
+
+.product-card-combo .product-cbmp-tag {
+  background: var(--color-accent-gold) !important;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Right Main Content Area */
+.catalog-main {
+  width: 100%;
+  min-width: 0;
+}
+
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 12px 18px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 12px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.catalog-count-display {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  letter-spacing: 0.02em;
+}
+
+/* Product Grid inside catalog-main */
+.catalog-main .brief-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 1240px) and (min-width: 992px) {
+  .catalog-main .brief-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 600px) {
+  .catalog-main .brief-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 599px) {
+  .catalog-main .brief-product-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ==========================================================================
+   CONSULTATION BLOCK (CHƯA BIẾT NÊN BẮT ĐẦU VỚI SẢN PHẨM NÀO?)
+   - Minimalist, clean, natural presentation
+   ========================================================================== */
+.catalog-consultation-section {
+  padding-top: 20px;
+  padding-bottom: 56px;
+}
+
+.catalog-consultation-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg, 16px);
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.consultation-title {
+  font-size: clamp(22px, 2.5vw, 26px);
+  color: var(--color-text-main, #181818);
+  margin-bottom: 12px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.consultation-desc {
+  font-size: 15px;
+  color: var(--color-text-muted, #666666);
+  max-width: 680px;
+  margin: 0 auto 26px;
+  line-height: 1.65;
+}
+
+.consultation-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.consultation-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--color-primary, #181818);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.consultation-primary-btn:hover {
+  background: var(--color-accent-gold, #C5A059);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.consultation-quick-text {
+  font-size: 13.5px;
+  color: var(--color-text-muted, #718096);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+
+.consultation-link {
+  color: var(--color-primary, #181818);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.consultation-link:hover {
+  color: var(--color-accent-gold, #C5A059);
+}
+
+.consultation-sep {
+  color: var(--color-border, #E2DBD0);
+  user-select: none;
+}
+
+@media (max-width: 767px) {
+  .catalog-consultation-card {
+    padding: 30px 18px;
+  }
+
+  .consultation-primary-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+

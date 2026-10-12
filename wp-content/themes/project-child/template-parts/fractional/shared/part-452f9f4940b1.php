@@ -38,11 +38,11 @@
 
       
       <div class="header-mobile-bar">
-        <button class="mobile-nav-toggle" aria-label="Menu điều hướng">
-          <span></span><span></span><span></span>
-        </button>
         <button class="btn-header-order" data-open-order id="pd-header-order-btn-mob">
           <?php echo project_child_fcc_text( 'fcc_ui_9681bed187e219', 'shared', false ); ?>
+        </button>
+        <button class="mobile-nav-toggle" aria-label="Menu điều hướng">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>

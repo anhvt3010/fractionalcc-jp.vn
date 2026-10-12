@@ -38,11 +38,11 @@
 
       
       <div class="header-mobile-bar">
-        <button class="mobile-nav-toggle" aria-label="Menu điều hướng">
-          <span></span><span></span><span></span>
-        </button>
         <button class="btn-header-order" data-open-order data-product-select="<?php echo esc_attr( project_child_fcc_order_code( 'combo_C-CX4' ) ); ?>">
           <?php echo project_child_fcc_text( 'fcc_ui_9681bed187e219', 'shared', false ); ?>
+        </button>
+        <button class="mobile-nav-toggle" aria-label="Menu điều hướng">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>

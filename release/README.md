@@ -1,5 +1,7 @@
 # Quy trình build và release
 
+> Bản `0.3.3` đã cập nhật catalog từ Excel, bổ sung tự khởi tạo defaults trên site mới và kiểm tra cài hai ZIP trên database riêng. Xem [hồ sơ release](v0.3.3/RELEASE.md) và [ánh xạ dữ liệu](../docs/PRODUCT-DATA-EXCEL.md). Các mô tả phiên bản cũ bên dưới là lịch sử.
+
 Dùng XAMPP cho workflow hiện tại; Docker tạm thời không áp dụng. Mỗi bản build tạo một thư mục version trong `release/`, chứa **đúng hai file ZIP cài được qua WordPress Admin**, cùng hồ sơ phát hành nếu cần.
 
 Source Fractional CC `0.3.1` có compiler, initializer, công cụ sửa text trong Customizer và `scripts/build-release.ps1`. Defaults/homepage đã áp dụng trên XAMPP theo yêu cầu; database vẫn dùng chung với site cũ. Xem [trạng thái triển khai](../docs/FRACTIONAL-WORDPRESS.md); các mô tả “chưa triển khai script/seed” bên dưới là mốc trước chuyển đổi. Luồng tiếp nhận đơn phía server và nghiệm thu giao diện/public còn cần hoàn thiện; chưa là release production đã nghiệm thu.

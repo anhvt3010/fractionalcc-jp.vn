@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // 6. Initialize Product Detail Page if on chi-tiet-san-pham.html
+  initProductDetailTabs();
   if (document.getElementById('product-detail-view')) {
     initProductDetailView();
   }
@@ -149,17 +150,31 @@ function initMobileNav() {
   const navMenu = document.querySelector('.nav-menu');
 
   if (toggleBtn && navMenu) {
+    navMenu.id = navMenu.id || 'fcc-mobile-menu';
+    toggleBtn.setAttribute('aria-controls', navMenu.id);
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    const closeMenu = () => {
+      navMenu.classList.remove('mobile-open');
+      toggleBtn.classList.remove('active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    };
     toggleBtn.addEventListener('click', () => {
       const isOpen = navMenu.classList.toggle('mobile-open');
       toggleBtn.classList.toggle('active', isOpen);
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
     });
 
     // Close menu when clicking a link
     navMenu.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('mobile-open');
-        toggleBtn.classList.remove('active');
+        closeMenu();
       });
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navMenu.classList.contains('mobile-open')) {
+        closeMenu();
+        toggleBtn.focus();
+      }
     });
   }
 }
@@ -447,7 +462,7 @@ function initCatalogFilter() {
       card.hidden = !matches; if (matches) visible++;
     });
     empty.hidden = visible > 0;
-    if (count) count.textContent = 'Hiển thị ' + visible + '/' + cards.length + ' sản phẩm';
+    if (count) count.textContent = 'Hiển thị ' + visible + '/' + cards.length + ' sản phẩm & combo';
   }
   function bind(buttons, setValue) {
     buttons.forEach(button => button.addEventListener('click', () => {
@@ -480,6 +495,39 @@ function initProductDetailView() {
     document.querySelectorAll('[data-detail-image]').forEach(item => item.classList.remove('active'));
     button.classList.add('active');
   }));
+}
+
+function initProductDetailTabs() {
+  const tabButtons = document.querySelectorAll('.pd-tab-btn');
+  if (!tabButtons.length) return;
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parentNav = button.closest('.pd-tabs-nav');
+      if (!parentNav) return;
+      const container = parentNav.closest('.pd-tabs-section') || parentNav.parentElement;
+      const targetId = button.getAttribute('aria-controls');
+
+      parentNav.querySelectorAll('.pd-tab-btn').forEach(btn => {
+        const isActive = (btn === button);
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      if (container) {
+        container.querySelectorAll('.pd-tab-pane').forEach(pane => {
+          const isMatch = (pane.id === targetId);
+          pane.classList.toggle('is-active', isMatch);
+          if (isMatch) {
+            pane.removeAttribute('hidden');
+          } else {
+            pane.setAttribute('hidden', '');
+          }
+        });
+      }
+    });
+  });
 }
 
 function initThankYouPage() {

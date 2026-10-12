@@ -1,5 +1,5 @@
 {
-    "version": "0.3.2",
+    "version": "0.3.3",
     "pages": {
         "shared": {
             "title": "Thông tin và giao diện chung Fractional CC",
@@ -861,11 +861,11 @@
                     "type": "text"
                 },
                 "fcc_ui_487435027051ea": {
-                    "value": "Đánh Thức Vẻ Đẹp Làn Da",
+                    "value": "Đánh thức vẻ đẹp làn da",
                     "type": "text"
                 },
                 "fcc_ui_7c4ad8cffee502": {
-                    "value": "Với Công Nghệ Vi Kim Nhật Bản",
+                    "value": "Với công nghệ chăm sóc da Nhật Bản",
                     "type": "text"
                 },
                 "fcc_ui_543aa81dfd94d5": {
@@ -873,11 +873,11 @@
                     "type": "text"
                 },
                 "fcc_ui_88efa52705849b": {
-                    "value": "Fractional CC – thương hiệu dược mỹ phẩm Nhật Bản",
+                    "value": "Fractional CC – thương hiệu mỹ phẩm Nhật Bản",
                     "type": "text"
                 },
                 "fcc_ui_ea89cea6464acf": {
-                    "value": ". Ứng dụng công nghệ vi kim Spicule tự nhiên, dưỡng sáng và hỗ trợ tái tạo làn da chuyên sâu.",
+                    "value": "",
                     "type": "text"
                 },
                 "fcc_ui_e05dc8077446a2": {
@@ -1081,47 +1081,83 @@
                     "type": "text"
                 },
                 "fcc_ui_0b97909fa7b3d5": {
-                    "value": "Triết Lý Thương Hiệu Nhật Bản",
+                    "value": "GIỚI THIỆU THƯƠNG HIỆU FRACTIONAL CC",
                     "type": "text"
                 },
                 "fcc_ui_9be413a8b6650e": {
-                    "value": "Giới Thiệu Fractional CC",
+                    "value": "Fractional CC – Thương hiệu chăm sóc da Nhật Bản ứng dụng công nghệ vi kim",
                     "type": "text"
                 },
                 "fcc_ui_72e21cf4e1c4e6": {
-                    "value": "Fractional CC là thương hiệu chăm sóc da Nhật Bản với các dòng sản phẩm ứng dụng công nghệ vi kim, hướng đến nhu cầu dưỡng sáng, cấp ẩm và chăm sóc da chuyên sâu.",
+                    "value": "Fractional CC mang đến các giải pháp chăm sóc da chuyên sâu, tập trung vào dưỡng sáng, cải thiện kết cấu da và chăm sóc các dấu hiệu lão hóa thông qua sự kết hợp giữa công nghệ vi kim và các thành phần chăm sóc da nổi bật. Tại Việt Nam, Fractional CC được phân phối độc quyền bởi BUI DANG-JP, hướng đến việc đưa các sản phẩm chăm sóc da Nhật Bản đến gần hơn với người tiêu dùng Việt.",
                     "type": "textarea"
                 },
                 "fcc_ui_89f836dd883298": {
-                    "value": "“Chăm sóc làn da khoa học – nâng niu vẻ đẹp tự nhiên.”",
+                    "value": "",
                     "type": "text"
                 },
                 "fcc_ui_69055d77ba802f": {
-                    "value": "Fractional CC kết hợp tinh hoa làm đẹp Nhật Bản cùng công nghệ vi kim Spicule sinh học tiên tiến. Danh mục gồm serum, mặt nạ, tinh chất PDRN và dưỡng môi, mang đến giải pháp chăm sóc da chuyên sâu chuẩn salon ngay tại nhà với sự đồng hành tư vấn từ BUI DANG-JP.",
+                    "value": "",
                     "type": "textarea"
                 },
                 "fcc_ui_ea7adcd84f1a70": {
-                    "value": "Công nghệ vi kim sinh học Spicule:",
+                    "value": "Công nghệ vi kim:",
                     "type": "text"
                 },
                 "fcc_ui_7a09e2d30042ba": {
-                    "value": "Dẫn truyền hoạt chất vào biểu bì da một cách tự nhiên.",
+                    "value": "Điểm nhấn nổi bật của dòng Needle Serum, hướng đến hỗ trợ chăm sóc da chuyên sâu và tăng cường trải nghiệm sử dụng sản phẩm.",
                     "type": "text"
                 },
                 "fcc_ui_ec032b4fc66f48": {
-                    "value": "Hoạt chất tinh khiết chuẩn Nhật:",
+                    "value": "Thành phần chăm sóc da nổi bật:",
                     "type": "text"
                 },
                 "fcc_ui_b40c9e76d5c677": {
-                    "value": "Kết hợp Vitamin C, Glutathione, Retinol, NMN và PDRN cá hồi.",
+                    "value": "Tùy từng sản phẩm, công thức có thể kết hợp các thành phần như PDRN cá hồi, Retinol, NMN và những hoạt chất chăm sóc da khác.",
                     "type": "text"
                 },
                 "fcc_ui_a8a99c5a9a8606": {
-                    "value": "BUI DANG-JP phân phối độc quyền:",
+                    "value": "Đa dạng lựa chọn:",
                     "type": "text"
                 },
                 "fcc_ui_4163196532ab03": {
-                    "value": "Đảm bảo nguồn gốc xuất xứ, đủ số CBMP và tư vấn theo từng làn da.",
+                    "value": "Các dòng serum và mặt nạ đáp ứng những nhu cầu chăm sóc da khác nhau, từ dưỡng sáng, chăm sóc độ đàn hồi đến cải thiện vẻ ngoài của làn da.",
+                    "type": "text"
+                },
+                "fcc_ui_brand_feat4_strong": {
+                    "value": "Trải nghiệm chăm sóc da tại nhà:",
+                    "type": "text"
+                },
+                "fcc_ui_brand_feat4_text": {
+                    "value": "Mang đến lựa chọn chăm sóc da chuyên sâu trong chu trình skincare cá nhân, với hướng dẫn sử dụng phù hợp cho từng dòng sản phẩm.",
+                    "type": "text"
+                },
+                "fcc_ui_brand_disclaimer": {
+                    "value": "Lưu ý: Thành phần, công nghệ và công dụng cụ thể cần được đối chiếu với thông tin chính thức của từng sản phẩm.",
+                    "type": "text"
+                },
+                "fcc_ui_brand_message_tag": {
+                    "value": "Thông Điệp",
+                    "type": "text"
+                },
+                "fcc_ui_brand_msg_line1": {
+                    "value": "Fractional CC – Công nghệ vi kim, nâng tầm trải nghiệm chăm sóc da chuyên sâu.",
+                    "type": "text"
+                },
+                "fcc_ui_brand_msg_line2": {
+                    "value": "BUI DANG-JP – Đồng hành cùng bạn khám phá tinh hoa chăm sóc da Nhật Bản.",
+                    "type": "text"
+                },
+                "fcc_ui_brand_image": {
+                    "value": "assets/images/brand/fractional-lineup-full.jpg",
+                    "type": "image"
+                },
+                "fcc_ui_brand_image_alt": {
+                    "value": "Dòng sản phẩm Fractional CC",
+                    "type": "text"
+                },
+                "fcc_ui_brand_caption": {
+                    "value": "Hình ảnh sản phẩm, bao bì và phong cách thương hiệu",
                     "type": "text"
                 },
                 "fcc_ui_ffed63b9bad263": {
@@ -3336,7 +3372,7 @@
             "slug": "mandelic-shot-peel-essence",
             "name": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
             "shortName": "Mandelic Shot Peel Essence",
-            "category": "Tẩy tế bào chết",
+            "category": "Mỹ Phẩm",
             "categoryType": "peel",
             "skinConcerns": [
                 "pore",
@@ -3346,69 +3382,72 @@
             "tagline": "Serum tẩy tế bào chết – làm sạch lỗ chân lông – mịn da chỉ trong 1 bước",
             "spiculeCount": "50.000 vi kim tự nhiên",
             "volume": "30ml",
-            "originalPrice": null,
-            "salePrice": null,
+            "originalPrice": 850000,
+            "salePrice": 628000,
             "image": "assets/images/products/mandelic-peel-essence.png",
             "gallery": [
-                "assets/images/products/mandelic-peel-essence.png",
-                "assets/images/banner/hero-main.jpg",
-                "assets/images/banner/feature-routine.jpg"
+                "assets/images/products/mandelic-peel-essence.png"
             ],
             "cbmp": "312953/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": 4.9,
             "reviewCount": 382,
             "uspBullets": [
-                "Hỗ trợ loại bỏ tế bào chết trên bề mặt da dịu nhẹ chuẩn Nhật.",
-                "Làm sạch sâu bã nhờn trong lỗ chân lông, giảm bít tắc.",
-                "Hỗ trợ cải thiện tình trạng da sần sùi, thô ráp, xỉn màu.",
-                "Cấp ẩm, làm dịu và hạn chế tối đa cảm giác khô căng sau peel.",
-                "Giúp bề mặt da mịn màng, thông thoáng và hấp thụ dưỡng chất tốt hơn.",
-                "Nuôi dưỡng làn da khỏe mạnh, tươi sáng và rạng rỡ mỗi ngày."
+                "✅ Hỗ trợ loại bỏ tế bào chết trên bề mặt da.",
+                "✅ Làm sạch sâu lỗ chân lông, giảm bít tắc.",
+                "✅ Hỗ trợ cải thiện tình trạng da sần sùi, xỉn màu.",
+                "✅ Cấp ẩm, làm dịu và hạn chế khô căng sau khi tẩy da chết.",
+                "✅ Giúp bề mặt da mịn màng, thông thoáng và hấp thụ dưỡng chất tốt hơn.",
+                "✅ Mang lại làn da khỏe mạnh, tươi sáng và rạng rỡ hơn mỗi ngày."
             ],
             "actives": [
                 {
-                    "name": "50.000 Vi Kim Tự Nhiên (Microneedles)",
-                    "tag": "Công Nghệ Dẫn Truyền",
-                    "desc": "Mật độ 50.000 vi kim sinh học Spicule tinh khiết tạo các kênh dẫn vi thể mở đường cho AHA/BHA thâm nhập sâu vào biểu bì, tăng hiệu quả tái tạo bề mặt da gấp nhiều lần."
+                    "name": "50.000 vi kim tự nhiên (Microneedles)",
+                    "tag": "Thành phần chính",
+                    "desc": "50.000 vi kim tự nhiên (Microneedles) hỗ trợ đưa các hoạt chất thẩm thấu tốt hơn vào da, góp phần tăng hiệu quả chăm sóc và tái tạo bề mặt da."
                 },
                 {
-                    "name": "10% Mandelic Acid & 2% Lactic Acid (AHA)",
-                    "tag": "Tẩy Da Chết Bề Mặt",
-                    "desc": "Tổ hợp AHA phân tử lớn dịu nhẹ giúp hòa tan liên kết tế bào sừng già cỗi, cải thiện tình trạng sần sùi, thô ráp và trả lại bề mặt da mịn màng, sáng khỏe."
+                    "name": "10% Mandelic Acid kết hợp 2% Lactic Acid (AHA)",
+                    "tag": "Thành phần chính",
+                    "desc": "10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) giúp loại bỏ tế bào chết trên bề mặt, cải thiện tình trạng da xỉn màu, sần sùi, mang lại làn da mềm mịn và tươi sáng hơn."
                 },
                 {
                     "name": "Salicylic Acid (BHA)",
-                    "tag": "Làm Sạch Sâu Lỗ Chân Lông",
-                    "desc": "Thấm sâu vào tuyến bã nhờn, hòa tan dầu thừa, làm thông thoáng lỗ chân lông bị tắc nghẽn và ngăn ngừa hình thành mụn đầu đen, mụn cám."
+                    "tag": "Thành phần chính",
+                    "desc": "Salicylic Acid (BHA) hỗ trợ làm sạch sâu lỗ chân lông, loại bỏ bã nhờn dư thừa và giảm tình trạng bít tắc – một trong những nguyên nhân gây mụn."
                 },
                 {
-                    "name": "5% Niacinamide, CICA, B5 & Hyaluronic Acid",
-                    "tag": "Phục Hồi & Giảm Khô Căng",
-                    "desc": "Cấp ẩm, làm dịu da tức thì và phục hồi hàng rào màng ẩm tự nhiên sau khi tẩy da chết, ngăn ngừa tối đa hiện tượng đỏ rát hay căng rát."
+                    "name": "5% Niacinamide",
+                    "tag": "Thành phần chính",
+                    "desc": "5% Niacinamide kết hợp cùng Hyaluronic Acid, Panthenol và chiết xuất rau má (CICA) giúp bổ sung độ ẩm, làm dịu da và hỗ trợ phục hồi hàng rào bảo vệ da sau quá trình tẩy tế bào chết, hạn chế cảm giác khô căng."
                 }
             ],
             "targetUsers": [
-                "Da sần sùi, thô ráp, xỉn màu lâu ngày",
-                "Da dầu, da hỗn hợp thiên dầu hoặc da dễ bít tắc lỗ chân lông",
-                "Da có mụn đầu đen, mụn đầu trắng và sợi bã nhờn cứng đầu",
-                "Da có lỗ chân lông to, bề mặt kém mịn màng",
-                "Người muốn peel da hóa học nhẹ nhàng, an toàn tại nhà chuẩn chuẩn Nhật"
+                "✔ Da sần sùi, thô ráp, xỉn màu.",
+                "✔ Da dầu, da hỗn hợp hoặc da dễ bít tắc lỗ chân lông.",
+                "✔ Da có mụn đầu đen, mụn đầu trắng hoặc nhiều bã nhờn.",
+                "✔ Da có lỗ chân lông to, bề mặt kém mịn màng.",
+                "✔ Người muốn tẩy tế bào chết hóa học nhẹ nhàng để cải thiện kết cấu da."
             ],
             "howToUse": [
                 "Đọc hướng dẫn trên bao bì và sử dụng đúng tần suất khuyến nghị của nhà sản xuất.",
                 "Không tự ý kết hợp các hoạt chất dễ gây kích ứng.",
                 "Nếu châm chích kéo dài, đỏ rát hoặc kích ứng, ngừng sử dụng và tham khảo ý kiến chuyên môn."
             ],
-            "notes": "Cách dùng và cảm giác trên da phụ thuộc từng sản phẩm. Tuân thủ hướng dẫn trên bao bì.",
-            "origin": "Nhật Bản"
+            "notes": "",
+            "origin": "Nhật Bản",
+            "brand": "Fractional CC",
+            "ingredientsText": "💜 50.000 vi kim tự nhiên (Microneedles) hỗ trợ đưa các hoạt chất thẩm thấu tốt hơn vào da, góp phần tăng hiệu quả chăm sóc và tái tạo bề mặt da.\n✨ 10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) giúp loại bỏ tế bào chết trên bề mặt, cải thiện tình trạng da xỉn màu, sần sùi, mang lại làn da mềm mịn và tươi sáng hơn.\n🌿 Salicylic Acid (BHA) hỗ trợ làm sạch sâu lỗ chân lông, loại bỏ bã nhờn dư thừa và giảm tình trạng bít tắc – một trong những nguyên nhân gây mụn.\n💧 5% Niacinamide kết hợp cùng Hyaluronic Acid, Panthenol và chiết xuất rau má (CICA) giúp bổ sung độ ẩm, làm dịu da và hỗ trợ phục hồi hàng rào bảo vệ da sau quá trình tẩy tế bào chết, hạn chế cảm giác khô căng.",
+            "spotlightTitle": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
+            "spotlightDescription": "Serum tẩy tế bào chết – làm sạch lỗ chân lông – mịn da chỉ trong 1 bước",
+            "spotlightHighlights": "50.000 vi kim tự nhiên (Microneedles) | 50.000 vi kim tự nhiên (Microneedles) hỗ trợ đưa các hoạt chất thẩm thấu tốt hơn vào da, góp phần tăng hiệu quả chăm sóc và tái tạo bề mặt da.\n10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) | 10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) giúp loại bỏ tế bào chết trên bề mặt, cải thiện tình trạng da xỉn màu, sần sùi, mang lại làn da mềm mịn và tươi sáng hơn.\nSalicylic Acid (BHA) | Salicylic Acid (BHA) hỗ trợ làm sạch sâu lỗ chân lông, loại bỏ bã nhờn dư thừa và giảm tình trạng bít tắc – một trong những nguyên nhân gây mụn.\n5% Niacinamide | 5% Niacinamide kết hợp cùng Hyaluronic Acid, Panthenol và chiết xuất rau má (CICA) giúp bổ sung độ ẩm, làm dịu da và hỗ trợ phục hồi hàng rào bảo vệ da sau quá trình tẩy tế bào chết, hạn chế cảm giác khô căng."
         },
         {
             "id": 2,
             "slug": "needle-serum-a-face-mask",
             "name": "Mặt nạ FractionalCC Needle Serum A Face Mask",
             "shortName": "Needle Serum A Face Mask",
-            "category": "Mặt nạ vi kim",
+            "category": "Mỹ Phẩm",
             "categoryType": "mask",
             "skinConcerns": [
                 "aging",
@@ -3419,12 +3458,10 @@
             "spiculeCount": "300.000 vi kim tự nhiên",
             "volume": "Hộp 5 miếng (25ml / miếng)",
             "originalPrice": null,
-            "salePrice": null,
+            "salePrice": 386000,
             "image": "assets/images/products/needle-mask-a.png",
             "gallery": [
-                "assets/images/products/needle-mask-a.png",
-                "assets/images/banner/hero-main.jpg",
-                "assets/images/banner/combo-visual.jpg"
+                "assets/images/products/needle-mask-a.png"
             ],
             "cbmp": "312932/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3435,32 +3472,27 @@
             ],
             "actives": [
                 {
-                    "name": "300.000 Vi Kim Tự Nhiên Spicule",
-                    "tag": "Công Nghệ Dẫn Truyền Sinh Học",
-                    "desc": "Mật độ 300.000 vi kim siêu nhỏ mở hàng ngàn vi kênh dẫn trên lớp biểu bì, giúp các dưỡng chất chống lão hóa quý giá thẩm thấu sâu gấp nhiều lần so với mặt nạ thông thường."
+                    "name": "Chứa 300,000 vi kim và Retinol, PDRN (DNA cá hồi) & NMN",
+                    "tag": "Thành phần chính",
+                    "desc": "Chứa 300,000 vi kim và Retinol, PDRN (DNA cá hồi) & NMN: Giúp cải thiện kết cấu da, giúp mờ nếp nhăn và trẻ hóa da từ cấp độ phân tử."
                 },
                 {
-                    "name": "Retinol & Bakuchiol Tinh Khiết",
-                    "tag": "Tái Tạo & Giảm Nếp Nhăn",
-                    "desc": "Thúc đẩy chu kỳ thay mới tế bào, tăng sinh collagen tự nhiên, giúp làm mờ các nếp nhăn li ti và làm mịn cấu trúc bề mặt da thô ráp."
+                    "name": "CICA (hoạt chất rau má), Panthenol & Hyaluronic Acid",
+                    "tag": "Thành phần chính",
+                    "desc": "CICA (hoạt chất rau má), Panthenol & Hyaluronic Acid: Cấp ẩm sâu, giúp da mềm mịn"
                 },
                 {
-                    "name": "PDRN (DNA Cá Hồi) & NMN Tế Bào",
-                    "tag": "Trẻ Hóa & Phục Hồi Đa Tầng",
-                    "desc": "Bộ đôi hoạt chất công nghệ sinh học giúp sửa chữa tế bào tổn thương, phục hồi độ đàn hồi và duy trì vẻ đẹp thanh xuân căng tràn."
-                },
-                {
-                    "name": "CICA, Panthenol (B5) & Niacinamide",
-                    "tag": "Dưỡng Trắng & Làm Dịu Da",
-                    "desc": "Cấp ẩm sâu tức thì, làm dịu cảm giác châm chích vi kim tự nhiên, củng cố hàng rào bảo vệ và mang lại làn da trắng sáng mềm mịn."
+                    "name": "Niaciamide, Nicotinamide",
+                    "tag": "Thành phần chính",
+                    "desc": "Niaciamide, Nicotinamide: Dưỡng trắng da"
                 }
             ],
             "targetUsers": [
-                "Da có nếp nhăn li ti, thiếu độ đàn hồi, da chảy xệ nhẹ",
-                "Da xỉn màu, không đều màu, thiếu sức sống sau những ngày mệt mỏi",
-                "Da có lỗ chân lông to, bề mặt kém săn chắc",
-                "Người muốn trải nghiệm đắp mặt nạ vi kim chuẩn spa tại nhà",
-                "Da khô, da thiếu ẩm cần cấp cứu độ bóng mượt tức thì"
+                "-Da có nếp nhăn li ti, thiếu độ đàn hồi, da chảy xệ nhẹ.",
+                "-Da xỉn màu, không đều màu, thiếu sức sống.",
+                "-Da có lỗ chân lông to, bề mặt da kém mịn màng.",
+                "-Người muốn chăm sóc da chuyên sâu tại nhà với công nghệ vi kim sinh học.",
+                "-Da khô hoặc da thiếu ẩm cần được cấp ẩm và phục hồi."
             ],
             "howToUse": [
                 "Bước 1: Rửa mặt sạch và cân bằng da với toner dịu nhẹ.",
@@ -3468,15 +3500,20 @@
                 "Bước 3: Thư giãn 15–20 phút để dưỡng chất thấm sâu. Gỡ mặt nạ và massage nhẹ phần dưỡng chất còn lại trên da.",
                 "Bước 4: Không cần rửa lại với nước. Khóa ẩm bằng kem dưỡng và thoa kem chống nắng vào ban ngày."
             ],
-            "notes": "Cảm giác châm chích nhẹ và hơi đỏ tạm thời là hoàn toàn bình thường do 300.000 vi kim đang kích thích vi tuần hoàn và dẫn truyền dưỡng chất.",
-            "origin": "Nhật Bản"
+            "notes": "",
+            "origin": "Nhật Bản",
+            "brand": "Fractional CC",
+            "ingredientsText": "* Chứa 300,000 vi kim và Retinol, PDRN (DNA cá hồi) & NMN: Giúp cải thiện kết cấu da, giúp mờ nếp nhăn và trẻ hóa da từ cấp độ phân tử.\n* CICA (hoạt chất rau má), Panthenol & Hyaluronic Acid: Cấp ẩm sâu, giúp da mềm mịn \n* Niaciamide, Nicotinamide: Dưỡng trắng da",
+            "spotlightTitle": "Mặt nạ FractionalCC Needle Serum A Face Mask",
+            "spotlightDescription": "Dưỡng ẩm, dưỡng trắng, giúp làm dịu da khô, giúp da mềm mịn.",
+            "spotlightHighlights": "Chứa 300,000 vi kim và Retinol, PDRN (DNA cá hồi) & NMN | Chứa 300,000 vi kim và Retinol, PDRN (DNA cá hồi) & NMN: Giúp cải thiện kết cấu da, giúp mờ nếp nhăn và trẻ hóa da từ cấp độ phân tử.\nCICA (hoạt chất rau má), Panthenol & Hyaluronic Acid | CICA (hoạt chất rau má), Panthenol & Hyaluronic Acid: Cấp ẩm sâu, giúp da mềm mịn\nNiaciamide, Nicotinamide | Niaciamide, Nicotinamide: Dưỡng trắng da"
         },
         {
             "id": 3,
             "slug": "needle-serum-a",
             "name": "Serum dưỡng da FractionalCC Needle Serum A",
             "shortName": "Needle Serum A (Chống lão hóa)",
-            "category": "Serum vi kim",
+            "category": "Mỹ Phẩm",
             "categoryType": "serum",
             "skinConcerns": [
                 "aging",
@@ -3487,12 +3524,10 @@
             "spiculeCount": "150.000 vi kim tự nhiên 99% tinh khiết",
             "volume": "30ml",
             "originalPrice": null,
-            "salePrice": null,
+            "salePrice": 810000,
             "image": "assets/images/products/needle-serum-a.png",
             "gallery": [
-                "assets/images/products/needle-serum-a.png",
-                "assets/images/banner/artboard-7.jpg",
-                "assets/images/banner/feature-routine.jpg"
+                "assets/images/products/needle-serum-a.png"
             ],
             "cbmp": "312955/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3507,32 +3542,32 @@
             ],
             "actives": [
                 {
-                    "name": "150.000 Vi Kim Tự Nhiên 99% Tinh Khiết",
-                    "tag": "Công Nghệ Dẫn Truyền Sinh Học",
-                    "desc": "Tạo các kênh dẫn siêu vi vi thể trên biểu bì, giúp các phân tử Retinol và hoạt chất quý vượt qua màng lipid tự nhiên để thẩm thấu sâu xuống các tầng da."
+                    "name": "Vi kim (mật độ 150.000 kim siêu nhỏ)",
+                    "tag": "Thành phần chính",
+                    "desc": "Vi kim (mật độ 150.000 kim siêu nhỏ): Tạo các kênh dẫn siêu vi, giúp Vitamin C và dưỡng chất vượt qua hàng rào bảo vệ da để tác động trực tiếp vào tầng sâu."
                 },
                 {
-                    "name": "Phức Hợp Retinol Đa Dạng & Bakuchiol",
-                    "tag": "Tái Tạo Tế Bào & Giảm Nếp Nhăn",
-                    "desc": "Kích thích chu trình luân chuyển tế bào biểu bì, kích hoạt sản sinh collagen & elastin, làm mờ rõ rệt nếp nhăn và cải thiện độ săn chắc cho da."
+                    "name": "Niacinamide",
+                    "tag": "Thành phần chính",
+                    "desc": "Niacinamide: Dưỡng trắng da"
                 },
                 {
-                    "name": "PDRN (DNA Cá Hồi) & Exosome Sinh Học",
-                    "tag": "Sửa Chữa Hư Tổn & Trẻ Hóa",
-                    "desc": "Bộ đôi công nghệ sinh học cao cấp giúp chữa lành các tổn thương vi thể, tăng sinh tế bào mới và mang lại hiệu ứng da căng bóng, săn chắc vượt trội."
+                    "name": "Retinol",
+                    "tag": "Thành phần chính",
+                    "desc": "Retinol: Thúc đẩy tái tạo tế bào, tăng sinh collagen và elastin, giúp làm giảm sự xuất hiện của nếp nhăn trên da"
                 },
                 {
-                    "name": "Niacinamide & Phức Hợp CICA - B5",
-                    "tag": "Dưỡng Trắng & Thu Nhỏ Lỗ Chân Lông",
-                    "desc": "Kiểm soát bã nhờn, se khít lỗ chân lông, làm dịu da tức thì và nuôi dưỡng nền da đều màu, tươi sáng tự nhiên."
+                    "name": "PDRN & Exosome",
+                    "tag": "Thành phần chính",
+                    "desc": "PDRN & Exosome: Bộ đôi công nghệ tế bào giúp sửa chữa các tổn thương, mang lại hiệu ứng da căng bóng và rạng rỡ."
                 }
             ],
             "targetUsers": [
-                "Người từ 25 tuổi trở lên bắt đầu xuất hiện dấu hiệu lão hóa",
-                "Da thiếu độ đàn hồi, xuất hiện rãnh cười và nếp nhăn nhỏ quanh mắt/trán",
-                "Da xỉn màu, bề mặt thô sần, lỗ chân lông to do suy giảm collagen",
-                "Người muốn chăm sóc chống lão hóa nâng cao tại nhà thay cho lăn kim spa",
-                "Người muốn bắt đầu với nồng độ vi kim tiêu chuẩn an toàn"
+                "- Người từ 25 tuổi trở lên bắt đầu có dấu hiệu lão hóa.",
+                "- Da thiếu đàn hồi, xuất hiện nếp nhăn nhỏ.",
+                "- Da xỉn màu, thiếu sức sống.",
+                "- Da có lỗ chân lông to hoặc bề mặt da kém mịn màng.",
+                "- Người muốn tập trung vào chống lão hóa và cải thiện độ săn chắc da."
             ],
             "howToUse": [
                 "Bước 1: Rửa mặt sạch và dùng toner cân bằng độ ẩm.",
@@ -3540,15 +3575,20 @@
                 "Bước 3: Dùng đầu ngón tay massage nhẹ nhàng và vỗ đều theo hướng nâng cơ để đưa vi kim vào da.",
                 "Bước 4: Khóa ẩm bằng kem dưỡng ẩm phục hồi. Luôn bôi kem chống nắng bảo vệ da vào ban ngày."
             ],
-            "notes": "Cảm giác châm chích nhẹ như kim châm lăn tăn là dấu hiệu đặc trưng khi vi kim tự nhiên đang kích hoạt. Sử dụng 2–3 lần/tuần vào buổi tối khi mới bắt đầu.",
-            "origin": "Nhật Bản"
+            "notes": "",
+            "origin": "Nhật Bản",
+            "brand": "Fractional CC",
+            "ingredientsText": "*Vi kim (mật độ 150.000 kim siêu nhỏ): Tạo các kênh dẫn siêu vi, giúp Vitamin C và dưỡng chất vượt qua hàng rào bảo vệ da để tác động trực tiếp vào tầng sâu.\n*Niacinamide: Dưỡng trắng da\n*Retinol: Thúc đẩy tái tạo tế bào, tăng sinh collagen và elastin, giúp làm giảm sự xuất hiện của nếp nhăn trên da\n* PDRN & Exosome: Bộ đôi công nghệ tế bào giúp sửa chữa các tổn thương, mang lại hiệu ứng da căng bóng và rạng rỡ.",
+            "spotlightTitle": "Serum dưỡng da FractionalCC Needle Serum A",
+            "spotlightDescription": "Dưỡng ẩm cho da, giúp dưỡng trắng và hỗ trợ làm giảm sự xuất hiện của nếp nhăn trên da, giúp thu nhỏ lỗ chân lông",
+            "spotlightHighlights": "Vi kim (mật độ 150.000 kim siêu nhỏ) | Vi kim (mật độ 150.000 kim siêu nhỏ): Tạo các kênh dẫn siêu vi, giúp Vitamin C và dưỡng chất vượt qua hàng rào bảo vệ da để tác động trực tiếp vào tầng sâu.\nNiacinamide | Niacinamide: Dưỡng trắng da\nRetinol | Retinol: Thúc đẩy tái tạo tế bào, tăng sinh collagen và elastin, giúp làm giảm sự xuất hiện của nếp nhăn trên da\nPDRN & Exosome | PDRN & Exosome: Bộ đôi công nghệ tế bào giúp sửa chữa các tổn thương, mang lại hiệu ứng da căng bóng và rạng rỡ."
         },
         {
             "id": 4,
             "slug": "needle-serum-ax4",
             "name": "Serum dưỡng da FractionalCC Needle Serum AX4",
             "shortName": "Needle Serum AX4 (Chuyên sâu X4)",
-            "category": "Serum vi kim",
+            "category": "Mỹ Phẩm",
             "categoryType": "serum",
             "skinConcerns": [
                 "aging",
@@ -3559,12 +3599,10 @@
             "spiculeCount": "600.000 vi kim tự nhiên (Gấp 4 lần)",
             "volume": "30ml",
             "originalPrice": null,
-            "salePrice": null,
+            "salePrice": 910000,
             "image": "assets/images/products/needle-serum-ax4.png",
             "gallery": [
-                "assets/images/products/needle-serum-ax4.png",
-                "assets/images/banner/artboard-7.jpg",
-                "assets/images/banner/combo-visual.jpg"
+                "assets/images/products/needle-serum-ax4.png"
             ],
             "cbmp": "312956/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3579,31 +3617,26 @@
             ],
             "actives": [
                 {
-                    "name": "600.000 Vi Kim Sinh Học Tinh Khiết (Gấp 4 Lần)",
-                    "tag": "Kích Hoạt Tái Tạo Chuyên Sâu",
-                    "desc": "Mật độ vi kim cực đại mở mạng lưới dẫn truyền vi thể dày đặc, đưa toàn bộ dưỡng chất chuyên sâu xuyên qua tầng sừng để tác động mạnh mẽ vào cấu trúc nền."
+                    "name": "Vi kim (mật độ 600.000 kim siêu nhỏ)",
+                    "tag": "Thành phần chính",
+                    "desc": "Vi kim (mật độ 600.000 kim siêu nhỏ): Tạo đường dẫn siêu vi đưa Exosome và các hoạt chất đi sâu qua lớp sừng, tối ưu hóa hiệu quả hấp thụ."
                 },
                 {
-                    "name": "Retinol Đa Dạng & Bakuchiol Nồng Độ Cao",
-                    "tag": "Nâng Cơ & Xóa Mờ Rãnh Nhăn Sâu",
-                    "desc": "Tập trung tái tạo cấu trúc da chảy xệ, xóa mờ nếp nhăn tĩnh và nếp nhăn động, khôi phục mật độ săn chắc của làn da sau tuổi 30."
+                    "name": "Retinol/Bakuchiol (trong dòng A) hoặc Vitamin C (trong dòng C)",
+                    "tag": "Thành phần chính",
+                    "desc": "Retinol/Bakuchiol (trong dòng A) hoặc Vitamin C (trong dòng C): Tập trung giảm sự xuất hiện, làm mờ nếp nhăn hoặc làm đều màu da, làm sáng da."
                 },
                 {
-                    "name": "Exosome Tế Bào Gốc & Salmon PDRN Siêu Phân Tử",
-                    "tag": "Tái Sinh Biểu Bì Cấp Tốc",
-                    "desc": "Tín hiệu sinh học tế bào kích hoạt phục hồi sâu, tái tạo chuỗi collagen đứt gãy và mang lại hiệu ứng da căng bóng phẳng mịn chuẩn thẩm mỹ viện."
-                },
-                {
-                    "name": "Niacinamide & Phức Hợp Peptide Cao Cấp",
-                    "tag": "Củng Cố Hàng Rào & Dưỡng Sáng",
-                    "desc": "Tăng cường liên kết tế bào biểu bì, làm sáng da, mờ sạm nám và giữ gìn hàng rào bảo vệ da vững chắc."
+                    "name": "Niacinamide & Peptide",
+                    "tag": "Thành phần chính",
+                    "desc": "Niacinamide & Peptide: Dưỡng trắng, củng cố hàng rào bảo vệ và giúp da săn chắc, khỏe mạnh hơn."
                 }
             ],
             "targetUsers": [
-                "Da có dấu hiệu lão hóa rõ rệt, nếp nhăn hằn sâu, da chùng nhão",
-                "Da thiếu săn chắc, lỗ chân lông to hình giọt nước do lão hóa",
-                "Khách hàng đã từng sử dụng Needle Serum A hoặc serum vi kim khác muốn nâng cấp",
-                "Người cần phục hồi cấu trúc da săn mịn cấp tốc chuẩn thẩm mỹ viện"
+                "- Da có dấu hiệu lão hóa rõ rệt.",
+                "- Da thiếu săn chắc, thiếu đàn hồi.",
+                "- Da khô, lỗ chân lông to do lão hóa.",
+                "- Người đã từng sử dụng serum vi kim và muốn trải nghiệm dòng vi kim nồng độ cao hơn."
             ],
             "howToUse": [
                 "Bước 1: Làm sạch da kỹ càng bằng nước tẩy trang và sữa rửa mặt dịu nhẹ.",
@@ -3611,15 +3644,20 @@
                 "Bước 3: Ấn nhẹ và vỗ đều bằng lòng bàn tay theo hướng từ trong ra ngoài, từ dưới lên trên.",
                 "Bước 4: Bắt buộc dùng kem khóa ẩm giàu dưỡng chất (Ceramide / Panthenol) và chống nắng kỹ ban ngày."
             ],
-            "notes": "Mật độ 600.000 vi kim mang lại cảm giác châm chích rõ rệt hơn phiên bản chuẩn. Dùng 1–2 lần/tuần vào ban đêm, tăng dần tần suất theo độ thích ứng của da.",
-            "origin": "Nhật Bản"
+            "notes": "",
+            "origin": "Nhật Bản",
+            "brand": "Fractional CC",
+            "ingredientsText": "* Vi kim (mật độ 600.000 kim siêu nhỏ): Tạo đường dẫn siêu vi đưa Exosome và các hoạt chất đi sâu qua lớp sừng, tối ưu hóa hiệu quả hấp thụ.\n* Retinol/Bakuchiol (trong dòng A) hoặc Vitamin C (trong dòng C): Tập trung giảm sự xuất hiện, làm mờ nếp nhăn hoặc làm đều màu da, làm sáng da.\n* Niacinamide & Peptide: Dưỡng trắng, củng cố hàng rào bảo vệ và giúp da săn chắc, khỏe mạnh hơn.",
+            "spotlightTitle": "Serum dưỡng da FractionalCC Needle Serum AX4",
+            "spotlightDescription": "Dưỡng ẩm cho da, giúp dưỡng trắng, giúp làm dịu da khô và hỗ trợ làm giảm sự xuất hiện của nếp nhăn trên da.",
+            "spotlightHighlights": "Vi kim (mật độ 600.000 kim siêu nhỏ) | Vi kim (mật độ 600.000 kim siêu nhỏ): Tạo đường dẫn siêu vi đưa Exosome và các hoạt chất đi sâu qua lớp sừng, tối ưu hóa hiệu quả hấp thụ.\nRetinol/Bakuchiol (trong dòng A) hoặc Vitamin C (trong dòng C) | Retinol/Bakuchiol (trong dòng A) hoặc Vitamin C (trong dòng C): Tập trung giảm sự xuất hiện, làm mờ nếp nhăn hoặc làm đều màu da, làm sáng da.\nNiacinamide & Peptide | Niacinamide & Peptide: Dưỡng trắng, củng cố hàng rào bảo vệ và giúp da săn chắc, khỏe mạnh hơn."
         },
         {
             "id": 5,
             "slug": "needle-serum-c-face-mask",
             "name": "Mặt nạ FractionalCC Needle Serum C Face Mask",
             "shortName": "Needle Serum C Face Mask",
-            "category": "Mặt nạ vi kim",
+            "category": "Mỹ Phẩm",
             "categoryType": "mask",
             "skinConcerns": [
                 "brightening",
@@ -3630,12 +3668,10 @@
             "spiculeCount": "300.000 vi kim tự nhiên",
             "volume": "Hộp 5 miếng (25ml / miếng)",
             "originalPrice": null,
-            "salePrice": null,
+            "salePrice": 386000,
             "image": "assets/images/products/needle-mask-c.png",
             "gallery": [
-                "assets/images/products/needle-mask-c.png",
-                "assets/images/banner/hero-main.jpg",
-                "assets/images/banner/combo-visual.jpg"
+                "assets/images/products/needle-mask-c.png"
             ],
             "cbmp": "312931/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3650,32 +3686,32 @@
             ],
             "actives": [
                 {
-                    "name": "300.000 Vi Kim Tự Nhiên Spicule",
-                    "tag": "Kênh Dẫn Thẩm Thấu Biểu Bì",
-                    "desc": "Tạo vi kênh dẫn mở đường cho tổ hợp 5 loại Vitamin C thấm sâu vào tầng tế bào, tăng hiệu quả dưỡng sáng gấp nhiều lần so với mặt nạ thông thường."
+                    "name": "Công nghệ Vi kim (300.000 kim tự nhiên)",
+                    "tag": "Thành phần chính",
+                    "desc": "Công nghệ Vi kim (300.000 kim tự nhiên): Tạo đường dẫn siêu vi, giúp dưỡng chất đi sâu vào lớp biểu bì, tăng hiệu quả thẩm thấu gấp nhiều lần so với mặt nạ thông thường."
                 },
                 {
-                    "name": "Phức Hợp 5 Dẫn Xuất Vitamin C & Glutathione",
-                    "tag": "Tổ Hợp Vàng Dưỡng Trắng & Mờ Nám",
-                    "desc": "Cơ chế chống oxy hóa kép ức chế tổng hợp melanin, hỗ trợ làm sáng da bật tông, xóa mờ vết thâm mụn và đốm tàn nhang cứng đầu."
+                    "name": "Phức hợp 5 loại Vitamin C & Glutathione",
+                    "tag": "Thành phần chính",
+                    "desc": "Phức hợp 5 loại Vitamin C & Glutathione: Tổ hợp \"vàng\" giúp làm đều màu da,  làm sáng da, làm mờ thâm nám và mờ tàn nhang hiệu quả."
                 },
                 {
-                    "name": "Niacinamide & Alpha Arbutin",
-                    "tag": "Làm Đều Màu Da Rạng Rỡ",
-                    "desc": "Cải thiện làn da xỉn màu thiếu sức sống, làm đều sắc tố da và hỗ trợ se khít lỗ chân lông."
+                    "name": "Niacinamide & Panthenol (Vitamin B5)",
+                    "tag": "Thành phần chính",
+                    "desc": "Niacinamide & Panthenol (Vitamin B5): Làm sáng da, Củng cố hàng rào bảo vệ da và giữ cho nền da luôn đủ ẩm."
                 },
                 {
-                    "name": "CICA (Rau Má), Panthenol & Hyaluronic Acid",
-                    "tag": "Làm Dịu & Cấp Ẩm Đa Tầng",
-                    "desc": "Cấp ẩm chuyên sâu, làm dịu tức thì cảm giác châm chích vi kim và duy trì làn da mướt mát, căng tràn ngậm nước."
+                    "name": "Chiết xuất CICA (Rau má)",
+                    "tag": "Thành phần chính",
+                    "desc": "Chiết xuất CICA (Rau má): Làm dịu da, phục hồi những vùng da nhạy cảm hoặc bị tổn thương, giúp da khỏe khoắn hơn."
                 }
             ],
             "targetUsers": [
-                "Da xỉn màu, tối màu, thiếu sức sống do mệt mỏi hoặc tiếp xúc khói bụi",
-                "Da có nhiều vết thâm sau mụn, đốm sắc tố không đều màu",
-                "Da có lỗ chân lông rõ rệt, bề mặt kém mịn màng",
-                "Người chuẩn bị đi sự kiện cần da sáng bật tông nhanh chóng",
-                "Người yêu thích dưỡng sáng bằng Vitamin C kết hợp công nghệ vi kim"
+                "- Da xỉn màu, thiếu sức sống.",
+                "- Da có lỗ chân lông rõ.",
+                "- Da không đều màu, cần tăng độ rạng rỡ.",
+                "- Da khô thiếu ẩm.",
+                "- Người muốn chăm sóc da sáng khỏe bằng Vitamin C kết hợp công nghệ vi kim."
             ],
             "howToUse": [
                 "Bước 1: Làm sạch da với tẩy trang và sữa rửa mặt dịu nhẹ.",
@@ -3683,15 +3719,20 @@
                 "Bước 3: Đắp trong 15–20 phút, sau đó tháo mặt nạ và dùng tay vỗ nhẹ lượng tinh chất còn lại.",
                 "Bước 4: Không cần rửa lại với nước. Thoa kem dưỡng khóa ẩm để bảo toàn dưỡng chất."
             ],
-            "notes": "Cảm giác châm chích nhẹ là hoàn toàn bình thường do tác động dẫn truyền của 300.000 vi kim. Sử dụng 2–3 lần/tuần để duy trì làn da sáng mịn rạng rỡ.",
-            "origin": "Nhật Bản"
+            "notes": "",
+            "origin": "Nhật Bản",
+            "brand": "Fractional CC",
+            "ingredientsText": "*Công nghệ Vi kim (300.000 kim tự nhiên): Tạo đường dẫn siêu vi, giúp dưỡng chất đi sâu vào lớp biểu bì, tăng hiệu quả thẩm thấu gấp nhiều lần so với mặt nạ thông thường.\n*Phức hợp 5 loại Vitamin C & Glutathione: Tổ hợp \"vàng\" giúp làm đều màu da,  làm sáng da, làm mờ thâm nám và mờ tàn nhang hiệu quả.\n*Niacinamide & Panthenol (Vitamin B5): Làm sáng da, Củng cố hàng rào bảo vệ da và giữ cho nền da luôn đủ ẩm.\n*Chiết xuất CICA (Rau má): Làm dịu da, phục hồi những vùng da nhạy cảm hoặc bị tổn thương, giúp da khỏe khoắn hơn.",
+            "spotlightTitle": "Mặt nạ FractionalCC Needle Serum C Face Mask",
+            "spotlightDescription": "Dưỡng ẩm cho da, giúp làm dịu da khô, giúp dưỡng trắng da và giúp da mềm mịn, thu nhỏ lỗ chân lông",
+            "spotlightHighlights": "Công nghệ Vi kim (300.000 kim tự nhiên) | Công nghệ Vi kim (300.000 kim tự nhiên): Tạo đường dẫn siêu vi, giúp dưỡng chất đi sâu vào lớp biểu bì, tăng hiệu quả thẩm thấu gấp nhiều lần so với mặt nạ thông thường.\nPhức hợp 5 loại Vitamin C & Glutathione | Phức hợp 5 loại Vitamin C & Glutathione: Tổ hợp \"vàng\" giúp làm đều màu da,  làm sáng da, làm mờ thâm nám và mờ tàn nhang hiệu quả.\nNiacinamide & Panthenol (Vitamin B5) | Niacinamide & Panthenol (Vitamin B5): Làm sáng da, Củng cố hàng rào bảo vệ da và giữ cho nền da luôn đủ ẩm.\nChiết xuất CICA (Rau má) | Chiết xuất CICA (Rau má): Làm dịu da, phục hồi những vùng da nhạy cảm hoặc bị tổn thương, giúp da khỏe khoắn hơn."
         },
         {
             "id": 6,
             "slug": "needle-serum-c",
             "name": "Serum dưỡng da FractionalCC Needle Serum C",
             "shortName": "Needle Serum C (Dưỡng sáng)",
-            "category": "Serum vi kim",
+            "category": "Mỹ Phẩm",
             "categoryType": "serum",
             "skinConcerns": [
                 "brightening",
@@ -3701,13 +3742,11 @@
             "tagline": "Dưỡng ẩm cho da, giúp dưỡng trắng da và hỗ trợ làm mờ vết đồi mồi, vết nám trên da, giúp da mềm mịn.",
             "spiculeCount": "150.000 vi kim tự nhiên 99% tinh khiết",
             "volume": "30ml",
-            "originalPrice": 650000,
-            "salePrice": 593100,
+            "originalPrice": null,
+            "salePrice": 790000,
             "image": "assets/images/products/needle-serum-c.png",
             "gallery": [
-                "assets/images/products/needle-serum-c.png",
-                "assets/images/banner/artboard-7.jpg",
-                "assets/images/banner/hero-main.jpg"
+                "assets/images/products/needle-serum-c.png"
             ],
             "cbmp": "312954/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3722,47 +3761,47 @@
             ],
             "actives": [
                 {
-                    "name": "150.000 Vi Kim Tự Nhiên (99% Tinh Khiết)",
-                    "tag": "Dẫn Truyền Vi Thể",
-                    "desc": "Tạo các kênh dẫn siêu vi giúp Vitamin C và dưỡng chất vượt qua hàng rào lipid để tác động trực tiếp vào tầng biểu bì sâu, tăng hiệu quả thẩm thấu."
+                    "name": "Vi kim (mật độ 150.000 kim siêu nhỏ)",
+                    "tag": "Thành phần chính",
+                    "desc": "Vi kim (mật độ 150.000 kim siêu nhỏ): Tạo các kênh dẫn siêu vi, giúp Vitamin C và dưỡng chất vượt qua hàng rào bảo vệ da để tác động trực tiếp vào tầng sâu."
                 },
                 {
-                    "name": "Phức Hợp 5 Dẫn Xuất Vitamin C Nồng Độ Cao",
-                    "tag": "Làm Mờ Nám & Tàn Nhang",
-                    "desc": "Hoạt chất chủ chốt giúp làm đều màu da, ức chế melanin, hỗ trợ mờ thâm nám, tàn nhang và các vết đồi mồi hiệu quả rõ rệt."
+                    "name": "Vitamin C (Dẫn xuất nồng độ cao)",
+                    "tag": "Thành phần chính",
+                    "desc": "Vitamin C (Dẫn xuất nồng độ cao): Hoạt chất chủ chốt giúp làm đều màu da, hỗ trợ mờ thâm nám và mờ tàn nhang, mờ vết đồi mồi hiệu quả."
                 },
                 {
-                    "name": "Glutathione, Niacinamide & Arbutin",
-                    "tag": "Dưỡng Sáng Đa Tầng",
-                    "desc": "Bộ ba dưỡng sáng toàn diện, ngăn ngừa sạm da, giúp bề mặt da trong trẻo, rạng rỡ và bắt sáng tự nhiên."
-                },
-                {
-                    "name": "Hyaluronic Acid, Panthenol (B5) & CICA",
-                    "tag": "Khóa Ẩm & Phục Hồi",
-                    "desc": "Cung cấp độ ẩm dồi dào, làm dịu da tức thì và củng cố hàng rào bảo vệ da, giúp nền da luôn đủ ẩm và mềm mịn."
+                    "name": "Niacinamide",
+                    "tag": "Thành phần chính",
+                    "desc": "Niacinamide: Dưỡng trắng da"
                 }
             ],
             "targetUsers": [
-                "Da xỉn màu, xám xịt, thiếu sức sống",
-                "Da không đều màu, có vết thâm do mụn để lại",
-                "Da có lỗ chân lông to, bề mặt da thô ráp",
-                "Da khô thiếu ẩm cần tăng độ mướt bóng",
-                "Người muốn dưỡng sáng chuyên sâu an toàn mỗi ngày tại nhà"
+                "- Da xỉn màu, thiếu sức sống.",
+                "- Da không đều màu.",
+                "- Da có lỗ chân lông to.",
+                "- Da khô, thiếu ẩm.",
+                "- Người muốn tập trung vào dưỡng sáng và cải thiện độ rạng rỡ của làn da."
             ],
             "howToUse": [
                 "Đọc hướng dẫn trên bao bì và sử dụng đúng tần suất khuyến nghị của nhà sản xuất.",
                 "Không tự ý kết hợp các hoạt chất dễ gây kích ứng.",
                 "Nếu châm chích kéo dài, đỏ rát hoặc kích ứng, ngừng sử dụng và tham khảo ý kiến chuyên môn."
             ],
-            "notes": "Cách dùng và cảm giác trên da phụ thuộc từng sản phẩm. Tuân thủ hướng dẫn trên bao bì.",
-            "origin": "Nhật Bản"
+            "notes": "",
+            "origin": "Nhật Bản",
+            "brand": "Fractional CC",
+            "ingredientsText": "*Vi kim (mật độ 150.000 kim siêu nhỏ): Tạo các kênh dẫn siêu vi, giúp Vitamin C và dưỡng chất vượt qua hàng rào bảo vệ da để tác động trực tiếp vào tầng sâu.\n*Vitamin C (Dẫn xuất nồng độ cao): Hoạt chất chủ chốt giúp làm đều màu da, hỗ trợ mờ thâm nám và mờ tàn nhang, mờ vết đồi mồi hiệu quả.\n*Niacinamide: Dưỡng trắng da",
+            "spotlightTitle": "Serum dưỡng da FractionalCC Needle Serum C",
+            "spotlightDescription": "Dưỡng ẩm cho da, giúp dưỡng trắng da và hỗ trợ làm mờ vết đồi mồi, vết nám trên da, giúp da mềm mịn.",
+            "spotlightHighlights": "Vi kim (mật độ 150.000 kim siêu nhỏ) | Vi kim (mật độ 150.000 kim siêu nhỏ): Tạo các kênh dẫn siêu vi, giúp Vitamin C và dưỡng chất vượt qua hàng rào bảo vệ da để tác động trực tiếp vào tầng sâu.\nVitamin C (Dẫn xuất nồng độ cao) | Vitamin C (Dẫn xuất nồng độ cao): Hoạt chất chủ chốt giúp làm đều màu da, hỗ trợ mờ thâm nám và mờ tàn nhang, mờ vết đồi mồi hiệu quả.\nNiacinamide | Niacinamide: Dưỡng trắng da"
         },
         {
             "id": 7,
             "slug": "needle-serum-cx4",
             "name": "Serum dưỡng da FractionalCC Needle Serum CX4",
             "shortName": "Needle Serum CX4 (Dưỡng sáng X4)",
-            "category": "Serum vi kim",
+            "category": "Mỹ Phẩm",
             "categoryType": "serum",
             "skinConcerns": [
                 "brightening",
@@ -3772,13 +3811,11 @@
             "tagline": "Dưỡng ẩm cho da, giúp làm dịu da khô, giúp dưỡng trắng và hỗ trợ làm mờ vết đốm, tàn nhang trên da, giúp da mềm mịn",
             "spiculeCount": "600.000 vi kim tự nhiên (Gấp 4 lần)",
             "volume": "30ml",
-            "originalPrice": 750000,
-            "salePrice": 682500,
+            "originalPrice": null,
+            "salePrice": 910000,
             "image": "assets/images/products/needle-serum-cx4.png",
             "gallery": [
-                "assets/images/products/needle-serum-cx4.png",
-                "assets/images/banner/artboard-7.jpg",
-                "assets/images/banner/combo-visual.jpg"
+                "assets/images/products/needle-serum-cx4.png"
             ],
             "cbmp": "312957/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3792,46 +3829,57 @@
             ],
             "actives": [
                 {
-                    "name": "600.000 Vi Kim Siêu Nhỏ (Phiên Bản X4)",
-                    "tag": "Dẫn Truyền Cơ Học Đậm Đặc",
-                    "desc": "Mật độ vi kim siêu dày đặc 600.000 kim tạo mạng lưới kênh dẫn vi thể đưa các hoạt chất làm sáng đi sâu vào lớp biểu bì, tăng hiệu quả tác động gấp nhiều lần."
+                    "name": "Vi kim (mật độ 600.000 kim siêu nhỏ)",
+                    "tag": "Thành phần chính",
+                    "desc": "Vi kim (mật độ 600.000 kim siêu nhỏ): Công nghệ dẫn truyền cơ học đưa các hoạt chất làm sáng đi sâu vào lớp biểu bì, tăng hiệu quả tác động gấp nhiều lần."
                 },
                 {
-                    "name": "Phức Hợp 5 Dẫn Xuất Vitamin C Đậm Đặc",
-                    "tag": "Chống Oxy Hóa Tối Đa",
-                    "desc": "Tăng cường sức mạnh chống oxy hóa tối đa, phá vỡ các cụm hắc sắc tố, giúp làm đều màu da nhanh chóng và mang lại vẻ rạng rỡ tức thì."
+                    "name": "Phức hợp Vitamin C đậm đặc (phiên bản X4)",
+                    "tag": "Thành phần chính",
+                    "desc": "Phức hợp Vitamin C đậm đặc (phiên bản X4): Tăng cường sức mạnh chống oxy hóa, giúp làm đều màu da nhanh chóng và mang lại vẻ rạng rỡ tức thì."
                 },
                 {
-                    "name": "Arbutin, Niacinamide & Ceramide Oil",
-                    "tag": "Mờ Nám & Khóa Ẩm Tầng Sâu",
-                    "desc": "Hỗ trợ xóa mờ thâm nám, tàn nhang và các đốm nâu li ti, đồng thời củng cố vững chắc màng lipid ngăn ngừa thoát ẩm biểu bì."
+                    "name": "Arbutin & Niacinamide, Ceramide",
+                    "tag": "Thành phần chính",
+                    "desc": "Arbutin & Niacinamide, Ceramide: Hỗ trợ hiệu quả trong việc mờ thâm nám, mờ tàn nhang và các đốm nâu li ti."
                 },
                 {
-                    "name": "PDRN (DNA Cá Hồi), Peptide & Collagen",
-                    "tag": "Tái Sinh & Căng Bóng",
-                    "desc": "Kích thích tái tạo tế bào, hỗ trợ phục hồi và làm mờ sẹo thâm, củng cố độ đàn hồi, giúp mờ nếp nhăn và nuôi dưỡng nền da căng bóng."
+                    "name": "PDRN (DNA Cá hồi)",
+                    "tag": "Thành phần chính",
+                    "desc": "PDRN (DNA Cá hồi): Kích thích tái tạo tế bào, hỗ trợ phục hồi và làm mờ sẹo thâm, giúp da mịn màng hơn."
+                },
+                {
+                    "name": "Peptide & Collagen",
+                    "tag": "Thành phần chính",
+                    "desc": "Peptide & Collagen: Củng cố độ đàn hồi, giúp mờ nếp nhăn và nuôi dưỡng nền da căng bóng."
                 }
             ],
             "targetUsers": [
-                "Da có thâm nám, đốm nâu, tàn nhang hoặc vết thâm mụn lâu năm",
-                "Da xỉn màu mờ mịt dù đã dùng qua nhiều loại serum C thông thường",
-                "Người đã quen dùng serum vi kim và muốn tăng tốc độ cải thiện da",
-                "Người mong muốn sở hữu làn da căng bóng rạng rỡ chuẩn công nghệ Nhật"
+                "- Da xỉn màu, thiếu sức sống.",
+                "- Da không đều màu, có thâm sau mụn.",
+                "- Da có lỗ chân lông to.",
+                "- Người muốn dưỡng sáng chuyên sâu bằng Vitamin C.",
+                "- Người đã quen sử dụng serum vi kim và muốn hiệu quả mạnh hơn phiên bản Needle Serum C."
             ],
             "howToUse": [
                 "Đọc hướng dẫn trên bao bì và sử dụng đúng tần suất khuyến nghị của nhà sản xuất.",
                 "Không tự ý kết hợp các hoạt chất dễ gây kích ứng.",
                 "Nếu châm chích kéo dài, đỏ rát hoặc kích ứng, ngừng sử dụng và tham khảo ý kiến chuyên môn."
             ],
-            "notes": "Cách dùng và cảm giác trên da phụ thuộc từng sản phẩm. Tuân thủ hướng dẫn trên bao bì.",
-            "origin": "Nhật Bản"
+            "notes": "",
+            "origin": "Nhật Bản",
+            "brand": "Fractional CC",
+            "ingredientsText": "*Vi kim (mật độ 600.000 kim siêu nhỏ): Công nghệ dẫn truyền cơ học đưa các hoạt chất làm sáng đi sâu vào lớp biểu bì, tăng hiệu quả tác động gấp nhiều lần.\n*Phức hợp Vitamin C đậm đặc (phiên bản X4): Tăng cường sức mạnh chống oxy hóa, giúp làm đều màu da nhanh chóng và mang lại vẻ rạng rỡ tức thì.\n*Arbutin & Niacinamide, Ceramide: Hỗ trợ hiệu quả trong việc mờ thâm nám, mờ tàn nhang và các đốm nâu li ti.\n*PDRN (DNA Cá hồi): Kích thích tái tạo tế bào, hỗ trợ phục hồi và làm mờ sẹo thâm, giúp da mịn màng hơn.\n*Peptide & Collagen: Củng cố độ đàn hồi, giúp mờ nếp nhăn và nuôi dưỡng nền da căng bóng.",
+            "spotlightTitle": "Serum dưỡng da FractionalCC Needle Serum CX4",
+            "spotlightDescription": "Dưỡng ẩm cho da, giúp làm dịu da khô, giúp dưỡng trắng và hỗ trợ làm mờ vết đốm, tàn nhang trên da, giúp da mềm mịn",
+            "spotlightHighlights": "Vi kim (mật độ 600.000 kim siêu nhỏ) | Vi kim (mật độ 600.000 kim siêu nhỏ): Công nghệ dẫn truyền cơ học đưa các hoạt chất làm sáng đi sâu vào lớp biểu bì, tăng hiệu quả tác động gấp nhiều lần.\nPhức hợp Vitamin C đậm đặc (phiên bản X4) | Phức hợp Vitamin C đậm đặc (phiên bản X4): Tăng cường sức mạnh chống oxy hóa, giúp làm đều màu da nhanh chóng và mang lại vẻ rạng rỡ tức thì.\nArbutin & Niacinamide, Ceramide | Arbutin & Niacinamide, Ceramide: Hỗ trợ hiệu quả trong việc mờ thâm nám, mờ tàn nhang và các đốm nâu li ti.\nPDRN (DNA Cá hồi) | PDRN (DNA Cá hồi): Kích thích tái tạo tế bào, hỗ trợ phục hồi và làm mờ sẹo thâm, giúp da mịn màng hơn.\nPeptide & Collagen | Peptide & Collagen: Củng cố độ đàn hồi, giúp mờ nếp nhăn và nuôi dưỡng nền da căng bóng."
         },
         {
             "id": 8,
             "slug": "pdrn-shot-1000-toning-essence",
             "name": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence",
             "shortName": "PDRN Shot 1000+ Toning Essence",
-            "category": "Serum phục hồi",
+            "category": "Mỹ Phẩm",
             "categoryType": "serum",
             "skinConcerns": [
                 "recovery",
@@ -3841,53 +3889,47 @@
             "tagline": "Serum phục hồi – làm sáng – mờ thâm – căng bóng chỉ trong 1 bước",
             "spiculeCount": "Công nghệ Tế bào PDRN 1000ppm",
             "volume": "50ml",
-            "originalPrice": 560000,
-            "salePrice": 506800,
+            "originalPrice": null,
+            "salePrice": 630000,
             "image": "assets/images/products/pdrn-toning-essence.png",
             "gallery": [
-                "assets/images/products/pdrn-toning-essence.png",
-                "assets/images/banner/artboard-7.jpg",
-                "assets/images/banner/hero-main.jpg"
+                "assets/images/products/pdrn-toning-essence.png"
             ],
             "cbmp": "312958/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": 4.93,
             "reviewCount": 472,
             "uspBullets": [
-                "Phục hồi và tái tạo tế bào da chuyên sâu từ tầng biểu bì",
-                "Làm sáng và làm đều màu da, mờ vết thâm sau mụn",
-                "Cấp ẩm đa tầng, làm dịu da và củng cố hàng rào bảo vệ",
-                "Chống oxy hóa mạnh mẽ, ngăn ngừa lão hóa sớm",
-                "Nuôi dưỡng làn da căng bóng, rạng rỡ và khỏe mạnh mỗi ngày"
+                "✅ Phục hồi da",
+                "✅ Làm sáng và đều màu",
+                "✅ Mờ thâm sau mụn",
+                "✅ Cấp ẩm sâu",
+                "✅ Hỗ trợ chống lão hóa",
+                "✅ Cho làn da căng bóng, khỏe mạnh mỗi ngày."
             ],
             "actives": [
                 {
-                    "name": "1.000ppm PDRN (DNA Cá Hồi Tinh Khiết)",
-                    "tag": "Tái Sinh Tế Bào",
-                    "desc": "Chiết xuất PDRN nồng độ cao 1000ppm từ DNA cá hồi đại dương tương thích sinh học cao, hỗ trợ kích hoạt tái tạo và phục hồi tế bào da tổn thương, tăng sinh collagen, cải thiện độ đàn hồi cho da mềm mịn và khỏe khoắn từ tầng sâu."
+                    "name": "1000ppm PDRN (DNA cá hồi)",
+                    "tag": "Thành phần chính",
+                    "desc": "Sản phẩm nổi bật với 1000ppm PDRN (DNA cá hồi) giúp hỗ trợ tái tạo và phục hồi làn da, cải thiện độ đàn hồi, cho da mềm mịn và khỏe khoắn hơn."
                 },
                 {
-                    "name": "12% Niacinamide & 2% Alpha Arbutin",
-                    "tag": "Dưỡng Sáng & Mờ Thâm",
-                    "desc": "Sự kết hợp nồng độ vàng tối ưu giúp ức chế vận chuyển melanin lên bề mặt, cải thiện tình trạng thâm mụn, da xỉn màu và mang lại làn da đều màu, tươi sáng, rạng rỡ rõ rệt theo thời gian."
+                    "name": "12% Niacinamide và 2% Arbutin",
+                    "tag": "Thành phần chính",
+                    "desc": "Bên cạnh đó, sự kết hợp của 12% Niacinamide và 2% Arbutin giúp hỗ trợ làm sáng da, cải thiện tình trạng thâm mụn, da xỉn màu và mang lại làn da đều màu, rạng rỡ hơn theo thời gian."
                 },
                 {
-                    "name": "Glutathione & Vitamin C Tinh Khiết",
-                    "tag": "Chống Oxy Hóa Kép",
-                    "desc": "Bộ đôi chống oxy hóa mạnh mẽ quét sạch các gốc tự do, bảo vệ tế bào khỏi tác hại từ tia UV và ô nhiễm môi trường, nuôi dưỡng làn da tươi sáng và tràn đầy sức sống."
-                },
-                {
-                    "name": "CICA (Rau Má), Panthenol (B5) & Hyaluronic Acid",
-                    "tag": "Làm Dịu & Cấp Ẩm Đa Tầng",
-                    "desc": "Cấp ẩm sâu đa tầng, làm dịu da tức thì và củng cố vững chắc hàng rào bảo vệ da, giúp da luôn căng mướt, ngậm nước và không bị khô căng sau treatment."
+                    "name": "Glutathione kết hợp Vitamin C",
+                    "tag": "Thành phần chính",
+                    "desc": "Không chỉ vậy, Glutathione kết hợp Vitamin C còn giúp chống oxy hóa, nuôi dưỡng làn da tươi sáng, trong khi CICA, Panthenol và Hyaluronic Acid cấp ẩm sâu, làm dịu da và hỗ trợ củng cố hàng rào bảo vệ da, giúp da luôn căng mướt và tràn đầy sức sống."
                 }
             ],
             "targetUsers": [
-                "Làn da xỉn màu, thô ráp, thiếu sức sống",
-                "Da có nhiều vết thâm mụn, đốm sắc tố không đều màu",
-                "Da khô ráp, thiếu ẩm cần phục hồi hàng rào màng ẩm",
-                "Da bắt đầu xuất hiện các dấu hiệu lão hóa sớm, thiếu độ săn chắc",
-                "Người muốn phục hồi da êm dịu sau liệu trình peel da hoặc sau khi nặn mụn"
+                "✔ Da xỉn màu, thiếu sức sống.",
+                "✔ Da có thâm mụn, không đều màu.",
+                "✔ Da khô, thiếu ẩm.",
+                "✔ Da bắt đầu có dấu hiệu lão hóa.",
+                "✔ Người muốn phục hồi da sau treatment nhẹ hoặc sau mụn."
             ],
             "howToUse": [
                 "Bước 1: Làm sạch da mặt bằng nước tẩy trang và sữa rửa mặt dịu nhẹ, thấm ráo bằng khăn mềm.",
@@ -3895,15 +3937,20 @@
                 "Bước 3: Thoa đều theo hướng nâng cơ và vỗ nhẹ bằng lòng bàn tay để các phân tử PDRN thẩm thấu sâu.",
                 "Bước 4: Khóa ẩm bằng kem dưỡng phục hồi Ceramide / B5. Thoa kem chống nắng phổ rộng vào ban ngày."
             ],
-            "notes": "Sản phẩm êm dịu, không chứa cồn hay paraben độc hại. Thích hợp sử dụng đều đặn mỗi ngày (cả sáng và tối). Có thể kết hợp sau các bước peel da hoặc serum vi kim để nhân đôi hiệu quả căng bóng.",
-            "origin": "Nhật Bản"
+            "notes": "",
+            "origin": "Nhật Bản",
+            "brand": "Fractional CC",
+            "ingredientsText": "💗 Sản phẩm nổi bật với 1000ppm PDRN (DNA cá hồi) giúp hỗ trợ tái tạo và phục hồi làn da, cải thiện độ đàn hồi, cho da mềm mịn và khỏe khoắn hơn.\nBên cạnh đó, sự kết hợp của 12% Niacinamide và 2% Arbutin giúp hỗ trợ làm sáng da, cải thiện tình trạng thâm mụn, da xỉn màu và mang lại làn da đều màu, rạng rỡ hơn theo thời gian.\nKhông chỉ vậy, Glutathione kết hợp Vitamin C còn giúp chống oxy hóa, nuôi dưỡng làn da tươi sáng, trong khi CICA, Panthenol và Hyaluronic Acid cấp ẩm sâu, làm dịu da và hỗ trợ củng cố hàng rào bảo vệ da, giúp da luôn căng mướt và tràn đầy sức sống.",
+            "spotlightTitle": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence",
+            "spotlightDescription": "Serum phục hồi – làm sáng – mờ thâm – căng bóng chỉ trong 1 bước",
+            "spotlightHighlights": "1000ppm PDRN (DNA cá hồi) | Sản phẩm nổi bật với 1000ppm PDRN (DNA cá hồi) giúp hỗ trợ tái tạo và phục hồi làn da, cải thiện độ đàn hồi, cho da mềm mịn và khỏe khoắn hơn.\n12% Niacinamide và 2% Arbutin | Bên cạnh đó, sự kết hợp của 12% Niacinamide và 2% Arbutin giúp hỗ trợ làm sáng da, cải thiện tình trạng thâm mụn, da xỉn màu và mang lại làn da đều màu, rạng rỡ hơn theo thời gian.\nGlutathione kết hợp Vitamin C | Không chỉ vậy, Glutathione kết hợp Vitamin C còn giúp chống oxy hóa, nuôi dưỡng làn da tươi sáng, trong khi CICA, Panthenol và Hyaluronic Acid cấp ẩm sâu, làm dịu da và hỗ trợ củng cố hàng rào bảo vệ da, giúp da luôn căng mướt và tràn đầy sức sống."
         },
         {
             "id": 9,
             "slug": "pdrn-shot-lip-essence",
             "name": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence",
             "shortName": "PDRN Shot Lip Essence (Không màu)",
-            "category": "Dưỡng môi PDRN",
+            "category": "Mỹ Phẩm",
             "categoryType": "lip",
             "skinConcerns": [
                 "lip",
@@ -3912,62 +3959,66 @@
             "tagline": "Dưỡng ẩm cho môi và giúp môi mềm mịn, tạo hiệu ứng môi căng mọng. (Không màu)",
             "spiculeCount": "Vi kim sinh học tự nhiên cho môi",
             "volume": "10ml",
-            "originalPrice": 420000,
-            "salePrice": 379776,
+            "originalPrice": null,
+            "salePrice": 445000,
             "image": "assets/images/products/pdrn-lip-essence.png",
             "gallery": [
-                "assets/images/products/pdrn-lip-essence.png",
-                "assets/images/banner/artboard-7.jpg",
-                "assets/images/banner/hero-main.jpg"
+                "assets/images/products/pdrn-lip-essence.png"
             ],
             "cbmp": "312950/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": 4.88,
             "reviewCount": 310,
             "uspBullets": [
-                "- Công nghệ vi kim sinh học (Hydrolyzed Sponge) hỗ trợ tăng cường hấp thu dưỡng chất cho môi. ",
+                "- Công nghệ vi kim sinh học (Hydrolyzed Sponge) hỗ trợ tăng cường hấp thu dưỡng chất cho môi.",
                 "- PDRN (Sodium DNA) hỗ trợ dưỡng và cải thiện vẻ ngoài của môi.",
                 "- Hyaluronic Acid giúp cấp ẩm, làm mềm và giảm cảm giác khô môi.",
-                "- Peptide + Glutathione + Arbutin hỗ trợ làm mịn và cải thiện vẻ ngoài đều màu của môi. ",
+                "- Peptide + Glutathione + Arbutin hỗ trợ làm mịn và cải thiện vẻ ngoài đều màu của môi.",
                 "- Tạo độ bóng và hiệu ứng môi trông căng đầy hơn, đồng thời chăm sóc môi khô, kém mịn."
             ],
             "actives": [
                 {
-                    "name": "PDRN Chiết Xuất DNA Cá Hồi",
-                    "tag": "Tái Sinh Tế Bào Môi",
-                    "desc": "Hỗ trợ quá trình tự làm mới tế bào biểu mô môi, làm mờ rãnh nhăn môi sâu và nuôi dưỡng sắc môi căng mọng đầy sức sống từ bên trong."
+                    "name": "PDRN Chiết xuất từ DNA cá hồi",
+                    "tag": "Thành phần chính",
+                    "desc": "PDRN Chiết xuất từ DNA cá hồi: giúp làm mờ nếp nhăn môi, hỗ trợ quá trình tự làm mới tế bào, cho đôi môi sức sống từ bên trong."
                 },
                 {
-                    "name": "Công Nghệ Vi Kim Microneedle Sinh Học",
-                    "tag": "Dẫn Truyền Vi Thể",
-                    "desc": "Những sợi vi kim siêu nhỏ (Hydrolyzed Sponge) đóng vai trò người dẫn đường, tạo các kênh siêu vi đưa PDRN và hoạt chất xuyên thấu qua lớp tế bào sừng môi dày cộm."
+                    "name": "Công nghệ Vi kim Microneedle",
+                    "tag": "Thành phần chính",
+                    "desc": "Công nghệ Vi kim Microneedle: Những sợi vi kim siêu nhỏ đóng vai trò là \"người dẫn đường\", tạo ra các kênh siêu vi để đưa PDRN và dưỡng chất xuyên thâu qua lớp biểu bì môi dày cộm, tác động trực tiếp xuống tầng sâu."
                 },
                 {
-                    "name": "Phức Hợp Dưỡng Ẩm Chuyên Sâu (Vitamin C & Glutathione)",
-                    "tag": "Khóa Ẩm & Chống Khô Nứt",
-                    "desc": "Cung cấp độ ẩm tức thì, giúp đôi môi ngậm nước, loại bỏ tình trạng bong tróc vảy và nứt nẻ ngay sau lần thoa đầu tiên."
+                    "name": "Phức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione",
+                    "tag": "Thành phần chính",
+                    "desc": "Phức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione: Cung cấp độ ẩm tức thì, giúp đôi môi ngậm nước, loại bỏ tình trạng bong tróc, nứt nẻ ngay sau lần sử dụng đầu tiên."
                 }
             ],
             "targetUsers": [
-                "Người có bờ môi khô, bong tróc vảy, nứt nẻ quanh năm",
-                "Môi nhiều rãnh sâu, đánh son dễ bị đọng rãnh và bột",
-                "Người muốn dưỡng môi mềm mượt, căng mọng hằng ngày không cần màu",
-                "Người yêu thích essence dưỡng môi cao cấp chứa PDRN + vi kim dịu nhẹ"
+                "- Người có môi khô, thiếu ẩm, dễ bong tróc.",
+                "- Người có môi kém mịn, nhiều rãnh môi.",
+                "- Người muốn dưỡng môi mềm mại, căng bóng hằng ngày.",
+                "- Người muốn chăm sóc môi với PDRN + Hyaluronic Acid + Peptide.",
+                "- Phù hợp với người thích essence dưỡng môi không cay/nóng, có cảm giác châm chích nhẹ do vi kim sinh học"
             ],
             "howToUse": [
                 "Đọc hướng dẫn trên bao bì và sử dụng đúng tần suất khuyến nghị của nhà sản xuất.",
                 "Không tự ý kết hợp các hoạt chất dễ gây kích ứng.",
                 "Nếu châm chích kéo dài, đỏ rát hoặc kích ứng, ngừng sử dụng và tham khảo ý kiến chuyên môn."
             ],
-            "notes": "Cách dùng và cảm giác trên da phụ thuộc từng sản phẩm. Tuân thủ hướng dẫn trên bao bì.",
-            "origin": "Nhật Bản"
+            "notes": "Lưu ý: \n* Có thể dùng hàng ngày, có thể dùng buổi sáng và tối\n* Châm chích là cảm giác tự nhiên khi sử dụng và sẽ giảm dần theo thời gian.",
+            "origin": "Nhật Bản",
+            "brand": "Fractional CC",
+            "ingredientsText": "*PDRN Chiết xuất từ DNA cá hồi: giúp làm mờ nếp nhăn môi, hỗ trợ quá trình tự làm mới tế bào, cho đôi môi sức sống từ bên trong.\n* Công nghệ Vi kim Microneedle: Những sợi vi kim siêu nhỏ đóng vai trò là \"người dẫn đường\", tạo ra các kênh siêu vi để đưa PDRN và dưỡng chất xuyên thâu qua lớp biểu bì môi dày cộm, tác động trực tiếp xuống tầng sâu.\n*Phức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione: Cung cấp độ ẩm tức thì, giúp đôi môi ngậm nước, loại bỏ tình trạng bong tróc, nứt nẻ ngay sau lần sử dụng đầu tiên.",
+            "spotlightTitle": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence",
+            "spotlightDescription": "Dưỡng ẩm cho môi và giúp môi mềm mịn, tạo hiệu ứng môi căng mọng. (Không màu)",
+            "spotlightHighlights": "PDRN Chiết xuất từ DNA cá hồi | PDRN Chiết xuất từ DNA cá hồi: giúp làm mờ nếp nhăn môi, hỗ trợ quá trình tự làm mới tế bào, cho đôi môi sức sống từ bên trong.\nCông nghệ Vi kim Microneedle | Công nghệ Vi kim Microneedle: Những sợi vi kim siêu nhỏ đóng vai trò là \"người dẫn đường\", tạo ra các kênh siêu vi để đưa PDRN và dưỡng chất xuyên thâu qua lớp biểu bì môi dày cộm, tác động trực tiếp xuống tầng sâu.\nPhức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione | Phức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione: Cung cấp độ ẩm tức thì, giúp đôi môi ngậm nước, loại bỏ tình trạng bong tróc, nứt nẻ ngay sau lần sử dụng đầu tiên."
         },
         {
             "id": 10,
             "slug": "pdrn-shot-lip-plumper",
             "name": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper",
             "shortName": "PDRN Shot Lip Plumper (Có màu)",
-            "category": "Dưỡng môi PDRN",
+            "category": "Mỹ Phẩm",
             "categoryType": "lip",
             "skinConcerns": [
                 "lip",
@@ -3976,13 +4027,11 @@
             "tagline": "Dưỡng ẩm cho môi và giúp môi mềm mịn, tạo hiệu ứng môi căng mọng, phủ màu môi (Có màu)",
             "spiculeCount": "Vi kim sinh học tự nhiên + Plumping Complex",
             "volume": "10ml",
-            "originalPrice": 420000,
-            "salePrice": 379776,
+            "originalPrice": null,
+            "salePrice": 445000,
             "image": "assets/images/products/pdrn-lip-plumper.png",
             "gallery": [
-                "assets/images/products/pdrn-lip-plumper.png",
-                "assets/images/banner/artboard-7.jpg",
-                "assets/images/banner/hero-main.jpg"
+                "assets/images/products/pdrn-lip-plumper.png"
             ],
             "cbmp": "312959/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3997,39 +4046,39 @@
             ],
             "actives": [
                 {
-                    "name": "PDRN (Sodium DNA) Từ Cá Hồi",
-                    "tag": "Tái Sinh Tế Bào Môi",
-                    "desc": "Hỗ trợ chăm sóc, tái tạo và cải thiện vẻ ngoài rạng rỡ, hồng hào và mềm mọng của bờ môi."
+                    "name": "PDRN Chiết xuất từ DNA cá hồi",
+                    "tag": "Thành phần chính",
+                    "desc": "PDRN Chiết xuất từ DNA cá hồi: giúp làm mờ nếp nhăn môi, hỗ trợ quá trình tự làm mới tế bào, cho đôi môi sức sống từ bên trong."
                 },
                 {
-                    "name": "Hiệu Ứng Làm Đầy Môi Tức Thì (Capsicum & Vanillyl Butyl Ether)",
-                    "tag": "Căng Mọng & Đầy Đặn",
-                    "desc": "Kích thích tuần hoàn máu nhẹ nhàng tạo cảm giác ấm/cay êm dịu, cho môi trông mịn màng, căng đầy và bóng khỏe tự nhiên."
+                    "name": "Công nghệ Vi kim Microneedle",
+                    "tag": "Thành phần chính",
+                    "desc": "Công nghệ Vi kim Microneedle: Những sợi vi kim siêu nhỏ đóng vai trò là \"người dẫn đường\", tạo ra các kênh siêu vi để đưa PDRN và dưỡng chất xuyên thâu qua lớp biểu bì môi dày cộm, tác động trực tiếp xuống tầng sâu."
                 },
                 {
-                    "name": "Cấp Ẩm Chuyên Sâu Đa Tầng (HA Đa Phân Tử)",
-                    "tag": "Khóa Ẩm Chuyên Sâu",
-                    "desc": "Kết hợp Hydrolyzed Hyaluronic Acid và Sodium Hyaluronate thấm sâu làm mềm nếp gấp môi, dưỡng ẩm bền bỉ suốt ngày dài."
-                },
-                {
-                    "name": "Vi Kim Siêu Nhỏ Microneedle & Độ Bóng Gương",
-                    "tag": "Phủ Màu & Bóng Gương",
-                    "desc": "Hỗ trợ đưa các thành phần chăm sóc vào biểu bì môi, phủ sắc màu nhẹ nhàng và tạo hiệu ứng bóng gương sang trọng."
+                    "name": "Phức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione",
+                    "tag": "Thành phần chính",
+                    "desc": "Phức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione: Cung cấp độ ẩm tức thì, giúp đôi môi ngậm nước, loại bỏ tình trạng bong tróc, nứt nẻ ngay sau lần sử dụng đầu tiên."
                 }
             ],
             "targetUsers": [
-                "Người muốn sở hữu đôi môi căng mọng, đầy đặn, bóng khỏe tự nhiên",
-                "Người có môi khô ráp, nhiều vân môi muốn che phủ rãnh môi tức thì",
-                "Người thích sản phẩm dưỡng môi có màu nhẹ thay thế son bóng trang điểm",
-                "Người yêu thích hiệu ứng làm đầy môi ấm cay nhẹ nhàng"
+                "- Người muốn tạo hiệu ứng môi căng mọng, đầy đặn và bóng khỏe.",
+                "- Người có môi khô, thiếu ẩm, nhiều đường vân môi.",
+                "- Người muốn chăm sóc môi kết hợp dưỡng ẩm và hỗ trợ làm mềm bề mặt môi.",
+                "- Phù hợp với người yêu thích sản phẩm lip plumper có cảm giác ấm/cay nhẹ khi sử dụng do thành phần tạo hiệu ứng làm đầy."
             ],
             "howToUse": [
                 "Đọc hướng dẫn trên bao bì và sử dụng đúng tần suất khuyến nghị của nhà sản xuất.",
                 "Không tự ý kết hợp các hoạt chất dễ gây kích ứng.",
                 "Nếu châm chích kéo dài, đỏ rát hoặc kích ứng, ngừng sử dụng và tham khảo ý kiến chuyên môn."
             ],
-            "notes": "Cách dùng và cảm giác trên da phụ thuộc từng sản phẩm. Tuân thủ hướng dẫn trên bao bì.",
-            "origin": "Nhật Bản"
+            "notes": "Lưu ý: \n* Có thể dùng hàng ngày, có thể dùng buổi sáng và tối\n* Châm chích là cảm giác tự nhiên khi sử dụng và sẽ giảm dần theo thời gian.",
+            "origin": "Nhật Bản",
+            "brand": "Fractional CC",
+            "ingredientsText": "• PDRN Chiết xuất từ DNA cá hồi: giúp làm mờ nếp nhăn môi, hỗ trợ quá trình tự làm mới tế bào, cho đôi môi sức sống từ bên trong.\n* Công nghệ Vi kim Microneedle: Những sợi vi kim siêu nhỏ đóng vai trò là \"người dẫn đường\", tạo ra các kênh siêu vi để đưa PDRN và dưỡng chất xuyên thâu qua lớp biểu bì môi dày cộm, tác động trực tiếp xuống tầng sâu.\n* Phức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione: Cung cấp độ ẩm tức thì, giúp đôi môi ngậm nước, loại bỏ tình trạng bong tróc, nứt nẻ ngay sau lần sử dụng đầu tiên.",
+            "spotlightTitle": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper",
+            "spotlightDescription": "Dưỡng ẩm cho môi và giúp môi mềm mịn, tạo hiệu ứng môi căng mọng, phủ màu môi (Có màu)",
+            "spotlightHighlights": "PDRN Chiết xuất từ DNA cá hồi | PDRN Chiết xuất từ DNA cá hồi: giúp làm mờ nếp nhăn môi, hỗ trợ quá trình tự làm mới tế bào, cho đôi môi sức sống từ bên trong.\nCông nghệ Vi kim Microneedle | Công nghệ Vi kim Microneedle: Những sợi vi kim siêu nhỏ đóng vai trò là \"người dẫn đường\", tạo ra các kênh siêu vi để đưa PDRN và dưỡng chất xuyên thâu qua lớp biểu bì môi dày cộm, tác động trực tiếp xuống tầng sâu.\nPhức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione | Phức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione: Cung cấp độ ẩm tức thì, giúp đôi môi ngậm nước, loại bỏ tình trạng bong tróc, nứt nẻ ngay sau lần sử dụng đầu tiên."
         }
     ],
     "combos": [
@@ -4050,11 +4099,177 @@
             ],
             "idealFor": "Nhu cầu dưỡng sáng và chăm sóc làn da không đều màu",
             "routine": "Sử dụng theo hướng dẫn riêng của từng sản phẩm.",
-            "originalPrice": 1275600,
+            "originalPrice": 1700000,
             "salePrice": 1237500,
-            "saveAmount": 38100,
+            "saveAmount": 462500,
             "gift": "Serum dưỡng môi PDRN Shot theo ảnh combo trong brief; xác nhận quà tặng khi đặt hàng.",
             "image": "assets/images/banner/combo-c-cx4.png"
         }
-    ]
+    ],
+    "featured": [
+        {
+            "source": "product_1",
+            "fields": {
+                "spotlightTitle": {
+                    "value": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence"
+                },
+                "spotlightDescription": {
+                    "value": "Serum tẩy tế bào chết – làm sạch lỗ chân lông – mịn da chỉ trong 1 bước"
+                },
+                "spotlightRating": {
+                    "value": "4.9 (382 đánh giá) • 50.000 Vi kim Spicule",
+                    "legacy": [
+                        [
+                            "fcc_ui_74a115f731a3d1"
+                        ]
+                    ]
+                },
+                "spotlightSpecs": {
+                    "value": "Số CBMP: | 312953/26/CBMP-QLD • | Dung tích: | 30ml",
+                    "legacy": [
+                        [
+                            "fcc_ui_26eee93ef29833",
+                            "fcc_ui_ed8c12130271b3",
+                            "fcc_ui_72ac35be91f126",
+                            "fcc_ui_87e7b83ff58112"
+                        ]
+                    ]
+                },
+                "spotlightHighlights": {
+                    "value": "50.000 vi kim tự nhiên (Microneedles) | 50.000 vi kim tự nhiên (Microneedles) hỗ trợ đưa các hoạt chất thẩm thấu tốt hơn vào da, góp phần tăng hiệu quả chăm sóc và tái tạo bề mặt da.\n10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) | 10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) giúp loại bỏ tế bào chết trên bề mặt, cải thiện tình trạng da xỉn màu, sần sùi, mang lại làn da mềm mịn và tươi sáng hơn.\nSalicylic Acid (BHA) | Salicylic Acid (BHA) hỗ trợ làm sạch sâu lỗ chân lông, loại bỏ bã nhờn dư thừa và giảm tình trạng bít tắc – một trong những nguyên nhân gây mụn.\n5% Niacinamide | 5% Niacinamide kết hợp cùng Hyaluronic Acid, Panthenol và chiết xuất rau má (CICA) giúp bổ sung độ ẩm, làm dịu da và hỗ trợ phục hồi hàng rào bảo vệ da sau quá trình tẩy tế bào chết, hạn chế cảm giác khô căng."
+                },
+                "spotlightDetailLabel": {
+                    "value": "Xem Chi Tiết",
+                    "legacy": [
+                        [
+                            "fcc_ui_5151ad413147c3"
+                        ]
+                    ]
+                },
+                "spotlightBuyLabel": {
+                    "value": "MUA NGAY",
+                    "legacy": [
+                        [
+                            "fcc_ui_8fb63d7960b518"
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "source": "combo_C-CX4",
+            "fields": {
+                "spotlightTitle": {
+                    "value": "Combo Siêu Tinh Chất Vi Kim Giảm Thâm Fractional CC | Serum C - CX4",
+                    "legacy": [
+                        [
+                            "fcc_ui_30f5312a89060d"
+                        ]
+                    ]
+                },
+                "spotlightDescription": {
+                    "value": "Bộ đôi Needle Serum C và Needle Serum CX4 hỗ trợ chăm sóc làn da không đều màu, dưỡng sáng chuyên sâu và tăng đàn hồi.",
+                    "legacy": [
+                        [
+                            "fcc_ui_763a55e6c2afa0"
+                        ]
+                    ]
+                },
+                "spotlightRating": {
+                    "value": "5.0 (420+ khách hàng tin dùng) • Bán chạy nhất",
+                    "legacy": [
+                        [
+                            "fcc_ui_6b95a448003ac5"
+                        ]
+                    ]
+                },
+                "spotlightSpecs": {
+                    "value": "Bộ 2 lọ tinh chất: | 01 Serum C + 01 Serum CX4 • | Đủ CBMP",
+                    "legacy": [
+                        [
+                            "fcc_ui_e36c0ac07f489b",
+                            "fcc_ui_d058dde1e967d3",
+                            "fcc_ui_8065b9e9902300"
+                        ]
+                    ]
+                },
+                "spotlightHighlights": {
+                    "value": "Needle Serum C (150.000 vi kim): | Vitamin C tinh khiết & Glutathione làm sáng đều màu da hàng ngày.\nNeedle Serum CX4 (Mật độ X4): | Dòng C chuyên sâu nồng độ cao hỗ trợ mờ thâm nám và tái sinh làn da.\nQuà Tặng PDRN Shot: | Serum dưỡng môi DNA cá hồi Nhật Bản cấp ẩm căng bóng tự nhiên.\nCông Nghệ Vi Kim Tokyo: | 100% Made In Japan, kiểm nghiệm nghiêm ngặt, hồ sơ CBMP minh bạch.",
+                    "legacy": [
+                        [
+                            "fcc_ui_5f7b21d229f48a",
+                            "fcc_ui_a36662c20acc2a"
+                        ],
+                        [
+                            "fcc_ui_3c8f3a068c5ce7",
+                            "fcc_ui_d17cc841f7293c"
+                        ],
+                        [
+                            "fcc_ui_4cdc37dad10f6f",
+                            "fcc_ui_fc344a259f4dce"
+                        ],
+                        [
+                            "fcc_ui_1ce46fba55620b",
+                            "fcc_ui_df9646dc3eb033"
+                        ]
+                    ]
+                },
+                "spotlightGift": {
+                    "value": "Serum dưỡng môi PDRN Shot theo ảnh combo; xác nhận khi đặt hàng.",
+                    "legacy": [
+                        [
+                            "fcc_ui_92afbd147c9060"
+                        ]
+                    ]
+                },
+                "spotlightDetailLabel": {
+                    "value": "Xem Thêm Dòng C",
+                    "legacy": [
+                        [
+                            "fcc_ui_d6685bf6e40741"
+                        ]
+                    ]
+                },
+                "spotlightBuyLabel": {
+                    "value": "MUA COMBO C–CX4 NGAY",
+                    "legacy": [
+                        [
+                            "fcc_ui_18f8818401f0d7"
+                        ]
+                    ]
+                }
+            }
+        }
+    ],
+    "catalogSource": {
+        "file": "List sản phẩm fractional CC.xlsx",
+        "sheet": "Trang tính1",
+        "range": "A3:O13",
+        "sha256": "0dd50638d92c260f391261bd38437fcb528439620c785e86964ad9acdf732170",
+        "productFields": [
+            "brand",
+            "category",
+            "origin",
+            "tagline",
+            "ingredientsText",
+            "targetUsers",
+            "uspBullets",
+            "legalStatus",
+            "cbmp",
+            "notes",
+            "salePrice",
+            "originalPrice",
+            "image",
+            "actives",
+            "gallery",
+            "spotlightTitle",
+            "spotlightDescription",
+            "spotlightHighlights"
+        ],
+        "comboFields": [
+            "salePrice",
+            "originalPrice",
+            "saveAmount"
+        ]
+    }
 }

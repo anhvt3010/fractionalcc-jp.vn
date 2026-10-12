@@ -3962,6 +3962,14 @@ textarea.form-control {
   margin-top: 2px;
 }
 
+.brand-disclaimer {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 2px 0 6px;
+}
+
 /* Authority Proof Stats Grid (Cocoon / High-end Japanese Skincare aesthetic) */
 .brand-stats-row {
   display: grid;
@@ -6242,3 +6250,135 @@ textarea.form-control {
   display: none !important;
 }
 
+
+/* Section 03: Brand Message Card */
+.brand-message-card {
+  background: linear-gradient(135deg, #FAF7F0 0%, #FFFDF9 100%);
+  border: 1px solid #EAE2D0;
+  border-left: 3.5px solid var(--color-accent-gold, #C5A059);
+  border-radius: var(--radius-md, 12px);
+  padding: 13px 18px;
+  margin: 6px 0 10px;
+  position: relative;
+}
+.brand-message-header {
+  margin-bottom: 6px;
+}
+.brand-message-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8C6A28;
+}
+.brand-message-badge svg {
+  color: var(--color-accent-gold, #C5A059);
+  flex-shrink: 0;
+}
+.brand-message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.brand-message-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--color-text-main, #222222);
+  margin: 0;
+}
+.brand-message-line strong {
+  color: #1A1A1A;
+  font-weight: 700;
+}
+.brand-message-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-accent-gold, #C5A059);
+  flex-shrink: 0;
+  position: relative;
+  top: -2px;
+}
+
+/* Section 03: Brand Showcase Visual */
+.section-brand-story .section-header {
+  max-width: 1200px;
+}
+.section-brand-story .section-desc {
+  max-width: 1100px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--color-text-body, #444444);
+  margin-top: 14px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.brand-visual-wrap {
+  position: relative;
+  height: 100%;
+  background: #FFFFFF;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  border-top-left-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.brand-image-stage {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-top-left-radius: 22px;
+  background: #F8F9FA;
+}
+.brand-visual-wrap .brand-lineup-img,
+.brand-image-stage img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  max-width: 100% !important;
+  display: block !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  object-fit: contain !important;
+  transition: transform 0.4s ease;
+}
+.brief-brand:hover .brand-lineup-img {
+  transform: scale(1.02);
+}
+.brand-visual-caption {
+  margin: 0;
+  padding: 14px 20px 20px;
+  font-size: 13px;
+  color: var(--color-text-muted, #666666);
+  line-height: 1.5;
+  text-align: center;
+  background: #FFFFFF;
+}
+@media (max-width: 920px) {
+  .brand-visual-wrap {
+    height: auto !important;
+    min-height: unset !important;
+    padding: 0 !important;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+  }
+  .brand-image-stage {
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+  }
+  .brand-visual-caption {
+    padding: 12px 16px 16px;
+  }
+}

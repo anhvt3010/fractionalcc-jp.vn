@@ -10,6 +10,7 @@ $root = dirname( __DIR__ );
 $source = $root . '/template/fractional-cc';
 $theme = $root . '/wp-content/themes/project-child';
 $plugin = $root . '/wp-content/plugins/project-core';
+$existing_defaults = json_decode( file_get_contents( $plugin . '/defaults/fractional.json' ), true );
 $pages = array(
 	'home' => array( 'index.html', 'Trang chủ', 'trang-chu' ),
 	'catalog' => array( 'san-pham.html', 'Sản phẩm', 'san-pham' ),
@@ -17,7 +18,7 @@ $pages = array(
 	'policies' => array( 'chinh-sach.html', 'Chính sách', 'chinh-sach' ),
 	'thankyou' => array( 'cam-on.html', 'Cảm ơn', 'cam-on' ),
 );
-$defaults = array( 'version' => '0.3.2', 'pages' => array( 'shared' => array( 'title' => 'Thông tin và giao diện chung Fractional CC', 'slug' => 'fractional-cc-settings', 'fields' => array() ) ) );
+$defaults = array( 'version' => '0.3.3', 'pages' => array( 'shared' => array( 'title' => 'Thông tin và giao diện chung Fractional CC', 'slug' => 'fractional-cc-settings', 'fields' => array() ) ) );
 $schemas = array();
 $tokens = array();
 $bindings_path = $root . '/scripts/fractional-bindings.json';
@@ -198,6 +199,24 @@ foreach ( $pages as $kind => $page ) {
 			$hero_img->setAttribute( 'src', fcc_compile_php( 'echo esc_url( project_child_fcc_hero_product_image_url() );' ) );
 			$hero_img->setAttribute( 'alt', fcc_compile_php( 'echo esc_attr( project_child_fcc_hero_product_image_alt() );' ) );
 		}
+		$hero_grid = $xpath->query( '//div[contains(concat(" ", normalize-space(@class), " "), " hero-grid ")]' )->item( 0 );
+		$cta = $xpath->query( '//div[contains(concat(" ", normalize-space(@class), " "), " hero-cta-group ")]' )->item( 0 );
+		$trust = $xpath->query( '//div[contains(concat(" ", normalize-space(@class), " "), " hero-trust-micro ")]' )->item( 0 );
+		if ( $hero_grid && $cta && $trust ) {
+			$hero_grid->setAttribute( 'class', $hero_grid->getAttribute( 'class' ) . ' fcc-hero-product-first' );
+			$conversion = $doc->createElement( 'div' );
+			$conversion->setAttribute( 'class', 'hero-conversion' );
+			$conversion->appendChild( $cta );
+			$conversion->appendChild( $trust );
+			$hero_grid->appendChild( $conversion );
+		}
+		foreach ( iterator_to_array( $xpath->query( '//div[contains(concat(" ", normalize-space(@class), " "), " brand-stats-row ")]' ) ) as $stats ) {
+			$stats->parentNode->removeChild( $stats );
+		}
+	}
+	foreach ( $xpath->query( '//div[contains(concat(" ", normalize-space(@class), " "), " header-mobile-bar ")]' ) as $mobile_bar ) {
+		$toggle = $xpath->query( './/button[contains(concat(" ", normalize-space(@class), " "), " mobile-nav-toggle ")]', $mobile_bar )->item( 0 );
+		if ( $toggle ) { $mobile_bar->appendChild( $toggle ); }
 	}
 	$body = $doc->getElementsByTagName( 'body' )->item( 0 );
 	$output = "<?php\ndefined( 'ABSPATH' ) || exit;\n?>\n";
@@ -211,7 +230,10 @@ foreach ( $pages as $kind => $page ) {
 				$name = $kind . '/section-' . str_pad( (string) ++$index, 2, '0', STR_PAD_LEFT );
 				$markup = fcc_compile_html( $doc, $section );
 				$markup = str_replace( 'data-fcc-hero="<?php project_child_fcc_hero_background_attributes(); ?>"', '<?php project_child_fcc_hero_background_attributes(); ?>', $markup );
-				fcc_compile_write( $theme . '/template-parts/fractional/' . $name . '.php', "<?php defined( 'ABSPATH' ) || exit; ?>\n" . $markup . "\n" );
+				// This section is maintained as a CMS-driven component, not compiled static cards.
+				if ( 'home' !== $kind || 'san-pham-chu-luc' !== $section->getAttribute( 'id' ) ) {
+					fcc_compile_write( $theme . '/template-parts/fractional/' . $name . '.php', "<?php defined( 'ABSPATH' ) || exit; ?>\n" . $markup . "\n" );
+				}
 				$output .= "<?php get_template_part( 'template-parts/fractional/" . $name . "' ); ?>\n";
 			}
 			$output .= "</main>\n";
@@ -249,6 +271,10 @@ $source_data = file_get_contents( $source . '/assets/js/data.js' );
 preg_match( '/const FCC_DATA = (\{.*?\});/s', $source_data, $match );
 $catalog = json_decode( $match[1], true, 512, JSON_THROW_ON_ERROR );
 $defaults += array_intersect_key( $catalog, array_flip( array( 'brand', 'products', 'combos' ) ) );
+if ( isset( $existing_defaults['catalogSource'] ) ) {
+	foreach ( array( 'products', 'combos', 'catalogSource' ) as $key ) { $defaults[ $key ] = $existing_defaults[ $key ]; }
+}
+if ( isset( $existing_defaults['featured'] ) ) { $defaults['featured'] = $existing_defaults['featured']; }
 fcc_compile_write( $plugin . '/defaults/fractional.json', json_encode( $defaults, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . "\n" );
 fcc_compile_write( $theme . '/inc/fractional-fields.json', json_encode( $schemas, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . "\n" );
 ksort( $bindings );

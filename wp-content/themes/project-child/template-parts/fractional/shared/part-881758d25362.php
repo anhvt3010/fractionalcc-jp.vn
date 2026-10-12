@@ -33,12 +33,12 @@
       </nav>
 
       <div class="header-mobile-bar">
-        <button class="mobile-nav-toggle" aria-label="Menu điều hướng">
-          <span></span><span></span><span></span>
-        </button>
         <a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>" class="btn btn-primary" style="font-size: 12px; padding: 8px 14px;">
           <?php echo project_child_fcc_text( 'fcc_ui_ea01b6a3caa0ce', 'shared', false ); ?>
         </a>
+        <button class="mobile-nav-toggle" aria-label="Menu điều hướng">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>

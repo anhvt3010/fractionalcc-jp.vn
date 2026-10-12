@@ -68,15 +68,67 @@
             </div>
 
             
-            <div class="pd-cocoon-section">
-              <h3 class="pd-cocoon-heading"><?php echo project_child_fcc_text( 'fcc_ui_2cacb01c3941c0', 'shared' ); ?></h3>
-              <p class="pd-cocoon-text" id="pd-target-summary"><?php echo esc_html( project_child_fcc_product_value( 'target_summary' ) ); ?></p>
-            </div>
+            <?php
+            $fcc_current_product = function_exists( 'project_core_fcc_product' ) ? project_core_fcc_product( get_queried_object_id(), true ) : array();
+            $fcc_targets         = ! empty( $fcc_current_product['targetUsers'] ) ? (array) $fcc_current_product['targetUsers'] : array();
+            if ( empty( $fcc_targets ) ) {
+              $fcc_target_sum = project_child_fcc_product_value( 'target_summary' );
+              if ( $fcc_target_sum ) {
+                $fcc_targets = array_filter( array_map( 'trim', explode( '•', $fcc_target_sum ) ) );
+              }
+            }
+            $fcc_actives = ! empty( $fcc_current_product['actives'] ) ? (array) $fcc_current_product['actives'] : array();
+            ?>
+            <div class="pd-cocoon-section pd-tabs-section">
+              <div class="pd-tabs-nav" role="tablist" aria-label="Thông tin sản phẩm">
+                <button type="button" role="tab" class="pd-tab-btn is-active" id="pd-tab-targets-btn" aria-selected="true" aria-controls="pd-tab-targets-pane">
+                  <?php echo project_child_fcc_text( 'fcc_ui_2cacb01c3941c0', 'shared' ); ?>
+                </button>
+                <button type="button" role="tab" class="pd-tab-btn" id="pd-tab-actives-btn" aria-selected="false" aria-controls="pd-tab-actives-pane">
+                  <?php echo project_child_fcc_text( 'fcc_ui_b2f2c633e021b5', 'shared' ); ?>
+                </button>
+              </div>
 
-            
-            <div class="pd-cocoon-section">
-              <h3 class="pd-cocoon-heading"><?php echo project_child_fcc_text( 'fcc_ui_b2f2c633e021b5', 'shared' ); ?></h3>
-              <p class="pd-cocoon-text" id="pd-actives-summary"><?php echo esc_html( project_child_fcc_product_value( 'active_summary' ) ); ?></p>
+              <div class="pd-tab-panes">
+                <div class="pd-tab-pane is-active" id="pd-tab-targets-pane" role="tabpanel" aria-labelledby="pd-tab-targets-btn">
+                  <ul class="pd-tab-bullet-list" id="pd-target-list-bullets">
+                    <?php foreach ( $fcc_targets as $t_item ) :
+                      $t_clean = project_child_fcc_clean_bullet( $t_item );
+                      if ( '' === $t_clean ) { continue; }
+                    ?>
+                      <li><span class="pd-bullet-dash">—</span><span class="pd-bullet-text"><?php echo esc_html( $t_clean ); ?></span></li>
+                    <?php endforeach; ?>
+                  </ul>
+                  <p class="pd-cocoon-text sr-only" id="pd-target-summary" style="display:none;"><?php echo esc_html( project_child_fcc_product_value( 'target_summary' ) ); ?></p>
+                </div>
+
+                <div class="pd-tab-pane" id="pd-tab-actives-pane" role="tabpanel" aria-labelledby="pd-tab-actives-btn" hidden>
+                  <ul class="pd-tab-bullet-list" id="pd-actives-list-bullets">
+                    <?php
+                    if ( ! empty( $fcc_actives ) ) :
+                      foreach ( $fcc_actives as $a_item ) :
+                        $a_clean = project_child_fcc_clean_bullet( is_array( $a_item ) ? $a_item['name'] : $a_item );
+                        if ( '' === $a_clean ) { continue; }
+                      ?>
+                        <li><span class="pd-bullet-dash">—</span><span class="pd-bullet-text"><?php echo esc_html( $a_clean ); ?></span></li>
+                      <?php endforeach;
+                    else :
+                      $fcc_actives_sum = project_child_fcc_product_value( 'active_summary' );
+                      if ( $fcc_actives_sum ) :
+                        $fcc_actives_list = array_filter( array_map( 'trim', explode( '•', $fcc_actives_sum ) ) );
+                        foreach ( $fcc_actives_list as $a_item ) :
+                          $a_clean = project_child_fcc_clean_bullet( $a_item );
+                          if ( '' === $a_clean ) { continue; }
+                        ?>
+                          <li><span class="pd-bullet-dash">—</span><span class="pd-bullet-text"><?php echo esc_html( $a_clean ); ?></span></li>
+                        <?php endforeach;
+                      endif;
+                    endif;
+                    ?>
+                  </ul>
+                  <p class="pd-cocoon-text sr-only" id="pd-actives-summary" style="display:none;"><?php echo esc_html( project_child_fcc_product_value( 'active_summary' ) ); ?></p>
+                </div>
+              </div>
             </div>
 
             

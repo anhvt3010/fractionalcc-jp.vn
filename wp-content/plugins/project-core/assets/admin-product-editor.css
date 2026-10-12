@@ -1,0 +1,11 @@
+/* Layout only: narrow editors stack columns without changing ACF control styles. */
+@media (max-width: 782px) {
+	#acf-group_fcc_product .acf-field[data-width],
+	#acf-group_fcc_featured .acf-field[data-width],
+	#acf-group_fcc_spotlight .acf-field[data-width] {
+		width: 100% !important; /* Override native inline percentage widths. */
+		min-height: 0 !important; /* Remove native desktop row-height matching. */
+		clear: both;
+		border-left-width: 0 !important;
+	}
+}

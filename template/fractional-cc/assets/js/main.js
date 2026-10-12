@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // 6. Initialize Product Detail Page if on chi-tiet-san-pham.html
+  initProductDetailTabs();
   if (document.getElementById('product-detail-view')) {
     initProductDetailView();
   }
@@ -567,12 +568,27 @@ function initProductDetailView() {
   const specCbmp = document.getElementById('pd-spec-cbmp');
   if (specCbmp) specCbmp.textContent = product.cbmp;
 
-  // Cocoon-style Editorial Summaries
+  // Cocoon-style Editorial Summaries & Tab Bullets
+  const targetBullets = document.getElementById('pd-target-list-bullets');
+  if (targetBullets && product.targetUsers) {
+    targetBullets.innerHTML = product.targetUsers.map(t => {
+      const clean = t.replace(/^[\s✅✓✔☑•*–—\-]+/u, '').trim();
+      return `<li><span class="pd-bullet-dash">—</span><span class="pd-bullet-text">${clean}</span></li>`;
+    }).join('');
+  }
   const targetSummary = document.getElementById('pd-target-summary');
   if (targetSummary && product.targetUsers) {
     targetSummary.textContent = product.targetUsers.map(t => t.replace(/^[\s✅✓✔☑•*-]+/u, '').trim()).join(' • ');
   }
 
+  const activesBullets = document.getElementById('pd-actives-list-bullets');
+  if (activesBullets && product.actives) {
+    activesBullets.innerHTML = product.actives.map(a => {
+      const name = typeof a === 'string' ? a : (a.name || '');
+      const clean = name.replace(/^[\s✅✓✔☑•*–—\-]+/u, '').trim();
+      return `<li><span class="pd-bullet-dash">—</span><span class="pd-bullet-text">${clean}</span></li>`;
+    }).join('');
+  }
   const activesSummary = document.getElementById('pd-actives-summary');
   if (activesSummary && product.actives) {
     activesSummary.textContent = product.actives.map(a => a.name).join(' • ');
@@ -1013,6 +1029,42 @@ function initRoutineCollapsible() {
         const textSpan = btn.querySelector('.toggle-text');
         if (textSpan) textSpan.textContent = 'Thu gọn';
         btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+/**
+ * Product Detail Tabs: Thích hợp với / Thành phần chính
+ */
+function initProductDetailTabs() {
+  const tabButtons = document.querySelectorAll('.pd-tab-btn');
+  if (!tabButtons.length) return;
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parentNav = button.closest('.pd-tabs-nav');
+      if (!parentNav) return;
+      const container = parentNav.closest('.pd-tabs-section') || parentNav.parentElement;
+      const targetId = button.getAttribute('aria-controls');
+
+      parentNav.querySelectorAll('.pd-tab-btn').forEach(btn => {
+        const isActive = (btn === button);
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      if (container) {
+        container.querySelectorAll('.pd-tab-pane').forEach(pane => {
+          const isMatch = (pane.id === targetId);
+          pane.classList.toggle('is-active', isMatch);
+          if (isMatch) {
+            pane.removeAttribute('hidden');
+          } else {
+            pane.setAttribute('hidden', '');
+          }
+        });
       }
     });
   });

@@ -2,7 +2,7 @@
 <div class="hero-viewport-wrap">
       
       <section <?php project_child_fcc_hero_background_attributes(); ?>>
-        <div class="container hero-grid">
+        <div class="container hero-grid fcc-hero-product-first">
           <div class="hero-content">
             <div class="hero-badge-wrap">
               <span class="badge-pill badge-gold"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="badge-icon" aria-hidden="true"><path d="M3 18h18M4 18l2-10 6 6 6-6 2 10H4z"></path></svg> <?php echo project_child_fcc_text( 'fcc_ui_fbc8886b40af10', 'home' ); ?></span>
@@ -15,9 +15,18 @@
             </h1>
             
             <p class="hero-subtitle">
-              <?php echo project_child_fcc_text( 'fcc_ui_543aa81dfd94d5', 'home' ); ?> <strong><?php echo project_child_fcc_text( 'fcc_ui_88efa52705849b', 'home' ); ?></strong><?php echo project_child_fcc_text( 'fcc_ui_ea89cea6464acf', 'home' ); ?>
+              <?php echo project_child_fcc_text( 'fcc_ui_543aa81dfd94d5', 'home' ); ?> <strong><?php echo project_child_fcc_text( 'fcc_ui_88efa52705849b', 'home' ); ?></strong>
             </p>
 
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card">
+              <img src="<?php echo esc_url( project_child_fcc_hero_product_image_url() ); ?>" alt="<?php echo esc_attr( project_child_fcc_hero_product_image_alt() ); ?>" class="hero-banner-img" loading="eager">
+            </div>
+          </div>
+
+          <div class="hero-conversion">
             <div class="hero-cta-group">
               <button class="btn btn-primary" data-open-order data-product-select="<?php echo esc_attr( project_child_fcc_order_code( 'combo_C-CX4' ) ); ?>">
                 <?php echo project_child_fcc_text( 'fcc_ui_e05dc8077446a2', 'home', false ); ?>
@@ -33,11 +42,6 @@
             </div>
           </div>
 
-          <div class="hero-visual">
-            <div class="hero-card">
-              <img src="<?php echo esc_url( project_child_fcc_hero_product_image_url() ); ?>" alt="<?php echo esc_attr( project_child_fcc_hero_product_image_alt() ); ?>" class="hero-banner-img" loading="eager">
-            </div>
-          </div>
         </div>
       </section>
 

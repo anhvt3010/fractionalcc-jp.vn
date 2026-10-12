@@ -45,12 +45,14 @@ function project_core_render_website_guide() {
 		<h2><?php echo esc_html__( 'Cách chỉnh sửa', 'project-core' ); ?></h2>
 		<ol>
 			<li><?php echo esc_html__( 'Chọn nội dung ở trên. Với trang, mở tab theo section và sửa chữ/ảnh; không cần sửa HTML, CSS hoặc PHP.', 'project-core' ); ?></li>
-			<li><?php echo esc_html__( 'Với sản phẩm, chỉnh giá và thông tin ở nhóm ACF; mỗi ý trong danh sách là một dòng. Để giá trống khi chưa có dữ liệu.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Với sản phẩm, mở tab Thông tin & giá để sửa tên ngắn, giá và ảnh chính. Các tab Công dụng & cách dùng, Thành phần, Hồ sơ, Bộ lọc và Đánh giá tách riêng theo nội dung. Mỗi ý trong danh sách là một dòng; để giá trống khi chưa có dữ liệu.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Tại danh sách Sản phẩm, chọn Sửa nhanh để đổi giá bán, giá gốc, tên ngắn, quy cách, loại sản phẩm, xuất xứ, số CBMP, trạng thái hồ sơ và mô tả ngắn. Nhập giá bằng số VNĐ không có dấu phân cách; để trống khi chưa có giá.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Thêm ảnh chi tiết bằng block Thư viện ảnh trong trình soạn thảo sản phẩm. Chọn hoạt chất trong trường liên kết, kéo để sắp xếp.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Nhấn Cập nhật rồi Xem trang. Không thay thiết kế hoặc thêm nội dung chưa được duyệt.', 'project-core' ); ?></li>
 		</ol>
 		<?php if ( current_user_can( 'manage_options' ) ) : ?>
 		<h2><?php echo esc_html__( 'Khởi tạo dữ liệu mặc định', 'project-core' ); ?></h2>
+		<p><?php echo esc_html__( 'Site mới tự tạo dữ liệu mặc định khi kích hoạt Project Child và Project Core, sau khi ACF sẵn sàng. Bộ mặc định gồm 10 sản phẩm và combo C–CX4 theo Excel đã duyệt. Nút bên dưới bổ sung dữ liệu còn thiếu nếu cần.', 'project-core' ); ?></p>
 		<p><?php echo esc_html__( 'Chỉ tạo bản ghi/trường còn thiếu; chạy lại giữ nguyên nội dung đã sửa. Không tự đổi URL, homepage hoặc kích hoạt theme.', 'project-core' ); ?></p>
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 			<input type="hidden" name="action" value="project_core_fcc_setup">

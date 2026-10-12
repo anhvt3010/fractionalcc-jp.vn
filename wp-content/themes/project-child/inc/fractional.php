@@ -3,6 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 require_once __DIR__ . '/fractional-render.php';
 require_once __DIR__ . '/fractional-components.php';
+require_once __DIR__ . '/fractional-spotlight.php';
 
 function project_child_fcc_kind() {
 	if ( is_singular( 'fcc_product' ) ) { return 'product'; }
@@ -29,7 +30,16 @@ add_action( 'acf/init', 'project_child_fcc_register_fields' );
 
 function project_child_fcc_schema() {
 	static $schema;
-	if ( null === $schema ) { $schema = json_decode( file_get_contents( __DIR__ . '/fractional-fields.json' ), true ); }
+	if ( null === $schema ) {
+		$schema = json_decode( file_get_contents( __DIR__ . '/fractional-fields.json' ), true );
+		// Individual card content is now edited on the selected product/combo.
+		foreach ( isset( $schema['home'] ) ? $schema['home'] : array() as $section => $fields ) {
+			$schema['home'][ $section ] = array_diff_key( $fields, array_flip( array( 'fcc_ui_ffed63b9bad263', 'fcc_ui_3c6bdffa7d9479', 'fcc_ui_5fdb1175c7533c', 'fcc_ui_6b5c492b8ee8c7', 'fcc_ui_46606573b70ffc', 'fcc_ui_4177f27e6977cf' ) ) );
+			if ( isset( $fields['fcc_ui_cc3c2901a4cef8'] ) ) {
+				$schema['home'][ $section ] = array_intersect_key( $fields, array_flip( array( 'fcc_ui_1bde33c83730c6', 'fcc_ui_cc3c2901a4cef8', 'fcc_ui_a12e257cd86c9f' ) ) );
+			}
+		}
+	}
 	return is_array( $schema ) ? $schema : array();
 }
 
