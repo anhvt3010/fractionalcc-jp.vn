@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt Hàng Thành Công | Cảm Ơn Quý Khách - Fractional CC Vietnam</title>
+  
+  <meta name="description" content="Đơn hàng của bạn tại Fractional CC Vietnam đã được tiếp nhận thành công. Chuyên viên BUI DANG-JP sẽ liên hệ xác nhận và hướng dẫn sử dụng trong ít phút.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <style>
+    .thankyou-page {
+      background-color: var(--color-bg-soft);
+      padding: 44px 0 80px;
+      min-height: 80vh;
+    }
+    .thankyou-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 52px 48px;
+      max-width: 1040px;
+      margin: 0 auto;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .thankyou-card {
+        padding: 32px 20px;
+      }
+    }
+    /* Animated Success Icon */
+    .thankyou-badge-icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: #EAF7EE;
+      color: #2E7D32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      margin: 0 auto 20px;
+      border: 2px solid rgba(46, 125, 50, 0.25);
+      box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+    }
+    .thankyou-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .thankyou-title {
+      font-size: 28px;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    @media (min-width: 768px) {
+      .thankyou-title { font-size: 34px; }
+    }
+    .thankyou-subtitle {
+      font-size: 15px;
+      color: var(--color-text-body);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    /* Order Receipt Box */
+    .receipt-box {
+      background: #FAF8F4;
+      border: 1px solid #EAE3D2;
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 600px) {
+      .receipt-box {
+        padding: 20px 16px;
+      }
+    }
+    .receipt-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #EAE3D2;
+      margin-bottom: 18px;
+    }
+    .receipt-id-tag {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--color-primary);
+      letter-spacing: 0.04em;
+    }
+    .receipt-status-badge {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8C6A28;
+      background: #F4EEDF;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+    }
+    .receipt-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      font-size: 14px;
+    }
+    @media (min-width: 540px) {
+      .receipt-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+    }
+    @media (min-width: 900px) {
+      .receipt-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+    }
+    .receipt-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .receipt-label {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+    .receipt-value {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 14.5px;
+    }
+    /* Product Summary inside Receipt */
+    .receipt-product-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: #FFFFFF;
+      border: 1px solid #EAE3D2;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 18px;
+    }
+    .receipt-product-thumb {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .receipt-product-info {
+      flex: 1;
+    }
+    .receipt-product-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+    .receipt-product-gift {
+      font-size: 13px;
+      color: #2E7D32;
+      font-weight: 600;
+    }
+
+    /* 3-Step Journey Timeline */
+    .timeline-wrap {
+      margin-bottom: 36px;
+      padding: 30px 28px;
+      background: #FAF9F6;
+      border: 1px solid #EAE3D2;
+      border-radius: var(--radius-md);
+    }
+    @media (max-width: 600px) {
+      .timeline-wrap {
+        padding: 22px 16px;
+      }
+    }
+    .timeline-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-text-muted);
+      margin-bottom: 22px;
+      text-align: center;
+    }
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .timeline-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    }
+    .fulfillment-card {
+      background: #FFFFFF;
+      border: 1px solid #ECE7DE;
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .fulfillment-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    }
+    @media (max-width: 767px) {
+      .fulfillment-card {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px 16px;
+      }
+    }
+    .step-icon-wrap {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 767px) {
+      .step-icon-wrap {
+        margin: 0;
+      }
+    }
+    .step-icon-done {
+      background: #2E7D32;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+    }
+    .step-icon-active {
+      background: #FAF3E3;
+      border: 2px solid var(--color-accent-gold);
+      color: #8C6A28;
+      box-shadow: 0 4px 12px rgba(197, 160, 89, 0.2);
+    }
+    .step-icon-next {
+      background: #F1EFEA;
+      color: #9E9E9E;
+      border: 1px solid #DDD8CE;
+    }
+    .step-card-body {
+      flex: 1;
+    }
+    .step-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+    .step-desc {
+      font-size: 13px;
+      color: var(--color-text-body);
+      line-height: 1.55;
+    }
+
+    /* Action Buttons */
+    .thankyou-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    @media (min-width: 576px) {
+      .thankyou-actions {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    .btn-zalo-priority {
+      background: #0068FF;
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 104, 255, 0.3);
+      transition: all var(--transition-fast);
+    }
+    .btn-zalo-priority:hover {
+      background: #0056D2;
+      transform: translateY(-2px);
+    }
+  </style>
+
+  <!-- ================================================================= -->
+  <!-- META PIXEL / TIKTOK PIXEL / GOOGLE ADS CONVERSION SCRIPT TEMPLATE  -->
+  <!-- Khi triển khai chạy ads, hãy điền ID pixel và bỏ comment dưới đây  -->
+  <!-- ================================================================= -->
+  <!--
+  <script>
+    // 1. Meta Pixel - Track Purchase Conversion
+    if (typeof fbq === 'function') {
+      fbq('track', 'Purchase', {
+        value: 1237500,
+        currency: 'VND',
+        content_name: 'Combo Needle Serum C - CX4 Fractional CC'
+      });
+    }
+
+    // 2. Google Ads - Track Conversion Event
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-CONVERSION_ID/LABEL',
+        'value': 1237500,
+        'currency': 'VND'
+      });
+    }
+  </script>
+  -->
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <span>
+        <svg width="18" height="12" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; border-radius: 2px; margin-right: 6px; box-shadow: 0 0 2px rgba(0,0,0,0.4);">
+          <rect width="24" height="16" fill="#FFFFFF"/>
+          <circle cx="12" cy="8" r="4.8" fill="#BC002D"/>
+        </svg>
+        <strong>FRACTIONAL CC NHẬT BẢN</strong> | Tiếp nhận đơn hàng chính ngạch • Hotline: 0985 561 862
+      </span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner-split">
+      <nav class="header-nav-side header-nav-left" aria-label="Menu chính bên trái">
+        <ul class="nav-split-list">
+          <li><a href="index.html" class="nav-link">Trang Chủ</a></li>
+          <li><a href="san-pham.html" class="nav-link">Sản Phẩm</a></li>
+        </ul>
+      </nav>
+
+      <a href="index.html" class="brand-logo-center" title="Fractional CC Nhật Bản & BUI DANG-JP">
+        <img src="assets/images/brand/fractional-cc-logo.png" alt="Logo Fractional CC" class="brand-logo-main-img">
+        <span class="logo-divider"></span>
+        <div class="distributor-badge">
+          <img src="assets/images/brand/bui-dang-jp-logo.png" alt="Công ty BUI DANG-JP" class="distributor-logo-img" title="BUI DANG-JP - Phân phối độc quyền tại Việt Nam">
+          <div class="distributor-text">
+            <span class="distributor-title">BUI DANG–JP</span>
+            <span class="distributor-sub">Độc quyền VN</span>
+          </div>
+        </div>
+      </a>
+
+      <nav class="header-nav-side header-nav-right" aria-label="Menu chính bên phải">
+        <ul class="nav-split-list">
+          <li><a href="index.html#routine" class="nav-link">Chu Trình Skincare</a></li>
+          <li><a href="chinh-sach.html" class="nav-link">Chính Sách</a></li>
+        </ul>
+        <div class="header-actions">
+          <a href="san-pham.html" class="btn btn-outline" style="font-size: 13px; padding: 9px 18px;">
+            Xem Thêm Sản Phẩm
+          </a>
+        </div>
+      </nav>
+
+      <div class="header-mobile-bar">
+        <button class="mobile-nav-toggle" aria-label="Menu điều hướng">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="san-pham.html" class="btn btn-primary" style="font-size: 12px; padding: 8px 14px;">
+          Sản Phẩm
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="thankyou-page">
+    <div class="container">
+      
+      <div class="thankyou-card">
+        
+        <!-- ICON SUCCESS -->
+        <div class="thankyou-badge-icon">✓</div>
+
+        <!-- HEADER -->
+        <div class="thankyou-header">
+          <span class="section-tag">Tiếp Nhận Thành Công</span>
+          <h1 class="thankyou-title heading-serif">Cảm Ơn Quý Khách Đã Đặt Hàng!</h1>
+          <p class="thankyou-subtitle">
+            Yêu cầu của bạn đã được ghi nhận trên hệ thống phân phối chính ngạch của <strong>Công ty TNHH BUI DANG–JP</strong>. Chuyên viên chăm sóc da sẽ liên hệ trong <strong>15–30 phút</strong> để tư vấn phác đồ và xác nhận thông tin gửi hàng.
+          </p>
+        </div>
+
+        <!-- THẺ XÁC NHẬN CHI TIẾT ĐƠN HÀNG DYNAMIC -->
+        <div class="receipt-box" id="receipt-container">
+          <div class="receipt-head">
+            <span class="receipt-id-tag">MÃ ĐƠN HÀNG: <strong id="order-id-val">#FCC-869214</strong></span>
+            <span class="receipt-status-badge">● Chờ Gọi Điện Xác Nhận</span>
+          </div>
+
+          <div class="receipt-grid">
+            <div class="receipt-item">
+              <span class="receipt-label">Khách hàng nhận:</span>
+              <span class="receipt-value" id="order-name-val">Quý Khách Hàng</span>
+            </div>
+            <div class="receipt-item">
+              <span class="receipt-label">Số điện thoại:</span>
+              <span class="receipt-value" id="order-phone-val">0985 ••• •••</span>
+            </div>
+            <div class="receipt-item">
+              <span class="receipt-label">Hình thức thanh toán:</span>
+              <span class="receipt-value" style="color: #2E7D32;">Thanh toán khi nhận hàng (COD)</span>
+            </div>
+            <div class="receipt-item">
+              <span class="receipt-label">Quyền lợi khách hàng:</span>
+              <span class="receipt-value" style="color: #8C6A28;">Được kiểm tra hàng trước khi trả tiền</span>
+            </div>
+          </div>
+
+          <!-- DÒNG SẢN PHẨM & QUÀ TẶNG -->
+          <div class="receipt-product-row">
+            <img src="assets/images/banner/combo-c-cx4.png" alt="Sản phẩm Fractional CC" class="receipt-product-thumb" id="order-img-val">
+            <div class="receipt-product-info">
+              <div class="receipt-product-title" id="order-product-val">Combo Siêu Tinh Chất Vi Kim Giảm Thâm Serum C - CX4</div>
+              <div class="receipt-product-gift">🎁 Tặng kèm: Son Dưỡng Fractional CC PDRN Shot (Miễn Phí)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 BƯỚC TIẾP THEO CỦA ĐƠN HÀNG -->
+        <div class="timeline-wrap">
+          <div class="timeline-title">Lộ Trình Xử Lý Đơn Hàng Của Bạn</div>
+          <div class="timeline-steps">
+            <!-- Bước 1 -->
+            <div class="fulfillment-card">
+              <div class="step-icon-wrap step-icon-done">✓</div>
+              <div class="step-card-body">
+                <div class="step-name">1. Tiếp Nhận Đơn</div>
+                <div class="step-desc">Hệ thống đã lưu thông tin và gói ưu đãi của bạn.</div>
+              </div>
+            </div>
+            <!-- Bước 2 -->
+            <div class="fulfillment-card">
+              <div class="step-icon-wrap step-icon-active">2</div>
+              <div class="step-card-body">
+                <div class="step-name">2. Chuyên Viên Gọi Điện</div>
+                <div class="step-desc">Tư vấn tình trạng da và xác nhận địa chỉ giao trong 15-30p.</div>
+              </div>
+            </div>
+            <!-- Bước 3 -->
+            <div class="fulfillment-card">
+              <div class="step-icon-wrap step-icon-next">3</div>
+              <div class="step-card-body">
+                <div class="step-name">3. Giao Tận Tay (COD)</div>
+                <div class="step-desc">Nhận hàng trong 2-4 ngày, đồng kiểm thoải mái.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NÚT HÀNH ĐỘNG ƯU TIÊN -->
+        <div class="thankyou-actions">
+          <a href="https://zalo.me/0985561862" target="_blank" rel="noopener noreferrer" class="btn-zalo-priority">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.477 2 2 6.03 2 11C2 13.565 3.195 15.864 5.12 17.472L4.2 21.2C4.085 21.664 4.545 22.052 4.965 21.848L9.29 19.742C10.158 19.911 11.063 20 12 20C17.523 20 22 15.97 22 11C22 6.03 17.523 2 12 2Z" fill="#FFFFFF"/>
+            </svg>
+            <span>Nhắn Zalo Để Ưu Tiên Giao Sớm</span>
+          </a>
+          <a href="tel:0985561862" class="btn btn-outline" style="font-weight: 700;">
+            <span>Hotline: 0985 561 862</span>
+          </a>
+          <a href="san-pham.html" class="btn btn-outline">
+            <span>Xem 10 Sản Phẩm Khác</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER CHUẨN MỰC -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo-duo">
+            <img src="assets/images/brand/fractional-cc-logo-white.png" alt="Fractional CC Logo" class="brand-logo-main-img">
+            <span class="logo-divider"></span>
+            <img src="assets/images/brand/bui-dang-jp-logo.png" alt="BUI DANG-JP Logo" class="distributor-logo-img">
+          </div>
+          <p>
+            <strong>Đơn vị phân phối độc quyền tại Việt Nam:</strong><br>
+            Công ty TNHH BUI DANG-JP
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Văn Phòng & Liên Hệ</h4>
+          <p><strong>Hotline:</strong> <a href="tel:0985561862" style="color: var(--color-accent-gold); font-weight: 700;">0985 561 862</a></p>
+          <p><strong>Email:</strong> jpbuidangco.ltd@gmail.com</p>
+          <p><strong>Xuất xứ:</strong> Made in Japan • Tokyo Cosmetics</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Chính Sách & Thông Tin</h4>
+          <ul class="footer-links">
+            <li><a href="san-pham.html">Danh mục 10 sản phẩm chính hãng</a></li>
+            <li><a href="chinh-sach.html#doi-tra">Chính sách đổi trả & hỗ trợ</a></li>
+            <li><a href="chinh-sach.html#giao-hang">Chính sách giao hàng & kiểm tra</a></li>
+            <li><a href="chinh-sach.html#bao-mat">Chính sách bảo mật thông tin</a></li>
+            <li><a href="chinh-sach.html#chinh-hang">Hướng dẫn phân biệt hàng chính hãng</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p style="margin: 0;">Copyright © 2026 Fractional CC Vietnam - Phân phối bởi Công ty TNHH BUI DANG-JP.</p>
+        <p style="margin: 0; font-size: 12px; color: #757575;">Mỹ phẩm không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT READ DYNAMIC ORDER DATA -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const raw = localStorage.getItem('fcc_last_order');
+        if (raw) {
+          const order = JSON.parse(raw);
+          if (order.orderId) document.getElementById('order-id-val').textContent = '#' + order.orderId;
+          if (order.customerName) document.getElementById('order-name-val').textContent = order.customerName;
+          if (order.customerPhone) document.getElementById('order-phone-val').textContent = order.customerPhone;
+          if (order.selectedItemName) document.getElementById('order-product-val').textContent = order.selectedItemName;
+        }
+      } catch (e) {
+        console.warn('Could not read order from storage', e);
+      }
+    });
+  </script>
+</body>
+</html>

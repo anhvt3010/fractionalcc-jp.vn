@@ -1,0 +1,4 @@
+interface:
+  display_name: "WordPress AI Development"
+  short_description: "WordPress, XAMPP, secure code and plugin/theme ZIP releases"
+  default_prompt: "Use $wordpress-ai-development to inspect this WordPress project and implement the requested change with the existing architecture."

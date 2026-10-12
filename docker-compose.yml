@@ -1,0 +1,142 @@
+name: project-wordpress-local
+
+x-wordpress-environment: &wordpress-environment
+  WORDPRESS_DB_HOST: db:3306
+  WORDPRESS_DB_NAME: ${DB_NAME:-wordpress_local}
+  WORDPRESS_DB_USER: ${DB_USER:-wordpress_local}
+  WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:?Run scripts/init-local-env.ps1 first}
+  WORDPRESS_TABLE_PREFIX: wp_
+  WORDPRESS_DEBUG: "1"
+  PROJECT_SITE_URL: http://localhost:${WORDPRESS_PORT:-8088}
+  WORDPRESS_CONFIG_EXTRA: |
+    define( 'WP_HOME', getenv( 'PROJECT_SITE_URL' ) );
+    define( 'WP_SITEURL', getenv( 'PROJECT_SITE_URL' ) );
+    define( 'WP_ENVIRONMENT_TYPE', 'local' );
+    define( 'WP_DEBUG_LOG', true );
+    define( 'WP_DEBUG_DISPLAY', false );
+    define( 'DISALLOW_FILE_EDIT', true );
+
+x-wordpress-volumes: &wordpress-volumes
+  - type: volume
+    source: wordpress_data
+    target: /var/www/html
+  - type: bind
+    source: ./wp-content/themes/project-child
+    target: /var/www/html/wp-content/themes/project-child
+    bind:
+      create_host_path: false
+  - type: bind
+    source: ./wp-content/plugins/project-core
+    target: /var/www/html/wp-content/plugins/project-core
+    bind:
+      create_host_path: false
+  - type: bind
+    source: ./wp-content/themes/kadence
+    target: /var/www/html/wp-content/themes/kadence
+    read_only: true
+    bind:
+      create_host_path: false
+  - type: bind
+    source: ./wp-content/plugins/advanced-custom-fields
+    target: /var/www/html/wp-content/plugins/advanced-custom-fields
+    read_only: true
+    bind:
+      create_host_path: false
+
+services:
+  db:
+    image: ${MARIADB_IMAGE:?Missing MARIADB_IMAGE in .env}
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ${DB_NAME:-wordpress_local}
+      MARIADB_USER: ${DB_USER:-wordpress_local}
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Missing DB_PASSWORD in .env}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Missing DB_ROOT_PASSWORD in .env}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      start_period: 30s
+      retries: 20
+
+  wordpress:
+    image: ${WORDPRESS_IMAGE:?Missing WORDPRESS_IMAGE in .env}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${WORDPRESS_PORT:-8088}:80"
+    environment: *wordpress-environment
+    volumes: *wordpress-volumes
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "php", "-r", "exit(@fsockopen('127.0.0.1', 80) ? 0 : 1);"]
+      interval: 10s
+      timeout: 5s
+      start_period: 30s
+      retries: 12
+
+  cli:
+    image: ${WORDPRESS_CLI_IMAGE:?Missing WORDPRESS_CLI_IMAGE in .env}
+    profiles: ["tools"]
+    user: "33:33"
+    working_dir: /var/www/html
+    entrypoint: ["sh"]
+    command: ["-c", "wp --info"]
+    environment:
+      <<: *wordpress-environment
+      WP_CLI_CACHE_DIR: /tmp/wp-cli-cache
+      PROJECT_WORDPRESS_ROOT: /var/www/html
+      WP_ADMIN_USER: ${WP_ADMIN_USER:-localadmin}
+      WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD:?Missing WP_ADMIN_PASSWORD in .env}
+      WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL:-admin@example.test}
+      WP_SITE_TITLE: ${WP_SITE_TITLE:-Website local}
+    volumes:
+      - type: volume
+        source: wordpress_data
+        target: /var/www/html
+      - type: bind
+        source: ./wp-content/themes/project-child
+        target: /var/www/html/wp-content/themes/project-child
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./wp-content/plugins/project-core
+        target: /var/www/html/wp-content/plugins/project-core
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./wp-content/themes/kadence
+        target: /var/www/html/wp-content/themes/kadence
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./wp-content/plugins/advanced-custom-fields
+        target: /var/www/html/wp-content/plugins/advanced-custom-fields
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./docker/setup-local.sh
+        target: /opt/project/setup-local.sh
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./scripts/create-sample-page.php
+        target: /opt/project/create-sample-page.php
+        read_only: true
+        bind:
+          create_host_path: false
+    depends_on:
+      db:
+        condition: service_healthy
+      wordpress:
+        condition: service_healthy
+
+volumes:
+  db_data:
+  wordpress_data:
