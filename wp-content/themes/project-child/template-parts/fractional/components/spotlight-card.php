@@ -24,7 +24,7 @@ $item = $args['item'];
 		<?php if ( $item['spotlightGift'] ) : ?>
 		<div class="combo-gift-box" style="margin-bottom: 12px; padding: 10px 14px; font-size: 13px;">
 			<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;" aria-hidden="true"><path d="M20 12v10H4V12"></path><path d="M2 7h20v5H2z"></path><path d="M12 22V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
-			<strong>QUÀ TẶNG:</strong> <?php echo esc_html( $item['spotlightGift'] ); ?>
+			<strong><?php echo project_child_fcc_text( 'fcc_ui_m_64ef9f9f2c6c', 'shared' ); ?></strong> <?php echo esc_html( $item['spotlightGift'] ); ?>
 		</div>
 		<?php endif; ?>
 		<div class="duo-card-footer">

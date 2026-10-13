@@ -1,57 +1,35 @@
-# Quy trình build và release
+# Build v? release Fractional CC
 
-> Bản `0.3.26` dọn code gửi đơn/fragment cũ, adapter lỗi thời, CSS không dùng và ảnh dư; kiểm tra giữ nguyên nội dung 15 trang, 24 form và khởi tạo từ hai ZIP. Xem [hồ sơ release và phục hồi](v0.3.26/RELEASE.md).
+Release ??u ti?n hi?n t?i l? **1.0.0**, ng?y 14/10/2026. Ng??i d?ng ?? ch?t to?n b? n?i dung, s?n ph?m, media v? l?a ch?n hi?n c? l?m defaults. C?c release tr??c ?? x?a theo y?u c?u. Xem [h? s? release](v1.0.0/RELEASE.md), [d? li?u ?? ch?t](../docs/APPROVED-DEFAULTS.md) v? [h??ng d?n qu?n l?](../docs/CONTENT-MANAGEMENT.md).
 
-
-Dùng XAMPP cho workflow hiện tại; Docker tạm thời không áp dụng. Mỗi bản build tạo một thư mục version trong `release/`, chứa **đúng hai file ZIP cài được qua WordPress Admin**, cùng hồ sơ phát hành nếu cần.
-
-Source Fractional CC `0.3.1` có compiler, initializer, công cụ sửa text trong Customizer và `scripts/build-release.ps1`. Defaults/homepage đã áp dụng trên XAMPP theo yêu cầu; database vẫn dùng chung với site cũ. Xem [trạng thái triển khai](../docs/FRACTIONAL-WORDPRESS.md); các mô tả “chưa triển khai script/seed” bên dưới là mốc trước chuyển đổi. Luồng tiếp nhận đơn phía server và nghiệm thu giao diện/public còn cần hoàn thiện; chưa là release production đã nghiệm thu.
-
-## Cấu trúc phiên bản
+## C?u tr?c
 
 ```text
 release/
-├── README.md
-├── RELEASE-TEMPLATE.md
-└── vX.Y.Z/
-    ├── project-core-vX.Y.Z.zip
-    ├── project-child-vX.Y.Z.zip
-    └── RELEASE.md
+??? README.md
+??? RELEASE-TEMPLATE.md
+??? v1.0.0/
+    ??? project-core-v1.0.0.zip
+    ??? project-child-v1.0.0.zip
+    ??? RELEASE.md
+    ??? qa/
 ```
 
-Tên `project-core` và `project-child` theo slug source hiện có; đổi theo slug thực tế khi dự án đổi tên. Không chuyển ZIP sang `release/artifacts/`. Hồ sơ `v0.1.0`, `v0.2.0` trước đây không có nghĩa đã có gói ZIP theo quy trình mới. Tác vụ cập nhật quy tắc chưa triển khai script build hoặc seed.
+M?i version c? ??ng hai ZIP c?i qua WordPress: core plugin v? child theme. Root trong ZIP t??ng ?ng `project-core/`, `project-child/`; kh?ng l?ng `wp-content/` ho?c th? m?c version. Core ch?a domain/defaults/initializer, theme ch?a presentation/schema/assets. Kh?ng ??ng g?i WordPress core, parent theme, ACF, config, secrets, t?i kho?n, ??n h?ng, kh?ch h?ng, dump, logs, backup ho?c uploads ri?ng; ghi dependencies trong RELEASE.md.
 
-## Nội dung hai ZIP
+## Quy tr?nh l?n ch?t ti?p theo
 
-| Gói | Thư mục cấp đầu trong ZIP | Nội dung |
-| --- | --- | --- |
-| Plugin core | `project-core/` | Plugin header/bootstrap, nghiệp vụ, field definitions thuộc plugin, dữ liệu mặc định đã duyệt và initializer có version |
-| Child theme | `project-child/` | `style.css` với `Template` đúng parent, bootstrap, templates, assets và field definitions thuộc giao diện |
+1. D?ng site XAMPP ?ang ch?y t?i `D:/xampp/htdocs/fractionalcc-jp.vn`; kh?ng d?ng Docker. Sao l?u ri?ng database/uploads/config tr??c c?c thao t?c c? r?i ro.
+2. Khi ng??i d?ng duy?t n?i dung m?i, ch?y XAMPP PHP v?i `scripts/export-fractional-defaults.php --user=<administrator-id> --version=X.Y.Z --approve`. Exporter l?y gi? tr? CMS, ?nh/hash/alt/caption, ngu?n quan h? v? settings ???c cho ph?p; kh?ng export credentials ho?c d? li?u v?n h?nh ri?ng.
+3. T?ng header version core v? child theme theo snapshot. Gi? schema v? code runtime hi?n h?nh; compiler HTML m?u c? b? ch?n sau khi d? li?u ?? approved.
+4. Lint/ki?m tra nghi?p v? b? ?nh h??ng, r?i ch?y `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-release.ps1 -Version X.Y.Z`. Script build v?o `release/vX.Y.Z/`, lint PHP, ch?n file ri?ng v? kh?ng t? ghi ?? archive ?? t?n t?i. Review artifact tr??c khi s?a/rebuild.
+5. Ki?m tra root, entry count, byte/SHA-256 so v?i source, CRC, dependencies v? exclusions. Tr?n site/database ri?ng, c?i/k?ch ho?t ??ng hai ZIP v?i Kadence/ACF, ki?m tra d? li?u c?i m?i v? ch?y l?i gi? edits/gi? tr? ?? x?a. Kh?ng ch?y test destructive tr?n database l?m vi?c.
+6. Ki?m tra frontend/admin, mobile/tablet/desktop, SEO/noindex theo m?i tr??ng v? quy?n/nonce; kh?ng g?i form th?t khi ch?a ???c y?u c?u. Ghi checksum, migration, k?t qu? th?c t?, gi?i h?n v? rollback v?o RELEASE.md; d?ng RELEASE-TEMPLATE.md l?m khung khi ph? h?p.
 
-ZIP phải có một thư mục gốc đúng slug, không thêm lớp `wp-content/`, `plugins/`, `themes/` hoặc thư mục version bên trong. Bao gồm assets đã build và các file runtime cần thiết. Không gộp WordPress core, parent theme hay plugin bên thứ ba vào hai gói này; ghi rõ nguồn cài, phiên bản tương thích và license của dependencies.
+## Kh?i t?o v? c?p nh?t
 
-Không đóng gói `wp-config.php`, `.env`, secrets, tài khoản/mật khẩu, database dump, dữ liệu khách hàng, uploads riêng tư, backup, logs, caches, `node_modules` hoặc công cụ dev không cần cho runtime. Chỉ đóng gói media mặc định đã được duyệt và có quyền sử dụng.
+K?ch ho?t core/child theme tr?n site m?i s? x?p h?ng kh?i t?o; m?t l?n m? admin b?ng administrator c? quy?n upload s? ch?y khi ?? dependencies. C? n?t kh?i t?o trong **N?i dung website**. Kh?ng c?n ACF Sync. Tr?ng th?i d? li?u m?c ??nh l? `approved`, ??c l?p v?i noindex local/staging; trang C?m ?n lu?n noindex.
 
-## Dữ liệu mặc định
+Initializer d?ng kh?a/version v? source key, ?nh x? media/gallery/URL/quan h? sang site ??ch. C?i m?i ch?n homepage khi ch?a c? l?a ch?n; kh?ng ??i theme/menu qua activation. Ch?y l?i/update gi? b?n ghi, settings, Reading, Media metadata, n?i dung v? l?a ch?n ?? ch?nh, k? c? ?nh/ph?c ?? ?? x?a. Migration ch? b? sung gi? tr? thi?u.
 
-- Đóng gói defaults có version cùng plugin core, bao gồm giá trị nội dung/cài đặt cần thiết và tham chiếu media đã duyệt. Field definitions của ACF JSON/PHP chỉ là schema, không chứa giá trị nội dung.
-- Chỉ dùng nội dung người dùng cung cấp hoặc duyệt. Thiếu dữ kiện thì hỏi hoặc để trống; không tự tạo dịch vụ, giá, số liệu, testimonial, khách hàng, thông tin liên hệ hoặc tuyên bố quảng cáo. Placeholder phải được cho phép và ghi rõ.
-- Initializer dùng WordPress APIs, kiểm tra dependencies, xác định dữ liệu bằng khóa ổn định và lưu version đã khởi tạo. Chạy lại không tạo trùng và không ghi đè trang, field, menu hoặc settings đã được sửa; migration nâng cấp phải mô tả riêng.
-- Thao tác khởi tạo qua admin phải có quyền phù hợp và nonce. Không tạo tài khoản với mật khẩu mặc định. Theo yêu cầu người dùng, từ `0.3.4`, khởi tạo lần đầu đặt trang Fractional CC làm homepage nếu Reading vẫn là danh sách bài viết và chưa chọn trang chủ. Các lần chạy lại/update giữ lựa chọn Reading đã có. Activation không tự thay active theme, menu hoặc dữ liệu đang có.
-- Ghi rõ cách chạy khởi tạo trong hồ sơ release. Nếu cần đặt homepage/menu, hướng dẫn thao tác cụ thể theo phạm vi được duyệt; không tự áp dụng vào site đang dùng.
-
-## Quy trình build và xác minh
-
-1. Chốt version và phạm vi; review custom code, dependencies, nội dung mặc định và thiết kế đã duyệt. Ghi commit/tag khi Git đã có; không bịa mã commit.
-2. Lint PHP bằng XAMPP PHP, chạy build assets nếu cần và các kiểm tra phù hợp. Review validation/sanitization, quyền, nonce, SQL, escaping, secrets; kiểm tra SEO liên quan, code trùng/thừa và hiệu năng.
-3. Tạo `release/vX.Y.Z/`, đóng gói hai ZIP từ source custom tương ứng. Ghi version plugin/theme thực tế và dependencies; không sửa source dependency để đóng gói.
-4. Kiểm tra danh sách file và cấu trúc từng ZIP, loại bỏ dữ liệu riêng tư và bảo đảm file runtime/asset/defaults không thiếu.
-5. Trên site kiểm thử riêng, cài dependencies, upload/activate plugin core, upload/activate child theme, rồi chạy khởi tạo defaults theo hướng dẫn của release. Kiểm tra dependency thiếu được xử lý rõ ràng.
-6. Kiểm tra site mới nhận đủ defaults; sửa thử nội dung rồi chạy lại initializer/cập nhật để xác minh không trùng hoặc mất nội dung. Kiểm tra frontend/admin, editor, lỗi PHP/console và desktop/mobile nếu có UI trong phạm vi.
-7. Copy [RELEASE-TEMPLATE.md](RELEASE-TEMPLATE.md) thành `vX.Y.Z/RELEASE.md`; ghi hai ZIP, checksum SHA-256, dependencies, cách cài/activate/seed, kết quả kiểm thử, giới hạn và rollback. Không đánh dấu đạt kiểm tra chưa chạy.
-
-## Deploy và rollback
-
-Sao lưu database/uploads/config vào nơi riêng và kiểm tra khả năng khôi phục trước deploy có rủi ro. Cài đúng hai ZIP và dependencies đã kiểm thử; xử lý migration/field sync/default initialization theo hồ sơ release, xóa cache liên quan và smoke-test frontend/admin.
-
-Rollback về plugin/theme và dependencies đã biết tốt. Migration/seed dữ liệu không nhất thiết rollback bằng code; phải có hướng dẫn khôi phục hoặc forward-fix bảo toàn dữ liệu phát sinh. Không chép database local đè production. Ghi kết quả deploy, lỗi và kiểm tra sau rollback vào hồ sơ phiên bản.
+Tr??c deploy sao l?u v? ki?m tra kh? n?ng kh?i ph?c tr?n m?i tr??ng ??ch. C?i ??ng c?p ZIP/dependencies, c?u h?nh URL v? secrets ri?ng, x?a cache v? smoke-test. Kh?ng ch?p database local/test ?? production. Rollback d?ng backup m?i tr??ng ??ch ho?c snapshot code ?? bi?t t?t, b?o to?n edits ph?t sinh; c?c release v0.x ?? x?a v? kh?ng c?n l? ngu?n rollback.

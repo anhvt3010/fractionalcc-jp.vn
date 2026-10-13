@@ -15,7 +15,7 @@
         </div>
         <div class="footer-col">
           <h4><?php echo project_child_fcc_text( 'fcc_ui_0f36c14dea884e', 'shared' ); ?></h4>
-          <p><strong><?php echo project_child_fcc_text( 'fcc_ui_984783bd913b86', 'shared' ); ?></strong> <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" style="color: var(--color-accent-gold); font-weight: 700;">0985 561 862</a></p>
+          <p><strong><?php echo project_child_fcc_text( 'fcc_ui_984783bd913b86', 'shared' ); ?></strong> <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" style="color: var(--color-accent-gold); font-weight: 700;"><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></a></p>
           <p><strong><?php echo project_child_fcc_text( 'fcc_ui_7374e1f6e37820', 'shared' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_73944c222e59fa', 'shared' ); ?></p>
         </div>
         <div class="footer-col">

@@ -1,8 +1,10 @@
 # Setup và workflow XAMPP
 
-> Rà soát `0.3.5`: site hiện tại đã chạy lại initializer có kiểm soát, giữ nguyên 53 bản ghi nội dung, cấu hình trang chủ và số attachment. Cài mới đã kiểm tra thứ tự kích hoạt, dependency thiếu, khôi phục khóa quá hạn và các lỗi package. [Hồ sơ kiểm tra](../release/v0.3.5/RELEASE.md). Không cần reset hoặc cập nhật lại catalog của site đang dùng.
+> Ch?t 14/10/2026: to?n b? n?i dung/s?n ph?m/media/ph?c ?? hi?n t?i ?? ???c duy?t l?m [defaults 1.0.0](APPROVED-DEFAULTS.md). C?c release c? ?? x?a; [release ??u ti?n](../release/v1.0.0/RELEASE.md) l? h? s? hi?n h?nh. C?c m? t? ch? duy?t/local_sample c?a b?n tr??c d??i ??y l? l?ch s?.
 
-> Cập nhật `0.3.4` ngày 13/10/2026: runtime tại `C:\xampp\htdocs\fractionalcc-jp.vn` dùng Project Child/Kadence và Project Core/ACF. Homepage hiện là trang Fractional CC ID `22`, `show_on_front=page`; URL gốc đã trả về giao diện trang chủ. Ảnh combo nền vàng do người dùng gửi đã được nhập Media và đóng gói làm mặc định. Khởi tạo lần đầu tự chọn homepage nếu chưa có trang chủ; chạy lại bảo toàn lựa chọn đã sửa. Các ID và trạng thái cũ bên dưới là lịch sử. Xem [release 0.3.4](../release/v0.3.4/RELEASE.md).
+> Rà soát `0.3.5`: site hiện tại đã chạy lại initializer có kiểm soát, giữ nguyên 53 bản ghi nội dung, cấu hình trang chủ và số attachment. Cài mới đã kiểm tra thứ tự kích hoạt, dependency thiếu, khôi phục khóa quá hạn và các lỗi package. [Hồ sơ kiểm tra](../release/v1.0.0/RELEASE.md). Không cần reset hoặc cập nhật lại catalog của site đang dùng.
+
+> Cập nhật `0.3.4` ngày 13/10/2026: runtime tại `C:\xampp\htdocs\fractionalcc-jp.vn` dùng Project Child/Kadence và Project Core/ACF. Homepage hiện là trang Fractional CC ID `22`, `show_on_front=page`; URL gốc đã trả về giao diện trang chủ. Ảnh combo nền vàng do người dùng gửi đã được nhập Media và đóng gói làm mặc định. Khởi tạo lần đầu tự chọn homepage nếu chưa có trang chủ; chạy lại bảo toàn lựa chọn đã sửa. Các ID và trạng thái cũ bên dưới là lịch sử. Xem [release 0.3.4](../release/v1.0.0/RELEASE.md).
 
 > Cập nhật chuyển template: source `0.3.0` đã có child theme Fractional CC, mô hình CMS/ACF và initializer/build scripts. Đã khởi tạo dữ liệu và đặt homepage trên WordPress hiện tại theo yêu cầu dùng thông tin index và danh sách sản phẩm làm mặc định. Database vẫn dùng chung với thư mục `wordpress` cũ, có bản sao lưu riêng trước thao tác. Xem [FRACTIONAL-WORDPRESS.md](FRACTIONAL-WORDPRESS.md) cho trạng thái hiện tại; phần mô tả chưa triển khai bên dưới là mốc trước chuyển đổi.
 

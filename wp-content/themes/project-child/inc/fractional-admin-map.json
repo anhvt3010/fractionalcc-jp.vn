@@ -511,7 +511,8 @@
                 "label": "Chữ Sản phẩm trong đường dẫn sản phẩm"
             },
             "fcc_ui_2bd71effeb0585": {
-                "label": "Dòng thông tin đánh giá trên trang sản phẩm"
+                "label": "Dòng thông tin đánh giá trên trang sản phẩm",
+                "note": "D?ng ??nh gi? d?ng chung c?a b? c?c c?, hi?n kh?ng s? d?ng. S?a ?i?m v? s? ??nh gi? ? t?ng S?n ph?m; trang chi ti?t v? danh m?c d?ng c?ng d? li?u."
             },
             "fcc_ui_476e0450734143": {
                 "label": "Nhãn thông tin xuất xứ trên trang sản phẩm"
@@ -884,6 +885,258 @@
             "fcc_ui_7766fc9ecb857b": {
                 "label": "Làn Da Phù Hợp Nhất",
                 "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            }
+        }
+    },
+    "managed_c3a34edd": {
+        "label": "17. Form đặt hàng – liên hệ & chính sách",
+        "description": "Chỉnh nội dung đang hiển thị ở Form đặt hàng – liên hệ & chính sách.",
+        "page": "home",
+        "fragment": "dat-hang",
+        "fields": {
+            "fcc_ui_m_4f498b8722ef": {
+                "label": "Nội dung: Kênh Liên Hệ & Tư Vấn Trực Tiếp"
+            },
+            "fcc_ui_m_92a089a749c6": {
+                "label": "Nội dung: Hotline:"
+            },
+            "fcc_ui_m_d3dbd43eb42f": {
+                "label": "Nội dung: Email:"
+            },
+            "fcc_ui_m_db25d68f6300": {
+                "label": "Nội dung: Chat Zalo"
+            },
+            "fcc_ui_m_5c77cd896de7": {
+                "label": "Nội dung: Messenger"
+            },
+            "fcc_ui_m_f412d16b3a3e": {
+                "label": "Nội dung: Hotline: 0985 561 862"
+            },
+            "fcc_ui_m_a4ad94c43d5b": {
+                "label": "Nội dung: Chính Sách Giao Hàng & Thanh Toán"
+            },
+            "fcc_ui_m_df7e31188f91": {
+                "label": "Nội dung: Giao hàng:"
+            },
+            "fcc_ui_m_68273e5a84bb": {
+                "label": "Nội dung: Toàn quốc, thời gian dự kiến 2–5 ngày làm việc."
+            },
+            "fcc_ui_m_fb7037579c0c": {
+                "label": "Nội dung: Phí vận chuyển:"
+            },
+            "fcc_ui_m_a2a451396944": {
+                "label": "Nội dung: Thông báo khi xác nhận đơn hàng."
+            },
+            "fcc_ui_m_89b96c48a7e5": {
+                "label": "Nội dung: Thanh toán:"
+            },
+            "fcc_ui_m_2781e65c6bfe": {
+                "label": "Nội dung: Chuyển khoản ngân hàng hoặc thanh toán khi nhận hàng (COD)."
+            },
+            "fcc_ui_m_63d5110e4475": {
+                "label": "Nội dung: Kiểm tra hàng:"
+            },
+            "fcc_ui_m_c2a91961cf47": {
+                "label": "Nội dung: Vui lòng kiểm tra sản phẩm khi nhận hàng."
+            },
+            "fcc_ui_m_65d268dfc2a2": {
+                "label": "Nội dung: ✓ Phân phối độc quyền BUI DANG-JP"
+            },
+            "fcc_ui_m_f0739114e699": {
+                "label": "Nội dung: ✓ 100% Chính hãng Nhật Bản"
+            }
+        }
+    },
+    "managed_bf886e9e": {
+        "label": "18. Nhãn thẻ sản phẩm & combo",
+        "description": "Chỉnh nội dung đang hiển thị ở Nhãn thẻ sản phẩm & combo.",
+        "page": "home",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_m_d43decf568f2": {
+                "label": "Nội dung: Số CBMP:"
+            },
+            "fcc_ui_m_33b5b579e52f": {
+                "label": "Nội dung: Chi tiết"
+            },
+            "fcc_ui_m_b2d24c22f0ff": {
+                "label": "Nội dung: Đặt mua"
+            },
+            "fcc_ui_m_0154b155cb8d": {
+                "label": "Nội dung: Bộ Đôi Chăm Sóc Da •"
+            },
+            "fcc_ui_m_878351020275": {
+                "label": "Nội dung: COMBO"
+            },
+            "fcc_ui_m_13f5d50dabf4": {
+                "label": "Nội dung: Đặt mua Combo"
+            },
+            "fcc_ui_m_d377ac936d0f": {
+                "label": "Nội dung: Xem chi tiết"
+            },
+            "fcc_ui_m_64ef9f9f2c6c": {
+                "label": "Nội dung: QUÀ TẶNG:"
+            },
+            "fcc_ui_rating_reviews": {
+                "label": "Nhãn số đánh giá"
+            },
+            "fcc_ui_rating_detail_reviews": {
+                "label": "Nhãn đánh giá ở trang chi tiết"
+            },
+            "fcc_ui_card_detail": {
+                "label": "Nút xem chi tiết"
+            },
+            "fcc_ui_card_buy": {
+                "label": "Nút đặt mua"
+            },
+            "fcc_ui_combo_gift_prefix": {
+                "label": "Nhãn quà tặng"
+            },
+            "fcc_ui_combo_buy": {
+                "label": "Nút mua combo liên quan"
+            },
+            "fcc_ui_combo_bestseller": {
+                "label": "Nhãn bán chạy"
+            },
+            "fcc_ui_choose_item": {
+                "label": "Lựa chọn sản phẩm trống"
+            },
+            "fcc_ui_buy_prefix": {
+                "label": "Tiền tố nút mua sản phẩm"
+            },
+            "fcc_ui_callout_technology": {
+                "label": "Callout khi có thông tin vi kim"
+            },
+            "fcc_ui_callout_default_title": {
+                "label": "Callout mặc định – tiêu đề"
+            },
+            "fcc_ui_callout_default_subtitle": {
+                "label": "Callout mặc định – mô tả"
+            },
+            "fcc_ui_saving_prefix": {
+                "label": "Nhãn số tiền tiết kiệm"
+            }
+        }
+    },
+    "managed_8d8a871e": {
+        "label": "19. Ảnh chia sẻ & biểu tượng",
+        "description": "Chỉnh nội dung đang hiển thị ở Ảnh chia sẻ & biểu tượng.",
+        "page": "home",
+        "fragment": "",
+        "fields": {
+            "fcc_site_favicon": {
+                "label": "Biểu tượng website (favicon)"
+            }
+        }
+    },
+    "managed_7a4745df": {
+        "label": "20. Nhãn giao diện dùng chung",
+        "description": "Chỉnh nội dung đang hiển thị ở Nhãn giao diện dùng chung.",
+        "page": "home",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_m_4ff6a4a13bca": {
+                "label": "Nhãn / thuộc tính: Kênh liên hệ nhanh"
+            },
+            "fcc_ui_m_11c56f1da0dd": {
+                "label": "Nhãn / thuộc tính: Chat Zalo tư vấn"
+            },
+            "fcc_ui_m_e49c4bed29ca": {
+                "label": "Nhãn / thuộc tính: Gọi Hotline 0985 561 862"
+            },
+            "fcc_ui_m_6a7a3ceef1f1": {
+                "label": "Nhãn / thuộc tính: Cuộn lên đầu trang"
+            },
+            "fcc_ui_m_acb57503d846": {
+                "label": "Nhãn / thuộc tính: Đóng"
+            },
+            "fcc_ui_m_a613489f0d9c": {
+                "label": "Nội dung: Vấn đề làn da & Giải pháp"
+            }
+        }
+    },
+    "managed_15f3b9e4": {
+        "label": "21. Nhãn giao diện sản phẩm",
+        "description": "Chỉnh nội dung đang hiển thị ở Nhãn giao diện sản phẩm.",
+        "page": "home",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_m_19d74a6b4cae": {
+                "label": "Nhãn / thuộc tính: Thông tin sản phẩm"
+            },
+            "fcc_ui_gallery_view": {
+                "label": "Nhãn nút chọn ảnh"
+            }
+        }
+    },
+    "managed_bccbf28b": {
+        "label": "22. Thông báo biểu mẫu & tương tác",
+        "description": "Chỉnh nội dung đang hiển thị ở Thông báo biểu mẫu & tương tác.",
+        "page": "home",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_msg_d8d095a87f": {
+                "label": "Thông báo: Vui lòng tích ô đồng ý với điều khoản tư vấn và chính sách bảo mật trước khi gửi."
+            },
+            "fcc_ui_msg_a21859c45a": {
+                "label": "Thông báo: Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt."
+            },
+            "fcc_ui_msg_e1b8f395d0": {
+                "label": "Thông báo: -- Chọn Combo hoặc Sản Phẩm --"
+            },
+            "fcc_ui_msg_68b970cb65": {
+                "label": "Thông báo: ★ CÁC COMBO TIẾT KIỆM (KHUYÊN DÙNG)"
+            },
+            "fcc_ui_msg_8b95d518e7": {
+                "label": "Thông báo: SẢN PHẨM ĐƠN LẺ"
+            },
+            "fcc_ui_msg_97d8ec39f5": {
+                "label": "Thông báo: Vui lòng nhập họ và tên của bạn (tối thiểu 2 ký tự)"
+            },
+            "fcc_ui_msg_954deccc88": {
+                "label": "Thông báo: Số điện thoại không đúng định dạng Việt Nam (10 số, bắt đầu bằng 0 hoặc +84)"
+            },
+            "fcc_ui_msg_2617b365fa": {
+                "label": "Thông báo: Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt"
+            },
+            "fcc_ui_msg_accf07628a": {
+                "label": "Thông báo: Đang gửi yêu cầu đặt hàng…"
+            },
+            "fcc_ui_msg_fc0cd7d243": {
+                "label": "Thông báo: Đang gửi đơn hàng..."
+            },
+            "fcc_ui_msg_439c0031f2": {
+                "label": "Thông báo: Yêu cầu đặt hàng đã được tiếp nhận."
+            },
+            "fcc_ui_msg_f6aa50ef87": {
+                "label": "Thông báo: Đặt hàng thành công! BUI DANG-JP sẽ liên hệ với bạn sớm nhất."
+            },
+            "fcc_ui_msg_989ccc6d21": {
+                "label": "Thông báo: Có lỗi xảy ra khi gửi đơn. Vui lòng thử lại hoặc liên hệ qua Zalo/Hotline."
+            },
+            "fcc_ui_msg_188f916a00": {
+                "label": "Thông báo: Chưa xác nhận được kết quả gửi. Vui lòng kiểm tra kết nối hoặc liên hệ Hotline/Zalo trước "
+            },
+            "fcc_ui_msg_bc40b568b3": {
+                "label": "Thông báo: Liên hệ tư vấn"
+            },
+            "fcc_ui_msg_a08abe5384": {
+                "label": "Thông báo: Không tìm thấy sản phẩm phù hợp"
+            },
+            "fcc_ui_msg_2e2f49a962": {
+                "label": "Thông báo: Xem tất cả sản phẩm"
+            },
+            "fcc_ui_msg_c0617328bf": {
+                "label": "Thông báo: Hiển thị "
+            },
+            "fcc_ui_msg_278575af6c": {
+                "label": "Thông báo:  sản phẩm & combo"
+            },
+            "fcc_ui_msg_e30c937169": {
+                "label": "Thông báo: Xem chi tiết"
+            },
+            "fcc_ui_msg_b123316808": {
+                "label": "Thông báo: Thu gọn"
             }
         }
     }

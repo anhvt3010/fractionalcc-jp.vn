@@ -1,5 +1,7 @@
 # Thông tin ban đầu website Fractional CC
 
+> Ch?t 14/10/2026: to?n b? n?i dung/s?n ph?m/media/ph?c ?? hi?n t?i ?? ???c duy?t l?m [defaults 1.0.0](APPROVED-DEFAULTS.md). C?c release c? ?? x?a; [release ??u ti?n](../release/v1.0.0/RELEASE.md) l? h? s? hi?n h?nh. C?c m? t? ch? duy?t/local_sample c?a b?n tr??c d??i ??y l? l?ch s?.
+
 > Cập nhật 13/10/2026: người dùng đã duyệt [Excel sản phẩm mới](<../template/fractional-cc/List sản phẩm fractional CC.xlsx>) làm nguồn dữ liệu và defaults. Giá/nội dung mới thay bảng giá cũ dưới đây; xem [ánh xạ và trạng thái kiểm tra từng trường](PRODUCT-DATA-EXCEL.md). Các mục thiếu và khác biệt lịch sử vẫn được giữ để tra cứu.
 
 Hồ sơ lập ngày 12/10/2026 từ `template/fractional-cc`, dùng làm nguồn nội dung và phạm vi cho website WordPress. Lần lập hồ sơ ban đầu chỉ cập nhật tài liệu. Sau đó người dùng chỉ định dùng nội dung đã chuẩn bị ở trang index và danh sách sản phẩm làm mặc định active; nội dung đã được khởi tạo vào CMS và đặt trang chủ Fractional CC trên WordPress hiện tại. Các thông tin thiếu vẫn giữ dấu vết nguồn, không tự điền thêm. Xem [FRACTIONAL-WORDPRESS.md](FRACTIONAL-WORDPRESS.md) cho runtime và kiểm thử.

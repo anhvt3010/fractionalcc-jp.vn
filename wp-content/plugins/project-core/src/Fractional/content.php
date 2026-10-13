@@ -77,14 +77,17 @@ function project_core_fcc_product( $post_id, $with_details = true ) {
 	$data['skinConcerns'] = (array) get_post_meta( $post->ID, 'fcc_skinConcerns', true );
 	$image_id = absint( get_post_meta( $post->ID, 'fcc_image', true ) );
 	$data['image'] = $image_id ? wp_get_attachment_image_url( $image_id, 'full' ) : '';
+	$data['imageAlt'] = $image_id ? (string) get_post_meta( $image_id, '_wp_attachment_image_alt', true ) : '';
+	if ( '' === $data['imageAlt'] ) { $data['imageAlt'] = $data['name']; }
 	if ( ! $with_details ) { return $data; }
 	$data['gallery'] = array_filter( array( $data['image'] ) );
+	$data['galleryAlts'] = $data['image'] ? array( $data['image'] => $data['imageAlt'] ) : array();
 	foreach ( parse_blocks( $post->post_content ) as $block ) {
 		if ( 'core/gallery' === $block['blockName'] ) {
 			foreach ( $block['innerBlocks'] as $image ) {
 				$id = isset( $image['attrs']['id'] ) ? absint( $image['attrs']['id'] ) : 0;
 				$url = $id ? wp_get_attachment_image_url( $id, 'full' ) : '';
-				if ( $url ) { $data['gallery'][] = $url; }
+				if ( $url ) { $data['gallery'][] = $url; $alt = (string) get_post_meta( $id, '_wp_attachment_image_alt', true ); $data['galleryAlts'][ $url ] = $alt ?: $data['name']; }
 			}
 		}
 	}
@@ -105,7 +108,7 @@ function project_core_fcc_combos() {
 	foreach ( project_core_fcc_posts( 'fcc_combo' ) as $combo ) {
 		$item = array( 'id' => $combo->ID, 'name' => get_the_title( $combo ), 'productIds' => array_map( 'absint', (array) get_post_meta( $combo->ID, 'fcc_productIds', true ) ) );
 		foreach ( array( 'code', 'shortName', 'badge', 'idealFor', 'routine', 'gift' ) as $name ) { $item[ $name ] = (string) get_post_meta( $combo->ID, 'fcc_' . $name, true ); }
-		foreach ( array( 'originalPrice', 'salePrice' ) as $name ) { $value = get_post_meta( $combo->ID, 'fcc_' . $name, true ); $item[ $name ] = '' === $value ? null : (float) $value; }
+		foreach ( array( 'originalPrice', 'salePrice', 'rating', 'reviewCount' ) as $name ) { $value = get_post_meta( $combo->ID, 'fcc_' . $name, true ); $item[ $name ] = '' === $value ? null : (float) $value; }
 		$item['saveAmount'] = max( 0, (float) $item['originalPrice'] - (float) $item['salePrice'] );
 		$item['productsIncluded'] = project_core_fcc_lines( get_post_meta( $combo->ID, 'fcc_productsIncluded', true ) );
 		$item['image'] = wp_get_attachment_image_url( absint( get_post_meta( $combo->ID, 'fcc_image', true ) ), 'full' );

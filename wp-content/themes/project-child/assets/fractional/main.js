@@ -1,3 +1,5 @@
+function fccLabel(key) { return window.FCC_CONFIG?.labels?.[key] || ''; }
+
 /**
  * FRACTIONAL CC - Main Interactive & CRO Script
  * Handles: Order Modal, Pre-selected combos, Form validation,
@@ -44,6 +46,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 11. Initialize Skin Concerns Tabs (van-de-lan-da)
   initConcernsTabs();
+
+  // 12. Initialize Feature Pillars Stack Deck on Mobile
+  initFeaturePillarsStack();
+
+  // 13. Initialize Routine Process Stack Deck on Mobile (Section 06)
+  initRoutineProcessStack();
 });
 
 /**
@@ -195,9 +203,9 @@ function initOrderSystem() {
       form.addEventListener('submit', handleOrderSubmit);
       form.addEventListener('invalid', event => {
         const message = event.target.name === 'agree_terms'
-          ? 'Vui lòng tích ô đồng ý với điều khoản tư vấn và chính sách bảo mật trước khi gửi.'
+          ? fccLabel('message_1')
           : event.target.name === 'selected_item'
-            ? 'Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt.'
+            ? fccLabel('message_2')
             : event.target.validationMessage;
         showOrderFormMessage(form, message);
       }, true);
@@ -215,12 +223,12 @@ function populateProductOptions(selectEl) {
 
   const defaultOpt = document.createElement('option');
   defaultOpt.value = '';
-  defaultOpt.textContent = '-- Chọn Combo hoặc Sản Phẩm --';
+  defaultOpt.textContent = fccLabel('message_3');
   selectEl.appendChild(defaultOpt);
 
   // Group 1: Combos
   const comboGroup = document.createElement('optgroup');
-  comboGroup.label = '★ CÁC COMBO TIẾT KIỆM (KHUYÊN DÙNG)';
+  comboGroup.label = fccLabel('message_4');
   window.FCC_DATA.combos.forEach(cb => {
     const opt = document.createElement('option');
     opt.value = `combo_${cb.id}`;
@@ -231,7 +239,7 @@ function populateProductOptions(selectEl) {
 
   // Group 2: Individual Products
   const prodGroup = document.createElement('optgroup');
-  prodGroup.label = 'SẢN PHẨM ĐƠN LẺ';
+  prodGroup.label = fccLabel('message_5');
   window.FCC_DATA.products.forEach(p => {
     const opt = document.createElement('option');
     opt.value = `prod_${p.id}`;
@@ -295,7 +303,7 @@ async function handleOrderSubmit(e) {
 
   const name = nameInput ? nameInput.value.trim() : '';
   if (name.length < 2) {
-    reportError('Vui lòng nhập họ và tên của bạn (tối thiểu 2 ký tự)');
+    reportError(fccLabel('message_6'));
     nameInput?.focus();
     return;
   }
@@ -303,19 +311,19 @@ async function handleOrderSubmit(e) {
   const phone = phoneInput ? phoneInput.value.trim().replace(/\s+/g, '') : '';
   const phoneRegex = /^(0|\+84)(3|5|7|8|9)[0-9]{8}$/;
   if (!phoneRegex.test(phone)) {
-    reportError('Số điện thoại không đúng định dạng Việt Nam (10 số, bắt đầu bằng 0 hoặc +84)');
+    reportError(fccLabel('message_7'));
     phoneInput?.focus();
     return;
   }
 
   if (!productSelect || !productSelect.value) {
-    reportError('Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt');
+    reportError(fccLabel('message_8'));
     productSelect?.focus();
     return;
   }
 
   if (agreeCheck && !agreeCheck.checked) {
-    reportError('Vui lòng tích ô đồng ý với điều khoản tư vấn và chính sách bảo mật trước khi gửi.');
+    reportError(fccLabel('message_1'));
     agreeCheck?.focus();
     return;
   }
@@ -324,10 +332,10 @@ async function handleOrderSubmit(e) {
 
   const originalBtnText = submitBtn ? submitBtn.textContent : '';
   form.dataset.submitting = 'true';
-  showOrderFormMessage(form, 'Đang gửi yêu cầu đặt hàng…');
+  showOrderFormMessage(form, fccLabel('message_9'));
   if (submitBtn) {
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Đang gửi đơn hàng...';
+    submitBtn.textContent = fccLabel('message_10');
   }
 
   const formData = new FormData(form);
@@ -348,8 +356,8 @@ async function handleOrderSubmit(e) {
     const result = await response.json();
 
     if (result && result.success) {
-      showOrderFormMessage(form, result.data?.message || 'Yêu cầu đặt hàng đã được tiếp nhận.');
-      showToast(result.data?.message || 'Đặt hàng thành công! BUI DANG-JP sẽ liên hệ với bạn sớm nhất.');
+      showOrderFormMessage(form, result.data?.message || fccLabel('message_11'));
+      showToast(result.data?.message || fccLabel('message_12'));
       form.reset();
 
       try {
@@ -371,7 +379,7 @@ async function handleOrderSubmit(e) {
         window.location.href = result.data?.redirectUrl || window.FCC_CONFIG?.thankyouUrl || '/cam-on/';
       }, 1500);
     } else {
-      const errMsg = result?.data?.message || 'Có lỗi xảy ra khi gửi đơn. Vui lòng thử lại hoặc liên hệ qua Zalo/Hotline.';
+      const errMsg = result?.data?.message || fccLabel('message_13');
       reportError(errMsg);
       form.dataset.submitting = 'false';
       if (submitBtn) {
@@ -381,7 +389,7 @@ async function handleOrderSubmit(e) {
     }
   } catch (err) {
     // A failed response can arrive after the server saved/sent the order; never resubmit automatically.
-    reportError('Chưa xác nhận được kết quả gửi. Vui lòng kiểm tra kết nối hoặc liên hệ Hotline/Zalo trước khi gửi lại.');
+    reportError(fccLabel('message_14'));
     form.dataset.submitting = 'false';
     if (submitBtn) {
       submitBtn.disabled = false;
@@ -412,7 +420,7 @@ function showToast(msg) {
  * Currency Formatter
  */
 function formatVND(amount) {
-  if (amount == null) return 'Liên hệ tư vấn';
+  if (amount == null) return fccLabel('message_15');
   return new Intl.NumberFormat('vi-VN').format(amount) + 'đ';
 }
 
@@ -431,10 +439,10 @@ function initCatalogFilter() {
   const empty = document.createElement('div');
   empty.style.cssText = 'grid-column:1/-1;text-align:center;padding:48px 20px;background:#FFF;border-radius:12px;border:1px solid var(--color-border)';
   const heading = document.createElement('p');
-  heading.textContent = 'Không tìm thấy sản phẩm phù hợp';
+  heading.textContent = fccLabel('message_16');
   heading.style.cssText = 'font-size:18px;font-weight:700;margin-bottom:8px';
   const reset = document.createElement('button');
-  reset.className = 'btn btn-outline'; reset.textContent = 'Xem tất cả sản phẩm';
+  reset.className = 'btn btn-outline'; reset.textContent = fccLabel('message_17');
   empty.append(heading, reset); grid.append(empty);
   function render() {
     let visible = 0;
@@ -445,7 +453,7 @@ function initCatalogFilter() {
       card.hidden = !matches; if (matches) visible++;
     });
     empty.hidden = visible > 0;
-    if (count) count.textContent = 'Hiển thị ' + visible + '/' + cards.length + ' sản phẩm & combo';
+    if (count) count.textContent = fccLabel('message_18') + visible + '/' + cards.length + fccLabel('message_19');
   }
   function bind(buttons, setValue) {
     buttons.forEach(button => button.addEventListener('click', () => {
@@ -474,7 +482,7 @@ function initProductDetailView() {
   if (inlineSelect) inlineSelect.value = 'prod_' + product.id;
   const image = document.getElementById('pd-main-image');
   document.querySelectorAll('[data-detail-image]').forEach(button => button.addEventListener('click', () => {
-    if (image) image.src = button.dataset.detailImage;
+    if (image) { image.src = button.dataset.detailImage; image.alt = button.dataset.detailAlt || ''; }
     document.querySelectorAll('[data-detail-image]').forEach(item => item.classList.remove('active'));
     button.classList.add('active');
   }));
@@ -746,7 +754,7 @@ function initRoutineCollapsible() {
       const isCollapsed = card.classList.toggle('collapsed');
       const textSpan = this.querySelector('.toggle-text');
       if (textSpan) {
-        textSpan.textContent = isCollapsed ? 'Xem chi tiết' : 'Thu gọn';
+        textSpan.textContent = isCollapsed ? fccLabel('message_20') : fccLabel('message_21');
       }
       this.setAttribute('aria-expanded', !isCollapsed);
     });
@@ -761,7 +769,7 @@ function initRoutineCollapsible() {
       const btn = card.querySelector('.routine-toggle-btn');
       if (btn) {
         const textSpan = btn.querySelector('.toggle-text');
-        if (textSpan) textSpan.textContent = 'Thu gọn';
+        if (textSpan) textSpan.textContent = fccLabel('message_21');
         btn.setAttribute('aria-expanded', 'true');
       }
     });
@@ -808,6 +816,132 @@ function initConcernsTabs() {
   if (currentHash && document.getElementById('pane-' + currentHash)) {
     switchTab(currentHash, false);
   }
+}
+
+/**
+ * 12. Feature Pillars Stack Deck on Mobile (Section 04)
+ * Allows tapping stacked cards to expand active card and collapse others.
+ */
+function initFeaturePillarsStack() {
+  const grid = document.querySelector('.brief-feature-grid');
+  if (!grid) return;
+
+  const cards = grid.querySelectorAll('.feature-pillar-card');
+  if (!cards.length) return;
+
+  function isMobileDeck() {
+    return window.matchMedia('(max-width: 767px)').matches;
+  }
+
+  function toggleCard(targetCard) {
+    if (!isMobileDeck()) return;
+
+    const isAlreadyActive = targetCard.classList.contains('is-active');
+
+    // Close all cards
+    cards.forEach(function (card) {
+      card.classList.remove('is-active');
+      card.setAttribute('aria-expanded', 'false');
+    });
+
+    // If not active, expand it; if active, collapse it back into the stack
+    if (!isAlreadyActive) {
+      targetCard.classList.add('is-active');
+      targetCard.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  cards.forEach(function (card) {
+    // Header click toggles open/close
+    const header = card.querySelector('.feature-pillar-header');
+    if (header) {
+      header.addEventListener('click', function (e) {
+        if (!isMobileDeck()) return;
+        e.stopPropagation();
+        toggleCard(card);
+      });
+    }
+
+    // Card click: clicking anywhere on an inactive card expands it
+    card.addEventListener('click', function () {
+      if (!isMobileDeck()) return;
+      if (!card.classList.contains('is-active')) {
+        toggleCard(card);
+      }
+    });
+
+    // Accessibility keyboard support
+    card.addEventListener('keydown', function (e) {
+      if (!isMobileDeck()) return;
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleCard(card);
+      }
+    });
+  });
+}
+
+/**
+ * 13. Routine Process Stack Deck on Mobile (Section 06)
+ * Allows tapping stacked 4-step routine cards to expand active card and collapse others.
+ */
+function initRoutineProcessStack() {
+  const bar = document.querySelector('.routine-process-bar');
+  if (!bar) return;
+
+  const steps = bar.querySelectorAll('.routine-process-step');
+  if (!steps.length) return;
+
+  function isMobileDeck() {
+    return window.matchMedia('(max-width: 767px)').matches;
+  }
+
+  function toggleStep(targetStep) {
+    if (!isMobileDeck()) return;
+
+    const isAlreadyActive = targetStep.classList.contains('is-active');
+
+    // Close all steps
+    steps.forEach(function (step) {
+      step.classList.remove('is-active');
+      step.setAttribute('aria-expanded', 'false');
+    });
+
+    // If not active, expand it; if active, collapse it back into the stack
+    if (!isAlreadyActive) {
+      targetStep.classList.add('is-active');
+      targetStep.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  steps.forEach(function (step) {
+    // Header click toggles open/close
+    const header = step.querySelector('.routine-process-header');
+    if (header) {
+      header.addEventListener('click', function (e) {
+        if (!isMobileDeck()) return;
+        e.stopPropagation();
+        toggleStep(step);
+      });
+    }
+
+    // Step click: clicking anywhere on an inactive card expands it
+    step.addEventListener('click', function () {
+      if (!isMobileDeck()) return;
+      if (!step.classList.contains('is-active')) {
+        toggleStep(step);
+      }
+    });
+
+    // Accessibility keyboard support
+    step.addEventListener('keydown', function (e) {
+      if (!isMobileDeck()) return;
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleStep(step);
+      }
+    });
+  });
 }
 
 

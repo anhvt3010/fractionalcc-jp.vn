@@ -15,12 +15,15 @@ function project_core_fcc_seed_meta( $id, $name, $value, $key = '', $replace = f
 	else { update_post_meta( $id, $name, $value ); }
 }
 
-function project_core_fcc_seed_post( $type, $source_key, $title, $slug, $order = 0, $update_title = false ) {
+function project_core_fcc_seed_post( $type, $source_key, $title, $slug, $order = 0, $update_title = false, $record = array() ) {
 	$existing = get_posts( array( 'post_type' => $type, 'post_status' => array_values( get_post_stati() ), 'posts_per_page' => 1, 'fields' => 'ids', 'meta_key' => '_fcc_source_key', 'meta_value' => $source_key ) );
 	if ( $existing ) {
 		return $update_title ? wp_update_post( array( 'ID' => (int) $existing[0], 'post_title' => $title ), true ) : (int) $existing[0];
 	}
-	return wp_insert_post( array( 'post_type' => $type, 'post_status' => 'publish', 'post_title' => $title, 'post_name' => $slug, 'menu_order' => $order, 'post_author' => get_current_user_id(), 'meta_input' => array( '_fcc_source_key' => $source_key ) ), true );
+	$content = project_core_fcc_resolve_default( $record['content'] ?? '' );
+	$excerpt = project_core_fcc_resolve_default( $record['excerpt'] ?? '' );
+	if ( is_wp_error( $content ) || is_wp_error( $excerpt ) ) { return is_wp_error( $content ) ? $content : $excerpt; }
+	return wp_insert_post( wp_slash( array( 'post_type' => $type, 'post_status' => 'publish', 'post_title' => $title, 'post_name' => $slug, 'post_content' => $content, 'post_excerpt' => $excerpt, 'menu_order' => $order, 'post_author' => get_current_user_id(), 'meta_input' => array( '_fcc_source_key' => $source_key ) ) ), true );
 }
 
 function project_core_fcc_seed_media( $relative_path ) {
@@ -37,6 +40,13 @@ function project_core_fcc_seed_media( $relative_path ) {
 	$id = media_handle_sideload( array( 'name' => basename( $source ), 'tmp_name' => $temp ), 0 );
 	if ( is_wp_error( $id ) ) { if ( file_exists( $temp ) ) { wp_delete_file( $temp ); } return $id; }
 	add_post_meta( $id, '_fcc_asset_source', $relative_path, true );
+	$data = project_core_fcc_default_document();
+	if ( ! is_wp_error( $data ) && isset( $data['media'][ $relative_path ] ) ) {
+		$media = $data['media'][ $relative_path ];
+		$updated = wp_update_post( wp_slash( array( 'ID' => $id, 'post_title' => $media['title'], 'post_excerpt' => $media['caption'], 'post_content' => $media['description'] ) ), true );
+		if ( is_wp_error( $updated ) ) { return $updated; }
+		update_post_meta( $id, '_wp_attachment_image_alt', wp_slash( $media['alt'] ) );
+	}
 	return $id;
 }
 
@@ -53,15 +63,15 @@ function project_core_fcc_validate_defaults( $data ) {
 		if ( ! isset( $page['title'], $page['slug'], $page['fields'] ) || ! is_string( $page['title'] ) || ! is_string( $page['slug'] ) || ! is_array( $page['fields'] ) ) { return $invalid; }
 		if ( 'shared' !== $kind && ( ! isset( $page['template'] ) || 'templates/fractional-' . $kind . '.php' !== $page['template'] || ! is_readable( get_stylesheet_directory() . '/' . $page['template'] ) ) ) { return $invalid; }
 		foreach ( $page['fields'] as $field ) {
-			if ( ! is_array( $field ) || ! isset( $field['type'] ) || ! array_key_exists( 'value', $field ) || ! is_scalar( $field['value'] ) ) { return $invalid; }
-			if ( 'image' === $field['type'] ) { $images[] = $field['value']; }
+			if ( ! is_array( $field ) || ! isset( $field['type'] ) || ! array_key_exists( 'value', $field ) || ( ! is_scalar( $field['value'] ) && ! is_array( $field['value'] ) ) ) { return $invalid; }
+			if ( 'image' === $field['type'] && $field['value'] ) { $images[] = $field['value']; }
 		}
 	}
 	$product_ids = array();
 	foreach ( $data['products'] as $product ) {
 		if ( ! isset( $product['id'], $product['name'], $product['slug'], $product['image'], $product['gallery'], $product['actives'] ) || ! is_int( $product['id'] ) || $product['id'] < 1 || isset( $product_ids[ $product['id'] ] ) || ! is_string( $product['name'] ) || ! is_string( $product['slug'] ) || ! is_array( $product['gallery'] ) || ! is_array( $product['actives'] ) ) { return $invalid; }
 		$product_ids[ $product['id'] ] = true;
-		$images[] = $product['image'];
+		if ( $product['image'] ) { $images[] = $product['image']; }
 		$images = array_merge( $images, $product['gallery'] );
 		foreach ( $product['actives'] as $active ) {
 			foreach ( array( 'name', 'tag', 'desc' ) as $key ) {
@@ -73,7 +83,7 @@ function project_core_fcc_validate_defaults( $data ) {
 	foreach ( $data['combos'] as $combo ) {
 		if ( ! isset( $combo['id'], $combo['name'], $combo['code'], $combo['image'], $combo['productIds'] ) || ! is_scalar( $combo['id'] ) || ! preg_match( '/^[a-zA-Z0-9_-]+$/', (string) $combo['id'] ) || isset( $combo_ids[ $combo['id'] ] ) || ! is_string( $combo['name'] ) || ! is_string( $combo['code'] ) || ! is_array( $combo['productIds'] ) ) { return $invalid; }
 		$combo_ids[ $combo['id'] ] = true;
-		$images[] = $combo['image'];
+		if ( $combo['image'] ) { $images[] = $combo['image']; }
 		foreach ( $combo['productIds'] as $id ) {
 			if ( ! is_int( $id ) || ! isset( $product_ids[ $id ] ) ) { return $invalid; }
 		}
@@ -87,7 +97,7 @@ function project_core_fcc_validate_defaults( $data ) {
 		if ( ! in_array( wp_get_image_mime( $source ), array( 'image/png', 'image/jpeg', 'image/webp' ), true ) ) { return new WP_Error( 'fcc_asset_invalid', 'Ảnh mặc định không hợp lệ: ' . $path ); }
 		$checked[ $path ] = true;
 	}
-	return true;
+	return project_core_fcc_validate_snapshot( $data );
 }
 
 /** Compare-and-delete prevents an expired worker from releasing a newer lock. */
@@ -100,12 +110,13 @@ function project_core_fcc_release_setup_lock( $lock ) {
 	}
 }
 
-function project_core_fcc_initialize( $content_status = 'local_sample', $update_catalog = false ) {
+function project_core_fcc_initialize( $content_status = null, $update_catalog = false ) {
 	if ( ! current_user_can( 'manage_options' ) || ! current_user_can( 'upload_files' ) ) { return new WP_Error( 'fcc_permissions', 'Không có quyền khởi tạo website.' ); }
 	if ( $update_catalog && 'cli' !== PHP_SAPI ) { return new WP_Error( 'fcc_catalog_cli', 'Cập nhật hồ sơ hiện có chỉ được chạy bằng lệnh CLI có chỉ định rõ.' ); }
 	if ( ! function_exists( 'acf_add_local_field_group' ) || 'project-child' !== get_stylesheet() || wp_get_theme()->errors() ) { return new WP_Error( 'fcc_dependencies', 'Cần cài Kadence và kích hoạt ACF, Project Child trước khi khởi tạo.' ); }
 	$data = project_core_fcc_default_document();
 	if ( is_wp_error( $data ) ) { return $data; }
+	if ( null === $content_status ) { $content_status = $data['approval']['status'] ?? 'local_sample'; }
 	$valid = project_core_fcc_validate_defaults( $data );
 	if ( is_wp_error( $valid ) ) { return $valid; }
 	$previous = get_option( 'project_core_fcc_setup_lock' );
@@ -135,30 +146,27 @@ function project_core_fcc_import_document( $data, $content_status, $update_catal
 	$product_fields = isset( $data['catalogSource']['productFields'] ) ? $data['catalogSource']['productFields'] : array();
 	$combo_fields = isset( $data['catalogSource']['comboFields'] ) ? $data['catalogSource']['comboFields'] : array();
 	$ids = get_option( 'project_core_fcc_pages', array() );
+	$first = ! get_option( 'project_core_fcc_seed_version' );
 	foreach ( $data['pages'] as $kind => $page ) {
-		$id = project_core_fcc_seed_post( 'shared' === $kind ? 'fcc_site' : 'page', 'page_' . $kind, $page['title'], $page['slug'] );
+		$id = project_core_fcc_seed_post( 'shared' === $kind ? 'fcc_site' : 'page', 'page_' . $kind, $page['title'], $page['slug'], $page['menuOrder'] ?? 0, false, $page );
 		if ( is_wp_error( $id ) ) { return $id; }
 		$ids[ $kind ] = $id;
 		if ( isset( $page['template'] ) ) { project_core_fcc_seed_meta( $id, '_wp_page_template', $page['template'] ); }
-		foreach ( $page['fields'] as $name => $field ) {
-			if ( metadata_exists( 'post', $id, $name ) ) { continue; }
-			$value = $field['value'];
-			if ( 'image' === $field['type'] ) { $value = project_core_fcc_seed_media( $value ); if ( is_wp_error( $value ) ) { return $value; } }
-			project_core_fcc_seed_meta( $id, $name, $value, 'field_' . $name );
-		}
+		$result = project_core_fcc_seed_snapshot_fields( $id, $page['fields'] );
+		if ( is_wp_error( $result ) ) { return $result; }
 	}
 	update_option( 'project_core_fcc_pages', $ids, false );
 	foreach ( $data['brand'] as $name => $value ) { if ( is_scalar( $value ) || null === $value ) { project_core_fcc_seed_meta( $ids['shared'], 'fcc_' . $name, (string) $value, 'field_fcc_' . $name ); } }
 	project_core_fcc_seed_meta( $ids['shared'], 'fcc_content_status', 'approved' === $content_status ? 'approved' : 'local_sample', 'field_fcc_content_status' );
 	$products = array();
 	foreach ( $data['products'] as $order => $product ) {
-		$id = project_core_fcc_seed_post( 'fcc_product', 'product_' . $product['id'], $product['name'], $product['slug'], $order, $update_catalog );
+		$id = project_core_fcc_seed_post( 'fcc_product', 'product_' . $product['id'], $product['name'], $product['slug'], $product['menuOrder'] ?? $order, $update_catalog, $product );
 		if ( is_wp_error( $id ) ) { return $id; }
 		$products[ $product['id'] ] = $id;
 		project_core_fcc_seed_meta( $id, '_fcc_source_id', $product['id'] );
 		$ingredient_ids = array();
 		foreach ( $product['actives'] as $index => $ingredient ) {
-			$ingredient_id = project_core_fcc_seed_post( 'fcc_ingredient', 'ingredient_' . $product['id'] . '_' . $index, $ingredient['name'], sanitize_title( $ingredient['name'] ), 0, $update_catalog );
+			$ingredient_id = project_core_fcc_seed_post( 'fcc_ingredient', $ingredient['source'] ?? 'ingredient_' . $product['id'] . '_' . $index, $ingredient['name'], $ingredient['slug'] ?? sanitize_title( $ingredient['name'] ), 0, $update_catalog );
 			if ( is_wp_error( $ingredient_id ) ) { return $ingredient_id; }
 			project_core_fcc_seed_meta( $ingredient_id, 'fcc_tag', $ingredient['tag'], 'field_fcc_tag', $update_catalog );
 			project_core_fcc_seed_meta( $ingredient_id, 'fcc_description', $ingredient['desc'], 'field_fcc_description', $update_catalog );
@@ -166,16 +174,18 @@ function project_core_fcc_import_document( $data, $content_status, $update_catal
 		}
 		project_core_fcc_seed_meta( $id, 'fcc_actives', $ingredient_ids, 'field_fcc_actives', $update_catalog );
 		foreach ( $product as $name => $value ) {
-			if ( in_array( $name, array( 'id', 'name', 'slug', 'gallery', 'actives' ), true ) ) { continue; }
+			if ( in_array( $name, array( 'id', 'name', 'slug', 'gallery', 'actives', 'fields', 'menuOrder', 'content', 'excerpt' ), true ) ) { continue; }
 			$replace = $update_catalog && in_array( $name, $product_fields, true );
 			if ( ! $replace && metadata_exists( 'post', $id, 'fcc_' . $name ) ) { continue; }
 			if ( 'image' === $name ) {
-				$value = project_core_fcc_seed_media( $value ); if ( is_wp_error( $value ) ) { return $value; }
-				if ( '' === get_post_meta( $value, '_wp_attachment_image_alt', true ) ) { update_post_meta( $value, '_wp_attachment_image_alt', $product['name'] ); }
+				$value = $value ? project_core_fcc_seed_media( $value ) : 0; if ( is_wp_error( $value ) ) { return $value; }
+				if ( $value && ! isset( $data['media'] ) && '' === get_post_meta( $value, '_wp_attachment_image_alt', true ) ) { update_post_meta( $value, '_wp_attachment_image_alt', $product['name'] ); }
 			}
 			elseif ( is_array( $value ) && 'skinConcerns' !== $name ) { $value = implode( "\n", $value ); }
+			$value = project_core_fcc_resolve_default( $value ); if ( is_wp_error( $value ) ) { return $value; }
 			project_core_fcc_seed_meta( $id, 'fcc_' . $name, null === $value ? '' : $value, 'field_fcc_' . $name, $replace );
 		}
+		$result = project_core_fcc_seed_snapshot_fields( $id, $product['fields'] ?? array() ); if ( is_wp_error( $result ) ) { return $result; }
 		$replace_gallery = $update_catalog && project_core_fcc_is_seeded_gallery( $id );
 		if ( ! metadata_exists( 'post', $id, '_fcc_gallery_initialized' ) || $replace_gallery ) {
 			$blocks = '';
@@ -191,18 +201,25 @@ function project_core_fcc_import_document( $data, $content_status, $update_catal
 		}
 	}
 	foreach ( $data['combos'] as $combo ) {
-		$id = project_core_fcc_seed_post( 'fcc_combo', 'combo_' . $combo['id'], $combo['name'], sanitize_title( $combo['code'] ) );
+		$id = project_core_fcc_seed_post( 'fcc_combo', 'combo_' . $combo['id'], $combo['name'], $combo['slug'] ?? sanitize_title( $combo['code'] ), $combo['menuOrder'] ?? 0, false, $combo );
 		if ( is_wp_error( $id ) ) { return $id; }
 		foreach ( $combo as $name => $value ) {
-			if ( in_array( $name, array( 'id', 'name' ), true ) ) { continue; }
+			if ( in_array( $name, array( 'id', 'name', 'slug', 'menuOrder', 'content', 'excerpt', 'fields' ), true ) ) { continue; }
 			$replace = $update_catalog && in_array( $name, $combo_fields, true );
 			if ( ! $replace && metadata_exists( 'post', $id, 'fcc_' . $name ) ) { continue; }
-			if ( 'image' === $name ) { $value = project_core_fcc_seed_media( $value ); if ( is_wp_error( $value ) ) { return $value; } }
+			if ( 'image' === $name ) { $value = $value ? project_core_fcc_seed_media( $value ) : 0; if ( is_wp_error( $value ) ) { return $value; } }
 			elseif ( 'productIds' === $name ) { $value = array_map( function ( $source_id ) use ( $products ) { return $products[ $source_id ]; }, $value ); }
 			elseif ( is_array( $value ) ) { $value = implode( "\n", $value ); }
+			$value = project_core_fcc_resolve_default( $value ); if ( is_wp_error( $value ) ) { return $value; }
 			project_core_fcc_seed_meta( $id, 'fcc_' . $name, null === $value ? '' : $value, 'field_fcc_combo_' . $name, $replace );
 		}
+		$result = project_core_fcc_seed_snapshot_fields( $id, $combo['fields'] ?? array() ); if ( is_wp_error( $result ) ) { return $result; }
 	}
+	foreach ( $data['ingredients'] ?? array() as $ingredient ) {
+		$id = project_core_fcc_seed_post( 'fcc_ingredient', $ingredient['source'], $ingredient['name'], $ingredient['slug'] ); if ( is_wp_error( $id ) ) { return $id; }
+		project_core_fcc_seed_meta( $id, 'fcc_tag', $ingredient['tag'], 'field_fcc_tag' ); project_core_fcc_seed_meta( $id, 'fcc_description', $ingredient['desc'], 'field_fcc_description' );
+	}
+	project_core_fcc_seed_snapshot_selections( $data, $ids, $first );
 	project_core_fcc_initialize_featured();
 	project_core_fcc_initialize_home_catalog();
 	if ( $update_catalog && isset( $data['catalogSource']['sha256'] ) ) { update_option( 'project_core_fcc_catalog_source_hash', $data['catalogSource']['sha256'], false ); }

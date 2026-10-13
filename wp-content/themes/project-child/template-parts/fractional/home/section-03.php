@@ -29,15 +29,29 @@
             if ( empty( trim( $brand_img_alt ) ) ) {
                 $brand_img_alt = 'Dòng sản phẩm Fractional CC';
             }
-            $brand_caption = project_child_fcc_text( 'fcc_ui_brand_caption', 'home' );
-            if ( empty( trim( wp_strip_all_tags( $brand_caption ) ) ) ) {
-                $brand_caption = 'Hình ảnh sản phẩm, bao bì và phong cách thương hiệu';
+            $brand_card_title = project_child_fcc_text( 'fcc_ui_brand_card_title', 'home' );
+            if ( empty( trim( wp_strip_all_tags( $brand_card_title ) ) ) ) {
+                $brand_card_title = 'Giảm đến 25% mỹ phẩm & TPCN Nhật';
+            }
+            $brand_card_desc = project_child_fcc_text( 'fcc_ui_brand_card_desc', 'home' );
+            if ( empty( trim( wp_strip_all_tags( $brand_card_desc ) ) ) ) {
+                $brand_card_desc = project_child_fcc_text( 'fcc_ui_brand_caption', 'home' );
+            }
+            if ( empty( trim( wp_strip_all_tags( $brand_card_desc ) ) ) || 'Hình ảnh sản phẩm, bao bì và phong cách thương hiệu' === trim( $brand_card_desc ) ) {
+                $brand_card_desc = 'Deal tốt cho skincare, vitamin và đặc sản Nhật Bản.';
             }
             ?>
             <div class="brand-image-stage">
               <img src="<?php echo esc_url( $brand_img_url ); ?>" alt="<?php echo esc_attr( $brand_img_alt ); ?>" class="brand-lineup-img" loading="lazy">
             </div>
-            <p class="brand-visual-caption"><?php echo $brand_caption; ?></p>
+            <div class="brand-visual-card">
+              <?php if ( ! empty( trim( wp_strip_all_tags( $brand_card_title ) ) ) ) : ?>
+                <h3 class="brand-visual-title heading-serif"><?php echo esc_html( $brand_card_title ); ?></h3>
+              <?php endif; ?>
+              <?php if ( ! empty( trim( wp_strip_all_tags( $brand_card_desc ) ) ) ) : ?>
+                <p class="brand-visual-desc"><?php echo esc_html( $brand_card_desc ); ?></p>
+              <?php endif; ?>
+            </div>
           </div>
           <div class="brand-content-wrap">
             <?php 

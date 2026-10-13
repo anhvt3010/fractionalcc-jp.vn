@@ -11,6 +11,7 @@ $source = $root . '/template/fractional-cc';
 $theme = $root . '/wp-content/themes/project-child';
 $plugin = $root . '/wp-content/plugins/project-core';
 $existing_defaults = json_decode( file_get_contents( $plugin . '/defaults/fractional.json' ), true );
+if ( 'approved' === ( $existing_defaults['approval']['status'] ?? '' ) ) { fwrite( STDERR, "Defaults are approved. Legacy template compilation is disabled; edit the CMS/runtime source and export approved defaults instead.\n" ); exit( 1 ); }
 $existing_schema = json_decode( file_get_contents( $theme . '/inc/fractional-fields.json' ), true );
 $asset_exclusions = json_decode( file_get_contents( __DIR__ . '/fractional-asset-exclusions.json' ), true, 512, JSON_THROW_ON_ERROR );
 if ( ! isset( $asset_exclusions['images'] ) || ! is_array( $asset_exclusions['images'] ) ) { throw new RuntimeException( 'Invalid asset exclusion manifest.' ); }
@@ -29,6 +30,11 @@ $bindings = is_file( $bindings_path ) ? json_decode( file_get_contents( $binding
 if ( ! is_array( $bindings ) ) { throw new RuntimeException( 'Invalid content binding map.' ); }
 
 function fcc_compile_write( $path, $content ) {
+	global $existing_defaults, $theme;
+	// These templates now own editable CMS bindings, rather than static source markup.
+	foreach ( isset( $existing_defaults['contentManagement']['templates'] ) ? $existing_defaults['contentManagement']['templates'] : array() as $template ) {
+		if ( str_replace( '\\', '/', $path ) === str_replace( '\\', '/', $theme . '/' . $template ) && is_file( $path ) ) { return; }
+	}
 	if ( ! is_dir( dirname( $path ) ) ) { mkdir( dirname( $path ), 0775, true ); }
 	if ( false === file_put_contents( $path, $content ) ) { throw new RuntimeException( 'Cannot write ' . $path ); }
 }
@@ -309,6 +315,16 @@ if ( isset( $existing_schema['shared']['Menu điều hướng'] ) ) {
 		$defaults['pages']['shared']['fields'][ $name ] = $existing_defaults['pages']['shared']['fields'][ $name ];
 	}
 }
+if ( isset( $existing_defaults['contentManagement'] ) ) {
+	$defaults['contentManagement'] = $existing_defaults['contentManagement'];
+	$defaults['version'] = $existing_defaults['version'];
+	foreach ( $existing_defaults['contentManagement']['pages'] as $scope => $names ) {
+		foreach ( $names as $name ) {
+			$defaults['pages'][ $scope ]['fields'][ $name ] = $existing_defaults['pages'][ $scope ]['fields'][ $name ];
+			foreach ( $existing_schema[ $scope ] as $section => $fields ) { if ( isset( $fields[ $name ] ) ) { $schemas[ $scope ][ $section ][ $name ] = $fields[ $name ]; } }
+		}
+	}
+}
 fcc_compile_write( $plugin . '/defaults/fractional.json', json_encode( $defaults, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . "\n" );
 fcc_compile_write( $theme . '/inc/fractional-fields.json', json_encode( $schemas, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . "\n" );
 ksort( $bindings );
@@ -328,6 +344,9 @@ foreach ( array_merge( array_keys( $pages ), array( 'shared/header' ) ) as $kind
 	$used = array_merge( $used, $matches[1] );
 }
 $shared_root = realpath( $theme . '/template-parts/fractional/shared' );
+foreach ( isset( $existing_defaults['contentManagement']['templates'] ) ? $existing_defaults['contentManagement']['templates'] : array() as $template ) {
+	$used[] = basename( $template, '.php' );
+}
 foreach ( glob( $shared_root . '/part-*.php' ) as $path ) {
 	$resolved = realpath( $path );
 	if ( ! $resolved || dirname( $resolved ) !== $shared_root || ! preg_match( '/^part-[a-f0-9]{12}\.php$/', basename( $resolved ) ) ) { throw new RuntimeException( 'Unsafe generated-file path.' ); }

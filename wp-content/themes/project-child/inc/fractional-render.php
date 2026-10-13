@@ -46,8 +46,8 @@ function project_child_fcc_asset( $path ) {
 	return get_stylesheet_directory_uri() . '/assets/fractional/' . $path;
 }
 
-function project_child_fcc_image( $field ) {
-	$id = absint( get_post_meta( project_core_fcc_page_id( 'shared' ), $field, true ) );
+function project_child_fcc_image( $field, $scope = 'shared' ) {
+	$id = absint( get_post_meta( project_core_fcc_page_id( $scope ), $field, true ) );
 	return $id ? (string) wp_get_attachment_image_url( $id, 'full' ) : '';
 }
 
@@ -151,22 +151,35 @@ function project_child_fcc_price( $amount ) {
 	return null === $amount || '' === $amount ? 'Liên hệ tư vấn' : number_format( (float) $amount, 0, ',', '.' ) . ' đ';
 }
 
+/** Product/combo scores have one data source, with editable wording. */
+function project_child_fcc_rating_text( $data, $detail = false ) {
+	if ( ! isset( $data['rating'] ) ) { return ''; }
+	$score = (string) $data['rating'];
+	if ( false === strpos( $score, '.' ) ) { $score .= '.0'; }
+	$text = $score . ( $detail ? ' / 5.0' : '' );
+	if ( isset( $data['reviewCount'] ) ) {
+		$label = project_child_fcc_raw_text( $detail ? 'fcc_ui_rating_detail_reviews' : 'fcc_ui_rating_reviews', 'shared' );
+		$text .= ' (' . number_format( (int) $data['reviewCount'], 0, ',', '.' ) . '+ ' . $label . ')';
+	}
+	return $text;
+}
+
 function project_child_fcc_product_value( $name ) {
 	$data = project_core_fcc_product( get_queried_object_id(), 'active_summary' === $name );
 	if ( ! $data ) { return ''; }
 	if ( 'price' === $name ) { return project_child_fcc_price( $data['salePrice'] ); }
 	if ( 'original' === $name ) { return $data['originalPrice'] ? project_child_fcc_price( $data['originalPrice'] ) : ''; }
-	if ( 'saving' === $name ) { return $data['saveAmount'] > 0 ? 'Tiết kiệm ' . project_child_fcc_price( $data['saveAmount'] ) : ''; }
-	if ( 'buy' === $name ) { return $data['salePrice'] ? 'MUA NGAY – ' . project_child_fcc_price( $data['salePrice'] ) : 'MUA NGAY'; }
+	if ( 'saving' === $name ) { return $data['saveAmount'] > 0 ? project_child_fcc_raw_text( 'fcc_ui_saving_prefix', 'shared' ) . ' ' . project_child_fcc_price( $data['saveAmount'] ) : ''; }
+	if ( 'buy' === $name ) { $label = project_child_fcc_raw_text( 'fcc_ui_buy_prefix', 'shared' ); return $data['salePrice'] ? $label . ' – ' . project_child_fcc_price( $data['salePrice'] ) : $label; }
 	if ( 'target_summary' === $name ) { return implode( ' • ', $data['targetUsers'] ); }
 	if ( 'active_summary' === $name ) { return implode( ' • ', wp_list_pluck( $data['actives'], 'name' ) ); }
-	if ( 'callout_title' === $name ) { return $data['spiculeCount'] ? 'CÔNG NGHỆ CHUẨN NHẬT' : 'CHUẨN TOKYO'; }
-	if ( 'callout_subtitle' === $name ) { return $data['spiculeCount'] ?: 'TÁI TẠO TẦNG SÂU'; }
+	if ( 'callout_title' === $name ) { return get_post_meta( $data['id'], 'fcc_detail_callout_title', true ) ?: ( $data['spiculeCount'] ? project_child_fcc_raw_text( 'fcc_ui_callout_technology', 'shared' ) : project_child_fcc_raw_text( 'fcc_ui_callout_default_title', 'shared' ) ); }
+	if ( 'callout_subtitle' === $name ) { return get_post_meta( $data['id'], 'fcc_detail_callout_subtitle', true ) ?: ( $data['spiculeCount'] ?: project_child_fcc_raw_text( 'fcc_ui_callout_default_subtitle', 'shared' ) ); }
 	return isset( $data[ $name ] ) && is_scalar( $data[ $name ] ) ? (string) $data[ $name ] : '';
 }
 
 function project_child_fcc_order_options() {
-	echo '<option value="">Chọn Combo hoặc Sản phẩm</option>';
+	echo '<option value="">' . esc_html( project_child_fcc_raw_text( 'fcc_ui_choose_item', 'shared' ) ) . '</option>';
 	$data = project_core_fcc_frontend_data();
 	foreach ( $data['combos'] as $combo ) { echo '<option value="combo_' . esc_attr( $combo['id'] ) . '">' . esc_html( $combo['name'] . ' – ' . project_child_fcc_price( $combo['salePrice'] ) ) . '</option>'; }
 	foreach ( $data['products'] as $product ) { echo '<option value="prod_' . esc_attr( $product['id'] ) . '"' . selected( get_queried_object_id(), $product['id'], false ) . '>' . esc_html( $product['shortName'] . ' – ' . project_child_fcc_price( $product['salePrice'] ) ) . '</option>'; }

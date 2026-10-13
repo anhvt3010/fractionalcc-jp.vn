@@ -12,11 +12,11 @@
         </div>
 
 
-        <div style="margin-top: 40px; text-align: center; background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--shadow-sm);">
-          <p style="font-size: 15px; font-weight: 600; color: var(--color-text-main); margin-bottom: 12px;">
+        <div class="fcc-catalog-more-box">
+          <p class="fcc-catalog-more-text">
             <?php echo project_child_fcc_text( 'fcc_ui_573d0aefa67d9b', 'home' ); ?>
           </p>
-          <a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>" class="btn btn-outline" style="font-size: 14px; padding: 12px 28px;">
+          <a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>" class="btn btn-outline fcc-catalog-more-btn">
             <?php echo project_child_fcc_text( 'fcc_ui_839b3de79eb53b', 'home', false ); ?>
           </a>
         </div>

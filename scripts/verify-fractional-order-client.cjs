@@ -2,6 +2,8 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
+const defaults = JSON.parse(fs.readFileSync('wp-content/plugins/project-core/defaults/fractional.json', 'utf8'));
+const labels = Object.fromEntries(Object.entries(defaults.contentManagement.clientLabels).map(([key, name]) => [key, defaults.pages.shared.fields[name].value]));
 const forms = [];
 let fetchCalls = 0;
 let reply = { success: true, data: { orderCode: 'TEST', redirectUrl: '/cam-on/' } };
@@ -11,7 +13,7 @@ const sandbox = {
     querySelectorAll(selector) { return selector === 'form' ? forms : []; },
     createElement() { return { setAttribute() {}, textContent: '' }; }
   },
-  window: { FCC_CONFIG: { nonce: 'config-nonce', ajaxUrl: '/wp-admin/admin-ajax.php' }, location: {} },
+  window: { FCC_CONFIG: { nonce: 'config-nonce', ajaxUrl: '/wp-admin/admin-ajax.php', labels }, location: {} },
   sessionStorage: { setItem() {} }, setTimeout() {}, console,
   FormData: class {
     constructor(form) { this.values = new Map(Object.entries(form.values)); }

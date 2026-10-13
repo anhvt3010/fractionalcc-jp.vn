@@ -153,7 +153,7 @@
               <h3 style="font-size: 16px; margin: 18px 0 10px; color: var(--color-primary);"><?php echo project_child_fcc_text( 'fcc_ui_1dc1abb1f5f624', 'policies' ); ?></h3>
               <ul>
                 <li><strong><?php echo project_child_fcc_text( 'fcc_ui_d139d0104af1f1', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_c1ba563b9871d6', 'policies' ); ?></li>
-                <li><strong><?php echo project_child_fcc_text( 'fcc_ui_6dbccd4e8f062f', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_64f415c6d1c400', 'policies' ); ?> <code>0985 561 862</code><?php echo project_child_fcc_text( 'fcc_ui_974a12a81f8b5c', 'policies' ); ?></li>
+                <li><strong><?php echo project_child_fcc_text( 'fcc_ui_6dbccd4e8f062f', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_64f415c6d1c400', 'policies' ); ?> <code><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></code><?php echo project_child_fcc_text( 'fcc_ui_974a12a81f8b5c', 'policies' ); ?></li>
               </ul>
             </div>
           </article>
@@ -210,7 +210,7 @@
               <p><?php echo project_child_fcc_text( 'fcc_ui_352957fa4aa925', 'policies' ); ?></p>
 
               <ol>
-                <li><strong><?php echo project_child_fcc_text( 'fcc_ui_3078a4e8be5f03', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_29fc9490f43d63', 'policies' ); ?> <code>0985 561 862</code> <?php echo project_child_fcc_text( 'fcc_ui_037ff33a2a220a', 'policies' ); ?> <code><?php echo project_child_fcc_text( 'fcc_ui_7496ba7d0c475a', 'policies' ); ?></code><?php echo project_child_fcc_text( 'fcc_ui_e344bb52d30078', 'policies' ); ?></li>
+                <li><strong><?php echo project_child_fcc_text( 'fcc_ui_3078a4e8be5f03', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_29fc9490f43d63', 'policies' ); ?> <code><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></code> <?php echo project_child_fcc_text( 'fcc_ui_037ff33a2a220a', 'policies' ); ?> <code><?php echo project_child_fcc_text( 'fcc_ui_7496ba7d0c475a', 'policies' ); ?></code><?php echo project_child_fcc_text( 'fcc_ui_e344bb52d30078', 'policies' ); ?></li>
                 <li><strong><?php echo project_child_fcc_text( 'fcc_ui_da7e74dd5aceb6', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_70d7e8b71cf734', 'policies' ); ?></li>
                 <li><strong><?php echo project_child_fcc_text( 'fcc_ui_a35831dbf051fe', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_9e38574d174260', 'policies' ); ?></li>
               </ol>
@@ -220,7 +220,7 @@
                 <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--color-text-body);">
                   <strong><?php echo project_child_fcc_text( 'fcc_ui_b2f17719051e8c', 'policies' ); ?></strong><br>
                   <?php echo project_child_fcc_text( 'fcc_ui_a7422ed566e213', 'policies' ); ?><br>
-                  <?php echo project_child_fcc_text( 'fcc_ui_8f73760042b523', 'policies' ); ?> <strong>0985 561 862</strong><br>
+                  <?php echo project_child_fcc_text( 'fcc_ui_8f73760042b523', 'policies' ); ?> <strong><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></strong><br>
                   <?php echo project_child_fcc_text( 'fcc_ui_6d11f04edb7c01', 'policies' ); ?> <strong><?php echo project_child_fcc_text( 'fcc_ui_7496ba7d0c475a', 'policies' ); ?></strong>
                 </p>
               </div>

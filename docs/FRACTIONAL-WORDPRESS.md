@@ -1,5 +1,7 @@
 # Chuyển template Fractional CC sang WordPress
 
+> Ch?t 14/10/2026: to?n b? n?i dung/s?n ph?m/media/ph?c ?? hi?n t?i ?? ???c duy?t l?m [defaults 1.0.0](APPROVED-DEFAULTS.md). C?c release c? ?? x?a; [release ??u ti?n](../release/v1.0.0/RELEASE.md) l? h? s? hi?n h?nh. C?c m? t? ch? duy?t/local_sample c?a b?n tr??c d??i ??y l? l?ch s?.
+
 ## Trạng thái ngày 12/10/2026
 
 Đã chuyển 5 mẫu giao diện trong `template/fractional-cc` sang PHP trong child theme hiện có, bổ sung mô hình nội dung và khởi tạo dữ liệu mặc định trong plugin hiện có. Parent Kadence, WordPress core và ACF không bị sửa source. Dùng ACF miễn phí, không thêm page builder, ACF PRO hoặc dependency frontend.

@@ -30,7 +30,7 @@ function project_core_render_website_guide() {
 		<table class="widefat striped">
 			<thead><tr><th><?php echo esc_html__( 'Nội dung', 'project-core' ); ?></th><th><?php echo esc_html__( 'Thao tác', 'project-core' ); ?></th></tr></thead>
 			<tbody>
-			<?php foreach ( array( 'shared' => 'Thông tin liên hệ, logo và giao diện chung', 'home' => 'Trang chủ', 'catalog' => 'Danh mục sản phẩm', 'policies' => 'Chính sách', 'thankyou' => 'Trang cảm ơn' ) as $kind => $label ) : ?>
+			<?php foreach ( array( 'shared' => 'Thông tin liên hệ, logo và giao diện chung', 'home' => 'Trang chủ', 'catalog' => 'Danh mục sản phẩm', 'concerns' => 'Vấn đề làn da & phác đồ', 'policies' => 'Chính sách', 'thankyou' => 'Trang cảm ơn' ) as $kind => $label ) : ?>
 				<?php $id = isset( $pages[ $kind ] ) ? absint( $pages[ $kind ] ) : 0; ?>
 				<?php if ( ! $id || ! current_user_can( 'edit_post', $id ) ) { continue; } ?>
 				<tr><td><?php echo esc_html( $label ); ?></td><td><a class="button" href="<?php echo esc_url( get_edit_post_link( $id, 'raw' ) ); ?>"><?php echo esc_html__( 'Chỉnh sửa', 'project-core' ); ?></a><?php if ( 'shared' !== $kind ) : ?> <a class="button" href="<?php echo esc_url( get_permalink( $id ) ); ?>"><?php echo esc_html__( 'Xem trang', 'project-core' ); ?></a><?php endif; ?></td></tr>
@@ -51,6 +51,9 @@ function project_core_render_website_guide() {
 			<li><?php echo esc_html__( 'Thêm ảnh chi tiết bằng block Thư viện ảnh trong trình soạn thảo sản phẩm. Chọn hoạt chất trong trường liên kết, kéo để sắp xếp.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Để chọn thẻ trong Danh Mục Sản Phẩm & Các Combo Tối Ưu trên trang chủ, mở từng Sản phẩm hoặc Combo, bật Hiển thị trong danh mục trang chủ và nhập thứ tự. Tổng cộng tối đa 6 mục; bỏ chọn một mục trước khi thêm mục mới. Lựa chọn này độc lập với 2 sản phẩm chủ lực.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Nhấn Cập nhật rồi Xem trang. Không thay thiết kế hoặc thêm nội dung chưa được duyệt.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Mở Vấn đề làn da & phác đồ để sửa chữ, chọn ảnh theo từng tình trạng, nguyên tắc, tư vấn và SEO. Nhóm Gợi ý phác đồ quản lý sản phẩm/combo và thứ tự, tối đa 6 mục mỗi tình trạng. Lựa chọn sản phẩm lưu trên site này, chưa đưa vào dữ liệu mặc định khởi tạo.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Trong Trang chủ, nhóm Công nghệ – nội dung chi tiết quản lý ảnh và các đoạn giải thích; nhóm Chu trình – video quản lý liên kết video hướng dẫn. Trong Thông tin chung, nhóm Form đặt hàng quản lý chính sách tóm tắt cạnh form, các nhóm Nhãn và Thông báo quản lý chữ nút, nhãn và thông báo tương tác. Hotline hiển thị và liên kết gọi đều lấy cấu hình Liên hệ dùng chung.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Điểm/số đánh giá sản phẩm được dùng cho cả danh mục và chi tiết; combo có điểm/số đánh giá riêng trong editor Combo. Mỗi trang có ảnh chia sẻ ở tab SEO; favicon nằm trong Thông tin chung. Sản phẩm có nhóm SEO & nhãn ảnh riêng, để trống để dùng dữ liệu sản phẩm.', 'project-core' ); ?></li>
 		</ol>
 		<?php if ( current_user_can( 'manage_options' ) ) : ?>
 		<h2><?php echo esc_html__( 'Khởi tạo dữ liệu mặc định', 'project-core' ); ?></h2>

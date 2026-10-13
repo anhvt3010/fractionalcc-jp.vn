@@ -410,6 +410,11 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
+.concern-products-grid .concern-combo-card-compact {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
 @media (min-width: 640px) {
   .concern-combo-card-compact {
     flex-direction: row;

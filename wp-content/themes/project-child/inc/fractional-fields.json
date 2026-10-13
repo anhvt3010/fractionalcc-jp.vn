@@ -12,6 +12,18 @@
                 "name": "fcc_home_seo_description",
                 "label": "Mô tả SEO – Trang chủ",
                 "type": "textarea"
+            },
+            "fcc_home_seo_image": {
+                "key": "field_fcc_home_seo_image",
+                "name": "fcc_home_seo_image",
+                "label": "Ảnh chia sẻ mạng xã hội",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại SEO. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
             }
         },
         "hero-section": {
@@ -745,6 +757,24 @@
                 "key": "field_fcc_ui_brand_image_alt",
                 "name": "fcc_ui_brand_image_alt",
                 "label": "Mô tả ảnh thương hiệu (alt text)",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_brand_card_title": {
+                "key": "field_fcc_ui_brand_card_title",
+                "name": "fcc_ui_brand_card_title",
+                "label": "Tiêu đề thẻ kính nổi trên ảnh",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_brand_card_desc": {
+                "key": "field_fcc_ui_brand_card_desc",
+                "name": "fcc_ui_brand_card_desc",
+                "label": "Mô tả thẻ kính nổi trên ảnh",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3929,6 +3959,351 @@
                 "fcc_inline": false,
                 "fcc_refresh": true
             }
+        },
+        "Công nghệ – nội dung chi tiết": {
+            "fcc_ui_m_03206086d152": {
+                "key": "field_fcc_ui_m_03206086d152",
+                "name": "fcc_ui_m_03206086d152",
+                "label": "Nội dung: Ứng dụng công nghệ vi kim mỹ phẩm với các vi cấu trúc từ bọt biển thủy phân (Hydrolyzed Sp",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_6fc8b85fa590": {
+                "key": "field_fcc_ui_m_6fc8b85fa590",
+                "name": "fcc_ui_m_6fc8b85fa590",
+                "label": "Nội dung: Kết hợp PDRN (DNA-Na từ cá hồi), Retinol và NMN theo công thức riêng của từng dòng sản phẩ",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_1531ec996f1e": {
+                "key": "field_fcc_ui_m_1531ec996f1e",
+                "name": "fcc_ui_m_1531ec996f1e",
+                "label": "Nội dung: Có thể xuất hiện cảm giác châm chích nhẹ khi sử dụng; thoa trên da sạch trước bước dưỡng ẩ",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_c2cd8def125e": {
+                "key": "field_fcc_ui_m_c2cd8def125e",
+                "name": "fcc_ui_m_c2cd8def125e",
+                "label": "Nội dung: Các dòng tẩy da chết Mandelic, Needle Serum A/C/AX4/CX4, mặt nạ, PDRN Shot và dưỡng môi ph",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_7a2188a8a844": {
+                "key": "field_fcc_ui_m_7a2188a8a844",
+                "name": "fcc_ui_m_7a2188a8a844",
+                "label": "Nhãn / thuộc tính: Công nghệ vi kim mỹ phẩm và các thành phần chăm sóc da Fractional CC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_fc2ea2b80d3f": {
+                "key": "field_fcc_ui_m_fc2ea2b80d3f",
+                "name": "fcc_ui_m_fc2ea2b80d3f",
+                "label": "Nội dung: Hình ảnh minh họa: Công nghệ vi kim và các thành phần chăm sóc da theo tài liệu thương hiệ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_cedd7a76f83f": {
+                "key": "field_fcc_ui_m_cedd7a76f83f",
+                "name": "fcc_ui_m_cedd7a76f83f",
+                "label": "Nội dung: CÔNG NGHỆ & THÀNH PHẦN NỔI BẬT",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_dc1f79aa308a": {
+                "key": "field_fcc_ui_m_dc1f79aa308a",
+                "name": "fcc_ui_m_dc1f79aa308a",
+                "label": "Nội dung: Công Nghệ Vi Kim Mỹ Phẩm & Thành Phần Theo Từng Nhu Cầu",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_f56226b10a9c": {
+                "key": "field_fcc_ui_m_f56226b10a9c",
+                "name": "fcc_ui_m_f56226b10a9c",
+                "label": "Nội dung: Fractional CC ứng dụng công nghệ vi kim mỹ phẩm với các vi cấu trúc có nguồn gốc từ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_492d6c32126b": {
+                "key": "field_fcc_ui_m_492d6c32126b",
+                "name": "fcc_ui_m_492d6c32126b",
+                "label": "Nội dung: bọt biển thủy phân (Hydrolyzed Sponge)",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_6b4df3f10347": {
+                "key": "field_fcc_ui_m_6b4df3f10347",
+                "name": "fcc_ui_m_6b4df3f10347",
+                "label": "Nội dung: , kết hợp cùng các thành phần dưỡng da trong công thức riêng của từng sản phẩm. Mang đến t",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_26fb250cfecd": {
+                "key": "field_fcc_ui_m_26fb250cfecd",
+                "name": "fcc_ui_m_26fb250cfecd",
+                "label": "Nội dung: PDRN – Chăm sóc da chuyên sâu",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_6515f3a1f865": {
+                "key": "field_fcc_ui_m_6515f3a1f865",
+                "name": "fcc_ui_m_6515f3a1f865",
+                "label": "Nội dung: Hỗ trợ duy trì độ ẩm, cải thiện vẻ ngoài khỏe khoắn và độ mịn màng của làn da. Nổi bật tro",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_11f49cae9df5": {
+                "key": "field_fcc_ui_m_11f49cae9df5",
+                "name": "fcc_ui_m_11f49cae9df5",
+                "label": "Nội dung: Retinol – Chăm sóc da lão hóa",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_5eba64a2dc1f": {
+                "key": "field_fcc_ui_m_5eba64a2dc1f",
+                "name": "fcc_ui_m_5eba64a2dc1f",
+                "label": "Nội dung: Hỗ trợ cải thiện bề mặt da, độ mịn và các dấu hiệu lão hóa. Phù hợp với chu trình chăm sóc",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_0bd5bb62a9bc": {
+                "key": "field_fcc_ui_m_0bd5bb62a9bc",
+                "name": "fcc_ui_m_0bd5bb62a9bc",
+                "label": "Nội dung: NMN – Bổ sung vào chu trình chăm sóc da",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_c4429fdee486": {
+                "key": "field_fcc_ui_m_c4429fdee486",
+                "name": "fcc_ui_m_c4429fdee486",
+                "label": "Nội dung: Thành phần NMN có mặt trong công thức Needle Serum A và AX4, kết hợp cùng các thành phần d",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_335f689dce84": {
+                "key": "field_fcc_ui_m_335f689dce84",
+                "name": "fcc_ui_m_335f689dce84",
+                "label": "Nội dung: THÔNG TIN SẢN PHẨM AX4",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_c193669975d2": {
+                "key": "field_fcc_ui_m_c193669975d2",
+                "name": "fcc_ui_m_c193669975d2",
+                "label": "Nội dung: 600.000 VI KIM",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_643b64fca7c8": {
+                "key": "field_fcc_ui_m_643b64fca7c8",
+                "name": "fcc_ui_m_643b64fca7c8",
+                "label": "Nội dung: Điểm nổi bật là dòng",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_5cf4fd1cc7b3": {
+                "key": "field_fcc_ui_m_5cf4fd1cc7b3",
+                "name": "fcc_ui_m_5cf4fd1cc7b3",
+                "label": "Nội dung: Needle Serum AX4",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_1604c8058164": {
+                "key": "field_fcc_ui_m_1604c8058164",
+                "name": "fcc_ui_m_1604c8058164",
+                "label": "Nội dung: được hãng giới thiệu có lượng vi kim gấp",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_61782c8b11bb": {
+                "key": "field_fcc_ui_m_61782c8b11bb",
+                "name": "fcc_ui_m_61782c8b11bb",
+                "label": "Nội dung: 4 lần",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_44659c22eda2": {
+                "key": "field_fcc_ui_m_44659c22eda2",
+                "name": "fcc_ui_m_44659c22eda2",
+                "label": "Nội dung: Needle Serum A, tương đương khoảng",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_8d4feacdb3fc": {
+                "key": "field_fcc_ui_m_8d4feacdb3fc",
+                "name": "fcc_ui_m_8d4feacdb3fc",
+                "label": "Nội dung: 600.000 vi kim",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_5eca3007bb75": {
+                "key": "field_fcc_ui_m_5eca3007bb75",
+                "name": "fcc_ui_m_5eca3007bb75",
+                "label": "Nội dung: theo thông tin sản phẩm.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_ab30ba7fd2c0": {
+                "key": "field_fcc_ui_m_ab30ba7fd2c0",
+                "name": "fcc_ui_m_ab30ba7fd2c0",
+                "label": "Nội dung: TRẢI NGHIỆM SỬ DỤNG",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_3e4fdc742dfd": {
+                "key": "field_fcc_ui_m_3e4fdc742dfd",
+                "name": "fcc_ui_m_3e4fdc742dfd",
+                "label": "Nội dung: Trải Nghiệm Sử Dụng, Cảm Giác Trên Da & Vị Trí Skincare",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_777a11e43efc": {
+                "key": "field_fcc_ui_m_777a11e43efc",
+                "name": "fcc_ui_m_777a11e43efc",
+                "label": "Nội dung: Tùy từng dòng serum, sản phẩm có thể mang lại cảm giác đặc trưng khi thoa do chứa thành ph",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_9e881650e66d": {
+                "key": "field_fcc_ui_m_9e881650e66d",
+                "name": "fcc_ui_m_9e881650e66d",
+                "label": "Nội dung: Cảm giác trên da",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_46bc3f224820": {
+                "key": "field_fcc_ui_m_46bc3f224820",
+                "name": "fcc_ui_m_46bc3f224820",
+                "label": "Nội dung: Có thể xuất hiện cảm giác châm chích nhẹ khi sử dụng. Mức độ cảm nhận tùy thuộc vào sản ph",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_90436c65261d": {
+                "key": "field_fcc_ui_m_90436c65261d",
+                "name": "fcc_ui_m_90436c65261d",
+                "label": "Nội dung: Cách dùng",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_6f4b3c1262c8": {
+                "key": "field_fcc_ui_m_6f4b3c1262c8",
+                "name": "fcc_ui_m_6f4b3c1262c8",
+                "label": "Nội dung: Thực hiện theo hướng dẫn riêng của từng sản phẩm; với serum vi kim, nên thoa trên da sạch ",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_a573c3d5d316": {
+                "key": "field_fcc_ui_m_a573c3d5d316",
+                "name": "fcc_ui_m_a573c3d5d316",
+                "label": "Nội dung: Lưu ý khi sử dụng",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_8b213687c068": {
+                "key": "field_fcc_ui_m_8b213687c068",
+                "name": "fcc_ui_m_8b213687c068",
+                "label": "Nội dung: Làm quen từ từ, tránh vùng mắt và không sử dụng trên vùng da tổn thương. Kết hợp kem chống",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_722d801f8aa1": {
+                "key": "field_fcc_ui_m_722d801f8aa1",
+                "name": "fcc_ui_m_722d801f8aa1",
+                "label": "Nhãn / thuộc tính: Hướng dẫn sử dụng và chu trình chăm sóc da Fractional CC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_be68bc224ffb": {
+                "key": "field_fcc_ui_m_be68bc224ffb",
+                "name": "fcc_ui_m_be68bc224ffb",
+                "label": "Nội dung: Hình ảnh hướng dẫn: Chu trình chăm sóc da và thứ tự sử dụng theo tài liệu sản phẩm",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_mechanism_breakthrough_image": {
+                "key": "field_fcc_ui_mechanism_breakthrough_image",
+                "name": "fcc_ui_mechanism_breakthrough_image",
+                "label": "Ảnh công nghệ & thành phần",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
+            },
+            "fcc_ui_mechanism_routine_image": {
+                "key": "field_fcc_ui_mechanism_routine_image",
+                "name": "fcc_ui_mechanism_routine_image",
+                "label": "Ảnh chu trình & cách dùng",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
+            }
+        },
+        "Chu trình – video": {
+            "fcc_home_routine_video_url": {
+                "key": "field_fcc_home_routine_video_url",
+                "name": "fcc_home_routine_video_url",
+                "label": "Liên kết video hướng dẫn",
+                "type": "url",
+                "instructions": "Nội dung hiển thị tại Chu trình – video. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "fcc_refresh": true
+            }
         }
     },
     "shared": {
@@ -5804,6 +6179,566 @@
                 "type": "text",
                 "instructions": "Nhãn menu dùng chung trên tất cả trang và kích thước màn hình."
             }
+        },
+        "Form đặt hàng – liên hệ & chính sách": {
+            "fcc_ui_m_4f498b8722ef": {
+                "key": "field_fcc_ui_m_4f498b8722ef",
+                "name": "fcc_ui_m_4f498b8722ef",
+                "label": "Nội dung: Kênh Liên Hệ & Tư Vấn Trực Tiếp",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_92a089a749c6": {
+                "key": "field_fcc_ui_m_92a089a749c6",
+                "name": "fcc_ui_m_92a089a749c6",
+                "label": "Nội dung: Hotline:",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_d3dbd43eb42f": {
+                "key": "field_fcc_ui_m_d3dbd43eb42f",
+                "name": "fcc_ui_m_d3dbd43eb42f",
+                "label": "Nội dung: Email:",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_db25d68f6300": {
+                "key": "field_fcc_ui_m_db25d68f6300",
+                "name": "fcc_ui_m_db25d68f6300",
+                "label": "Nội dung: Chat Zalo",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_5c77cd896de7": {
+                "key": "field_fcc_ui_m_5c77cd896de7",
+                "name": "fcc_ui_m_5c77cd896de7",
+                "label": "Nội dung: Messenger",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_f412d16b3a3e": {
+                "key": "field_fcc_ui_m_f412d16b3a3e",
+                "name": "fcc_ui_m_f412d16b3a3e",
+                "label": "Nội dung: Hotline: 0985 561 862",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_a4ad94c43d5b": {
+                "key": "field_fcc_ui_m_a4ad94c43d5b",
+                "name": "fcc_ui_m_a4ad94c43d5b",
+                "label": "Nội dung: Chính Sách Giao Hàng & Thanh Toán",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_df7e31188f91": {
+                "key": "field_fcc_ui_m_df7e31188f91",
+                "name": "fcc_ui_m_df7e31188f91",
+                "label": "Nội dung: Giao hàng:",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_68273e5a84bb": {
+                "key": "field_fcc_ui_m_68273e5a84bb",
+                "name": "fcc_ui_m_68273e5a84bb",
+                "label": "Nội dung: Toàn quốc, thời gian dự kiến 2–5 ngày làm việc.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_fb7037579c0c": {
+                "key": "field_fcc_ui_m_fb7037579c0c",
+                "name": "fcc_ui_m_fb7037579c0c",
+                "label": "Nội dung: Phí vận chuyển:",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_a2a451396944": {
+                "key": "field_fcc_ui_m_a2a451396944",
+                "name": "fcc_ui_m_a2a451396944",
+                "label": "Nội dung: Thông báo khi xác nhận đơn hàng.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_89b96c48a7e5": {
+                "key": "field_fcc_ui_m_89b96c48a7e5",
+                "name": "fcc_ui_m_89b96c48a7e5",
+                "label": "Nội dung: Thanh toán:",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_2781e65c6bfe": {
+                "key": "field_fcc_ui_m_2781e65c6bfe",
+                "name": "fcc_ui_m_2781e65c6bfe",
+                "label": "Nội dung: Chuyển khoản ngân hàng hoặc thanh toán khi nhận hàng (COD).",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_63d5110e4475": {
+                "key": "field_fcc_ui_m_63d5110e4475",
+                "name": "fcc_ui_m_63d5110e4475",
+                "label": "Nội dung: Kiểm tra hàng:",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_c2a91961cf47": {
+                "key": "field_fcc_ui_m_c2a91961cf47",
+                "name": "fcc_ui_m_c2a91961cf47",
+                "label": "Nội dung: Vui lòng kiểm tra sản phẩm khi nhận hàng.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_65d268dfc2a2": {
+                "key": "field_fcc_ui_m_65d268dfc2a2",
+                "name": "fcc_ui_m_65d268dfc2a2",
+                "label": "Nội dung: ✓ Phân phối độc quyền BUI DANG-JP",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_f0739114e699": {
+                "key": "field_fcc_ui_m_f0739114e699",
+                "name": "fcc_ui_m_f0739114e699",
+                "label": "Nội dung: ✓ 100% Chính hãng Nhật Bản",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            }
+        },
+        "Nhãn thẻ sản phẩm & combo": {
+            "fcc_ui_m_d43decf568f2": {
+                "key": "field_fcc_ui_m_d43decf568f2",
+                "name": "fcc_ui_m_d43decf568f2",
+                "label": "Nội dung: Số CBMP:",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_33b5b579e52f": {
+                "key": "field_fcc_ui_m_33b5b579e52f",
+                "name": "fcc_ui_m_33b5b579e52f",
+                "label": "Nội dung: Chi tiết",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_b2d24c22f0ff": {
+                "key": "field_fcc_ui_m_b2d24c22f0ff",
+                "name": "fcc_ui_m_b2d24c22f0ff",
+                "label": "Nội dung: Đặt mua",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_0154b155cb8d": {
+                "key": "field_fcc_ui_m_0154b155cb8d",
+                "name": "fcc_ui_m_0154b155cb8d",
+                "label": "Nội dung: Bộ Đôi Chăm Sóc Da •",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_878351020275": {
+                "key": "field_fcc_ui_m_878351020275",
+                "name": "fcc_ui_m_878351020275",
+                "label": "Nội dung: COMBO",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_13f5d50dabf4": {
+                "key": "field_fcc_ui_m_13f5d50dabf4",
+                "name": "fcc_ui_m_13f5d50dabf4",
+                "label": "Nội dung: Đặt mua Combo",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_d377ac936d0f": {
+                "key": "field_fcc_ui_m_d377ac936d0f",
+                "name": "fcc_ui_m_d377ac936d0f",
+                "label": "Nội dung: Xem chi tiết",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_64ef9f9f2c6c": {
+                "key": "field_fcc_ui_m_64ef9f9f2c6c",
+                "name": "fcc_ui_m_64ef9f9f2c6c",
+                "label": "Nội dung: QUÀ TẶNG:",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_rating_reviews": {
+                "key": "field_fcc_ui_rating_reviews",
+                "name": "fcc_ui_rating_reviews",
+                "label": "Nhãn số đánh giá",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_rating_detail_reviews": {
+                "key": "field_fcc_ui_rating_detail_reviews",
+                "name": "fcc_ui_rating_detail_reviews",
+                "label": "Nhãn đánh giá ở trang chi tiết",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_card_detail": {
+                "key": "field_fcc_ui_card_detail",
+                "name": "fcc_ui_card_detail",
+                "label": "Nút xem chi tiết",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_card_buy": {
+                "key": "field_fcc_ui_card_buy",
+                "name": "fcc_ui_card_buy",
+                "label": "Nút đặt mua",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_combo_gift_prefix": {
+                "key": "field_fcc_ui_combo_gift_prefix",
+                "name": "fcc_ui_combo_gift_prefix",
+                "label": "Nhãn quà tặng",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_combo_buy": {
+                "key": "field_fcc_ui_combo_buy",
+                "name": "fcc_ui_combo_buy",
+                "label": "Nút mua combo liên quan",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_combo_bestseller": {
+                "key": "field_fcc_ui_combo_bestseller",
+                "name": "fcc_ui_combo_bestseller",
+                "label": "Nhãn bán chạy",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_choose_item": {
+                "key": "field_fcc_ui_choose_item",
+                "name": "fcc_ui_choose_item",
+                "label": "Lựa chọn sản phẩm trống",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_buy_prefix": {
+                "key": "field_fcc_ui_buy_prefix",
+                "name": "fcc_ui_buy_prefix",
+                "label": "Tiền tố nút mua sản phẩm",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_callout_technology": {
+                "key": "field_fcc_ui_callout_technology",
+                "name": "fcc_ui_callout_technology",
+                "label": "Callout khi có thông tin vi kim",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_callout_default_title": {
+                "key": "field_fcc_ui_callout_default_title",
+                "name": "fcc_ui_callout_default_title",
+                "label": "Callout mặc định – tiêu đề",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_callout_default_subtitle": {
+                "key": "field_fcc_ui_callout_default_subtitle",
+                "name": "fcc_ui_callout_default_subtitle",
+                "label": "Callout mặc định – mô tả",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_saving_prefix": {
+                "key": "field_fcc_ui_saving_prefix",
+                "name": "fcc_ui_saving_prefix",
+                "label": "Nhãn số tiền tiết kiệm",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            }
+        },
+        "Ảnh chia sẻ & biểu tượng": {
+            "fcc_site_favicon": {
+                "key": "field_fcc_site_favicon",
+                "name": "fcc_site_favicon",
+                "label": "Biểu tượng website (favicon)",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại Ảnh chia sẻ & biểu tượng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
+            }
+        },
+        "Nhãn giao diện dùng chung": {
+            "fcc_ui_m_4ff6a4a13bca": {
+                "key": "field_fcc_ui_m_4ff6a4a13bca",
+                "name": "fcc_ui_m_4ff6a4a13bca",
+                "label": "Nhãn / thuộc tính: Kênh liên hệ nhanh",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn giao diện dùng chung. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_11c56f1da0dd": {
+                "key": "field_fcc_ui_m_11c56f1da0dd",
+                "name": "fcc_ui_m_11c56f1da0dd",
+                "label": "Nhãn / thuộc tính: Chat Zalo tư vấn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn giao diện dùng chung. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_e49c4bed29ca": {
+                "key": "field_fcc_ui_m_e49c4bed29ca",
+                "name": "fcc_ui_m_e49c4bed29ca",
+                "label": "Nhãn / thuộc tính: Gọi Hotline 0985 561 862",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn giao diện dùng chung. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_6a7a3ceef1f1": {
+                "key": "field_fcc_ui_m_6a7a3ceef1f1",
+                "name": "fcc_ui_m_6a7a3ceef1f1",
+                "label": "Nhãn / thuộc tính: Cuộn lên đầu trang",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn giao diện dùng chung. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_acb57503d846": {
+                "key": "field_fcc_ui_m_acb57503d846",
+                "name": "fcc_ui_m_acb57503d846",
+                "label": "Nhãn / thuộc tính: Đóng",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn giao diện dùng chung. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_a613489f0d9c": {
+                "key": "field_fcc_ui_m_a613489f0d9c",
+                "name": "fcc_ui_m_a613489f0d9c",
+                "label": "Nội dung: Vấn đề làn da & Giải pháp",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn giao diện dùng chung. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            }
+        },
+        "Nhãn giao diện sản phẩm": {
+            "fcc_ui_m_19d74a6b4cae": {
+                "key": "field_fcc_ui_m_19d74a6b4cae",
+                "name": "fcc_ui_m_19d74a6b4cae",
+                "label": "Nhãn / thuộc tính: Thông tin sản phẩm",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn giao diện sản phẩm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_gallery_view": {
+                "key": "field_fcc_ui_gallery_view",
+                "name": "fcc_ui_gallery_view",
+                "label": "Nhãn nút chọn ảnh",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn giao diện sản phẩm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            }
+        },
+        "Thông báo biểu mẫu & tương tác": {
+            "fcc_ui_msg_d8d095a87f": {
+                "key": "field_fcc_ui_msg_d8d095a87f",
+                "name": "fcc_ui_msg_d8d095a87f",
+                "label": "Thông báo: Vui lòng tích ô đồng ý với điều khoản tư vấn và chính sách bảo mật trước khi gửi.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_a21859c45a": {
+                "key": "field_fcc_ui_msg_a21859c45a",
+                "name": "fcc_ui_msg_a21859c45a",
+                "label": "Thông báo: Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_e1b8f395d0": {
+                "key": "field_fcc_ui_msg_e1b8f395d0",
+                "name": "fcc_ui_msg_e1b8f395d0",
+                "label": "Thông báo: -- Chọn Combo hoặc Sản Phẩm --",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_68b970cb65": {
+                "key": "field_fcc_ui_msg_68b970cb65",
+                "name": "fcc_ui_msg_68b970cb65",
+                "label": "Thông báo: ★ CÁC COMBO TIẾT KIỆM (KHUYÊN DÙNG)",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_8b95d518e7": {
+                "key": "field_fcc_ui_msg_8b95d518e7",
+                "name": "fcc_ui_msg_8b95d518e7",
+                "label": "Thông báo: SẢN PHẨM ĐƠN LẺ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_97d8ec39f5": {
+                "key": "field_fcc_ui_msg_97d8ec39f5",
+                "name": "fcc_ui_msg_97d8ec39f5",
+                "label": "Thông báo: Vui lòng nhập họ và tên của bạn (tối thiểu 2 ký tự)",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_954deccc88": {
+                "key": "field_fcc_ui_msg_954deccc88",
+                "name": "fcc_ui_msg_954deccc88",
+                "label": "Thông báo: Số điện thoại không đúng định dạng Việt Nam (10 số, bắt đầu bằng 0 hoặc +84)",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_2617b365fa": {
+                "key": "field_fcc_ui_msg_2617b365fa",
+                "name": "fcc_ui_msg_2617b365fa",
+                "label": "Thông báo: Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_accf07628a": {
+                "key": "field_fcc_ui_msg_accf07628a",
+                "name": "fcc_ui_msg_accf07628a",
+                "label": "Thông báo: Đang gửi yêu cầu đặt hàng…",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_fc0cd7d243": {
+                "key": "field_fcc_ui_msg_fc0cd7d243",
+                "name": "fcc_ui_msg_fc0cd7d243",
+                "label": "Thông báo: Đang gửi đơn hàng...",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_439c0031f2": {
+                "key": "field_fcc_ui_msg_439c0031f2",
+                "name": "fcc_ui_msg_439c0031f2",
+                "label": "Thông báo: Yêu cầu đặt hàng đã được tiếp nhận.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_f6aa50ef87": {
+                "key": "field_fcc_ui_msg_f6aa50ef87",
+                "name": "fcc_ui_msg_f6aa50ef87",
+                "label": "Thông báo: Đặt hàng thành công! BUI DANG-JP sẽ liên hệ với bạn sớm nhất.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_989ccc6d21": {
+                "key": "field_fcc_ui_msg_989ccc6d21",
+                "name": "fcc_ui_msg_989ccc6d21",
+                "label": "Thông báo: Có lỗi xảy ra khi gửi đơn. Vui lòng thử lại hoặc liên hệ qua Zalo/Hotline.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_188f916a00": {
+                "key": "field_fcc_ui_msg_188f916a00",
+                "name": "fcc_ui_msg_188f916a00",
+                "label": "Thông báo: Chưa xác nhận được kết quả gửi. Vui lòng kiểm tra kết nối hoặc liên hệ Hotline/Zalo trước ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_bc40b568b3": {
+                "key": "field_fcc_ui_msg_bc40b568b3",
+                "name": "fcc_ui_msg_bc40b568b3",
+                "label": "Thông báo: Liên hệ tư vấn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_a08abe5384": {
+                "key": "field_fcc_ui_msg_a08abe5384",
+                "name": "fcc_ui_msg_a08abe5384",
+                "label": "Thông báo: Không tìm thấy sản phẩm phù hợp",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_2e2f49a962": {
+                "key": "field_fcc_ui_msg_2e2f49a962",
+                "name": "fcc_ui_msg_2e2f49a962",
+                "label": "Thông báo: Xem tất cả sản phẩm",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_c0617328bf": {
+                "key": "field_fcc_ui_msg_c0617328bf",
+                "name": "fcc_ui_msg_c0617328bf",
+                "label": "Thông báo: Hiển thị ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_278575af6c": {
+                "key": "field_fcc_ui_msg_278575af6c",
+                "name": "fcc_ui_msg_278575af6c",
+                "label": "Thông báo:  sản phẩm & combo",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_e30c937169": {
+                "key": "field_fcc_ui_msg_e30c937169",
+                "name": "fcc_ui_msg_e30c937169",
+                "label": "Thông báo: Xem chi tiết",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_msg_b123316808": {
+                "key": "field_fcc_ui_msg_b123316808",
+                "name": "fcc_ui_msg_b123316808",
+                "label": "Thông báo: Thu gọn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            }
         }
     },
     "catalog": {
@@ -5819,6 +6754,18 @@
                 "name": "fcc_catalog_seo_description",
                 "label": "Mô tả SEO – Sản phẩm",
                 "type": "textarea"
+            },
+            "fcc_catalog_seo_image": {
+                "key": "field_fcc_catalog_seo_image",
+                "name": "fcc_catalog_seo_image",
+                "label": "Ảnh chia sẻ mạng xã hội",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại SEO. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
             }
         },
         "section-soft": {
@@ -6246,6 +7193,106 @@
                 "fcc_inline": false,
                 "fcc_refresh": true
             }
+        },
+        "Danh mục – bộ lọc": {
+            "fcc_ui_m_e49982d492e8": {
+                "key": "field_fcc_ui_m_e49982d492e8",
+                "name": "fcc_ui_m_e49982d492e8",
+                "label": "Nội dung: Bộ lọc tìm kiếm",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – bộ lọc. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_74bbdb6f91ad": {
+                "key": "field_fcc_ui_m_74bbdb6f91ad",
+                "name": "fcc_ui_m_74bbdb6f91ad",
+                "label": "Nhãn / thuộc tính: Đặt lại bộ lọc",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – bộ lọc. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_70b9a85fe261": {
+                "key": "field_fcc_ui_m_70b9a85fe261",
+                "name": "fcc_ui_m_70b9a85fe261",
+                "label": "Nội dung: Đặt lại",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – bộ lọc. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_ab18d55d894d": {
+                "key": "field_fcc_ui_m_ab18d55d894d",
+                "name": "fcc_ui_m_ab18d55d894d",
+                "label": "Nội dung: Tìm kiếm",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – bộ lọc. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_9e15ecef7bc1": {
+                "key": "field_fcc_ui_m_9e15ecef7bc1",
+                "name": "fcc_ui_m_9e15ecef7bc1",
+                "label": "Nhãn / thuộc tính: Tìm sản phẩm, combo, thành phần...",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – bộ lọc. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_d18cedce708b": {
+                "key": "field_fcc_ui_m_d18cedce708b",
+                "name": "fcc_ui_m_d18cedce708b",
+                "label": "Nội dung: Tất cả (",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – bộ lọc. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_9163e78c6936": {
+                "key": "field_fcc_ui_m_9163e78c6936",
+                "name": "fcc_ui_m_9163e78c6936",
+                "label": "Nội dung: Bộ đôi & Combo (",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – bộ lọc. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_64de9e7f299d": {
+                "key": "field_fcc_ui_m_64de9e7f299d",
+                "name": "fcc_ui_m_64de9e7f299d",
+                "label": "Nội dung: Hiển thị",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – bộ lọc. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_20e21a88f38a": {
+                "key": "field_fcc_ui_m_20e21a88f38a",
+                "name": "fcc_ui_m_20e21a88f38a",
+                "label": "Nội dung: sản phẩm & combo",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – bộ lọc. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            }
+        },
+        "Danh mục – tư vấn": {
+            "fcc_ui_m_955ba00d5b32": {
+                "key": "field_fcc_ui_m_955ba00d5b32",
+                "name": "fcc_ui_m_955ba00d5b32",
+                "label": "Nội dung: Tư vấn trực tiếp:",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_6d64ee9c2e3b": {
+                "key": "field_fcc_ui_m_6d64ee9c2e3b",
+                "name": "fcc_ui_m_6d64ee9c2e3b",
+                "label": "Nội dung: Chat Zalo",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_5a19a5862bce": {
+                "key": "field_fcc_ui_m_5a19a5862bce",
+                "name": "fcc_ui_m_5a19a5862bce",
+                "label": "Nội dung: Hotline: 0985 561 862",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Danh mục – tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            }
         }
     },
     "policies": {
@@ -6261,6 +7308,18 @@
                 "name": "fcc_policies_seo_description",
                 "label": "Mô tả SEO – Chính sách",
                 "type": "textarea"
+            },
+            "fcc_policies_seo_image": {
+                "key": "field_fcc_policies_seo_image",
+                "name": "fcc_policies_seo_image",
+                "label": "Ảnh chia sẻ mạng xã hội",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại SEO. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
             }
         },
         "Chữ và nội dung": {
@@ -7404,6 +8463,18 @@
                 "name": "fcc_thankyou_seo_description",
                 "label": "Mô tả SEO – Cảm ơn",
                 "type": "textarea"
+            },
+            "fcc_thankyou_seo_image": {
+                "key": "field_fcc_thankyou_seo_image",
+                "name": "fcc_thankyou_seo_image",
+                "label": "Ảnh chia sẻ mạng xã hội",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại SEO. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
             }
         },
         "Chữ và nội dung": {
@@ -7669,6 +8740,808 @@
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
                 "fcc_refresh": false
+            }
+        }
+    },
+    "concerns": {
+        "01. Hero & điều hướng": {
+            "fcc_ui_m_14b8ce911f21": {
+                "key": "field_fcc_ui_m_14b8ce911f21",
+                "name": "fcc_ui_m_14b8ce911f21",
+                "label": "Nhãn / thuộc tính: Breadcrumb",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_ab99a1cbbda7": {
+                "key": "field_fcc_ui_m_ab99a1cbbda7",
+                "name": "fcc_ui_m_ab99a1cbbda7",
+                "label": "Nội dung: Trang chủ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_b660b6828a87": {
+                "key": "field_fcc_ui_m_b660b6828a87",
+                "name": "fcc_ui_m_b660b6828a87",
+                "label": "Nội dung: Vấn đề làn da & Giải pháp",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_649eb3367b80": {
+                "key": "field_fcc_ui_m_649eb3367b80",
+                "name": "fcc_ui_m_649eb3367b80",
+                "label": "Nội dung: KHOA HỌC LÀN DA • CHUẨN SALON TOKYO",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_cfab75cee336": {
+                "key": "field_fcc_ui_m_cfab75cee336",
+                "name": "fcc_ui_m_cfab75cee336",
+                "label": "Nội dung: LÀN DA CỦA BẠN ĐANG GẶP NHỮNG VẤN ĐỀ GÌ?",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_c8c79f67f1e0": {
+                "key": "field_fcc_ui_m_c8c79f67f1e0",
+                "name": "fcc_ui_m_c8c79f67f1e0",
+                "label": "Nội dung: Bạn đã chăm sóc da mỗi ngày nhưng làn da vẫn chưa đạt được vẻ rạng rỡ như mong muốn? Khám ",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_1aac9f5963a3": {
+                "key": "field_fcc_ui_m_1aac9f5963a3",
+                "name": "fcc_ui_m_1aac9f5963a3",
+                "label": "Nhãn / thuộc tính: Chọn tình trạng da của bạn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_f06dd395969c": {
+                "key": "field_fcc_ui_m_f06dd395969c",
+                "name": "fcc_ui_m_f06dd395969c",
+                "label": "Nội dung: Đốm Nâu & Không Đều Màu",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_401a2fca51b8": {
+                "key": "field_fcc_ui_m_401a2fca51b8",
+                "name": "fcc_ui_m_401a2fca51b8",
+                "label": "Nội dung: Lỗ Chân Lông To & Da Sần",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_e420d47dc084": {
+                "key": "field_fcc_ui_m_e420d47dc084",
+                "name": "fcc_ui_m_e420d47dc084",
+                "label": "Nội dung: Lão Hóa & Nếp Nhăn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_5b5204b02fc1": {
+                "key": "field_fcc_ui_m_5b5204b02fc1",
+                "name": "fcc_ui_m_5b5204b02fc1",
+                "label": "Nội dung: Da Thâm Mụn Sau Viêm",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 01. Hero & điều hướng. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            }
+        },
+        "02. Đốm nâu & không đều màu": {
+            "fcc_ui_m_f5bbdaaf31e5": {
+                "key": "field_fcc_ui_m_f5bbdaaf31e5",
+                "name": "fcc_ui_m_f5bbdaaf31e5",
+                "label": "Nội dung: SẮC TỐ & ĐỘ RẠNG RỠ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_0e55facbf019": {
+                "key": "field_fcc_ui_m_0e55facbf019",
+                "name": "fcc_ui_m_0e55facbf019",
+                "label": "Nội dung: Đốm Nâu, Nám Nông & Da Không Đều Màu",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_beda867aa60c": {
+                "key": "field_fcc_ui_m_beda867aa60c",
+                "name": "fcc_ui_m_beda867aa60c",
+                "label": "Nội dung: “Những vùng da sậm màu khiến tổng thể gương mặt thiếu tươi tắn, bạn ngại để mặt mộc và phả",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_7f9a48bcc23a": {
+                "key": "field_fcc_ui_m_7f9a48bcc23a",
+                "name": "fcc_ui_m_7f9a48bcc23a",
+                "label": "Nhãn / thuộc tính: Đốm nâu, da không đều màu",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_034411885516": {
+                "key": "field_fcc_ui_m_034411885516",
+                "name": "fcc_ui_m_034411885516",
+                "label": "Nội dung: Dấu hiệu: Vùng sậm màu phân tán, da xỉn màu, thiếu vẻ tươi tắn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_ffa7ee5fe96b": {
+                "key": "field_fcc_ui_m_ffa7ee5fe96b",
+                "name": "fcc_ui_m_ffa7ee5fe96b",
+                "label": "Nội dung: CƠ CHẾ KHOA HỌC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_455c002eaf62": {
+                "key": "field_fcc_ui_m_455c002eaf62",
+                "name": "fcc_ui_m_455c002eaf62",
+                "label": "Nội dung: Nguyên Nhân Sinh Học & Giải Pháp Chuẩn Nhật",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_17a6eb86cfe3": {
+                "key": "field_fcc_ui_m_17a6eb86cfe3",
+                "name": "fcc_ui_m_17a6eb86cfe3",
+                "label": "Nội dung: Hiểu rõ cơ chế ở tầng tế bào để lựa chọn phác đồ điều hòa biểu bì tối ưu.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_451a423cf5c2": {
+                "key": "field_fcc_ui_m_451a423cf5c2",
+                "name": "fcc_ui_m_451a423cf5c2",
+                "label": "Nội dung: Nguyên nhân từ góc nhìn khoa học",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_ee317c6cecd4": {
+                "key": "field_fcc_ui_m_ee317c6cecd4",
+                "name": "fcc_ui_m_ee317c6cecd4",
+                "label": "Nội dung: Tia UV và các gốc tự do kích hoạt tế bào hắc tố melanocyte sản sinh melanin phân tán không",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_15ab5f794c38": {
+                "key": "field_fcc_ui_m_15ab5f794c38",
+                "name": "fcc_ui_m_15ab5f794c38",
+                "label": "Nội dung: Giải pháp vi kim Fractional CC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_b914dd02a446": {
+                "key": "field_fcc_ui_m_b914dd02a446",
+                "name": "fcc_ui_m_b914dd02a446",
+                "label": "Nội dung: Hệ vi kim sinh học Hydrolyzed Sponge tạo hàng ngàn đường dẫn siêu vi đưa trực tiếp dẫn xuấ",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_9758ca3fb681": {
+                "key": "field_fcc_ui_m_9758ca3fb681",
+                "name": "fcc_ui_m_9758ca3fb681",
+                "label": "Nội dung: GỢI Ý PHÁC ĐỒ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_6ca8ac0a58fa": {
+                "key": "field_fcc_ui_m_6ca8ac0a58fa",
+                "name": "fcc_ui_m_6ca8ac0a58fa",
+                "label": "Nội dung: Sản Phẩm Chủ Lực Cho Da Đốm Nâu",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_d50ac8254e8c": {
+                "key": "field_fcc_ui_m_d50ac8254e8c",
+                "name": "fcc_ui_m_d50ac8254e8c",
+                "label": "Nội dung: Các lựa chọn dưỡng sáng, hỗ trợ làm mờ đốm nâu và chăm sóc da không đều màu theo hồ sơ sản",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_concerns_dom_nau_image": {
+                "key": "field_fcc_concerns_dom_nau_image",
+                "name": "fcc_concerns_dom_nau_image",
+                "label": "Ảnh minh họa tình trạng da",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại 02. Đốm nâu & không đều màu. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
+            }
+        },
+        "03. Lỗ chân lông & da sần": {
+            "fcc_ui_m_2744e5e9d152": {
+                "key": "field_fcc_ui_m_2744e5e9d152",
+                "name": "fcc_ui_m_2744e5e9d152",
+                "label": "Nội dung: BỀ MẶT & ĐỘ MỊN MÀNG",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_5d147807e782": {
+                "key": "field_fcc_ui_m_5d147807e782",
+                "name": "fcc_ui_m_5d147807e782",
+                "label": "Nội dung: Lỗ Chân Lông To & Bề Mặt Da Kém Mịn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_808bf3619735": {
+                "key": "field_fcc_ui_m_808bf3619735",
+                "name": "fcc_ui_m_808bf3619735",
+                "label": "Nội dung: “Lỗ chân lông to khiến bề mặt da kém mịn, lớp nền dễ lộ khuyết điểm, khiến làn da trông ké",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_522cb40cc5a1": {
+                "key": "field_fcc_ui_m_522cb40cc5a1",
+                "name": "fcc_ui_m_522cb40cc5a1",
+                "label": "Nhãn / thuộc tính: Lỗ chân lông to và bề mặt da kém mịn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_e71b65eb752e": {
+                "key": "field_fcc_ui_m_e71b65eb752e",
+                "name": "fcc_ui_m_e71b65eb752e",
+                "label": "Nội dung: Dấu hiệu: Bề mặt sần sùi, cổ nang lông giãn nở, lớp nền dễ mốc phấn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_20801d2b44e3": {
+                "key": "field_fcc_ui_m_20801d2b44e3",
+                "name": "fcc_ui_m_20801d2b44e3",
+                "label": "Nội dung: CƠ CHẾ KHOA HỌC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_a1d45865fa01": {
+                "key": "field_fcc_ui_m_a1d45865fa01",
+                "name": "fcc_ui_m_a1d45865fa01",
+                "label": "Nội dung: Nguyên Nhân Sinh Học & Giải Pháp Chuẩn Nhật",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_70b6625c50ea": {
+                "key": "field_fcc_ui_m_70b6625c50ea",
+                "name": "fcc_ui_m_70b6625c50ea",
+                "label": "Nội dung: Hiểu rõ cơ chế ở tầng tế bào để lựa chọn phác đồ điều hòa biểu bì tối ưu.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_305f2711c20c": {
+                "key": "field_fcc_ui_m_305f2711c20c",
+                "name": "fcc_ui_m_305f2711c20c",
+                "label": "Nội dung: Nguyên nhân từ góc nhìn khoa học",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_73519e2fc8b1": {
+                "key": "field_fcc_ui_m_73519e2fc8b1",
+                "name": "fcc_ui_m_73519e2fc8b1",
+                "label": "Nội dung: Bã nhờn tích tụ kết hợp tế bào chết ứ đọng tạo thành các nút sừng làm cổ nang lông giãn rộ",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_d064bb5fcb12": {
+                "key": "field_fcc_ui_m_d064bb5fcb12",
+                "name": "fcc_ui_m_d064bb5fcb12",
+                "label": "Nội dung: Giải pháp vi kim Fractional CC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_cfc5818a1f4e": {
+                "key": "field_fcc_ui_m_cfc5818a1f4e",
+                "name": "fcc_ui_m_cfc5818a1f4e",
+                "label": "Nội dung: Quy trình làm sạch sâu cổ nang lông với acid phân tử lớn dịu nhẹ (Mandelic Acid) giải phón",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_dcdcfc792794": {
+                "key": "field_fcc_ui_m_dcdcfc792794",
+                "name": "fcc_ui_m_dcdcfc792794",
+                "label": "Nội dung: GỢI Ý PHÁC ĐỒ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_7b8f8f082a7a": {
+                "key": "field_fcc_ui_m_7b8f8f082a7a",
+                "name": "fcc_ui_m_7b8f8f082a7a",
+                "label": "Nội dung: Sản Phẩm Cho Lỗ Chân Lông & Da Sần",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_94aa9ca1ca92": {
+                "key": "field_fcc_ui_m_94aa9ca1ca92",
+                "name": "fcc_ui_m_94aa9ca1ca92",
+                "label": "Nội dung: Các lựa chọn tẩy tế bào chết, chăm sóc lỗ chân lông và bổ sung độ ẩm theo nhu cầu của da. ",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_concerns_lo_chan_long_image": {
+                "key": "field_fcc_concerns_lo_chan_long_image",
+                "name": "fcc_concerns_lo_chan_long_image",
+                "label": "Ảnh minh họa tình trạng da",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại 03. Lỗ chân lông & da sần. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
+            }
+        },
+        "04. Lão hóa & nếp nhăn": {
+            "fcc_ui_m_512462f7367e": {
+                "key": "field_fcc_ui_m_512462f7367e",
+                "name": "fcc_ui_m_512462f7367e",
+                "label": "Nội dung: ĐỘ ĐÀN HỒI & SĂN CHẮC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_5d389bb25f5c": {
+                "key": "field_fcc_ui_m_5d389bb25f5c",
+                "name": "fcc_ui_m_5d389bb25f5c",
+                "label": "Nội dung: Da Lão Hóa, Nếp Nhăn & Chùng Nhão",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_249a0482da6f": {
+                "key": "field_fcc_ui_m_249a0482da6f",
+                "name": "fcc_ui_m_249a0482da6f",
+                "label": "Nội dung: “Các dấu hiệu lão hóa dần xuất hiện, làn da không còn giữ được vẻ căng mịn, đàn hồi như tr",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_dc5e405bfc31": {
+                "key": "field_fcc_ui_m_dc5e405bfc31",
+                "name": "fcc_ui_m_dc5e405bfc31",
+                "label": "Nhãn / thuộc tính: Da lão hóa, nếp nhăn, chảy xệ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_261246e91302": {
+                "key": "field_fcc_ui_m_261246e91302",
+                "name": "fcc_ui_m_261246e91302",
+                "label": "Nội dung: Dấu hiệu: Rãnh nhăn nông quanh mắt & khóe miệng, da giảm độ đàn hồi",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_76c6f45b84b1": {
+                "key": "field_fcc_ui_m_76c6f45b84b1",
+                "name": "fcc_ui_m_76c6f45b84b1",
+                "label": "Nội dung: CƠ CHẾ KHOA HỌC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_d3dcadafdded": {
+                "key": "field_fcc_ui_m_d3dcadafdded",
+                "name": "fcc_ui_m_d3dcadafdded",
+                "label": "Nội dung: Nguyên Nhân Sinh Học & Giải Pháp Chuẩn Nhật",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_3eda3804b1c1": {
+                "key": "field_fcc_ui_m_3eda3804b1c1",
+                "name": "fcc_ui_m_3eda3804b1c1",
+                "label": "Nội dung: Hiểu rõ cơ chế ở tầng tế bào để lựa chọn phác đồ điều hòa biểu bì tối ưu.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_75b59cceb48d": {
+                "key": "field_fcc_ui_m_75b59cceb48d",
+                "name": "fcc_ui_m_75b59cceb48d",
+                "label": "Nội dung: Nguyên nhân từ góc nhìn khoa học",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_3b83ce4eb80b": {
+                "key": "field_fcc_ui_m_3b83ce4eb80b",
+                "name": "fcc_ui_m_3b83ce4eb80b",
+                "label": "Nội dung: Từ sau tuổi 25, mạng lưới collagen và elastin tự nhiên suy giảm dần đều. Chu kỳ thay mới t",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_653b87d4dfd4": {
+                "key": "field_fcc_ui_m_653b87d4dfd4",
+                "name": "fcc_ui_m_653b87d4dfd4",
+                "label": "Nội dung: Giải pháp vi kim Fractional CC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_abb850c5218b": {
+                "key": "field_fcc_ui_m_abb850c5218b",
+                "name": "fcc_ui_m_abb850c5218b",
+                "label": "Nội dung: Sức mạnh từ công nghệ vi kim sinh học bọc hoạt chất vàng Retinol: Dòng Needle Serum AX4 sở",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_561888c8085f": {
+                "key": "field_fcc_ui_m_561888c8085f",
+                "name": "fcc_ui_m_561888c8085f",
+                "label": "Nội dung: GỢI Ý PHÁC ĐỒ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_69872d42c4cb": {
+                "key": "field_fcc_ui_m_69872d42c4cb",
+                "name": "fcc_ui_m_69872d42c4cb",
+                "label": "Nội dung: Sản Phẩm Chủ Lực Chống Lão Hóa",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_765a23fcf221": {
+                "key": "field_fcc_ui_m_765a23fcf221",
+                "name": "fcc_ui_m_765a23fcf221",
+                "label": "Nội dung: Các lựa chọn chăm sóc nếp nhăn, độ đàn hồi và da thiếu ẩm theo hồ sơ sản phẩm. Lựa chọn sả",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_concerns_lao_hoa_image": {
+                "key": "field_fcc_concerns_lao_hoa_image",
+                "name": "fcc_concerns_lao_hoa_image",
+                "label": "Ảnh minh họa tình trạng da",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại 04. Lão hóa & nếp nhăn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
+            }
+        },
+        "05. Thâm mụn sau viêm": {
+            "fcc_ui_m_b9f7d946a2ec": {
+                "key": "field_fcc_ui_m_b9f7d946a2ec",
+                "name": "fcc_ui_m_b9f7d946a2ec",
+                "label": "Nội dung: PHỤC HỒI & MỜ VẾT THÂM",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_a04a8019b757": {
+                "key": "field_fcc_ui_m_a04a8019b757",
+                "name": "fcc_ui_m_a04a8019b757",
+                "label": "Nội dung: Da Thâm Mụn, Tổn Thương Sau Mụn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_32e2a12f43fa": {
+                "key": "field_fcc_ui_m_32e2a12f43fa",
+                "name": "fcc_ui_m_32e2a12f43fa",
+                "label": "Nội dung: “Da thâm mụn, không đều màu khiến lớp nền khó tiệp vào da, dễ lộ khuyết điểm và kém tự nhi",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_f1bf77b4dc2b": {
+                "key": "field_fcc_ui_m_f1bf77b4dc2b",
+                "name": "fcc_ui_m_f1bf77b4dc2b",
+                "label": "Nhãn / thuộc tính: Da thâm mụn, tổn thương sau mụn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_3fa36d29fe26": {
+                "key": "field_fcc_ui_m_3fa36d29fe26",
+                "name": "fcc_ui_m_3fa36d29fe26",
+                "label": "Nội dung: Dấu hiệu: Vết thâm sau mụn dai dẳng, da không đều màu, nền da mỏng yếu",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_46a4e3691cea": {
+                "key": "field_fcc_ui_m_46a4e3691cea",
+                "name": "fcc_ui_m_46a4e3691cea",
+                "label": "Nội dung: CƠ CHẾ KHOA HỌC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_8b887d541a3f": {
+                "key": "field_fcc_ui_m_8b887d541a3f",
+                "name": "fcc_ui_m_8b887d541a3f",
+                "label": "Nội dung: Nguyên Nhân Sinh Học & Giải Pháp Chuẩn Nhật",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_c9fd8e80cc6b": {
+                "key": "field_fcc_ui_m_c9fd8e80cc6b",
+                "name": "fcc_ui_m_c9fd8e80cc6b",
+                "label": "Nội dung: Hiểu rõ cơ chế ở tầng tế bào để lựa chọn phác đồ điều hòa biểu bì tối ưu.",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_442fda7a3914": {
+                "key": "field_fcc_ui_m_442fda7a3914",
+                "name": "fcc_ui_m_442fda7a3914",
+                "label": "Nội dung: Nguyên nhân từ góc nhìn khoa học",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_78efcb0d16cf": {
+                "key": "field_fcc_ui_m_78efcb0d16cf",
+                "name": "fcc_ui_m_78efcb0d16cf",
+                "label": "Nội dung: Tổn thương sau phản ứng viêm mụn kích thích tích tụ sắc tố melanin và giãn mao mạch cục bộ",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_6613aa307a5d": {
+                "key": "field_fcc_ui_m_6613aa307a5d",
+                "name": "fcc_ui_m_6613aa307a5d",
+                "label": "Nội dung: Giải pháp vi kim Fractional CC",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_8bdc88a333b9": {
+                "key": "field_fcc_ui_m_8bdc88a333b9",
+                "name": "fcc_ui_m_8bdc88a333b9",
+                "label": "Nội dung: Phác đồ hiệp đồng bước đệm và bước tăng cường: Bắt đầu làm quen dịu nhẹ với Serum C để củn",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_be3346100dcf": {
+                "key": "field_fcc_ui_m_be3346100dcf",
+                "name": "fcc_ui_m_be3346100dcf",
+                "label": "Nội dung: GỢI Ý PHÁC ĐỒ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_cf4ae9d38b97": {
+                "key": "field_fcc_ui_m_cf4ae9d38b97",
+                "name": "fcc_ui_m_cf4ae9d38b97",
+                "label": "Nội dung: Sản Phẩm & Combo Giảm Thâm Mụn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_89120f97d182": {
+                "key": "field_fcc_ui_m_89120f97d182",
+                "name": "fcc_ui_m_89120f97d182",
+                "label": "Nội dung: Các lựa chọn dưỡng sáng, chăm sóc da không đều màu và phục hồi sau mụn theo hồ sơ sản phẩm",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_concerns_tham_mun_image": {
+                "key": "field_fcc_concerns_tham_mun_image",
+                "name": "fcc_concerns_tham_mun_image",
+                "label": "Ảnh minh họa tình trạng da",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại 05. Thâm mụn sau viêm. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
+            }
+        },
+        "06. Nguyên tắc & tư vấn": {
+            "fcc_ui_m_02f1df1d5599": {
+                "key": "field_fcc_ui_m_02f1df1d5599",
+                "name": "fcc_ui_m_02f1df1d5599",
+                "label": "Nội dung: TRIẾT LÝ DƯỠNG DA TOKYO",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_acdc2bebc18e": {
+                "key": "field_fcc_ui_m_acdc2bebc18e",
+                "name": "fcc_ui_m_acdc2bebc18e",
+                "label": "Nội dung: 3 NGUYÊN TẮC VÀNG ĐỂ CHĂM SÓC DA HIỆU QUẢ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_bd7a8e23590b": {
+                "key": "field_fcc_ui_m_bd7a8e23590b",
+                "name": "fcc_ui_m_bd7a8e23590b",
+                "label": "Nội dung: Làn da không thể thay đổi sau một đêm. Hiểu đúng và kiên nhẫn đồng hành cùng chu trình sin",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_dd8055ab472e": {
+                "key": "field_fcc_ui_m_dd8055ab472e",
+                "name": "fcc_ui_m_dd8055ab472e",
+                "label": "Nội dung: Làm quen từ tốn & Lắng nghe phản hồi",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_6f7efa3c3475": {
+                "key": "field_fcc_ui_m_6f7efa3c3475",
+                "name": "fcc_ui_m_6f7efa3c3475",
+                "label": "Nội dung: Với serum vi kim, cảm giác châm chích nhẹ là phản ứng tự nhiên khi vi kim sinh học tiếp xú",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_c7586281721f": {
+                "key": "field_fcc_ui_m_c7586281721f",
+                "name": "fcc_ui_m_c7586281721f",
+                "label": "Nội dung: Cấp ẩm & Phục hồi đầy đủ",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_a1c0ddeffd83": {
+                "key": "field_fcc_ui_m_a1c0ddeffd83",
+                "name": "fcc_ui_m_a1c0ddeffd83",
+                "label": "Nội dung: Khi vi kim kích thích quá trình thay mới tế bào, da rất cần độ ẩm để tăng sinh. Hãy kết hợ",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_a9b77c4c9196": {
+                "key": "field_fcc_ui_m_a9b77c4c9196",
+                "name": "fcc_ui_m_a9b77c4c9196",
+                "label": "Nội dung: Bảo vệ quang phổ rộng ban ngày",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_43e1f28e55cf": {
+                "key": "field_fcc_ui_m_43e1f28e55cf",
+                "name": "fcc_ui_m_43e1f28e55cf",
+                "label": "Nội dung: Bảo vệ thành quả dưỡng da bằng kem chống nắng SPF50+ PA++++ mỗi sáng để ngăn chặn tia UV k",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_24517189950b": {
+                "key": "field_fcc_ui_m_24517189950b",
+                "name": "fcc_ui_m_24517189950b",
+                "label": "Nội dung: TƯ VẤN 1:1 MIỄN PHÍ TỪ BUI DANG-JP",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_11c8950d9cde": {
+                "key": "field_fcc_ui_m_11c8950d9cde",
+                "name": "fcc_ui_m_11c8950d9cde",
+                "label": "Nội dung: BẠN CHƯA BIẾT LÀN DA MÌNH CẦN SẢN PHẨM NÀO?",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_74f09950bc89": {
+                "key": "field_fcc_ui_m_74f09950bc89",
+                "name": "fcc_ui_m_74f09950bc89",
+                "label": "Nội dung: Mỗi làn da có cấu trúc và lịch sử chăm sóc riêng biệt. Hãy liên hệ với chuyên viên BUI DAN",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_ui_m_1e850dd54933": {
+                "key": "field_fcc_ui_m_1e850dd54933",
+                "name": "fcc_ui_m_1e850dd54933",
+                "label": "Nội dung: ĐĂNG KÝ NHẬN TƯ VẤN DA",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_32e4397e39fe": {
+                "key": "field_fcc_ui_m_32e4397e39fe",
+                "name": "fcc_ui_m_32e4397e39fe",
+                "label": "Nội dung: Nhắn Zalo chuyên viên",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_1fd1da925638": {
+                "key": "field_fcc_ui_m_1fd1da925638",
+                "name": "fcc_ui_m_1fd1da925638",
+                "label": "Nội dung: Hotline:",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            }
+        },
+        "SEO": {
+            "fcc_concerns_seo_title": {
+                "key": "field_fcc_concerns_seo_title",
+                "name": "fcc_concerns_seo_title",
+                "label": "Tiêu đề SEO",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại SEO. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_concerns_seo_description": {
+                "key": "field_fcc_concerns_seo_description",
+                "name": "fcc_concerns_seo_description",
+                "label": "Mô tả SEO",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại SEO. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
+            "fcc_concerns_seo_image": {
+                "key": "field_fcc_concerns_seo_image",
+                "name": "fcc_concerns_seo_image",
+                "label": "Ảnh chia sẻ mạng xã hội",
+                "type": "image",
+                "instructions": "Nội dung hiển thị tại SEO. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": false,
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp",
+                "fcc_refresh": true
             }
         }
     }

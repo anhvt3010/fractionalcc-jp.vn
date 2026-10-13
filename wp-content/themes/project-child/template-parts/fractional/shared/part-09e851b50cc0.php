@@ -16,7 +16,7 @@
 
         <div class="footer-col">
           <h4><?php echo project_child_fcc_text( 'fcc_ui_0f36c14dea884e', 'shared' ); ?></h4>
-          <p><strong><?php echo project_child_fcc_text( 'fcc_ui_984783bd913b86', 'shared' ); ?></strong> <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" style="color: var(--color-accent-gold); font-weight: 700;">0985 561 862</a></p>
+          <p><strong><?php echo project_child_fcc_text( 'fcc_ui_984783bd913b86', 'shared' ); ?></strong> <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" style="color: var(--color-accent-gold); font-weight: 700;"><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></a></p>
           <p><strong><?php echo project_child_fcc_text( 'fcc_ui_7374e1f6e37820', 'shared' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_73944c222e59fa', 'shared' ); ?></p>
           <p><strong><?php echo project_child_fcc_text( 'fcc_ui_1db01ca035a66e', 'shared' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_a2642b697a4c65', 'shared' ); ?></p>
         </div>
@@ -25,7 +25,7 @@
           <h4><?php echo project_child_fcc_text( 'fcc_ui_337affe9cef2fd', 'shared' ); ?></h4>
           <ul class="footer-links">
             <li><a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_13f874efa5726a', 'shared', false ); ?></a></li>
-            <li><a href="<?php echo esc_url( project_child_fcc_link( 'van-de-lan-da.html' ) ); ?>">Vấn đề làn da &amp; Giải pháp</a></li>
+            <li><a href="<?php echo esc_url( project_child_fcc_link( 'van-de-lan-da.html' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_m_a613489f0d9c', 'shared' ); ?></a></li>
             <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#doi-tra' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_8aa241ea23c189', 'shared', false ); ?></a></li>
             <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#giao-hang' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_369ace7ad7eef2', 'shared', false ); ?></a></li>
             <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#bao-mat' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_9e1d7490e3a45a', 'shared', false ); ?></a></li>

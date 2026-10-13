@@ -1,4 +1,8 @@
-<?php defined( 'ABSPATH' ) || exit; ?>
+<?php
+defined( 'ABSPATH' ) || exit;
+$fcc_routine_video = get_post_meta( project_core_fcc_page_id( 'home' ), 'fcc_home_routine_video_url', true );
+$fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : project_child_fcc_link( 'https://zalo.me/0985561862' );
+?>
 <section class="section" id="routine">
       <div class="container">
         <div class="section-header">
@@ -9,31 +13,66 @@
 
         
         <div class="routine-process-bar">
-          <div class="routine-process-step">
-            <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_1150d5032f811b', 'home' ); ?></span>
-            <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_bee9c4b00c61ec', 'home' ); ?></div>
-            <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_96ce48e4a6ec44', 'home' ); ?></p>
+          <!-- Bước 1 -->
+          <div class="routine-process-step is-active" data-step-index="1" role="button" tabindex="0" aria-expanded="true">
+            <div class="routine-process-header">
+              <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_1150d5032f811b', 'home' ); ?></span>
+              <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_bee9c4b00c61ec', 'home' ); ?></div>
+              <span class="routine-process-indicator" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </div>
+            <div class="routine-process-body">
+              <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_96ce48e4a6ec44', 'home' ); ?></p>
+            </div>
           </div>
-          <div class="routine-process-step">
-            <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_715f3de32d7627', 'home' ); ?></span>
-            <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_7f7d50245bffe1', 'home' ); ?></div>
-            <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_bf297687475994', 'home' ); ?></p>
+
+          <!-- Bước 2 -->
+          <div class="routine-process-step" data-step-index="2" role="button" tabindex="0" aria-expanded="false">
+            <div class="routine-process-header">
+              <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_715f3de32d7627', 'home' ); ?></span>
+              <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_7f7d50245bffe1', 'home' ); ?></div>
+              <span class="routine-process-indicator" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </div>
+            <div class="routine-process-body">
+              <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_bf297687475994', 'home' ); ?></p>
+            </div>
           </div>
-          <div class="routine-process-step">
-            <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_42b60390b14af9', 'home' ); ?></span>
-            <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_a10e07eb3754d6', 'home' ); ?></div>
-            <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_6bba06b88e4314', 'home' ); ?></p>
+
+          <!-- Bước 3 -->
+          <div class="routine-process-step" data-step-index="3" role="button" tabindex="0" aria-expanded="false">
+            <div class="routine-process-header">
+              <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_42b60390b14af9', 'home' ); ?></span>
+              <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_a10e07eb3754d6', 'home' ); ?></div>
+              <span class="routine-process-indicator" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </div>
+            <div class="routine-process-body">
+              <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_6bba06b88e4314', 'home' ); ?></p>
+            </div>
           </div>
-          <div class="routine-process-step">
-            <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_1f4c916e18b01b', 'home' ); ?></span>
-            <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_4445a75a4d80d3', 'home' ); ?></div>
-            <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_5fb7949360f1f3', 'home' ); ?></p>
+
+          <!-- Bước 4 -->
+          <div class="routine-process-step" data-step-index="4" role="button" tabindex="0" aria-expanded="false">
+            <div class="routine-process-header">
+              <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_1f4c916e18b01b', 'home' ); ?></span>
+              <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_4445a75a4d80d3', 'home' ); ?></div>
+              <span class="routine-process-indicator" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </div>
+            <div class="routine-process-body">
+              <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_5fb7949360f1f3', 'home' ); ?></p>
+            </div>
           </div>
         </div>
 
         <div class="brief-routine-grid">
           
-          <article class="routine-column-card routine-card-day">
+          <article class="routine-column-card routine-card-day collapsed">
             <div class="routine-column-header">
               <div class="routine-badge-icon routine-badge-icon-day" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_6f8a79402827e4', 'shared' ) ); ?>">
                 <svg width="30" height="30" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -56,8 +95,8 @@
                 <h3><?php echo project_child_fcc_text( 'fcc_ui_3ca61cb5f92ad1', 'home' ); ?></h3>
                 <span class="routine-header-sub"><?php echo project_child_fcc_text( 'fcc_ui_33b2876f22ec35', 'home' ); ?></span>
               </div>
-              <button type="button" class="routine-toggle-btn" aria-expanded="true" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_56bfb850da0788', 'shared' ) ); ?>">
-                <span class="toggle-text"><?php echo project_child_fcc_text( 'fcc_ui_03d3335d1edd15', 'home', false ); ?></span>
+              <button type="button" class="routine-toggle-btn" aria-expanded="false" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_56bfb850da0788', 'shared' ) ); ?>">
+                <span class="toggle-text"><?php echo project_child_fcc_text( 'fcc_ui_msg_e30c937169', 'home', false ) ?: 'Xem chi tiết'; ?></span>
                 <svg class="routine-toggle-icon" width="13" height="13" viewbox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="4 10 8 6 12 10"></polyline>
                 </svg>
@@ -66,8 +105,7 @@
 
             
             <div class="routine-collapsed-summary" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_df4b07da76fd42', 'shared' ) ); ?>">
-              <strong><?php echo project_child_fcc_text( 'fcc_ui_a8547b35389863', 'home' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_4e0a8e13025a90', 'home' ); ?><br>
-              <span style="color: #A07D2E; font-weight: 600;"><?php echo project_child_fcc_text( 'fcc_ui_940062904072c0', 'home' ); ?></span>
+              <strong><?php echo project_child_fcc_text( 'fcc_ui_a8547b35389863', 'home' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_4e0a8e13025a90', 'home' ); ?>
             </div>
 
             <div class="routine-steps-wrapper">
@@ -177,7 +215,7 @@
         </article>
 
         
-        <article class="routine-column-card routine-card-night">
+        <article class="routine-column-card routine-card-night collapsed">
           <div class="routine-column-header">
             <div class="routine-badge-icon routine-badge-icon-night" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_9efecf6decbfe1', 'shared' ) ); ?>">
               <svg width="30" height="30" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -192,8 +230,8 @@
               <h3><?php echo project_child_fcc_text( 'fcc_ui_9cc7af4413ee5a', 'home' ); ?></h3>
               <span class="routine-header-sub"><?php echo project_child_fcc_text( 'fcc_ui_9ba02722fc9988', 'home' ); ?></span>
             </div>
-            <button type="button" class="routine-toggle-btn" aria-expanded="true" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_56bfb850da0788', 'shared' ) ); ?>">
-              <span class="toggle-text"><?php echo project_child_fcc_text( 'fcc_ui_03d3335d1edd15', 'home', false ); ?></span>
+            <button type="button" class="routine-toggle-btn" aria-expanded="false" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_56bfb850da0788', 'shared' ) ); ?>">
+              <span class="toggle-text"><?php echo project_child_fcc_text( 'fcc_ui_msg_e30c937169', 'home', false ) ?: 'Xem chi tiết'; ?></span>
               <svg class="routine-toggle-icon" width="13" height="13" viewbox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="4 10 8 6 12 10"></polyline>
               </svg>
@@ -202,8 +240,7 @@
 
           
           <div class="routine-collapsed-summary" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_df4b07da76fd42', 'shared' ) ); ?>">
-            <strong><?php echo project_child_fcc_text( 'fcc_ui_b4179608806e68', 'home' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_423d9f2734335f', 'home' ); ?><br>
-            <span style="color: #A07D2E; font-weight: 600;"><?php echo project_child_fcc_text( 'fcc_ui_940062904072c0', 'home' ); ?></span>
+            <strong><?php echo project_child_fcc_text( 'fcc_ui_b4179608806e68', 'home' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_423d9f2734335f', 'home' ); ?>
           </div>
 
           <div class="routine-steps-wrapper">
@@ -321,21 +358,18 @@
             <div class="demo-player-preview">
               <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_555650f3e397c2' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_555650f3e397c2', 'fcc_ui_6df4668d328d6b' ) ); ?>" class="demo-player-img" loading="lazy">
               <div class="demo-player-overlay">
-                <span class="demo-player-badge"><?php echo project_child_fcc_text( 'fcc_ui_c621d87bd038db', 'home' ); ?></span>
-                <a href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/0985561862' ) ); ?>" target="_blank" rel="noopener noreferrer" class="demo-play-btn-wrap" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_7273916d822930', 'shared' ) ); ?>">
+                <a href="<?php echo esc_url( $fcc_routine_link ); ?>" target="_blank" rel="noopener noreferrer" class="demo-play-btn-wrap" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_7273916d822930', 'shared' ) ); ?>">
                   <div class="demo-play-btn">
                     <svg width="22" height="22" viewbox="0 0 24 24" fill="currentColor">
                       <polygon points="6,3 20,12 6,21"></polygon>
                     </svg>
                   </div>
                 </a>
-                <span style="font-size: 11.5px; color: #FFFFFF; opacity: 0.9;"><?php echo project_child_fcc_text( 'fcc_ui_3ef8f48058a977', 'home' ); ?></span>
               </div>
             </div>
             <div class="demo-player-footer">
               <div>
                 <div class="demo-player-caption"><?php echo project_child_fcc_text( 'fcc_ui_c70f7bac8522f7', 'home' ); ?></div>
-                <div class="demo-player-length"><?php echo project_child_fcc_text( 'fcc_ui_d470f372912db2', 'home' ); ?></div>
               </div>
               <a href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/0985561862' ) ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 12px; padding: 7px 14px;">
                 <?php echo project_child_fcc_text( 'fcc_ui_4c38e0fae9a6b0', 'home', false ); ?>

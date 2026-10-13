@@ -124,7 +124,7 @@
                 </div>
                 <div class="corporate-pillar-content">
                   <h5><?php echo project_child_fcc_text( 'fcc_ui_aca2a86286f849', 'home' ); ?></h5>
-                  <p><?php echo project_child_fcc_text( 'fcc_ui_36e815217673ad', 'home' ); ?> <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" style="font-weight: 700; color: var(--color-accent-gold);">0985 561 862</a> <?php echo project_child_fcc_text( 'fcc_ui_6175b716eac766', 'home' ); ?></p>
+                  <p><?php echo project_child_fcc_text( 'fcc_ui_36e815217673ad', 'home' ); ?> <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" style="font-weight: 700; color: var(--color-accent-gold);"><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></a> <?php echo project_child_fcc_text( 'fcc_ui_6175b716eac766', 'home' ); ?></p>
                 </div>
               </div>
             </div>

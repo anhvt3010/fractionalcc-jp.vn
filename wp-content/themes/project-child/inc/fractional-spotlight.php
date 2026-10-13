@@ -27,6 +27,20 @@ function project_child_fcc_spotlight_fields() {
 }
 add_action( 'acf/init', 'project_child_fcc_spotlight_fields' );
 
+/** Optional page-specific presentation; empty values use the product data. */
+function project_child_fcc_product_presentation_fields() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) { return; }
+	$fields = array();
+	foreach ( array( 'seo_title' => array( 'Tiêu đề SEO riêng', 'text' ), 'seo_description' => array( 'Mô tả SEO riêng', 'textarea' ), 'seo_image' => array( 'Ảnh chia sẻ riêng', 'image' ), 'detail_callout_title' => array( 'Tiêu đề nhãn trên ảnh', 'text' ), 'detail_callout_subtitle' => array( 'Mô tả nhãn trên ảnh', 'text' ) ) as $name => $definition ) {
+		$meta_name = 0 === strpos( $name, 'seo_' ) ? 'fcc_product_' . $name : 'fcc_' . $name;
+		$field = array( 'key' => 'field_' . $meta_name, 'name' => $meta_name, 'label' => $definition[0], 'type' => $definition[1], 'instructions' => 'Để trống để dùng nội dung sản phẩm và nhãn dùng chung. Chỉ nhập nội dung đã xác nhận.' );
+		if ( 'image' === $definition[1] ) { $field += array( 'return_format' => 'id', 'preview_size' => 'medium', 'mime_types' => 'jpg,jpeg,png,webp' ); }
+		$fields[] = $field;
+	}
+	acf_add_local_field_group( array( 'key' => 'group_fcc_product_presentation', 'title' => 'SEO & nhãn ảnh trang sản phẩm', 'fields' => $fields, 'menu_order' => 21, 'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ) ) ) );
+}
+add_action( 'acf/init', 'project_child_fcc_product_presentation_fields' );
+
 function project_child_fcc_spotlight_data( $post, $combos ) {
 	$is_combo = 'fcc_combo' === $post->post_type;
 	$data = $is_combo ? ( isset( $combos[ $post->ID ] ) ? $combos[ $post->ID ] : array() ) : project_core_fcc_product( $post->ID, true );
@@ -56,7 +70,10 @@ function project_child_fcc_spotlight_data( $post, $combos ) {
 function project_child_fcc_spotlight_line( $text ) {
 	$parts = explode( '|', $text );
 	foreach ( $parts as $index => $part ) {
-		if ( count( $parts ) > 1 && 0 === $index % 2 ) { echo '<strong>' . esc_html( trim( $part ) ) . '</strong> '; }
-		else { echo esc_html( trim( $part ) ) . ' '; }
+		if ( count( $parts ) > 1 && 0 === $index % 2 ) {
+			echo '<strong class="duo-line-label">' . esc_html( trim( $part ) ) . '</strong> ';
+		} else {
+			echo '<span class="duo-line-desc">' . esc_html( trim( $part ) ) . '</span> ';
+		}
 	}
 }

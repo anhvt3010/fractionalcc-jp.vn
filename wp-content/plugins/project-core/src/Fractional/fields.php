@@ -68,6 +68,10 @@ function project_core_fcc_register_fields() {
 	$combo[] = project_core_fcc_field( 'combo_productIds', 'Sản phẩm trong combo', 'relationship', array( 'post_type' => array( 'fcc_product' ), 'return_format' => 'id' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_productIds';
 	$combo[] = project_core_fcc_field( 'combo_image', 'Ảnh combo', 'image', array( 'return_format' => 'id', 'preview_size' => 'medium' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_image';
 	$combo[] = project_core_fcc_field( 'combo_isBestSeller', 'Hiện nhãn bán chạy (cần có nguồn)', 'true_false', array( 'ui' => 1 ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_isBestSeller';
+	foreach ( array( 'rating' => 'Điểm đánh giá combo có nguồn', 'reviewCount' => 'Số đánh giá combo có nguồn' ) as $name => $label ) {
+		$combo[] = project_core_fcc_field( 'combo_' . $name, $label, 'number', array( 'min' => 0, 'max' => 'rating' === $name ? 5 : '', 'step' => 'rating' === $name ? '0.01' : 1, 'wrapper' => array( 'width' => 50 ), 'instructions' => 'Dùng cho thẻ combo trong danh mục. Nội dung cũ được giữ để quản lý; cần xác nhận nguồn, để trống nếu chưa có đánh giá.' ) );
+		$combo[ count( $combo ) - 1 ]['name'] = 'fcc_' . $name;
+	}
 	$groups = array( 'fcc_site' => array( 'Liên hệ, thương hiệu & trạng thái', $site ), 'fcc_product' => array( 'Thông tin sản phẩm', $product ), 'fcc_combo' => array( 'Thông tin combo', $combo ), 'fcc_ingredient' => array( 'Thông tin hoạt chất', array( project_core_fcc_field( 'tag', 'Nhóm / nhãn'), project_core_fcc_field( 'description', 'Mô tả theo hồ sơ', 'textarea', array( 'rows' => 5 ) ) ) ) );
 	foreach ( $groups as $type => $group ) {
 		acf_add_local_field_group( array( 'key' => 'group_' . $type, 'title' => $group[0], 'fields' => $group[1], 'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => $type ) ) ), 'show_in_rest' => 0 ) );

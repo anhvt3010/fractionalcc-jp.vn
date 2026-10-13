@@ -1,5 +1,7 @@
 # Website Fractional CC
 
+> Ch?t 14/10/2026: [release ??u ti?n 1.0.0](release/v1.0.0/RELEASE.md) ch?a to?n b? [d? li?u hi?n t?i ?? duy?t](docs/APPROVED-DEFAULTS.md). C?c b?n release tr??c ?? x?a theo y?u c?u.
+
 Website giới thiệu Fractional CC và tiếp nhận yêu cầu tư vấn/đặt hàng theo brief của Công ty TNHH BUI DANG-JP. [Hồ sơ thông tin website ban đầu](docs/WEBSITE-BRIEF.md) tổng hợp nội dung từ `template/fractional-cc`, danh mục 10 sản phẩm, giá có nguồn, tài nguyên thiết kế và các thông tin chờ xác nhận.
 
 Đã áp dụng [bản chuyển template sang child theme + ACF/CMS](docs/FRACTIONAL-WORDPRESS.md), source version hiện tại `0.3.1`, vào WordPress theo yêu cầu dùng thông tin trang index và danh sách sản phẩm làm mặc định. Trang chủ đã dùng template Fractional CC; CMS có 10 sản phẩm, 1 combo, 39 bản ghi hoạt chất và media. Tên website là **Fractional CC**, slogan lấy từ dữ liệu template. Chỉnh sửa tại [Nội dung website](http://localhost/fractionalcc-jp.vn/wp-admin/admin.php?page=project-website-content).

@@ -28,7 +28,7 @@ function project_child_fcc_customize_register( $manager ) {
 		)
 	);
 
-	$labels  = array( 'home' => 'Trang chủ', 'shared' => 'Nội dung chung', 'catalog' => 'Danh mục', 'policies' => 'Chính sách', 'thankyou' => 'Cảm ơn' );
+	$labels  = array( 'home' => 'Trang chủ', 'shared' => 'Nội dung chung', 'catalog' => 'Danh mục', 'policies' => 'Chính sách', 'thankyou' => 'Cảm ơn', 'concerns' => 'Vấn đề làn da' );
 	$schema  = project_child_fcc_schema();
 	$counter = 0;
 	foreach ( $labels as $scope => $label ) {

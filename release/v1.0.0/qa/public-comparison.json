@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "pages": 15,
+  "checks": 30,
+  "visible_text_and_image_bytes_order_match": true,
+  "unique_image_requests": 58
+}
