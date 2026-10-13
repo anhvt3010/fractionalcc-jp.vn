@@ -41,6 +41,8 @@ if ( false !== mb_stripos( $search_attr, 'môi' ) ) {
 $concerns_attr = implode( ' ', array_unique( $concerns ) );
 $order_select  = project_child_fcc_order_code( 'combo_' . $combo['code'] );
 $badge_text    = ! empty( $combo['badge'] ) ? $combo['badge'] : 'COMBO TIẾT KIỆM';
+$detail_url    = ! empty( $args['home'] ) ? project_core_fcc_url( 'catalog' ) . '#danh-sach-combo' : '#danh-sach-combo';
+$rating        = ! empty( $args['home'] ) ? (string) get_post_meta( $combo['id'], 'fcc_spotlightRating', true ) : '5.0 (1.200+ đánh giá)';
 ?>
 <div class="product-card product-card-combo" data-id="combo-<?php echo esc_attr( $combo['id'] ); ?>" data-type="combo" data-concerns="<?php echo esc_attr( $concerns_attr ); ?>" data-search="<?php echo esc_attr( $search_attr ); ?>">
 	<div class="product-thumb">
@@ -49,9 +51,9 @@ $badge_text    = ! empty( $combo['badge'] ) ? $combo['badge'] : 'COMBO TIẾT KI
 	</div>
 	<div class="product-info">
 		<span class="product-category-name" style="color: var(--color-accent-gold); font-weight: 700;">Bộ Đôi Chăm Sóc Da • <?php echo esc_html( $combo['code'] ); ?></span>
-		<div class="card-rating-row"><span class="card-rating-stars">★★★★★</span><span>5.0 (1.200+ đánh giá)</span></div>
+		<?php if ( '' !== $rating ) : ?><div class="card-rating-row"><span class="card-rating-stars">★★★★★</span><span><?php echo esc_html( $rating ); ?></span></div><?php endif; ?>
 		<h3 class="product-title" title="<?php echo esc_attr( $combo['name'] ); ?>">
-			<a href="#danh-sach-combo"><?php echo esc_html( $combo['shortName'] ); ?></a>
+			<a href="<?php echo esc_url( $detail_url ); ?>"><?php echo esc_html( $combo['shortName'] ?: $combo['name'] ); ?></a>
 		</h3>
 		<p style="font-size: 12.5px; color: var(--color-text-body); margin-bottom: 12px; line-height: 1.45;">
 			<?php echo esc_html( ! empty( $combo['productsIncluded'] ) ? implode( ' + ', $combo['productsIncluded'] ) : $combo['idealFor'] ); ?>
@@ -63,7 +65,7 @@ $badge_text    = ! empty( $combo['badge'] ) ? $combo['badge'] : 'COMBO TIẾT KI
 			<?php endif; ?>
 		</div>
 		<div class="product-actions">
-			<a href="#danh-sach-combo" class="btn-card-view">Chi tiết</a>
+			<a href="<?php echo esc_url( $detail_url ); ?>" class="btn-card-view">Chi tiết</a>
 			<button class="btn-card-buy" data-open-order data-product-select="<?php echo esc_attr( $order_select ); ?>">Đặt mua</button>
 		</div>
 	</div>

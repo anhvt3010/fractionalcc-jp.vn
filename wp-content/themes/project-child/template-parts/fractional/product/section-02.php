@@ -47,7 +47,7 @@
             
             <div class="pd-cocoon-claims">
               <div class="pd-claim-item">
-                <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <svg width="17" height="12" viewbox="0 0 24 16" fill="none" style="border-radius:2px;box-shadow:0 0 2px rgba(0,0,0,0.25);flex-shrink:0;"><rect width="24" height="16" fill="#FFFFFF"></rect><circle cx="12" cy="8" r="4.8" fill="#BC002D"></circle></svg>
                 <span><?php echo project_child_fcc_text( 'fcc_ui_476e0450734143', 'shared' ); ?></span>
               </div>
               <span class="pd-claim-sep">•</span>
@@ -57,7 +57,7 @@
               </div>
               <span class="pd-claim-sep">•</span>
               <div class="pd-claim-item">
-                <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"></path></svg>
+                <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
                 <span><?php echo project_child_fcc_text( 'fcc_ui_a4761e5516401e', 'shared' ); ?></span>
               </div>
               <span class="pd-claim-sep">•</span>
@@ -78,6 +78,7 @@
               }
             }
             $fcc_actives = ! empty( $fcc_current_product['actives'] ) ? (array) $fcc_current_product['actives'] : array();
+            $fcc_usps    = ! empty( $fcc_current_product['uspBullets'] ) ? (array) $fcc_current_product['uspBullets'] : array();
             ?>
             <div class="pd-cocoon-section pd-tabs-section">
               <div class="pd-tabs-nav" role="tablist" aria-label="Thông tin sản phẩm">
@@ -86,6 +87,9 @@
                 </button>
                 <button type="button" role="tab" class="pd-tab-btn" id="pd-tab-actives-btn" aria-selected="false" aria-controls="pd-tab-actives-pane">
                   <?php echo project_child_fcc_text( 'fcc_ui_b2f2c633e021b5', 'shared' ); ?>
+                </button>
+                <button type="button" role="tab" class="pd-tab-btn" id="pd-tab-usps-btn" aria-selected="false" aria-controls="pd-tab-usps-pane">
+                  <?php $tab_usp_label = project_child_fcc_text( 'fcc_ui_tab_usps', 'shared' ); echo $tab_usp_label ? $tab_usp_label : esc_html( 'Điểm Nổi Bật' ); ?>
                 </button>
               </div>
 
@@ -96,7 +100,15 @@
                       $t_clean = project_child_fcc_clean_bullet( $t_item );
                       if ( '' === $t_clean ) { continue; }
                     ?>
-                      <li><span class="pd-bullet-dash">—</span><span class="pd-bullet-text"><?php echo esc_html( $t_clean ); ?></span></li>
+                      <li>
+                        <span class="pd-bullet-check" aria-hidden="true">
+                          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" fill="#FAF6EE" stroke="#C5A059" stroke-width="1.4"/>
+                            <path d="M6 10.2L8.8 13L14 7.8" stroke="#8C6A28" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </span>
+                        <span class="pd-bullet-text"><?php echo esc_html( $t_clean ); ?></span>
+                      </li>
                     <?php endforeach; ?>
                   </ul>
                   <p class="pd-cocoon-text sr-only" id="pd-target-summary" style="display:none;"><?php echo esc_html( project_child_fcc_product_value( 'target_summary' ) ); ?></p>
@@ -128,6 +140,25 @@
                   </ul>
                   <p class="pd-cocoon-text sr-only" id="pd-actives-summary" style="display:none;"><?php echo esc_html( project_child_fcc_product_value( 'active_summary' ) ); ?></p>
                 </div>
+
+                <div class="pd-tab-pane" id="pd-tab-usps-pane" role="tabpanel" aria-labelledby="pd-tab-usps-btn" hidden>
+                  <ul class="pd-tab-bullet-list pd-tab-usp-list" id="pd-usps-list-bullets">
+                    <?php foreach ( $fcc_usps as $u_item ) :
+                      $u_clean = project_child_fcc_clean_bullet( $u_item );
+                      if ( '' === $u_clean ) { continue; }
+                    ?>
+                      <li>
+                        <span class="pd-bullet-check" aria-hidden="true">
+                          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" fill="#FAF6EE" stroke="#C5A059" stroke-width="1.4"/>
+                            <path d="M6 10.2L8.8 13L14 7.8" stroke="#8C6A28" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </span>
+                        <span class="pd-bullet-text"><?php echo esc_html( $u_clean ); ?></span>
+                      </li>
+                    <?php endforeach; ?>
+                  </ul>
+                </div>
               </div>
             </div>
 
@@ -135,29 +166,12 @@
             <div class="pd-cocoon-meta-line">
               <span><strong><?php echo project_child_fcc_text( 'fcc_ui_7c2ab4b4eda5ba', 'shared' ); ?></strong> <span id="pd-volume"><?php echo esc_html( project_child_fcc_product_value( 'volume' ) ); ?></span></span>
               <span>•</span>
-              <span><strong><?php echo project_child_fcc_text( 'fcc_ui_4e3e203cfd2278', 'shared' ); ?></strong> <span id="pd-spec-origin"><?php echo esc_html( project_child_fcc_product_value( 'origin' ) ); ?></span></span>
-              <span>•</span>
               <span><strong><?php echo project_child_fcc_text( 'fcc_ui_09caa8fe5fdc81', 'shared' ); ?></strong> <span id="pd-spec-cbmp" class="text-gold"><?php echo esc_html( project_child_fcc_product_value( 'cbmp' ) ); ?></span></span>
             </div>
 
-            
-            <div class="pd-cocoon-cert-row">
-              <div class="pd-cert-badge">
-                <svg width="20" height="20" viewbox="0 0 24 16" fill="none" style="border-radius:2px;box-shadow:0 0 2px rgba(0,0,0,0.3);"><rect width="24" height="16" fill="#FFFFFF"></rect><circle cx="12" cy="8" r="4.8" fill="#BC002D"></circle></svg>
-                <span><?php echo project_child_fcc_text( 'fcc_ui_07d4db9057c1e0', 'shared' ); ?></span>
-              </div>
-              <div class="pd-cert-badge">
-                <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-                <span><?php echo project_child_fcc_text( 'fcc_ui_d1f450c933841c', 'shared' ); ?></span>
-              </div>
-              <div class="pd-cert-badge">
-                <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2"><path d="M20 6L9 17l-5-5"></path></svg>
-                <span><?php echo project_child_fcc_text( 'fcc_ui_f1cf9cbf3a1a05', 'shared' ); ?></span>
-              </div>
-            </div>
 
             
-            <button class="btn-pd-cocoon-buy" data-open-order id="pd-buy-now-btn">
+            <button class="btn-pd-cocoon-buy" data-open-order data-product-select="prod_<?php echo esc_attr( get_queried_object_id() ); ?>" id="pd-buy-now-btn">
               <span id="pd-buy-btn-label"><?php echo esc_html( project_child_fcc_product_value( 'buy' ) ); ?></span>
               <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
             </button>
@@ -179,20 +193,9 @@
           </div>
         </div>
 
-        
-        <div class="pd-usp-section" id="pd-dac-diem-noi-bat">
-          <div class="section-header">
-            <span class="section-tag"><?php echo project_child_fcc_text( 'fcc_ui_8594d5c948e8fc', 'shared' ); ?></span>
-            <h2 class="section-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_cade7d2a34862c', 'shared' ); ?></h2>
-            <p class="section-desc"><?php echo project_child_fcc_text( 'fcc_ui_5d5f80440bfe3c', 'shared' ); ?></p>
-          </div>
-          <div class="pd-usp-wrap">
-            <ul class="pd-usp-list" id="pd-usp-list"><?php project_child_fcc_fragment( 'usp' ); ?></ul>
-          </div>
-        </div>
 
         
-        <div class="pd-dossier-section">
+        <div class="pd-dossier-section" id="pd-dossier">
           <div class="pd-dossier-header">
             <div>
               <div class="pd-dossier-tag">
@@ -245,35 +248,26 @@
         </div>
 
         
-        <div class="pd-actives-section">
-          <div class="section-header">
-            <span class="section-tag"><?php echo project_child_fcc_text( 'fcc_ui_8b8deb3c94c1ca', 'shared' ); ?></span>
-            <h2 class="section-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_5adcdfe588f53d', 'shared' ); ?></h2>
-            <p class="section-desc"><?php echo project_child_fcc_text( 'fcc_ui_79ee3469c0cac9', 'shared' ); ?></p>
-          </div>
-          <div class="pd-actives-grid" id="pd-actives-grid"><?php project_child_fcc_fragment( 'actives' ); ?></div>
-        </div>
-
-        
+        <!-- COMBINED SECTION: INGREDIENTS & USAGE -->
         <div class="pd-usage-section">
           <div class="section-header">
-            <span class="section-tag"><?php echo project_child_fcc_text( 'fcc_ui_f5310755fa3015', 'shared' ); ?></span>
+            <span class="section-tag"><?php echo project_child_fcc_text( 'fcc_ui_8b8deb3c94c1ca', 'shared' ); ?></span>
             <h2 class="section-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_42526f178a133b', 'shared' ); ?></h2>
             <p class="section-desc"><?php echo project_child_fcc_text( 'fcc_ui_2ec853bc877a83', 'shared' ); ?></p>
           </div>
           <div class="pd-twocol-grid">
-            
+            <!-- COLUMN 1: ACTIVES & MECHANISMS -->
             <div class="pd-card-panel">
               <div class="pd-panel-header">
                 <div class="pd-panel-icon">
-                  <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"></path><path d="M8.5 2h7"></path><path d="M7 16h10"></path></svg>
                 </div>
-                <h3 class="pd-panel-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_7766fc9ecb857b', 'shared' ); ?></h3>
+                <h3 class="pd-panel-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_5adcdfe588f53d', 'shared' ); ?></h3>
               </div>
-              <ul class="pd-target-list" id="pd-target-list"><?php project_child_fcc_fragment( 'targets' ); ?></ul>
+              <div class="pd-actives-grid" id="pd-actives-grid"><?php project_child_fcc_fragment( 'actives' ); ?></div>
             </div>
 
-            
+            <!-- COLUMN 2: HOW TO USE -->
             <div class="pd-card-panel">
               <div class="pd-panel-header">
                 <div class="pd-panel-icon">
@@ -283,7 +277,7 @@
               </div>
               <div class="pd-steps-list" id="pd-steps-list"><?php project_child_fcc_fragment( 'steps' ); ?></div>
 
-              
+              <!-- TINGLING NOTICE -->
               <div class="pd-tingling-box">
                 <div class="pd-tingling-icon">
                   <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"></path><path d="m4.93 4.93 2.83 2.83"></path><path d="M2 12h4"></path><path d="m4.93 19.07 2.83-2.83"></path><path d="M12 22v-4"></path><path d="m19.07 19.07-2.83-2.83"></path><path d="M22 12h-4"></path><path d="m19.07 4.93-2.83 2.83"></path></svg>
@@ -294,8 +288,21 @@
           </div>
         </div>
 
-        
-        <div class="pd-combos-section">
+        <?php
+        $fcc_has_combos = false;
+        if ( function_exists( 'project_core_fcc_combos' ) ) {
+          $fcc_current_id = get_queried_object_id();
+          foreach ( project_core_fcc_combos() as $combo_check ) {
+            if ( ! empty( $combo_check['productIds'] ) && in_array( $fcc_current_id, (array) $combo_check['productIds'], true ) ) {
+              $fcc_has_combos = true;
+              break;
+            }
+          }
+        }
+        if ( $fcc_has_combos ) :
+        ?>
+        <!-- RELATED COMBOS -->
+        <div class="pd-combos-section" id="pd-combos-section">
           <div class="section-header">
             <span class="section-tag"><?php echo project_child_fcc_text( 'fcc_ui_cfd8da94dbbe98', 'shared' ); ?></span>
             <h2 class="section-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_6a7e8255f4bd36', 'shared' ); ?></h2>
@@ -303,49 +310,6 @@
           </div>
           <div class="combos-grid" id="pd-related-combos" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));"><?php project_child_fcc_fragment( 'combos' ); ?></div>
         </div>
-
-        
-        <div class="pd-order-box" id="pd-order-section">
-          <div class="pd-order-header">
-            <span class="badge-pill badge-gold" style="margin-bottom: 8px;"><?php echo project_child_fcc_text( 'fcc_ui_6bcf2a73908762', 'shared' ); ?></span>
-            <h3 class="heading-serif" style="font-size: 28px; margin-bottom: 8px;"><?php echo project_child_fcc_text( 'fcc_ui_231220a45140b9', 'shared' ); ?></h3>
-            <p style="font-size: 14.5px; color: var(--color-text-muted); max-width: 560px; margin: 0 auto;">
-              <?php echo project_child_fcc_text( 'fcc_ui_162da04035299f', 'shared' ); ?>
-            </p>
-          </div>
-
-          <form id="inline-order-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-            <input type="text" name="website_url" style="display:none !important;" tabindex="-1" autocomplete="off">
-            <div class="form-grid">
-              <div class="form-grid-2 form-grid">
-                <div class="form-group">
-                  <label class="form-label" for="inline-order-form-customer_name"><?php echo project_child_fcc_text( 'fcc_ui_c0f92fda1faf20', 'shared', false ); ?> <span class="required"><?php echo project_child_fcc_text( 'fcc_ui_bc90e573831e54', 'shared', false ); ?></span></label>
-                  <input type="text" name="customer_name" class="form-control" placeholder="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_e92a39efe375cb', 'shared' ) ); ?>" required id="inline-order-form-customer_name">
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="inline-order-form-customer_phone"><?php echo project_child_fcc_text( 'fcc_ui_2599277f442df4', 'shared', false ); ?> <span class="required"><?php echo project_child_fcc_text( 'fcc_ui_bc90e573831e54', 'shared', false ); ?></span></label>
-                  <input type="tel" name="customer_phone" class="form-control" placeholder="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_e023e68eba385b', 'shared' ) ); ?>" required id="inline-order-form-customer_phone">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="inline-product-select"><?php echo project_child_fcc_text( 'fcc_ui_8a73cc57b45bc2', 'shared', false ); ?> <span class="required"><?php echo project_child_fcc_text( 'fcc_ui_bc90e573831e54', 'shared', false ); ?></span></label>
-                <select name="selected_item" class="form-control form-select" required id="inline-product-select"><?php project_child_fcc_order_options(); ?></select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="inline-order-form-customer_address"><?php echo project_child_fcc_text( 'fcc_ui_d4a1dc81975845', 'shared', false ); ?></label>
-                <input type="text" name="customer_address" class="form-control" placeholder="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_44ef8652c97ae4', 'shared' ) ); ?>" id="inline-order-form-customer_address">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="inline-order-form-customer_note"><?php echo project_child_fcc_text( 'fcc_ui_7ba461f49016e9', 'shared', false ); ?></label>
-                <textarea name="customer_note" class="form-control" placeholder="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_814bc7fe54e46d', 'shared' ) ); ?>" id="inline-order-form-customer_note" style="min-height: 70px;"></textarea>
-              </div>
-              <div class="form-checkbox-row">
-                <input type="checkbox" name="agree_terms" id="pd-agree" required>
-                <label for="pd-agree"><?php echo project_child_fcc_text( 'fcc_ui_1a2520ccc60375', 'shared', false ); ?></label>
-              </div>
-              <button type="submit" class="btn-submit-order" style="padding: 18px; font-size: 16px;"><?php echo project_child_fcc_text( 'fcc_ui_f2e6976d2f8823', 'shared', false ); ?></button>
-            </div>
-          <?php project_child_fcc_form_fields(); ?></form>
-        </div>
+        <?php endif; ?>
       </div>
     </section>

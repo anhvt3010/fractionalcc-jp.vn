@@ -68,7 +68,6 @@ if (!combo || combo.productIds.join(',') !== '6,7') throw new Error('Existing C‚
 Object.assign(combo, price(comboRows[0].values['Gi√° combo']));
 combo.saveAmount = combo.originalPrice - combo.salePrice;
 const fields = ['brand', 'category', 'origin', 'tagline', 'ingredientsText', 'targetUsers', 'uspBullets', 'legalStatus', 'cbmp', 'notes', 'salePrice', 'originalPrice', 'image', 'actives', 'gallery', 'spotlightTitle', 'spotlightDescription', 'spotlightHighlights'];
-defaults.version = '0.3.3';
 const brandImage = defaults.pages.home.fields.fcc_ui_brand_image;
 if (brandImage?.type === 'image' && /^\d+$/.test(String(brandImage.value))) {
   brandImage.value = 'assets/images/brand/fractional-lineup-full.jpg';

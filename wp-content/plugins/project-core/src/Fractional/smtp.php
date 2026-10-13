@@ -176,108 +176,107 @@ function project_core_fcc_render_smtp_page() {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>' . esc_html( $subject ) . '</title>
 <style>
-  body, table, td, th, p, a, li, blockquote, span, div, h1, h2, h3 { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Arial, Helvetica, sans-serif !important; }
-  table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: Arial, Helvetica, sans-serif; }
+  body, table, td, th, p, a, li, blockquote, span, div, h1, h2, h3 { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif !important; }
+  table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif; }
   img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
-  body { margin: 0; padding: 0; width: 100% !important; background-color: #F4EFE6; font-family: Arial, Helvetica, sans-serif; color: #2B1E16; -webkit-font-smoothing: antialiased; }
+  body { margin: 0; padding: 0; width: 100% !important; background-color: #F4EFE6; font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif; color: #2B1E16; -webkit-font-smoothing: antialiased; }
 </style>
 </head>
-<body style="margin:0;padding:0;background-color:#F4EFE6;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;">
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F4EFE6" style="background-color:#F4EFE6;padding:32px 12px;font-family:Arial,Helvetica,sans-serif;">
+<body style="margin:0;padding:0;background-color:#F4EFE6;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;-webkit-font-smoothing:antialiased;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F4EFE6" style="background-color:#F4EFE6;padding:32px 12px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
     <tr>
-      <td align="center" style="font-family:Arial,Helvetica,sans-serif;">
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:680px;width:100%;background-color:#FFFFFF;border-radius:14px;border:1px solid #DFCEB2;box-shadow:0 8px 30px rgba(43,30,22,0.08);overflow:hidden;font-family:Arial,Helvetica,sans-serif;">
+      <td align="center" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:680px;width:100%;background-color:#FFFFFF;border-radius:14px;border:1px solid #DFCEB2;box-shadow:0 8px 30px rgba(43,30,22,0.08);overflow:hidden;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
           <tr>
-            <td style="background-color:#18110D;background:linear-gradient(145deg, #251912 0%, #140E0A 100%);padding:36px 32px 30px;text-align:center;border-bottom:3px solid #C5A059;font-family:Arial,Helvetica,sans-serif;">
-              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 20px auto;font-family:Arial,Helvetica,sans-serif;">
+            <td style="background-color:#18110D;background:linear-gradient(145deg, #251912 0%, #140E0A 100%);padding:36px 32px 30px;text-align:center;border-bottom:3px solid #C5A059;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 20px auto;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <tr>
-                  <td align="center" valign="middle" style="padding-right:18px;font-family:Arial,Helvetica,sans-serif;">
+                  <td align="center" valign="middle" style="padding-right:18px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                     <img src="cid:fcc_brand_logo" alt="Fractional CC Nhật Bản" width="165" style="display:block;width:165px;height:auto;max-width:165px;border:0;">
                   </td>
                   <td align="center" valign="middle" style="padding:0 4px;">
                     <div style="width:1px;height:38px;background-color:rgba(197,160,89,0.4);line-height:38px;">&nbsp;</div>
                   </td>
-                  <td align="left" valign="middle" style="padding-left:18px;font-family:Arial,Helvetica,sans-serif;">
-                    <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;">
+                  <td align="left" valign="middle" style="padding-left:18px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <table cellpadding="0" cellspacing="0" border="0" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                       <tr>
                         <td align="center" valign="middle" style="background-color:#FFFFFF;border-radius:50%;width:38px;height:38px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.3);padding:0;">
                           <img src="cid:buidang_brand_logo" alt="BUI DANG-JP" width="30" height="30" style="display:block;margin:auto;width:30px;height:30px;border-radius:50%;border:0;">
                         </td>
-                        <td valign="middle" style="padding-left:10px;text-align:left;font-family:Arial,Helvetica,sans-serif;">
-                          <span style="display:block;font-size:9px;color:#C5A059;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;line-height:1.2;font-family:Arial,Helvetica,sans-serif;">PHÂN PHỐI ĐỘC QUYỀN</span>
-                          <span style="display:block;font-size:13px;color:#FFFFFF;font-weight:700;letter-spacing:0.8px;line-height:1.2;font-family:Arial,Helvetica,sans-serif;">BUI DANG-JP</span>
+                        <td valign="middle" style="padding-left:10px;text-align:left;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                          <span style="display:block;font-size:9px;color:#C5A059;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">PHÂN PHỐI ĐỘC QUYỀN</span>
+                          <span style="display:block;font-size:13px;color:#FFFFFF;font-weight:700;letter-spacing:0.8px;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">BUI DANG-JP</span>
                         </td>
                       </tr>
                     </table>
                   </td>
                 </tr>
               </table>
-              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 12px auto;font-family:Arial,Helvetica,sans-serif;">
+              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 12px auto;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <tr>
-                  <td style="background-color:rgba(197,160,89,0.15);border:1px solid rgba(197,160,89,0.35);border-radius:20px;padding:5px 18px;text-align:center;font-family:Arial,Helvetica,sans-serif;">
-                    <span style="color:#E5C178;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:Arial,Helvetica,sans-serif;">KIỂM TRA HỆ THỐNG SMTP</span>
+                  <td style="background-color:rgba(197,160,89,0.15);border:1px solid rgba(197,160,89,0.35);border-radius:20px;padding:5px 18px;text-align:center;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <span style="color:#E5C178;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">KIỂM TRA HỆ THỐNG SMTP</span>
                   </td>
                 </tr>
               </table>
-              <h1 style="margin:0;font-size:22px;font-weight:800;color:#FFFFFF;letter-spacing:0.5px;line-height:1.3;text-transform:uppercase;font-family:Arial,Helvetica,sans-serif;">
+              <h1 style="margin:0;font-size:22px;font-weight:800;color:#FFFFFF;letter-spacing:0.5px;line-height:1.3;text-transform:uppercase;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 KẾT NỐI SMTP THÀNH CÔNG
               </h1>
             </td>
           </tr>
           <tr>
-            <td style="padding:32px 36px 36px;font-family:Arial,Helvetica,sans-serif;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FAF5EC;border:1px solid #ECDDC5;border-radius:8px;margin-bottom:28px;font-family:Arial,Helvetica,sans-serif;">
+            <td style="padding:32px 36px 36px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FAF5EC;border:1px solid #ECDDC5;border-radius:8px;margin-bottom:28px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <tr>
-                  <td align="left" valign="middle" style="padding:16px 20px;font-family:Arial,Helvetica,sans-serif;">
-                    <span style="display:block;font-size:10px;color:#8A7561;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:3px;font-family:Arial,Helvetica,sans-serif;">TRẠNG THÁI KẾT NỐI</span>
-                    <span style="font-size:18px;font-weight:800;color:#1B5E20;letter-spacing:0.5px;font-family:Arial,Helvetica,sans-serif;">✓ ĐÃ XÁC THỰC THÀNH CÔNG</span>
+                  <td align="left" valign="middle" style="padding:16px 20px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <span style="display:block;font-size:10px;color:#8A7561;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:3px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">TRẠNG THÁI KẾT NỐI</span>
+                    <span style="font-size:18px;font-weight:800;color:#1B5E20;letter-spacing:0.5px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">✓ ĐÃ XÁC THỰC THÀNH CÔNG</span>
                   </td>
-                  <td align="right" valign="middle" style="padding:16px 20px;text-align:right;font-family:Arial,Helvetica,sans-serif;">
-                    <span style="display:block;font-size:10px;color:#8A7561;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:3px;font-family:Arial,Helvetica,sans-serif;">THỜI GIAN KIỂM TRA</span>
-                    <span style="font-size:14px;font-weight:700;color:#2B1E16;font-family:Arial,Helvetica,sans-serif;">' . esc_html( $current_time_str ) . '</span>
-                  </td>
-                </tr>
-              </table>
-
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px;font-family:Arial,Helvetica,sans-serif;">
-                <tr>
-                  <td style="border-left:4px solid #C5A059;padding-left:12px;font-family:Arial,Helvetica,sans-serif;">
-                    <span style="font-size:14px;font-weight:800;color:#241812;text-transform:uppercase;letter-spacing:0.5px;font-family:Arial,Helvetica,sans-serif;">THÔNG SỐ MÁY CHỦ SMTP</span>
+                  <td align="right" valign="middle" style="padding:16px 20px;text-align:right;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <span style="display:block;font-size:10px;color:#8A7561;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:3px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">THỜI GIAN KIỂM TRA</span>
+                    <span style="font-size:14px;font-weight:700;color:#2B1E16;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">' . esc_html( $current_time_str ) . '</span>
                   </td>
                 </tr>
               </table>
 
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin-bottom:28px;border:1px solid #EFE8DD;border-radius:8px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <tr>
-                  <td width="35%" style="padding:12px 18px;background-color:#FBF9F6;border-bottom:1px solid #EFE8DD;color:#6A5C52;font-size:13px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">Máy chủ (Host)</td>
-                  <td width="65%" style="padding:12px 18px;background-color:#FFFFFF;border-bottom:1px solid #EFE8DD;color:#18110D;font-size:14px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">' . esc_html( $settings['host'] ) . '</td>
-                </tr>
-                <tr>
-                  <td style="padding:12px 18px;background-color:#FBF9F6;border-bottom:1px solid #EFE8DD;color:#6A5C52;font-size:13px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">Cổng &amp; Mã hóa</td>
-                  <td style="padding:12px 18px;background-color:#FFFFFF;border-bottom:1px solid #EFE8DD;color:#18110D;font-size:14px;font-family:Arial,Helvetica,sans-serif;">' . esc_html( $settings['port'] ) . ' (' . strtoupper( esc_html( $settings['encryption'] ) ) . ')</td>
-                </tr>
-                <tr>
-                  <td style="padding:12px 18px;background-color:#FBF9F6;border-bottom:1px solid #EFE8DD;color:#6A5C52;font-size:13px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">Người gửi thiết lập</td>
-                  <td style="padding:12px 18px;background-color:#FFFFFF;border-bottom:1px solid #EFE8DD;color:#18110D;font-size:14px;font-family:Arial,Helvetica,sans-serif;">' . esc_html( $settings['from_name'] ) . ' &lt;' . esc_html( $settings['from_email'] ) . '&gt;</td>
-                </tr>
-                <tr>
-                  <td style="padding:12px 18px;background-color:#FBF9F6;color:#6A5C52;font-size:13px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">Hộp thư nhận thông báo</td>
-                  <td style="padding:12px 18px;background-color:#FFFFFF;color:#0056b3;font-size:14px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">' . esc_html( $test_recipient ) . '</td>
+                  <td style="border-left:4px solid #C5A059;padding-left:12px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <span style="font-size:14px;font-weight:800;color:#241812;text-transform:uppercase;letter-spacing:0.5px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">THÔNG SỐ MÁY CHỦ SMTP</span>
+                  </td>
                 </tr>
               </table>
 
-              <p style="color:#5C5046;font-size:13px;line-height:1.6;margin:0;font-family:Arial,Helvetica,sans-serif;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin-bottom:28px;border:1px solid #EFE8DD;border-radius:8px;overflow:hidden;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                <tr>
+                  <td width="35%" style="padding:12px 18px;background-color:#FBF9F6;border-bottom:1px solid #EFE8DD;color:#6A5C52;font-size:13px;font-weight:700;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">Máy chủ (Host)</td>
+                  <td width="65%" style="padding:12px 18px;background-color:#FFFFFF;border-bottom:1px solid #EFE8DD;color:#18110D;font-size:14px;font-weight:700;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">' . esc_html( $settings['host'] ) . '</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 18px;background-color:#FBF9F6;border-bottom:1px solid #EFE8DD;color:#6A5C52;font-size:13px;font-weight:700;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">Cổng &amp; Mã hóa</td>
+                  <td style="padding:12px 18px;background-color:#FFFFFF;border-bottom:1px solid #EFE8DD;color:#18110D;font-size:14px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">' . esc_html( $settings['port'] ) . ' (' . strtoupper( esc_html( $settings['encryption'] ) ) . ')</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 18px;background-color:#FBF9F6;border-bottom:1px solid #EFE8DD;color:#6A5C52;font-size:13px;font-weight:700;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">Người gửi thiết lập</td>
+                  <td style="padding:12px 18px;background-color:#FFFFFF;border-bottom:1px solid #EFE8DD;color:#18110D;font-size:14px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">' . esc_html( $settings['from_name'] ) . ' &lt;' . esc_html( $settings['from_email'] ) . '&gt;</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 18px;background-color:#FBF9F6;color:#6A5C52;font-size:13px;font-weight:700;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">Hộp thư nhận thông báo</td>
+                  <td style="padding:12px 18px;background-color:#FFFFFF;color:#0056b3;font-size:14px;font-weight:700;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">' . esc_html( $test_recipient ) . '</td>
+                </tr>
+              </table>
+
+              <p style="color:#5C5046;font-size:13px;line-height:1.6;margin:0;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 Hệ thống website đã sẵn sàng tiếp nhận đơn đặt hàng trực tuyến và gửi email thông báo kèm đầy đủ thông tin khách hàng tới hộp thư này.
               </p>
             </td>
           </tr>
           <tr>
-            <td style="background-color:#FAF8F5;border-top:1px solid #EFE8DD;padding:22px 32px;text-align:center;font-family:Arial,Helvetica,sans-serif;">
-              <p style="margin:0 0 4px 0;font-size:12px;color:#4A4038;line-height:1.6;font-family:Arial,Helvetica,sans-serif;">
-                <strong style="color:#2B1E16;font-family:Arial,Helvetica,sans-serif;">FRACTIONAL CC NHẬT BẢN</strong> &bull; Phân phối độc quyền bởi <strong style="color:#2B1E16;font-family:Arial,Helvetica,sans-serif;">CÔNG TY TNHH BUI DANG-JP</strong>
-              </p>
-              <p style="margin:0;font-size:11px;color:#A39990;line-height:1.5;font-family:Arial,Helvetica,sans-serif;">
-                Hotline: 0985 561 862 &bull; Văn phòng: Tầng 6, Số 35 Phố Trần Thái Tông, Cầu Giấy, Hà Nội
+            <td style="background-color:#FAF8F5;border-top:1px solid #EFE8DD;padding:22px 32px;text-align:center;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+              <p style="margin:0 0 4px 0;font-size:12px;color:#4A4038;line-height:1.6;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                <strong style="color:#2B1E16;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">FRACTIONAL CC NHẬT BẢN</strong> &bull; Phân phối độc quyền bởi <strong style="color:#2B1E16;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">CÔNG TY TNHH BUI DANG-JP</strong>
+              <p style="margin:0;font-size:11px;color:#A39990;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                Email thông báo tự động từ hệ thống quản trị Fractional CC Vietnam.
               </p>
             </td>
           </tr>

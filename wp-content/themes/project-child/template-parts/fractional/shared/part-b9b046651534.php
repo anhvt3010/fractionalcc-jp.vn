@@ -13,7 +13,6 @@
         <p style="font-size: 13.5px; color: var(--color-text-muted);"><?php echo project_child_fcc_text( 'fcc_ui_dfc1bf59d438e2', 'shared' ); ?></p>
       </div>
       <form id="modal-order-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-        <input type="text" name="website_url" style="display:none !important;" tabindex="-1" autocomplete="off">
         <div class="form-grid">
           <div class="form-group">
             <label class="form-label" for="modal-order-form-customer_name"><?php echo project_child_fcc_text( 'fcc_ui_1496dc7df7ac7f', 'shared', false ); ?> <span class="required"><?php echo project_child_fcc_text( 'fcc_ui_b69c738f215c43', 'shared', false ); ?></span></label>
@@ -34,10 +33,6 @@
           <div class="form-group">
             <label class="form-label" for="modal-order-form-customer_note"><?php echo project_child_fcc_text( 'fcc_ui_2ea28da43d47d0', 'shared', false ); ?></label>
                   <textarea name="customer_note" class="form-control" style="min-height: 60px;" placeholder="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_8ab23cd60b12f1', 'shared' ) ); ?>" id="modal-order-form-customer_note"></textarea>
-          </div>
-          <div class="form-checkbox-row">
-            <input type="checkbox" name="agree_terms" id="modal-agree" required>
-            <label for="modal-agree"><?php echo project_child_fcc_text( 'fcc_ui_2eb27fa50153ca', 'shared', false ); ?></label>
           </div>
           <button type="submit" class="btn-submit-order"><?php echo project_child_fcc_text( 'fcc_ui_9681bed187e219', 'shared', false ); ?></button>
         </div>

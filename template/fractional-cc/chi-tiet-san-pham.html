@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +11,7 @@
   <!-- Google Fonts Preconnect & Stylesheet (100% tiếng Việt chuẩn) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -117,8 +117,6 @@
         <span class="pd-breadcrumb-sep">/</span>
         <a href="san-pham.html">Sản phẩm</a>
         <span class="pd-breadcrumb-sep">/</span>
-        <span id="pd-breadcrumb-category">Mỹ Phẩm Nhật Bản</span>
-        <span class="pd-breadcrumb-sep">/</span>
         <strong class="pd-breadcrumb-current" id="pd-breadcrumb-name">Chi tiết sản phẩm</strong>
       </nav>
     </div>
@@ -178,8 +176,8 @@
             <!-- Claims Bar (Like Cocoon's 4 Standards with hairline dividers) -->
             <div class="pd-cocoon-claims">
               <div class="pd-claim-item">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span>100% Nội Địa Nhật</span>
+                <svg width="17" height="12" viewBox="0 0 24 16" fill="none" style="border-radius:2px;box-shadow:0 0 2px rgba(0,0,0,0.25);flex-shrink:0;"><rect width="24" height="16" fill="#FFFFFF"/><circle cx="12" cy="8" r="4.8" fill="#BC002D"/></svg>
+                <span>Xuất xứ: Nhật Bản</span>
               </div>
               <span class="pd-claim-sep">•</span>
               <div class="pd-claim-item">
@@ -188,7 +186,7 @@
               </div>
               <span class="pd-claim-sep">•</span>
               <div class="pd-claim-item">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                 <span>Bộ Y Tế Cấp Phép</span>
               </div>
               <span class="pd-claim-sep">•</span>
@@ -198,7 +196,7 @@
               </div>
             </div>
 
-            <!-- Section: Tabs (Thích hợp với / Thành phần chính) -->
+            <!-- Section: Tabs (Thích hợp với / Thành phần chính / Điểm Nổi Bật) -->
             <div class="pd-cocoon-section pd-tabs-section">
               <div class="pd-tabs-nav" role="tablist" aria-label="Thông tin sản phẩm">
                 <button type="button" role="tab" class="pd-tab-btn is-active" id="pd-tab-targets-btn" aria-selected="true" aria-controls="pd-tab-targets-pane">
@@ -206,6 +204,9 @@
                 </button>
                 <button type="button" role="tab" class="pd-tab-btn" id="pd-tab-actives-btn" aria-selected="false" aria-controls="pd-tab-actives-pane">
                   Thành phần chính
+                </button>
+                <button type="button" role="tab" class="pd-tab-btn" id="pd-tab-usps-btn" aria-selected="false" aria-controls="pd-tab-usps-pane">
+                  Điểm Nổi Bật
                 </button>
               </div>
 
@@ -219,6 +220,10 @@
                   <ul class="pd-tab-bullet-list" id="pd-actives-list-bullets"></ul>
                   <p class="pd-cocoon-text sr-only" id="pd-actives-summary" style="display:none;"></p>
                 </div>
+
+                <div class="pd-tab-pane" id="pd-tab-usps-pane" role="tabpanel" aria-labelledby="pd-tab-usps-btn" hidden>
+                  <ul class="pd-tab-bullet-list pd-tab-usp-list" id="pd-usps-list-bullets"></ul>
+                </div>
               </div>
             </div>
 
@@ -226,26 +231,9 @@
             <div class="pd-cocoon-meta-line">
               <span><strong>Quy cách:</strong> <span id="pd-volume">50ml</span></span>
               <span>•</span>
-              <span><strong>Xuất xứ:</strong> <span id="pd-spec-origin">Nhật Bản</span></span>
-              <span>•</span>
               <span><strong>Số CBMP:</strong> <span id="pd-spec-cbmp" class="text-gold">312958/26/CBMP-QLD</span></span>
             </div>
 
-            <!-- Certification Badges (Like Cocoon's 3 badges) -->
-            <div class="pd-cocoon-cert-row">
-              <div class="pd-cert-badge">
-                <svg width="20" height="20" viewBox="0 0 24 16" fill="none" style="border-radius:2px;box-shadow:0 0 2px rgba(0,0,0,0.3);"><rect width="24" height="16" fill="#FFFFFF"/><circle cx="12" cy="8" r="4.8" fill="#BC002D"/></svg>
-                <span>Tiêu Chuẩn Tokyo</span>
-              </div>
-              <div class="pd-cert-badge">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                <span>Đã Cấp Phép CBMP</span>
-              </div>
-              <div class="pd-cert-badge">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                <span>Phân Phối BUI DANG-JP</span>
-              </div>
-            </div>
 
             <!-- Big Primary Buy Button (Like Cocoon's Big Button) -->
             <button class="btn-pd-cocoon-buy" data-open-order id="pd-buy-now-btn">
@@ -267,20 +255,6 @@
               <span>•</span>
               <span>Đồng kiểm khi nhận hàng</span>
             </div>
-          </div>
-        </div>
-
-        <!-- ĐIỂM NỔI BẬT & CÔNG NGHỆ CHỦ ĐẠO (USP LIST WITH SINGLE CLEAN SVG CHECKMARK) -->
-        <div class="pd-usp-section" id="pd-dac-diem-noi-bat">
-          <div class="section-header">
-            <span class="section-tag">Công Nghệ & Lợi Điểm Độc Quyền</span>
-            <h2 class="section-title heading-serif">Điểm Nổi Bật & Công Nghệ Chủ Đạo</h2>
-            <p class="section-desc">Ứng dụng công nghệ vi kim sinh học tự nhiên Spicule kết hợp phức hợp hoạt chất chuyên sâu từ Tokyo.</p>
-          </div>
-          <div class="pd-usp-wrap">
-            <ul class="pd-usp-list" id="pd-usp-list">
-              <!-- Rendered dynamically by JS: Single clean SVG checkmark per item, no double emojis! -->
-            </ul>
           </div>
         </div>
 
@@ -337,37 +311,25 @@
           </div>
         </div>
 
-        <!-- BREAKTHROUGH ACTIVES SECTION -->
-        <div class="pd-actives-section">
-          <div class="section-header">
-            <span class="section-tag">Công Thức Tầng Sâu & Hoạt Chất Đột Phá</span>
-            <h2 class="section-title heading-serif">Bảng Thành Phần & Cơ Chế Hoạt Động</h2>
-            <p class="section-desc">Hội tụ các phức hợp tinh khiết nồng độ chuẩn y khoa được kiểm chứng lâm sàng nghiêm ngặt.</p>
-          </div>
-          <div class="pd-actives-grid" id="pd-actives-grid">
-            <!-- Rendered dynamically by JS -->
-          </div>
-        </div>
-
-        <!-- TARGET USERS & HOW TO USE (TWO-COLUMN) -->
+        <!-- INGREDIENTS & HOW TO USE (TWO-COLUMN) -->
         <div class="pd-usage-section">
           <div class="section-header">
-            <span class="section-tag">Quy Trình & Làn Da Phù Hợp</span>
+            <span class="section-tag">Công Thức Tầng Sâu & Hoạt Chất Đột Phá</span>
             <h2 class="section-title heading-serif">Hiệu Quả Ứng Dụng & Cách Dùng Chuẩn</h2>
             <p class="section-desc">Tối ưu hóa khả năng hấp thu hoạt chất và đảm bảo an toàn tối đa cho hàng rào bảo vệ da.</p>
           </div>
           <div class="pd-twocol-grid">
-            <!-- Làn Da Phù Hợp -->
+            <!-- Bảng Thành Phần & Cơ Chế Hoạt Động -->
             <div class="pd-card-panel">
               <div class="pd-panel-header">
                 <div class="pd-panel-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"></path><path d="M8.5 2h7"></path><path d="M7 16h10"></path></svg>
                 </div>
-                <h3 class="pd-panel-title heading-serif">Làn Da Phù Hợp Nhất</h3>
+                <h3 class="pd-panel-title heading-serif">Bảng Thành Phần & Cơ Chế Hoạt Động</h3>
               </div>
-              <ul class="pd-target-list" id="pd-target-list">
+              <div class="pd-actives-grid" id="pd-actives-grid">
                 <!-- Rendered dynamically by JS -->
-              </ul>
+              </div>
             </div>
 
             <!-- Hướng Dẫn Sử Dụng Chuẩn -->
@@ -376,7 +338,7 @@
                 <div class="pd-panel-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
                 </div>
-                <h3 class="pd-panel-title heading-serif">Hướng Dẫn Sử Dụng Chuẩn Salon Tokyo</h3>
+                <h3 class="pd-panel-title heading-serif">Hướng Dẫn Sử Dụng</h3>
               </div>
               <div class="pd-steps-list" id="pd-steps-list">
                 <!-- Rendered dynamically by JS -->
@@ -396,7 +358,7 @@
         </div>
 
         <!-- RELATED COMBOS -->
-        <div class="pd-combos-section">
+        <div class="pd-combos-section" id="pd-combos-section">
           <div class="section-header">
             <span class="section-tag">Mua Theo Bộ Tiết Kiệm Hơn</span>
             <h2 class="section-title heading-serif">Các Combo Ưu Đãi Đồng Bộ</h2>
@@ -544,9 +506,9 @@
         </svg>
       </button>
       <div style="text-align: center; margin-bottom: 24px; padding: 0 36px;">
-        <span class="badge-pill badge-gold" style="margin-bottom: 6px;">TƯ VẤN CHÍNH HÃNG</span>
-        <h3 style="font-size: 24px; color: var(--color-text-main); margin-bottom: 6px;">ĐĂNG KÝ ĐẶT HÀNG</h3>
-        <p style="font-size: 13.5px; color: var(--color-text-muted);">Phí vận chuyển thông báo khi xác nhận đơn & Nhận quà tặng kèm theo combo</p>
+        <span class="badge-pill badge-gold" style="margin-bottom: 6px;">BUI DANG-JP PHÂN PHỐI ĐỘC QUYỀN</span>
+        <h3 style="font-size: 24px; color: var(--color-text-main); margin-bottom: 6px;">ĐĂNG KÝ TƯ VẤN & ĐẶT HÀNG</h3>
+        <p style="font-size: 13.5px; color: var(--color-text-muted);">Chuyên viên sẽ liên hệ xác nhận đơn hàng và tư vấn cách sử dụng</p>
       </div>
       <form id="modal-order-form">
         <input type="text" name="website_url" style="display:none !important;" tabindex="-1" autocomplete="off">
@@ -570,10 +532,6 @@
           <div class="form-group">
             <label class="form-label" for="modal-order-form-customer_note">Ghi chú cho chuyên viên</label>
                   <textarea name="customer_note" class="form-control" style="min-height: 60px;" placeholder="Ghi chú thêm..." id="modal-order-form-customer_note"></textarea>
-          </div>
-          <div class="form-checkbox-row">
-            <input type="checkbox" name="agree_terms" id="modal-agree" required>
-            <label for="modal-agree">Tôi đồng ý nhận tư vấn và xác nhận đơn hàng qua điện thoại.</label>
           </div>
           <button type="submit" class="btn-submit-order">MUA NGAY</button>
         </div>

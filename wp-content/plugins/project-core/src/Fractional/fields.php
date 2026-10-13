@@ -8,12 +8,23 @@ function project_core_fcc_field( $name, $label, $type = 'text', $options = array
 
 function project_core_fcc_register_fields() {
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) { return; }
-	$site = array();
-	foreach ( array( 'name' => 'Thương hiệu', 'distributor' => 'Đơn vị phân phối', 'distributorRole' => 'Vai trò phân phối', 'slogan' => 'Thông điệp', 'headline' => 'Tiêu đề nhận diện', 'subheadline' => 'Mô tả nhận diện', 'origin' => 'Xuất xứ', 'hotline' => 'Hotline (chỉ số)', 'hotlineDisplay' => 'Hotline hiển thị' ) as $name => $label ) { $site[] = project_core_fcc_field( $name, $label ); }
-	$site[] = project_core_fcc_field( 'email', 'Email liên hệ', 'email' );
-	$site[] = project_core_fcc_field( 'zaloLink', 'URL Zalo', 'url' );
-	$site[] = project_core_fcc_field( 'messengerLink', 'URL Messenger', 'url' );
-	$site[] = project_core_fcc_field( 'content_status', 'Trạng thái duyệt nội dung', 'select', array( 'choices' => array( 'local_sample' => 'Dữ liệu mẫu local – chờ duyệt', 'approved' => 'Đã duyệt để sử dụng' ), 'default_value' => 'local_sample', 'instructions' => 'Chỉ chọn đã duyệt khi nội dung, chính sách, đánh giá và media đã được xác nhận.' ) );
+	$site = array( project_core_fcc_field( 'site_tab_contact', 'Liên hệ dùng chung', 'tab', array( 'name' => '', 'placement' => 'left' ) ) );
+	foreach ( array(
+		'hotline' => array( 'Số điện thoại cho nút Gọi', 'text', 'Dùng cho liên kết bấm gọi ở chân trang, nút nổi và thanh điện thoại. Nhập liền các chữ số, ví dụ 0985561862.' ),
+		'hotlineDisplay' => array( 'Số điện thoại hiển thị', 'text', 'Dùng trong các dòng hotline trên website; có thể thêm khoảng cách để dễ đọc.' ),
+		'email' => array( 'Email liên hệ', 'email', 'Dùng trong thông tin liên hệ/chân trang và làm đích của nút bấm gửi email.' ),
+		'zaloLink' => array( 'Địa chỉ mở Zalo', 'url', 'Dùng cho các nút Zalo trên website. Nhập URL đầy đủ của kênh liên hệ.' ),
+		'messengerLink' => array( 'Địa chỉ mở Messenger', 'url', 'Dùng cho các liên kết Messenger trên website. Nhập URL đầy đủ của kênh liên hệ.' ),
+	) as $name => $definition ) { $site[] = project_core_fcc_field( $name, $definition[0], $definition[1], array( 'instructions' => $definition[2], 'wrapper' => array( 'width' => 50 ) ) ); }
+	$site[] = project_core_fcc_field( 'site_tab_identity', 'Thương hiệu & phân phối', 'tab', array( 'name' => '', 'placement' => 'left' ) );
+	$site[] = project_core_fcc_field( 'name', 'Tên thương hiệu dùng chung', 'text', array( 'instructions' => 'Dùng trong tiêu đề trang sản phẩm. Logo và chữ trong header được quản lý ở khối Nội dung theo vị trí bên dưới.', 'wrapper' => array( 'width' => 50 ) ) );
+	$site[] = project_core_fcc_field( 'distributor', 'Tên công ty phân phối dùng chung', 'text', array( 'instructions' => 'Thay tên công ty trong những câu giới thiệu/liên hệ đang sử dụng tên mặc định, gồm thanh trên cùng và chân trang.', 'wrapper' => array( 'width' => 50 ) ) );
+	$site[] = project_core_fcc_field( 'site_tab_review', 'Trạng thái nội dung', 'tab', array( 'name' => '', 'placement' => 'left' ) );
+	$site[] = project_core_fcc_field( 'content_status', 'Trạng thái duyệt nội dung website', 'select', array( 'choices' => array( 'local_sample' => 'Dữ liệu mẫu local – chờ duyệt', 'approved' => 'Đã duyệt để sử dụng' ), 'default_value' => 'local_sample', 'instructions' => 'Các trang dùng dữ liệu mẫu được đặt noindex. Chỉ chọn đã duyệt khi nội dung, chính sách, đánh giá và media đã được xác nhận.' ) );
+	$site[] = project_core_fcc_field( 'site_tab_reference', 'Hồ sơ tham chiếu – chưa hiển thị', 'tab', array( 'name' => '', 'placement' => 'left' ) );
+	foreach ( array( 'distributorRole' => 'Vai trò phân phối', 'slogan' => 'Thông điệp thương hiệu', 'headline' => 'Tiêu đề nhận diện', 'subheadline' => 'Mô tả nhận diện', 'origin' => 'Xuất xứ trong hồ sơ thương hiệu' ) as $name => $label ) {
+		$site[] = project_core_fcc_field( $name, $label, 'text', array( 'instructions' => 'Dữ liệu được lưu để tham chiếu, hiện chưa hiển thị trong bố cục website. Các tiêu đề/đoạn giới thiệu đang hiển thị được chỉnh tại Trang chủ hoặc sửa text trực tiếp ngoài giao diện.' ) );
+	}
 	// Native ACF tabs and column widths keep the editor compact without custom styling.
 	$product = array(
 		project_core_fcc_field( 'product_tab_basic', 'Thông tin & giá', 'tab', array( 'name' => '', 'selected' => 1 ) ),
@@ -57,7 +68,7 @@ function project_core_fcc_register_fields() {
 	$combo[] = project_core_fcc_field( 'combo_productIds', 'Sản phẩm trong combo', 'relationship', array( 'post_type' => array( 'fcc_product' ), 'return_format' => 'id' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_productIds';
 	$combo[] = project_core_fcc_field( 'combo_image', 'Ảnh combo', 'image', array( 'return_format' => 'id', 'preview_size' => 'medium' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_image';
 	$combo[] = project_core_fcc_field( 'combo_isBestSeller', 'Hiện nhãn bán chạy (cần có nguồn)', 'true_false', array( 'ui' => 1 ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_isBestSeller';
-	$groups = array( 'fcc_site' => array( 'Thông tin Fractional CC', $site ), 'fcc_product' => array( 'Thông tin sản phẩm', $product ), 'fcc_combo' => array( 'Thông tin combo', $combo ), 'fcc_ingredient' => array( 'Thông tin hoạt chất', array( project_core_fcc_field( 'tag', 'Nhóm / nhãn'), project_core_fcc_field( 'description', 'Mô tả theo hồ sơ', 'textarea', array( 'rows' => 5 ) ) ) ) );
+	$groups = array( 'fcc_site' => array( 'Liên hệ, thương hiệu & trạng thái', $site ), 'fcc_product' => array( 'Thông tin sản phẩm', $product ), 'fcc_combo' => array( 'Thông tin combo', $combo ), 'fcc_ingredient' => array( 'Thông tin hoạt chất', array( project_core_fcc_field( 'tag', 'Nhóm / nhãn'), project_core_fcc_field( 'description', 'Mô tả theo hồ sơ', 'textarea', array( 'rows' => 5 ) ) ) ) );
 	foreach ( $groups as $type => $group ) {
 		acf_add_local_field_group( array( 'key' => 'group_' . $type, 'title' => $group[0], 'fields' => $group[1], 'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => $type ) ) ), 'show_in_rest' => 0 ) );
 	}
@@ -66,6 +77,14 @@ function project_core_fcc_register_fields() {
 		'fields' => array(
 			project_core_fcc_field( 'featured', 'Sản phẩm chủ lực', 'true_false', array( 'wrapper' => array( 'width' => 75 ), 'ui' => 1, 'instructions' => 'Bật để hiển thị ở mục sản phẩm chủ lực trên trang chủ. Chọn tối đa 2 sản phẩm hoặc combo đã xuất bản; bỏ chọn mục cũ trước khi thay thế.' ) ),
 			project_core_fcc_field( 'featured_order', 'Thứ tự hiển thị', 'number', array( 'wrapper' => array( 'width' => 25 ), 'min' => 0, 'step' => 1, 'default_value' => 0, 'instructions' => 'Số nhỏ hơn đứng trước. Chỉ có tác dụng khi bật Sản phẩm chủ lực.' ) ),
+		),
+		'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ), array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_combo' ) ) ),
+	) );
+	acf_add_local_field_group( array(
+		'key' => 'group_fcc_home_catalog', 'title' => 'Danh Mục Sản Phẩm & Các Combo Tối Ưu – Trang chủ', 'menu_order' => 11,
+		'fields' => array(
+			project_core_fcc_field( 'home_catalog', 'Hiển thị trong danh mục trang chủ', 'true_false', array( 'wrapper' => array( 'width' => 75 ), 'ui' => 1, 'instructions' => 'Bật để hiển thị trong mục Danh Mục Sản Phẩm & Các Combo Tối Ưu. Tối đa 6 sản phẩm và combo tổng cộng đã xuất bản. Độc lập với lựa chọn 2 sản phẩm chủ lực; bỏ chọn mục cũ trước khi thay thế.' ) ),
+			project_core_fcc_field( 'home_catalog_order', 'Thứ tự trong danh mục trang chủ', 'number', array( 'wrapper' => array( 'width' => 25 ), 'min' => 0, 'step' => 1, 'default_value' => 0, 'instructions' => 'Số nhỏ hơn đứng trước, dùng chung thứ tự cho sản phẩm và combo. Chỉ có tác dụng khi bật hiển thị danh mục trang chủ.' ) ),
 		),
 		'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ), array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_combo' ) ) ),
 	) );

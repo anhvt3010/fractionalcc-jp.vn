@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 10. Initialize Routine Collapsible & Toggle
   initRoutineCollapsible();
+
+  // 11. Initialize Skin Concerns Tabs (van-de-lan-da)
+  initConcernsTabs();
 });
 
 /**
@@ -573,7 +576,7 @@ function initProductDetailView() {
   if (targetBullets && product.targetUsers) {
     targetBullets.innerHTML = product.targetUsers.map(t => {
       const clean = t.replace(/^[\s✅✓✔☑•*–—\-]+/u, '').trim();
-      return `<li><span class="pd-bullet-dash">—</span><span class="pd-bullet-text">${clean}</span></li>`;
+      return `<li><span class="pd-bullet-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#FAF6EE" stroke="#C5A059" stroke-width="1.4"/><path d="M6 10.2L8.8 13L14 7.8" stroke="#8C6A28" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="pd-bullet-text">${clean}</span></li>`;
     }).join('');
   }
   const targetSummary = document.getElementById('pd-target-summary');
@@ -592,6 +595,14 @@ function initProductDetailView() {
   const activesSummary = document.getElementById('pd-actives-summary');
   if (activesSummary && product.actives) {
     activesSummary.textContent = product.actives.map(a => a.name).join(' • ');
+  }
+
+  const uspsBullets = document.getElementById('pd-usps-list-bullets');
+  if (uspsBullets && product.uspBullets) {
+    uspsBullets.innerHTML = product.uspBullets.map(u => {
+      const clean = u.replace(/^[\s✅✓✔☑•*–—\-]+/u, '').trim();
+      return `<li><span class="pd-bullet-check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#FAF6EE" stroke="#C5A059" stroke-width="1.4"/><path d="M6 10.2L8.8 13L14 7.8" stroke="#8C6A28" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="pd-bullet-text">${clean}</span></li>`;
+    }).join('');
   }
 
   // Dossier Section
@@ -752,9 +763,11 @@ function initProductDetailView() {
 
   // Related Combos that contain this product
   const relatedCombosWrap = document.getElementById('pd-related-combos');
+  const relatedCombosSection = document.getElementById('pd-combos-section') || (relatedCombosWrap ? relatedCombosWrap.closest('.pd-combos-section') : null);
   if (relatedCombosWrap) {
-    const containingCombos = window.FCC_DATA.combos.filter(cb => cb.productIds.includes(product.id));
+    const containingCombos = (window.FCC_DATA?.combos || []).filter(cb => (cb.productIds || []).includes(product.id));
     if (containingCombos.length > 0) {
+      if (relatedCombosSection) relatedCombosSection.hidden = false;
       relatedCombosWrap.innerHTML = containingCombos.map(cb => `
         <div class="combo-card ${cb.isBestSeller ? 'is-featured' : ''}">
           ${cb.isBestSeller ? '<div class="combo-top-badge">BÁN CHẠY NHẤT</div>' : ''}
@@ -785,7 +798,10 @@ function initProductDetailView() {
         button.addEventListener('click', () => openOrderModal(button.dataset.productSelect));
       });
     } else {
-      relatedCombosWrap.innerHTML = `<p style="color: var(--color-text-muted);">Khám phá thêm các combo ưu đãi tại trang danh mục.</p>`;
+      if (relatedCombosSection) {
+        relatedCombosSection.hidden = true;
+      }
+      relatedCombosWrap.innerHTML = '';
     }
   }
 
@@ -1069,4 +1085,47 @@ function initProductDetailTabs() {
     });
   });
 }
+
+/**
+ * 11. Initialize Skin Concerns Tab Switcher (van-de-lan-da)
+ */
+function initConcernsTabs() {
+  const tabBtns = document.querySelectorAll('.concern-tab-btn');
+  const panes = document.querySelectorAll('.concern-tab-pane');
+  if (!tabBtns.length || !panes.length) return;
+
+  function switchTab(targetId, updateHash) {
+    if (typeof updateHash === 'undefined') updateHash = true;
+    var matched = false;
+    tabBtns.forEach(function (btn) {
+      var isTarget = btn.getAttribute('data-tab') === targetId;
+      btn.classList.toggle('active', isTarget);
+      btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+      if (isTarget) matched = true;
+    });
+
+    panes.forEach(function (pane) {
+      var isTarget = pane.id === 'pane-' + targetId;
+      pane.classList.toggle('active', isTarget);
+    });
+
+    if (matched && updateHash && window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', '#' + targetId);
+    }
+  }
+
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var targetId = this.getAttribute('data-tab');
+      if (targetId) switchTab(targetId, true);
+    });
+  });
+
+  // Activate tab from URL hash if present
+  var currentHash = window.location.hash.replace('#', '');
+  if (currentHash && document.getElementById('pane-' + currentHash)) {
+    switchTab(currentHash, false);
+  }
+}
+
 

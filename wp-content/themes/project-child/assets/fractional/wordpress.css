@@ -200,14 +200,29 @@ body.admin-bar .site-header { top: 32px; }
 	.fcc-site .fcc-hero-product-first .hero-conversion { align-self: start; }
 }
 
-/* Comfortable mobile controls, with the menu at the outer right edge. */
-@media (max-width: 1023.98px) {
-	.fcc-site .header-inner-split { padding-left: 16px; padding-right: 16px; gap: 8px; }
-	.fcc-site .header-inner-split .brand-logo-center { padding: 0; min-width: 0; flex-shrink: 1; gap: 8px; }
+/* One centered header, with compact navigation when the split menu cannot fit. */
+.fcc-site .fcc-unified-header .brand-logo-center { padding-left: 16px; padding-right: 16px; }
+@media (min-width: 1280px) {
+	.fcc-site .fcc-unified-header .nav-split-list { gap: 24px; }
+	.fcc-site .fcc-unified-header .header-nav-right { gap: 20px; }
+}
+@media (max-width: 1279.98px) {
+	.fcc-site .fcc-unified-header .header-inner-split {
+		display: grid;
+		grid-template-columns: minmax(88px, 1fr) minmax(0, auto) minmax(88px, 1fr);
+		padding-left: 16px;
+		padding-right: 16px;
+		gap: 8px;
+		height: 80px;
+	}
+	.fcc-site .fcc-unified-header .header-nav-side { display: none; }
+	.fcc-site .fcc-unified-header .header-mobile-bar { display: contents; }
+	.fcc-site .fcc-unified-header .brand-logo-center { grid-column: 2; grid-row: 1; padding: 0; min-width: 0; gap: 8px; }
+	.fcc-site .fcc-unified-header .header-mobile-bar > .btn-header-order { grid-column: 3; grid-row: 1; justify-self: end; padding: 10px 12px; font-size: 11px; letter-spacing: 0.02em; }
+	.fcc-site .fcc-unified-header .mobile-nav-toggle { grid-column: 1; grid-row: 1; justify-self: start; }
 	.fcc-site .header-inner-split .brand-logo-main-img { min-width: 0; flex-shrink: 1; }
 	.fcc-site .site-header .nav-menu { position: absolute; top: 100%; max-height: calc(100dvh - 80px); }
 	body.admin-bar.fcc-site .site-header .nav-menu { max-height: calc(100dvh - 126px); }
-	.fcc-site .header-mobile-bar { flex-shrink: 0; gap: 6px; }
 	.fcc-site .mobile-nav-toggle { width: 44px; height: 44px; flex-shrink: 0; }
 	.fcc-site .header-mobile-bar > .btn-header-order,
 	.fcc-site .header-mobile-bar > .btn { min-height: 44px; }
@@ -521,13 +536,151 @@ body.admin-bar .site-header { top: 32px; }
 	min-width: 0;
 }
 
+.pd-tab-bullet-list .pd-bullet-check {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	margin-top: 2px;
+}
+
+.pd-tabs-nav {
+	display: flex !important;
+	align-items: center !important;
+	gap: 22px !important;
+	border-bottom: 1px solid #EAE5DF !important;
+	margin-bottom: 16px !important;
+	padding-bottom: 0 !important;
+	overflow-x: auto !important;
+	scrollbar-width: none !important;
+	-webkit-overflow-scrolling: touch !important;
+}
+
+.pd-tabs-nav::-webkit-scrollbar {
+	display: none !important;
+}
+
 @media (max-width: 480px) {
 	.pd-tabs-nav {
-		gap: 16px;
+		gap: 16px !important;
 	}
 	.pd-tab-btn {
-		font-size: 13px;
+		font-size: 13px !important;
 	}
 }
+
+/* Widen product information column on desktop */
+@media (min-width: 992px) {
+	.pd-hero-grid {
+		grid-template-columns: 0.9fr 1.1fr !important;
+		gap: 40px !important;
+	}
+}
+
+@media (min-width: 1200px) {
+	.pd-hero-grid {
+		grid-template-columns: 0.88fr 1.12fr !important;
+		gap: 48px !important;
+	}
+}
+
+@media (min-width: 1400px) {
+	.pd-hero-grid {
+		grid-template-columns: 0.85fr 1.15fr !important;
+		gap: 52px !important;
+	}
+}
+
+/* Product Detail Claims Bar: Strictly 1 single row */
+.pd-cocoon-claims {
+	display: flex !important;
+	align-items: center !important;
+	gap: clamp(6px, 0.9vw, 12px) !important;
+	flex-wrap: nowrap !important;
+	white-space: nowrap !important;
+	overflow-x: auto !important;
+	scrollbar-width: none !important;
+	-webkit-overflow-scrolling: touch !important;
+}
+
+.pd-cocoon-claims::-webkit-scrollbar {
+	display: none !important;
+}
+
+.pd-claim-item {
+	display: inline-flex !important;
+	align-items: center !important;
+	gap: 5px !important;
+	font-size: 12px !important;
+	font-weight: 600 !important;
+	color: #38342E !important;
+	white-space: nowrap !important;
+	flex-shrink: 0 !important;
+}
+
+.pd-claim-item svg {
+	color: var(--color-accent-gold, #C5A059) !important;
+	flex-shrink: 0 !important;
+}
+
+.pd-claim-sep {
+	color: var(--color-accent-gold, #C5A059) !important;
+	font-size: 10px !important;
+	line-height: 1 !important;
+	opacity: 0.6 !important;
+	user-select: none !important;
+	flex-shrink: 0 !important;
+}
+
+/* Actives list nested inside two-column card panel */
+.pd-card-panel .pd-actives-grid {
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 14px !important;
+	margin-top: 0 !important;
+}
+
+.pd-card-panel .pd-active-card {
+	background: #FAF8F5 !important;
+	border: 1px solid #EFEBE4 !important;
+	border-radius: 14px !important;
+	padding: 16px 18px !important;
+	box-shadow: none !important;
+	gap: 8px !important;
+	transition: all var(--transition-fast) !important;
+}
+
+.pd-card-panel .pd-active-card::before {
+	display: none !important;
+}
+
+.pd-card-panel .pd-active-card:hover {
+	background: #FFFFFF !important;
+	border-color: #DFBA73 !important;
+	transform: translateY(-2px) !important;
+	box-shadow: 0 6px 20px rgba(197, 160, 89, 0.08) !important;
+}
+
+.pd-card-panel .pd-active-tag {
+	font-size: 10.5px !important;
+	padding: 3px 8px !important;
+	width: fit-content !important;
+}
+
+.pd-card-panel .pd-active-title {
+	font-size: 16px !important;
+	line-height: 1.35 !important;
+	color: #1A1713 !important;
+	margin: 0 !important;
+}
+
+.pd-card-panel .pd-active-desc {
+	font-size: 13.5px !important;
+	line-height: 1.55 !important;
+	color: #5C5750 !important;
+	margin: 0 !important;
+}
+
+
 
 

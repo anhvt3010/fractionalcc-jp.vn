@@ -3,10 +3,15 @@
 defined( 'ABSPATH' ) || exit;
 
 function project_core_fcc_featured_posts( $exclude = 0 ) {
+	return project_core_fcc_selected_posts( 'featured', 2, $exclude );
+}
+
+/** Query a homepage selection, sharing ordering and publication rules. */
+function project_core_fcc_selected_posts( $selection, $limit, $exclude = 0 ) {
 	return get_posts( array(
 		'post_type' => array( 'fcc_product', 'fcc_combo' ), 'post_status' => 'publish',
-		'posts_per_page' => 2, 'post__not_in' => $exclude ? array( absint( $exclude ) ) : array(),
-		'meta_query' => array( 'selection' => array( 'key' => 'fcc_featured', 'value' => '1' ), 'position' => array( 'key' => 'fcc_featured_order', 'compare' => 'EXISTS', 'type' => 'NUMERIC' ) ),
+		'posts_per_page' => $limit, 'post__not_in' => $exclude ? array( absint( $exclude ) ) : array(),
+		'meta_query' => array( 'selection' => array( 'key' => 'fcc_' . $selection, 'value' => '1' ), 'position' => array( 'key' => 'fcc_' . $selection . '_order', 'compare' => 'EXISTS', 'type' => 'NUMERIC' ) ),
 		'orderby' => array( 'position' => 'ASC', 'ID' => 'ASC' ), 'no_found_rows' => true,
 	) );
 }

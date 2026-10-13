@@ -92,7 +92,7 @@ function project_child_fcc_hero_product_image_url() {
 		}
 	}
 	$shared_url = project_child_fcc_image( 'fcc_ui_453bd451ef0751' );
-	return $shared_url ? $shared_url : project_child_fcc_asset( 'assets/images/combo-c-cx4.png' );
+	return $shared_url ? $shared_url : project_child_fcc_asset( 'assets/images/banner/combo-c-cx4-gold.png' );
 }
 
 /** Render the featured product image alt text for the home hero card. */
@@ -118,9 +118,13 @@ function project_child_fcc_link( $source ) {
 	if ( 0 === strpos( $source, 'tel:' ) ) { return 'tel:' . preg_replace( '/[^0-9+]/', '', project_core_fcc_site( 'hotline' ) ); }
 	if ( 0 === strpos( $source, 'mailto:' ) ) { return 'mailto:' . sanitize_email( project_core_fcc_site( 'email' ) ); }
 	if ( 0 === strpos( $source, 'https://zalo.me/' ) ) { return project_core_fcc_site( 'zaloLink' ); }
+	if ( 0 === strpos( $source, 'https://m.me/' ) ) {
+		$messenger = project_core_fcc_site( 'messengerLink' );
+		return ! empty( $messenger ) ? $messenger : 'https://m.me/buidangjp';
+	}
 	$parts = wp_parse_url( $source );
 	$fragment = isset( $parts['fragment'] ) ? '#' . $parts['fragment'] : '';
-	$map = array( 'index.html' => 'home', 'san-pham.html' => 'catalog', 'chinh-sach.html' => 'policies', 'cam-on.html' => 'thankyou' );
+	$map = array( 'index.html' => 'home', 'san-pham.html' => 'catalog', 'chinh-sach.html' => 'policies', 'cam-on.html' => 'thankyou', 'van-de-lan-da.html' => 'concerns' );
 	$path = isset( $parts['path'] ) ? $parts['path'] : '';
 	if ( isset( $map[ $path ] ) ) { return project_core_fcc_url( $map[ $path ], $fragment ); }
 	if ( 'chi-tiet-san-pham.html' === $path ) {
@@ -168,8 +172,9 @@ function project_child_fcc_order_options() {
 	foreach ( $data['products'] as $product ) { echo '<option value="prod_' . esc_attr( $product['id'] ) . '"' . selected( get_queried_object_id(), $product['id'], false ) . '>' . esc_html( $product['shortName'] . ' – ' . project_child_fcc_price( $product['salePrice'] ) ) . '</option>'; }
 }
 
-function project_child_fcc_form_fields() {
+function project_child_fcc_form_fields( $source = 'modal' ) {
 	echo '<input type="hidden" name="action" value="fcc_submit_order">';
 	echo '<input type="hidden" name="_fcc_nonce" value="' . esc_attr( wp_create_nonce( 'fcc_order_action' ) ) . '">';
+	echo '<input type="hidden" name="fcc_form_source" value="' . esc_attr( $source ) . '">';
 	echo '<input type="text" name="website_url" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="fcc-honeypot">';
 }

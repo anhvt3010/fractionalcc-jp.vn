@@ -16,7 +16,7 @@ function project_core_fcc_seed_meta( $id, $name, $value, $key = '', $replace = f
 }
 
 function project_core_fcc_seed_post( $type, $source_key, $title, $slug, $order = 0, $update_title = false ) {
-	$existing = get_posts( array( 'post_type' => $type, 'post_status' => 'any', 'posts_per_page' => 1, 'fields' => 'ids', 'meta_key' => '_fcc_source_key', 'meta_value' => $source_key ) );
+	$existing = get_posts( array( 'post_type' => $type, 'post_status' => array_values( get_post_stati() ), 'posts_per_page' => 1, 'fields' => 'ids', 'meta_key' => '_fcc_source_key', 'meta_value' => $source_key ) );
 	if ( $existing ) {
 		return $update_title ? wp_update_post( array( 'ID' => (int) $existing[0], 'post_title' => $title ), true ) : (int) $existing[0];
 	}
@@ -40,16 +40,82 @@ function project_core_fcc_seed_media( $relative_path ) {
 	return $id;
 }
 
+/** Reject incomplete packages before creating any content. */
+function project_core_fcc_validate_defaults( $data ) {
+	$invalid = new WP_Error( 'fcc_defaults_invalid', 'Dữ liệu mặc định không đầy đủ hoặc không hợp lệ.' );
+	if ( empty( $data['version'] ) || ! is_string( $data['version'] ) || ! preg_match( '/^\d+\.\d+\.\d+(?:-[a-zA-Z0-9.-]+)?$/', $data['version'] ) ) { return $invalid; }
+	foreach ( array( 'pages', 'brand', 'products', 'combos' ) as $section ) {
+		if ( ! isset( $data[ $section ] ) || ! is_array( $data[ $section ] ) ) { return $invalid; }
+	}
+	$images = array();
+	foreach ( array( 'shared', 'home', 'catalog', 'policies', 'thankyou', 'concerns' ) as $kind ) {
+		$page = isset( $data['pages'][ $kind ] ) ? $data['pages'][ $kind ] : array();
+		if ( ! isset( $page['title'], $page['slug'], $page['fields'] ) || ! is_string( $page['title'] ) || ! is_string( $page['slug'] ) || ! is_array( $page['fields'] ) ) { return $invalid; }
+		if ( 'shared' !== $kind && ( ! isset( $page['template'] ) || 'templates/fractional-' . $kind . '.php' !== $page['template'] || ! is_readable( get_stylesheet_directory() . '/' . $page['template'] ) ) ) { return $invalid; }
+		foreach ( $page['fields'] as $field ) {
+			if ( ! is_array( $field ) || ! isset( $field['type'] ) || ! array_key_exists( 'value', $field ) || ! is_scalar( $field['value'] ) ) { return $invalid; }
+			if ( 'image' === $field['type'] ) { $images[] = $field['value']; }
+		}
+	}
+	$product_ids = array();
+	foreach ( $data['products'] as $product ) {
+		if ( ! isset( $product['id'], $product['name'], $product['slug'], $product['image'], $product['gallery'], $product['actives'] ) || ! is_int( $product['id'] ) || $product['id'] < 1 || isset( $product_ids[ $product['id'] ] ) || ! is_string( $product['name'] ) || ! is_string( $product['slug'] ) || ! is_array( $product['gallery'] ) || ! is_array( $product['actives'] ) ) { return $invalid; }
+		$product_ids[ $product['id'] ] = true;
+		$images[] = $product['image'];
+		$images = array_merge( $images, $product['gallery'] );
+		foreach ( $product['actives'] as $active ) {
+			foreach ( array( 'name', 'tag', 'desc' ) as $key ) {
+				if ( ! isset( $active[ $key ] ) || ! is_string( $active[ $key ] ) ) { return $invalid; }
+			}
+		}
+	}
+	$combo_ids = array();
+	foreach ( $data['combos'] as $combo ) {
+		if ( ! isset( $combo['id'], $combo['name'], $combo['code'], $combo['image'], $combo['productIds'] ) || ! is_scalar( $combo['id'] ) || ! preg_match( '/^[a-zA-Z0-9_-]+$/', (string) $combo['id'] ) || isset( $combo_ids[ $combo['id'] ] ) || ! is_string( $combo['name'] ) || ! is_string( $combo['code'] ) || ! is_array( $combo['productIds'] ) ) { return $invalid; }
+		$combo_ids[ $combo['id'] ] = true;
+		$images[] = $combo['image'];
+		foreach ( $combo['productIds'] as $id ) {
+			if ( ! is_int( $id ) || ! isset( $product_ids[ $id ] ) ) { return $invalid; }
+		}
+	}
+	$checked = array();
+	foreach ( $images as $path ) {
+		if ( ! is_string( $path ) || ! preg_match( '#^assets/images/[a-zA-Z0-9/_-]+\.(png|jpe?g|webp)$#', $path ) ) { return $invalid; }
+		if ( isset( $checked[ $path ] ) ) { continue; }
+		$source = get_stylesheet_directory() . '/assets/fractional/' . $path;
+		if ( ! is_readable( $source ) ) { return new WP_Error( 'fcc_asset_missing', 'Thiếu ảnh mặc định: ' . $path ); }
+		if ( ! in_array( wp_get_image_mime( $source ), array( 'image/png', 'image/jpeg', 'image/webp' ), true ) ) { return new WP_Error( 'fcc_asset_invalid', 'Ảnh mặc định không hợp lệ: ' . $path ); }
+		$checked[ $path ] = true;
+	}
+	return true;
+}
+
+/** Compare-and-delete prevents an expired worker from releasing a newer lock. */
+function project_core_fcc_release_setup_lock( $lock ) {
+	global $wpdb;
+	$deleted = $wpdb->delete( $wpdb->options, array( 'option_name' => 'project_core_fcc_setup_lock', 'option_value' => maybe_serialize( $lock ) ), array( '%s', '%s' ) );
+	if ( $deleted ) {
+		wp_cache_delete( 'project_core_fcc_setup_lock', 'options' );
+		wp_cache_delete( 'notoptions', 'options' );
+	}
+}
+
 function project_core_fcc_initialize( $content_status = 'local_sample', $update_catalog = false ) {
 	if ( ! current_user_can( 'manage_options' ) || ! current_user_can( 'upload_files' ) ) { return new WP_Error( 'fcc_permissions', 'Không có quyền khởi tạo website.' ); }
 	if ( $update_catalog && 'cli' !== PHP_SAPI ) { return new WP_Error( 'fcc_catalog_cli', 'Cập nhật hồ sơ hiện có chỉ được chạy bằng lệnh CLI có chỉ định rõ.' ); }
-	if ( ! function_exists( 'acf_add_local_field_group' ) || 'project-child' !== get_stylesheet() ) { return new WP_Error( 'fcc_dependencies', 'Cần kích hoạt ACF và Project Child trước khi khởi tạo.' ); }
+	if ( ! function_exists( 'acf_add_local_field_group' ) || 'project-child' !== get_stylesheet() || wp_get_theme()->errors() ) { return new WP_Error( 'fcc_dependencies', 'Cần cài Kadence và kích hoạt ACF, Project Child trước khi khởi tạo.' ); }
 	$data = project_core_fcc_default_document();
 	if ( is_wp_error( $data ) ) { return $data; }
-	if ( ! add_option( 'project_core_fcc_setup_lock', time(), '', false ) ) { return new WP_Error( 'fcc_setup_busy', 'Có lần khởi tạo đang chạy. Không chạy đồng thời.' ); }
+	$valid = project_core_fcc_validate_defaults( $data );
+	if ( is_wp_error( $valid ) ) { return $valid; }
+	$previous = get_option( 'project_core_fcc_setup_lock' );
+	$started = is_array( $previous ) && isset( $previous['started'] ) ? (int) $previous['started'] : (int) $previous;
+	if ( $previous && $started < time() - 15 * MINUTE_IN_SECONDS ) { project_core_fcc_release_setup_lock( $previous ); }
+	$lock = array( 'started' => time(), 'token' => wp_generate_uuid4() );
+	if ( ! add_option( 'project_core_fcc_setup_lock', $lock, '', false ) ) { return new WP_Error( 'fcc_setup_busy', 'Có lần khởi tạo đang chạy. Không chạy đồng thời.' ); }
 	try {
 		return project_core_fcc_import_document( $data, $content_status, $update_catalog );
-	} finally { delete_option( 'project_core_fcc_setup_lock' ); }
+	} finally { project_core_fcc_release_setup_lock( $lock ); }
 }
 
 /** Only replace an initializer-owned gallery; preserve manually authored blocks. */
@@ -101,12 +167,14 @@ function project_core_fcc_import_document( $data, $content_status, $update_catal
 		project_core_fcc_seed_meta( $id, 'fcc_actives', $ingredient_ids, 'field_fcc_actives', $update_catalog );
 		foreach ( $product as $name => $value ) {
 			if ( in_array( $name, array( 'id', 'name', 'slug', 'gallery', 'actives' ), true ) ) { continue; }
+			$replace = $update_catalog && in_array( $name, $product_fields, true );
+			if ( ! $replace && metadata_exists( 'post', $id, 'fcc_' . $name ) ) { continue; }
 			if ( 'image' === $name ) {
 				$value = project_core_fcc_seed_media( $value ); if ( is_wp_error( $value ) ) { return $value; }
 				if ( '' === get_post_meta( $value, '_wp_attachment_image_alt', true ) ) { update_post_meta( $value, '_wp_attachment_image_alt', $product['name'] ); }
 			}
 			elseif ( is_array( $value ) && 'skinConcerns' !== $name ) { $value = implode( "\n", $value ); }
-			project_core_fcc_seed_meta( $id, 'fcc_' . $name, null === $value ? '' : $value, 'field_fcc_' . $name, $update_catalog && in_array( $name, $product_fields, true ) );
+			project_core_fcc_seed_meta( $id, 'fcc_' . $name, null === $value ? '' : $value, 'field_fcc_' . $name, $replace );
 		}
 		$replace_gallery = $update_catalog && project_core_fcc_is_seeded_gallery( $id );
 		if ( ! metadata_exists( 'post', $id, '_fcc_gallery_initialized' ) || $replace_gallery ) {
@@ -127,14 +195,22 @@ function project_core_fcc_import_document( $data, $content_status, $update_catal
 		if ( is_wp_error( $id ) ) { return $id; }
 		foreach ( $combo as $name => $value ) {
 			if ( in_array( $name, array( 'id', 'name' ), true ) ) { continue; }
+			$replace = $update_catalog && in_array( $name, $combo_fields, true );
+			if ( ! $replace && metadata_exists( 'post', $id, 'fcc_' . $name ) ) { continue; }
 			if ( 'image' === $name ) { $value = project_core_fcc_seed_media( $value ); if ( is_wp_error( $value ) ) { return $value; } }
 			elseif ( 'productIds' === $name ) { $value = array_map( function ( $source_id ) use ( $products ) { return $products[ $source_id ]; }, $value ); }
 			elseif ( is_array( $value ) ) { $value = implode( "\n", $value ); }
-			project_core_fcc_seed_meta( $id, 'fcc_' . $name, null === $value ? '' : $value, 'field_fcc_combo_' . $name, $update_catalog && in_array( $name, $combo_fields, true ) );
+			project_core_fcc_seed_meta( $id, 'fcc_' . $name, null === $value ? '' : $value, 'field_fcc_combo_' . $name, $replace );
 		}
 	}
 	project_core_fcc_initialize_featured();
+	project_core_fcc_initialize_home_catalog();
 	if ( $update_catalog && isset( $data['catalogSource']['sha256'] ) ) { update_option( 'project_core_fcc_catalog_source_hash', $data['catalogSource']['sha256'], false ); }
+	// Select the generated homepage once; subsequent setup must preserve Reading settings.
+	if ( ! get_option( 'project_core_fcc_seed_version' ) && 'posts' === get_option( 'show_on_front' ) && ! get_option( 'page_on_front' ) ) {
+		update_option( 'page_on_front', $ids['home'] );
+		update_option( 'show_on_front', 'page' );
+	}
 	update_option( 'project_core_fcc_seed_version', $data['version'], false );
 	flush_rewrite_rules( false );
 	return $ids;
@@ -171,6 +247,9 @@ add_action( 'admin_init', 'project_core_fcc_maybe_initialize_defaults', 20 );
 
 function project_core_fcc_setup_notice() {
 	$message = get_transient( 'project_core_fcc_setup_error' );
+	if ( get_option( 'project_core_fcc_autosetup_pending' ) && ( ! function_exists( 'acf_add_local_field_group' ) || 'project-child' !== get_stylesheet() || wp_get_theme()->errors() ) ) {
+		$message = 'Khởi tạo đang chờ: cần cài Kadence và kích hoạt ACF, Fractional CC – Project Child.';
+	}
 	if ( $message && current_user_can( 'manage_options' ) ) { echo '<div class="notice notice-error"><p>' . esc_html( $message ) . '</p></div>'; }
 }
 add_action( 'admin_notices', 'project_core_fcc_setup_notice' );

@@ -8,7 +8,7 @@
 .catalog-hero-header {
   padding: 36px 0 30px;
   background: var(--color-bg-soft, #FAF8F5);
-  border-bottom: 1px solid var(--color-border, #E2DBD0);
+  border-bottom: none;
 }
 
 .catalog-hero-header .breadcrumb-nav {

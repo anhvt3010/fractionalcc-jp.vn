@@ -20,6 +20,7 @@ function project_core_render_website_guide() {
 	<div class="wrap">
 		<h1><?php echo esc_html__( 'Nội dung website Fractional CC', 'project-core' ); ?></h1>
 		<p><?php echo esc_html__( 'Chỉnh nội dung và ảnh bằng các trường có nhãn; bố cục được giữ theo thiết kế. Sản phẩm, combo và hoạt chất được quản lý riêng để tái sử dụng.', 'project-core' ); ?></p>
+		<p><?php echo esc_html__( 'Trong Thông tin chung, dùng ô tìm kiếm hoặc chọn tab theo vị trí: đầu trang, menu, chân trang, biểu mẫu, ảnh đánh giá và nhãn trang sản phẩm. Mỗi phần có hướng dẫn và liên kết xem khu vực tương ứng. Nội dung riêng của trang chủ/sản phẩm được chỉnh ở mục của trang/sản phẩm đó; cách sửa text ngoài giao diện vẫn giữ nguyên.', 'project-core' ); ?></p>
 		<?php if ( ! function_exists( 'acf_add_local_field_group' ) || 'project-child' !== get_stylesheet() ) : ?>
 			<div class="notice notice-warning inline"><p><?php echo esc_html__( 'Cần kích hoạt ACF và Fractional CC – Project Child.', 'project-core' ); ?></p></div>
 		<?php endif; ?>
@@ -48,6 +49,7 @@ function project_core_render_website_guide() {
 			<li><?php echo esc_html__( 'Với sản phẩm, mở tab Thông tin & giá để sửa tên ngắn, giá và ảnh chính. Các tab Công dụng & cách dùng, Thành phần, Hồ sơ, Bộ lọc và Đánh giá tách riêng theo nội dung. Mỗi ý trong danh sách là một dòng; để giá trống khi chưa có dữ liệu.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Tại danh sách Sản phẩm, chọn Sửa nhanh để đổi giá bán, giá gốc, tên ngắn, quy cách, loại sản phẩm, xuất xứ, số CBMP, trạng thái hồ sơ và mô tả ngắn. Nhập giá bằng số VNĐ không có dấu phân cách; để trống khi chưa có giá.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Thêm ảnh chi tiết bằng block Thư viện ảnh trong trình soạn thảo sản phẩm. Chọn hoạt chất trong trường liên kết, kéo để sắp xếp.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Để chọn thẻ trong Danh Mục Sản Phẩm & Các Combo Tối Ưu trên trang chủ, mở từng Sản phẩm hoặc Combo, bật Hiển thị trong danh mục trang chủ và nhập thứ tự. Tổng cộng tối đa 6 mục; bỏ chọn một mục trước khi thêm mục mới. Lựa chọn này độc lập với 2 sản phẩm chủ lực.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Nhấn Cập nhật rồi Xem trang. Không thay thiết kế hoặc thêm nội dung chưa được duyệt.', 'project-core' ); ?></li>
 		</ol>
 		<?php if ( current_user_can( 'manage_options' ) ) : ?>

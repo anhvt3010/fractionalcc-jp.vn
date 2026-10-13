@@ -281,6 +281,14 @@ function project_core_fcc_render_order_metabox( $post ) {
 			<td><strong style="font-size:16px;color:#9E6B0D;"><?php echo esc_html( $code ?: $post->post_title ); ?></strong></td>
 		</tr>
 		<tr>
+			<th scope="row">Form gửi yêu cầu</th>
+			<td><?php $sources = array( 'home_inline' => 'Form trực tiếp trang chủ', 'product_inline' => 'Form trực tiếp trang sản phẩm', 'modal' => 'Popup đặt hàng' ); $source_key = get_post_meta( $post->ID, '_fcc_form_source', true ); echo esc_html( isset( $sources[ $source_key ] ) ? $sources[ $source_key ] : 'Chưa ghi nhận ở đơn cũ' ); ?></td>
+		</tr>
+		<tr>
+			<th scope="row">Email thông báo</th>
+			<td><?php $mail_status = get_post_meta( $post->ID, '_fcc_mail_status', true ); echo esc_html( 'sent' === $mail_status ? 'Hệ thống gửi mail đã chấp nhận' : ( 'failed' === $mail_status ? 'Gửi email chưa thành công – kiểm tra cấu hình SMTP' : 'Chưa ghi nhận ở đơn cũ' ) ); ?></td>
+		</tr>
+		<tr>
 			<th scope="row">Trạng thái xử lý</th>
 			<td>
 				<select name="fcc_order_status" id="fcc_order_status" style="font-weight:600;">
@@ -349,6 +357,21 @@ add_action( 'save_post_fcc_order', 'project_core_fcc_save_order_metabox' );
 /**
  * Handle order submissions from both AJAX and standard POST.
  */
+/** Resolve submitted IDs against published catalog data; client-supplied names are not authoritative. */
+function project_core_fcc_order_item_name( $item ) {
+	if ( ! preg_match( '/^(prod|combo)_([1-9][0-9]*)$/', $item, $match ) ) { return ''; }
+	$id = absint( $match[2] );
+	if ( 'prod' === $match[1] ) {
+		$product = project_core_fcc_product( $id, false );
+		if ( ! $product ) { return ''; }
+	} else {
+		$product = null;
+		foreach ( project_core_fcc_combos() as $combo ) { if ( $id === $combo['id'] ) { $product = $combo; break; } }
+		if ( ! $product ) { return ''; }
+	}
+	return $product['name'] . ( ! empty( $product['salePrice'] ) ? ' (' . number_format( $product['salePrice'], 0, ',', '.' ) . ' đ)' : '' );
+}
+
 function project_core_fcc_handle_order_submission() {
 	// 1. Anti-spam honeypot
 	if ( ! empty( $_POST['website_url'] ) ) {
@@ -377,7 +400,6 @@ function project_core_fcc_handle_order_submission() {
 	$item    = isset( $_POST['selected_item'] ) ? sanitize_text_field( wp_unslash( $_POST['selected_item'] ) ) : '';
 	$address = isset( $_POST['customer_address'] ) ? sanitize_text_field( wp_unslash( $_POST['customer_address'] ) ) : '';
 	$note    = isset( $_POST['customer_note'] ) ? sanitize_textarea_field( wp_unslash( $_POST['customer_note'] ) ) : '';
-	$item_name_client = isset( $_POST['selected_item_name'] ) ? sanitize_text_field( wp_unslash( $_POST['selected_item_name'] ) ) : '';
 
 	// 4. Validate requirements
 	if ( mb_strlen( $name ) < 2 ) {
@@ -400,24 +422,11 @@ function project_core_fcc_handle_order_submission() {
 	}
 
 	// 5. Resolve Product/Combo Name
-	$resolved_item_name = $item_name_client;
-	if ( 0 === strpos( $item, 'combo_' ) ) {
-		$combo_id = absint( substr( $item, 6 ) );
-		foreach ( project_core_fcc_combos() as $c ) {
-			if ( $c['id'] === $combo_id ) {
-				$resolved_item_name = $c['name'] . ( $c['salePrice'] ? ' (' . number_format( $c['salePrice'], 0, ',', '.' ) . ' đ)' : '' );
-				break;
-			}
-		}
-	} elseif ( 0 === strpos( $item, 'prod_' ) ) {
-		$prod_id = absint( substr( $item, 5 ) );
-		$product = project_core_fcc_product( $prod_id, false );
-		if ( ! empty( $product['name'] ) ) {
-			$resolved_item_name = $product['name'] . ( ! empty( $product['salePrice'] ) ? ' (' . number_format( $product['salePrice'], 0, ',', '.' ) . ' đ)' : '' );
-		}
-	}
+	$resolved_item_name = project_core_fcc_order_item_name( $item );
 	if ( empty( $resolved_item_name ) ) {
-		$resolved_item_name = $item;
+		$error = 'Sản phẩm hoặc combo đã chọn không còn khả dụng. Vui lòng tải lại trang và chọn lại.';
+		if ( wp_doing_ajax() ) { wp_send_json_error( array( 'message' => $error ), 400 ); }
+		else { wp_die( esc_html( $error ), '', array( 'response' => 400 ) ); }
 	}
 
 	// 6. Generate order code and save to DB
@@ -430,6 +439,11 @@ function project_core_fcc_handle_order_submission() {
 		),
 		true
 	);
+	if ( is_wp_error( $post_id ) || ! $post_id ) {
+		$error = 'Chưa lưu được yêu cầu đặt hàng. Vui lòng thử lại sau hoặc liên hệ Hotline/Zalo.';
+		if ( wp_doing_ajax() ) { wp_send_json_error( array( 'message' => $error ), 500 ); }
+		else { wp_die( esc_html( $error ), '', array( 'response' => 500 ) ); }
+	}
 
 	if ( ! is_wp_error( $post_id ) ) {
 		update_post_meta( $post_id, '_fcc_order_code', $order_code );
@@ -442,6 +456,8 @@ function project_core_fcc_handle_order_submission() {
 		update_post_meta( $post_id, '_fcc_customer_ip', sanitize_text_field( $_SERVER['REMOTE_ADDR'] ?? '' ) );
 		update_post_meta( $post_id, '_fcc_source_url', esc_url_raw( wp_get_referer() ?: '' ) );
 		update_post_meta( $post_id, '_fcc_order_status', 'pending' );
+		$form_source = isset( $_POST['fcc_form_source'] ) && is_string( $_POST['fcc_form_source'] ) ? sanitize_key( wp_unslash( $_POST['fcc_form_source'] ) ) : '';
+		if ( in_array( $form_source, array( 'home_inline', 'product_inline', 'modal' ), true ) ) { update_post_meta( $post_id, '_fcc_form_source', $form_source ); }
 	}
 
 	// 7. Dispatch Email Notification via SMTP/wp_mail()
@@ -456,6 +472,7 @@ function project_core_fcc_handle_order_submission() {
 			'post_id'    => is_numeric( $post_id ) ? $post_id : 0,
 		)
 	);
+	update_post_meta( $post_id, '_fcc_mail_status', $mail_sent ? 'sent' : 'failed' );
 
 	// 8. Respond to client
 	$thankyou_url = add_query_arg(
@@ -520,35 +537,37 @@ function project_core_fcc_send_order_email( $order ) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>' . esc_html( $subject ) . '</title>
 <style>
-  body, table, td, th, p, a, li, blockquote, span, div, h1, h2, h3 { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Arial, Helvetica, sans-serif !important; }
-  table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: Arial, Helvetica, sans-serif; }
+  body, table, td, th, p, a, li, blockquote, span, div, h1, h2, h3 { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif !important; }
+  table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif; }
   img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
-  body { margin: 0; padding: 0; width: 100% !important; background-color: #F4EFE6; font-family: Arial, Helvetica, sans-serif; color: #2B1E16; -webkit-font-smoothing: antialiased; }
+  body { margin: 0; padding: 0; width: 100% !important; background-color: #F4EFE6; font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif; color: #2B1E16; -webkit-font-smoothing: antialiased; }
   @media only screen and (max-width: 620px) {
     .email-container { width: 100% !important; }
-    .email-content { padding: 24px 16px !important; }
-    .email-header-inner { padding: 26px 16px 22px !important; }
+    .email-content { padding: 20px 14px !important; }
+    .email-header-inner { padding: 22px 14px !important; }
     .meta-col { display: block !important; width: 100% !important; text-align: left !important; padding: 10px 14px !important; }
+    .info-label { width: 32% !important; padding: 12px 10px !important; font-size: 12px !important; }
+    .info-val { width: 68% !important; padding: 12px 12px !important; font-size: 13px !important; }
   }
 </style>
 </head>
-<body style="margin:0;padding:0;background-color:#F4EFE6;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;">
+<body style="margin:0;padding:0;background-color:#F4EFE6;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;-webkit-font-smoothing:antialiased;">
   <!-- Outer Wrapper Table -->
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F4EFE6" style="background-color:#F4EFE6;padding:32px 12px;font-family:Arial,Helvetica,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F4EFE6" style="background-color:#F4EFE6;padding:32px 12px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
     <tr>
-      <td align="center" style="font-family:Arial,Helvetica,sans-serif;">
+      <td align="center" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
         <!-- Main Card Container (Width 680px) -->
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" class="email-container" style="max-width:680px;width:100%;background-color:#FFFFFF;border-radius:14px;border:1px solid #DFCEB2;box-shadow:0 8px 30px rgba(43,30,22,0.08);overflow:hidden;font-family:Arial,Helvetica,sans-serif;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" class="email-container" style="max-width:680px;width:100%;background-color:#FFFFFF;border-radius:14px;border:1px solid #DFCEB2;box-shadow:0 8px 30px rgba(43,30,22,0.08);overflow:hidden;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
           
           <!-- Header: Obsidian Black + Luxury Gold Border -->
           <tr>
-            <td class="email-header-inner" style="background-color:#18110D;background:linear-gradient(145deg,#251912 0%,#140E0A 100%);padding:36px 32px 30px;text-align:center;border-bottom:3px solid #C5A059;font-family:Arial,Helvetica,sans-serif;">
+            <td class="email-header-inner" style="background-color:#18110D;background:linear-gradient(145deg,#251912 0%,#140E0A 100%);padding:28px 32px 24px;text-align:center;border-bottom:3px solid #C5A059;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
               
               <!-- Brand Logo Duo: Fractional CC x BUI DANG-JP -->
-              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 20px auto;font-family:Arial,Helvetica,sans-serif;">
+              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <tr>
                   <!-- Fractional CC Logo -->
-                  <td align="center" valign="middle" style="padding-right:18px;font-family:Arial,Helvetica,sans-serif;">
+                  <td align="center" valign="middle" style="padding-right:18px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                     <img src="cid:fcc_brand_logo" alt="Fractional CC Nhật Bản" width="165" style="display:block;width:165px;height:auto;max-width:165px;border:0;">
                   </td>
                   
@@ -558,93 +577,79 @@ function project_core_fcc_send_order_email( $order ) {
                   </td>
                   
                   <!-- BUI DANG-JP Distributor Badge -->
-                  <td align="left" valign="middle" style="padding-left:18px;font-family:Arial,Helvetica,sans-serif;">
-                    <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;">
+                  <td align="left" valign="middle" style="padding-left:18px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <table cellpadding="0" cellspacing="0" border="0" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                       <tr>
                         <td align="center" valign="middle" style="background-color:#FFFFFF;border-radius:50%;width:38px;height:38px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.3);padding:0;">
                           <img src="cid:buidang_brand_logo" alt="BUI DANG-JP" width="30" height="30" style="display:block;margin:auto;width:30px;height:30px;border-radius:50%;border:0;">
                         </td>
-                        <td valign="middle" style="padding-left:10px;text-align:left;font-family:Arial,Helvetica,sans-serif;">
-                          <span style="display:block;font-size:9px;color:#C5A059;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;line-height:1.2;font-family:Arial,Helvetica,sans-serif;">PHÂN PHỐI ĐỘC QUYỀN</span>
-                          <span style="display:block;font-size:13px;color:#FFFFFF;font-weight:700;letter-spacing:0.8px;line-height:1.2;font-family:Arial,Helvetica,sans-serif;">BUI DANG-JP</span>
+                        <td valign="middle" style="padding-left:10px;text-align:left;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                          <span style="display:block;font-size:9px;color:#C5A059;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">PHÂN PHỐI ĐỘC QUYỀN</span>
+                          <span style="display:block;font-size:13px;color:#FFFFFF;font-weight:700;letter-spacing:0.8px;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">BUI DANG-JP</span>
                         </td>
                       </tr>
                     </table>
                   </td>
                 </tr>
               </table>
-
-              <!-- Badge Tag -->
-              <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 12px auto;font-family:Arial,Helvetica,sans-serif;">
-                <tr>
-                  <td style="background-color:rgba(197,160,89,0.15);border:1px solid rgba(197,160,89,0.35);border-radius:20px;padding:5px 18px;text-align:center;font-family:Arial,Helvetica,sans-serif;">
-                    <span style="color:#E5C178;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:Arial,Helvetica,sans-serif;">ĐƠN ĐẶT HÀNG TRỰC TUYẾN</span>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Main Header Title -->
-              <h1 style="margin:0;font-size:23px;font-weight:800;color:#FFFFFF;letter-spacing:0.5px;line-height:1.3;text-transform:uppercase;font-family:Arial,Helvetica,sans-serif;">
-                THÔNG BÁO ĐƠN HÀNG MỚI
-              </h1>
             </td>
           </tr>
 
           <!-- Main Content Body -->
           <tr>
-            <td class="email-content" style="padding:32px 36px 36px;font-family:Arial,Helvetica,sans-serif;">
+            <td class="email-content" style="padding:32px 36px 36px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
 
               <!-- Order Meta Banner: 2-column Table layout -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FAF5EC;border:1px solid #ECDDC5;border-radius:8px;margin-bottom:28px;font-family:Arial,Helvetica,sans-serif;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FAF5EC;border:1px solid #ECDDC5;border-radius:8px;margin-bottom:28px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <tr>
-                  <td class="meta-col" align="left" valign="middle" style="padding:16px 20px;font-family:Arial,Helvetica,sans-serif;">
-                    <span style="display:block;font-size:10px;color:#8A7561;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:3px;font-family:Arial,Helvetica,sans-serif;">MÃ ĐƠN HÀNG</span>
-                    <span style="font-size:22px;font-weight:800;color:#9E6B0D;letter-spacing:0.5px;font-family:Arial,Helvetica,sans-serif;">#' . esc_html( $order['order_code'] ) . '</span>
+                  <td class="meta-col" align="left" valign="middle" style="padding:16px 20px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <span style="display:block;font-size:10px;color:#8A7561;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:3px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">MÃ ĐƠN HÀNG</span>
+                    <span style="font-size:22px;font-weight:800;color:#9E6B0D;letter-spacing:0.5px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">#' . esc_html( $order['order_code'] ) . '</span>
                   </td>
-                  <td class="meta-col" align="right" valign="middle" style="padding:16px 20px;text-align:right;font-family:Arial,Helvetica,sans-serif;">
-                    <span style="display:block;font-size:10px;color:#8A7561;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:3px;font-family:Arial,Helvetica,sans-serif;">THỜI GIAN ĐẶT HÀNG</span>
-                    <span style="font-size:14px;font-weight:700;color:#2B1E16;font-family:Arial,Helvetica,sans-serif;">' . esc_html( $current_time_str ) . '</span>
+                  <td class="meta-col" align="right" valign="middle" style="padding:16px 20px;text-align:right;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <span style="display:block;font-size:10px;color:#8A7561;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:3px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">THỜI GIAN ĐẶT HÀNG</span>
+                    <span style="font-size:14px;font-weight:700;color:#2B1E16;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">' . esc_html( $current_time_str ) . '</span>
                   </td>
                 </tr>
               </table>
 
               <!-- Section Title: Customer Info -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px;font-family:Arial,Helvetica,sans-serif;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <tr>
-                  <td style="border-left:4px solid #C5A059;padding-left:12px;font-family:Arial,Helvetica,sans-serif;">
-                    <span style="font-size:14px;font-weight:800;color:#241812;text-transform:uppercase;letter-spacing:0.5px;font-family:Arial,Helvetica,sans-serif;">THÔNG TIN KHÁCH HÀNG &amp; CHI TIẾT ĐƠN HÀNG</span>
+                  <td style="border-left:4px solid #C5A059;padding-left:12px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <span style="font-size:14px;font-weight:800;color:#241812;text-transform:uppercase;letter-spacing:0.5px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">THÔNG TIN KHÁCH HÀNG &amp; CHI TIẾT ĐƠN HÀNG</span>
                   </td>
                 </tr>
               </table>
 
-              <!-- Information Table -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin-bottom:28px;border:1px solid #EFE8DD;border-radius:8px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;">
+              <!-- Information Table: Full Grid with Vertical & Horizontal Dividers -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin-bottom:28px;border:1px solid #D8C6AC;background-color:#FFFFFF;box-shadow:0 1px 4px rgba(43,30,22,0.04);font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <!-- Họ và tên -->
                 <tr>
-                  <td width="32%" valign="top" style="padding:14px 18px;background-color:#FBF9F6;border-bottom:1px solid #EFE8DD;color:#6A5C52;font-size:13px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">
-                    Họ và tên khách hàng
+                  <td class="info-label" width="28%" valign="top" style="padding:13px 16px;background-color:#F8F4EC;border-right:1px solid #D8C6AC;border-bottom:1px solid #D8C6AC;color:#4A3C31;font-size:13px;font-weight:700;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    Họ và tên
                   </td>
-                  <td width="68%" valign="top" style="padding:14px 18px;background-color:#FFFFFF;border-bottom:1px solid #EFE8DD;color:#18110D;font-size:16px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">
+                  <td class="info-val" width="72%" valign="top" style="padding:13px 16px;background-color:#FFFFFF;border-bottom:1px solid #D8C6AC;color:#18110D;font-size:15px;font-weight:700;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                     ' . esc_html( $order['name'] ) . '
                   </td>
                 </tr>
 
                 <!-- Số điện thoại + Quick actions -->
                 <tr>
-                  <td valign="top" style="padding:14px 18px;background-color:#FBF9F6;border-bottom:1px solid #EFE8DD;color:#6A5C52;font-size:13px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">
+                  <td class="info-label" valign="middle" style="padding:13px 16px;background-color:#F8F4EC;border-right:1px solid #D8C6AC;border-bottom:1px solid #D8C6AC;color:#4A3C31;font-size:13px;font-weight:700;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                     Số điện thoại
                   </td>
-                  <td valign="middle" style="padding:14px 18px;background-color:#FFFFFF;border-bottom:1px solid #EFE8DD;font-family:Arial,Helvetica,sans-serif;">
-                    <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;">
+                  <td class="info-val" valign="middle" style="padding:13px 16px;background-color:#FFFFFF;border-bottom:1px solid #D8C6AC;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <table cellpadding="0" cellspacing="0" border="0" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                       <tr>
-                        <td valign="middle" style="font-family:Arial,Helvetica,sans-serif;">
-                          <a href="tel:' . esc_attr( $order['phone'] ) . '" style="color:#0056b3;font-size:18px;font-weight:800;text-decoration:none;letter-spacing:0.5px;font-family:Arial,Helvetica,sans-serif;">' . esc_html( $order['phone'] ) . '</a>
+                        <td valign="middle" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                          <a href="tel:' . esc_attr( $order['phone'] ) . '" style="color:#0056b3;font-size:17px;font-weight:800;text-decoration:none;letter-spacing:0.5px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">' . esc_html( $order['phone'] ) . '</a>
                         </td>
-                        <td valign="middle" style="padding-left:14px;font-family:Arial,Helvetica,sans-serif;">
-                          <a href="tel:' . esc_attr( $order['phone'] ) . '" style="display:inline-block;background-color:#EBF3FC;border:1px solid #BED8F6;color:#0056b3;font-size:12px;font-weight:700;padding:5px 12px;border-radius:4px;text-decoration:none;font-family:Arial,Helvetica,sans-serif;">Gọi điện</a>
+                        <td valign="middle" style="padding-left:14px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                          <a href="tel:' . esc_attr( $order['phone'] ) . '" style="display:inline-block;background-color:#EBF3FC;border:1px solid #BED8F6;color:#0056b3;font-size:12px;font-weight:700;padding:5px 13px;border-radius:4px;text-decoration:none;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">Gọi điện</a>
                         </td>
-                        <td valign="middle" style="padding-left:8px;font-family:Arial,Helvetica,sans-serif;">
-                          <a href="https://zalo.me/' . esc_attr( $zalo_phone ) . '" target="_blank" style="display:inline-block;background-color:#0068FF;color:#FFFFFF;font-size:12px;font-weight:700;padding:5px 12px;border-radius:4px;text-decoration:none;font-family:Arial,Helvetica,sans-serif;">Chat Zalo</a>
+                        <td valign="middle" style="padding-left:8px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                          <a href="https://zalo.me/' . esc_attr( $zalo_phone ) . '" target="_blank" style="display:inline-block;background-color:#0068FF;color:#FFFFFF;font-size:12px;font-weight:700;padding:5px 13px;border-radius:4px;text-decoration:none;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">Chat Zalo</a>
                         </td>
                       </tr>
                     </table>
@@ -653,44 +658,42 @@ function project_core_fcc_send_order_email( $order ) {
 
                 <!-- Sản phẩm / Combo -->
                 <tr>
-                  <td valign="top" style="padding:14px 18px;background-color:#FBF9F6;border-bottom:1px solid #EFE8DD;color:#6A5C52;font-size:13px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">
-                    Sản phẩm / Combo chọn
+                  <td class="info-label" valign="top" style="padding:13px 16px;background-color:#F8F4EC;border-right:1px solid #D8C6AC;border-bottom:1px solid #D8C6AC;color:#4A3C31;font-size:13px;font-weight:700;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    Sản phẩm chọn
                   </td>
-                  <td valign="top" style="padding:14px 18px;background-color:#FFFFFF;border-bottom:1px solid #EFE8DD;font-family:Arial,Helvetica,sans-serif;">
-                    <div style="background-color:#FFF9EE;border:1px solid #F0DFBF;border-left:4px solid #C5A059;padding:12px 14px;border-radius:6px;font-family:Arial,Helvetica,sans-serif;">
-                      <span style="display:block;font-size:15px;font-weight:700;color:#8A5800;line-height:1.4;font-family:Arial,Helvetica,sans-serif;">' . esc_html( $order['product'] ) . '</span>
+                  <td class="info-val" valign="top" style="padding:13px 16px;background-color:#FFFFFF;border-bottom:1px solid #D8C6AC;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <div style="font-size:15px;font-weight:700;color:#9E6B0D;line-height:1.45;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                      ' . esc_html( $order['product'] ) . '
                     </div>
                   </td>
                 </tr>
 
                 <!-- Địa chỉ giao hàng -->
                 <tr>
-                  <td valign="top" style="padding:14px 18px;background-color:#FBF9F6;border-bottom:1px solid #EFE8DD;color:#6A5C52;font-size:13px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">
-                    Địa chỉ nhận hàng
+                  <td class="info-label" valign="top" style="padding:13px 16px;background-color:#F8F4EC;border-right:1px solid #D8C6AC;border-bottom:1px solid #D8C6AC;color:#4A3C31;font-size:13px;font-weight:700;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    Địa chỉ nhận
                   </td>
-                  <td valign="top" style="padding:14px 18px;background-color:#FFFFFF;border-bottom:1px solid #EFE8DD;color:#2B1E16;font-size:14px;line-height:1.5;font-family:Arial,Helvetica,sans-serif;">
+                  <td class="info-val" valign="top" style="padding:13px 16px;background-color:#FFFFFF;border-bottom:1px solid #D8C6AC;color:#2B1E16;font-size:14px;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                     ' . esc_html( $order['address'] ?: 'Chưa nhập (xác nhận lại qua điện thoại khi gọi)' ) . '
                   </td>
                 </tr>
 
                 <!-- Lời nhắn / Tình trạng da -->
                 <tr>
-                  <td valign="top" style="padding:14px 18px;background-color:#FBF9F6;color:#6A5C52;font-size:13px;font-weight:700;font-family:Arial,Helvetica,sans-serif;">
-                    Lời nhắn / Tình trạng da
+                  <td class="info-label" valign="top" style="padding:13px 16px;background-color:#F8F4EC;border-right:1px solid #D8C6AC;color:#4A3C31;font-size:13px;font-weight:700;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    Ghi chú
                   </td>
-                  <td valign="top" style="padding:14px 18px;background-color:#FFFFFF;font-family:Arial,Helvetica,sans-serif;">
-                    <div style="background-color:#FBFBFB;border:1px dashed #D9CEBF;padding:12px 14px;border-radius:6px;font-size:13px;color:#4A4038;line-height:1.5;font-family:Arial,Helvetica,sans-serif;">
-                      ' . ( $order['note'] ? nl2br( esc_html( $order['note'] ) ) : 'Không có ghi chú' ) . '
-                    </div>
+                  <td class="info-val" valign="top" style="padding:13px 16px;background-color:#FFFFFF;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    ' . ( $order['note'] ? '<div style="font-size:13px;color:#3D332A;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">' . nl2br( esc_html( $order['note'] ) ) . '</div>' : '<span style="font-size:13px;color:#9E9388;font-style:italic;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">Không có ghi chú</span>' ) . '
                   </td>
                 </tr>
               </table>
 
               <!-- Call to Action Button: Direct to Order edit screen -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:28px 0 10px;font-family:Arial,Helvetica,sans-serif;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:28px 0 10px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <tr>
-                  <td align="center" style="font-family:Arial,Helvetica,sans-serif;">
-                    <a href="' . esc_url( $admin_order_url ) . '" target="_blank" style="display:inline-block;background-color:#C5A059;background:linear-gradient(135deg,#D4AF67 0%,#A67C2E 100%);color:#FFFFFF !important;text-decoration:none;font-weight:800;font-size:14px;letter-spacing:0.5px;padding:15px 36px;border-radius:30px;box-shadow:0 6px 18px rgba(166,124,46,0.35);text-transform:uppercase;font-family:Arial,Helvetica,sans-serif;">
+                  <td align="center" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    <a href="' . esc_url( $admin_order_url ) . '" target="_blank" style="display:inline-block;background-color:#C5A059;background:linear-gradient(135deg,#D4AF67 0%,#A67C2E 100%);color:#FFFFFF !important;text-decoration:none;font-weight:800;font-size:14px;letter-spacing:0.5px;padding:15px 36px;border-radius:30px;box-shadow:0 6px 18px rgba(166,124,46,0.35);text-transform:uppercase;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                       XEM &amp; XỬ LÝ ĐƠN HÀNG TRONG ADMIN &rarr;
                     </a>
                   </td>
@@ -702,14 +705,11 @@ function project_core_fcc_send_order_email( $order ) {
 
           <!-- Footer Information -->
           <tr>
-            <td style="background-color:#FAF8F5;border-top:1px solid #EFE8DD;padding:24px 32px;text-align:center;font-family:Arial,Helvetica,sans-serif;">
-              <p style="margin:0 0 6px 0;font-size:12px;color:#4A4038;line-height:1.6;font-family:Arial,Helvetica,sans-serif;">
-                <strong style="color:#2B1E16;font-family:Arial,Helvetica,sans-serif;">FRACTIONAL CC NHẬT BẢN</strong> &bull; Phân phối độc quyền bởi <strong style="color:#2B1E16;font-family:Arial,Helvetica,sans-serif;">CÔNG TY TNHH BUI DANG-JP</strong>
+            <td style="background-color:#FAF8F5;border-top:1px solid #EFE8DD;padding:24px 32px;text-align:center;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+              <p style="margin:0 0 6px 0;font-size:12px;color:#4A4038;line-height:1.6;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                <strong style="color:#2B1E16;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">FRACTIONAL CC NHẬT BẢN</strong> &bull; Phân phối độc quyền bởi <strong style="color:#2B1E16;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">CÔNG TY TNHH BUI DANG-JP</strong>
               </p>
-              <p style="margin:0 0 6px 0;font-size:12px;color:#7A6E65;line-height:1.6;font-family:Arial,Helvetica,sans-serif;">
-                Hotline tư vấn: <strong style="color:#9E6B0D;font-family:Arial,Helvetica,sans-serif;">0985 561 862</strong> &bull; Văn phòng: Tầng 6, Số 35 Phố Trần Thái Tông, Cầu Giấy, Hà Nội
-              </p>
-              <p style="margin:0;font-size:11px;color:#A39990;line-height:1.5;font-family:Arial,Helvetica,sans-serif;">
+              <p style="margin:0;font-size:11px;color:#A39990;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 Email thông báo tự động từ hệ thống quản trị Fractional CC Vietnam.
               </p>
             </td>

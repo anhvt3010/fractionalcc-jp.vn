@@ -1,0 +1,685 @@
+/* ==========================================================================
+   Skin Concerns & Scientific Solutions Page
+   Fractional CC – BUI DANG-JP
+   Redesigned: Clean, Unified, Tab-based Layout
+   ========================================================================== */
+
+.concerns-page-wrap {
+  background-color: #FAF8F5;
+  color: #2D2823;
+  padding-bottom: 60px;
+}
+
+/* 1. HERO HEADER (Harmonized with catalog-hero-header) */
+.concerns-hero-header {
+  padding: 36px 0 30px;
+  background: var(--color-bg-soft, #FAF8F5);
+  border-bottom: none;
+  text-align: left;
+}
+
+.concerns-hero-header .breadcrumb-nav {
+  padding: 0;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--color-text-muted, #718096);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  justify-content: flex-start;
+}
+
+.concerns-hero-header .breadcrumb-nav a {
+  color: var(--color-text-muted, #718096);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.concerns-hero-header .breadcrumb-nav a:hover {
+  color: var(--color-primary, #181818);
+}
+
+.concerns-hero-header .breadcrumb-nav span {
+  margin: 0 8px;
+  color: var(--color-text-muted, #A0AEC0);
+}
+
+.concerns-hero-header .breadcrumb-nav strong {
+  color: var(--color-text-main, #181818);
+  font-weight: 600;
+}
+
+.concerns-hero-content {
+  max-width: 860px;
+  margin: 0;
+  text-align: left;
+}
+
+.concerns-hero-title {
+  font-size: clamp(26px, 3.2vw, 34px);
+  color: var(--color-text-main, #181818);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.concerns-hero-desc {
+  font-size: 15px;
+  color: var(--color-text-body, #4A4A4A);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 780px;
+  text-align: left;
+}
+
+/* 2. TAB NAVIGATION */
+.concerns-body-wrap {
+  padding-top: 32px;
+}
+
+.concerns-tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.concern-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 1px solid #DFD7CA;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #38342E;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  user-select: none;
+}
+
+.concern-tab-btn .tab-btn-num {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 13px;
+  color: #C5A059;
+  transition: color 0.25s ease;
+}
+
+.concern-tab-btn:hover {
+  border-color: #1A1715;
+  color: #1A1715;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.concern-tab-btn.active {
+  background: #1A1715;
+  color: #FFFFFF;
+  border-color: #1A1715;
+  box-shadow: 0 6px 18px rgba(26, 23, 21, 0.18);
+  transform: translateY(-2px);
+}
+
+.concern-tab-btn.active .tab-btn-num {
+  color: #DFBA73;
+}
+
+/* 3. TAB PANES */
+.concern-tab-pane {
+  display: none;
+  opacity: 0;
+}
+
+.concern-tab-pane.active {
+  display: block;
+  opacity: 1;
+  animation: fccPaneFadeIn 0.35s ease;
+}
+
+@keyframes fccPaneFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.concern-pane-card {
+  background: #FFFFFF;
+  border: 1px solid #EAE3D6;
+  border-radius: 24px;
+  padding: 32px 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 992px) {
+  .concern-pane-card {
+    padding: 40px;
+  }
+}
+
+/* 3.1. Overview Grid: Left (Visual + Sign) & Right (Causes + Solutions + Regimen) */
+.concern-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 992px) {
+  .concern-overview-grid {
+    grid-template-columns: 380px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+}
+
+@media (min-width: 1200px) {
+  .concern-overview-grid {
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+  }
+}
+
+/* Left Column: Visual & Symptoms */
+.concern-visual-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.concern-info-header {
+  border-bottom: 1px solid #F0EAE1;
+  padding-bottom: 14px;
+}
+
+.concern-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: #F4EFE6;
+  color: #8C6A28;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.concern-pane-heading {
+  font-size: clamp(20px, 1.8vw, 24px);
+  font-weight: 700;
+  color: #1A1715;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Elegant empathetic quote for customer pain points from brief.docx */
+.concern-pain-quote {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5C5245;
+  font-style: italic;
+  margin: 10px 0 0;
+  padding-left: 14px;
+  border-left: 2.5px solid #C5A059;
+}
+
+.concern-pain-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #4A4238;
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  background: #FAF7F0;
+  border-left: 3px solid #C5A059;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Visual Card */
+.concern-visual-card {
+  background: #FCFAF6;
+  border: 1px solid #EAE2D4;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.concern-img-frame {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #F4EFE6;
+}
+
+.concern-skin-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 10px;
+  display: block;
+}
+
+.concern-visual-caption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #7A6F62;
+  margin-top: 10px;
+  padding: 0 4px;
+  line-height: 1.45;
+}
+
+.concern-visual-caption svg {
+  flex-shrink: 0;
+  color: #C5A059;
+}
+
+/* Right Column: Science, Causes & Solution */
+.concern-science-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.concern-science-header {
+  border-bottom: 1px solid #F0EAE1;
+  padding-bottom: 14px;
+}
+
+.concern-science-title {
+  font-size: clamp(20px, 1.8vw, 24px);
+  font-weight: 700;
+  color: #1A1715;
+  margin: 6px 0 6px;
+  line-height: 1.35;
+}
+
+.concern-science-desc {
+  font-size: 14px;
+  color: #6E6457;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Detail Cards */
+.concern-detail-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.concern-detail-card {
+  background: #FCFAF7;
+  border: 1px solid #ECE4D8;
+  border-radius: 14px;
+  padding: 16px 18px;
+  transition: all var(--transition-fast);
+}
+
+.concern-detail-card.highlight-card {
+  background: #FAF6ED;
+  border-color: #E2D3B8;
+  border-left: 4px solid #C5A059;
+}
+
+.detail-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1A1715;
+  margin: 0 0 8px;
+}
+
+.detail-card-title svg {
+  flex-shrink: 0;
+}
+
+.concern-detail-card p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #4D453C;
+  margin: 0;
+}
+
+/* 3.2. Regimen Section: Spans full width underneath Overview Grid */
+.concern-regimen-section {
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid #EDE5D8;
+}
+
+.concern-regimen-section .pane-products-header {
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.concern-regimen-section .pane-products-title {
+  font-size: clamp(20px, 1.9vw, 24px);
+  font-weight: 700;
+  color: #1A1715;
+  margin: 6px 0 6px;
+  line-height: 1.35;
+}
+
+.concern-regimen-section .pane-products-desc {
+  font-size: 14px;
+  color: #6E6457;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.concern-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 340px));
+  justify-content: start;
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 680px) {
+  .concern-products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Compact Combo Card (Tab 04) */
+.concern-combo-card-compact {
+  display: flex;
+  flex-direction: column;
+  background: #FAF7F0;
+  border: 1px solid #DFD4C0;
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin: 0 0 24px;
+  max-width: 704px;
+  width: 100%;
+  gap: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+@media (min-width: 640px) {
+  .concern-combo-card-compact {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+.combo-compact-thumb {
+  position: relative;
+  width: 140px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.combo-compact-thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.combo-compact-badge {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  background: #1A1715;
+  color: #DFBA73;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.combo-compact-info {
+  flex: 1;
+}
+
+.combo-compact-title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: #1A1715;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.combo-compact-desc {
+  font-size: 13px;
+  color: #5D5449;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.combo-compact-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.combo-compact-price-row .combo-price-now {
+  font-size: 18px;
+  font-weight: 800;
+  color: #C0392B;
+}
+
+.combo-compact-price-row .combo-price-was {
+  font-size: 13px;
+  color: #999083;
+  text-decoration: line-through;
+}
+
+.combo-compact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.combo-compact-actions .btn-card-buy {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.combo-compact-actions .btn-card-view {
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 4. PRINCIPLES SECTION */
+.concerns-principles-section {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid #EAE1D3;
+}
+
+.principles-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 36px;
+}
+
+.principles-title {
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 700;
+  color: #1A1715;
+  margin: 10px 0 8px;
+}
+
+.principles-sub {
+  font-size: 14.5px;
+  color: #6C6255;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.principle-item {
+  background: #FFFFFF;
+  border: 1px solid #EAE3D6;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+
+.principle-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: #D6C8B4;
+}
+
+.principle-num {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: #C5A059;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.principle-item-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1A1715;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.principle-item-desc {
+  font-size: 13.5px;
+  color: #5C5449;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 5. CONSULTATION BANNER */
+.concerns-consultation-banner {
+  margin-top: 48px;
+  background: linear-gradient(145deg, #1A1715 0%, #26211D 100%);
+  border-radius: 22px;
+  padding: 48px 28px;
+  text-align: center;
+  color: #FFFFFF;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.consultation-banner-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.consultation-banner-title {
+  font-size: clamp(20px, 2.2vw, 27px);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 12px;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.consultation-banner-desc {
+  font-size: 14.5px;
+  color: #C8BFB3;
+  line-height: 1.6;
+  margin: 0 auto 28px;
+  max-width: 780px;
+  text-wrap: balance;
+}
+
+.consultation-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-consult-zalo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0068FF;
+  color: #FFFFFF;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-consult-zalo:hover {
+  background: #0056D2;
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+.btn-consult-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-consult-phone:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+/* 6. RESPONSIVE OPTIMIZATIONS */
+@media (max-width: 768px) {
+  .concerns-tab-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+  .concerns-tab-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .concern-tab-btn {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+  .concern-pane-grid {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+  .concerns-consultation-banner {
+    padding: 36px 20px;
+    border-radius: 18px;
+  }
+}

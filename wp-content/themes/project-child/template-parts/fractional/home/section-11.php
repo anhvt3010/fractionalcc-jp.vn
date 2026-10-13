@@ -84,11 +84,6 @@
 
         
         <div class="container final-cta-content">
-          <div class="final-cta-badge">
-            <span class="final-cta-badge-dot"><?php echo project_child_fcc_text( 'fcc_ui_a1a6df710dbb23', 'home' ); ?></span>
-            <span><?php echo project_child_fcc_text( 'fcc_ui_cb085d11a08144', 'home' ); ?></span>
-            <span class="final-cta-badge-dot"><?php echo project_child_fcc_text( 'fcc_ui_a1a6df710dbb23', 'home' ); ?></span>
-          </div>
 
           <h2 class="final-cta-title heading-serif">
             <?php echo project_child_fcc_text( 'fcc_ui_2c8d427ab152ee', 'home' ); ?> <span class="final-cta-title-gold"><?php echo project_child_fcc_text( 'fcc_ui_678d18c5839fc1', 'home' ); ?></span>

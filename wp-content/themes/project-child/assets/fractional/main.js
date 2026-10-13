@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 10. Initialize Routine Collapsible & Toggle
   initRoutineCollapsible();
+
+  // 11. Initialize Skin Concerns Tabs (van-de-lan-da)
+  initConcernsTabs();
 });
 
 /**
@@ -217,6 +220,14 @@ function initOrderSystem() {
     if (form) {
       form.addEventListener('submit', handleOrderSubmit);
       form.addEventListener('input', () => form.querySelector('.order-handoff')?.remove());
+      form.addEventListener('invalid', event => {
+        const message = event.target.name === 'agree_terms'
+          ? 'Vui lòng tích ô đồng ý với điều khoản tư vấn và chính sách bảo mật trước khi gửi.'
+          : event.target.name === 'selected_item'
+            ? 'Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt.'
+            : event.target.validationMessage;
+        showOrderFormMessage(form, message);
+      }, true);
     }
   });
   document.addEventListener('keydown', event => {
@@ -279,9 +290,28 @@ function closeOrderModal() {
   document.body.style.overflow = '';
 }
 
+function showOrderFormMessage(form, message) {
+  let status = form.querySelector('.fcc-order-status');
+  if (!status) {
+    status = document.createElement('p');
+    status.className = 'fcc-order-status';
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
+    const button = form.querySelector('button[type="submit"]');
+    if (button) button.insertAdjacentElement('beforebegin', status);
+    else form.appendChild(status);
+  }
+  status.textContent = message;
+}
+
 async function handleOrderSubmit(e) {
   e.preventDefault();
   const form = e.target;
+  if (form.dataset.submitting === 'true') return;
+  const reportError = message => {
+    showOrderFormMessage(form, message);
+    showToast(message);
+  };
   const nameInput = form.querySelector('[name="customer_name"]');
   const phoneInput = form.querySelector('[name="customer_phone"]');
   const productSelect = form.querySelector('[name="selected_item"]');
@@ -292,7 +322,7 @@ async function handleOrderSubmit(e) {
 
   const name = nameInput ? nameInput.value.trim() : '';
   if (name.length < 2) {
-    showToast('Vui lòng nhập họ và tên của bạn (tối thiểu 2 ký tự)');
+    reportError('Vui lòng nhập họ và tên của bạn (tối thiểu 2 ký tự)');
     nameInput?.focus();
     return;
   }
@@ -300,19 +330,19 @@ async function handleOrderSubmit(e) {
   const phone = phoneInput ? phoneInput.value.trim().replace(/\s+/g, '') : '';
   const phoneRegex = /^(0|\+84)(3|5|7|8|9)[0-9]{8}$/;
   if (!phoneRegex.test(phone)) {
-    showToast('Số điện thoại không đúng định dạng Việt Nam (10 số, bắt đầu bằng 0 hoặc +84)');
+    reportError('Số điện thoại không đúng định dạng Việt Nam (10 số, bắt đầu bằng 0 hoặc +84)');
     phoneInput?.focus();
     return;
   }
 
   if (!productSelect || !productSelect.value) {
-    showToast('Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt');
+    reportError('Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt');
     productSelect?.focus();
     return;
   }
 
   if (agreeCheck && !agreeCheck.checked) {
-    showToast('Vui lòng đồng ý với điều khoản tư vấn và chính sách bảo mật');
+    reportError('Vui lòng tích ô đồng ý với điều khoản tư vấn và chính sách bảo mật trước khi gửi.');
     agreeCheck?.focus();
     return;
   }
@@ -320,6 +350,8 @@ async function handleOrderSubmit(e) {
   if (form.querySelector('[name="website_url"]')?.value) return;
 
   const originalBtnText = submitBtn ? submitBtn.textContent : '';
+  form.dataset.submitting = 'true';
+  showOrderFormMessage(form, 'Đang gửi yêu cầu đặt hàng…');
   if (submitBtn) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Đang gửi đơn hàng...';
@@ -327,7 +359,7 @@ async function handleOrderSubmit(e) {
 
   const formData = new FormData(form);
   formData.set('action', 'fcc_submit_order');
-  formData.set('_fcc_nonce', window.FCC_CONFIG?.nonce || '');
+  formData.set('_fcc_nonce', formData.get('_fcc_nonce') || window.FCC_CONFIG?.nonce || '');
   formData.set('selected_item_name', productSelect.options[productSelect.selectedIndex]?.text || '');
 
   try {
@@ -343,6 +375,7 @@ async function handleOrderSubmit(e) {
     const result = await response.json();
 
     if (result && result.success) {
+      showOrderFormMessage(form, result.data?.message || 'Yêu cầu đặt hàng đã được tiếp nhận.');
       showToast(result.data?.message || 'Đặt hàng thành công! BUI DANG-JP sẽ liên hệ với bạn sớm nhất.');
       form.reset();
 
@@ -366,14 +399,21 @@ async function handleOrderSubmit(e) {
       }, 1500);
     } else {
       const errMsg = result?.data?.message || 'Có lỗi xảy ra khi gửi đơn. Vui lòng thử lại hoặc liên hệ qua Zalo/Hotline.';
-      showToast(errMsg);
+      reportError(errMsg);
+      form.dataset.submitting = 'false';
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = originalBtnText;
       }
     }
   } catch (err) {
-    form.submit();
+    // A failed response can arrive after the server saved/sent the order; never resubmit automatically.
+    reportError('Chưa xác nhận được kết quả gửi. Vui lòng kiểm tra kết nối hoặc liên hệ Hotline/Zalo trước khi gửi lại.');
+    form.dataset.submitting = 'false';
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
   }
 }
 
@@ -784,4 +824,47 @@ function initRoutineCollapsible() {
     });
   });
 }
+
+/**
+ * 11. Initialize Skin Concerns Tab Switcher (van-de-lan-da)
+ */
+function initConcernsTabs() {
+  const tabBtns = document.querySelectorAll('.concern-tab-btn');
+  const panes = document.querySelectorAll('.concern-tab-pane');
+  if (!tabBtns.length || !panes.length) return;
+
+  function switchTab(targetId, updateHash) {
+    if (typeof updateHash === 'undefined') updateHash = true;
+    var matched = false;
+    tabBtns.forEach(function (btn) {
+      var isTarget = btn.getAttribute('data-tab') === targetId;
+      btn.classList.toggle('active', isTarget);
+      btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+      if (isTarget) matched = true;
+    });
+
+    panes.forEach(function (pane) {
+      var isTarget = pane.id === 'pane-' + targetId;
+      pane.classList.toggle('active', isTarget);
+    });
+
+    if (matched && updateHash && window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', '#' + targetId);
+    }
+  }
+
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var targetId = this.getAttribute('data-tab');
+      if (targetId) switchTab(targetId, true);
+    });
+  });
+
+  // Activate tab from URL hash if present
+  var currentHash = window.location.hash.replace('#', '');
+  if (currentHash && document.getElementById('pane-' + currentHash)) {
+    switchTab(currentHash, false);
+  }
+}
+
 

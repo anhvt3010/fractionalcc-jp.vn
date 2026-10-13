@@ -1,0 +1,20 @@
+/* Admin only: use native WordPress/ACF fields and tabs, with a local content finder. */
+.fcc-content-finder { margin: 18px 0; padding: 18px; border: 1px solid #c3c4c7; border-radius: 4px; background: #fff; }
+.fcc-content-finder h2 { margin: 0 0 10px; font-size: 16px; }
+.fcc-content-finder label { display: block; margin: 12px 0 6px; font-weight: 600; }
+.fcc-content-finder input[type="search"] { width: 100%; max-width: 720px; min-height: 40px; }
+#fcc-field-results { max-height: 280px; overflow: auto; margin: 12px 0 0; }
+#fcc-field-results button { width: 100%; padding: 10px; text-align: left; border: 1px solid #dcdcde; border-radius: 3px; background: #f6f7f7; color: #1d2327; cursor: pointer; }
+#fcc-field-results button:hover { background: #f0f6fc; }
+#fcc-field-results button:focus-visible { outline: 2px solid #2271b1; outline-offset: -2px; }
+.post-type-fcc_site .acf-field.fcc-field-found { box-shadow: inset 4px 0 0 #2271b1; background: #f0f6fc; }
+.post-type-fcc_site .acf-fields > .acf-tab-wrap.-left .acf-tab-group li a { white-space: normal; }
+.post-type-fcc_site .acf-field-message .acf-input { line-height: 1.7; }
+@media (max-width: 782px) {
+  .post-type-fcc_site .acf-fields.-sidebar { padding-left: 0; }
+  .post-type-fcc_site .acf-fields > .acf-tab-wrap.-left { position: relative; width: 100%; }
+  .post-type-fcc_site .acf-fields > .acf-tab-wrap.-left .acf-tab-group { display: flex; flex-wrap: wrap; padding: 8px; }
+  .post-type-fcc_site .acf-fields > .acf-tab-wrap.-left .acf-tab-group li { margin: 2px; }
+  .post-type-fcc_site .acf-fields.-sidebar::before { display: none; }
+  .post-type-fcc_site .acf-field[data-width] { width: 100% !important; min-height: 0 !important; border-left-width: 0 !important; }
+}

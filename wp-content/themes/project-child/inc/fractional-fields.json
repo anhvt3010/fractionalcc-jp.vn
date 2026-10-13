@@ -1316,7 +1316,7 @@
             "fcc_ui_839b3de79eb53b": {
                 "key": "field_fcc_ui_839b3de79eb53b",
                 "name": "fcc_ui_839b3de79eb53b",
-                "label": "Khám Phá Toàn Bộ 10 Sản Phẩm & Bộ Lọc Nhu Cầu Tại Đây →",
+                "label": "Khám Phá Toàn Bộ Sản Phẩm & Combo Tại Đây →",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
@@ -2117,7 +2117,7 @@
                 "fcc_refresh": false
             }
         },
-        "Đánh Giá Khách Hàng & Review KOL/KOC": {
+        "Đánh Giá Khách Hàng": {
             "fcc_ui_120d1c810750c2": {
                 "key": "field_fcc_ui_120d1c810750c2",
                 "name": "fcc_ui_120d1c810750c2",
@@ -2130,7 +2130,7 @@
             "fcc_ui_d5a34567c9c8c0": {
                 "key": "field_fcc_ui_d5a34567c9c8c0",
                 "name": "fcc_ui_d5a34567c9c8c0",
-                "label": "Đánh Giá Khách Hàng & Review KOL/KOC",
+                "label": "Đánh Giá Khách Hàng",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -2635,6 +2635,98 @@
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
                 "fcc_refresh": true
+            },
+            "fcc_ui_badge_5": {
+                "key": "field_fcc_ui_badge_5",
+                "name": "fcc_ui_badge_5",
+                "label": "★ Reviewer Skincare",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_feedback_name_7": {
+                "key": "field_fcc_ui_feedback_name_7",
+                "name": "fcc_ui_feedback_name_7",
+                "label": "Ngọc Hân",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_feedback_sub_7": {
+                "key": "field_fcc_ui_feedback_sub_7",
+                "name": "fcc_ui_feedback_sub_7",
+                "label": "32 tuổi · Quảng Ninh",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_feedback_badge_7": {
+                "key": "field_fcc_ui_feedback_badge_7",
+                "name": "fcc_ui_feedback_badge_7",
+                "label": "✓ Khách Thân Thiết",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_feedback_rating_7": {
+                "key": "field_fcc_ui_feedback_rating_7",
+                "name": "fcc_ui_feedback_rating_7",
+                "label": "5.0 / 5.0",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_feedback_concern_7": {
+                "key": "field_fcc_ui_feedback_concern_7",
+                "name": "fcc_ui_feedback_concern_7",
+                "label": "Làn da: Nám mảng, da sần sùi thô ráp, tối màu",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_feedback_product_7": {
+                "key": "field_fcc_ui_feedback_product_7",
+                "name": "fcc_ui_feedback_product_7",
+                "label": "Trải nghiệm: Trọn Bộ Liệu Trình Vi Kim Fractional CC",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_feedback_text_7": {
+                "key": "field_fcc_ui_feedback_text_7",
+                "name": "fcc_ui_feedback_text_7",
+                "label": "Feedback Ngọc Hân",
+                "type": "textarea",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false,
+                "rows": 3,
+                "new_lines": ""
+            },
+            "fcc_ui_feedback_photo_tag_7": {
+                "key": "field_fcc_ui_feedback_photo_tag_7",
+                "name": "fcc_ui_feedback_photo_tag_7",
+                "label": "Ảnh Before/After sau 1 tháng",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_feedback_time_7": {
+                "key": "field_fcc_ui_feedback_time_7",
+                "name": "fcc_ui_feedback_time_7",
+                "label": "1 tháng trước",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
             }
         },
         "Fractional CC – Phân Phối Độc Quyền Bởi BUI DANG-JP Tại Việt Nam": {
@@ -3746,7 +3838,7 @@
             "fcc_ui_2c8d427ab152ee": {
                 "key": "field_fcc_ui_2c8d427ab152ee",
                 "name": "fcc_ui_2c8d427ab152ee",
-                "label": "Khám Phá Fractional CC –",
+                "label": "KHÁM PHÁ FRACTIONAL CC –",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3755,7 +3847,7 @@
             "fcc_ui_678d18c5839fc1": {
                 "key": "field_fcc_ui_678d18c5839fc1",
                 "name": "fcc_ui_678d18c5839fc1",
-                "label": "Chăm Sóc Làn Da Theo Cách Của Bạn.",
+                "label": "CHĂM SÓC LÀN DA THEO CÁCH CỦA BẠN.",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4195,7 +4287,7 @@
             "fcc_ui_f2b083aef82352": {
                 "key": "field_fcc_ui_f2b083aef82352",
                 "name": "fcc_ui_f2b083aef82352",
-                "label": "TƯ VẤN CHÍNH HÃNG",
+                "label": "BUI DANG-JP PHÂN PHỐI ĐỘC QUYỀN",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4204,7 +4296,7 @@
             "fcc_ui_e97d9d953b50ea": {
                 "key": "field_fcc_ui_e97d9d953b50ea",
                 "name": "fcc_ui_e97d9d953b50ea",
-                "label": "ĐĂNG KÝ ĐẶT HÀNG",
+                "label": "ĐĂNG KÝ TƯ VẤN & ĐẶT HÀNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4213,7 +4305,7 @@
             "fcc_ui_923181c9defa62": {
                 "key": "field_fcc_ui_923181c9defa62",
                 "name": "fcc_ui_923181c9defa62",
-                "label": "Phân phối độc quyền bởi BUI DANG-JP • Phí vận chuyển thông báo khi xác nhận đơn",
+                "label": "Chuyên viên sẽ liên hệ xác nhận đơn hàng và tư vấn cách sử dụng",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4402,7 +4494,7 @@
             "fcc_ui_dfc1bf59d438e2": {
                 "key": "field_fcc_ui_dfc1bf59d438e2",
                 "name": "fcc_ui_dfc1bf59d438e2",
-                "label": "Phí vận chuyển thông báo khi xác nhận đơn & Nhận quà tặng kèm theo combo",
+                "label": "Chuyên viên sẽ liên hệ xác nhận đơn hàng và tư vấn cách sử dụng",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4912,7 +5004,7 @@
             "fcc_ui_453bd451ef0751": {
                 "key": "field_fcc_ui_453bd451ef0751",
                 "name": "fcc_ui_453bd451ef0751",
-                "label": "combo-c-cx4.png",
+                "label": "combo-c-cx4-gold.png",
                 "type": "image",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "return_format": "id",
@@ -4982,7 +5074,7 @@
             "fcc_ui_2d8d0e4cc814fb": {
                 "key": "field_fcc_ui_2d8d0e4cc814fb",
                 "name": "fcc_ui_2d8d0e4cc814fb",
-                "label": "feedback-1.jpg",
+                "label": "feedback-1.png",
                 "type": "image",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "return_format": "id",
@@ -4992,7 +5084,7 @@
             "fcc_ui_5e28ca19d6c1a6": {
                 "key": "field_fcc_ui_5e28ca19d6c1a6",
                 "name": "fcc_ui_5e28ca19d6c1a6",
-                "label": "feedback-2.jpg",
+                "label": "feedback-2.png",
                 "type": "image",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "return_format": "id",
@@ -5002,7 +5094,7 @@
             "fcc_ui_0db797a330bea5": {
                 "key": "field_fcc_ui_0db797a330bea5",
                 "name": "fcc_ui_0db797a330bea5",
-                "label": "feedback-3.jpg",
+                "label": "feedback-3.png",
                 "type": "image",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "return_format": "id",
@@ -5012,7 +5104,7 @@
             "fcc_ui_86f10657c932c8": {
                 "key": "field_fcc_ui_86f10657c932c8",
                 "name": "fcc_ui_86f10657c932c8",
-                "label": "feedback-4.jpg",
+                "label": "feedback-4.png",
                 "type": "image",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "return_format": "id",
@@ -5085,7 +5177,7 @@
             "fcc_ui_476e0450734143": {
                 "key": "field_fcc_ui_476e0450734143",
                 "name": "fcc_ui_476e0450734143",
-                "label": "100% Nội Địa Nhật",
+                "label": "Xuất xứ: Nhật Bản",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -5131,6 +5223,15 @@
                 "key": "field_fcc_ui_b2f2c633e021b5",
                 "name": "fcc_ui_b2f2c633e021b5",
                 "label": "Thành phần chính",
+                "type": "text",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "fcc_inline": true,
+                "fcc_refresh": false
+            },
+            "fcc_ui_tab_usps": {
+                "key": "field_fcc_ui_tab_usps",
+                "name": "fcc_ui_tab_usps",
+                "label": "Điểm Nổi Bật",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -5465,7 +5566,7 @@
             "fcc_ui_e9dfbe7e600722": {
                 "key": "field_fcc_ui_e9dfbe7e600722",
                 "name": "fcc_ui_e9dfbe7e600722",
-                "label": "Hướng Dẫn Sử Dụng Chuẩn Salon Tokyo",
+                "label": "Hướng Dẫn Sử Dụng",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -5629,6 +5730,79 @@
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
                 "fcc_refresh": true
+            }
+        },
+        "Media & Nhận diện": {
+            "fcc_ui_feedback_img_6": {
+                "key": "field_fcc_ui_feedback_img_6",
+                "name": "fcc_ui_feedback_img_6",
+                "label": "feedback-6.png",
+                "type": "image",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp"
+            },
+            "fcc_ui_feedback_img_7": {
+                "key": "field_fcc_ui_feedback_img_7",
+                "name": "fcc_ui_feedback_img_7",
+                "label": "feedback-7.png",
+                "type": "image",
+                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "return_format": "id",
+                "preview_size": "medium",
+                "mime_types": "jpg,jpeg,png,webp"
+            },
+            "fcc_ui_feedback_alt_7": {
+                "key": "field_fcc_ui_feedback_alt_7",
+                "name": "fcc_ui_feedback_alt_7",
+                "label": "Mô tả ảnh đại diện – đánh giá 7",
+                "type": "text",
+                "instructions": "Mô tả ngắn cho ảnh đánh giá thứ 7 trên trang chủ."
+            },
+            "fcc_ui_feedback_ugc_alt_7": {
+                "key": "field_fcc_ui_feedback_ugc_alt_7",
+                "name": "fcc_ui_feedback_ugc_alt_7",
+                "label": "Mô tả ảnh minh họa – đánh giá 7",
+                "type": "text",
+                "instructions": "Mô tả ngắn cho ảnh đánh giá thứ 7 trên trang chủ."
+            }
+        },
+        "Menu điều hướng": {
+            "fcc_nav_home": {
+                "key": "field_fcc_nav_home",
+                "name": "fcc_nav_home",
+                "label": "Trang chủ",
+                "type": "text",
+                "instructions": "Nhãn menu dùng chung trên tất cả trang và kích thước màn hình."
+            },
+            "fcc_nav_products": {
+                "key": "field_fcc_nav_products",
+                "name": "fcc_nav_products",
+                "label": "Sản phẩm",
+                "type": "text",
+                "instructions": "Nhãn menu dùng chung trên tất cả trang và kích thước màn hình."
+            },
+            "fcc_nav_brand": {
+                "key": "field_fcc_nav_brand",
+                "name": "fcc_nav_brand",
+                "label": "Về Thương hiệu",
+                "type": "text",
+                "instructions": "Nhãn menu dùng chung trên tất cả trang và kích thước màn hình."
+            },
+            "fcc_nav_concerns": {
+                "key": "field_fcc_nav_concerns",
+                "name": "fcc_nav_concerns",
+                "label": "Vấn đề làn da",
+                "type": "text",
+                "instructions": "Nhãn menu dùng chung trên tất cả trang và kích thước màn hình."
+            },
+            "fcc_nav_legal": {
+                "key": "field_fcc_nav_legal",
+                "name": "fcc_nav_legal",
+                "label": "Bảo chứng pháp lý",
+                "type": "text",
+                "instructions": "Nhãn menu dùng chung trên tất cả trang và kích thước màn hình."
             }
         }
     },
@@ -5840,7 +6014,7 @@
                 "fcc_refresh": true
             }
         },
-        "Toàn Bộ 10 Sản Phẩm Đơn Lẻ": {
+        "Danh sách sản phẩm và combo tối ưu": {
             "fcc_ui_34f1c64852fcf1": {
                 "key": "field_fcc_ui_34f1c64852fcf1",
                 "name": "fcc_ui_34f1c64852fcf1",
@@ -5853,7 +6027,7 @@
             "fcc_ui_c05ac9ce8537b8": {
                 "key": "field_fcc_ui_c05ac9ce8537b8",
                 "name": "fcc_ui_c05ac9ce8537b8",
-                "label": "Toàn Bộ 10 Sản Phẩm Đơn Lẻ",
+                "label": "Danh sách sản phẩm và combo tối ưu",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,

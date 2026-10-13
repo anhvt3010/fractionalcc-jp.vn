@@ -1,5 +1,5 @@
 <?php defined( 'ABSPATH' ) || exit; ?>
-<footer class="site-footer">
+<footer class="site-footer" id="fcc-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">

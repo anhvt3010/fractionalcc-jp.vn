@@ -1,5 +1,5 @@
 <?php defined( 'ABSPATH' ) || exit; ?>
-<footer class="site-footer">
+<footer class="site-footer" id="fcc-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
@@ -25,6 +25,7 @@
           <h4><?php echo project_child_fcc_text( 'fcc_ui_337affe9cef2fd', 'shared' ); ?></h4>
           <ul class="footer-links">
             <li><a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_13f874efa5726a', 'shared', false ); ?></a></li>
+            <li><a href="<?php echo esc_url( project_child_fcc_link( 'van-de-lan-da.html' ) ); ?>">Vấn đề làn da &amp; Giải pháp</a></li>
             <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#doi-tra' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_8aa241ea23c189', 'shared', false ); ?></a></li>
             <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#giao-hang' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_369ace7ad7eef2', 'shared', false ); ?></a></li>
             <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#bao-mat' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_9e1d7490e3a45a', 'shared', false ); ?></a></li>

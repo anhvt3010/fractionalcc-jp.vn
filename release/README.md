@@ -1,5 +1,19 @@
 # Quy trình build và release
 
+> Bản `0.3.21` cải thiện phản hồi/validation trên mọi form đặt hàng, bỏ gửi lại tự động khi AJAX lỗi và ghi trạng thái gửi mail trong đơn. Xem [hồ sơ release](v0.3.21/RELEASE.md), gồm kiểm tra 24 form và giới hạn chưa xác nhận inbox/browser.
+
+> Bản `0.3.17` cho phép chọn tối đa 6 sản phẩm/combo trong danh mục trang chủ, có thứ tự riêng và độc lập với 2 sản phẩm chủ lực. Xem [hồ sơ release](v0.3.17/RELEASE.md).
+
+> Bản `0.3.15` sắp xếp **Thông tin chung** theo vị trí hiển thị, thêm nhãn/hướng dẫn và tìm kiếm trường; giữ dữ liệu cùng cách sửa text ngoài giao diện. Xem [hồ sơ release](v0.3.15/RELEASE.md) và giới hạn kiểm tra tương tác trình duyệt.
+
+> Bản `0.3.13` đồng bộ header/menu trên mọi trang Fractional CC, giữ logo giữa và nút Mua ngay, dùng cùng năm nhãn chỉnh được qua CMS cho desktop/mobile. Xem [hồ sơ release](v0.3.13/RELEASE.md).
+
+> Bản `0.3.7` sửa warning `Undefined array key "type"` từ schema ảnh feedback khai báo trùng/thiếu thuộc tính. Kiểm tra frontend, ACF/Customizer và cài mới đạt. Xem [hồ sơ release](v0.3.7/RELEASE.md).
+
+> Bản `0.3.5` đã rà soát activation/initializer, sửa khóa bị kẹt, bảo toàn mục trong thùng rác, kiểm tra package trước nhập và đồng bộ ảnh defaults với nguồn Excel. Hai ZIP cài mới đạt 53 kiểm tra khởi tạo và 305 kiểm tra catalog. Xem [hồ sơ release](v0.3.5/RELEASE.md).
+
+> Bản `0.3.4` sửa lựa chọn homepage khi khởi tạo lần đầu và đóng gói ảnh combo nền vàng do người dùng cung cấp. Site XAMPP hiện tại đã áp dụng. Xem [hồ sơ release](v0.3.4/RELEASE.md). Các mô tả phiên bản cũ bên dưới là lịch sử.
+
 > Bản `0.3.3` đã cập nhật catalog từ Excel, bổ sung tự khởi tạo defaults trên site mới và kiểm tra cài hai ZIP trên database riêng. Xem [hồ sơ release](v0.3.3/RELEASE.md) và [ánh xạ dữ liệu](../docs/PRODUCT-DATA-EXCEL.md). Các mô tả phiên bản cũ bên dưới là lịch sử.
 
 Dùng XAMPP cho workflow hiện tại; Docker tạm thời không áp dụng. Mỗi bản build tạo một thư mục version trong `release/`, chứa **đúng hai file ZIP cài được qua WordPress Admin**, cùng hồ sơ phát hành nếu cần.
@@ -36,7 +50,7 @@ Không đóng gói `wp-config.php`, `.env`, secrets, tài khoản/mật khẩu, 
 - Đóng gói defaults có version cùng plugin core, bao gồm giá trị nội dung/cài đặt cần thiết và tham chiếu media đã duyệt. Field definitions của ACF JSON/PHP chỉ là schema, không chứa giá trị nội dung.
 - Chỉ dùng nội dung người dùng cung cấp hoặc duyệt. Thiếu dữ kiện thì hỏi hoặc để trống; không tự tạo dịch vụ, giá, số liệu, testimonial, khách hàng, thông tin liên hệ hoặc tuyên bố quảng cáo. Placeholder phải được cho phép và ghi rõ.
 - Initializer dùng WordPress APIs, kiểm tra dependencies, xác định dữ liệu bằng khóa ổn định và lưu version đã khởi tạo. Chạy lại không tạo trùng và không ghi đè trang, field, menu hoặc settings đã được sửa; migration nâng cấp phải mô tả riêng.
-- Thao tác khởi tạo qua admin phải có quyền phù hợp và nonce. Không tạo tài khoản với mật khẩu mặc định. Activation không tự thay active theme, homepage, menu hoặc dữ liệu đang có.
+- Thao tác khởi tạo qua admin phải có quyền phù hợp và nonce. Không tạo tài khoản với mật khẩu mặc định. Theo yêu cầu người dùng, từ `0.3.4`, khởi tạo lần đầu đặt trang Fractional CC làm homepage nếu Reading vẫn là danh sách bài viết và chưa chọn trang chủ. Các lần chạy lại/update giữ lựa chọn Reading đã có. Activation không tự thay active theme, menu hoặc dữ liệu đang có.
 - Ghi rõ cách chạy khởi tạo trong hồ sơ release. Nếu cần đặt homepage/menu, hướng dẫn thao tác cụ thể theo phạm vi được duyệt; không tự áp dụng vào site đang dùng.
 
 ## Quy trình build và xác minh

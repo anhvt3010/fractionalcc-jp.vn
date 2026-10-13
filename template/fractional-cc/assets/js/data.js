@@ -746,7 +746,7 @@ const FCC_DATA = {
       "salePrice": 1237500,
       "saveAmount": 38100,
       "gift": "Serum dưỡng môi PDRN Shot theo ảnh combo trong brief; xác nhận quà tặng khi đặt hàng.",
-      "image": "assets/images/banner/combo-c-cx4.png"
+      "image": "assets/images/banner/combo-c-cx4-gold.png"
     }
   ],
   "reviews": [],

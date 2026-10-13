@@ -19,7 +19,7 @@
 
           <div style="display: flex; align-items: center; gap: 14px;">
             <div style="font-size: 13px; font-weight: 700; color: var(--color-text-muted);">
-              <span id="review-counter-current">01</span> / <span id="review-counter-total">06</span>
+              <span id="review-counter-current">01</span> / <span id="review-counter-total">07</span>
             </div>
             <div style="display: flex; gap: 8px;">
               <button id="review-prev-btn" class="review-nav-btn" aria-label="Đánh giá trước" style="width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--color-border); background: #FFF; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px;"><?php echo project_child_fcc_text( 'fcc_ui_856500a8b8ce5b', 'home', false ); ?></button>
@@ -56,7 +56,6 @@
               </p>
               <div class="review-ugc-photo">
                 <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_2d8d0e4cc814fb' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_2d8d0e4cc814fb', 'fcc_ui_424bf7d26ffd10' ) ); ?>" loading="lazy">
-                <span class="review-photo-tag"><?php echo project_child_fcc_text( 'fcc_ui_25b3794c4ce4e1', 'home' ); ?></span>
               </div>
               <div class="review-meta">
                 <span class="verified-badge"><?php echo project_child_fcc_text( 'fcc_ui_b87712fd5f7219', 'home' ); ?></span>
@@ -89,7 +88,6 @@
               </p>
               <div class="review-ugc-photo">
                 <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_5e28ca19d6c1a6' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_5e28ca19d6c1a6', 'fcc_ui_8a11ba251693bf' ) ); ?>" loading="lazy">
-                <span class="review-photo-tag"><?php echo project_child_fcc_text( 'fcc_ui_7d09b5715413e3', 'home' ); ?></span>
               </div>
               <div class="review-meta">
                 <span class="verified-badge"><?php echo project_child_fcc_text( 'fcc_ui_b87712fd5f7219', 'home' ); ?></span>
@@ -122,7 +120,6 @@
               </p>
               <div class="review-ugc-photo">
                 <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_0db797a330bea5' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_0db797a330bea5', 'fcc_ui_9dc56fa56ef628' ) ); ?>" loading="lazy">
-                <span class="review-photo-tag"><?php echo project_child_fcc_text( 'fcc_ui_fd2d93768e2ffa', 'home' ); ?></span>
               </div>
               <div class="review-meta">
                 <span class="verified-badge"><?php echo project_child_fcc_text( 'fcc_ui_b87712fd5f7219', 'home' ); ?></span>
@@ -155,7 +152,6 @@
               </p>
               <div class="review-ugc-photo">
                 <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_86f10657c932c8' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_86f10657c932c8', 'fcc_ui_49056b4ced1219' ) ); ?>" loading="lazy">
-                <span class="review-photo-tag"><?php echo project_child_fcc_text( 'fcc_ui_11645e8a7a77ef', 'home' ); ?></span>
               </div>
               <div class="review-meta">
                 <span class="verified-badge"><?php echo project_child_fcc_text( 'fcc_ui_b87712fd5f7219', 'home' ); ?></span>
@@ -175,7 +171,7 @@
                     <span><?php echo project_child_fcc_text( 'fcc_ui_d2ddc5756c7268', 'home' ); ?></span>
                   </div>
                 </div>
-                <span class="review-badge badge-verified"><?php echo project_child_fcc_text( 'fcc_ui_510d2126ca66e3', 'home' ); ?></span>
+                <span class="review-badge badge-koc"><?php echo project_child_fcc_text( 'fcc_ui_badge_5', 'home' ); ?></span>
               </div>
               <div class="review-rating-row">
                 <span class="review-stars">★★★★★</span>
@@ -188,7 +184,6 @@
               </p>
               <div class="review-ugc-photo">
                 <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_da1eaea273e1e5' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_da1eaea273e1e5', 'fcc_ui_02342e69ec8261' ) ); ?>" loading="lazy">
-                <span class="review-photo-tag"><?php echo project_child_fcc_text( 'fcc_ui_da1afbd40cc4f8', 'home' ); ?></span>
               </div>
               <div class="review-meta">
                 <span class="verified-badge"><?php echo project_child_fcc_text( 'fcc_ui_b87712fd5f7219', 'home' ); ?></span>
@@ -201,7 +196,7 @@
               <div class="review-card-top">
                 <div class="review-author-info">
                   <div class="review-avatar-wrap">
-                    <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_1a1ddc977ed16f' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_1a1ddc977ed16f', 'fcc_ui_67e344a449c6ea' ) ); ?>" loading="lazy">
+                    <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_feedback_img_6' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_feedback_img_6', 'fcc_ui_67e344a449c6ea' ) ); ?>" loading="lazy">
                   </div>
                   <div class="review-author-names">
                     <h4><?php echo project_child_fcc_text( 'fcc_ui_0cd0b40d7ab747', 'home' ); ?></h4>
@@ -220,12 +215,43 @@
                 <?php echo project_child_fcc_text( 'fcc_ui_11e28e296727ba', 'home' ); ?>
               </p>
               <div class="review-ugc-photo">
-                <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_453bd451ef0751' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_453bd451ef0751', 'fcc_ui_890c34255cfbfd' ) ); ?>" loading="lazy">
-                <span class="review-photo-tag"><?php echo project_child_fcc_text( 'fcc_ui_0df452e0d7f8cd', 'home' ); ?></span>
+                <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_feedback_img_6' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_feedback_img_6', 'fcc_ui_890c34255cfbfd' ) ); ?>" loading="lazy">
               </div>
               <div class="review-meta">
                 <span class="verified-badge"><?php echo project_child_fcc_text( 'fcc_ui_b87712fd5f7219', 'home' ); ?></span>
                 <span><?php echo project_child_fcc_text( 'fcc_ui_41d95cdb237b18', 'home' ); ?></span>
+              </div>
+            </article>
+
+            
+            <article class="review-card">
+              <div class="review-card-top">
+                <div class="review-author-info">
+                  <div class="review-avatar-wrap">
+                    <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_feedback_img_7' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_feedback_img_7', 'fcc_ui_feedback_alt_7' ) ); ?>" loading="lazy">
+                  </div>
+                  <div class="review-author-names">
+                    <h4><?php echo project_child_fcc_text( 'fcc_ui_feedback_name_7', 'home' ); ?></h4>
+                    <span><?php echo project_child_fcc_text( 'fcc_ui_feedback_sub_7', 'home' ); ?></span>
+                  </div>
+                </div>
+                <span class="review-badge badge-verified"><?php echo project_child_fcc_text( 'fcc_ui_feedback_badge_7', 'home' ); ?></span>
+              </div>
+              <div class="review-rating-row">
+                <span class="review-stars">★★★★★</span>
+                <span class="review-rating-score"><?php echo project_child_fcc_text( 'fcc_ui_feedback_rating_7', 'home' ); ?></span>
+              </div>
+              <span class="review-skin-concern"><?php echo project_child_fcc_text( 'fcc_ui_feedback_concern_7', 'home' ); ?></span>
+              <div class="review-product-tag"><?php echo project_child_fcc_text( 'fcc_ui_feedback_product_7', 'home' ); ?></div>
+              <p class="review-text">
+                <?php echo project_child_fcc_text( 'fcc_ui_feedback_text_7', 'home' ); ?>
+              </p>
+              <div class="review-ugc-photo">
+                <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_feedback_img_7' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_feedback_img_7', 'fcc_ui_feedback_ugc_alt_7' ) ); ?>" loading="lazy">
+              </div>
+              <div class="review-meta">
+                <span class="verified-badge"><?php echo project_child_fcc_text( 'fcc_ui_b87712fd5f7219', 'home' ); ?></span>
+                <span><?php echo project_child_fcc_text( 'fcc_ui_feedback_time_7', 'home' ); ?></span>
               </div>
             </article>
           </div>

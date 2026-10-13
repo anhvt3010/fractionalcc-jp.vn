@@ -1,8 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 ?>
-<?php get_template_part( 'template-parts/fractional/shared/part-06cfc0b96783' ); ?>
-<?php get_template_part( 'template-parts/fractional/shared/part-b47ccfd0a995' ); ?>
+<?php get_template_part( 'template-parts/fractional/shared/header' ); ?>
 <main>
 <?php get_template_part( 'template-parts/fractional/catalog/section-01' ); ?>
 <?php get_template_part( 'template-parts/fractional/catalog/section-02' ); ?>

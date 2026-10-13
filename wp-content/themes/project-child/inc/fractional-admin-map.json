@@ -1,0 +1,890 @@
+{
+    "header": {
+        "label": "01. Đầu trang & logo",
+        "description": "Thanh nhận diện màu đen trên cùng, cụm logo giữa header và logo dùng lại ở cuối trang. Một ảnh logo có thể xuất hiện ở nhiều khu vực.",
+        "page": "home",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_bbd01ed1192ea8": {
+                "label": "Dòng nhận diện thương hiệu – thanh trên cùng"
+            },
+            "fcc_ui_e122cc77b5bbe5": {
+                "label": "Câu giới thiệu đơn vị phân phối – thanh trên cùng"
+            },
+            "fcc_ui_e28520e695bc79": {
+                "label": "Tên công ty – thanh trên cùng và chân trang",
+                "note": "Dùng trong thanh trên cùng và các chân trang. Tên công ty chuẩn lấy từ Thương hiệu & phân phối."
+            },
+            "fcc_ui_af94720c731fdb": {
+                "label": "Dòng hotline – thanh trên cùng"
+            },
+            "fcc_ui_f2b1ceab0294d6": {
+                "label": "Tên đơn vị bên cạnh logo"
+            },
+            "fcc_ui_bb054f8c102d4d": {
+                "label": "Dòng chú thích bên dưới tên đơn vị"
+            },
+            "fcc_ui_ab373a90954b36": {
+                "label": "Mô tả liên kết khi rê chuột lên cụm logo",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            },
+            "fcc_ui_9426ed1ade78ab": {
+                "label": "Mô tả ảnh logo Fractional CC – header",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_61ed77463dff18": {
+                "label": "Mô tả ảnh logo đơn vị phân phối – header",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_a941b421c5e005": {
+                "label": "Chữ giải thích khi rê chuột lên logo đơn vị",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            },
+            "fcc_ui_1a0029c547f307": {
+                "label": "Logo Fractional CC – header và khối chứng nhận"
+            },
+            "fcc_ui_be08f7c57f78ec": {
+                "label": "Logo đơn vị phân phối – dùng chung",
+                "note": "Ảnh dùng ở header, chân trang, thanh cam kết, khối chứng nhận và khối cuối trang chủ."
+            },
+            "fcc_ui_73ad1fb64a971c": {
+                "label": "Logo nền tối – chân trang và khối cuối trang chủ"
+            }
+        }
+    },
+    "menu": {
+        "label": "02. Menu & nút Mua ngay",
+        "description": "Các mục menu và nút mua dùng chung trên tất cả trang, cả máy tính và điện thoại.",
+        "page": "home",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_9681bed187e219": {
+                "label": "Chữ nút Mua ngay – header và form",
+                "note": "Cùng nhãn cho nút header và một số nút gửi/đặt mua; thay đổi sẽ áp dụng ở tất cả các vị trí này."
+            },
+            "fcc_nav_home": {
+                "label": "Menu bên trái – Trang chủ"
+            },
+            "fcc_nav_products": {
+                "label": "Menu bên trái – Sản phẩm"
+            },
+            "fcc_nav_brand": {
+                "label": "Menu bên trái – Về Thương hiệu"
+            },
+            "fcc_nav_concerns": {
+                "label": "Menu bên phải – Vấn đề làn da"
+            },
+            "fcc_nav_legal": {
+                "label": "Menu bên phải – Bảo chứng pháp lý"
+            }
+        }
+    },
+    "footer": {
+        "label": "03. Chân trang",
+        "description": "Các cột thông tin, liên kết và dòng bản quyền ở cuối trang. Danh mục sản phẩm có một số câu chữ riêng. Số điện thoại và địa chỉ liên hệ được quản lý ở khối Liên hệ phía trên.",
+        "page": "home",
+        "fragment": "fcc-footer",
+        "fields": {
+            "fcc_ui_8c686c3909c590": {
+                "label": "Nhãn giới thiệu đơn vị phân phối"
+            },
+            "fcc_ui_0f36c14dea884e": {
+                "label": "Tiêu đề cột liên hệ"
+            },
+            "fcc_ui_984783bd913b86": {
+                "label": "Nhãn trước số hotline"
+            },
+            "fcc_ui_7374e1f6e37820": {
+                "label": "Nhãn trước email"
+            },
+            "fcc_ui_73944c222e59fa": {
+                "label": "Dòng email trong chân trang",
+                "note": "Chữ email trong chân trang. Đích bấm gửi email lấy từ Email liên hệ ở khối Liên hệ."
+            },
+            "fcc_ui_337affe9cef2fd": {
+                "label": "Tiêu đề cột chính sách"
+            },
+            "fcc_ui_13f874efa5726a": {
+                "label": "Chữ liên kết đến danh mục sản phẩm"
+            },
+            "fcc_ui_8aa241ea23c189": {
+                "label": "Chữ liên kết chính sách đổi trả"
+            },
+            "fcc_ui_369ace7ad7eef2": {
+                "label": "Chữ liên kết chính sách giao hàng"
+            },
+            "fcc_ui_9e1d7490e3a45a": {
+                "label": "Chữ liên kết chính sách bảo mật"
+            },
+            "fcc_ui_0a8730dc13bdc0": {
+                "label": "Chữ liên kết hướng dẫn hàng chính hãng"
+            },
+            "fcc_ui_3e12c24e7634b2": {
+                "label": "Dòng bản quyền – chân trang chung"
+            },
+            "fcc_ui_f8b498e754b279": {
+                "label": "Dòng lưu ý về mỹ phẩm – chân trang"
+            },
+            "fcc_ui_329c1993aecb38": {
+                "label": "Đoạn giới thiệu – chân trang danh mục"
+            },
+            "fcc_ui_46ad108e0789e5": {
+                "label": "Tiêu đề cột liên hệ – chân trang danh mục"
+            },
+            "fcc_ui_235173256a25ff": {
+                "label": "Dòng bản quyền – chân trang danh mục"
+            },
+            "fcc_ui_1db01ca035a66e": {
+                "label": "Nhãn xuất xứ – chân trang chính sách/cảm ơn"
+            },
+            "fcc_ui_a2642b697a4c65": {
+                "label": "Dòng xuất xứ – chân trang chính sách/cảm ơn"
+            },
+            "fcc_ui_e23f070eed474c": {
+                "label": "Mô tả ảnh logo thương hiệu – chân trang",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_435f1980942f04": {
+                "label": "Mô tả ảnh logo đơn vị – chân trang",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            }
+        }
+    },
+    "contact": {
+        "label": "04. Nút liên hệ & thanh điện thoại",
+        "description": "Nút nổi Zalo/Gọi/Lên đầu trang và thanh cố định phía dưới khi xem bằng điện thoại. Địa chỉ Zalo và số gọi lấy từ thông tin liên hệ.",
+        "page": "home",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_020367c06caf00": {
+                "label": "Biểu tượng nút Gọi – thanh điện thoại"
+            },
+            "fcc_ui_07358083768019": {
+                "label": "Chữ nút Gọi – thanh điện thoại"
+            },
+            "fcc_ui_783c9befd8e9f8": {
+                "label": "Chữ nút mua combo – thanh điện thoại trang chủ"
+            },
+            "fcc_ui_394f3b16ccdd73": {
+                "label": "Chữ nút đặt mua – thanh điện thoại danh mục"
+            },
+            "fcc_ui_f31d233ccedb04": {
+                "label": "Mô tả nút Zalo – trang sản phẩm"
+            },
+            "fcc_ui_e2b5b5e41063f4": {
+                "label": "Mô tả nút Gọi – trang sản phẩm"
+            },
+            "fcc_ui_c147e4bc37f96e": {
+                "label": "Mô tả nút Lên đầu trang – trang sản phẩm"
+            }
+        }
+    },
+    "modal": {
+        "label": "05. Cửa sổ đặt hàng",
+        "description": "Cửa sổ mở khi bấm Mua ngay. Các nhãn ô nhập dùng chung; trang chủ, danh mục và trang sản phẩm có một số mô tả/nút riêng.",
+        "page": "home",
+        "fragment": "dat-hang",
+        "fields": {
+            "fcc_ui_f2b083aef82352": {
+                "label": "Dòng nhận diện trên cửa sổ đặt hàng"
+            },
+            "fcc_ui_e97d9d953b50ea": {
+                "label": "Tiêu đề cửa sổ đặt hàng"
+            },
+            "fcc_ui_923181c9defa62": {
+                "label": "Mô tả dưới tiêu đề – cửa sổ trên trang chủ"
+            },
+            "fcc_ui_1496dc7df7ac7f": {
+                "label": "Nhãn ô họ tên – cửa sổ đặt hàng"
+            },
+            "fcc_ui_b69c738f215c43": {
+                "label": "Ký hiệu đánh dấu ô bắt buộc – cửa sổ đặt hàng"
+            },
+            "fcc_ui_f2710d708cc9d4": {
+                "label": "Nhãn ô số điện thoại – cửa sổ đặt hàng"
+            },
+            "fcc_ui_235bacf2e47e24": {
+                "label": "Nhãn ô chọn sản phẩm – cửa sổ đặt hàng"
+            },
+            "fcc_ui_f9e51ea87d8c27": {
+                "label": "Nhãn ô địa chỉ – cửa sổ đặt hàng"
+            },
+            "fcc_ui_2ea28da43d47d0": {
+                "label": "Nhãn ô ghi chú – cửa sổ đặt hàng"
+            },
+            "fcc_ui_ddb45a44565e5c": {
+                "label": "Dòng hỗ trợ bên dưới nút gửi – cửa sổ trang chủ"
+            },
+            "fcc_ui_dfc1bf59d438e2": {
+                "label": "Mô tả dưới tiêu đề – cửa sổ trên danh mục/sản phẩm"
+            },
+            "fcc_ui_5ac948100cd449": {
+                "label": "Chữ nút gửi – cửa sổ trên danh mục"
+            },
+            "fcc_ui_484f408cddfc35": {
+                "label": "Gợi ý nhập họ tên – cửa sổ đặt hàng",
+                "note": "Hiện bên trong ô khi người xem chưa nhập dữ liệu; nhãn nằm bên ngoài ô được quản lý riêng."
+            },
+            "fcc_ui_e023e68eba385b": {
+                "label": "Gợi ý nhập điện thoại – cửa sổ và trang sản phẩm",
+                "note": "Hiện bên trong ô khi người xem chưa nhập dữ liệu; nhãn nằm bên ngoài ô được quản lý riêng."
+            },
+            "fcc_ui_3dedbf56c53eec": {
+                "label": "Gợi ý nhập địa chỉ – cửa sổ đặt hàng",
+                "note": "Hiện bên trong ô khi người xem chưa nhập dữ liệu; nhãn nằm bên ngoài ô được quản lý riêng."
+            },
+            "fcc_ui_27a4b43a36f23c": {
+                "label": "Gợi ý nhập ghi chú – cửa sổ trên trang chủ/danh mục",
+                "note": "Hiện bên trong ô khi người xem chưa nhập dữ liệu; nhãn nằm bên ngoài ô được quản lý riêng."
+            },
+            "fcc_ui_8ab23cd60b12f1": {
+                "label": "Gợi ý nhập ghi chú – cửa sổ trên trang sản phẩm",
+                "note": "Hiện bên trong ô khi người xem chưa nhập dữ liệu; nhãn nằm bên ngoài ô được quản lý riêng."
+            }
+        }
+    },
+    "form_hints": {
+        "label": "06. Gợi ý nhập thông tin",
+        "description": "Chữ gợi ý nằm bên trong các ô còn trống của form đặt hàng trên trang chủ, trang sản phẩm và cửa sổ đặt hàng.",
+        "page": "home",
+        "fragment": "dat-hang",
+        "fields": {
+            "fcc_ui_e92a39efe375cb": {
+                "label": "Gợi ý nhập họ tên – trang chủ/trang sản phẩm",
+                "note": "Hiện bên trong ô khi người xem chưa nhập dữ liệu; nhãn nằm bên ngoài ô được quản lý riêng."
+            },
+            "fcc_ui_cc9b6af3ede286": {
+                "label": "Gợi ý nhập điện thoại – trang chủ",
+                "note": "Hiện bên trong ô khi người xem chưa nhập dữ liệu; nhãn nằm bên ngoài ô được quản lý riêng."
+            },
+            "fcc_ui_44ef8652c97ae4": {
+                "label": "Gợi ý nhập địa chỉ – trang chủ/trang sản phẩm",
+                "note": "Hiện bên trong ô khi người xem chưa nhập dữ liệu; nhãn nằm bên ngoài ô được quản lý riêng."
+            },
+            "fcc_ui_4da5e0bc6baf4a": {
+                "label": "Gợi ý nhập ghi chú – trang chủ",
+                "note": "Hiện bên trong ô khi người xem chưa nhập dữ liệu; nhãn nằm bên ngoài ô được quản lý riêng."
+            }
+        }
+    },
+    "home_trust": {
+        "label": "07. Trang chủ – thanh cam kết",
+        "description": "Chữ giải thích khi rê chuột lên các biểu tượng trong thanh cam kết ngay dưới banner đầu trang.",
+        "page": "home",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_722cc950bbd51f": {
+                "label": "Chữ giải thích biểu tượng xuất xứ",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            },
+            "fcc_ui_0db343ac35a4d7": {
+                "label": "Chữ giải thích biểu tượng đơn vị phân phối",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            },
+            "fcc_ui_6d82420f357692": {
+                "label": "Mô tả logo đơn vị – thanh cam kết",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_2e477cc3b39cf0": {
+                "label": "Chữ giải thích biểu tượng hồ sơ công bố",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            },
+            "fcc_ui_8ce2cfbee099eb": {
+                "label": "Chữ giải thích biểu tượng giao hàng",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            }
+        }
+    },
+    "home_images": {
+        "label": "08. Trang chủ – ảnh sản phẩm",
+        "description": "Ảnh ở khối danh mục trên trang chủ. Ảnh combo dùng chung còn xuất hiện trong danh mục, trang cảm ơn và làm ảnh dự phòng cho banner. Ảnh chính của từng hồ sơ sản phẩm được quản lý tại Sản phẩm.",
+        "page": "home",
+        "fragment": "danh-muc",
+        "fields": {
+            "fcc_ui_eeddc60a6e4bec": {
+                "label": "Mô tả ảnh combo dự phòng – banner",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_65ad6ef34a2704": {
+                "label": "Mô tả ảnh Mandelic – khối danh mục trang chủ",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_d1d5e466e757ab": {
+                "label": "Mô tả ảnh combo – khối danh mục trang chủ",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_f7797e05b4a8ae": {
+                "label": "Mô tả ảnh Serum C – khối danh mục trang chủ",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_b710ed3cad3b13": {
+                "label": "Mô tả ảnh Serum CX4 – khối danh mục trang chủ",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_7480dd983a2559": {
+                "label": "Mô tả ảnh PDRN Toning – khối danh mục trang chủ",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_0f4c7a9a698f94": {
+                "label": "Mô tả ảnh dưỡng môi – khối danh mục trang chủ",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_b9912a532ed31f": {
+                "label": "Mô tả ảnh combo – trang danh mục",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_963cafcaa053a1": {
+                "label": "Mô tả ảnh sản phẩm – trang cảm ơn",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_453bd451ef0751": {
+                "label": "Ảnh combo C–CX4 – dùng chung",
+                "note": "Ảnh dùng trong danh mục và trang cảm ơn; banner trang chủ dùng ảnh này khi chưa chọn ảnh riêng."
+            },
+            "fcc_ui_a614a94ea4e266": {
+                "label": "Ảnh Mandelic – khối danh mục trang chủ"
+            },
+            "fcc_ui_fcb9a5558a4aa3": {
+                "label": "Ảnh Serum C – khối danh mục trang chủ"
+            },
+            "fcc_ui_1a1ddc977ed16f": {
+                "label": "Ảnh Serum CX4 – khối danh mục trang chủ"
+            },
+            "fcc_ui_22aa1c028e8ab6": {
+                "label": "Ảnh PDRN Toning – khối danh mục trang chủ"
+            },
+            "fcc_ui_80f56b22dbc19b": {
+                "label": "Ảnh dưỡng môi – khối danh mục trang chủ"
+            }
+        }
+    },
+    "home_routine": {
+        "label": "09. Trang chủ – chu trình chăm sóc",
+        "description": "Hình minh họa, mô tả ảnh và chữ giải thích khi rê chuột trong khối chu trình chăm sóc da.",
+        "page": "home",
+        "fragment": "routine",
+        "fields": {
+            "fcc_ui_6f8a79402827e4": {
+                "label": "Chữ giải thích mục chu trình ban ngày",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            },
+            "fcc_ui_56bfb850da0788": {
+                "label": "Chữ giải thích nút thu gọn/mở rộng",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            },
+            "fcc_ui_df4b07da76fd42": {
+                "label": "Chữ giải thích nút xem chi tiết chu trình",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            },
+            "fcc_ui_9efecf6decbfe1": {
+                "label": "Chữ giải thích mục chu trình ban đêm",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            },
+            "fcc_ui_6df4668d328d6b": {
+                "label": "Mô tả hình minh họa hướng dẫn thao tác",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_7273916d822930": {
+                "label": "Chữ giải thích liên kết video hướng dẫn",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            },
+            "fcc_ui_555650f3e397c2": {
+                "label": "Hình minh họa chu trình chăm sóc"
+            }
+        }
+    },
+    "home_feedback": {
+        "label": "10. Trang chủ – ảnh đánh giá",
+        "description": "Ảnh của 7 thẻ đánh giá và mô tả ảnh. Tên người đánh giá, nội dung nhận xét và các dòng chữ trên thẻ được chỉnh ở mục Trang chủ, trong phần đánh giá.",
+        "page": "home",
+        "fragment": "danh-gia",
+        "fields": {
+            "fcc_ui_4fe975230c2416": {
+                "label": "Đánh giá 1 – mô tả ảnh đại diện",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_424bf7d26ffd10": {
+                "label": "Đánh giá 1 – mô tả ảnh minh họa",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_582af86c2cd2b7": {
+                "label": "Đánh giá 2 – mô tả ảnh đại diện",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_8a11ba251693bf": {
+                "label": "Đánh giá 2 – mô tả ảnh minh họa",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_d78a914ad8029f": {
+                "label": "Đánh giá 3 – mô tả ảnh đại diện",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_9dc56fa56ef628": {
+                "label": "Đánh giá 3 – mô tả ảnh minh họa",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_b89e4c5a14dd5f": {
+                "label": "Đánh giá 4 – mô tả ảnh đại diện",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_49056b4ced1219": {
+                "label": "Đánh giá 4 – mô tả ảnh minh họa",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_c70eeb1112b97e": {
+                "label": "Đánh giá 5 – mô tả ảnh đại diện",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_02342e69ec8261": {
+                "label": "Đánh giá 5 – mô tả ảnh minh họa",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_67e344a449c6ea": {
+                "label": "Đánh giá 6 – mô tả ảnh đại diện",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_890c34255cfbfd": {
+                "label": "Đánh giá 6 – mô tả ảnh minh họa",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_2d8d0e4cc814fb": {
+                "label": "Đánh giá 1 – ảnh đại diện và minh họa"
+            },
+            "fcc_ui_5e28ca19d6c1a6": {
+                "label": "Đánh giá 2 – ảnh đại diện và minh họa"
+            },
+            "fcc_ui_0db797a330bea5": {
+                "label": "Đánh giá 3 – ảnh đại diện và minh họa"
+            },
+            "fcc_ui_86f10657c932c8": {
+                "label": "Đánh giá 4 – ảnh đại diện và minh họa"
+            },
+            "fcc_ui_da1eaea273e1e5": {
+                "label": "Đánh giá 5 – ảnh đại diện và minh họa"
+            },
+            "fcc_ui_feedback_img_6": {
+                "label": "Đánh giá 6 – ảnh đại diện và minh họa"
+            },
+            "fcc_ui_feedback_img_7": {
+                "label": "Đánh giá 7 – ảnh đại diện và minh họa"
+            },
+            "fcc_ui_feedback_alt_7": {
+                "label": "Đánh giá 7 – mô tả ảnh đại diện",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_feedback_ugc_alt_7": {
+                "label": "Đánh giá 7 – mô tả ảnh minh họa",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            }
+        }
+    },
+    "home_legal": {
+        "label": "11. Trang chủ – chứng nhận",
+        "description": "Mô tả logo và chữ giải thích của liên kết chứng nhận trong khối Bảo chứng pháp lý. Ảnh logo dùng chung được chọn ở Đầu trang & logo.",
+        "page": "home",
+        "fragment": "cam-ket-phap-ly",
+        "fields": {
+            "fcc_ui_dc30959abe8847": {
+                "label": "Mô tả logo đơn vị – khối chứng nhận",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_97054d25b36218": {
+                "label": "Mô tả logo thương hiệu – khối chứng nhận",
+                "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_ui_43470c268bc605": {
+                "label": "Chữ giải thích liên kết mở chứng nhận",
+                "note": "Chữ giải thích hiện khi rê chuột lên biểu tượng hoặc liên kết; không phải tiêu đề lớn của trang."
+            }
+        }
+    },
+    "product_basic": {
+        "label": "12. Sản phẩm – nhãn thông tin",
+        "description": "Nhãn đường dẫn, thẻ thông tin, nút liên hệ và tên các tab trên tất cả trang chi tiết sản phẩm. Tên, giá và thông tin riêng của mỗi sản phẩm được chỉnh trong hồ sơ Sản phẩm.",
+        "page": "product",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_db7aae96337c15": {
+                "label": "Chữ Trang chủ trong đường dẫn sản phẩm"
+            },
+            "fcc_ui_e4a25aa0335570": {
+                "label": "Chữ Sản phẩm trong đường dẫn sản phẩm"
+            },
+            "fcc_ui_2bd71effeb0585": {
+                "label": "Dòng thông tin đánh giá trên trang sản phẩm"
+            },
+            "fcc_ui_476e0450734143": {
+                "label": "Nhãn thông tin xuất xứ trên trang sản phẩm"
+            },
+            "fcc_ui_bcf7198870556e": {
+                "label": "Nhãn thông tin công thức trên trang sản phẩm"
+            },
+            "fcc_ui_a4761e5516401e": {
+                "label": "Nhãn thông tin pháp lý trên trang sản phẩm"
+            },
+            "fcc_ui_3a43752a881468": {
+                "label": "Nhãn đơn vị phân phối trên trang sản phẩm"
+            },
+            "fcc_ui_2cacb01c3941c0": {
+                "label": "Tên tab đối tượng phù hợp"
+            },
+            "fcc_ui_b2f2c633e021b5": {
+                "label": "Tên tab thành phần chính"
+            },
+            "fcc_ui_tab_usps": {
+                "label": "Tên tab điểm nổi bật"
+            },
+            "fcc_ui_7c2ab4b4eda5ba": {
+                "label": "Nhãn trước quy cách sản phẩm"
+            },
+            "fcc_ui_09caa8fe5fdc81": {
+                "label": "Nhãn trước số công bố sản phẩm"
+            },
+            "fcc_ui_20748aba1fa4a2": {
+                "label": "Chữ nút tư vấn Zalo trong trang sản phẩm"
+            },
+            "fcc_ui_d0f30a260b8018": {
+                "label": "Chữ nút hotline trong trang sản phẩm"
+            },
+            "fcc_ui_82c0e470cd9121": {
+                "label": "Dòng thông tin bên dưới các nút tư vấn"
+            }
+        }
+    },
+    "product_legal": {
+        "label": "13. Sản phẩm – hồ sơ pháp lý",
+        "description": "Tiêu đề, nhãn và câu mô tả dùng chung trong phần hồ sơ pháp lý của các trang sản phẩm. Số CBMP và xuất xứ riêng của từng sản phẩm lấy từ hồ sơ Sản phẩm.",
+        "page": "product",
+        "fragment": "pd-dossier",
+        "fields": {
+            "fcc_ui_00dbdd876ed3f1": {
+                "label": "Tiêu đề khối hồ sơ pháp lý"
+            },
+            "fcc_ui_0521464c014938": {
+                "label": "Tiêu đề phụ khối hồ sơ pháp lý"
+            },
+            "fcc_ui_3c17f4f2108157": {
+                "label": "Đoạn giới thiệu khối hồ sơ pháp lý"
+            },
+            "fcc_ui_c6521a32293b35": {
+                "label": "Chữ trên nhãn trạng thái hồ sơ"
+            },
+            "fcc_ui_1117e9caf2f9c5": {
+                "label": "Tiêu đề mục thương hiệu/dòng sản phẩm"
+            },
+            "fcc_ui_d030a6d0c4b852": {
+                "label": "Chú thích dưới thông tin thương hiệu"
+            },
+            "fcc_ui_672c75317fb0c1": {
+                "label": "Tiêu đề mục xuất xứ/nơi sản xuất"
+            },
+            "fcc_ui_e8e91f7268d663": {
+                "label": "Chú thích dưới thông tin xuất xứ"
+            },
+            "fcc_ui_62e8c9b9513489": {
+                "label": "Tiêu đề mục số công bố"
+            },
+            "fcc_ui_e4e9ad9ac34848": {
+                "label": "Chú thích dưới số công bố"
+            },
+            "fcc_ui_c9174fa4d7a18c": {
+                "label": "Tiêu đề mục tình trạng hồ sơ"
+            },
+            "fcc_ui_edb76d7790c3d5": {
+                "label": "Chú thích dưới tình trạng hồ sơ"
+            },
+            "fcc_ui_7b7743af09d591": {
+                "label": "Tiêu đề mục đơn vị phân phối"
+            },
+            "fcc_ui_2812b49f68fc1b": {
+                "label": "Dòng tên đơn vị trong hồ sơ pháp lý"
+            },
+            "fcc_ui_81827da6a441bb": {
+                "label": "Chú thích dưới đơn vị phân phối"
+            },
+            "fcc_ui_3b59a86c555faa": {
+                "label": "Tiêu đề mục hotline hỗ trợ"
+            },
+            "fcc_ui_a93e048327d51f": {
+                "label": "Chú thích dưới hotline hỗ trợ"
+            }
+        }
+    },
+    "product_guide": {
+        "label": "14. Sản phẩm – hướng dẫn & combo",
+        "description": "Tiêu đề và đoạn giới thiệu cho phần thành phần, hướng dẫn sử dụng và combo gợi ý trên trang sản phẩm. Các thành phần/bước dùng cụ thể lấy từ hồ sơ Sản phẩm.",
+        "page": "product",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_8b8deb3c94c1ca": {
+                "label": "Tiêu đề khối thành phần/công nghệ"
+            },
+            "fcc_ui_5adcdfe588f53d": {
+                "label": "Tiêu đề phụ khối thành phần"
+            },
+            "fcc_ui_42526f178a133b": {
+                "label": "Tiêu đề khối cách sử dụng"
+            },
+            "fcc_ui_2ec853bc877a83": {
+                "label": "Đoạn giới thiệu trước hướng dẫn dùng"
+            },
+            "fcc_ui_e9dfbe7e600722": {
+                "label": "Tiêu đề danh sách bước sử dụng"
+            },
+            "fcc_ui_cfd8da94dbbe98": {
+                "label": "Tiêu đề khối combo gợi ý"
+            },
+            "fcc_ui_6a7e8255f4bd36": {
+                "label": "Tiêu đề phụ khối combo gợi ý"
+            },
+            "fcc_ui_345ca4d93b0bd2": {
+                "label": "Đoạn giới thiệu trước các combo"
+            }
+        }
+    },
+    "product_order": {
+        "label": "15. Sản phẩm – form đặt hàng",
+        "description": "Tiêu đề, mô tả, nhãn ô nhập, lời đồng ý và nút của form đặt hàng nằm trong trang chi tiết sản phẩm.",
+        "page": "product",
+        "fragment": "pd-order-section",
+        "fields": {
+            "fcc_ui_814bc7fe54e46d": {
+                "label": "Gợi ý nhập ghi chú – form trang sản phẩm",
+                "note": "Hiện bên trong ô khi người xem chưa nhập dữ liệu; nhãn nằm bên ngoài ô được quản lý riêng."
+            },
+            "fcc_ui_6bcf2a73908762": {
+                "label": "Dòng nhận diện trên form đặt hàng"
+            },
+            "fcc_ui_231220a45140b9": {
+                "label": "Tiêu đề form đặt hàng trong trang sản phẩm"
+            },
+            "fcc_ui_162da04035299f": {
+                "label": "Mô tả dưới tiêu đề form đặt hàng"
+            },
+            "fcc_ui_c0f92fda1faf20": {
+                "label": "Nhãn ô họ tên – form trang sản phẩm"
+            },
+            "fcc_ui_bc90e573831e54": {
+                "label": "Ký hiệu ô bắt buộc – form trang sản phẩm"
+            },
+            "fcc_ui_2599277f442df4": {
+                "label": "Nhãn ô điện thoại – form trang sản phẩm"
+            },
+            "fcc_ui_8a73cc57b45bc2": {
+                "label": "Nhãn ô chọn sản phẩm – form trang sản phẩm"
+            },
+            "fcc_ui_d4a1dc81975845": {
+                "label": "Nhãn ô địa chỉ – form trang sản phẩm"
+            },
+            "fcc_ui_7ba461f49016e9": {
+                "label": "Nhãn ô ghi chú – form trang sản phẩm"
+            },
+            "fcc_ui_1a2520ccc60375": {
+                "label": "Lời đồng ý dưới form trang sản phẩm"
+            },
+            "fcc_ui_f2e6976d2f8823": {
+                "label": "Chữ nút gửi form trong trang sản phẩm"
+            }
+        }
+    },
+    "archive": {
+        "label": "16. Lưu trữ – bố cục cũ",
+        "description": "Nội dung được lưu từ bố cục/menu cũ, hiện không xuất hiện trên website. Dữ liệu được giữ để đối chiếu.",
+        "page": "",
+        "fragment": "",
+        "fields": {
+            "fcc_ui_030d29589ecca2": {
+                "label": "Sản Phẩm & Combo",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_b4c0ae913bf5a6": {
+                "label": "Công Nghệ Vi Kim",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_ffa1098f587730": {
+                "label": "Về Thương Hiệu",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_3dbd96608220ae": {
+                "label": "Chu Trình Skincare",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_23be8881d2ac63": {
+                "label": "Bảo Chứng Pháp Lý",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_f5248afaa5707e": {
+                "label": "Sản Phẩm & Combo Chủ Lực",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_75c0b9744b7141": {
+                "label": "Công Nghệ Vi Kim Spicule Tokyo",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_7765c53f3b0cc4": {
+                "label": "Thương Hiệu Fractional CC",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_3768eee65faaa8": {
+                "label": "Bảng Giá Combo Tối Ưu",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_1b9b25c3ff94b1": {
+                "label": "Chu Trình Chăm Sóc Da Chuẩn",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_8e50f2be218967": {
+                "label": "Đánh Giá Từ Khách Hàng",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_04f8a3a25234b4": {
+                "label": "Bảo Chứng Pháp Lý Bộ Y Tế",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_52b1954ad7b65f": {
+                "label": "Câu Hỏi Thường Gặp (FAQ)",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_8dd9f85de733a5": {
+                "label": "Xem Tất Cả 10 Sản Phẩm",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_125a2c81361b62": {
+                "label": "Chính Sách Hoạt Động",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_ff8b62e42bfee6": {
+                "label": "📞 Hotline: 0985 561 862",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_2eb27fa50153ca": {
+                "label": "Tôi đồng ý nhận tư vấn và xác nhận đơn hàng qua điện thoại.",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_a85983585c62f1": {
+                "label": "XUẤT XỨ NHẬT BẢN",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_1b7fae7f00cac5": {
+                "label": "| Phí vận chuyển thông báo khi xác nhận đơn cho mọi combo + Quà tặng mặt nạ cao cấp",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_babf38c50a7fcc": {
+                "label": "Trang Chủ",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_5443666fa22e6f": {
+                "label": "Bộ Đôi C–CX4",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_f8221194420eb8": {
+                "label": "10 Sản Phẩm",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_e73f19478e7063": {
+                "label": "Chính Sách",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_48323817422ee9": {
+                "label": "Chu Trình Chăm Sóc Da",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_fbfab8b4a14f79": {
+                "label": "Chính Sách Bán Hàng",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_c3e7324c41894e": {
+                "label": "Công ty TNHH BUI DANG–JP",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_fc9b4ff0aa7808": {
+                "label": "BUI DANG–JP",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_8b675966c60cc0": {
+                "label": "Danh Mục 10 Sản Phẩm",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_f0c1bf9d0b430f": {
+                "label": "Combo Chủ Lực C–CX4",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_0fcd6554af37a8": {
+                "label": "Chính Sách Bán Hàng & Pháp Lý",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_e6c36702ec3d1c": {
+                "label": "| Tiếp nhận đơn hàng chính ngạch • Hotline: 0985 561 862",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_ea01b6a3caa0ce": {
+                "label": "Sản Phẩm",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_afa9c097a260f7": {
+                "label": "Xem Thêm Sản Phẩm",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_51c818e24ec58c": {
+                "label": "alt – Combo Siêu tinh chất vi kim giảm thâm Fractional CC Serum C - CX4",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_931cfdd0ed629a": {
+                "label": "alt – Bao bì bộ đôi Needle Serum C và CX4",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_89d1e3ccd6cffc": {
+                "label": "placeholder – Tìm kiếm theo tên sản phẩm, thành phần...",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_product_seo_title": {
+                "label": "Tiêu đề SEO – Giao diện chi tiết sản phẩm",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_product_seo_description": {
+                "label": "Mô tả SEO – Giao diện chi tiết sản phẩm",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_4e3e203cfd2278": {
+                "label": "Xuất xứ:",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_07d4db9057c1e0": {
+                "label": "Tiêu Chuẩn Tokyo",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_d1f450c933841c": {
+                "label": "Đã Cấp Phép CBMP",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_f1cf9cbf3a1a05": {
+                "label": "Phân Phối BUI DANG-JP",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_8594d5c948e8fc": {
+                "label": "Công Nghệ & Lợi Điểm Độc Quyền",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_cade7d2a34862c": {
+                "label": "Điểm Nổi Bật & Công Nghệ Chủ Đạo",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_5d5f80440bfe3c": {
+                "label": "Ứng dụng công nghệ vi kim sinh học tự nhiên Spicule kết hợp phức hợp hoạt chất chuyên",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_79ee3469c0cac9": {
+                "label": "Hội tụ các phức hợp tinh khiết nồng độ chuẩn y khoa được kiểm chứng lâm sàng nghiêm n",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_f5310755fa3015": {
+                "label": "Quy Trình & Làn Da Phù Hợp",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            },
+            "fcc_ui_7766fc9ecb857b": {
+                "label": "Làn Da Phù Hợp Nhất",
+                "note": "Được giữ từ bố cục trước. Nội dung này hiện không xuất hiện trên website."
+            }
+        }
+    }
+}

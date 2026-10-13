@@ -11,6 +11,7 @@ $source = $root . '/template/fractional-cc';
 $theme = $root . '/wp-content/themes/project-child';
 $plugin = $root . '/wp-content/plugins/project-core';
 $existing_defaults = json_decode( file_get_contents( $plugin . '/defaults/fractional.json' ), true );
+$existing_schema = json_decode( file_get_contents( $theme . '/inc/fractional-fields.json' ), true );
 $pages = array(
 	'home' => array( 'index.html', 'Trang chủ', 'trang-chu' ),
 	'catalog' => array( 'san-pham.html', 'Sản phẩm', 'san-pham' ),
@@ -18,7 +19,7 @@ $pages = array(
 	'policies' => array( 'chinh-sach.html', 'Chính sách', 'chinh-sach' ),
 	'thankyou' => array( 'cam-on.html', 'Cảm ơn', 'cam-on' ),
 );
-$defaults = array( 'version' => '0.3.3', 'pages' => array( 'shared' => array( 'title' => 'Thông tin và giao diện chung Fractional CC', 'slug' => 'fractional-cc-settings', 'fields' => array() ) ) );
+$defaults = array( 'version' => '0.3.21', 'pages' => array( 'shared' => array( 'title' => 'Thông tin và giao diện chung Fractional CC', 'slug' => 'fractional-cc-settings', 'fields' => array() ) ) );
 $schemas = array();
 $tokens = array();
 $bindings_path = $root . '/scripts/fractional-bindings.json';
@@ -95,6 +96,11 @@ foreach ( $pages as $kind => $page ) {
 	$doc->loadHTML( '<?xml encoding="UTF-8">' . file_get_contents( $source . '/' . $page[0] ), LIBXML_NONET );
 	libxml_clear_errors();
 	$xpath = new DOMXPath( $doc );
+	foreach ( array( 'site-footer' => 'fcc-footer', 'pd-dossier-section' => 'pd-dossier' ) as $class => $id ) {
+		foreach ( $xpath->query( '//*[contains(concat(" ", normalize-space(@class), " "), " ' . $class . ' ")]' ) as $section ) {
+			if ( ! $section->hasAttribute( 'id' ) ) { $section->setAttribute( 'id', $id ); }
+		}
+	}
 	foreach ( iterator_to_array( $xpath->query( '//comment() | //script' ) ) as $node ) { $node->parentNode->removeChild( $node ); }
 	$css = '';
 	foreach ( $xpath->query( '//head/style' ) as $style ) { $css .= $style->textContent . "\n"; }
@@ -122,6 +128,10 @@ foreach ( $pages as $kind => $page ) {
 	foreach ( $fragments as $id => $fragment ) {
 		$node = $xpath->query( '//*[@id="' . $id . '"]' )->item( 0 );
 		if ( $node ) { fcc_compile_node_content( $doc, $node, 'project_child_fcc_fragment( ' . var_export( $fragment, true ) . ' );' ); }
+	}
+	if ( 'home' === $kind ) {
+		$node = $xpath->query( '//*[@id="danh-muc"]//*[contains(concat(" ", normalize-space(@class), " "), " brief-product-grid ")]' )->item( 0 );
+		if ( $node ) { fcc_compile_node_content( $doc, $node, "project_child_fcc_fragment( 'home_catalog' );" ); }
 	}
 	$text_nodes = array();
 	foreach ( iterator_to_array( $xpath->query( '//body//text()[normalize-space()]' ) ) as $node ) {
@@ -185,7 +195,9 @@ foreach ( $pages as $kind => $page ) {
 	foreach ( $xpath->query( '//form' ) as $form ) {
 		$form->setAttribute( 'method', 'post' );
 		$form->setAttribute( 'action', fcc_compile_php( 'echo esc_url( admin_url( \'admin-post.php\' ) );' ) );
-		$form->appendChild( $doc->createTextNode( fcc_compile_php( 'project_child_fcc_form_fields();' ) ) );
+		foreach ( iterator_to_array( $xpath->query( './/*[@name="website_url"]', $form ) ) as $honeypot ) { $honeypot->parentNode->removeChild( $honeypot ); }
+		$source = 'inline-order-form' === $form->getAttribute( 'id' ) ? ( 'product' === $kind ? 'product_inline' : 'home_inline' ) : 'modal';
+		$form->appendChild( $doc->createTextNode( fcc_compile_php( 'project_child_fcc_form_fields( ' . var_export( $source, true ) . ' );' ) ) );
 		foreach ( $form->getElementsByTagName( 'select' ) as $select ) { if ( 'selected_item' === $select->getAttribute( 'name' ) ) { fcc_compile_node_content( $doc, $select, 'project_child_fcc_order_options();' ); } }
 	}
 	if ( 'home' === $kind ) {
@@ -222,6 +234,11 @@ foreach ( $pages as $kind => $page ) {
 	$output = "<?php\ndefined( 'ABSPATH' ) || exit;\n?>\n";
 	foreach ( iterator_to_array( $body->childNodes ) as $node ) {
 		if ( ! ( $node instanceof DOMElement ) ) { continue; }
+		if ( 'header' === $node->tagName && false !== strpos( ' ' . $node->getAttribute( 'class' ) . ' ', ' site-header ' ) ) {
+			$output .= "<?php get_template_part( 'template-parts/fractional/shared/header' ); ?>\n";
+			continue;
+		}
+		if ( false !== strpos( ' ' . $node->getAttribute( 'class' ) . ' ', ' top-bar ' ) ) { continue; }
 		if ( 'main' === $node->tagName ) {
 			$output .= '<main' . ( $node->hasAttribute( 'class' ) ? ' class="' . htmlspecialchars( $node->getAttribute( 'class' ), ENT_QUOTES, 'UTF-8' ) . '"' : '' ) . ( $node->hasAttribute( 'id' ) ? ' id="' . htmlspecialchars( $node->getAttribute( 'id' ), ENT_QUOTES, 'UTF-8' ) . '"' : '' ) . ">\n";
 			$index = 0;
@@ -255,7 +272,7 @@ foreach ( $pages as $kind => $page ) {
 $hero_fields = array(
 	'fcc_home_hero_background' => array( 'value' => 'assets/images/banner/hero-background.jpg', 'type' => 'image', 'label' => 'Ảnh nền toàn bộ Hero', 'return_format' => 'id', 'preview_size' => 'medium', 'mime_types' => 'jpg,jpeg,png,webp', 'instructions' => 'Chọn ảnh làm nền phủ toàn bộ Hero. Xóa ảnh để dùng lại nền mặc định.' ),
 	'fcc_home_hero_background_position' => array( 'value' => 'center center', 'type' => 'select', 'label' => 'Vị trí ảnh nền Hero', 'choices' => array( 'center center' => 'Giữa', 'center top' => 'Trên', 'center bottom' => 'Dưới', 'left center' => 'Trái', 'right center' => 'Phải' ), 'instructions' => 'Ảnh phủ kín Hero (cover), có thể cắt bớt mép tùy kích thước màn hình. Chọn vị trí để ưu tiên vùng ảnh.' ),
-	'fcc_home_hero_product_image' => array( 'value' => 'assets/images/banner/combo-c-cx4.png', 'type' => 'image', 'label' => 'Ảnh sản phẩm nổi bật Hero', 'return_format' => 'id', 'preview_size' => 'medium', 'mime_types' => 'jpg,jpeg,png,webp', 'instructions' => 'Chọn ảnh sản phẩm nổi bật hiển thị ở khung banner Hero bên phải. Xóa ảnh để dùng lại ảnh mặc định.' ),
+	'fcc_home_hero_product_image' => array( 'value' => 'assets/images/banner/combo-c-cx4-gold.png', 'type' => 'image', 'label' => 'Ảnh sản phẩm nổi bật Hero', 'return_format' => 'id', 'preview_size' => 'medium', 'mime_types' => 'jpg,jpeg,png,webp', 'instructions' => 'Chọn ảnh sản phẩm nổi bật hiển thị ở khung banner Hero bên phải. Xóa ảnh để dùng lại ảnh mặc định.' ),
 	'fcc_home_hero_product_alt' => array( 'value' => 'Combo Siêu Tinh Chất Vi Kim Fractional CC Serum C và CX4 Nhật Bản', 'type' => 'text', 'label' => 'Văn bản thay thế (Alt) ảnh sản phẩm Hero', 'instructions' => 'Mô tả ngắn gọn cho ảnh sản phẩm nổi bật (tối ưu SEO & trợ năng).' ),
 );
 $hero_schema_fields = array();
@@ -275,6 +292,21 @@ if ( isset( $existing_defaults['catalogSource'] ) ) {
 	foreach ( array( 'products', 'combos', 'catalogSource' ) as $key ) { $defaults[ $key ] = $existing_defaults[ $key ]; }
 }
 if ( isset( $existing_defaults['featured'] ) ) { $defaults['featured'] = $existing_defaults['featured']; }
+if ( isset( $existing_defaults['homeCatalog'] ) ) { $defaults['homeCatalog'] = $existing_defaults['homeCatalog']; }
+// Preserve pages maintained outside the original template compiler, such as concerns.
+foreach ( $existing_defaults['pages'] as $kind => $page ) {
+	if ( ! isset( $defaults['pages'][ $kind ] ) ) {
+		$defaults['pages'][ $kind ] = $page;
+		if ( isset( $existing_schema[ $kind ] ) ) { $schemas[ $kind ] = $existing_schema[ $kind ]; }
+	}
+}
+// The common header owns one editable set of labels across every page.
+if ( isset( $existing_schema['shared']['Menu điều hướng'] ) ) {
+	$schemas['shared']['Menu điều hướng'] = $existing_schema['shared']['Menu điều hướng'];
+	foreach ( $schemas['shared']['Menu điều hướng'] as $name => $field ) {
+		$defaults['pages']['shared']['fields'][ $name ] = $existing_defaults['pages']['shared']['fields'][ $name ];
+	}
+}
 fcc_compile_write( $plugin . '/defaults/fractional.json', json_encode( $defaults, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . "\n" );
 fcc_compile_write( $theme . '/inc/fractional-fields.json', json_encode( $schemas, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . "\n" );
 ksort( $bindings );
@@ -287,7 +319,7 @@ foreach ( $assets as $file ) {
 }
 // Remove only obsolete files emitted by this compiler, inside its shared folder.
 $used = array();
-foreach ( array_keys( $pages ) as $kind ) {
+foreach ( array_merge( array_keys( $pages ), array( 'shared/header' ) ) as $kind ) {
 	$markup = file_get_contents( $theme . '/template-parts/fractional/' . $kind . '.php' );
 	preg_match_all( '#template-parts/fractional/shared/(part-[a-f0-9]+)#', $markup, $matches );
 	$used = array_merge( $used, $matches[1] );

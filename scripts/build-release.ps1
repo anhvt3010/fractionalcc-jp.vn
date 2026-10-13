@@ -4,7 +4,7 @@ param(
     [string]$Version
 )
 $ErrorActionPreference = 'Stop'
-$taskPhp = @('D:/xampp/php/php.exe', 'C:/xampp/php/php.exe') | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
+$taskPhp = @('C:/xampp/php/php.exe', 'D:/xampp/php/php.exe') | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
 if (-not $taskPhp) { throw 'XAMPP PHP executable not found.' }
 $taskRoot = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $taskReleaseRoot = Join-Path $taskRoot 'release'

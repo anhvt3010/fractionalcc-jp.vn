@@ -1,5 +1,5 @@
 {
-    "version": "0.3.3",
+    "version": "0.3.24",
     "pages": {
         "shared": {
             "title": "Thông tin và giao diện chung Fractional CC",
@@ -162,15 +162,15 @@
                     "type": "text"
                 },
                 "fcc_ui_f2b083aef82352": {
-                    "value": "TƯ VẤN CHÍNH HÃNG",
+                    "value": "BUI DANG-JP PHÂN PHỐI ĐỘC QUYỀN",
                     "type": "text"
                 },
                 "fcc_ui_e97d9d953b50ea": {
-                    "value": "ĐĂNG KÝ ĐẶT HÀNG",
+                    "value": "ĐĂNG KÝ TƯ VẤN & ĐẶT HÀNG",
                     "type": "text"
                 },
                 "fcc_ui_923181c9defa62": {
-                    "value": "Phân phối độc quyền bởi BUI DANG-JP • Phí vận chuyển thông báo khi xác nhận đơn",
+                    "value": "Chuyên viên sẽ liên hệ xác nhận đơn hàng và tư vấn cách sử dụng",
                     "type": "text"
                 },
                 "fcc_ui_1496dc7df7ac7f": {
@@ -230,7 +230,7 @@
                     "type": "text"
                 },
                 "fcc_ui_453bd451ef0751": {
-                    "value": "assets/images/banner/combo-c-cx4.png",
+                    "value": "assets/images/banner/combo-c-cx4-gold.png",
                     "type": "image"
                 },
                 "fcc_ui_eeddc60a6e4bec": {
@@ -258,7 +258,7 @@
                     "type": "text"
                 },
                 "fcc_ui_a614a94ea4e266": {
-                    "value": "assets/images/products/mandelic-peel-essence.png",
+                    "value": "assets/images/products/excel-20261013/mandelic-shot-peel-essence.png",
                     "type": "image"
                 },
                 "fcc_ui_65ad6ef34a2704": {
@@ -278,7 +278,7 @@
                     "type": "text"
                 },
                 "fcc_ui_fcb9a5558a4aa3": {
-                    "value": "assets/images/products/needle-serum-c.png",
+                    "value": "assets/images/products/excel-20261013/needle-serum-c.png",
                     "type": "image"
                 },
                 "fcc_ui_f7797e05b4a8ae": {
@@ -286,7 +286,7 @@
                     "type": "text"
                 },
                 "fcc_ui_1a1ddc977ed16f": {
-                    "value": "assets/images/products/needle-serum-cx4.png",
+                    "value": "assets/images/products/excel-20261013/needle-serum-cx4.png",
                     "type": "image"
                 },
                 "fcc_ui_b710ed3cad3b13": {
@@ -294,7 +294,7 @@
                     "type": "text"
                 },
                 "fcc_ui_22aa1c028e8ab6": {
-                    "value": "assets/images/products/pdrn-toning-essence.png",
+                    "value": "assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png",
                     "type": "image"
                 },
                 "fcc_ui_7480dd983a2559": {
@@ -302,7 +302,7 @@
                     "type": "text"
                 },
                 "fcc_ui_80f56b22dbc19b": {
-                    "value": "assets/images/products/pdrn-lip-essence.png",
+                    "value": "assets/images/products/excel-20261013/pdrn-shot-lip-essence.png",
                     "type": "image"
                 },
                 "fcc_ui_0f4c7a9a698f94": {
@@ -338,71 +338,71 @@
                     "type": "text"
                 },
                 "fcc_ui_2d8d0e4cc814fb": {
-                    "value": "assets/images/feedback/feedback-1.jpg",
+                    "value": "assets/images/feedback/feedback-1.png",
                     "type": "image"
                 },
                 "fcc_ui_4fe975230c2416": {
-                    "value": "Hoàng Yến Skincare",
+                    "value": "Feedback Hoàng Yến - Combo Siêu Tinh Chất Vi Kim Needle Serum C & CX4",
                     "type": "text"
                 },
                 "fcc_ui_424bf7d26ffd10": {
-                    "value": "Hình ảnh kết quả peel da",
+                    "value": "Ảnh thực tế sau 1 tuần",
                     "type": "text"
                 },
                 "fcc_ui_5e28ca19d6c1a6": {
-                    "value": "assets/images/feedback/feedback-2.jpg",
+                    "value": "assets/images/feedback/feedback-2.png",
                     "type": "image"
                 },
                 "fcc_ui_582af86c2cd2b7": {
-                    "value": "Minh Thư",
+                    "value": "Feedback Minh Thư - Combo Trọn Bộ Vi Kim Serum C, CX4 & Mặt Nạ Face Mask",
                     "type": "text"
                 },
                 "fcc_ui_8a11ba251693bf": {
-                    "value": "Feedback combo C CX4",
+                    "value": "Ảnh unbox combo gửi shop",
                     "type": "text"
                 },
                 "fcc_ui_0db797a330bea5": {
-                    "value": "assets/images/feedback/feedback-3.jpg",
+                    "value": "assets/images/feedback/feedback-3.png",
                     "type": "image"
                 },
                 "fcc_ui_d78a914ad8029f": {
-                    "value": "Linh Đan Review",
+                    "value": "Feedback Linh Đan - Siêu Tinh Chất Vi Kim Giảm Thâm Nám Needle Serum C",
                     "type": "text"
                 },
                 "fcc_ui_9dc56fa56ef628": {
-                    "value": "Trải nghiệm mặt nạ vi kim",
+                    "value": "Ảnh dùng hết lọ serum C",
                     "type": "text"
                 },
                 "fcc_ui_86f10657c932c8": {
-                    "value": "assets/images/feedback/feedback-4.jpg",
+                    "value": "assets/images/feedback/feedback-4.png",
                     "type": "image"
                 },
                 "fcc_ui_b89e4c5a14dd5f": {
-                    "value": "Bích Phương",
+                    "value": "Feedback Bích Phương - Bộ Đôi Serum Vi Kim Fractional CC & Mặt Nạ",
                     "type": "text"
                 },
                 "fcc_ui_49056b4ced1219": {
-                    "value": "Feedback PDRN Toning Essence",
+                    "value": "Ảnh trải nghiệm thực tế",
                     "type": "text"
                 },
                 "fcc_ui_da1eaea273e1e5": {
-                    "value": "assets/images/products/pdrn-lip-plumper.png",
+                    "value": "assets/images/feedback/feedback-5.png",
                     "type": "image"
                 },
                 "fcc_ui_c70eeb1112b97e": {
-                    "value": "Phương Anh",
+                    "value": "Feedback Thanh Trúc - Serum Vi Kim Needle Serum C Chuyên Sâu",
                     "type": "text"
                 },
                 "fcc_ui_02342e69ec8261": {
-                    "value": "Ảnh son dưỡng môi PDRN",
+                    "value": "Ảnh review cam thường",
                     "type": "text"
                 },
                 "fcc_ui_67e344a449c6ea": {
-                    "value": "Thu Trang",
+                    "value": "Feedback Mai Anh - Serum Vi Kim Cao Cấp Needle Serum CX4",
                     "type": "text"
                 },
                 "fcc_ui_890c34255cfbfd": {
-                    "value": "Ảnh trọn bộ vi kim Fractional CC",
+                    "value": "Ảnh cầm tay 2 bản C và CX4",
                     "type": "text"
                 },
                 "fcc_ui_dc30959abe8847": {
@@ -510,7 +510,7 @@
                     "type": "text"
                 },
                 "fcc_ui_dfc1bf59d438e2": {
-                    "value": "Phí vận chuyển thông báo khi xác nhận đơn & Nhận quà tặng kèm theo combo",
+                    "value": "Chuyên viên sẽ liên hệ xác nhận đơn hàng và tư vấn cách sử dụng",
                     "type": "text"
                 },
                 "fcc_ui_5ac948100cd449": {
@@ -546,7 +546,7 @@
                     "type": "text"
                 },
                 "fcc_ui_476e0450734143": {
-                    "value": "100% Nội Địa Nhật",
+                    "value": "Xuất xứ: Nhật Bản",
                     "type": "text"
                 },
                 "fcc_ui_bcf7198870556e": {
@@ -567,6 +567,10 @@
                 },
                 "fcc_ui_b2f2c633e021b5": {
                     "value": "Thành phần chính",
+                    "type": "text"
+                },
+                "fcc_ui_tab_usps": {
+                    "value": "Điểm Nổi Bật",
                     "type": "text"
                 },
                 "fcc_ui_7c2ab4b4eda5ba": {
@@ -714,7 +718,7 @@
                     "type": "text"
                 },
                 "fcc_ui_e9dfbe7e600722": {
-                    "value": "Hướng Dẫn Sử Dụng Chuẩn Salon Tokyo",
+                    "value": "Hướng Dẫn Sử Dụng",
                     "type": "text"
                 },
                 "fcc_ui_cfd8da94dbbe98": {
@@ -835,6 +839,42 @@
                 },
                 "fcc_ui_963cafcaa053a1": {
                     "value": "Sản phẩm Fractional CC",
+                    "type": "text"
+                },
+                "fcc_ui_feedback_img_6": {
+                    "value": "assets/images/feedback/feedback-6.png",
+                    "type": "image"
+                },
+                "fcc_ui_feedback_img_7": {
+                    "value": "assets/images/feedback/feedback-7.png",
+                    "type": "image"
+                },
+                "fcc_ui_feedback_alt_7": {
+                    "value": "Feedback Ngọc Hân - Trọn Bộ Liệu Trình Vi Kim Fractional CC",
+                    "type": "text"
+                },
+                "fcc_ui_feedback_ugc_alt_7": {
+                    "value": "Ảnh Before/After sau 1 tháng",
+                    "type": "text"
+                },
+                "fcc_nav_home": {
+                    "value": "Trang chủ",
+                    "type": "text"
+                },
+                "fcc_nav_products": {
+                    "value": "Sản phẩm",
+                    "type": "text"
+                },
+                "fcc_nav_brand": {
+                    "value": "Về Thương hiệu",
+                    "type": "text"
+                },
+                "fcc_nav_concerns": {
+                    "value": "Vấn đề làn da",
+                    "type": "text"
+                },
+                "fcc_nav_legal": {
+                    "value": "Bảo chứng pháp lý",
                     "type": "text"
                 }
             }
@@ -1401,7 +1441,7 @@
                     "type": "text"
                 },
                 "fcc_ui_839b3de79eb53b": {
-                    "value": "Khám Phá Toàn Bộ 10 Sản Phẩm & Bộ Lọc Nhu Cầu Tại Đây →",
+                    "value": "Khám Phá Toàn Bộ Sản Phẩm & Combo Tại Đây →",
                     "type": "text"
                 },
                 "fcc_ui_5069048586d7c3": {
@@ -1753,7 +1793,7 @@
                     "type": "text"
                 },
                 "fcc_ui_d5a34567c9c8c0": {
-                    "value": "Đánh Giá Khách Hàng & Review KOL/KOC",
+                    "value": "Đánh Giá Khách Hàng",
                     "type": "text"
                 },
                 "fcc_ui_ae9582f3595962": {
@@ -1793,19 +1833,19 @@
                     "type": "text"
                 },
                 "fcc_ui_83e9a0f8927e14": {
-                    "value": "Làn da: Dầu, lỗ chân lông to, da sần",
+                    "value": "Làn da: Lỗ chân lông to, da xỉn màu, kém săn chắc",
                     "type": "text"
                 },
                 "fcc_ui_5b450847aa849d": {
-                    "value": "Trải nghiệm: Mandelic Shot Peel Essence",
+                    "value": "Trải nghiệm: Combo Siêu Tinh Chất Vi Kim Needle Serum C & CX4",
                     "type": "text"
                 },
                 "fcc_ui_4a5a5878a1651b": {
-                    "value": "\"Cảm giác 50.000 vi kim châm chích lăn tăn rất sảng khoái và êm ái trên da. Sau 2 tuần dùng đúng hướng dẫn, vùng mũi và cằm mịn hẳn, bã nhờn giảm rõ rệt mà không hề bị khô căng hay bong tróc rát buốt.\"",
+                    "value": "\"Châm chích nhẹ nhẹ 1 xíu vì là dòng vi kim mà. Kh biết mn sao nhưng mình lại thấy thích. Sau 1 tuần thấy sáng hơn hẳn, lỗ chân lông cải thiện khá nhiều nha. Da cũng cảm giác khoẻ và săn chắc hơn. Nch mới dùng thấy rất ưng!!\"",
                     "type": "textarea"
                 },
                 "fcc_ui_25b3794c4ce4e1": {
-                    "value": "Ảnh thực tế sau 14 ngày",
+                    "value": "Ảnh thực tế sau 1 tuần",
                     "type": "text"
                 },
                 "fcc_ui_b87712fd5f7219": {
@@ -1829,23 +1869,23 @@
                     "type": "text"
                 },
                 "fcc_ui_c479ee1ddb85b4": {
-                    "value": "Làn da: Thâm mụn, da xỉn màu",
+                    "value": "Làn da: Thâm mụn, da khô thiếu ẩm, xỉn màu",
                     "type": "text"
                 },
                 "fcc_ui_d7787cde62b9c7": {
-                    "value": "Trải nghiệm: Combo Serum C – CX4",
+                    "value": "Trải nghiệm: Combo Trọn Bộ Vi Kim Serum C, CX4 & Mặt Nạ Face Mask",
                     "type": "text"
                 },
                 "fcc_ui_dbc46d0507416e": {
-                    "value": "\"Mua combo C–CX4 được tặng kèm dưỡng môi PDRN hời thật sự. Serum C dùng ban ngày thẩm thấu siêu nhanh, còn tối mình xen kẽ CX4. Vết thâm mụn cũ mờ nhanh hơn hẳn các loại vitamin C trước đây mình dùng.\"",
+                    "value": "\"Bao bì sp siuu đẹp luôn í :3. Mình dùng cả combo vi kim C và CX4 + mặt nạ đc 2 tuần rồi, da sáng hẳn, mờ thâm 1 chút, cảm giác căng bóng và ẩm hơn. Rất ưng combo này của shop 🥰 Mua đợt sale được giá hời còn tặng nữa. Sẽ ủng hộ thêm!!\"",
                     "type": "textarea"
                 },
                 "fcc_ui_7d09b5715413e3": {
-                    "value": "Ảnh feedback gửi Zalo",
+                    "value": "Ảnh unbox combo gửi shop",
                     "type": "text"
                 },
                 "fcc_ui_05614b50bf95cc": {
-                    "value": "5 ngày trước",
+                    "value": "4 ngày trước",
                     "type": "text"
                 },
                 "fcc_ui_9a5b4a75039b72": {
@@ -1865,19 +1905,19 @@
                     "type": "text"
                 },
                 "fcc_ui_e06ce21cb42c3e": {
-                    "value": "Làn da: Thiếu sức sống, nếp nhăn li ti",
+                    "value": "Làn da: Đốm nâu, tàn nhang, nám sạm",
                     "type": "text"
                 },
                 "fcc_ui_2bf87779931e23": {
-                    "value": "Trải nghiệm: Mặt Nạ Needle Serum A Mask",
+                    "value": "Trải nghiệm: Siêu Tinh Chất Vi Kim Giảm Thâm Nám Needle Serum C",
                     "type": "text"
                 },
                 "fcc_ui_aae96066552a69": {
-                    "value": "\"Mặt nạ vi kim 300.000 kim kết hợp Retinol và PDRN cá hồi. Đắp 20 phút gỡ ra da căng bóng ngậm nước như vừa đi spa tại Nhật. Rất ưng ý với tem phụ chuẩn chỉ của công ty BUI DANG-JP.\"",
+                    "value": "\"Mình dùng hết 1 lọ serum C này thì thấy nó có hiệu quả thật nha, mấy vết đốm nám trên mặt mờ hẳn, da sáng hơn. Thấy hợp nên mình vừa đặt thêm combo rồi, giờ chỉ ngồi hóng hàng về thuiii\"",
                     "type": "textarea"
                 },
                 "fcc_ui_fd2d93768e2ffa": {
-                    "value": "Ảnh test mặt nạ vi kim",
+                    "value": "Ảnh dùng hết lọ serum C",
                     "type": "text"
                 },
                 "fcc_ui_e30fb068af857c": {
@@ -1893,19 +1933,19 @@
                     "type": "text"
                 },
                 "fcc_ui_cfddc9ae95b931": {
-                    "value": "Làn da: Da khô, thiếu ẩm",
+                    "value": "Làn da: Da sạm màu, không đều màu, thiếu ẩm",
                     "type": "text"
                 },
                 "fcc_ui_aa7b6b83722208": {
-                    "value": "Trải nghiệm: PDRN Shot 1000+ Toning Essence",
+                    "value": "Trải nghiệm: Bộ Đôi Serum Vi Kim Fractional CC & Mặt Nạ",
                     "type": "text"
                 },
                 "fcc_ui_50561c424b1d41": {
-                    "value": "\"Chất essence lỏng nhẹ, vỗ lên da ngậm nước ngay lập tức. Sau 3 tuần da trông căng mịn có sức sống hơn nhiều. Giao hàng về Hải Phòng mất đúng 2 ngày, mở hộp kiểm tra đầy đủ tem nhãn mới thanh toán.\"",
+                    "value": "\"Tui dùng cả serum vi kim của VT với Fractional CC rồi, mà nói thật là khá ấn tượng với FCC nha mấy bà. Da tui nhìn sáng và đều màu hơn, mấy vùng da sạm màu cũng có vẻ cải thiện. Cảm giác da tươi tắn hơn hẳn nên tui khá ưng em này. Bà nào muốn thử thì nhớ tìm hiểu cách dùng kỹ nha, nhất là dòng serum vi kim á. Rcm mấy bà dùng thử mặt nạ dòng này luôn nha, siêu mướt da, cấp ẩm tốt, nói chung là thích lắm\"",
                     "type": "textarea"
                 },
                 "fcc_ui_11645e8a7a77ef": {
-                    "value": "Ảnh sau 3 tuần sử dụng",
+                    "value": "Ảnh trải nghiệm thực tế",
                     "type": "text"
                 },
                 "fcc_ui_26385de9767f04": {
@@ -1913,27 +1953,27 @@
                     "type": "text"
                 },
                 "fcc_ui_eeab6c7deedef8": {
-                    "value": "Phương Anh",
+                    "value": "Thanh Trúc",
                     "type": "text"
                 },
                 "fcc_ui_d2ddc5756c7268": {
-                    "value": "26 tuổi · Cần Thơ",
+                    "value": "27 tuổi · Hà Nội",
                     "type": "text"
                 },
                 "fcc_ui_b944e00dd9af5e": {
-                    "value": "Tình trạng: Môi khô nứt nẻ, nhiều rãnh",
+                    "value": "Làn da: Nám sạm, da kém đàn hồi, xỉn màu",
                     "type": "text"
                 },
                 "fcc_ui_0ba24cdcc58c3e": {
-                    "value": "Trải nghiệm: Dưỡng Môi PDRN Shot Lip Plumper",
+                    "value": "Trải nghiệm: Serum Vi Kim Needle Serum C Chuyên Sâu",
                     "type": "text"
                 },
                 "fcc_ui_50e2751288982c": {
-                    "value": "\"Thỏi dưỡng môi vi kim PDRN làm đầy môi xuất sắc. Đánh lên có độ the mát nhẹ, môi căng mọng đầy đặn và hồng hào tự nhiên, che phủ hoàn toàn các rãnh môi khô khốc mùa hanh khô này.\"",
+                    "value": "\"Tui dùng serum vi kim Frac CC được một thời gian thấy rất thích nha, ban đầu dùng hơi lạ da xíu nhưng đọc kỹ cách dùng rồi làm theo hướng dẫn là da sáng hơn rất nhiều, hỗ trợ mờ nám, căng bóng luôn\"",
                     "type": "textarea"
                 },
                 "fcc_ui_da1afbd40cc4f8": {
-                    "value": "Hiệu ứng môi căng mọng",
+                    "value": "Ảnh review cam thường",
                     "type": "text"
                 },
                 "fcc_ui_790e2513613da8": {
@@ -1941,27 +1981,27 @@
                     "type": "text"
                 },
                 "fcc_ui_0cd0b40d7ab747": {
-                    "value": "Thu Trang",
+                    "value": "Mai Anh",
                     "type": "text"
                 },
                 "fcc_ui_4a2e3b716720af": {
-                    "value": "31 tuổi · Hà Nội",
+                    "value": "31 tuổi · Cần Thơ",
                     "type": "text"
                 },
                 "fcc_ui_7c482827e5e757": {
-                    "value": "Làn da: Thâm sạm, da chai lì",
+                    "value": "Làn da: Lão hóa sớm, lỗ chân lông to, nếp nhăn",
                     "type": "text"
                 },
                 "fcc_ui_b9e236e944c903": {
-                    "value": "Trải nghiệm: Needle Serum CX4",
+                    "value": "Trải nghiệm: Serum Vi Kim Cao Cấp Needle Serum CX4",
                     "type": "text"
                 },
                 "fcc_ui_11e28e296727ba": {
-                    "value": "\"Dòng CX4 vi kim mật độ cao này chăm sóc da thâm sạm rất hiệu quả. Đội ngũ chuyên viên tư vấn của BUI DANG-JP hỗ trợ tỉ mỉ từ tần suất đến cách kết hợp kem khóa ẩm, dịch vụ rất chu đáo.\"",
+                    "value": "\"Bà nào còn rén thì có thể tham khảo bản 150.000 vi kim trước nha 😂 Còn tui thì chốt hẳn bản cao cấp CX4 luôn, thích dòng này vì công thức kết hợp thêm các thành phần dưỡng da chuyên sâu\"",
                     "type": "textarea"
                 },
                 "fcc_ui_0df452e0d7f8cd": {
-                    "value": "Bộ đôi vi kim dòng C",
+                    "value": "Ảnh cầm tay 2 bản C và CX4",
                     "type": "text"
                 },
                 "fcc_ui_41d95cdb237b18": {
@@ -2457,11 +2497,11 @@
                     "type": "text"
                 },
                 "fcc_ui_2c8d427ab152ee": {
-                    "value": "Khám Phá Fractional CC –",
+                    "value": "KHÁM PHÁ FRACTIONAL CC –",
                     "type": "text"
                 },
                 "fcc_ui_678d18c5839fc1": {
-                    "value": "Chăm Sóc Làn Da Theo Cách Của Bạn.",
+                    "value": "CHĂM SÓC LÀN DA THEO CÁCH CỦA BẠN.",
                     "type": "text"
                 },
                 "fcc_ui_04e30839b767fe": {
@@ -2505,11 +2545,51 @@
                     "type": "select"
                 },
                 "fcc_home_hero_product_image": {
-                    "value": "assets/images/banner/combo-c-cx4.png",
+                    "value": "assets/images/banner/combo-c-cx4-gold.png",
                     "type": "image"
                 },
                 "fcc_home_hero_product_alt": {
                     "value": "Combo Siêu Tinh Chất Vi Kim Fractional CC Serum C và CX4 Nhật Bản",
+                    "type": "text"
+                },
+                "fcc_ui_badge_5": {
+                    "value": "★ Reviewer Skincare",
+                    "type": "text"
+                },
+                "fcc_ui_feedback_name_7": {
+                    "value": "Ngọc Hân",
+                    "type": "text"
+                },
+                "fcc_ui_feedback_sub_7": {
+                    "value": "32 tuổi · Quảng Ninh",
+                    "type": "text"
+                },
+                "fcc_ui_feedback_badge_7": {
+                    "value": "✓ Khách Thân Thiết",
+                    "type": "text"
+                },
+                "fcc_ui_feedback_rating_7": {
+                    "value": "5.0 / 5.0",
+                    "type": "text"
+                },
+                "fcc_ui_feedback_concern_7": {
+                    "value": "Làn da: Nám mảng, da sần sùi thô ráp, tối màu",
+                    "type": "text"
+                },
+                "fcc_ui_feedback_product_7": {
+                    "value": "Trải nghiệm: Trọn Bộ Liệu Trình Vi Kim Fractional CC",
+                    "type": "text"
+                },
+                "fcc_ui_feedback_text_7": {
+                    "value": "\"Nhìn ảnh là tự hiểu nha mấy bà. Siêu siêu recommend dùng combo đầy đủ nhá. Trời ơi nó đã cái nư gì đâu ý. Tôi dùng hơn 1 tháng mà da sáng hơn hẳn luôn, mà nó mướt, nó mịn ý\"",
+                    "type": "textarea"
+                },
+                "fcc_ui_feedback_photo_tag_7": {
+                    "value": "Ảnh Before/After sau 1 tháng",
+                    "type": "text"
+                },
+                "fcc_ui_feedback_time_7": {
+                    "value": "1 tháng trước",
                     "type": "text"
                 }
             }
@@ -2616,7 +2696,7 @@
                     "type": "text"
                 },
                 "fcc_ui_c05ac9ce8537b8": {
-                    "value": "Toàn Bộ 10 Sản Phẩm Đơn Lẻ",
+                    "value": "Danh sách sản phẩm và combo tối ưu",
                     "type": "text"
                 },
                 "fcc_ui_349eefd455ce28": {
@@ -3342,6 +3422,21 @@
                     "type": "text"
                 }
             }
+        },
+        "concerns": {
+            "title": "Vấn đề làn da & Giải pháp",
+            "slug": "van-de-lan-da",
+            "template": "templates/fractional-concerns.php",
+            "fields": {
+                "fcc_concerns_seo_title": {
+                    "value": "Vấn Đề Làn Da & Giải Pháp Khoa Học Chuẩn Nhật | Fractional CC",
+                    "type": "text"
+                },
+                "fcc_concerns_seo_description": {
+                    "value": "Khám phá giải pháp chuyên sâu cho các vấn đề: đốm nâu, da không đều màu, lỗ chân lông to, lão hóa nếp nhăn và thâm mụn từ công nghệ vi kim sinh học Fractional CC.",
+                    "type": "text"
+                }
+            }
         }
     },
     "brand": {
@@ -3384,9 +3479,9 @@
             "volume": "30ml",
             "originalPrice": 850000,
             "salePrice": 628000,
-            "image": "assets/images/products/mandelic-peel-essence.png",
+            "image": "assets/images/products/excel-20261013/mandelic-shot-peel-essence.png",
             "gallery": [
-                "assets/images/products/mandelic-peel-essence.png"
+                "assets/images/products/excel-20261013/mandelic-shot-peel-essence.png"
             ],
             "cbmp": "312953/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3459,9 +3554,9 @@
             "volume": "Hộp 5 miếng (25ml / miếng)",
             "originalPrice": null,
             "salePrice": 386000,
-            "image": "assets/images/products/needle-mask-a.png",
+            "image": "assets/images/products/excel-20261013/needle-serum-a-face-mask.png",
             "gallery": [
-                "assets/images/products/needle-mask-a.png"
+                "assets/images/products/excel-20261013/needle-serum-a-face-mask.png"
             ],
             "cbmp": "312932/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3525,9 +3620,9 @@
             "volume": "30ml",
             "originalPrice": null,
             "salePrice": 810000,
-            "image": "assets/images/products/needle-serum-a.png",
+            "image": "assets/images/products/excel-20261013/needle-serum-a.png",
             "gallery": [
-                "assets/images/products/needle-serum-a.png"
+                "assets/images/products/excel-20261013/needle-serum-a.png"
             ],
             "cbmp": "312955/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3600,9 +3695,9 @@
             "volume": "30ml",
             "originalPrice": null,
             "salePrice": 910000,
-            "image": "assets/images/products/needle-serum-ax4.png",
+            "image": "assets/images/products/excel-20261013/needle-serum-ax4.png",
             "gallery": [
-                "assets/images/products/needle-serum-ax4.png"
+                "assets/images/products/excel-20261013/needle-serum-ax4.png"
             ],
             "cbmp": "312956/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3669,9 +3764,9 @@
             "volume": "Hộp 5 miếng (25ml / miếng)",
             "originalPrice": null,
             "salePrice": 386000,
-            "image": "assets/images/products/needle-mask-c.png",
+            "image": "assets/images/products/excel-20261013/needle-serum-c-face-mask.png",
             "gallery": [
-                "assets/images/products/needle-mask-c.png"
+                "assets/images/products/excel-20261013/needle-serum-c-face-mask.png"
             ],
             "cbmp": "312931/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3744,9 +3839,9 @@
             "volume": "30ml",
             "originalPrice": null,
             "salePrice": 790000,
-            "image": "assets/images/products/needle-serum-c.png",
+            "image": "assets/images/products/excel-20261013/needle-serum-c.png",
             "gallery": [
-                "assets/images/products/needle-serum-c.png"
+                "assets/images/products/excel-20261013/needle-serum-c.png"
             ],
             "cbmp": "312954/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3813,9 +3908,9 @@
             "volume": "30ml",
             "originalPrice": null,
             "salePrice": 910000,
-            "image": "assets/images/products/needle-serum-cx4.png",
+            "image": "assets/images/products/excel-20261013/needle-serum-cx4.png",
             "gallery": [
-                "assets/images/products/needle-serum-cx4.png"
+                "assets/images/products/excel-20261013/needle-serum-cx4.png"
             ],
             "cbmp": "312957/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3891,9 +3986,9 @@
             "volume": "50ml",
             "originalPrice": null,
             "salePrice": 630000,
-            "image": "assets/images/products/pdrn-toning-essence.png",
+            "image": "assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png",
             "gallery": [
-                "assets/images/products/pdrn-toning-essence.png"
+                "assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png"
             ],
             "cbmp": "312958/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -3961,9 +4056,9 @@
             "volume": "10ml",
             "originalPrice": null,
             "salePrice": 445000,
-            "image": "assets/images/products/pdrn-lip-essence.png",
+            "image": "assets/images/products/excel-20261013/pdrn-shot-lip-essence.png",
             "gallery": [
-                "assets/images/products/pdrn-lip-essence.png"
+                "assets/images/products/excel-20261013/pdrn-shot-lip-essence.png"
             ],
             "cbmp": "312950/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -4029,9 +4124,9 @@
             "volume": "10ml",
             "originalPrice": null,
             "salePrice": 445000,
-            "image": "assets/images/products/pdrn-lip-plumper.png",
+            "image": "assets/images/products/excel-20261013/pdrn-shot-lip-plumper.png",
             "gallery": [
-                "assets/images/products/pdrn-lip-plumper.png"
+                "assets/images/products/excel-20261013/pdrn-shot-lip-plumper.png"
             ],
             "cbmp": "312959/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
@@ -4103,7 +4198,7 @@
             "salePrice": 1237500,
             "saveAmount": 462500,
             "gift": "Serum dưỡng môi PDRN Shot theo ảnh combo trong brief; xác nhận quà tặng khi đặt hàng.",
-            "image": "assets/images/banner/combo-c-cx4.png"
+            "image": "assets/images/banner/combo-c-cx4-gold.png"
         }
     ],
     "featured": [
@@ -4271,5 +4366,6 @@
             "originalPrice",
             "saveAmount"
         ]
-    }
+    },
+    "homeCatalog": ["combo_C-CX4", "product_1", "product_6", "product_7", "product_8", "product_9"]
 }

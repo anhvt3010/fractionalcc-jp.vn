@@ -41,7 +41,7 @@ function project_child_fcc_customize_register( $manager ) {
 			$heading    = array( 'hero-section' => 'Khối đầu trang (Hero)', 'trust-bar' => 'Thanh cam kết' );
 			$manager->add_section( $section_id, array( 'title' => $label . ' · ' . ( isset( $heading[ $section ] ) ? $heading[ $section ] : $section ), 'panel' => 'fcc_content', 'priority' => ++$counter ) );
 			foreach ( $fields as $field ) {
-				if ( ! in_array( $field['type'], array( 'text', 'textarea', 'image', 'select' ), true ) || ! acf_get_field( $field['key'] ) || ( 'image' === $field['type'] && ! current_user_can( 'upload_files' ) ) ) {
+				if ( ! isset( $field['type'], $field['key'], $field['name'], $field['label'] ) || ! in_array( $field['type'], array( 'text', 'textarea', 'image', 'select' ), true ) || ! acf_get_field( $field['key'] ) || ( 'image' === $field['type'] && ! current_user_can( 'upload_files' ) ) ) {
 					continue;
 				}
 				$key     = $field['name'];

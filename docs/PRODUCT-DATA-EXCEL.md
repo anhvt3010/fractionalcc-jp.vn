@@ -1,5 +1,7 @@
 # Dữ liệu sản phẩm mặc định từ Excel – 13/10/2026
 
+> Rà soát `0.3.5` đã sửa tham chiếu ảnh trong defaults đang còn dùng đường dẫn legacy. Cài mới từ hai ZIP hiện đạt đầy đủ 305 kiểm tra Excel/catalog; khởi tạo thường trên site đã dùng giữ ảnh người dùng đã lưu. Các trạng thái phiên bản cũ bên dưới là lịch sử.
+
 Nguồn được người dùng chỉ định và đồng ý cập nhật: [List sản phẩm fractional CC.xlsx](<../template/fractional-cc/List sản phẩm fractional CC.xlsx>), sheet `Trang tính1`, vùng `A3:O13`. SHA-256: `0dd50638d92c260f391261bd38437fcb528439620c785e86964ad9acdf732170`. File có 10 sản phẩm, 10 ảnh nhúng tại cột B và giá combo tại `O9`. Không có công thức.
 
 ## Ánh xạ từng trường

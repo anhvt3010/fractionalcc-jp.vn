@@ -4,11 +4,12 @@ defined( 'ABSPATH' ) || exit;
 require_once __DIR__ . '/fractional-render.php';
 require_once __DIR__ . '/fractional-components.php';
 require_once __DIR__ . '/fractional-spotlight.php';
+require_once __DIR__ . '/fractional-admin.php';
 
 function project_child_fcc_kind() {
 	if ( is_singular( 'fcc_product' ) ) { return 'product'; }
 	$template = get_page_template_slug();
-	if ( preg_match( '#^templates/fractional-(home|catalog|policies|thankyou)\.php$#', (string) $template, $match ) ) { return $match[1]; }
+	if ( preg_match( '#^templates/fractional-(home|catalog|policies|thankyou|concerns)\.php$#', (string) $template, $match ) ) { return $match[1]; }
 	return '';
 }
 
@@ -17,13 +18,17 @@ function project_child_fcc_register_fields() {
 	$groups = project_child_fcc_schema();
 	$labels = array( 'shared' => 'Thông tin chung', 'home' => 'Trang chủ', 'catalog' => 'Danh mục', 'policies' => 'Chính sách', 'thankyou' => 'Cảm ơn' );
 	foreach ( (array) $groups as $kind => $sections ) {
+		if ( 'shared' === $kind && is_admin() ) { $sections = project_child_fcc_admin_shared_sections( $sections ); }
 		$fields = array();
 		foreach ( $sections as $section => $section_fields ) {
 			$fields[] = array( 'key' => 'field_fcc_tab_' . md5( $kind . $section ), 'label' => $section, 'type' => 'tab', 'placement' => 'left' );
+			if ( 'home' === $kind && isset( $section_fields['fcc_ui_44137315906c33'] ) ) {
+				$fields[] = array( 'key' => 'field_fcc_home_catalog_help', 'name' => '', 'label' => 'Chọn sản phẩm và combo hiển thị', 'type' => 'message', 'message' => 'Mở <a href="' . esc_url( admin_url( 'edit.php?post_type=fcc_product' ) ) . '">Sản phẩm</a> hoặc <a href="' . esc_url( admin_url( 'edit.php?post_type=fcc_combo' ) ) . '">Combo</a>, bật <strong>Hiển thị trong danh mục trang chủ</strong> và nhập thứ tự. Tối đa 6 mục tổng cộng; độc lập với 2 sản phẩm chủ lực. Tên, ảnh, mô tả và giá lấy từ sản phẩm/combo đã chọn.', 'new_lines' => '', 'esc_html' => 0 );
+			}
 			$fields = array_merge( $fields, array_values( $section_fields ) );
 		}
 		$location = 'shared' === $kind ? array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_site' ) : array( 'param' => 'page_template', 'operator' => '==', 'value' => 'templates/fractional-' . $kind . '.php' );
-		acf_add_local_field_group( array( 'key' => 'group_fcc_ui_' . $kind, 'title' => 'Nội dung giao diện – ' . $labels[ $kind ], 'fields' => $fields, 'location' => array( array( $location ) ), 'position' => 'normal', 'hide_on_screen' => 'shared' === $kind ? array() : array( 'the_content' ), 'show_in_rest' => 0 ) );
+		acf_add_local_field_group( array( 'key' => 'group_fcc_ui_' . $kind, 'title' => 'shared' === $kind && is_admin() ? 'Nội dung theo vị trí trên website' : 'Nội dung giao diện – ' . $labels[ $kind ], 'fields' => $fields, 'menu_order' => 'shared' === $kind ? 10 : 0, 'location' => array( array( $location ) ), 'position' => 'normal', 'hide_on_screen' => 'shared' === $kind ? array() : array( 'the_content' ), 'show_in_rest' => 0 ) );
 	}
 }
 add_action( 'acf/init', 'project_child_fcc_register_fields' );
@@ -38,6 +43,10 @@ function project_child_fcc_schema() {
 			if ( isset( $fields['fcc_ui_cc3c2901a4cef8'] ) ) {
 				$schema['home'][ $section ] = array_intersect_key( $fields, array_flip( array( 'fcc_ui_1bde33c83730c6', 'fcc_ui_cc3c2901a4cef8', 'fcc_ui_a12e257cd86c9f' ) ) );
 			}
+			if ( isset( $fields['fcc_ui_44137315906c33'] ) ) {
+				// Cards read product/combo data; retain only this section's heading and footer CTA.
+				$schema['home'][ $section ] = array_intersect_key( $fields, array_flip( array( 'fcc_ui_63b89170181142', 'fcc_ui_44137315906c33', 'fcc_ui_ab00a54528cf05', 'fcc_ui_573d0aefa67d9b', 'fcc_ui_839b3de79eb53b' ) ) );
+			}
 		}
 	}
 	return is_array( $schema ) ? $schema : array();
@@ -48,7 +57,7 @@ function project_child_fcc_prime_images() {
 	$ids = array();
 	foreach ( isset( $schema['shared'] ) ? $schema['shared'] : array() as $section ) {
 		foreach ( $section as $field ) {
-			if ( 'image' === $field['type'] ) { $ids[] = absint( get_post_meta( project_core_fcc_page_id( 'shared' ), $field['name'], true ) ); }
+			if ( isset( $field['type'], $field['name'] ) && 'image' === $field['type'] ) { $ids[] = absint( get_post_meta( project_core_fcc_page_id( 'shared' ), $field['name'], true ) ); }
 		}
 	}
 	$ids = array_values( array_unique( array_filter( $ids ) ) );
@@ -81,7 +90,7 @@ function project_child_fcc_enqueue() {
 			'thankyouUrl' => project_core_fcc_url( 'thankyou' ),
 			'homeUrl'     => project_core_fcc_url( 'home' ),
 		);
-		wp_add_inline_script( 'fcc-interactions', 'window.FCC_DATA=' . wp_json_encode( project_core_fcc_frontend_data( in_array( $kind, array( 'home', 'catalog', 'product' ), true ) ), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) . ';window.FCC_CONFIG=' . wp_json_encode( $configuration, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) . ';', 'before' );
+		wp_add_inline_script( 'fcc-interactions', 'window.FCC_DATA=' . wp_json_encode( project_core_fcc_frontend_data( in_array( $kind, array( 'home', 'catalog', 'product', 'concerns' ), true ) ), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) . ';window.FCC_CONFIG=' . wp_json_encode( $configuration, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) . ';', 'before' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'project_child_fcc_enqueue', 100 );
@@ -114,7 +123,7 @@ function project_child_fcc_metadata() {
 	if ( ! $kind || ! function_exists( 'project_core_fcc_page_id' ) ) { return; }
 	$description = 'product' === $kind ? project_child_fcc_product_value( 'tagline' ) : get_post_meta( project_core_fcc_page_id( $kind ), 'fcc_' . $kind . '_seo_description', true );
 	$url = get_permalink( get_queried_object_id() );
-	$image = 'product' === $kind ? project_child_fcc_product_value( 'image' ) : project_child_fcc_asset( 'assets/images/banner/combo-c-cx4.png' );
+	$image = 'product' === $kind ? project_child_fcc_product_value( 'image' ) : project_child_fcc_asset( 'assets/images/banner/combo-c-cx4-gold.png' );
 	echo '<meta name="description" content="' . esc_attr( $description ) . '"><link rel="canonical" href="' . esc_url( $url ) . '">';
 	echo '<meta property="og:type" content="website"><meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '"><meta property="og:description" content="' . esc_attr( $description ) . '"><meta property="og:url" content="' . esc_url( $url ) . '"><meta property="og:image" content="' . esc_url( $image ) . '"><meta name="twitter:card" content="summary_large_image">';
 	echo '<link rel="icon" href="' . esc_url( project_child_fcc_asset( 'assets/images/brand/bui-dang-jp-logo.png' ) ) . '">';

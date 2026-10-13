@@ -11,8 +11,6 @@
         <span class="pd-breadcrumb-sep">/</span>
         <a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_e4a25aa0335570', 'shared', false ); ?></a>
         <span class="pd-breadcrumb-sep">/</span>
-        <span id="pd-breadcrumb-category"><?php echo esc_html( project_child_fcc_product_value( 'category' ) ); ?></span>
-        <span class="pd-breadcrumb-sep">/</span>
         <strong class="pd-breadcrumb-current" id="pd-breadcrumb-name"><?php echo esc_html( project_child_fcc_product_value( 'shortName' ) ); ?></strong>
       </nav>
     </div>
