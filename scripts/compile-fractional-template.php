@@ -12,6 +12,8 @@ $theme = $root . '/wp-content/themes/project-child';
 $plugin = $root . '/wp-content/plugins/project-core';
 $existing_defaults = json_decode( file_get_contents( $plugin . '/defaults/fractional.json' ), true );
 $existing_schema = json_decode( file_get_contents( $theme . '/inc/fractional-fields.json' ), true );
+$asset_exclusions = json_decode( file_get_contents( __DIR__ . '/fractional-asset-exclusions.json' ), true, 512, JSON_THROW_ON_ERROR );
+if ( ! isset( $asset_exclusions['images'] ) || ! is_array( $asset_exclusions['images'] ) ) { throw new RuntimeException( 'Invalid asset exclusion manifest.' ); }
 $pages = array(
 	'home' => array( 'index.html', 'Trang chủ', 'trang-chu' ),
 	'catalog' => array( 'san-pham.html', 'Sản phẩm', 'san-pham' ),
@@ -19,7 +21,7 @@ $pages = array(
 	'policies' => array( 'chinh-sach.html', 'Chính sách', 'chinh-sach' ),
 	'thankyou' => array( 'cam-on.html', 'Cảm ơn', 'cam-on' ),
 );
-$defaults = array( 'version' => '0.3.21', 'pages' => array( 'shared' => array( 'title' => 'Thông tin và giao diện chung Fractional CC', 'slug' => 'fractional-cc-settings', 'fields' => array() ) ) );
+$defaults = array( 'version' => '0.3.26', 'pages' => array( 'shared' => array( 'title' => 'Thông tin và giao diện chung Fractional CC', 'slug' => 'fractional-cc-settings', 'fields' => array() ) ) );
 $schemas = array();
 $tokens = array();
 $bindings_path = $root . '/scripts/fractional-bindings.json';
@@ -87,7 +89,7 @@ $product_bindings = array(
 	'pd-dossier-name' => 'name', 'pd-dossier-origin' => 'origin', 'pd-dossier-cbmp' => 'cbmp', 'pd-dossier-status' => 'legalStatus', 'pd-note-text' => 'notes',
 	'pd-callout-title' => 'callout_title', 'pd-callout-sub' => 'callout_subtitle',
 );
-$fragments = array( 'pd-gallery-thumbs' => 'gallery', 'pd-usp-list' => 'usp', 'pd-actives-grid' => 'actives', 'pd-target-list' => 'targets', 'pd-steps-list' => 'steps', 'pd-related-combos' => 'combos', 'product-catalog-grid' => 'catalog' );
+$fragments = array( 'pd-gallery-thumbs' => 'gallery', 'pd-actives-grid' => 'actives', 'pd-steps-list' => 'steps', 'pd-related-combos' => 'combos', 'product-catalog-grid' => 'catalog' );
 
 foreach ( $pages as $kind => $page ) {
 	if ( 'product' !== $kind ) { $defaults['pages'][ $kind ] = array( 'title' => $page[1], 'slug' => $page[2], 'template' => 'templates/fractional-' . $kind . '.php', 'fields' => array() ); }
@@ -196,8 +198,8 @@ foreach ( $pages as $kind => $page ) {
 		$form->setAttribute( 'method', 'post' );
 		$form->setAttribute( 'action', fcc_compile_php( 'echo esc_url( admin_url( \'admin-post.php\' ) );' ) );
 		foreach ( iterator_to_array( $xpath->query( './/*[@name="website_url"]', $form ) ) as $honeypot ) { $honeypot->parentNode->removeChild( $honeypot ); }
-		$source = 'inline-order-form' === $form->getAttribute( 'id' ) ? ( 'product' === $kind ? 'product_inline' : 'home_inline' ) : 'modal';
-		$form->appendChild( $doc->createTextNode( fcc_compile_php( 'project_child_fcc_form_fields( ' . var_export( $source, true ) . ' );' ) ) );
+		$form_source = 'inline-order-form' === $form->getAttribute( 'id' ) ? ( 'product' === $kind ? 'product_inline' : 'home_inline' ) : 'modal';
+		$form->appendChild( $doc->createTextNode( fcc_compile_php( 'project_child_fcc_form_fields( ' . var_export( $form_source, true ) . ' );' ) ) );
 		foreach ( $form->getElementsByTagName( 'select' ) as $select ) { if ( 'selected_item' === $select->getAttribute( 'name' ) ) { fcc_compile_node_content( $doc, $select, 'project_child_fcc_order_options();' ); } }
 	}
 	if ( 'home' === $kind ) {
@@ -315,6 +317,7 @@ $assets = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $source
 foreach ( $assets as $file ) {
 	if ( ! $file->isFile() || ! preg_match( '/\.(?:png|jpe?g|webp|css)$/', $file->getFilename() ) ) { continue; }
 	$relative = str_replace( '\\', '/', substr( $file->getPathname(), strlen( $source ) + 1 ) );
+	if ( in_array( $relative, $asset_exclusions['images'], true ) ) { continue; }
 	fcc_compile_write( $theme . '/assets/fractional/' . $relative, file_get_contents( $file->getPathname() ) );
 }
 // Remove only obsolete files emitted by this compiler, inside its shared folder.

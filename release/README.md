@@ -1,20 +1,7 @@
 # Quy trình build và release
 
-> Bản `0.3.21` cải thiện phản hồi/validation trên mọi form đặt hàng, bỏ gửi lại tự động khi AJAX lỗi và ghi trạng thái gửi mail trong đơn. Xem [hồ sơ release](v0.3.21/RELEASE.md), gồm kiểm tra 24 form và giới hạn chưa xác nhận inbox/browser.
+> Bản `0.3.26` dọn code gửi đơn/fragment cũ, adapter lỗi thời, CSS không dùng và ảnh dư; kiểm tra giữ nguyên nội dung 15 trang, 24 form và khởi tạo từ hai ZIP. Xem [hồ sơ release và phục hồi](v0.3.26/RELEASE.md).
 
-> Bản `0.3.17` cho phép chọn tối đa 6 sản phẩm/combo trong danh mục trang chủ, có thứ tự riêng và độc lập với 2 sản phẩm chủ lực. Xem [hồ sơ release](v0.3.17/RELEASE.md).
-
-> Bản `0.3.15` sắp xếp **Thông tin chung** theo vị trí hiển thị, thêm nhãn/hướng dẫn và tìm kiếm trường; giữ dữ liệu cùng cách sửa text ngoài giao diện. Xem [hồ sơ release](v0.3.15/RELEASE.md) và giới hạn kiểm tra tương tác trình duyệt.
-
-> Bản `0.3.13` đồng bộ header/menu trên mọi trang Fractional CC, giữ logo giữa và nút Mua ngay, dùng cùng năm nhãn chỉnh được qua CMS cho desktop/mobile. Xem [hồ sơ release](v0.3.13/RELEASE.md).
-
-> Bản `0.3.7` sửa warning `Undefined array key "type"` từ schema ảnh feedback khai báo trùng/thiếu thuộc tính. Kiểm tra frontend, ACF/Customizer và cài mới đạt. Xem [hồ sơ release](v0.3.7/RELEASE.md).
-
-> Bản `0.3.5` đã rà soát activation/initializer, sửa khóa bị kẹt, bảo toàn mục trong thùng rác, kiểm tra package trước nhập và đồng bộ ảnh defaults với nguồn Excel. Hai ZIP cài mới đạt 53 kiểm tra khởi tạo và 305 kiểm tra catalog. Xem [hồ sơ release](v0.3.5/RELEASE.md).
-
-> Bản `0.3.4` sửa lựa chọn homepage khi khởi tạo lần đầu và đóng gói ảnh combo nền vàng do người dùng cung cấp. Site XAMPP hiện tại đã áp dụng. Xem [hồ sơ release](v0.3.4/RELEASE.md). Các mô tả phiên bản cũ bên dưới là lịch sử.
-
-> Bản `0.3.3` đã cập nhật catalog từ Excel, bổ sung tự khởi tạo defaults trên site mới và kiểm tra cài hai ZIP trên database riêng. Xem [hồ sơ release](v0.3.3/RELEASE.md) và [ánh xạ dữ liệu](../docs/PRODUCT-DATA-EXCEL.md). Các mô tả phiên bản cũ bên dưới là lịch sử.
 
 Dùng XAMPP cho workflow hiện tại; Docker tạm thời không áp dụng. Mỗi bản build tạo một thư mục version trong `release/`, chứa **đúng hai file ZIP cài được qua WordPress Admin**, cùng hồ sơ phát hành nếu cần.
 

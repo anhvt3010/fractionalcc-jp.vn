@@ -6,9 +6,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', function () {
-  // 1. Capture UTM parameters & referrer
-  captureMarketingTracking();
-
   // 2. Initialize FAQ accordions
   initFaqAccordions();
 
@@ -48,29 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // 11. Initialize Skin Concerns Tabs (van-de-lan-da)
   initConcernsTabs();
 });
-
-/**
- * Capture UTM and ad click parameters for lead tracking
- */
-function captureMarketingTracking() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid', 'ttclid'];
-  const trackingData = {};
-  try {
-
-  utmKeys.forEach(key => {
-    if (urlParams.has(key)) {
-      trackingData[key] = urlParams.get(key);
-      sessionStorage.setItem('fcc_' + key, urlParams.get(key));
-    } else if (sessionStorage.getItem('fcc_' + key)) {
-      trackingData[key] = sessionStorage.getItem('fcc_' + key);
-    }
-  });
-
-  // Store in global window for form submissions
-  window.FCC_TRACKING = trackingData;
-  } catch { window.FCC_TRACKING = {}; }
-}
 
 /**
  * FAQ Accordion
@@ -219,7 +193,6 @@ function initOrderSystem() {
   forms.forEach(form => {
     if (form) {
       form.addEventListener('submit', handleOrderSubmit);
-      form.addEventListener('input', () => form.querySelector('.order-handoff')?.remove());
       form.addEventListener('invalid', event => {
         const message = event.target.name === 'agree_terms'
           ? 'Vui lòng tích ô đồng ý với điều khoản tư vấn và chính sách bảo mật trước khi gửi.'
@@ -415,36 +388,6 @@ async function handleOrderSubmit(e) {
       submitBtn.textContent = originalBtnText;
     }
   }
-}
-
-function renderOrderHandoff(container, order) {
-  container.querySelector('.order-handoff')?.remove();
-  const box = document.createElement('section');
-  box.className = 'order-handoff';
-  box.setAttribute('aria-live', 'polite');
-  const heading = document.createElement('h3');
-  heading.textContent = 'Kiểm tra & gửi yêu cầu đặt hàng';
-  const note = document.createElement('p');
-  note.textContent = 'Yêu cầu chưa được gửi. Sao chép nội dung và gửi qua Zalo, hoặc mở email rồi nhấn Gửi. BUI DANG-JP sẽ xác nhận sản phẩm, phí vận chuyển và thanh toán với bạn.';
-  const message = ['Yêu cầu đặt hàng Fractional CC', `Họ tên: ${order.customerName}`, `Điện thoại: ${order.customerPhone}`, `Sản phẩm: ${order.selectedItemName}`, `Địa chỉ: ${order.customerAddress || 'Cung cấp khi xác nhận'}`, `Ghi chú: ${order.customerNote || 'Không'}`].join('\n');
-  const text = document.createElement('textarea');
-  text.value = message;
-  text.readOnly = true;
-  text.setAttribute('aria-label', 'Nội dung yêu cầu đặt hàng');
-  const actions = document.createElement('div');
-  actions.className = 'order-handoff-actions';
-  const copy = document.createElement('button');
-  copy.type = 'button'; copy.className = 'btn btn-outline'; copy.textContent = 'Sao chép nội dung';
-  copy.addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(message); showToast('Đã sao chép. Mở Zalo và dán nội dung để gửi.'); }
-    catch { text.focus(); text.select(); showToast('Hãy sao chép nội dung đã chọn rồi gửi qua Zalo.'); }
-  });
-  const zalo = document.createElement('a');
-  zalo.className = 'btn btn-primary'; zalo.href = window.FCC_DATA.brand.zaloLink; zalo.target = '_blank'; zalo.rel = 'noopener noreferrer'; zalo.textContent = 'Mở Zalo để gửi';
-  const viewReceipt = document.createElement('a');
-  viewReceipt.className = 'btn btn-outline'; viewReceipt.href = window.FCC_CONFIG.thankyouUrl; viewReceipt.textContent = 'Xem xác nhận đơn →';
-  actions.append(copy, zalo, viewReceipt); box.append(heading, note, text, actions); container.appendChild(box);
-  box.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
 /**

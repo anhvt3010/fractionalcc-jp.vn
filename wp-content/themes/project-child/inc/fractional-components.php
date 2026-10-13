@@ -30,10 +30,6 @@ function project_child_fcc_fragment( $name ) {
 	get_template_part( 'template-parts/fractional/components/product-detail', null, array( 'fragment' => $name, 'product' => $product ) );
 }
 
-function project_child_fcc_check_icon() {
-	echo '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>';
-}
-
 function project_child_fcc_clean_bullet( $value ) {
 	return trim( preg_replace( '/^[\s✅✓✔☑•*–—\-]+/u', '', (string) $value ) );
 }

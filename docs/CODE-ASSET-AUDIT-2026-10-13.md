@@ -1,5 +1,7 @@
 # Rà soát code và tài nguyên chưa dùng – 13/10/2026
 
+> **Cập nhật: đã dọn theo yêu cầu.** Bản 0.3.26 đã bỏ hai hàm JS/handler cũ, nhánh PHP/helper không dùng, adapter lỗi thời, 162 rule CSS (135 nhóm selector), 18 ảnh trong theme và 5 attachment cũ. Đối chiếu trước/sau trên 15 trang giữ nguyên nội dung/link/ảnh và dữ liệu CMS; 24 form và các kiểm tra cài mới đạt. Xem [hồ sơ dọn và phát hành](../release/v0.3.26/RELEASE.md). Các mục bên dưới là báo cáo khảo sát trước khi dọn, không phải danh sách còn nguyên trong source.
+
 Đã kiểm tra source của `project-core`, `project-child`, công cụ build và dữ liệu WordPress hiện tại trên XAMPP. Rà soát này chỉ đọc runtime/source và tạo báo cáo; không xóa ảnh, đổi nội dung, sửa CSS/JS hoặc chạy initializer. Workspace có cập nhật khác trong lúc kiểm tra, nên danh sách là ảnh chụp tại thời điểm rà soát, cần đối chiếu lại trước khi dọn.
 
 ## Kết quả chính

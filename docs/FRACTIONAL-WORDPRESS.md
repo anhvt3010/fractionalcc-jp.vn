@@ -71,8 +71,9 @@ Chạy từ root bằng PowerShell. Các lệnh compile chỉ cập nhật sourc
 
 ```powershell
 & 'C:\xampp\php\php.exe' scripts/compile-fractional-template.php
-node scripts/adapt-fractional-interactions.mjs
 ```
+
+JavaScript WordPress được duy trì trực tiếp tại `wp-content/themes/project-child/assets/fractional/main.js`; compiler không sinh lại file này. Adapter tương tác cũ đã bỏ vì ghi đè các sửa lỗi form bằng logic lỗi thời. JavaScript trong template gốc chỉ phục vụ bản mẫu tham chiếu.
 
 `scripts/fractional-bindings.json` giữ ánh xạ vị trí nội dung sang field key để đổi default text mà không tự đổi khóa metadata. Giữ file này trong Git. Khi thay cấu trúc DOM/di chuyển nội dung, review bindings và lập migration nếu cần; không tự gán dữ liệu cũ vào ý nghĩa mới. Các template parts được sinh từ compiler; sửa thiết kế nguồn và biên dịch theo phạm vi được duyệt, không chỉnh đồng thời hai bản.
 

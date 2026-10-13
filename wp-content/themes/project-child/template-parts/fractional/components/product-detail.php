@@ -8,10 +8,6 @@ $fragment = $args['fragment'];
 	<?php foreach ( $product['gallery'] as $index => $image ) : ?>
 	<button type="button" class="pd-thumb-btn <?php echo 0 === $index ? 'active' : ''; ?>" data-detail-image="<?php echo esc_url( $image ); ?>" aria-label="<?php echo esc_attr( 'Xem ảnh ' . ( $index + 1 ) ); ?>"><img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $product['shortName'] . ' ảnh ' . ( $index + 1 ) ); ?>" loading="lazy"></button>
 	<?php endforeach; ?>
-<?php elseif ( 'usp' === $fragment || 'targets' === $fragment ) : ?>
-	<?php foreach ( 'usp' === $fragment ? $product['uspBullets'] : $product['targetUsers'] as $text ) : ?>
-	<li class="<?php echo 'usp' === $fragment ? 'pd-usp-item' : 'pd-target-item'; ?>"><span class="<?php echo 'usp' === $fragment ? 'pd-usp-icon' : 'pd-target-check'; ?>" aria-hidden="true"><?php project_child_fcc_check_icon(); ?></span><span<?php echo 'usp' === $fragment ? ' class="pd-usp-text"' : ''; ?>><?php echo esc_html( project_child_fcc_clean_bullet( $text ) ); ?></span></li>
-	<?php endforeach; ?>
 <?php elseif ( 'actives' === $fragment ) : ?>
 	<?php foreach ( $product['actives'] as $active ) : ?>
 	<div class="pd-active-card"><span class="pd-active-tag"><?php echo esc_html( $active['tag'] ); ?></span><h3 class="pd-active-title"><?php echo esc_html( $active['name'] ); ?></h3><p class="pd-active-desc"><?php echo esc_html( $active['desc'] ); ?></p></div>

@@ -115,22 +115,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gold { color: var(--color-accent-gold); }
-.text-red { color: var(--color-accent-red); }
-.text-muted { color: var(--color-text-muted); }
 
 /* Layout Container */
 .container {
   width: 100%;
   max-width: var(--container-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.container-narrow {
-  width: 100%;
-  max-width: var(--container-narrow);
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -621,12 +610,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFFFFF;
 }
 
-.badge-red {
-  background-color: var(--color-accent-red-bg);
-  color: var(--color-accent-red);
-  border: 1px solid rgba(211, 47, 47, 0.2);
-}
-
 /* ==========================================================================
    FR-02: HERO SECTION & 100VH VIEWPORT WRAPPER
    ========================================================================== */
@@ -818,26 +801,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 32px 72px rgba(197, 160, 89, 0.28), 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
-.hero-badge-top-spotlight {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: rgba(18, 18, 18, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 5px 14px;
-  border-radius: var(--radius-pill);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-  z-index: 2;
-}
-
 .hero-banner-img,
 .hero-card img {
   width: 100%;
@@ -856,80 +819,12 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.025);
 }
 
-.hero-floating-pill {
-  position: absolute;
-  bottom: 14px;
-  left: 14px;
-  right: 14px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 10px 16px;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  z-index: 2;
-}
-
 /* Trust Bar under Hero */
 .trust-bar {
   background-color: var(--color-bg-soft);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   padding: 20px 0;
-}
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-@media (min-width: 768px) {
-  .trust-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
-}
-
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.trust-icon-box {
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background-color: #FFFFFF;
-  border: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-}
-
-.trust-logo-img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  border-radius: 50%;
-}
-
-.trust-text h4 {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 2px;
-  color: var(--color-text-main);
-}
-
-.trust-text p {
-  font-size: 11px;
-  color: var(--color-text-muted);
-  line-height: 1.3;
 }
 
 /* ==========================================================================
@@ -946,10 +841,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-soft {
   background-color: var(--color-bg-soft);
-}
-
-.section-subtle {
-  background-color: var(--color-bg-subtle);
 }
 
 .section-header {
@@ -1015,239 +906,13 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 740px;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* ==========================================================================
+}/* ==========================================================================
    FR-03: PROBLEMS SECTION (VẤN ĐỀ CỦA LÀN DA)
-   ========================================================================== */
-.problem-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-@media (min-width: 640px) {
-  .problem-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1024px) {
-  .problem-grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-.problem-card {
-  background-color: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 28px 22px;
-  transition: all var(--transition-normal);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.problem-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-accent-gold);
-}
-
-.problem-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  background-color: var(--color-bg-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.problem-card h3 {
-  font-size: 17px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--color-text-main);
-}
-
-.problem-card p {
-  font-size: 14px;
-  color: var(--color-text-body);
-  line-height: 1.5;
-}
-
-.problem-insight {
-  margin-top: 40px;
-  background: #FFFFFF;
-  border-left: 4px solid var(--color-accent-gold);
-  border-radius: var(--radius-sm);
-  padding: 20px 24px;
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-@media (min-width: 768px) {
-  .problem-insight {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-.problem-insight p {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--color-text-main);
-}
-
-/* ==========================================================================
+   ========================================================================== *//* ==========================================================================
    FR-04: SOLUTION & MECHANISM (CƠ CHẾ VI KIM SINH HỌC)
-   ========================================================================== */
-.mechanism-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 36px;
-  align-items: center;
-}
-
-@media (min-width: 992px) {
-  .mechanism-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
-}
-
-.mechanism-media {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--color-border);
-}
-
-.mechanism-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.step-card {
-  display: flex;
-  gap: 18px;
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  padding: 20px;
-  border-radius: var(--radius-md);
-  transition: all var(--transition-normal);
-}
-
-.step-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-sm);
-}
-
-.step-number {
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background-color: var(--color-primary);
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-content h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: var(--color-text-main);
-}
-
-.step-content p {
-  font-size: 14px;
-  color: var(--color-text-body);
-  line-height: 1.55;
-}
-
-/* Tingling Note Box */
-.tingling-note {
-  margin-top: 24px;
-  background-color: var(--color-accent-gold-soft);
-  border: 1px dashed var(--color-accent-gold);
-  border-radius: var(--radius-md);
-  padding: 16px 20px;
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.tingling-note-icon {
-  font-size: 22px;
-  flex-shrink: 0;
-}
-
-.tingling-note p {
-  font-size: 13px;
-  color: #664D1B;
-  line-height: 1.5;
-}
-
-/* ==========================================================================
+   ========================================================================== *//* Tingling Note Box *//* ==========================================================================
    FR-05: KEY ACTIVES (THÀNH PHẦN CHỦ CHỐT)
    ========================================================================== */
-.actives-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-
-@media (min-width: 640px) {
-  .actives-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1024px) {
-  .actives-grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-.active-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 28px 24px;
-  transition: all var(--transition-normal);
-  display: flex;
-  flex-direction: column;
-}
-
-.active-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-accent-gold);
-}
-
-.active-badge {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--color-accent-gold);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
-}
-
-.active-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.active-card p {
-  font-size: 14px;
-  color: var(--color-text-body);
-  line-height: 1.55;
-}
 
 /* ==========================================================================
    FR-07: COMBOS & PRICING SECTION (BẢNG GIÁ ƯU ĐÃI)
@@ -1344,54 +1009,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.45;
 }
 
-.combo-image-wrap {
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-bg-soft);
-  min-height: 180px;
-}
-
-.combo-image-wrap img {
-  max-height: 160px;
-  object-fit: contain;
-  transition: transform var(--transition-normal);
-}
-
-.combo-card:hover .combo-image-wrap img {
-  transform: scale(1.05);
-}
-
 .combo-card-body {
   padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-}
-
-.combo-items-list {
-  list-style: none;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.combo-items-list li {
-  font-size: 13px;
-  color: var(--color-text-body);
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  line-height: 1.4;
-}
-
-.combo-items-list li::before {
-  content: '✓';
-  color: var(--color-accent-gold);
-  font-weight: 800;
-  flex-shrink: 0;
 }
 
 .combo-gift-box {
@@ -1431,143 +1053,17 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 26px;
   font-weight: 800;
   color: var(--color-accent-red);
-}
-
-.combo-save-pill {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--color-accent-red);
-  background-color: var(--color-accent-red-bg);
-  padding: 2px 8px;
-  border-radius: var(--radius-pill);
-}
-
-/* Link all products footer inside Combo section */
-.combos-footer-link {
-  text-align: center;
-  margin-top: 40px;
-}
-
-/* ==========================================================================
+}/* Link all products footer inside Combo section *//* ==========================================================================
    FR-08: ROUTINE & HOW TO USE
    ========================================================================== */
-.routine-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-
-@media (min-width: 992px) {
-  .routine-grid { grid-template-columns: 1fr 1fr; }
-}
-
-.routine-box {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 32px 28px;
-  box-shadow: var(--shadow-sm);
-}
-
-.routine-box-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--color-border-light);
-}
-
-.routine-icon-circle {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-}
-
-.routine-icon-day { background-color: #FFF8E7; color: #D48806; }
-.routine-icon-night { background-color: #F0F5FF; color: #1D39C4; }
-
-.routine-box-header h3 {
-  font-size: 20px;
-  font-weight: 700;
-}
 
 .routine-steps-list {
   display: flex;
   flex-direction: column;
   gap: 18px;
-}
-
-.routine-step-item {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-
-.step-badge {
-  font-size: 11px;
-  font-weight: 800;
-  background-color: var(--color-bg-subtle);
-  color: var(--color-text-main);
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.routine-step-text h4 {
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-
-.routine-step-text p {
-  font-size: 13px;
-  color: var(--color-text-body);
-}
-
-/* ==========================================================================
+}/* ==========================================================================
    FR-08: CUSTOMER & KOL/KOC REVIEWS - LUXURY HORIZONTAL SLIDER
    ========================================================================== */
-.reviews-header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-
-.reviews-header-flex .section-header {
-  margin-bottom: 0;
-  text-align: left;
-}
-
-.reviews-nav-controls {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.reviews-counter {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-text-muted);
-  letter-spacing: 1px;
-  min-width: 48px;
-  text-align: center;
-}
-
-.reviews-counter-current {
-  color: var(--color-gold);
-  font-size: 15px;
-}
 
 .review-nav-btn {
   width: 44px;
@@ -1728,12 +1224,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 2px 6px rgba(212, 175, 55, 0.15);
 }
 
-.badge-doctor {
-  background: #EFF6FF;
-  border: 1px solid #93C5FD;
-  color: #1D4ED8;
-}
-
 .badge-koc {
   background: #FDF2F8;
   border: 1px solid #FBCFE8;
@@ -1828,10 +1318,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.05);
 }
 
-.review-photo-tag {
-  display: none !important;
-}
-
 /* Card Meta Footer */
 .review-meta {
   display: flex;
@@ -1877,14 +1363,6 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-gold);
 }
 
-.reviews-mobile-hint {
-  display: none;
-  text-align: center;
-  font-size: 12px;
-  color: var(--color-text-muted);
-  margin-top: 8px;
-}
-
 .disclaimer-note {
   text-align: center;
   font-size: 12px;
@@ -1894,72 +1372,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-  .reviews-header-flex {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  
-  .reviews-nav-controls {
-    display: none; /* Mobile uses natural touch-swipe */
-  }
 
   .review-card {
     flex: 0 0 calc(100vw - 56px);
     max-width: 320px;
     padding: 20px;
   }
-
-  .reviews-mobile-hint {
-    display: block;
-  }
-}
-
-/* ==========================================================================
+}/* ==========================================================================
    FR-09: COMMITMENT & TRUST PILLARS
    ========================================================================== */
-.commit-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-
-@media (min-width: 640px) {
-  .commit-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 1024px) {
-  .commit-grid { grid-template-columns: repeat(4, 1fr); }
-}
-
-.commit-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 28px 20px;
-  text-align: center;
-  transition: all var(--transition-normal);
-}
-
-.commit-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-sm);
-}
-
-.commit-icon {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.commit-card h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.commit-card p {
-  font-size: 13px;
-  color: var(--color-text-body);
-}
 
 /* ==========================================================================
    FR-10: FAQ ACCORDION (Distinct Sanctuary Section)
@@ -2378,16 +1799,6 @@ textarea.form-control {
   box-shadow: 0 10px 28px rgba(18, 18, 18, 0.28);
 }
 
-.form-secure-note {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 12px;
-  color: var(--color-text-muted);
-  margin-top: 14px;
-}
-
 /* Modal Checkout */
 .modal-overlay {
   position: fixed;
@@ -2735,21 +2146,6 @@ textarea.form-control {
   transform: scale(1.05);
 }
 
-.product-badge-float {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: rgba(18, 18, 18, 0.85);
-  color: #FFFFFF;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: var(--radius-pill);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  z-index: 2;
-}
-
 .product-cbmp-tag {
   position: absolute;
   bottom: 10px;
@@ -2792,18 +2188,6 @@ textarea.form-control {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.product-spicule-pill {
-  font-size: 11px;
-  font-weight: 600;
-  color: #555;
-  background-color: var(--color-bg-subtle);
-  padding: 2px 8px;
-  border-radius: var(--radius-xs);
-  display: inline-block;
-  margin-bottom: 12px;
-  width: fit-content;
 }
 
 .product-price-row {
@@ -2904,48 +2288,6 @@ textarea.form-control {
   box-shadow: var(--shadow-hover);
 }
 
-.duo-badge {
-  position: absolute;
-  top: -14px;
-  left: 24px;
-  background-color: var(--color-accent-gold);
-  color: #FFFFFF;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  padding: 6px 16px;
-  border-radius: var(--radius-pill);
-  text-transform: uppercase;
-  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.35);
-  white-space: nowrap;
-}
-
-.duo-badge-dark {
-  background-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(18, 18, 18, 0.25);
-}
-
-.duo-img-box {
-  background: var(--color-bg-soft);
-  border-radius: var(--radius-md);
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
-  margin-bottom: 20px;
-}
-
-.duo-img-box img {
-  max-height: 200px;
-  object-fit: contain;
-  transition: transform var(--transition-normal);
-}
-
-.duo-spotlight-card:hover .duo-img-box img {
-  transform: scale(1.06);
-}
-
 .duo-title {
   font-size: 20px;
   font-weight: 700;
@@ -2959,38 +2301,7 @@ textarea.form-control {
   color: var(--color-text-muted);
   margin-bottom: 16px;
   line-height: 1.5;
-}
-
-/* 3. GIỚI THIỆU THƯƠNG HIỆU FRACTIONAL CC */
-.brand-intro-box {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 40px 32px;
-  box-shadow: var(--shadow-md);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  align-items: center;
-}
-
-@media (min-width: 992px) {
-  .brand-intro-box {
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 48px;
-  }
-}
-
-.brand-philosophy-quote {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  font-style: italic;
-  color: var(--color-accent-gold);
-  line-height: 1.5;
-  margin: 18px 0;
-  border-left: 3px solid var(--color-accent-gold);
-  padding-left: 18px;
-}
+}/* 3. GIỚI THIỆU THƯƠNG HIỆU FRACTIONAL CC */
 
 /* 8. CAM KẾT PHÂN PHỐI & THÔNG TIN DOANH NGHIỆP */
 .corporate-card {
@@ -3002,46 +2313,7 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.corporate-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  border-bottom: 1px solid var(--color-border-light);
-  padding-bottom: 18px;
-}
-
-.corporate-logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: contain;
-  border: 1px solid var(--color-border);
-  background: #FFFFFF;
-}
-
-.corporate-details-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.corporate-details-list li strong {
-  color: var(--color-text-main);
-}
-
-/* 10. QUICK CONTACT BUTTONS (ZALO, MESSENGER, HOTLINE) */
-.quick-contacts-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 24px;
-}
+}/* 10. QUICK CONTACT BUTTONS (ZALO, MESSENGER, HOTLINE) */
 
 .contact-pill-btn {
   display: inline-flex;
@@ -3225,28 +2497,6 @@ textarea.form-control {
   z-index: 3;
 }
 
-.final-cta-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(197, 160, 89, 0.1);
-  border: 1px solid rgba(197, 160, 89, 0.3);
-  color: #DFBA73;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 4px 14px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-}
-
-.final-cta-badge-dot {
-  color: var(--color-accent-gold);
-  font-size: 9px;
-}
-
 .final-cta-title {
   font-family: var(--font-serif);
   font-size: clamp(17px, 1.6vw, 23px);
@@ -3324,44 +2574,6 @@ textarea.form-control {
   transform: translateX(3px);
 }
 
-.final-cta-contacts-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin: 14px 0 12px;
-}
-
-.final-cta-contacts-row .contact-pill-btn {
-  padding: 8px 18px;
-  font-size: 13px;
-}
-
-.final-cta-direct-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  font-size: 13px;
-  color: #CBC5BA;
-  margin-bottom: 16px;
-}
-
-.final-cta-direct-info a {
-  color: #DFBA73;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.final-cta-direct-info a:hover {
-  text-decoration: underline;
-}
-
-.final-cta-info-sep {
-  color: rgba(255, 255, 255, 0.2);
-}
-
 .final-cta-trust-bar {
   display: flex;
   align-items: center;
@@ -3393,11 +2605,6 @@ textarea.form-control {
   }
   .final-cta-content {
     padding: 0 16px;
-  }
-  .final-cta-badge {
-    font-size: 10px;
-    padding: 3px 12px;
-    margin-bottom: 8px;
   }
   .final-cta-title {
     font-size: 19px;
@@ -3696,14 +2903,6 @@ textarea.form-control {
   padding-bottom: 64px;
 }
 
-.section-tag-gold {
-  background: transparent;
-  color: var(--color-accent-gold);
-  border: none;
-  padding: 0;
-  border-radius: 0;
-}
-
 .duo-spotlight-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -3811,29 +3010,6 @@ textarea.form-control {
   flex-direction: column;
 }
 
-.duo-badge {
-  display: inline-flex;
-  align-self: flex-start;
-  font-size: 10.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  background: linear-gradient(135deg, #FAF4E6 0%, #F5E8C9 100%);
-  color: #8A641A;
-  border: 1px solid rgba(197, 160, 89, 0.45);
-  box-shadow: 0 2px 6px rgba(197, 160, 89, 0.1);
-  margin-bottom: 8px;
-}
-
-.duo-badge-dark {
-  background: linear-gradient(135deg, #181818 0%, #2A2A2A 100%);
-  color: #FFFFFF;
-  border: 1px solid #181818;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
 .duo-title {
   font-size: 28px;
   font-weight: 700;
@@ -3866,17 +3042,6 @@ textarea.form-control {
   margin-bottom: 12px;
   flex-wrap: wrap;
   gap: 6px;
-}
-
-.duo-ingredients-title {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent-gold);
-  display: flex;
-  align-items: center;
-  gap: 5px;
 }
 
 .duo-spec-pill {
@@ -3949,46 +3114,11 @@ textarea.form-control {
   .duo-card-visual img {
     max-height: 180px;
   }
-  .duo-ingredients-grid {
-    grid-template-columns: 1fr;
-  }
   .duo-card-footer {
     flex-direction: column;
     align-items: stretch;
   }
-}
-
-/* Luxury Section Divider between Duo Spotlight & Brand Story */
-.section-divider-luxury {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 24px 16px 8px;
-}
-
-.luxury-divider-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.35), transparent);
-}
-
-.luxury-divider-emblem {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent-gold);
-  padding: 6px 16px;
-  background: #FAF7F0;
-  border: 1px solid rgba(197, 160, 89, 0.25);
-  border-radius: var(--radius-pill);
-}
+}/* Luxury Section Divider between Duo Spotlight & Brand Story */
 
 /* 3. Section Brand Story (Editorial Sanctuary) */
 .section-brand-story {
@@ -4041,56 +3171,6 @@ textarea.form-control {
   object-position: center;
   display: block;
   filter: none;
-}
-
-.brand-origin-badge {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: rgba(18, 18, 18, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #FFFFFF;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  z-index: 2;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
-}
-
-.brand-auth-seal {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  margin: 0;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 10px 18px;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(197, 160, 89, 0.45);
-  font-size: 12px;
-  font-weight: 700;
-  color: #8C6A28;
-  letter-spacing: 0.02em;
-  z-index: 2;
-  box-shadow: 0 8px 24px rgba(45, 35, 20, 0.12);
-}
-
-.brand-auth-seal svg {
-  flex-shrink: 0;
 }
 
 .brand-content-wrap {
@@ -4162,40 +3242,7 @@ textarea.form-control {
   font-style: italic;
   line-height: 1.5;
   margin: 2px 0 6px;
-}
-
-/* Authority Proof Stats Grid (Cocoon / High-end Japanese Skincare aesthetic) */
-.brand-stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin: 6px 0 12px;
-  padding: 14px 12px;
-  background: #FAF7F0;
-  border: 1px solid #EAE2D0;
-  border-radius: var(--radius-md);
-}
-
-.brand-stat-card {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.brand-stat-val {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--color-primary);
-  line-height: 1.2;
-}
-
-.brand-stat-lbl {
-  font-size: 11.5px;
-  color: var(--color-text-muted);
-  font-weight: 600;
-}
+}/* Authority Proof Stats Grid (Cocoon / High-end Japanese Skincare aesthetic) */
 
 .brand-actions-row {
   display: flex;
@@ -4223,19 +3270,6 @@ textarea.form-control {
     min-height: unset;
   }
 
-  .brand-origin-badge {
-    top: 16px;
-    left: 16px;
-  }
-
-  .brand-auth-seal {
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
-    padding: 8px 14px;
-    font-size: 11.5px;
-  }
-
   .brand-content-wrap {
     padding: 32px 24px 36px;
     border-left: none;
@@ -4245,20 +3279,6 @@ textarea.form-control {
   .brand-content-quote {
     font-size: 21px;
   }
-  
-  .brand-stats-row {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
-    padding: 12px 8px;
-  }
-
-  .brand-stat-val {
-    font-size: 17px;
-  }
-
-  .brand-stat-lbl {
-    font-size: 10.5px;
-  }
 }
 
 @media (max-width: 540px) {
@@ -4266,22 +3286,8 @@ textarea.form-control {
     height: 310px;
   }
 
-  .brand-auth-seal {
-    bottom: 12px;
-    left: 12px;
-    right: 12px;
-    padding: 7px 10px;
-    font-size: 11px;
-    gap: 5px;
-  }
-
   .brand-content-wrap {
     padding: 24px 18px 28px;
-  }
-
-  .brand-stats-row {
-    grid-template-columns: 1fr;
-    gap: 8px;
   }
   
   .brand-actions-row {
@@ -4290,18 +3296,19 @@ textarea.form-control {
   }
 }
 
-/* 4. 4 Trụ Cột Nổi Bật (.brief-feature-grid) */
+/* 4. Trụ Cột & Điểm Nổi Bật Của Fractional CC */
 .brief-feature-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  margin-bottom: 48px;
 }
 
 .feature-pillar-card {
   background: #FFFFFF;
   border: 1px solid #ECE7DE;
   border-radius: var(--radius-md);
-  padding: 28px 20px;
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -4366,18 +3373,346 @@ textarea.form-control {
 }
 
 .feature-pillar-card h3 {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--color-text-main);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   line-height: 1.35;
 }
 
 .feature-pillar-card p {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--color-text-body);
-  line-height: 1.55;
+  line-height: 1.6;
   margin: 0;
+}
+
+/* Deepdive Cards for Section 04 */
+.fcc-deepdive-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 48px 44px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.fcc-deepdive-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-accent-gold), transparent);
+}
+
+.fcc-deepdive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.fcc-deepdive-grid-reversed {
+  grid-template-columns: 1.15fr 1fr;
+}
+
+.fcc-deepdive-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fcc-visual-frame {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+  border: 1.5px solid #EBE4D5;
+  background: #FFFDF9;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.fcc-visual-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px rgba(197, 160, 89, 0.18);
+  border-color: var(--color-accent-gold);
+}
+
+.fcc-deepdive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.fcc-visual-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(18, 18, 18, 0.88);
+  backdrop-filter: blur(8px);
+  color: #FAF5E8;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.fcc-visual-badge svg {
+  color: var(--color-accent-gold);
+  flex-shrink: 0;
+}
+
+.fcc-visual-caption {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.fcc-deepdive-badge-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8C6A28;
+  background: #FAF5E8;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.fcc-deepdive-title {
+  font-size: 26px;
+  line-height: 1.35;
+  color: var(--color-text-main);
+  margin-bottom: 14px;
+}
+
+.fcc-deepdive-lead {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-text-body);
+  margin-bottom: 22px;
+}
+
+.fcc-ingredient-pills-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.fcc-ing-pill {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #FAF8F5;
+  border: 1px solid #EFEAE1;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.fcc-ing-pill:hover {
+  background: #FFFFFF;
+  border-color: var(--color-accent-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.fcc-ing-pill-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid #E8E0D2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fcc-ing-pill-text h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0 0 3px 0;
+}
+
+.fcc-ing-pill-text p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--color-text-body);
+  margin: 0;
+}
+
+.fcc-ax4-callout-card {
+  background: linear-gradient(135deg, #181818 0%, #29241E 100%);
+  color: #FFFFFF;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.fcc-ax4-callout-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+  padding-bottom: 6px;
+}
+
+.fcc-ax4-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-gold);
+  text-transform: uppercase;
+}
+
+.fcc-ax4-num {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: rgba(197, 160, 89, 0.25);
+  padding: 2px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(197, 160, 89, 0.5);
+}
+
+.fcc-ax4-callout-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #E2DFD8;
+  margin: 0;
+}
+
+.fcc-ax4-callout-desc strong {
+  color: #FFFFFF;
+}
+
+.fcc-experience-steps-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fcc-exp-step-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: #FAF8F5;
+  border: 1px solid #EFEAE1;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.fcc-exp-step-item:hover {
+  background: #FFFFFF;
+  border-color: var(--color-accent-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.fcc-exp-step-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #FAF5E8;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  color: #8C6A28;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fcc-exp-step-info h4 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0 0 4px 0;
+}
+
+.fcc-exp-step-info p {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--color-text-body);
+  margin: 0;
+}
+
+.fcc-highlights-bottom-guide {
+  background: radial-gradient(circle at center, #FFFFFF 0%, #FAF8F5 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 28px 36px;
+  box-shadow: var(--shadow-sm);
+}
+
+.fcc-bottom-guide-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.fcc-bottom-guide-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #8C6A28;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.fcc-bottom-guide-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0 0 6px 0;
+}
+
+.fcc-bottom-guide-desc {
+  font-size: 13.5px;
+  color: var(--color-text-body);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.fcc-bottom-guide-actions {
+  flex-shrink: 0;
+}
+
+.fcc-scroll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.fcc-scroll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
 }
 
 @media (max-width: 1024px) {
@@ -4386,9 +3721,32 @@ textarea.form-control {
   }
 }
 
-@media (max-width: 560px) {
-  .brief-feature-grid {
+@media (max-width: 991px) {
+  .fcc-deepdive-grid,
+  .fcc-deepdive-grid-reversed {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .fcc-deepdive-card {
+    padding: 32px 20px;
+  }
+  .fcc-visual-frame {
+    max-width: 100%;
+  }
+  .fcc-bottom-guide-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .brief-feature-grid,
+  .brief-feature-grid.brief-feature-grid-3col {
+    grid-template-columns: 1fr;
+  }
+  .fcc-deepdive-title {
+    font-size: 21px;
   }
 }
 
@@ -4759,67 +4117,11 @@ textarea.form-control {
   color: var(--color-primary);
 }
 
-.routine-step-role-pill {
-  font-size: 10.5px;
-  font-weight: 700;
-  padding: 2.5px 8px;
-  border-radius: var(--radius-pill);
-  background: #F4F1EA;
-  color: #555555;
-}
-
-.routine-step-role-gold {
-  background: #FAF3E1;
-  color: #8C6A28;
-  border: 1px solid rgba(197, 160, 89, 0.35);
-}
-
 .routine-step-body {
   display: flex;
   gap: 13px;
   align-items: flex-start;
-}
-
-/* Luxury Step Visual Container (Consistent 46x46px for all 8 cards) */
-.routine-step-visual {
-  width: 46px;
-  height: 46px;
-  min-width: 46px;
-  border-radius: 6px;
-  background: #FFFFFF;
-  border: 1.5px solid #EBE4D5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  padding: 4px;
-  box-sizing: border-box;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.routine-step-card-item:hover .routine-step-visual {
-  transform: translateY(-2px);
-  border-color: #C5A059;
-  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.16);
-}
-
-.routine-step-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.routine-step-visual-icon {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FAF6EE 100%);
-  border: 1.5px solid #E8DFCB;
-}
-
-.routine-product-mini {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+}/* Luxury Step Visual Container (Consistent 46x46px for all 8 cards) */
 
 .routine-step-content {
   flex: 1;
@@ -5088,11 +4390,6 @@ textarea.form-control {
     gap: 12px;
     align-items: flex-start;
   }
-  .routine-step-visual {
-    width: 46px;
-    height: 46px;
-    min-width: 46px;
-  }
   .routine-step-technique {
     font-size: 11.5px;
     padding: 6px 9px;
@@ -5230,21 +4527,6 @@ textarea.form-control {
   font-size: 12px;
   color: var(--color-text-muted);
   margin: 2px 0 0;
-}
-
-.partnership-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #FAF5E8;
-  border: 1px solid rgba(197, 160, 89, 0.4);
-  color: #8C6A28;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 /* Main Grid Layout */
@@ -5509,42 +4791,7 @@ textarea.form-control {
     align-items: flex-start;
     gap: 16px;
   }
-
-  .partnership-badge {
-    align-self: flex-start;
-  }
-}
-
-/* Order Handoff box */
-.order-handoff {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  background: #FAF7F2;
-}
-
-.order-handoff textarea {
-  width: 100%;
-  min-height: 180px;
-  margin: 12px 0;
-  font-family: monospace;
-  font-size: 13px;
-  padding: 12px;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  background: #FFFFFF;
-}
-
-.order-handoff-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.actives-grid .active-card p {
-  white-space: pre-line;
-}
+}/* Order Handoff box */
 
 /* ==========================================================================
    COCOON-INSPIRED EDITORIAL LUXURY PRODUCT DETAIL SYSTEM
@@ -5884,15 +5131,6 @@ textarea.form-control {
   border-bottom: 1px solid #EAE5DF;
 }
 
-.pd-cocoon-heading {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #181614;
-  margin: 0 0 6px 0;
-}
-
 .pd-cocoon-text {
   font-size: 14px;
   line-height: 1.6;
@@ -5909,29 +5147,7 @@ textarea.form-control {
   color: #6C665D;
   margin-bottom: 20px;
   flex-wrap: wrap;
-}
-
-/* Cert Badges Row (Like Cocoon's 3 monochrome badges) */
-.pd-cocoon-cert-row {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-
-.pd-cert-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #4A453F;
-}
-
-.pd-cert-badge svg {
-  color: #C5A059;
-}
+}/* Cert Badges Row (Like Cocoon's 3 monochrome badges) */
 
 /* Primary Action Button (Like Cocoon's Big Sleek Button) */
 .btn-pd-cocoon-buy {
@@ -5984,78 +5200,10 @@ textarea.form-control {
 
 .pd-cocoon-sub-link:hover {
   color: #C5A059;
-}
-
-/* ==========================================================================
+}/* ==========================================================================
    PRODUCT DETAIL LOWER EDITORIAL SECTIONS (Aligned & Balanced)
    ========================================================================== */
-
 /* USP / Công Nghệ & Điểm Nổi Bật Section */
-.pd-usp-section {
-  margin-top: 64px;
-  padding-top: 56px;
-  border-top: 1px solid #ECE7DE;
-}
-
-.pd-usp-wrap {
-  max-width: 1060px;
-  margin: 0 auto;
-}
-
-.pd-usp-list {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-
-@media (min-width: 768px) {
-  .pd-usp-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px 24px;
-  }
-}
-
-.pd-usp-item {
-  background: #FAF8F5;
-  border: 1px solid #EFEBE4;
-  border-radius: 14px;
-  padding: 18px 20px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  transition: all var(--transition-fast);
-}
-
-.pd-usp-item:hover {
-  background: #FFFFFF;
-  border-color: #DFBA73;
-  box-shadow: 0 8px 22px rgba(197, 160, 89, 0.12);
-  transform: translateY(-2px);
-}
-
-.pd-usp-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #FAF4E8, #F5E8C9);
-  border: 1px solid #DFBA73;
-  color: #8C6A28;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.pd-usp-text {
-  font-size: 14.5px;
-  line-height: 1.55;
-  color: #2D2721;
-  font-weight: 500;
-}
 
 .pd-usage-section {
   margin-top: 64px;
@@ -6193,12 +5341,7 @@ textarea.form-control {
   font-size: 12.5px;
   color: #9C9589;
   line-height: 1.4;
-}
-
-/* Breakthrough Actives Section */
-.pd-actives-section {
-  margin-top: 64px;
-}
+}/* Breakthrough Actives Section */
 
 .pd-actives-grid {
   display: grid;
@@ -6384,38 +5527,6 @@ textarea.form-control {
   line-height: 1.55;
   color: #5C5750;
   margin: 0;
-}
-
-.pd-target-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 0;
-  margin: 0;
-}
-
-.pd-target-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 14.5px;
-  line-height: 1.5;
-  color: #38342E;
-}
-
-.pd-target-check {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #FAF4E8;
-  border: 1px solid #C5A059;
-  color: #8C6A28;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
 }
 
 /* Steps of How To Use */
