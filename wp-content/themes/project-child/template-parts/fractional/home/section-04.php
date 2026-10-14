@@ -138,10 +138,16 @@ $s04_desc  = project_child_fcc_text( 'fcc_ui_80ae9607363601', 'home' );
       <div class="fcc-deepdive-grid">
         <div class="fcc-deepdive-visual">
           <div class="fcc-visual-frame">
-            <?php if ( $breakthrough_img_url ) : ?><img src="<?php echo esc_url( $breakthrough_img_url ); ?>"
-                 alt="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_m_7a2188a8a844', 'home' ) ); ?>"
-                 loading="lazy" 
-                 class="fcc-deepdive-img"><?php endif; ?>
+            <?php
+            if ( $breakthrough_img_url ) {
+                echo project_child_fcc_picture_html(
+                    $breakthrough_img_url,
+                    project_child_fcc_raw_text( 'fcc_ui_m_7a2188a8a844', 'home' ),
+                    'fcc-deepdive-img',
+                    array( 'width' => 540, 'height' => 360, 'loading' => 'lazy' )
+                );
+            }
+            ?>
           </div>
           <p class="fcc-visual-caption"><?php echo project_child_fcc_text( 'fcc_ui_m_fc2ea2b80d3f', 'home' ); ?></p>
         </div>
@@ -237,10 +243,16 @@ $s04_desc  = project_child_fcc_text( 'fcc_ui_80ae9607363601', 'home' );
 
         <div class="fcc-deepdive-visual">
           <div class="fcc-visual-frame">
-            <?php if ( $routine_img_url ) : ?><img src="<?php echo esc_url( $routine_img_url ); ?>"
-                 alt="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_m_722d801f8aa1', 'home' ) ); ?>"
-                 loading="lazy" 
-                 class="fcc-deepdive-img"><?php endif; ?>
+            <?php
+            if ( $routine_img_url ) {
+                echo project_child_fcc_picture_html(
+                    $routine_img_url,
+                    project_child_fcc_raw_text( 'fcc_ui_m_722d801f8aa1', 'home' ),
+                    'fcc-deepdive-img',
+                    array( 'width' => 540, 'height' => 360, 'loading' => 'lazy' )
+                );
+            }
+            ?>
           </div>
           <p class="fcc-visual-caption"><?php echo project_child_fcc_text( 'fcc_ui_m_be68bc224ffb', 'home' ); ?></p>
         </div>

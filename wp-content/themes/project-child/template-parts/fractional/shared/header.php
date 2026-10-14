@@ -20,10 +20,28 @@ get_template_part( 'template-parts/fractional/shared/part-8fe73eaef545' );
 			<ul class="nav-split-list"><?php get_template_part( 'template-parts/fractional/shared/header-links', null, array( 'items' => $left ) ); ?></ul>
 		</nav>
 		<a href="<?php echo esc_url( project_core_fcc_url( 'home' ) ); ?>" class="brand-logo-center" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_ab373a90954b36', 'shared' ) ); ?>">
-			<img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_1a0029c547f307' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_1a0029c547f307', 'fcc_ui_9426ed1ade78ab' ) ); ?>" class="brand-logo-main-img">
+			<?php
+			echo project_child_fcc_picture_html(
+				project_child_fcc_image( 'fcc_ui_1a0029c547f307' ),
+				project_child_fcc_image_alt( 'fcc_ui_1a0029c547f307', 'fcc_ui_9426ed1ade78ab' ),
+				'brand-logo-main-img',
+				array( 'width' => 166, 'height' => 40 )
+			);
+			?>
 			<span class="logo-divider"></span>
 			<span class="distributor-badge">
-				<img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_be08f7c57f78ec' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_be08f7c57f78ec', 'fcc_ui_61ed77463dff18' ) ); ?>" class="distributor-logo-img" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_a941b421c5e005', 'shared' ) ); ?>">
+				<?php
+				echo project_child_fcc_picture_html(
+					project_child_fcc_image( 'fcc_ui_be08f7c57f78ec' ),
+					project_child_fcc_image_alt( 'fcc_ui_be08f7c57f78ec', 'fcc_ui_61ed77463dff18' ),
+					'distributor-logo-img',
+					array(
+						'width'  => 40,
+						'height' => 40,
+						'title'  => project_child_fcc_raw_text( 'fcc_ui_a941b421c5e005', 'shared' ),
+					)
+				);
+				?>
 				<span class="distributor-text">
 					<span class="distributor-title"><?php echo project_child_fcc_text( 'fcc_ui_f2b1ceab0294d6', 'shared', false ); ?></span>
 					<span class="distributor-sub"><?php echo project_child_fcc_text( 'fcc_ui_bb054f8c102d4d', 'shared', false ); ?></span>

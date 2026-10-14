@@ -12,7 +12,14 @@
           <div class="corporate-partnership-bar">
             <div class="partner-entity">
               <div class="partner-logo-box">
-                <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_be08f7c57f78ec' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_be08f7c57f78ec', 'fcc_ui_dc30959abe8847' ) ); ?>" loading="lazy">
+                <?php
+                echo project_child_fcc_picture_html(
+                    project_child_fcc_image( 'fcc_ui_be08f7c57f78ec' ),
+                    project_child_fcc_image_alt( 'fcc_ui_be08f7c57f78ec', 'fcc_ui_dc30959abe8847' ),
+                    '',
+                    array( 'width' => 48, 'height' => 48, 'loading' => 'lazy' )
+                );
+                ?>
               </div>
               <div class="partner-info">
                 <h4><?php echo project_child_fcc_text( 'fcc_ui_a2e7754f312ed0', 'home' ); ?></h4>
@@ -22,7 +29,14 @@
 
             <div class="partner-entity">
               <div class="partner-brand-logo-box">
-                <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_1a0029c547f307' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_1a0029c547f307', 'fcc_ui_97054d25b36218' ) ); ?>" loading="lazy">
+                <?php
+                echo project_child_fcc_picture_html(
+                    project_child_fcc_image( 'fcc_ui_1a0029c547f307' ),
+                    project_child_fcc_image_alt( 'fcc_ui_1a0029c547f307', 'fcc_ui_97054d25b36218' ),
+                    '',
+                    array( 'width' => 166, 'height' => 40, 'loading' => 'lazy' )
+                );
+                ?>
               </div>
               <div class="partner-info">
                 <h4><?php echo project_child_fcc_text( 'fcc_ui_ece1ba16c464ad', 'home' ); ?></h4>

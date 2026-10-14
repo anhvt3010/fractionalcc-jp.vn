@@ -7,7 +7,7 @@ Bản phát hành 1.0.2 khắc phục lỗi màn cảm ơn hiển thị sai lệ
 | Package | Số file | SHA-256 |
 | --- | --- | --- |
 | [Project Core 1.0.2](project-core-v1.0.2.zip) | 21 | `203fc7ffd701e80d7179e47c05d10334ab1fa074b211847473f5fc77447ac8c6` |
-| [Project Child 1.0.2](project-child-v1.0.2.zip) | 130 | `10d80f0cee184b52cfad0271c1313b10506901879d0e4028b478320b23f858f1` |
+| [Project Child 1.0.2](project-child-v1.0.2.zip) | 172 | `e7e788d729cb42d5733c487c60b34161ce8f5060371838e0c58933fa31b4e08d` |
 
 Đúng hai file ZIP với thư mục gốc tương ứng là `project-core/` và `project-child/`. Không chứa file tạm, file môi trường `.env`, `wp-config.php`, secrets, cơ sở dữ liệu hay thư mục uploads. Báo cáo xác thực tại [qa/package-report.json](qa/package-report.json).
 
@@ -26,6 +26,14 @@ Bản phát hành 1.0.2 khắc phục lỗi màn cảm ơn hiển thị sai lệ
 
 3. **Tối ưu luồng chuyển hướng Client-side:**
    - Gỡ bỏ việc lưu trữ `sessionStorage` cũ dễ gây lệch bộ nhớ đệm trình duyệt, chuyển hướng mượt mà bằng `redirectUrl` bảo mật từ phản hồi AJAX.
+
+4. **Tối ưu hiệu năng Core Web Vitals & PageSpeed Insights:**
+   - **Định dạng ảnh thế hệ mới (Next-Gen WebP):** Tự động sinh và tích hợp thẻ `<picture>` đa định dạng kèm WebP cho toàn bộ ảnh giao diện (ảnh chủ lực Hero Combo C–CX4 Gold giảm từ 2.75 MB xuống chỉ còn ~99 KB — tiết kiệm hơn 96% dung lượng; ảnh đánh giá review/feedback giảm từ 8.6 MB xuống còn ~350 KB).
+   - **Chống lỗi NO_LCP & Tối ưu LCP:** Bổ sung `<link rel="preload" as="image" fetchpriority="high">` và `loading="eager"` cho ảnh Hero Banner trong `<head>`, giúp ảnh LCP tải ngay từ giai đoạn parse HTML.
+   - **Xóa bỏ Render-Blocking Font & Preconnect:** Gỡ bỏ `@import` font chặn render trong CSS; chuyển sang `wp_enqueue_style` chuẩn WordPress kết hợp thẻ `<link rel="preconnect">` tới `fonts.googleapis.com` và `fonts.gstatic.com`.
+   - **Minify CSS & JS:** Bổ sung bản nén `style.min.css`, `responsive.min.css` và `main.min.js`, tự động ưu tiên load bản minified.
+   - **Khai báo kích thước ảnh (Unsized Images):** Bổ sung thuộc tính `width` và `height` rõ ràng cho tất cả logo, trust bar, và dải logo watermark Section 11, đảm bảo CLS = 0.
+   - **Khả năng tiếp cận (Accessibility WCAG):** Cải thiện độ tương phản màu (contrast ratio) cho chữ phụ, nhãn vàng Gold và mở rộng diện tích bấm (touch target >= 28px) cho các chấm tròn review slider.
 
 ## Hướng dẫn cập nhật lên Hosting
 

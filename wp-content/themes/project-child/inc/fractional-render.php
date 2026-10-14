@@ -83,6 +83,53 @@ function project_child_fcc_image_alt( $image_field, $fallback_field ) {
 	return is_scalar( $alt ) && '' !== (string) $alt ? (string) $alt : project_child_fcc_raw_text( $fallback_field, 'shared' );
 }
 
+/** Return the WebP URL if a corresponding .webp file exists on disk. */
+function project_child_fcc_webp_url( $url ) {
+	if ( ! $url || ! is_string( $url ) ) { return ''; }
+	$webp_url = preg_replace( '/\.(png|jpe?g)$/i', '.webp', $url );
+	if ( $webp_url === $url ) { return $url; }
+	$theme_uri = get_stylesheet_directory_uri();
+	if ( 0 === strpos( $url, $theme_uri ) ) {
+		$rel = substr( $url, strlen( $theme_uri ) );
+		$file = get_stylesheet_directory() . $rel;
+		$webp_file = preg_replace( '/\.(png|jpe?g)$/i', '.webp', $file );
+		if ( file_exists( $webp_file ) ) {
+			return $webp_url;
+		}
+	}
+	$upload_dir = wp_get_upload_dir();
+	if ( 0 === strpos( $url, $upload_dir['baseurl'] ) ) {
+		$rel = substr( $url, strlen( $upload_dir['baseurl'] ) );
+		$file = $upload_dir['basedir'] . $rel;
+		$webp_file = preg_replace( '/\.(png|jpe?g)$/i', '.webp', $file );
+		if ( file_exists( $webp_file ) ) {
+			return $webp_url;
+		}
+	}
+	return '';
+}
+
+/** Render a progressive picture element with WebP source and fallback img. */
+function project_child_fcc_picture_html( $url, $alt = '', $class = '', $attrs = array() ) {
+	if ( ! $url ) { return ''; }
+	$webp = project_child_fcc_webp_url( $url );
+	$attr_str = '';
+	foreach ( $attrs as $k => $v ) {
+		if ( true === $v ) {
+			$attr_str .= ' ' . esc_attr( $k );
+		} elseif ( false !== $v && null !== $v && '' !== $v ) {
+			$attr_str .= ' ' . esc_attr( $k ) . '="' . esc_attr( $v ) . '"';
+		}
+	}
+	$class_attr = $class ? ' class="' . esc_attr( $class ) . '"' : '';
+	$alt_attr = ' alt="' . esc_attr( $alt ) . '"';
+	$img_html = '<img src="' . esc_url( $url ) . '"' . $alt_attr . $class_attr . $attr_str . '>';
+	if ( $webp && $webp !== $url ) {
+		return '<picture><source srcset="' . esc_url( $webp ) . '" type="image/webp">' . $img_html . '</picture>';
+	}
+	return $img_html;
+}
+
 /** Render the editable decorative background without changing hero layout/content. */
 function project_child_fcc_hero_background_attributes() {
 	$id = project_core_fcc_page_id( 'home' );

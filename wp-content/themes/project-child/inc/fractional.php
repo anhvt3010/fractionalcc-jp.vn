@@ -98,12 +98,16 @@ function project_child_fcc_enqueue() {
 		if ( 0 === strpos( $handle, 'kadence' ) || in_array( $handle, array( 'global-styles', 'wp-block-library', 'classic-theme-styles', 'project-child-main' ), true ) ) { wp_dequeue_style( $handle ); }
 	}
 	$base = get_stylesheet_directory_uri() . '/assets/fractional/';
-	$styles = array( 'design' => 'assets/css/style.css', 'responsive' => 'assets/css/responsive.css', 'integration' => 'wordpress.css' );
+	wp_enqueue_style( 'fcc-google-fonts', 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap', array(), null );
+	$css_file = file_exists( get_stylesheet_directory() . '/assets/fractional/assets/css/style.min.css' ) ? 'assets/css/style.min.css' : 'assets/css/style.css';
+	$resp_file = file_exists( get_stylesheet_directory() . '/assets/fractional/assets/css/responsive.min.css' ) ? 'assets/css/responsive.min.css' : 'assets/css/responsive.css';
+	$styles = array( 'design' => $css_file, 'responsive' => $resp_file, 'integration' => 'wordpress.css' );
 	if ( file_exists( get_stylesheet_directory() . '/assets/fractional/' . $kind . '.css' ) ) { $styles[ $kind ] = $kind . '.css'; }
 	foreach ( $styles as $name => $path ) {
-		wp_enqueue_style( 'fcc-' . $name, $base . $path, 'design' === $name ? array() : array( 'fcc-design' ), (string) filemtime( get_stylesheet_directory() . '/assets/fractional/' . $path ) );
+		wp_enqueue_style( 'fcc-' . $name, $base . $path, 'design' === $name ? array( 'fcc-google-fonts' ) : array( 'fcc-design' ), (string) filemtime( get_stylesheet_directory() . '/assets/fractional/' . $path ) );
 	}
-	wp_enqueue_script( 'fcc-interactions', $base . 'main.js', array(), (string) filemtime( get_stylesheet_directory() . '/assets/fractional/main.js' ), true );
+	$js_file = file_exists( get_stylesheet_directory() . '/assets/fractional/main.min.js' ) ? 'main.min.js' : 'main.js';
+	wp_enqueue_script( 'fcc-interactions', $base . $js_file, array(), (string) filemtime( get_stylesheet_directory() . '/assets/fractional/' . $js_file ), true );
 	if ( function_exists( 'project_core_fcc_frontend_data' ) ) {
 		$client_labels = array();
 		$defaults = project_core_fcc_default_document();
@@ -125,6 +129,24 @@ function project_child_fcc_enqueue() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'project_child_fcc_enqueue', 100 );
+
+function project_child_fcc_performance_hints() {
+	$kind = project_child_fcc_kind();
+	if ( ! $kind ) { return; }
+	echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+	if ( 'home' === $kind && function_exists( 'project_child_fcc_hero_product_image_url' ) ) {
+		$hero_url = project_child_fcc_hero_product_image_url();
+		$webp_url = function_exists( 'project_child_fcc_webp_url' ) ? project_child_fcc_webp_url( $hero_url ) : '';
+		if ( $webp_url ) {
+			echo '<link rel="preload" as="image" href="' . esc_url( $webp_url ) . '" type="image/webp" fetchpriority="high">' . "\n";
+		} elseif ( $hero_url ) {
+			echo '<link rel="preload" as="image" href="' . esc_url( $hero_url ) . '" fetchpriority="high">' . "\n";
+		}
+	}
+}
+add_action( 'wp_head', 'project_child_fcc_performance_hints', 1 );
+
 
 function project_child_fcc_render( $kind ) {
 	if ( ! function_exists( 'project_core_fcc_page_id' ) ) {

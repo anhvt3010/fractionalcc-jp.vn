@@ -356,7 +356,14 @@ $fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : pro
           
           <div class="demo-player-card">
             <div class="demo-player-preview">
-              <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_555650f3e397c2' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_555650f3e397c2', 'fcc_ui_6df4668d328d6b' ) ); ?>" class="demo-player-img" loading="lazy">
+              <?php
+              echo project_child_fcc_picture_html(
+                  project_child_fcc_image( 'fcc_ui_555650f3e397c2' ),
+                  project_child_fcc_image_alt( 'fcc_ui_555650f3e397c2', 'fcc_ui_6df4668d328d6b' ),
+                  'demo-player-img',
+                  array( 'width' => 600, 'height' => 340, 'loading' => 'lazy' )
+              );
+              ?>
               <div class="demo-player-overlay">
                 <a <?php echo $fcc_routine_link ? 'href="' . esc_url( $fcc_routine_link ) . '"' : 'hidden'; ?> target="_blank" rel="noopener noreferrer" class="demo-play-btn-wrap" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_7273916d822930', 'shared' ) ); ?>">
                   <div class="demo-play-btn">

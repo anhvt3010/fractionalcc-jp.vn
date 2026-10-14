@@ -1,19 +1,19 @@
 {
-  "passed": true,
-  "packages": [
-    {
-      "package": "project-core-v1.0.2.zip",
-      "sha256": "203fc7ffd701e80d7179e47c05d10334ab1fa074b211847473f5fc77447ac8c6",
-      "entries": 21,
-      "sourceMatches": true,
-      "crcValid": true
-    },
-    {
-      "package": "project-child-v1.0.2.zip",
-      "sha256": "10d80f0cee184b52cfad0271c1313b10506901879d0e4028b478320b23f858f1",
-      "entries": 130,
-      "sourceMatches": true,
-      "crcValid": true
-    }
-  ]
+    "passed": true,
+    "packages": [
+        {
+            "package": "project-core-v1.0.2.zip",
+            "sha256": "203fc7ffd701e80d7179e47c05d10334ab1fa074b211847473f5fc77447ac8c6",
+            "entries": 21,
+            "sourceMatches": true,
+            "crcValid": true
+        },
+        {
+            "package": "project-child-v1.0.2.zip",
+            "sha256": "e7e788d729cb42d5733c487c60b34161ce8f5060371838e0c58933fa31b4e08d",
+            "entries": 172,
+            "sourceMatches": true,
+            "crcValid": true
+        }
+    ]
 }

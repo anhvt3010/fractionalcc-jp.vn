@@ -22,9 +22,23 @@ $email           = project_core_fcc_contact( 'email' );
       <!-- CỘT 1: THƯƠNG HIỆU & ĐƠN VỊ PHÂN PHỐI -->
       <div class="footer-col">
         <div class="brand-logo-duo">
-          <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_73ad1fb64a971c' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_73ad1fb64a971c', 'fcc_ui_e23f070eed474c' ) ); ?>" class="brand-logo-main-img">
+          <?php
+          echo project_child_fcc_picture_html(
+              project_child_fcc_image( 'fcc_ui_73ad1fb64a971c' ),
+              project_child_fcc_image_alt( 'fcc_ui_73ad1fb64a971c', 'fcc_ui_e23f070eed474c' ),
+              'brand-logo-main-img',
+              array( 'width' => 166, 'height' => 40 )
+          );
+          ?>
           <span class="logo-divider"></span>
-          <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_be08f7c57f78ec' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_be08f7c57f78ec', 'fcc_ui_435f1980942f04' ) ); ?>" class="distributor-logo-img">
+          <?php
+          echo project_child_fcc_picture_html(
+              project_child_fcc_image( 'fcc_ui_be08f7c57f78ec' ),
+              project_child_fcc_image_alt( 'fcc_ui_be08f7c57f78ec', 'fcc_ui_435f1980942f04' ),
+              'distributor-logo-img',
+              array( 'width' => 40, 'height' => 40 )
+          );
+          ?>
         </div>
         <p>
           <strong><?php echo project_child_fcc_text( 'fcc_ui_8c686c3909c590', 'shared' ); ?></strong><br>

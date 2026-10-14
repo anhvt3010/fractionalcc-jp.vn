@@ -35,7 +35,18 @@
             }
             ?>
             <div class="brand-image-stage">
-              <img src="<?php echo esc_url( $brand_img_url ); ?>" alt="<?php echo esc_attr( $brand_img_alt ); ?>" class="brand-lineup-img" loading="lazy">
+              <?php
+              echo project_child_fcc_picture_html(
+                  $brand_img_url,
+                  $brand_img_alt,
+                  'brand-lineup-img',
+                  array(
+                      'width'   => 540,
+                      'height'  => 360,
+                      'loading' => 'lazy',
+                  )
+              );
+              ?>
             </div>
             <p class="brand-visual-caption"><?php echo esc_html( $brand_caption ); ?></p>
           </div>

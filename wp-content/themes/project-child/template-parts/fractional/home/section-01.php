@@ -22,7 +22,19 @@
 
           <div class="hero-visual">
             <div class="hero-card">
-              <img src="<?php echo esc_url( project_child_fcc_hero_product_image_url() ); ?>" alt="<?php echo esc_attr( project_child_fcc_hero_product_image_alt() ); ?>" class="hero-banner-img" loading="eager">
+              <?php
+              echo project_child_fcc_picture_html(
+                  project_child_fcc_hero_product_image_url(),
+                  project_child_fcc_hero_product_image_alt(),
+                  'hero-banner-img',
+                  array(
+                      'width'         => 441,
+                      'height'        => 432,
+                      'loading'       => 'eager',
+                      'fetchpriority' => 'high',
+                  )
+              );
+              ?>
             </div>
           </div>
 
@@ -58,7 +70,7 @@
                 </svg>
               </div>
               <div class="trust-bar-content">
-                <h4><?php echo project_child_fcc_text( 'fcc_ui_c92fd3458a307a', 'home' ); ?></h4>
+                <div class="trust-bar-title"><?php echo project_child_fcc_text( 'fcc_ui_c92fd3458a307a', 'home' ); ?></div>
                 <p><?php echo project_child_fcc_text( 'fcc_ui_18645916ec2e37', 'home' ); ?></p>
               </div>
             </div>
@@ -66,10 +78,21 @@
             
             <div class="trust-bar-item">
               <div class="trust-bar-icon-wrap" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_0db343ac35a4d7', 'shared' ) ); ?>">
-                <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_be08f7c57f78ec' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_be08f7c57f78ec', 'fcc_ui_6d82420f357692' ) ); ?>" style="width: 40px; height: 40px; object-fit: contain; border-radius: 50%;">
+                <?php
+                echo project_child_fcc_picture_html(
+                    project_child_fcc_image( 'fcc_ui_be08f7c57f78ec' ),
+                    project_child_fcc_image_alt( 'fcc_ui_be08f7c57f78ec', 'fcc_ui_6d82420f357692' ),
+                    '',
+                    array(
+                        'width'  => 40,
+                        'height' => 40,
+                        'style'  => 'width: 40px; height: 40px; object-fit: contain; border-radius: 50%;',
+                    )
+                );
+                ?>
               </div>
               <div class="trust-bar-content">
-                <h4><?php echo project_child_fcc_text( 'fcc_ui_7f36fd34e50688', 'home' ); ?></h4>
+                <div class="trust-bar-title"><?php echo project_child_fcc_text( 'fcc_ui_7f36fd34e50688', 'home' ); ?></div>
                 <p><?php echo project_child_fcc_text( 'fcc_ui_3cb5377b9686ad', 'home' ); ?></p>
               </div>
             </div>
@@ -83,7 +106,7 @@
                 </svg>
               </div>
               <div class="trust-bar-content">
-                <h4><?php echo project_child_fcc_text( 'fcc_ui_7fae43eabd17c5', 'home' ); ?></h4>
+                <div class="trust-bar-title"><?php echo project_child_fcc_text( 'fcc_ui_7fae43eabd17c5', 'home' ); ?></div>
                 <p><?php echo project_child_fcc_text( 'fcc_ui_740d386bb06816', 'home' ); ?></p>
               </div>
             </div>
@@ -101,7 +124,7 @@
                 </svg>
               </div>
               <div class="trust-bar-content">
-                <h4><?php echo project_child_fcc_text( 'fcc_ui_71d9bd21e43bed', 'home' ); ?></h4>
+                <div class="trust-bar-title"><?php echo project_child_fcc_text( 'fcc_ui_71d9bd21e43bed', 'home' ); ?></div>
                 <p><?php echo project_child_fcc_text( 'fcc_ui_ad6fe4262d4b15', 'home' ); ?></p>
               </div>
             </div>
