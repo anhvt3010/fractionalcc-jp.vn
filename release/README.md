@@ -1,6 +1,6 @@
 # Build và release Fractional CC
 
-Bản cập nhật hiện hành là **[1.0.2](v1.0.2/RELEASE.md)**: đồng bộ chính xác sản phẩm mua và màn cảm ơn (ảnh, giá, tên, quà tặng) và bảo mật biên lai đơn hàng. [1.0.1](v1.0.1/RELEASE.md) khôi phục checkbox đồng ý; [1.0.0](v1.0.0/RELEASE.md) là bản đầu tiên. Xem [hướng dẫn cập nhật hosting](v1.0.2/RELEASE.md).
+Bản cập nhật hiện hành là **[1.0.3](v1.0.3/RELEASE.md)**: email dùng URL logo/ảnh sản phẩm công khai, bỏ ảnh đính kèm CID và bổ sung hướng dẫn xử lý thư rác. [1.0.2](v1.0.2/RELEASE.md) đồng bộ sản phẩm và bảo mật biên lai; [1.0.1](v1.0.1/RELEASE.md) khôi phục checkbox đồng ý; [1.0.0](v1.0.0/RELEASE.md) là bản đầu tiên. Xem [hướng dẫn cập nhật hosting](v1.0.3/RELEASE.md).
 
 Mỗi `release/vX.Y.Z/` chứa đúng hai ZIP cài qua WordPress: `project-core-vX.Y.Z.zip` và `project-child-vX.Y.Z.zip`, cùng `RELEASE.md` và hồ sơ `qa/`. Root ZIP tương ứng là `project-core/` và `project-child/`. Plugin chứa nghiệp vụ/defaults/initializer; child theme chứa giao diện/schema/ảnh đã duyệt. WordPress, Kadence và ACF cài riêng. Không đóng gói config, secrets, database, tài khoản, đơn hàng, logs, backup hoặc uploads.
 

@@ -697,36 +697,9 @@ function project_core_fcc_send_order_email( $order ) {
 		$item_snapshot = project_core_fcc_order_item( $order['item'] );
 	}
 
-	$product_img_file = '';
-	$product_img_src  = '';
+	$brand_images     = project_core_fcc_email_brand_images();
+	$product_img_src  = ! empty( $item_snapshot['image'] ) ? esc_url( $item_snapshot['image'], array( 'http', 'https' ) ) : '';
 	$product_img_alt  = ! empty( $item_snapshot['imageAlt'] ) ? $item_snapshot['imageAlt'] : ( ! empty( $item_snapshot['name'] ) ? $item_snapshot['name'] : 'Sản phẩm' );
-
-	if ( ! empty( $item_snapshot['id'] ) ) {
-		$item_post_id = absint( $item_snapshot['id'] );
-		$img_att_id   = absint( get_post_meta( $item_post_id, 'fcc_image', true ) );
-		if ( $img_att_id ) {
-			$file = get_attached_file( $img_att_id );
-			if ( $file && file_exists( $file ) ) {
-				$product_img_file = $file;
-			}
-		}
-	}
-
-	if ( ! $product_img_file && ! empty( $item_snapshot['image'] ) ) {
-		$att_id = attachment_url_to_postid( $item_snapshot['image'] );
-		if ( $att_id ) {
-			$file = get_attached_file( $att_id );
-			if ( $file && file_exists( $file ) ) {
-				$product_img_file = $file;
-			}
-		}
-	}
-
-	if ( $product_img_file ) {
-		$product_img_src = 'cid:fcc_order_product_img';
-	} elseif ( ! empty( $item_snapshot['image'] ) ) {
-		$product_img_src = esc_url( $item_snapshot['image'] );
-	}
 
 	$html = '<!DOCTYPE html>
 <html lang="vi">
@@ -766,7 +739,7 @@ function project_core_fcc_send_order_email( $order ) {
                 <tr>
                   <!-- Fractional CC Logo -->
                   <td align="center" valign="middle" style="padding-right:18px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
-                    <img src="cid:fcc_brand_logo" alt="Fractional CC Nhật Bản" width="165" style="display:block;width:165px;height:auto;max-width:165px;border:0;">
+                    <img src="' . esc_url( $brand_images['fractional'] ) . '" alt="Fractional CC Nhật Bản" width="165" style="display:block;width:165px;height:auto;max-width:165px;border:0;">
                   </td>
                   
                   <!-- Divider Line -->
@@ -779,7 +752,7 @@ function project_core_fcc_send_order_email( $order ) {
                     <table cellpadding="0" cellspacing="0" border="0" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                       <tr>
                         <td align="center" valign="middle" style="background-color:#FFFFFF;border-radius:50%;width:38px;height:38px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.3);padding:0;">
-                          <img src="cid:buidang_brand_logo" alt="JP- BÙI ĐẶNG" width="30" height="30" style="display:block;margin:auto;width:30px;height:30px;border-radius:50%;border:0;">
+                          <img src="' . esc_url( $brand_images['buidang'] ) . '" alt="JP- BÙI ĐẶNG" width="30" height="30" style="display:block;margin:auto;width:30px;height:30px;border-radius:50%;border:0;">
                         </td>
                         <td valign="middle" style="padding-left:10px;text-align:left;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                           <span style="display:block;font-size:9px;color:#C5A059;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">PHÂN PHỐI ĐỘC QUYỀN</span>
@@ -864,7 +837,7 @@ function project_core_fcc_send_order_email( $order ) {
                     <table cellpadding="0" cellspacing="0" border="0" style="margin:0;padding:0;border-collapse:collapse;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                       <tr>
                         <td valign="middle" style="padding-right:14px;width:60px;min-width:60px;vertical-align:middle;">
-                          <img src="' . esc_attr( $product_img_src ) . '" alt="' . esc_attr( $product_img_alt ) . '" width="60" height="60" style="display:block;width:60px;height:60px;max-width:60px;max-height:60px;object-fit:cover;border-radius:6px;border:1px solid #ECDDC5;background-color:#FAF8F5;">
+                          <img src="' . $product_img_src . '" alt="' . esc_attr( $product_img_alt ) . '" width="60" height="60" style="display:block;width:60px;height:60px;max-width:60px;max-height:60px;object-fit:cover;border-radius:6px;border:1px solid #ECDDC5;background-color:#FAF8F5;">
                         </td>
                         <td valign="middle" style="vertical-align:middle;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                           <div style="font-size:15px;font-weight:700;color:#9E6B0D;line-height:1.45;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
@@ -934,28 +907,5 @@ function project_core_fcc_send_order_email( $order ) {
 		'Content-Type: text/html; charset=UTF-8',
 	);
 
-	if ( function_exists( 'project_core_fcc_attach_brand_logos' ) ) {
-		add_action( 'phpmailer_init', 'project_core_fcc_attach_brand_logos' );
-	}
-
-	$attach_product_img = null;
-	if ( $product_img_file && file_exists( $product_img_file ) ) {
-		$attach_product_img = function( $phpmailer ) use ( $product_img_file ) {
-			$mime = function_exists( 'wp_get_image_mime' ) ? ( wp_get_image_mime( $product_img_file ) ?: 'image/png' ) : 'image/png';
-			$phpmailer->addEmbeddedImage( $product_img_file, 'fcc_order_product_img', basename( $product_img_file ), 'base64', $mime );
-		};
-		add_action( 'phpmailer_init', $attach_product_img );
-	}
-
-	$sent = wp_mail( $recipient, $subject, $html, $headers );
-
-	if ( $attach_product_img ) {
-		remove_action( 'phpmailer_init', $attach_product_img );
-	}
-
-	if ( function_exists( 'project_core_fcc_attach_brand_logos' ) ) {
-		remove_action( 'phpmailer_init', 'project_core_fcc_attach_brand_logos' );
-	}
-
-	return $sent;
+	return wp_mail( $recipient, $subject, $html, $headers );
 }

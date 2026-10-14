@@ -67,20 +67,13 @@ function project_core_fcc_configure_smtp( $phpmailer ) {
 }
 add_action( 'phpmailer_init', 'project_core_fcc_configure_smtp', 10 );
 
-/**
- * Attach brand logos to PHPMailer for embedded CID rendering in HTML emails.
- */
-function project_core_fcc_attach_brand_logos( $phpmailer ) {
-	$theme_dir = get_stylesheet_directory();
-	$fcc_path  = $theme_dir . '/assets/fractional/assets/images/brand/fractional-cc-logo-white.png';
-	$bd_path   = $theme_dir . '/assets/fractional/assets/images/brand/bui-dang-jp-logo.png';
-
-	if ( file_exists( $fcc_path ) ) {
-		$phpmailer->addEmbeddedImage( $fcc_path, 'fcc_brand_logo', 'fractional-cc-logo.png', 'base64', 'image/png' );
-	}
-	if ( file_exists( $bd_path ) ) {
-		$phpmailer->addEmbeddedImage( $bd_path, 'buidang_brand_logo', 'bui-dang-jp-logo.png', 'base64', 'image/png' );
-	}
+/** Use public PNG URLs so mail clients do not list logos as attachments. */
+function project_core_fcc_email_brand_images() {
+	$path = 'assets/fractional/assets/images/brand/';
+	return array(
+		'fractional' => get_theme_file_uri( $path . 'fractional-cc-logo-white.png' ),
+		'buidang'    => get_theme_file_uri( $path . 'bui-dang-jp-logo.png' ),
+	);
 }
 
 /** Ensure From Email matches SMTP setting when active. */
@@ -194,7 +187,7 @@ function project_core_fcc_render_smtp_page() {
 		};
 
 		add_action( 'wp_mail_failed', $error_catcher );
-		add_action( 'phpmailer_init', 'project_core_fcc_attach_brand_logos' );
+		$brand_images = project_core_fcc_email_brand_images();
 
 		$subject = '[Fractional CC] Thử nghiệm gửi email qua SMTP thành công';
 		$current_time_str = current_time( 'd/m/Y • H:i:s' );
@@ -221,7 +214,7 @@ function project_core_fcc_render_smtp_page() {
               <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 20px auto;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <tr>
                   <td align="center" valign="middle" style="padding-right:18px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
-                    <img src="cid:fcc_brand_logo" alt="Fractional CC Nhật Bản" width="165" style="display:block;width:165px;height:auto;max-width:165px;border:0;">
+                    <img src="' . esc_url( $brand_images['fractional'] ) . '" alt="Fractional CC Nhật Bản" width="165" style="display:block;width:165px;height:auto;max-width:165px;border:0;">
                   </td>
                   <td align="center" valign="middle" style="padding:0 4px;">
                     <div style="width:1px;height:38px;background-color:rgba(197,160,89,0.4);line-height:38px;">&nbsp;</div>
@@ -230,7 +223,7 @@ function project_core_fcc_render_smtp_page() {
                     <table cellpadding="0" cellspacing="0" border="0" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                       <tr>
                         <td align="center" valign="middle" style="background-color:#FFFFFF;border-radius:50%;width:38px;height:38px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.3);padding:0;">
-                          <img src="cid:buidang_brand_logo" alt="JP- BÙI ĐẶNG" width="30" height="30" style="display:block;margin:auto;width:30px;height:30px;border-radius:50%;border:0;">
+                          <img src="' . esc_url( $brand_images['buidang'] ) . '" alt="JP- BÙI ĐẶNG" width="30" height="30" style="display:block;margin:auto;width:30px;height:30px;border-radius:50%;border:0;">
                         </td>
                         <td valign="middle" style="padding-left:10px;text-align:left;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                           <span style="display:block;font-size:9px;color:#C5A059;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">PHÂN PHỐI ĐỘC QUYỀN</span>
@@ -316,7 +309,6 @@ function project_core_fcc_render_smtp_page() {
 		$headers = array( 'Content-Type: text/html; charset=UTF-8' );
 
 		$sent = wp_mail( $test_recipient, $subject, $body, $headers );
-		remove_action( 'phpmailer_init', 'project_core_fcc_attach_brand_logos' );
 		remove_action( 'wp_mail_failed', $error_catcher );
 
 		if ( $sent ) {
@@ -349,7 +341,7 @@ function project_core_fcc_render_smtp_page() {
 						<td>
 							<label>
 								<input type="checkbox" name="smtp_enabled" value="1" <?php checked( $settings['enabled'], 1 ); ?>>
-								<strong>Bật gửi email qua máy chủ SMTP</strong> (Khuyến nghị bật để tránh email bị đưa vào spam)
+								<strong>Bật gửi email qua máy chủ SMTP</strong> (Cần xác thực người gửi; SMTP không bảo đảm thư luôn vào Hộp thư đến)
 							</label>
 						</td>
 					</tr>
@@ -418,7 +410,7 @@ function project_core_fcc_render_smtp_page() {
 						<th scope="row"><label for="smtp_from_email">Email người gửi (From Email)</label></th>
 						<td>
 							<input name="smtp_from_email" type="email" id="smtp_from_email" value="<?php echo esc_attr( $settings['from_email'] ); ?>" class="regular-text" placeholder="jpbuidangco.ltd@gmail.com" required>
-							<p class="description">Nên trùng với tài khoản email SMTP để không bị từ chối gửi thư.</p>
+							<p class="description">Dùng địa chỉ đã được nhà cung cấp SMTP xác minh. Với Gmail cá nhân, dùng đúng tài khoản Gmail đăng nhập SMTP; với email tên miền, cấu hình SPF, DKIM và DMARC theo nhà cung cấp.</p>
 						</td>
 					</tr>
 					<tr>

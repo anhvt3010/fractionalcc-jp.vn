@@ -1,0 +1,15 @@
+Release: 1.0.3
+Environment: isolated XAMPP on D:; WordPress fixture marker enabled.
+Packages: exact release ZIPs extracted before plugin/theme activation.
+No external mail: PHPMailer capture subclass overrides send(); other fixture requests blocked by pre_wp_mail.
+
+PASS: PHP lint for all packaged PHP and scripts/verify-fractional-email-images.php.
+PASS: 2644 approved snapshot initialization/media/content/relationship checks.
+PASS: 219 email checks; 11 catalog cases, absent/unsafe/query-string image URLs and admin SMTP test; MIME has zero attachments; all image URLs HTTP 200. No mail sent.
+PASS: 181 order snapshot/receipt/render/privacy checks across ten products and one combo; mail captured only.
+PASS: 82 security checks; all email captured, fixture changes restored.
+PASS: ZIP CRC, single slug root, exact file inventory and source byte comparison (package-report.json).
+
+Runtime fixture: project-child / kadence; advanced-custom-fields + project-core active; core 1.0.3; seed 1.0.2; ten published products and one combo.
+Fixture setup initially emitted an ABSPATH redefinition warning; corrected fixture config before email/receipt/security checks. No application source change required.
+Limitations: production host, actual recipient rendering, Google image proxy, SMTP authentication results and DNS not available. Workspace root has no wp-config.php; no claim of working-site activation.
