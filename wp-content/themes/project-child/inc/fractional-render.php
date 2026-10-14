@@ -83,36 +83,62 @@ function project_child_fcc_image_alt( $image_field, $fallback_field ) {
 	return is_scalar( $alt ) && '' !== (string) $alt ? (string) $alt : project_child_fcc_raw_text( $fallback_field, 'shared' );
 }
 
-/** Return the WebP URL if a corresponding .webp file exists on disk. */
+/** Resolve exact source bytes to portable derivatives, including migrated Media uploads. */
+function project_child_fcc_image_variant( $url ) {
+	static $cache = array();
+	static $manifest;
+	if ( ! is_string( $url ) || ! $url ) { return array(); }
+	if ( isset( $cache[ $url ] ) ) { return $cache[ $url ]; }
+	$cache[ $url ] = array();
+	$uploads = wp_get_upload_dir();
+	$locations = array( get_stylesheet_directory_uri() => get_stylesheet_directory(), $uploads['baseurl'] => $uploads['basedir'] );
+	foreach ( $locations as $base_url => $directory ) {
+		if ( 0 !== strpos( $url, $base_url . '/' ) ) { continue; }
+		$relative = rawurldecode( (string) wp_parse_url( substr( $url, strlen( $base_url ) ), PHP_URL_PATH ) );
+		$file = realpath( $directory . $relative );
+		$base = realpath( $directory );
+		if ( ! $file || ! $base || 0 !== strpos( wp_normalize_path( $file ), trailingslashit( wp_normalize_path( $base ) ) ) ) { return array(); }
+		if ( null === $manifest ) {
+			$path = get_stylesheet_directory() . '/assets/fractional/image-variants.json';
+			$manifest = is_readable( $path ) ? json_decode( file_get_contents( $path ), true ) : array();
+		}
+		// Match bytes, not filenames: a customer's replacement image must never use an old default.
+		$digest = hash_file( 'sha256', $file );
+		if ( isset( $manifest[ $digest ] ) ) {
+			$variant = $manifest[ $digest ];
+			$root = get_stylesheet_directory() . '/assets/fractional/';
+			if ( is_file( $root . $variant['webp'] ) ) {
+				$srcset = array();
+				foreach ( $variant['srcset'] as $width => $path ) {
+					if ( is_file( $root . $path ) ) { $srcset[] = add_query_arg( 'ver', $variant['revision'], get_stylesheet_directory_uri() . '/assets/fractional/' . $path ) . ' ' . absint( $width ) . 'w'; }
+				}
+				$cache[ $url ] = array( 'url' => add_query_arg( 'ver', $variant['revision'], get_stylesheet_directory_uri() . '/assets/fractional/' . $variant['webp'] ), 'srcset' => implode( ', ', $srcset ), 'width' => $variant['width'], 'height' => $variant['height'] );
+			}
+		} elseif ( preg_match( '/\.(png|jpe?g)$/i', $file ) ) {
+			$webp_file = preg_replace( '/\.(png|jpe?g)$/i', '.webp', $file );
+			if ( is_file( $webp_file ) && filemtime( $webp_file ) >= filemtime( $file ) ) {
+				$cache[ $url ] = array( 'url' => $base_url . preg_replace( '/\.(png|jpe?g)$/i', '.webp', $relative ), 'srcset' => '' );
+			}
+		}
+		break;
+	}
+	return $cache[ $url ];
+}
+
 function project_child_fcc_webp_url( $url ) {
-	if ( ! $url || ! is_string( $url ) ) { return ''; }
-	$webp_url = preg_replace( '/\.(png|jpe?g)$/i', '.webp', $url );
-	if ( $webp_url === $url ) { return $url; }
-	$theme_uri = get_stylesheet_directory_uri();
-	if ( 0 === strpos( $url, $theme_uri ) ) {
-		$rel = substr( $url, strlen( $theme_uri ) );
-		$file = get_stylesheet_directory() . $rel;
-		$webp_file = preg_replace( '/\.(png|jpe?g)$/i', '.webp', $file );
-		if ( file_exists( $webp_file ) ) {
-			return $webp_url;
-		}
-	}
-	$upload_dir = wp_get_upload_dir();
-	if ( 0 === strpos( $url, $upload_dir['baseurl'] ) ) {
-		$rel = substr( $url, strlen( $upload_dir['baseurl'] ) );
-		$file = $upload_dir['basedir'] . $rel;
-		$webp_file = preg_replace( '/\.(png|jpe?g)$/i', '.webp', $file );
-		if ( file_exists( $webp_file ) ) {
-			return $webp_url;
-		}
-	}
-	return '';
+	$variant = project_child_fcc_image_variant( $url );
+	return $variant['url'] ?? '';
 }
 
 /** Render a progressive picture element with WebP source and fallback img. */
 function project_child_fcc_picture_html( $url, $alt = '', $class = '', $attrs = array() ) {
 	if ( ! $url ) { return ''; }
-	$webp = project_child_fcc_webp_url( $url );
+	$variant = project_child_fcc_image_variant( $url );
+	$webp = $variant['url'] ?? '';
+	$attrs = wp_parse_args( $attrs, array( 'decoding' => 'async' ) );
+	if ( ! isset( $attrs['width'], $attrs['height'] ) && isset( $variant['width'], $variant['height'] ) ) {
+		$attrs += array( 'width' => $variant['width'], 'height' => $variant['height'] );
+	}
 	$attr_str = '';
 	foreach ( $attrs as $k => $v ) {
 		if ( true === $v ) {
@@ -125,7 +151,9 @@ function project_child_fcc_picture_html( $url, $alt = '', $class = '', $attrs = 
 	$alt_attr = ' alt="' . esc_attr( $alt ) . '"';
 	$img_html = '<img src="' . esc_url( $url ) . '"' . $alt_attr . $class_attr . $attr_str . '>';
 	if ( $webp && $webp !== $url ) {
-		return '<picture><source srcset="' . esc_url( $webp ) . '" type="image/webp">' . $img_html . '</picture>';
+		$srcset = $variant['srcset'] ?: $webp;
+		$sizes = $attrs['sizes'] ?? ( ! empty( $attrs['width'] ) ? '(max-width: ' . absint( $attrs['width'] ) . 'px) 100vw, ' . absint( $attrs['width'] ) . 'px' : '100vw' );
+		return '<picture><source srcset="' . esc_attr( $srcset ) . '" sizes="' . esc_attr( $sizes ) . '" type="image/webp">' . $img_html . '</picture>';
 	}
 	return $img_html;
 }
@@ -144,12 +172,18 @@ function project_child_fcc_hero_background_attributes() {
 		echo 'class="hero-section"';
 		return;
 	}
+	$url = project_child_fcc_webp_url( $url ) ?: $url;
 	$schema   = project_child_fcc_schema();
 	$choices  = isset( $schema['home']['hero-section']['fcc_home_hero_background_position']['choices'] ) ? $schema['home']['hero-section']['fcc_home_hero_background_position']['choices'] : array();
 	$position = get_post_meta( $id, 'fcc_home_hero_background_position', true );
 	$position = is_string( $position ) && isset( $choices[ $position ] ) ? $position : 'center center';
 	$style    = '--fcc-hero-background:url("' . esc_url_raw( $url ) . '");--fcc-hero-position:' . $position . ';';
 	echo 'class="hero-section fcc-hero-background" style="' . esc_attr( $style ) . '"';
+}
+
+/** Keep preload and picture candidate selection identical to avoid duplicate downloads. */
+function project_child_fcc_hero_image_sizes() {
+	return '(min-width: 1440px) 580px, (min-width: 992px) 42vw, (min-width: 640px) 530px, calc(100vw - 40px)';
 }
 
 /** Render the featured product image for the home hero card. */

@@ -48,7 +48,7 @@ $email           = project_core_fcc_contact( 'email' );
 
       <!-- CỘT 2: VĂN PHÒNG & LIÊN HỆ -->
       <div class="footer-col">
-        <h4><?php echo project_child_fcc_text( 'fcc_ui_0f36c14dea884e', 'shared' ); ?></h4>
+        <h2><?php echo project_child_fcc_text( 'fcc_ui_0f36c14dea884e', 'shared' ); ?></h2>
         <?php if ( $address ) : ?><p><strong>Địa chỉ:</strong> <?php echo esc_html( $address ); ?></p><?php endif; ?>
         <?php if ( $hotline ) : ?><p><strong>Hotline:</strong> <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> style="color: var(--color-accent-gold); font-weight: 700;"><?php echo esc_html( $hotline_display ); ?></a></p><?php endif; ?>
         <?php if ( $phone ) : ?><p><strong>Điện thoại:</strong> <a <?php project_child_fcc_contact_attributes( 'phone' ); ?> style="color: #FFFFFF; font-weight: 600;"><?php echo esc_html( $phone_display ); ?></a></p><?php endif; ?>
@@ -57,7 +57,7 @@ $email           = project_core_fcc_contact( 'email' );
 
       <!-- CỘT 3: LIÊN KẾT NHANH -->
       <div class="footer-col">
-        <h4>Liên Kết Nhanh</h4>
+        <h2>Liên Kết Nhanh</h2>
         <ul class="footer-links">
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'index.html' ) ); ?>">Trang Chủ</a></li>
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>">Danh Mục 10 Sản Phẩm</a></li>
@@ -68,7 +68,7 @@ $email           = project_core_fcc_contact( 'email' );
 
       <!-- CỘT 4: CHÍNH SÁCH & THÔNG TIN -->
       <div class="footer-col">
-        <h4><?php echo project_child_fcc_text( 'fcc_ui_337affe9cef2fd', 'shared' ); ?></h4>
+        <h2><?php echo project_child_fcc_text( 'fcc_ui_337affe9cef2fd', 'shared' ); ?></h2>
         <ul class="footer-links">
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#doi-tra' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_8aa241ea23c189', 'shared', false ); ?></a></li>
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#giao-hang' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_369ace7ad7eef2', 'shared', false ); ?></a></li>
@@ -83,7 +83,7 @@ $email           = project_core_fcc_contact( 'email' );
     <!-- PHẦN DƯỚI CÙNG -->
     <div class="footer-bottom">
       <p style="margin: 0;"><?php echo project_child_fcc_text( 'fcc_ui_3e12c24e7634b2', 'shared' ); ?></p>
-      <p style="margin: 0; font-size: 12px; color: #757575;"><?php echo project_child_fcc_text( 'fcc_ui_f8b498e754b279', 'shared' ); ?></p>
+      <p style="margin: 0; font-size: 12px;"><?php echo project_child_fcc_text( 'fcc_ui_f8b498e754b279', 'shared' ); ?></p>
     </div>
   </div>
 </footer>

@@ -22,7 +22,7 @@
                 ?>
               </div>
               <div class="partner-info">
-                <h4><?php echo project_child_fcc_text( 'fcc_ui_a2e7754f312ed0', 'home' ); ?></h4>
+                <h3><?php echo project_child_fcc_text( 'fcc_ui_a2e7754f312ed0', 'home' ); ?></h3>
                 <p><?php echo project_child_fcc_text( 'fcc_ui_7b67317f0bc70d', 'home' ); ?></p>
               </div>
             </div>
@@ -39,7 +39,7 @@
                 ?>
               </div>
               <div class="partner-info">
-                <h4><?php echo project_child_fcc_text( 'fcc_ui_ece1ba16c464ad', 'home' ); ?></h4>
+                <h3><?php echo project_child_fcc_text( 'fcc_ui_ece1ba16c464ad', 'home' ); ?></h3>
                 <p><?php echo project_child_fcc_text( 'fcc_ui_410151f6a96765', 'home' ); ?></p>
               </div>
             </div>
@@ -107,7 +107,7 @@
                   <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                 </div>
                 <div class="corporate-pillar-content">
-                  <h5><?php echo project_child_fcc_text( 'fcc_ui_157469c8a78092', 'home' ); ?></h5>
+                  <h4><?php echo project_child_fcc_text( 'fcc_ui_157469c8a78092', 'home' ); ?></h4>
                   <p><?php echo project_child_fcc_text( 'fcc_ui_ae982933774491', 'home' ); ?></p>
                 </div>
               </div>
@@ -117,7 +117,7 @@
                   <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
                 </div>
                 <div class="corporate-pillar-content">
-                  <h5><?php echo project_child_fcc_text( 'fcc_ui_5b8df6b10deeed', 'home' ); ?></h5>
+                  <h4><?php echo project_child_fcc_text( 'fcc_ui_5b8df6b10deeed', 'home' ); ?></h4>
                   <p><?php echo project_child_fcc_text( 'fcc_ui_7edb9ddcb9e50a', 'home' ); ?></p>
                 </div>
               </div>
@@ -127,7 +127,7 @@
                   <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                 </div>
                 <div class="corporate-pillar-content">
-                  <h5><?php echo project_child_fcc_text( 'fcc_ui_e847590dad784e', 'home' ); ?></h5>
+                  <h4><?php echo project_child_fcc_text( 'fcc_ui_e847590dad784e', 'home' ); ?></h4>
                   <p><?php echo project_child_fcc_text( 'fcc_ui_438d790d6256e3', 'home' ); ?></p>
                 </div>
               </div>
@@ -137,7 +137,7 @@
                   <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </div>
                 <div class="corporate-pillar-content">
-                  <h5><?php echo project_child_fcc_text( 'fcc_ui_aca2a86286f849', 'home' ); ?></h5>
+                  <h4><?php echo project_child_fcc_text( 'fcc_ui_aca2a86286f849', 'home' ); ?></h4>
                   <p><?php echo project_child_fcc_text( 'fcc_ui_36e815217673ad', 'home' ); ?> <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> style="font-weight: 700; color: var(--color-accent-gold);"><?php echo esc_html( project_core_fcc_contact( 'hotlineDisplay' ) ); ?></a> <?php echo project_child_fcc_text( 'fcc_ui_6175b716eac766', 'home' ); ?></p>
                 </div>
               </div>

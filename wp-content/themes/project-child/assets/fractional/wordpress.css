@@ -1,6 +1,7 @@
 /* WordPress integration only. Visual design stays in the supplied stylesheets. */
 .fcc-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .fcc-site [hidden] { display: none !important; }
+.fcc-site picture { display: contents; }
 .fcc-site .btn-submit-order:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
@@ -487,4 +488,22 @@ body.admin-bar .fcc-site .policy-card {
 .fcc-site .site-footer .footer-links a:hover {
 	color: #FFFFFF;
 	transform: translateX(3px);
+}
+
+/* Keep the existing gold/gray palette legible at small text sizes. */
+.fcc-site .section-tag,
+.fcc-site .product-category-name,
+.fcc-site .routine-header-tag,
+.fcc-site .distributor-sub,
+.fcc-site .nav-link.active,
+.fcc-site .nav-link:hover {
+	color: #806025;
+}
+.fcc-site .combo-original-price,
+.fcc-site .product-price-original,
+.fcc-site .disclaimer-note {
+	color: #6B6B6B;
+}
+.fcc-site .footer-bottom {
+	color: #A3A3A3;
 }

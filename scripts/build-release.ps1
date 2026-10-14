@@ -7,6 +7,14 @@ $ErrorActionPreference = 'Stop'
 $taskPhp = @('C:/xampp/php/php.exe', 'D:/xampp/php/php.exe') | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
 if (-not $taskPhp) { throw 'XAMPP PHP executable not found.' }
 $taskRoot = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
+# Generate only public theme artifacts; fonts and licenses are already vendored.
+$taskPhpOptions = @()
+$taskHasWebp = & $taskPhp -r "echo function_exists('imagewebp') ? '1' : '0';"
+if ($taskHasWebp -ne '1') { $taskPhpOptions = @('-d', 'extension=gd') }
+& $taskPhp @taskPhpOptions (Join-Path $PSScriptRoot 'generate-fractional-webp.php')
+if ($LASTEXITCODE -ne 0) { throw 'Theme image build failed.' }
+& $taskPhp (Join-Path $PSScriptRoot 'minify-assets.php')
+if ($LASTEXITCODE -ne 0) { throw 'Theme asset bundle failed.' }
 $taskReleaseRoot = Join-Path $taskRoot 'release'
 $taskVersionRoot = [System.IO.Path]::GetFullPath((Join-Path $taskReleaseRoot ('v' + $Version)))
 if (-not $taskVersionRoot.StartsWith($taskReleaseRoot + [System.IO.Path]::DirectorySeparatorChar,[System.StringComparison]::OrdinalIgnoreCase)) { throw 'Release target is outside release/.' }

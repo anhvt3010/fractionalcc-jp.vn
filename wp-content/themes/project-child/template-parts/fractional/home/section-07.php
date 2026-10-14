@@ -39,7 +39,7 @@
                     <?php echo project_child_fcc_picture_html( project_child_fcc_image( 'fcc_ui_2d8d0e4cc814fb' ), project_child_fcc_image_alt( 'fcc_ui_2d8d0e4cc814fb', 'fcc_ui_4fe975230c2416' ), '', array( 'width' => 48, 'height' => 48, 'loading' => 'lazy' ) ); ?>
                   </div>
                   <div class="review-author-names">
-                    <h4><?php echo project_child_fcc_text( 'fcc_ui_20f5bca50308fb', 'home' ); ?></h4>
+                    <h3><?php echo project_child_fcc_text( 'fcc_ui_20f5bca50308fb', 'home' ); ?></h3>
                     <span><?php echo project_child_fcc_text( 'fcc_ui_6bc65a7c21f809', 'home' ); ?></span>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
                     <?php echo project_child_fcc_picture_html( project_child_fcc_image( 'fcc_ui_5e28ca19d6c1a6' ), project_child_fcc_image_alt( 'fcc_ui_5e28ca19d6c1a6', 'fcc_ui_582af86c2cd2b7' ), '', array( 'width' => 48, 'height' => 48, 'loading' => 'lazy' ) ); ?>
                   </div>
                   <div class="review-author-names">
-                    <h4><?php echo project_child_fcc_text( 'fcc_ui_abc7f8c203e574', 'home' ); ?></h4>
+                    <h3><?php echo project_child_fcc_text( 'fcc_ui_abc7f8c203e574', 'home' ); ?></h3>
                     <span><?php echo project_child_fcc_text( 'fcc_ui_51a538e556b295', 'home' ); ?></span>
                   </div>
                 </div>
@@ -103,7 +103,7 @@
                     <?php echo project_child_fcc_picture_html( project_child_fcc_image( 'fcc_ui_0db797a330bea5' ), project_child_fcc_image_alt( 'fcc_ui_0db797a330bea5', 'fcc_ui_d78a914ad8029f' ), '', array( 'width' => 48, 'height' => 48, 'loading' => 'lazy' ) ); ?>
                   </div>
                   <div class="review-author-names">
-                    <h4><?php echo project_child_fcc_text( 'fcc_ui_9a5b4a75039b72', 'home' ); ?></h4>
+                    <h3><?php echo project_child_fcc_text( 'fcc_ui_9a5b4a75039b72', 'home' ); ?></h3>
                     <span><?php echo project_child_fcc_text( 'fcc_ui_ab50cade3c4d54', 'home' ); ?></span>
                   </div>
                 </div>
@@ -135,7 +135,7 @@
                     <?php echo project_child_fcc_picture_html( project_child_fcc_image( 'fcc_ui_86f10657c932c8' ), project_child_fcc_image_alt( 'fcc_ui_86f10657c932c8', 'fcc_ui_b89e4c5a14dd5f' ), '', array( 'width' => 48, 'height' => 48, 'loading' => 'lazy' ) ); ?>
                   </div>
                   <div class="review-author-names">
-                    <h4><?php echo project_child_fcc_text( 'fcc_ui_e371a859bab35c', 'home' ); ?></h4>
+                    <h3><?php echo project_child_fcc_text( 'fcc_ui_e371a859bab35c', 'home' ); ?></h3>
                     <span><?php echo project_child_fcc_text( 'fcc_ui_fc8fab90b7ab74', 'home' ); ?></span>
                   </div>
                 </div>
@@ -167,7 +167,7 @@
                     <?php echo project_child_fcc_picture_html( project_child_fcc_image( 'fcc_ui_da1eaea273e1e5' ), project_child_fcc_image_alt( 'fcc_ui_da1eaea273e1e5', 'fcc_ui_c70eeb1112b97e' ), '', array( 'width' => 48, 'height' => 48, 'loading' => 'lazy' ) ); ?>
                   </div>
                   <div class="review-author-names">
-                    <h4><?php echo project_child_fcc_text( 'fcc_ui_eeab6c7deedef8', 'home' ); ?></h4>
+                    <h3><?php echo project_child_fcc_text( 'fcc_ui_eeab6c7deedef8', 'home' ); ?></h3>
                     <span><?php echo project_child_fcc_text( 'fcc_ui_d2ddc5756c7268', 'home' ); ?></span>
                   </div>
                 </div>
@@ -199,7 +199,7 @@
                     <?php echo project_child_fcc_picture_html( project_child_fcc_image( 'fcc_ui_feedback_img_6' ), project_child_fcc_image_alt( 'fcc_ui_feedback_img_6', 'fcc_ui_67e344a449c6ea' ), '', array( 'width' => 48, 'height' => 48, 'loading' => 'lazy' ) ); ?>
                   </div>
                   <div class="review-author-names">
-                    <h4><?php echo project_child_fcc_text( 'fcc_ui_0cd0b40d7ab747', 'home' ); ?></h4>
+                    <h3><?php echo project_child_fcc_text( 'fcc_ui_0cd0b40d7ab747', 'home' ); ?></h3>
                     <span><?php echo project_child_fcc_text( 'fcc_ui_4a2e3b716720af', 'home' ); ?></span>
                   </div>
                 </div>
@@ -231,7 +231,7 @@
                     <?php echo project_child_fcc_picture_html( project_child_fcc_image( 'fcc_ui_feedback_img_7' ), project_child_fcc_image_alt( 'fcc_ui_feedback_img_7', 'fcc_ui_feedback_alt_7' ), '', array( 'width' => 48, 'height' => 48, 'loading' => 'lazy' ) ); ?>
                   </div>
                   <div class="review-author-names">
-                    <h4><?php echo project_child_fcc_text( 'fcc_ui_feedback_name_7', 'home' ); ?></h4>
+                    <h3><?php echo project_child_fcc_text( 'fcc_ui_feedback_name_7', 'home' ); ?></h3>
                     <span><?php echo project_child_fcc_text( 'fcc_ui_feedback_sub_7', 'home' ); ?></span>
                   </div>
                 </div>

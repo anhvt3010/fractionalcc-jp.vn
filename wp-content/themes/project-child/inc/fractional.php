@@ -92,22 +92,31 @@ function project_child_fcc_prime_images() {
 function project_child_fcc_enqueue() {
 	$kind = project_child_fcc_kind();
 	if ( ! $kind ) { return; }
+	// These templates do not use the parent's full-width layout or its scrollbar variable.
+	if ( class_exists( '\Kadence\Theme' ) ) {
+		$parent_theme = \Kadence\Theme::instance();
+		if ( isset( $parent_theme->components['base_support'] ) ) {
+			remove_action( 'wp_footer', array( $parent_theme->components['base_support'], 'action_add_scrollbar_offset_script' ), 2 );
+		}
+	}
 	if ( function_exists( 'project_core_fcc_page_id' ) ) { project_child_fcc_prime_images(); }
 	// These pages supply the complete supplied design, including header/footer.
 	foreach ( wp_styles()->queue as $handle ) {
 		if ( 0 === strpos( $handle, 'kadence' ) || in_array( $handle, array( 'global-styles', 'wp-block-library', 'classic-theme-styles', 'project-child-main' ), true ) ) { wp_dequeue_style( $handle ); }
 	}
 	$base = get_stylesheet_directory_uri() . '/assets/fractional/';
-	wp_enqueue_style( 'fcc-google-fonts', 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap', array(), null );
+	$bundled = file_exists( get_stylesheet_directory() . '/assets/fractional/site.min.css' );
+	if ( ! $bundled ) { wp_enqueue_style( 'fcc-fonts', $base . 'fonts.css', array(), (string) filemtime( get_stylesheet_directory() . '/assets/fractional/fonts.css' ) ); }
 	$css_file = file_exists( get_stylesheet_directory() . '/assets/fractional/assets/css/style.min.css' ) ? 'assets/css/style.min.css' : 'assets/css/style.css';
 	$resp_file = file_exists( get_stylesheet_directory() . '/assets/fractional/assets/css/responsive.min.css' ) ? 'assets/css/responsive.min.css' : 'assets/css/responsive.css';
 	$styles = array( 'design' => $css_file, 'responsive' => $resp_file, 'integration' => 'wordpress.css' );
+	if ( $bundled ) { $styles = array( 'design' => 'site.min.css' ); }
 	if ( file_exists( get_stylesheet_directory() . '/assets/fractional/' . $kind . '.css' ) ) { $styles[ $kind ] = $kind . '.css'; }
 	foreach ( $styles as $name => $path ) {
-		wp_enqueue_style( 'fcc-' . $name, $base . $path, 'design' === $name ? array( 'fcc-google-fonts' ) : array( 'fcc-design' ), (string) filemtime( get_stylesheet_directory() . '/assets/fractional/' . $path ) );
+		wp_enqueue_style( 'fcc-' . $name, $base . $path, 'design' === $name ? ( $bundled ? array() : array( 'fcc-fonts' ) ) : array( 'fcc-design' ), (string) filemtime( get_stylesheet_directory() . '/assets/fractional/' . $path ) );
 	}
 	$js_file = file_exists( get_stylesheet_directory() . '/assets/fractional/main.min.js' ) ? 'main.min.js' : 'main.js';
-	wp_enqueue_script( 'fcc-interactions', $base . $js_file, array(), (string) filemtime( get_stylesheet_directory() . '/assets/fractional/' . $js_file ), true );
+	wp_enqueue_script( 'fcc-interactions', $base . $js_file, array(), (string) filemtime( get_stylesheet_directory() . '/assets/fractional/' . $js_file ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
 	if ( function_exists( 'project_core_fcc_frontend_data' ) ) {
 		$client_labels = array();
 		$defaults = project_core_fcc_default_document();
@@ -133,13 +142,13 @@ add_action( 'wp_enqueue_scripts', 'project_child_fcc_enqueue', 100 );
 function project_child_fcc_performance_hints() {
 	$kind = project_child_fcc_kind();
 	if ( ! $kind ) { return; }
-	echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
-	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
 	if ( 'home' === $kind && function_exists( 'project_child_fcc_hero_product_image_url' ) ) {
 		$hero_url = project_child_fcc_hero_product_image_url();
-		$webp_url = function_exists( 'project_child_fcc_webp_url' ) ? project_child_fcc_webp_url( $hero_url ) : '';
+		$variant = project_child_fcc_image_variant( $hero_url );
+		$webp_url = $variant['url'] ?? '';
 		if ( $webp_url ) {
-			echo '<link rel="preload" as="image" href="' . esc_url( $webp_url ) . '" type="image/webp" fetchpriority="high">' . "\n";
+			$responsive = $variant['srcset'] ? ' imagesrcset="' . esc_attr( $variant['srcset'] ) . '" imagesizes="' . esc_attr( project_child_fcc_hero_image_sizes() ) . '"' : '';
+			echo '<link rel="preload" as="image" href="' . esc_url( $webp_url ) . '"' . $responsive . ' type="image/webp" fetchpriority="high">' . "\n";
 		} elseif ( $hero_url ) {
 			echo '<link rel="preload" as="image" href="' . esc_url( $hero_url ) . '" fetchpriority="high">' . "\n";
 		}
@@ -182,6 +191,7 @@ function project_child_fcc_metadata() {
 	echo '<meta property="og:type" content="website"><meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '"><meta property="og:description" content="' . esc_attr( $description ) . '"><meta property="og:url" content="' . esc_url( $url ) . '">';
 	if ( $image ) { echo '<meta property="og:image" content="' . esc_url( $image ) . '"><meta name="twitter:card" content="summary_large_image">'; }
 	$favicon = project_child_fcc_image( 'fcc_site_favicon' );
+	$favicon = project_child_fcc_webp_url( $favicon ) ?: $favicon;
 	if ( $favicon ) { remove_action( 'wp_head', 'wp_site_icon', 99 ); echo '<link rel="icon" href="' . esc_url( $favicon ) . '">'; }
 }
 add_action( 'wp_head', 'project_child_fcc_metadata', 2 );

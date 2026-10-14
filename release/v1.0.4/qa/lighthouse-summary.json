@@ -1,0 +1,56 @@
+{
+  "beforeMobile": {
+    "lighthouseVersion": "13.5.0",
+    "fetchTime": "2026-10-14T14:13:06.577Z",
+    "scores": {
+      "performance": 0.64,
+      "accessibility": 0.92,
+      "best-practices": 1,
+      "seo": 0.66
+    },
+    "metrics": {
+      "first-contentful-paint": 4066.2471499999997,
+      "largest-contentful-paint": 19221.749800000012,
+      "total-blocking-time": 1,
+      "speed-index": 4574.701403995379,
+      "total-byte-weight": 3633705,
+      "cumulative-layout-shift": 0
+    }
+  },
+  "afterMobile": {
+    "lighthouseVersion": "13.5.0",
+    "fetchTime": "2026-10-14T14:26:08.142Z",
+    "scores": {
+      "performance": 0.67,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 0.66
+    },
+    "metrics": {
+      "first-contentful-paint": 3462.6949499999996,
+      "largest-contentful-paint": 4741.926599999999,
+      "total-blocking-time": 348,
+      "speed-index": 3987.3662612796816,
+      "total-byte-weight": 633068,
+      "cumulative-layout-shift": 0
+    }
+  },
+  "afterDesktop": {
+    "lighthouseVersion": "13.5.0",
+    "fetchTime": "2026-10-14T14:26:25.515Z",
+    "scores": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 0.66
+    },
+    "metrics": {
+      "first-contentful-paint": 685.5005,
+      "largest-contentful-paint": 967.3339999999998,
+      "total-blocking-time": 0,
+      "speed-index": 1094.9240187289633,
+      "total-byte-weight": 749425,
+      "cumulative-layout-shift": 0.020433720695025318
+    }
+  }
+}

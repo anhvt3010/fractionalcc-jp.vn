@@ -1273,7 +1273,7 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 0;
 }
 
-.review-author-names h4 {
+.review-author-names h3 {
   font-size: 15px;
   font-weight: 700;
   color: var(--color-text-main);
@@ -1433,11 +1433,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .reviews-slider-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 4px;
-  background: #D8D4CC;
-  transition: all 0.3s ease;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  background: transparent;
+  transition: width 0.3s ease;
   cursor: pointer;
   border: none;
   padding: 0;
@@ -1450,11 +1450,18 @@ h1, h2, h3, h4, h5, h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 28px;
-  min-height: 28px;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #D8D4CC;
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .reviews-slider-dot.active {
+  width: 44px;
+}
+
+.reviews-slider-dot.active::before {
   width: 24px;
   background: var(--color-gold);
 }
@@ -2120,7 +2127,7 @@ textarea.form-control {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.footer-col h4 {
+.footer-col h2 {
   color: #FFFFFF;
   font-size: 15px;
   font-weight: 700;
@@ -5518,7 +5525,7 @@ textarea.form-control {
   box-shadow: 0 6px 16px rgba(197, 160, 89, 0.16);
 }
 
-.partner-info h4 {
+.partner-info h3 {
   font-size: 15px;
   font-weight: 800;
   color: var(--color-primary);
@@ -5724,7 +5731,7 @@ textarea.form-control {
   flex-shrink: 0;
 }
 
-.corporate-pillar-content h5 {
+.corporate-pillar-content h4 {
   font-size: 14.5px;
   font-weight: 700;
   color: var(--color-primary);

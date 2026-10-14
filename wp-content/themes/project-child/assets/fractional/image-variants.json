@@ -1,0 +1,478 @@
+{
+    "06180560ad0b0a5e656b0a56aa0b54cf672523bbe62782fd6139794308989741": {
+        "source": "assets/images/products/pdrn-lip-essence.png",
+        "width": 443,
+        "height": 443,
+        "webp": "assets/images/products/pdrn-lip-essence.webp",
+        "srcset": {
+            "443": "assets/images/products/pdrn-lip-essence.webp"
+        },
+        "revision": "6c925d479179"
+    },
+    "11d085395034b932f461b30ced4002599b83719a87e4112042e43a60793e66c7": {
+        "source": "assets/images/concerns/concern-dom-nau.png",
+        "width": 526,
+        "height": 806,
+        "webp": "assets/images/concerns/concern-dom-nau.webp",
+        "srcset": {
+            "480": "assets/images/concerns/concern-dom-nau-480.webp",
+            "526": "assets/images/concerns/concern-dom-nau.webp"
+        },
+        "revision": "258f58cf4d5b"
+    },
+    "165b8e33abf2f21f6e4e0625bb7c9b4f3ce753e2f878d2b66915aca67b41a834": {
+        "source": "assets/images/approved/165b8e33abf2f21f-165b8e33abf2f21f-fractional-lineup-full-2.jpg",
+        "width": 1254,
+        "height": 1068,
+        "webp": "assets/images/approved/165b8e33abf2f21f-165b8e33abf2f21f-fractional-lineup-full-2.webp",
+        "srcset": {
+            "480": "assets/images/approved/165b8e33abf2f21f-165b8e33abf2f21f-fractional-lineup-full-2-480.webp",
+            "768": "assets/images/approved/165b8e33abf2f21f-165b8e33abf2f21f-fractional-lineup-full-2-768.webp",
+            "1200": "assets/images/approved/165b8e33abf2f21f-165b8e33abf2f21f-fractional-lineup-full-2.webp"
+        },
+        "revision": "058de6a270e8"
+    },
+    "29480a720fa47a88d1182d95ca907eb094585d8da297d7463ecb905de5cc9ded": {
+        "source": "assets/images/products/pdrn-lip-plumper.png",
+        "width": 669,
+        "height": 722,
+        "webp": "assets/images/products/pdrn-lip-plumper.webp",
+        "srcset": {
+            "480": "assets/images/products/pdrn-lip-plumper-480.webp",
+            "669": "assets/images/products/pdrn-lip-plumper.webp"
+        },
+        "revision": "6c36f211aa8a"
+    },
+    "2ac01ab6909bcbdb18a7b6f4d2b805d015d31a4fc6b4bc9c2bcd1dbf527e016b": {
+        "source": "assets/images/feedback/feedback-6.png",
+        "width": 960,
+        "height": 1280,
+        "webp": "assets/images/feedback/feedback-6.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-6-480.webp",
+            "720": "assets/images/feedback/feedback-6.webp"
+        },
+        "revision": "ee99a29e1e3e"
+    },
+    "2d0e36b1081e55a304947022d62eb06eab06643c805510d5bd73a6c6aa42fa68": {
+        "source": "assets/images/products/needle-serum-c.png",
+        "width": 555,
+        "height": 555,
+        "webp": "assets/images/products/needle-serum-c.webp",
+        "srcset": {
+            "480": "assets/images/products/needle-serum-c-480.webp",
+            "555": "assets/images/products/needle-serum-c.webp"
+        },
+        "revision": "b1f8e739113e"
+    },
+    "3cc24053e7f67b6d2204781e5dde22754db83cd9ca93fda3dbd1c53c6375f9f4": {
+        "source": "assets/images/products/mandelic-peel-essence.png",
+        "width": 494,
+        "height": 494,
+        "webp": "assets/images/products/mandelic-peel-essence.webp",
+        "srcset": {
+            "480": "assets/images/products/mandelic-peel-essence-480.webp",
+            "494": "assets/images/products/mandelic-peel-essence.webp"
+        },
+        "revision": "42fce03cc062"
+    },
+    "411f9fe77b2e1eead2980ab747712dfe38c3b7bc3853f2a8a9541a54eb1b3d12": {
+        "source": "assets/images/feedback/feedback-1.png",
+        "width": 960,
+        "height": 1280,
+        "webp": "assets/images/feedback/feedback-1.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-1-480.webp",
+            "720": "assets/images/feedback/feedback-1.webp"
+        },
+        "revision": "23f6529146b7"
+    },
+    "42a7115943682e9b89d90d951e936db066796e57e77a8fd2a059ff685d0ae6c6": {
+        "source": "assets/images/mechanism/needle-serum-ax4.jpg",
+        "width": 1024,
+        "height": 1024,
+        "webp": "assets/images/mechanism/needle-serum-ax4.webp",
+        "srcset": {
+            "480": "assets/images/mechanism/needle-serum-ax4-480.webp",
+            "768": "assets/images/mechanism/needle-serum-ax4-768.webp",
+            "1024": "assets/images/mechanism/needle-serum-ax4.webp"
+        },
+        "revision": "ad180be32698"
+    },
+    "497b2c703e610b15bf8b7d6d642e97cc6df480430afbae0ae023278c399cd02e": {
+        "source": "assets/images/approved/497b2c703e610b15-fractional-cc-logo.png",
+        "width": 280,
+        "height": 68,
+        "webp": "assets/images/approved/497b2c703e610b15-fractional-cc-logo.webp",
+        "srcset": {
+            "280": "assets/images/approved/497b2c703e610b15-fractional-cc-logo.webp"
+        },
+        "revision": "135cd9d78ee5"
+    },
+    "4a3ff5dc7ad55cb21434f36121cd73c1cceee8ea3b2ab1c74e098bbd8e637f7d": {
+        "source": "assets/images/concerns/concern-lo-chan-long.png",
+        "width": 722,
+        "height": 960,
+        "webp": "assets/images/concerns/concern-lo-chan-long.webp",
+        "srcset": {
+            "480": "assets/images/concerns/concern-lo-chan-long-480.webp",
+            "722": "assets/images/concerns/concern-lo-chan-long.webp"
+        },
+        "revision": "bc9038f79bf3"
+    },
+    "51e11fdc0492d8c50d845800214304a2681c18050cafc8042c6d25316b4724f0": {
+        "source": "assets/images/approved/51e11fdc0492d8c5-mechanism-breakthrough.jpg",
+        "width": 1024,
+        "height": 1232,
+        "webp": "assets/images/approved/51e11fdc0492d8c5-mechanism-breakthrough.webp",
+        "srcset": {
+            "480": "assets/images/approved/51e11fdc0492d8c5-mechanism-breakthrough-480.webp",
+            "768": "assets/images/approved/51e11fdc0492d8c5-mechanism-breakthrough-768.webp",
+            "1024": "assets/images/approved/51e11fdc0492d8c5-mechanism-breakthrough.webp"
+        },
+        "revision": "f96814a232dc"
+    },
+    "5aa692ef4bcb4a526daf0ff34493f9fcda358c1313e6259cd2266d0da9930f8a": {
+        "source": "assets/images/mechanism/mechanism-breakthrough.jpg",
+        "width": 1024,
+        "height": 1241,
+        "webp": "assets/images/mechanism/mechanism-breakthrough.webp",
+        "srcset": {
+            "480": "assets/images/mechanism/mechanism-breakthrough-480.webp",
+            "768": "assets/images/mechanism/mechanism-breakthrough-768.webp",
+            "1024": "assets/images/mechanism/mechanism-breakthrough.webp"
+        },
+        "revision": "3a94c3a1f5d0"
+    },
+    "5d98c3f1a7542fdb8168bf55ed1886abb038b1bc53f0ef1cb16e9051257e4d01": {
+        "source": "assets/images/feedback/feedback-2.jpg",
+        "width": 550,
+        "height": 733,
+        "webp": "assets/images/feedback/feedback-2-jpg.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-2-jpg-480.webp",
+            "550": "assets/images/feedback/feedback-2-jpg.webp"
+        },
+        "revision": "82fd341e74b3"
+    },
+    "71efa66b9101a92cf43c51c539acb2491aec2e50a23a51e1054cd69997f55eca": {
+        "source": "assets/images/feedback/feedback-2.png",
+        "width": 960,
+        "height": 1280,
+        "webp": "assets/images/feedback/feedback-2.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-2-480.webp",
+            "720": "assets/images/feedback/feedback-2.webp"
+        },
+        "revision": "26b36cf68ec5"
+    },
+    "7b404bcf585142a4afcc012c343082ba73924efb0d5e35ad0613b27d7e0536e4": {
+        "source": "assets/images/concerns/concern-lao-hoa.png",
+        "width": 519,
+        "height": 640,
+        "webp": "assets/images/concerns/concern-lao-hoa.webp",
+        "srcset": {
+            "480": "assets/images/concerns/concern-lao-hoa-480.webp",
+            "519": "assets/images/concerns/concern-lao-hoa.webp"
+        },
+        "revision": "256f7377feb6"
+    },
+    "7cf2edfc8a5af7c97973f01f274dcdc0b3ff6b4b52b38c49c146e7c80ccc9c1b": {
+        "source": "assets/images/brand/fractional-cc-logo.png",
+        "width": 280,
+        "height": 68,
+        "webp": "assets/images/brand/fractional-cc-logo.webp",
+        "srcset": {
+            "280": "assets/images/brand/fractional-cc-logo.webp"
+        },
+        "revision": "83acabad61db"
+    },
+    "837aabe318688b0cb5def337414bd664951d7765d4348e3afffe67f2155f25f9": {
+        "source": "assets/images/approved/165b8e33abf2f21f-fractional-lineup-full-2.jpg",
+        "width": 1104,
+        "height": 941,
+        "webp": "assets/images/approved/165b8e33abf2f21f-fractional-lineup-full-2.webp",
+        "srcset": {
+            "480": "assets/images/approved/165b8e33abf2f21f-fractional-lineup-full-2-480.webp",
+            "768": "assets/images/approved/165b8e33abf2f21f-fractional-lineup-full-2-768.webp",
+            "1104": "assets/images/approved/165b8e33abf2f21f-fractional-lineup-full-2.webp"
+        },
+        "revision": "4335bffbd86e"
+    },
+    "93494332db2f17821ba63ef2648797c6d353b85031d2f04556fa4723fb489de3": {
+        "source": "assets/images/feedback/feedback-4.png",
+        "width": 960,
+        "height": 1280,
+        "webp": "assets/images/feedback/feedback-4.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-4-480.webp",
+            "720": "assets/images/feedback/feedback-4.webp"
+        },
+        "revision": "0c4c8cf424df"
+    },
+    "95f902e18c8e426ee5b8ab09e3e9204d429b4f691d9fa4103283c20add1b4bbe": {
+        "source": "assets/images/banner/hero-background.jpg",
+        "width": 1672,
+        "height": 941,
+        "webp": "assets/images/banner/hero-background.webp",
+        "srcset": {
+            "480": "assets/images/banner/hero-background-480.webp",
+            "768": "assets/images/banner/hero-background-768.webp",
+            "1200": "assets/images/banner/hero-background.webp"
+        },
+        "revision": "82e05e41499e"
+    },
+    "9930cbe340b71bcc92692880bcd981f4ca06a973bdce30671a2e363728d215a0": {
+        "source": "assets/images/brand/bui-dang-jp-logo.png",
+        "width": 316,
+        "height": 316,
+        "webp": "assets/images/brand/bui-dang-jp-logo.webp",
+        "srcset": {
+            "144": "assets/images/brand/bui-dang-jp-logo.webp"
+        },
+        "revision": "b3581c83ced8"
+    },
+    "99c691616ac479212f9aa8708b683a3a85d7f30764e72f59fb75dffdeff8d5fd": {
+        "source": "assets/images/products/pdrn-toning-essence.png",
+        "width": 376,
+        "height": 376,
+        "webp": "assets/images/products/pdrn-toning-essence.webp",
+        "srcset": {
+            "376": "assets/images/products/pdrn-toning-essence.webp"
+        },
+        "revision": "651ae8986a78"
+    },
+    "9e0b546663f4b7ecb1d9c42cb62127aada81e328de4941d75070c4abb6f8e53d": {
+        "source": "assets/images/feedback/feedback-7.png",
+        "width": 736,
+        "height": 552,
+        "webp": "assets/images/feedback/feedback-7.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-7-480.webp",
+            "720": "assets/images/feedback/feedback-7.webp"
+        },
+        "revision": "d574d1fae20e"
+    },
+    "9fa7913643293f43581acadb8571dec034ff5d89a1d106eced7d02c3acfac469": {
+        "source": "assets/images/products/needle-mask-a.png",
+        "width": 436,
+        "height": 436,
+        "webp": "assets/images/products/needle-mask-a.webp",
+        "srcset": {
+            "436": "assets/images/products/needle-mask-a.webp"
+        },
+        "revision": "bac8b1b79ba6"
+    },
+    "a065741b7c1376beff022be50c1eef0817877f9a87ad5517f90ba6edc8aed77f": {
+        "source": "assets/images/products/needle-serum-cx4.png",
+        "width": 457,
+        "height": 457,
+        "webp": "assets/images/products/needle-serum-cx4.webp",
+        "srcset": {
+            "457": "assets/images/products/needle-serum-cx4.webp"
+        },
+        "revision": "426c42b9ee05"
+    },
+    "b65161dc5cafed72ff899677c75cc64ef11251ba5811546f2ae499630f1f9042": {
+        "source": "assets/images/banner/combo-c-cx4-gold.png",
+        "width": 1268,
+        "height": 1241,
+        "webp": "assets/images/banner/combo-c-cx4-gold.webp",
+        "srcset": {
+            "480": "assets/images/banner/combo-c-cx4-gold-480.webp",
+            "768": "assets/images/banner/combo-c-cx4-gold-768.webp",
+            "1200": "assets/images/banner/combo-c-cx4-gold.webp"
+        },
+        "revision": "ee7da773efa9"
+    },
+    "b83662377a3d5297bc01acbce9eeab060040ceff48abc4c6a96a199b353d7097": {
+        "source": "assets/images/mechanism/needle-serum-poster-jp.jpg",
+        "width": 1000,
+        "height": 1000,
+        "webp": "assets/images/mechanism/needle-serum-poster-jp.webp",
+        "srcset": {
+            "480": "assets/images/mechanism/needle-serum-poster-jp-480.webp",
+            "768": "assets/images/mechanism/needle-serum-poster-jp-768.webp",
+            "1000": "assets/images/mechanism/needle-serum-poster-jp.webp"
+        },
+        "revision": "ed2211606998"
+    },
+    "bc39714a1ca83eaa4cc93e50686bf7d992f4893cea25209eb5205128c0a34d32": {
+        "source": "assets/images/products/needle-serum-ax4.png",
+        "width": 533,
+        "height": 533,
+        "webp": "assets/images/products/needle-serum-ax4.webp",
+        "srcset": {
+            "480": "assets/images/products/needle-serum-ax4-480.webp",
+            "533": "assets/images/products/needle-serum-ax4.webp"
+        },
+        "revision": "52e8381653ca"
+    },
+    "c23a45ca66b41fa1a40ad93c469d3aa366abe6d5649d77d5ee85a2755f72de20": {
+        "source": "assets/images/mechanism/needle-serum-a.jpg",
+        "width": 1024,
+        "height": 1024,
+        "webp": "assets/images/mechanism/needle-serum-a.webp",
+        "srcset": {
+            "480": "assets/images/mechanism/needle-serum-a-480.webp",
+            "768": "assets/images/mechanism/needle-serum-a-768.webp",
+            "1024": "assets/images/mechanism/needle-serum-a.webp"
+        },
+        "revision": "43a13ee10f70"
+    },
+    "c98e6b91ad1ce746f9b539a110841b93f00e97d3153b8fc01ca592bf58ef22c6": {
+        "source": "assets/images/feedback/feedback-3.jpg",
+        "width": 550,
+        "height": 733,
+        "webp": "assets/images/feedback/feedback-3-jpg.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-3-jpg-480.webp",
+            "550": "assets/images/feedback/feedback-3-jpg.webp"
+        },
+        "revision": "84a84bd13161"
+    },
+    "ca3717b18a7cf6292c90195072c5307c490216c0b65b5f93ecc468c9780ed9b9": {
+        "source": "assets/images/products/needle-serum-a.png",
+        "width": 577,
+        "height": 577,
+        "webp": "assets/images/products/needle-serum-a.webp",
+        "srcset": {
+            "480": "assets/images/products/needle-serum-a-480.webp",
+            "577": "assets/images/products/needle-serum-a.webp"
+        },
+        "revision": "d6066af3fe45"
+    },
+    "ca9b916845194253b74d742135da914bdb68dff259ecdde17cda4f6f61a696c4": {
+        "source": "assets/images/concerns/concern-tham-mun.png",
+        "width": 526,
+        "height": 701,
+        "webp": "assets/images/concerns/concern-tham-mun.webp",
+        "srcset": {
+            "480": "assets/images/concerns/concern-tham-mun-480.webp",
+            "526": "assets/images/concerns/concern-tham-mun.webp"
+        },
+        "revision": "be76a7cd6ae7"
+    },
+    "cc00f650eb2371e619ae17c0658522c0ca6521012f6494fe05b452518a81145e": {
+        "source": "assets/images/banner/combo-c-cx4.png",
+        "width": 1039,
+        "height": 1024,
+        "webp": "assets/images/banner/combo-c-cx4.webp",
+        "srcset": {
+            "480": "assets/images/banner/combo-c-cx4-480.webp",
+            "768": "assets/images/banner/combo-c-cx4-768.webp",
+            "1039": "assets/images/banner/combo-c-cx4.webp"
+        },
+        "revision": "c86de7a967b7"
+    },
+    "ce48ce121e7ec50b22f4a28ad1e7aadb278f19eaa389f40a7aa26f4dc66f4ff4": {
+        "source": "assets/images/feedback/feedback-3.png",
+        "width": 960,
+        "height": 1280,
+        "webp": "assets/images/feedback/feedback-3.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-3-480.webp",
+            "720": "assets/images/feedback/feedback-3.webp"
+        },
+        "revision": "bd275f928f96"
+    },
+    "d443d0ecd2d17c53ea1973efa709aa506a97711e59347541e7b2ac35f659b150": {
+        "source": "assets/images/feedback/feedback-1.jpg",
+        "width": 550,
+        "height": 690,
+        "webp": "assets/images/feedback/feedback-1-jpg.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-1-jpg-480.webp",
+            "550": "assets/images/feedback/feedback-1-jpg.webp"
+        },
+        "revision": "0b7931491ed5"
+    },
+    "d774aa8629a3b4b62beb6fbb275afb551449a7c34f7f74fb02cc3b6e9a7be363": {
+        "source": "assets/images/feedback/feedback-5.png",
+        "width": 720,
+        "height": 1280,
+        "webp": "assets/images/feedback/feedback-5.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-5-480.webp",
+            "720": "assets/images/feedback/feedback-5.webp"
+        },
+        "revision": "c9421e069372"
+    },
+    "d90d8a7988d5b85d4149464c1addb4732975c87c0520acb6a3f5cf5fc4352452": {
+        "source": "assets/images/banner/combo-visual.jpg",
+        "width": 768,
+        "height": 1506,
+        "webp": "assets/images/banner/combo-visual.webp",
+        "srcset": {
+            "480": "assets/images/banner/combo-visual-480.webp",
+            "768": "assets/images/banner/combo-visual.webp"
+        },
+        "revision": "f26a84ad6857"
+    },
+    "dabad47cad701da52d28948c960418155ade5b05e9b28289e15a5536ee4cd139": {
+        "source": "assets/images/approved/dabad47cad701da5-bui-dang-jp-logo.png",
+        "width": 316,
+        "height": 316,
+        "webp": "assets/images/approved/dabad47cad701da5-bui-dang-jp-logo.webp",
+        "srcset": {
+            "144": "assets/images/approved/dabad47cad701da5-bui-dang-jp-logo.webp"
+        },
+        "revision": "d8feae19ac66"
+    },
+    "e0814697ef4538a1dd225f528ce96a351cea1a70e4ea388ead77da61279705cc": {
+        "source": "assets/images/brand/fractional-cc-logo-white.png",
+        "width": 280,
+        "height": 68,
+        "webp": "assets/images/brand/fractional-cc-logo-white.webp",
+        "srcset": {
+            "280": "assets/images/brand/fractional-cc-logo-white.webp"
+        },
+        "revision": "39f2e51dc9ac"
+    },
+    "e7fb05663fd5de2b5c9b54d00a9de7213b87f491036120b668b3c2a1054e0bcd": {
+        "source": "assets/images/products/needle-mask-c.png",
+        "width": 645,
+        "height": 645,
+        "webp": "assets/images/products/needle-mask-c.webp",
+        "srcset": {
+            "480": "assets/images/products/needle-mask-c-480.webp",
+            "645": "assets/images/products/needle-mask-c.webp"
+        },
+        "revision": "33fd28255d0a"
+    },
+    "ed4b4a09e7ebd39a71d95f4efc2882c375493bf67213e84d664d30d912329f1f": {
+        "source": "assets/images/mechanism/mechanism-skincare-routine.jpg",
+        "width": 977,
+        "height": 1610,
+        "webp": "assets/images/mechanism/mechanism-skincare-routine.webp",
+        "srcset": {
+            "480": "assets/images/mechanism/mechanism-skincare-routine-480.webp",
+            "768": "assets/images/mechanism/mechanism-skincare-routine-768.webp",
+            "977": "assets/images/mechanism/mechanism-skincare-routine.webp"
+        },
+        "revision": "33105abb956a"
+    },
+    "f6da14ce413f6d7e8f4b7a3ef4b9dfef50466bf0847ded81fd1eef60f8edb0a6": {
+        "source": "assets/images/feedback/feedback-4.jpg",
+        "width": 550,
+        "height": 1192,
+        "webp": "assets/images/feedback/feedback-4-jpg.webp",
+        "srcset": {
+            "480": "assets/images/feedback/feedback-4-jpg-480.webp",
+            "550": "assets/images/feedback/feedback-4-jpg.webp"
+        },
+        "revision": "be2194d9be33"
+    },
+    "ff9834510de3ff95aa89b0fd13eecf8e11e9b1c3a0688e40fdee3ea23b255763": {
+        "source": "assets/images/brand/fractional-lineup-full.jpg",
+        "width": 1024,
+        "height": 730,
+        "webp": "assets/images/brand/fractional-lineup-full.webp",
+        "srcset": {
+            "480": "assets/images/brand/fractional-lineup-full-480.webp",
+            "768": "assets/images/brand/fractional-lineup-full-768.webp",
+            "1024": "assets/images/brand/fractional-lineup-full.webp"
+        },
+        "revision": "fac4ff5a7d07"
+    }
+}

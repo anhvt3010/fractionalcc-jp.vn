@@ -608,6 +608,7 @@ function initReviewSlider() {
     let activeIdx = 0;
     let minDiff = Infinity;
     const currentScroll = track.scrollLeft;
+    const maxScroll = track.scrollWidth - track.clientWidth - 10;
 
     allCards.forEach((card, idx) => {
       const cardLeft = card.offsetLeft - track.offsetLeft;
@@ -640,7 +641,6 @@ function initReviewSlider() {
       prevBtn.disabled = currentScroll <= 10;
     }
     if (nextBtn) {
-      const maxScroll = track.scrollWidth - track.clientWidth - 10;
       nextBtn.disabled = currentScroll >= maxScroll;
     }
   }

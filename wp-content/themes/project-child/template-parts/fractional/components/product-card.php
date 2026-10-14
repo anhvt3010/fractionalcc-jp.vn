@@ -5,7 +5,7 @@ $product = $args['product'];
 ?>
 <div class="product-card" data-id="<?php echo esc_attr( $product['id'] ); ?>" data-type="<?php echo esc_attr( $product['categoryType'] ); ?>" data-concerns="<?php echo esc_attr( implode( ' ', $product['skinConcerns'] ) ); ?>" data-search="<?php echo esc_attr( mb_strtolower( $product['name'] . ' ' . $product['shortName'] . ' ' . $product['tagline'] ) ); ?>">
 	<div class="product-thumb">
-		<img src="<?php echo esc_url( $product['image'] ); ?>" alt="<?php echo esc_attr( $product['imageAlt'] ); ?>" loading="lazy">
+		<?php echo project_child_fcc_picture_html( $product['image'], $product['imageAlt'], '', array( 'loading' => 'lazy', 'sizes' => '(min-width: 992px) 400px, 50vw' ) ); ?>
 		<span class="product-cbmp-tag"><?php echo project_child_fcc_text( 'fcc_ui_m_d43decf568f2', 'shared' ); ?> <?php echo esc_html( $product['cbmp'] ); ?></span>
 	</div>
 	<div class="product-info">

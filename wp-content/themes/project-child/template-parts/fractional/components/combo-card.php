@@ -46,11 +46,11 @@ $rating        = ! empty( $args['home'] ) ? (string) get_post_meta( $combo['id']
 ?>
 <div class="product-card product-card-combo" data-id="combo-<?php echo esc_attr( $combo['id'] ); ?>" data-type="combo" data-concerns="<?php echo esc_attr( $concerns_attr ); ?>" data-search="<?php echo esc_attr( $search_attr ); ?>">
 	<div class="product-thumb">
-		<img src="<?php echo esc_url( $combo['image'] ); ?>" alt="<?php echo esc_attr( $combo['name'] ); ?>" loading="lazy">
+		<?php echo project_child_fcc_picture_html( $combo['image'], $combo['name'], '', array( 'loading' => 'lazy', 'sizes' => '(min-width: 992px) 400px, 50vw' ) ); ?>
 		<span class="product-cbmp-tag"><?php echo esc_html( $badge_text ); ?></span>
 	</div>
 	<div class="product-info">
-		<span class="product-category-name" style="color: var(--color-accent-gold); font-weight: 700;"><?php echo project_child_fcc_text( 'fcc_ui_m_0154b155cb8d', 'shared' ); ?> <?php echo esc_html( $combo['code'] ); ?></span>
+		<span class="product-category-name"><?php echo project_child_fcc_text( 'fcc_ui_m_0154b155cb8d', 'shared' ); ?> <?php echo esc_html( $combo['code'] ); ?></span>
 		<?php if ( '' !== $rating ) : ?><div class="card-rating-row"><span class="card-rating-stars">★★★★★</span><span><?php echo esc_html( $rating ); ?></span></div><?php endif; ?>
 		<h3 class="product-title" title="<?php echo esc_attr( $combo['name'] ); ?>">
 			<a href="<?php echo esc_url( $detail_url ); ?>"><?php echo esc_html( $combo['shortName'] ?: $combo['name'] ); ?></a>

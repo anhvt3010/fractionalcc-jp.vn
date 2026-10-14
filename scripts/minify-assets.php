@@ -3,7 +3,7 @@
  * Minify CSS and JS assets in project-child.
  */
 
-$themeDir = 'wp-content/themes/project-child/assets/fractional/';
+$themeDir = dirname( __DIR__ ) . '/wp-content/themes/project-child/assets/fractional/';
 
 // 1. Minify style.css
 $cssPath = $themeDir . 'assets/css/style.css';
@@ -56,4 +56,14 @@ if ( file_exists( $jsPath ) ) {
     printf( "main.js: %d KB -> main.min.js: %d KB\n", round( filesize( $jsPath ) / 1024 ), round( strlen( $min ) / 1024 ) );
 }
 
-echo "Minification completed!\n";
+// One blocking stylesheet; font URLs already resolve relative to the bundle directory.
+$bundle = '';
+foreach ( array( 'fonts.css', 'assets/css/style.min.css', 'assets/css/responsive.min.css', 'wordpress.css' ) as $part ) {
+    $css = file_get_contents( $themeDir . $part );
+    $css = preg_replace( '!/\*.*?\*/!s', '', $css );
+    $css = preg_replace( '/\s+/', ' ', $css );
+    $css = preg_replace( '/\s*([{};])\s*/', '$1', $css );
+    $bundle .= trim( $css ) . "\n";
+}
+file_put_contents( $themeDir . 'site.min.css', $bundle );
+echo "Minification and site CSS bundle completed!\n";

@@ -1,0 +1,29 @@
+Release: 1.0.4
+Environment: isolated XAMPP on D:; WordPress fixture marker enabled.
+Release ZIPs extracted into a NEW WordPress/database fixture before activation.
+Runtime dependencies: Kadence parent, Project Child, ACF and Project Core.
+Core/theme release: 1.0.4; approved seed remains 1.0.2.
+No production deployment and no external messages sent.
+
+PASS: PHP lint on all PHP in both packages and scripts/verify-fractional-performance.php.
+PASS: 2644 approved snapshot initialization/media/content/relationship checks on clean ZIP install, including rerun preservation of edits/cleared fields.
+PASS: 149 image/HTML/cache/security checks against the installed release ZIPs.
+PASS: 219 email checks with real MIME captured; zero attachments; assets HTTP 200.
+PASS: 181 order snapshot/receipt/render/privacy checks.
+PASS: client consent/validation/duplicate prevention/response error regression checks.
+PASS: 1081 responsive browser checks; ten product pages, thirteen widths, tabs, gallery and buy modal.
+PASS: final screenshot review for mobile and desktop home layouts.
+PASS: ZIP CRC, expected inventory, one slug root and exact source byte comparison.
+
+Lighthouse 13.5.0, local mobile before/after:
+Performance 64 -> 67; Accessibility 92 -> 100; Best Practices 100 -> 100.
+FCP 4066.25ms -> 3462.69ms; LCP 19221.75ms -> 4741.93ms.
+Bytes transferred 3633705 -> 633068 (82.58% reduction).
+Final desktop: Performance 98, Accessibility 100, Best Practices 100; LCP 967.33ms.
+Local SEO stays 66 because local indexing/robots restrictions intentionally remain.
+XAMPP has no mod_deflate loaded; actual production compression/cache/CDN settings differ.
+CLI emits internal LanternError: NO_LCP from insights even though final LCP audits and Performance scores are populated.
+No guarantee that a fresh remote PSI run will never hit that internal tool warning.
+Mobile local LCP is still above the good threshold. Production must be remeasured after deployment.
+
+Temporary verification sites disabled after checks.

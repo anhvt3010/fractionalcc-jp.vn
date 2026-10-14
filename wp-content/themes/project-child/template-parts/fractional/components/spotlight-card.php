@@ -6,7 +6,7 @@ $item = $args['item'];
 <div class="duo-spotlight-card" data-featured-id="<?php echo esc_attr( $item['id'] ); ?>">
 	<div class="duo-card-main-split">
 		<div class="duo-card-visual">
-			<?php if ( $item['image'] ) : ?><img src="<?php echo esc_url( $item['image'] ); ?>" alt="<?php echo esc_attr( $item['alt'] ); ?>" loading="lazy"><?php endif; ?>
+			<?php echo project_child_fcc_picture_html( $item['image'], $item['alt'], '', array( 'loading' => 'lazy', 'sizes' => '(min-width: 992px) 360px, 80vw' ) ); ?>
 		</div>
 		<div class="duo-card-primary-info">
 			<h3 class="duo-title heading-serif"><?php echo esc_html( $item['spotlightTitle'] ); ?></h3>

@@ -1,0 +1,9 @@
+# Versioned public theme assets only. Never cache HTML, orders or admin endpoints here.
+<IfModule mod_headers.c>
+    <FilesMatch "\.(?:css|js|webp|woff2)$">
+        Header set Cache-Control "public, max-age=31536000"
+    </FilesMatch>
+</IfModule>
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/css text/javascript application/javascript application/json
+</IfModule>

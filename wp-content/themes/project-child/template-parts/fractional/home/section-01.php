@@ -32,6 +32,7 @@
                       'height'        => 432,
                       'loading'       => 'eager',
                       'fetchpriority' => 'high',
+                      'sizes'         => project_child_fcc_hero_image_sizes(),
                   )
               );
               ?>
