@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "packages": [
+    {
+      "package": "project-core-v1.0.5.zip",
+      "sha256": "e0cdf128469d968a0516e1f2b7fbe7e052e2be35240882ccfd117e28e2fd70a9",
+      "entries": 25,
+      "sourceMatches": true,
+      "crcValid": true
+    },
+    {
+      "package": "project-child-v1.0.5.zip",
+      "sha256": "21cfd10b439d8528f1ec6c6e274facb6587db21816ad030ba730e4fd8bbfcb8d",
+      "entries": 291,
+      "sourceMatches": true,
+      "crcValid": true
+    }
+  ]
+}

@@ -40,13 +40,12 @@ function project_core_fcc_register_fields() {
 		project_core_fcc_field( 'volume', 'Quy cách', 'text', array( 'wrapper' => array( 'width' => 25 ), 'instructions' => 'Dung tích, khối lượng hoặc số lượng theo bao bì; ghi kèm đơn vị.' ) ),
 		project_core_fcc_field( 'category', 'Phân loại theo hồ sơ', 'text', array( 'wrapper' => array( 'width' => 25 ), 'instructions' => 'Phân loại ghi trong hồ sơ. Bộ lọc website chọn ở tab Bộ lọc.' ) ),
 		project_core_fcc_field( 'tagline', 'Công dụng / mô tả ngắn', 'text', array( 'instructions' => 'Tóm tắt công dụng theo hồ sơ; hiển thị trên thẻ và trang chi tiết sản phẩm.' ) ),
-		project_core_fcc_field( 'image', 'Ảnh sản phẩm chính', 'image', array( 'return_format' => 'id', 'preview_size' => 'medium', 'mime_types' => 'jpg,jpeg,png,webp', 'instructions' => 'Ảnh dùng trên thẻ và trang sản phẩm. Thêm các ảnh chi tiết bằng block Thư viện ảnh trong trình soạn thảo bên trên.' ) ),
-		project_core_fcc_field( 'product_tab_content', 'Công dụng & cách dùng', 'tab', array( 'name' => '' ) ),
+		project_core_fcc_field( 'product_images_help', 'Ảnh sản phẩm', 'message', array( 'name' => '', 'message' => 'Chọn ảnh đại diện và sắp xếp thumbnail tại <a href="#fcc-product-media">khung Ảnh sản phẩm – đại diện & thứ tự</a> bên dưới. Dữ liệu lưu bằng thư viện ảnh WordPress hiện có.', 'esc_html' => 0 ) ),
+		project_core_fcc_field( 'product_tab_content', 'Công dụng & lưu ý', 'tab', array( 'name' => '' ) ),
 	);
 	foreach ( array(
 		'uspBullets' => array( 'Điểm nổi bật', 'Mỗi điểm nổi bật một dòng, theo nội dung đã duyệt.' ),
 		'targetUsers' => array( 'Đối tượng phù hợp', 'Mỗi đối tượng hoặc nhu cầu phù hợp một dòng, theo hồ sơ.' ),
-		'howToUse' => array( 'Hướng dẫn sử dụng', 'Mỗi bước một dòng, đúng thứ tự hướng dẫn trên bao bì hoặc hồ sơ.' ),
 		'notes' => array( 'Lưu ý', 'Ghi lưu ý sử dụng theo hồ sơ; xuống dòng để dễ đọc.' ),
 	) as $name => $definition ) {
 		$product[] = project_core_fcc_field( $name, $definition[0], 'textarea', array( 'wrapper' => array( 'width' => 50 ), 'rows' => 5, 'instructions' => $definition[1] ) );

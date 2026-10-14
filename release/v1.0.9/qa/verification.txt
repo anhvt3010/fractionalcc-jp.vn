@@ -1,0 +1,18 @@
+﻿PASS: source frozen in two installable ZIPs, Core/Child/defaults version 1.0.9, approved.
+PASS: current working XAMPP site inspected; current CMS content and whitelisted settings exported without running initialization on its database.
+PASS: 2724 clean ZIP installation/defaults/media/content/relationship/preservation checks.
+PASS: 67 upgrade/preservation/retired-field checks from 1.0.8; all content/metadata for 52 records unchanged.
+PASS: 83 product photo/avatar/order/permission/clearing checks; fixture restored.
+PASS: 149 image/HTML/cache/security checks; originals and CMS content untouched.
+PASS: 181 order snapshot/receipt/render/privacy checks across ten products and one combo; mail captured only.
+PASS: 219 email checks; zero MIME attachments; all image URLs HTTP 200; no mail sent.
+PASS: 82 security checks; fixture changes restored and mail captured.
+PASS: 2106 responsive/browser checks on ten products at 13 widths, image dialog/navigation/keyboard/focus/scroll, tabs, gallery and buy modal.
+PASS: home/catalog at 375px/1440px, images loaded, forced hover without zoom, no horizontal overflow or browser errors.
+PASS: desktop/mobile screenshots reviewed. Single-image gallery and 320px-high landscape popup verified.
+PASS: clean installation fixture has no debug log.
+PASS: PHP lint for every PHP file in both ZIPs and exporter; JS syntax for source/minified/browser verifier; git diff --check.
+PASS: ZIP roots, inventory, CRC and exact source bytes, SHA-256; secrets and operational data excluded.
+Environment: XAMPP PHP 8.2.12, WordPress 7.1.3, Kadence 1.5.2, ACF Free 6.8.10.
+Working site: Project Child/Kadence and Project Core/ACF; source 1.0.9; database seed remains 1.0.5 after export.
+Release checks use isolated marked local fixtures with blocked outbound mail. No production deployment or SMTP/DNS changes.

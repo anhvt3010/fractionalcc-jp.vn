@@ -114,6 +114,9 @@ function project_child_fcc_image_variant( $url ) {
 				}
 				$cache[ $url ] = array( 'url' => add_query_arg( 'ver', $variant['revision'], get_stylesheet_directory_uri() . '/assets/fractional/' . $variant['webp'] ), 'srcset' => implode( ', ', $srcset ), 'width' => $variant['width'], 'height' => $variant['height'] );
 			}
+		} elseif ( preg_match( '/\.webp$/i', $file ) ) {
+			$dimensions = getimagesize( $file );
+			if ( $dimensions ) { $cache[ $url ] = array( 'url' => $url, 'srcset' => '', 'width' => $dimensions[0], 'height' => $dimensions[1] ); }
 		} elseif ( preg_match( '/\.(png|jpe?g)$/i', $file ) ) {
 			$webp_file = preg_replace( '/\.(png|jpe?g)$/i', '.webp', $file );
 			if ( is_file( $webp_file ) && filemtime( $webp_file ) >= filemtime( $file ) ) {

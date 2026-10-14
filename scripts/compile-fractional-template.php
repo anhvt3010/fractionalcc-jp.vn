@@ -95,7 +95,7 @@ $product_bindings = array(
 	'pd-dossier-name' => 'name', 'pd-dossier-origin' => 'origin', 'pd-dossier-cbmp' => 'cbmp', 'pd-dossier-status' => 'legalStatus', 'pd-note-text' => 'notes',
 	'pd-callout-title' => 'callout_title', 'pd-callout-sub' => 'callout_subtitle',
 );
-$fragments = array( 'pd-gallery-thumbs' => 'gallery', 'pd-actives-grid' => 'actives', 'pd-steps-list' => 'steps', 'pd-related-combos' => 'combos', 'product-catalog-grid' => 'catalog' );
+$fragments = array( 'pd-gallery-thumbs' => 'gallery', 'pd-actives-grid' => 'actives', 'pd-related-combos' => 'combos', 'product-catalog-grid' => 'catalog' );
 
 foreach ( $pages as $kind => $page ) {
 	if ( 'product' !== $kind ) { $defaults['pages'][ $kind ] = array( 'title' => $page[1], 'slug' => $page[2], 'template' => 'templates/fractional-' . $kind . '.php', 'fields' => array() ); }

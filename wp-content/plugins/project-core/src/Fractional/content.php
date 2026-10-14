@@ -26,7 +26,8 @@ function project_core_fcc_register_content() {
 				'public' => $definition[2], 'show_ui' => true, 'show_in_rest' => 'fcc_product' === $type,
 				'show_in_menu' => 'project-website-content', 'has_archive' => false,
 				'rewrite' => $definition[2] ? array( 'slug' => 'san-pham', 'with_front' => false ) : false,
-				'supports' => 'fcc_product' === $type ? array( 'title', 'editor', 'thumbnail', 'page-attributes', 'revisions' ) : array( 'title', 'page-attributes', 'revisions' ),
+				// Product copy uses ACF; the unified media box edits the existing gallery blocks.
+				'supports' => array( 'title', 'page-attributes', 'revisions' ),
 				'capability_type' => 'page', 'map_meta_cap' => true,
 			)
 		);
@@ -56,6 +57,35 @@ function project_core_fcc_lines( $value ) {
 	return array_values( array_filter( array_map( 'trim', preg_split( '/\r\n|\r|\n/', (string) $value ) ) ) );
 }
 
+/** Gallery blocks remain the single ordered source for product images. */
+function project_core_fcc_gallery_ids( $post_id ) {
+	$ids = array();
+	foreach ( parse_blocks( (string) get_post_field( 'post_content', $post_id ) ) as $block ) {
+		if ( 'core/gallery' !== $block['blockName'] ) { continue; }
+		foreach ( $block['innerBlocks'] as $image ) {
+			$id = absint( $image['attrs']['id'] ?? 0 );
+			if ( $id && wp_attachment_is_image( $id ) ) { $ids[] = $id; }
+		}
+	}
+	return array_values( array_unique( $ids ) );
+}
+
+/** Shared by the initializer and the native media editor; other blocks survive. */
+function project_core_fcc_gallery_content( $content, $ids ) {
+	$images = '';
+	foreach ( $ids as $id ) {
+		$images .= '<!-- wp:image {"id":' . absint( $id ) . ',"sizeSlug":"full","linkDestination":"none"} --><figure class="wp-block-image size-full"><img src="' . esc_url( wp_get_attachment_url( $id ) ) . '" alt="' . esc_attr( get_post_meta( $id, '_wp_attachment_image_alt', true ) ) . '" class="wp-image-' . absint( $id ) . '"/></figure><!-- /wp:image -->';
+	}
+	$gallery = $images ? '<!-- wp:gallery {"linkTo":"none"} --><figure class="wp-block-gallery has-nested-images columns-default is-cropped">' . $images . '</figure><!-- /wp:gallery -->' : '';
+	$result = ''; $inserted = false;
+	foreach ( parse_blocks( $content ) as $block ) {
+		if ( 'core/gallery' === $block['blockName'] ) {
+			if ( ! $inserted ) { $result .= $gallery; $inserted = true; }
+		} else { $result .= serialize_block( $block ); }
+	}
+	return $result . ( $inserted ? '' : $gallery );
+}
+
 function project_core_fcc_product( $post_id, $with_details = true ) {
 	$post = get_post( $post_id );
 	if ( ! $post || 'fcc_product' !== $post->post_type || 'publish' !== $post->post_status ) {
@@ -71,7 +101,7 @@ function project_core_fcc_product( $post_id, $with_details = true ) {
 		$data[ $field ] = '' === $value ? null : (float) $value;
 	}
 	$data['saveAmount'] = null !== $data['salePrice'] && null !== $data['originalPrice'] ? max( 0, $data['originalPrice'] - $data['salePrice'] ) : 0;
-	foreach ( array( 'uspBullets', 'targetUsers', 'howToUse' ) as $field ) {
+	foreach ( array( 'uspBullets', 'targetUsers' ) as $field ) {
 		$data[ $field ] = project_core_fcc_lines( get_post_meta( $post->ID, 'fcc_' . $field, true ) );
 	}
 	$data['skinConcerns'] = (array) get_post_meta( $post->ID, 'fcc_skinConcerns', true );
@@ -80,17 +110,20 @@ function project_core_fcc_product( $post_id, $with_details = true ) {
 	$data['imageAlt'] = $image_id ? (string) get_post_meta( $image_id, '_wp_attachment_image_alt', true ) : '';
 	if ( '' === $data['imageAlt'] ) { $data['imageAlt'] = $data['name']; }
 	if ( ! $with_details ) { return $data; }
-	$data['gallery'] = array_filter( array( $data['image'] ) );
-	$data['galleryAlts'] = $data['image'] ? array( $data['image'] => $data['imageAlt'] ) : array();
-	foreach ( parse_blocks( $post->post_content ) as $block ) {
-		if ( 'core/gallery' === $block['blockName'] ) {
-			foreach ( $block['innerBlocks'] as $image ) {
-				$id = isset( $image['attrs']['id'] ) ? absint( $image['attrs']['id'] ) : 0;
-				$url = $id ? wp_get_attachment_image_url( $id, 'full' ) : '';
-				if ( $url ) { $data['gallery'][] = $url; $alt = (string) get_post_meta( $id, '_wp_attachment_image_alt', true ); $data['galleryAlts'][ $url ] = $alt ?: $data['name']; }
-			}
+	$data['gallery'] = array();
+	$data['galleryAlts'] = array();
+	$data['galleryThumbs'] = array();
+	foreach ( project_core_fcc_gallery_ids( $post_id ) as $id ) {
+		$url = wp_get_attachment_image_url( $id, 'full' );
+		if ( $url ) {
+			$data['gallery'][] = $url;
+			$alt = (string) get_post_meta( $id, '_wp_attachment_image_alt', true );
+			$data['galleryAlts'][ $url ] = $alt ?: $data['name'];
+			$data['galleryThumbs'][ $url ] = wp_get_attachment_image_url( $id, 'thumbnail' ) ?: $url;
 		}
 	}
+	if ( $data['image'] && ! in_array( $data['image'], $data['gallery'], true ) ) { array_unshift( $data['gallery'], $data['image'] ); }
+	if ( $data['image'] ) { $data['galleryAlts'][ $data['image'] ] = $data['imageAlt']; $data['galleryThumbs'][ $data['image'] ] = wp_get_attachment_image_url( $image_id, 'thumbnail' ) ?: $data['image']; }
 	$data['gallery'] = array_values( array_unique( $data['gallery'] ) );
 	$data['actives'] = array();
 	$ingredient_ids = array_filter( array_map( 'absint', (array) get_post_meta( $post->ID, 'fcc_actives', true ) ) );

@@ -131,6 +131,7 @@ function project_core_fcc_initialize( $content_status = null, $update_catalog = 
 
 /** Only replace an initializer-owned gallery; preserve manually authored blocks. */
 function project_core_fcc_is_seeded_gallery( $id ) {
+	if ( get_post_meta( $id, '_fcc_product_media_customized', true ) ) { return false; }
 	if ( ! get_post_meta( $id, '_fcc_gallery_initialized', true ) ) { return false; }
 	$content = get_post_field( 'post_content', $id );
 	if ( '' === $content ) { return true; }
@@ -188,13 +189,13 @@ function project_core_fcc_import_document( $data, $content_status, $update_catal
 		$result = project_core_fcc_seed_snapshot_fields( $id, $product['fields'] ?? array() ); if ( is_wp_error( $result ) ) { return $result; }
 		$replace_gallery = $update_catalog && project_core_fcc_is_seeded_gallery( $id );
 		if ( ! metadata_exists( 'post', $id, '_fcc_gallery_initialized' ) || $replace_gallery ) {
-			$blocks = '';
+			$gallery_ids = array();
 			foreach ( $product['gallery'] as $path ) {
 				$media_id = project_core_fcc_seed_media( $path ); if ( is_wp_error( $media_id ) ) { return $media_id; }
-				$blocks .= '<!-- wp:image {"id":' . $media_id . ',"sizeSlug":"full","linkDestination":"none"} --><figure class="wp-block-image size-full"><img src="' . esc_url( wp_get_attachment_url( $media_id ) ) . '" alt="" class="wp-image-' . $media_id . '"/></figure><!-- /wp:image -->';
+				$gallery_ids[] = $media_id;
 			}
 			if ( '' === get_post_field( 'post_content', $id ) || $replace_gallery ) {
-				$updated = wp_update_post( array( 'ID' => $id, 'post_content' => '<!-- wp:gallery {"linkTo":"none"} --><figure class="wp-block-gallery has-nested-images columns-default is-cropped">' . $blocks . '</figure><!-- /wp:gallery -->' ), true );
+				$updated = wp_update_post( wp_slash( array( 'ID' => $id, 'post_content' => project_core_fcc_gallery_content( '', $gallery_ids ) ) ), true );
 				if ( is_wp_error( $updated ) ) { return $updated; }
 			}
 			add_post_meta( $id, '_fcc_gallery_initialized', 1, true );
@@ -228,6 +229,8 @@ function project_core_fcc_import_document( $data, $content_status, $update_catal
 		update_option( 'page_on_front', $ids['home'] );
 		update_option( 'show_on_front', 'page' );
 	}
+	$media_update = project_core_fcc_upgrade_media( $data );
+	if ( is_wp_error( $media_update ) ) { return $media_update; }
 	update_option( 'project_core_fcc_seed_version', $data['version'], false );
 	flush_rewrite_rules( false );
 	return $ids;

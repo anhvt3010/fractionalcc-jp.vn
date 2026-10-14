@@ -45,7 +45,19 @@ function project_core_fcc_validate_snapshot( $data ) {
 			foreach ( $matches[1] as $path ) { if ( ! isset( $data['media'][ $path ] ) ) { return $error; } }
 		}
 	}
-	foreach ( $data['media'] ?? array() as $path => $media ) {
+	if ( isset( $data['mediaUpdate'] ) ) {
+		$update = $data['mediaUpdate'];
+		if ( ! is_array( $update ) || empty( $update['version'] ) || ! is_string( $update['version'] ) || ! preg_match( '/^\d+\.\d+\.\d+$/', $update['version'] ) || ! isset( $update['products'], $update['previousMedia'] ) || ! is_array( $update['products'] ) || ! is_array( $update['previousMedia'] ) ) { return $error; }
+		$seen = array();
+		foreach ( $update['products'] as $change ) {
+			if ( ! is_array( $change ) || ! isset( $change['id'], $change['previousImage'], $change['previousGallery'] ) || ! is_int( $change['id'] ) || isset( $seen[ $change['id'] ] ) || ! in_array( 'product_' . $change['id'], $sources, true ) || ! is_array( $change['previousGallery'] ) ) { return $error; }
+			$seen[ $change['id'] ] = true;
+			foreach ( array_merge( array( $change['previousImage'] ), $change['previousGallery'] ) as $path ) {
+				if ( ! is_string( $path ) || ( ! isset( $data['media'][ $path ] ) && ! isset( $update['previousMedia'][ $path ] ) ) ) { return $error; }
+			}
+		}
+	}
+	foreach ( array_merge( $data['media'] ?? array(), $data['mediaUpdate']['previousMedia'] ?? array() ) as $path => $media ) {
 		if ( ! preg_match( '#^assets/images/[a-zA-Z0-9/_-]+\.(png|jpe?g|webp)$#', $path ) || ! isset( $media['sha256'] ) || ! preg_match( '/^[a-f0-9]{64}$/', $media['sha256'] ) ) { return $error; }
 		$file = get_stylesheet_directory() . '/assets/fractional/' . $path;
 		if ( ! is_readable( $file ) || hash_file( 'sha256', $file ) !== $media['sha256'] || ! in_array( wp_get_image_mime( $file ), array( 'image/png', 'image/jpeg', 'image/webp' ), true ) ) { return new WP_Error( 'fcc_snapshot_media', 'Ảnh đóng gói không khớp nội dung đã chốt.' ); }

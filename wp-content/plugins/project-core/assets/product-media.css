@@ -1,0 +1,8 @@
+.fcc-media-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.fcc-media-list > li { width: 165px; padding: 12px; border: 1px solid #c3c4c7; background: #fff; cursor: move; }
+.fcc-media-list img { display: block; width: 100%; height: 130px; object-fit: contain; background: #f6f7f7; }
+.fcc-media-title { display: block; min-height: 40px; margin: 8px 0; overflow-wrap: anywhere; }
+.fcc-media-list .button { margin: 2px; }
+.fcc-media-list [aria-pressed="true"] { color: #fff; background: #2271b1; }
+.fcc-media-list .ui-sortable-placeholder { visibility: visible !important; background: #f0f6fc; border-style: dashed; }
+@media (max-width: 600px) { .fcc-media-list > li { width: calc(50% - 32px); } }

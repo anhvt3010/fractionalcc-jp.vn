@@ -1,5 +1,7 @@
 # Setup và workflow XAMPP
 
+> Bản chốt ngày 15/10/2026: release/defaults **[1.0.9](../release/v1.0.9/RELEASE.md)** tổng hợp code hiện tại và xuất lại nội dung/thiết lập mặc định từ CMS. Đã xác nhận site làm việc chạy tại `D:/xampp/htdocs/fractionalcc-jp.vn`, URL `http://localhost/fractionalcc-jp.vn`, dùng Project Child/Kadence và Project Core/ACF. Source Core/Child là 1.0.9; mốc seed trong database làm việc trước cập nhật vẫn là 1.0.5. Việc xuất defaults không chạy initializer hoặc thay nội dung database làm việc. Đã kiểm tra cài mới/nâng cấp từ ZIP trên site/database riêng ở ổ D:; chưa cập nhật hosting. Các mốc C: và phiên bản bên dưới là lịch sử.
+
 > Hiện hành ngày 14/10/2026: [release 1.0.1](../release/v1.0.1/RELEASE.md), [defaults đã duyệt](APPROVED-DEFAULTS.md), seed version 1.0.1. Runtime dùng Project Child/Kadence và Project Core/ACF, homepage ID 24, 30 Media. Các mô tả phiên bản trước bên dưới là lịch sử.
 
 > Rà soát `0.3.5`: site hiện tại đã chạy lại initializer có kiểm soát, giữ nguyên 53 bản ghi nội dung, cấu hình trang chủ và số attachment. Cài mới đã kiểm tra thứ tự kích hoạt, dependency thiếu, khôi phục khóa quá hạn và các lỗi package. [Hồ sơ kiểm tra](../release/v1.0.0/RELEASE.md). Không cần reset hoặc cập nhật lại catalog của site đang dùng.

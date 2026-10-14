@@ -61,7 +61,12 @@ foreach ( $data['pages'] as $scope => &$page ) {
 	$id = $pages[ $scope ]; $post = get_post( $id );
 	$page['title'] = $post->post_title; $page['slug'] = $post->post_name; $page['content'] = fcc_export_value( $post->post_content ); $page['excerpt'] = fcc_export_value( $post->post_excerpt ); $page['menuOrder'] = (int) $post->menu_order;
 	$names = array_unique( array_merge( array_keys( $page['fields'] ), array_filter( array_keys( get_post_meta( $id ) ), function ( $name ) { return 0 === strpos( $name, 'fcc_' ) && 0 !== strpos( $name, 'fcc_regimen_' ); } ) ) );
-	foreach ( $names as $name ) { $page['fields'][ $name ] = fcc_export_field( $id, $name, $page['fields'][ $name ] ?? array() ); }
+	foreach ( $names as $name ) {
+		$key = get_post_meta( $id, '_' . $name, true ) ?: 'field_' . $name;
+		// Keep declared defaults, but do not resurrect fields retired from the CMS.
+		if ( ! isset( $page['fields'][ $name ] ) && ! acf_get_field( $key ) ) { continue; }
+		$page['fields'][ $name ] = fcc_export_field( $id, $name, $page['fields'][ $name ] ?? array() );
+	}
 }
 unset( $page );
 $products = array(); $used_ingredients = array();
@@ -70,7 +75,7 @@ foreach ( project_core_fcc_posts( 'fcc_product' ) as $post ) {
 	$old = array_values( array_filter( $data['products'], function ( $entry ) use ( $source_id ) { return $source_id === $entry['id']; } ) );
 	$product = array( 'id' => $source_id, 'name' => $post->post_title, 'slug' => $post->post_name, 'menuOrder' => (int) $post->menu_order, 'content' => fcc_export_value( $post->post_content ), 'excerpt' => fcc_export_value( $post->post_excerpt ), 'gallery' => array(), 'actives' => array(), 'fields' => array() );
 	foreach ( array_keys( $old[0] ?? project_core_fcc_product( $post->ID ) ) as $name ) {
-		if ( in_array( $name, array( 'id', 'name', 'slug', 'menuOrder', 'content', 'excerpt', 'gallery', 'actives', 'fields', 'url', 'imageAlt', 'galleryAlts', 'saveAmount' ), true ) ) { continue; }
+		if ( in_array( $name, array( 'id', 'name', 'slug', 'menuOrder', 'content', 'excerpt', 'gallery', 'actives', 'fields', 'url', 'imageAlt', 'galleryAlts', 'galleryThumbs', 'saveAmount' ), true ) ) { continue; }
 		$product[ $name ] = 'image' === $name ? fcc_export_media( get_post_meta( $post->ID, 'fcc_image', true ) ) : fcc_export_value( get_post_meta( $post->ID, 'fcc_' . $name, true ) );
 	}
 	foreach ( parse_blocks( $post->post_content ) as $block ) { if ( 'core/gallery' === $block['blockName'] ) { foreach ( $block['innerBlocks'] as $image ) { if ( ! empty( $image['attrs']['id'] ) ) { $product['gallery'][] = fcc_export_media( $image['attrs']['id'] ); } } } }
@@ -78,7 +83,7 @@ foreach ( project_core_fcc_posts( 'fcc_product' ) as $post ) {
 		$ingredient = get_post( $ingredient_id ); $used_ingredients[] = (int) $ingredient_id;
 		$product['actives'][] = array( 'name' => $ingredient->post_title, 'slug' => $ingredient->post_name, 'source' => $sources[ $ingredient_id ], 'tag' => get_post_meta( $ingredient_id, 'fcc_tag', true ), 'desc' => get_post_meta( $ingredient_id, 'fcc_description', true ) );
 	}
-	foreach ( array_keys( get_post_meta( $post->ID ) ) as $name ) { if ( 0 === strpos( $name, 'fcc_' ) && ! array_key_exists( substr( $name, 4 ), $product ) ) { $product['fields'][ $name ] = fcc_export_field( $post->ID, $name ); } }
+	foreach ( array_keys( get_post_meta( $post->ID ) ) as $name ) { if ( 0 === strpos( $name, 'fcc_' ) && ! array_key_exists( substr( $name, 4 ), $product ) && acf_get_field( get_post_meta( $post->ID, '_' . $name, true ) ?: 'field_' . $name ) ) { $product['fields'][ $name ] = fcc_export_field( $post->ID, $name ); } }
 	$products[] = $product;
 }
 $combos = array();
@@ -87,7 +92,7 @@ foreach ( project_core_fcc_posts( 'fcc_combo' ) as $post ) {
 	$old = array_values( array_filter( $data['combos'], function ( $entry ) use ( $combo_id ) { return $combo_id === (string) $entry['id']; } ) );
 	$combo = array( 'id' => $combo_id, 'name' => $post->post_title, 'slug' => $post->post_name, 'menuOrder' => (int) $post->menu_order, 'content' => fcc_export_value( $post->post_content ), 'excerpt' => fcc_export_value( $post->post_excerpt ), 'fields' => array() );
 	foreach ( array_keys( $old[0] ?? array() ) as $name ) { if ( in_array( $name, array( 'id', 'name', 'slug', 'menuOrder', 'content', 'excerpt', 'fields' ), true ) ) { continue; } $value = get_post_meta( $post->ID, 'fcc_' . $name, true ); if ( 'image' === $name ) { $value = fcc_export_media( $value ); } elseif ( 'productIds' === $name ) { $value = array_map( function ( $id ) { return absint( get_post_meta( $id, '_fcc_source_id', true ) ); }, (array) $value ); } $combo[ $name ] = fcc_export_value( $value ); }
-	foreach ( array_keys( get_post_meta( $post->ID ) ) as $name ) { if ( 0 === strpos( $name, 'fcc_' ) && ! array_key_exists( substr( $name, 4 ), $combo ) ) { $combo['fields'][ $name ] = fcc_export_field( $post->ID, $name ); } }
+	foreach ( array_keys( get_post_meta( $post->ID ) ) as $name ) { if ( 0 === strpos( $name, 'fcc_' ) && ! array_key_exists( substr( $name, 4 ), $combo ) && acf_get_field( get_post_meta( $post->ID, '_' . $name, true ) ?: 'field_' . $name ) ) { $combo['fields'][ $name ] = fcc_export_field( $post->ID, $name ); } }
 	$combos[] = $combo;
 }
 $data['ingredients'] = array();

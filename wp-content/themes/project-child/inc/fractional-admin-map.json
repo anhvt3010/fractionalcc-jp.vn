@@ -475,6 +475,34 @@
             "fcc_ui_feedback_ugc_alt_7": {
                 "label": "Đánh giá 7 – mô tả ảnh minh họa",
                 "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
+            },
+            "fcc_review_avatar_1": {
+                "label": "Avatar nh? ? th? ??nh gi? 1",
+                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+            },
+            "fcc_review_avatar_2": {
+                "label": "Avatar nh? ? th? ??nh gi? 2",
+                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+            },
+            "fcc_review_avatar_3": {
+                "label": "Avatar nh? ? th? ??nh gi? 3",
+                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+            },
+            "fcc_review_avatar_4": {
+                "label": "Avatar nh? ? th? ??nh gi? 4",
+                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+            },
+            "fcc_review_avatar_5": {
+                "label": "Avatar nh? ? th? ??nh gi? 5",
+                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+            },
+            "fcc_review_avatar_6": {
+                "label": "Avatar nh? ? th? ??nh gi? 6",
+                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+            },
+            "fcc_review_avatar_7": {
+                "label": "Avatar nh? ? th? ??nh gi? 7",
+                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
             }
         }
     },
@@ -515,16 +543,16 @@
                 "note": "D?ng ??nh gi? d?ng chung c?a b? c?c c?, hi?n kh?ng s? d?ng. S?a ?i?m v? s? ??nh gi? ? t?ng S?n ph?m; trang chi ti?t v? danh m?c d?ng c?ng d? li?u."
             },
             "fcc_ui_476e0450734143": {
-                "label": "Nhãn thông tin xuất xứ trên trang sản phẩm"
+                "label": "Nhãn cam kết 100% Chính Hãng Nhật Bản"
             },
             "fcc_ui_bcf7198870556e": {
-                "label": "Nhãn thông tin công thức trên trang sản phẩm"
+                "label": "Nhãn cam kết Lành Tính & Chuẩn Da Liễu"
             },
             "fcc_ui_a4761e5516401e": {
-                "label": "Nhãn thông tin pháp lý trên trang sản phẩm"
+                "label": "Nhãn cam kết Đã Công Bố Bộ Y Tế"
             },
             "fcc_ui_3a43752a881468": {
-                "label": "Nhãn đơn vị phân phối trên trang sản phẩm"
+                "label": "Nhãn cam kết Đồng Kiểm Khi Nhận Hàng"
             },
             "fcc_ui_2cacb01c3941c0": {
                 "label": "Tên tab đối tượng phù hợp"
@@ -612,8 +640,8 @@
         }
     },
     "product_guide": {
-        "label": "14. Sản phẩm – hướng dẫn & combo",
-        "description": "Tiêu đề và đoạn giới thiệu cho phần thành phần, hướng dẫn sử dụng và combo gợi ý trên trang sản phẩm. Các thành phần/bước dùng cụ thể lấy từ hồ sơ Sản phẩm.",
+        "label": "14. Sản phẩm – thành phần & combo",
+        "description": "Tiêu đề và đoạn giới thiệu cho phần thành phần, cơ chế hoạt động và combo gợi ý trên trang sản phẩm. Thẻ hoạt chất và lưu ý lấy từ hồ sơ Sản phẩm; hướng dẫn sử dụng nằm trong thumbnail.",
         "page": "product",
         "fragment": "",
         "fields": {
@@ -621,16 +649,10 @@
                 "label": "Tiêu đề khối thành phần/công nghệ"
             },
             "fcc_ui_5adcdfe588f53d": {
-                "label": "Tiêu đề phụ khối thành phần"
-            },
-            "fcc_ui_42526f178a133b": {
-                "label": "Tiêu đề khối cách sử dụng"
+                "label": "Tiêu đề khối thành phần & cơ chế hoạt động"
             },
             "fcc_ui_2ec853bc877a83": {
                 "label": "Đoạn giới thiệu trước hướng dẫn dùng"
-            },
-            "fcc_ui_e9dfbe7e600722": {
-                "label": "Tiêu đề danh sách bước sử dụng"
             },
             "fcc_ui_cfd8da94dbbe98": {
                 "label": "Tiêu đề khối combo gợi ý"

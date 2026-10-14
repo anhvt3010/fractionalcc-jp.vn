@@ -1,0 +1,287 @@
+{
+  "version": "1.0.5",
+  "files": [
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Mandelic Shot Peel Essence/JP (11).png",
+      "asset": "assets/images/thumbnail/mandelic-shot-peel-essence-01.webp",
+      "sourceBytes": 285378,
+      "webpBytes": 18340
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Mandelic Shot Peel Essence/PQA (13).png",
+      "asset": "assets/images/thumbnail/mandelic-shot-peel-essence-02.webp",
+      "sourceBytes": 963742,
+      "webpBytes": 95342
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Mandelic Shot Peel Essence/61b08324-5062-4493-95a6-5bacfd139a0c.jpg",
+      "asset": "assets/images/thumbnail/mandelic-shot-peel-essence-03.webp",
+      "sourceBytes": 202965,
+      "webpBytes": 96470
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Mandelic Shot Peel Essence/PQA (1).png",
+      "asset": "assets/images/thumbnail/mandelic-shot-peel-essence-04.webp",
+      "sourceBytes": 542512,
+      "webpBytes": 89274
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum A Face Mask/JP (8).png",
+      "asset": "assets/images/thumbnail/needle-serum-a-face-mask-01.webp",
+      "sourceBytes": 546273,
+      "webpBytes": 49464
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum A Face Mask/JP.png",
+      "asset": "assets/images/thumbnail/needle-serum-a-face-mask-02.webp",
+      "sourceBytes": 905847,
+      "webpBytes": 56010
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum A Face Mask/PQA (14).png",
+      "asset": "assets/images/thumbnail/needle-serum-a-face-mask-03.webp",
+      "sourceBytes": 746692,
+      "webpBytes": 73232
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum A Face Mask/JP (1).png",
+      "asset": "assets/images/thumbnail/needle-serum-a-face-mask-04.webp",
+      "sourceBytes": 517219,
+      "webpBytes": 73964
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum A (Chống lão hóa)/JP (12).png",
+      "asset": "assets/images/thumbnail/needle-serum-a-01.webp",
+      "sourceBytes": 301961,
+      "webpBytes": 28900
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum A (Chống lão hóa)/PQA (10).png",
+      "asset": "assets/images/thumbnail/needle-serum-a-02.webp",
+      "sourceBytes": 987213,
+      "webpBytes": 95004
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum A (Chống lão hóa)/4455c482-e78d-4507-bc8f-78fe3ab6f0c5.jpg",
+      "asset": "assets/images/thumbnail/needle-serum-a-03.webp",
+      "sourceBytes": 167294,
+      "webpBytes": 68222
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum A (Chống lão hóa)/PQA (11).png",
+      "asset": "assets/images/thumbnail/needle-serum-a-04.webp",
+      "sourceBytes": 700040,
+      "webpBytes": 61464
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum AX4 (Chuyên sâu X4)/JP (14).png",
+      "asset": "assets/images/thumbnail/needle-serum-ax4-01.webp",
+      "sourceBytes": 382271,
+      "webpBytes": 38766
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum AX4 (Chuyên sâu X4)/JP (2).png",
+      "asset": "assets/images/thumbnail/needle-serum-ax4-02.webp",
+      "sourceBytes": 852358,
+      "webpBytes": 70606
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum AX4 (Chuyên sâu X4)/JP (3).png",
+      "asset": "assets/images/thumbnail/needle-serum-ax4-03.webp",
+      "sourceBytes": 592813,
+      "webpBytes": 65596
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum AX4 (Chuyên sâu X4)/JP (4).png",
+      "asset": "assets/images/thumbnail/needle-serum-ax4-04.webp",
+      "sourceBytes": 869204,
+      "webpBytes": 87210
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum C Face Mask/JP (18).png",
+      "asset": "assets/images/thumbnail/needle-serum-c-face-mask-01.webp",
+      "sourceBytes": 734685,
+      "webpBytes": 76966
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum C Face Mask/JP (29).png",
+      "asset": "assets/images/thumbnail/needle-serum-c-face-mask-02.webp",
+      "sourceBytes": 851382,
+      "webpBytes": 72136
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum C Face Mask/JP (28).png",
+      "asset": "assets/images/thumbnail/needle-serum-c-face-mask-03.webp",
+      "sourceBytes": 762020,
+      "webpBytes": 62774
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum C Face Mask/JP (30).png",
+      "asset": "assets/images/thumbnail/needle-serum-c-face-mask-04.webp",
+      "sourceBytes": 556663,
+      "webpBytes": 77812
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum C (Dưỡng sáng)/JP (16).png",
+      "asset": "assets/images/thumbnail/needle-serum-c-01.webp",
+      "sourceBytes": 535627,
+      "webpBytes": 60580
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum C (Dưỡng sáng)/FCC_C_-2_0dbbe165-d76a-4011-bb6c-05d6e7929fd6.webp",
+      "asset": "assets/images/thumbnail/needle-serum-c-02.webp",
+      "sourceBytes": 51782,
+      "webpBytes": 48920
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum C (Dưỡng sáng)/JP (5).png",
+      "asset": "assets/images/thumbnail/needle-serum-c-03.webp",
+      "sourceBytes": 744473,
+      "webpBytes": 87288
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum C (Dưỡng sáng)/JP (6).png",
+      "asset": "assets/images/thumbnail/needle-serum-c-04.webp",
+      "sourceBytes": 677287,
+      "webpBytes": 67386
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum CX4 (Dưỡng sáng X4)/JP (17).png",
+      "asset": "assets/images/thumbnail/needle-serum-cx4-01.webp",
+      "sourceBytes": 352842,
+      "webpBytes": 36680
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum CX4 (Dưỡng sáng X4)/JP (25).png",
+      "asset": "assets/images/thumbnail/needle-serum-cx4-02.webp",
+      "sourceBytes": 753709,
+      "webpBytes": 69796
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum CX4 (Dưỡng sáng X4)/JP (27).png",
+      "asset": "assets/images/thumbnail/needle-serum-cx4-03.webp",
+      "sourceBytes": 451463,
+      "webpBytes": 46466
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/Needle Serum CX4 (Dưỡng sáng X4)/JP (26).png",
+      "asset": "assets/images/thumbnail/needle-serum-cx4-04.webp",
+      "sourceBytes": 644389,
+      "webpBytes": 69122
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot 1000+ Toning Essence/JP (9).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-1000-toning-essence-01.webp",
+      "sourceBytes": 622379,
+      "webpBytes": 65860
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot 1000+ Toning Essence/JP (24).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-1000-toning-essence-02.webp",
+      "sourceBytes": 991771,
+      "webpBytes": 73786
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot 1000+ Toning Essence/JP (22).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-1000-toning-essence-03.webp",
+      "sourceBytes": 643544,
+      "webpBytes": 73792
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot 1000+ Toning Essence/JP (23).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-1000-toning-essence-04.webp",
+      "sourceBytes": 287902,
+      "webpBytes": 58232
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot Lip Essence (Không màu)/JP (10).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-lip-essence-01.webp",
+      "sourceBytes": 620398,
+      "webpBytes": 51750
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot Lip Essence (Không màu)/JP (21).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-lip-essence-02.webp",
+      "sourceBytes": 625541,
+      "webpBytes": 73326
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot Lip Essence (Không màu)/JP (31).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-lip-essence-03.webp",
+      "sourceBytes": 640957,
+      "webpBytes": 73546
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot Lip Essence (Không màu)/JP (19).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-lip-essence-04.webp",
+      "sourceBytes": 508841,
+      "webpBytes": 64564
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot Lip Plumper (Có màu)/JP (13).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-lip-plumper-01.webp",
+      "sourceBytes": 741019,
+      "webpBytes": 62684
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot Lip Plumper (Có màu)/JP (20).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-lip-plumper-02.webp",
+      "sourceBytes": 652289,
+      "webpBytes": 83590
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot Lip Plumper (Có màu)/JP (31).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-lip-essence-03.webp",
+      "sourceBytes": 640957,
+      "webpBytes": 73546
+    },
+    {
+      "source": "template/Thumbnail/ẢNH SẢN PHẨM/PDRN Shot Lip Plumper (Có màu)/JP (19).png",
+      "asset": "assets/images/thumbnail/pdrn-shot-lip-essence-04.webp",
+      "sourceBytes": 508841,
+      "webpBytes": 64564
+    },
+    {
+      "source": "template/Thumbnail/AVT KH/a0ff84b7c50f8fc810c31df31bd5d5ec.jpg",
+      "asset": "assets/images/thumbnail/review-avatar-1.webp",
+      "sourceBytes": 161688,
+      "webpBytes": 41222
+    },
+    {
+      "source": "template/Thumbnail/AVT KH/images.jfif",
+      "asset": "assets/images/thumbnail/review-avatar-2.webp",
+      "sourceBytes": 31172,
+      "webpBytes": 11622
+    },
+    {
+      "source": "template/Thumbnail/AVT KH/96dba08312deb31b8bcf3c4f838c47ff.jpg",
+      "asset": "assets/images/thumbnail/review-avatar-3.webp",
+      "sourceBytes": 270441,
+      "webpBytes": 24722
+    },
+    {
+      "source": "template/Thumbnail/AVT KH/images (1).jfif",
+      "asset": "assets/images/thumbnail/review-avatar-4.webp",
+      "sourceBytes": 26767,
+      "webpBytes": 10748
+    },
+    {
+      "source": "template/Thumbnail/AVT KH/2bf7b91a9b65d02abe04298a3f04fc70.jpg",
+      "asset": "assets/images/thumbnail/review-avatar-5.webp",
+      "sourceBytes": 99954,
+      "webpBytes": 19368
+    },
+    {
+      "source": "template/Thumbnail/AVT KH/avatar_nu_10_fe17404b8c.jpg",
+      "asset": "assets/images/thumbnail/review-avatar-6.webp",
+      "sourceBytes": 407149,
+      "webpBytes": 30956
+    },
+    {
+      "source": "template/Thumbnail/AVT KH/anh-avatar-gai-xinh-cuon-hut-cho-mang-xa-hoi-1.webp",
+      "asset": "assets/images/thumbnail/review-avatar-7.webp",
+      "sourceBytes": 87392,
+      "webpBytes": 33348
+    }
+  ]
+}

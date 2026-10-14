@@ -1,0 +1,128 @@
+{
+  "passed": true,
+  "products": 10,
+  "views": 20,
+  "results": [
+    {
+      "productId": 121,
+      "width": 375,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 121,
+      "width": 1440,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 115,
+      "width": 375,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 115,
+      "width": 1440,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 107,
+      "width": 375,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 107,
+      "width": 1440,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 97,
+      "width": 375,
+      "cards": 5,
+      "unchanged": true
+    },
+    {
+      "productId": 97,
+      "width": 1440,
+      "cards": 5,
+      "unchanged": true
+    },
+    {
+      "productId": 89,
+      "width": 375,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 89,
+      "width": 1440,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 80,
+      "width": 375,
+      "cards": 4,
+      "unchanged": true
+    },
+    {
+      "productId": 80,
+      "width": 1440,
+      "cards": 4,
+      "unchanged": true
+    },
+    {
+      "productId": 72,
+      "width": 375,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 72,
+      "width": 1440,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 63,
+      "width": 375,
+      "cards": 4,
+      "unchanged": true
+    },
+    {
+      "productId": 63,
+      "width": 1440,
+      "cards": 4,
+      "unchanged": true
+    },
+    {
+      "productId": 55,
+      "width": 375,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 55,
+      "width": 1440,
+      "cards": 3,
+      "unchanged": true
+    },
+    {
+      "productId": 46,
+      "width": 375,
+      "cards": 4,
+      "unchanged": true
+    },
+    {
+      "productId": 46,
+      "width": 1440,
+      "cards": 4,
+      "unchanged": true
+    }
+  ],
+  "errors": []
+}

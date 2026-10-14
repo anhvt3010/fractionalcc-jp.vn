@@ -1,0 +1,11 @@
+﻿PASS: PHP lint for all PHP files in both release packages.
+PASS: 2724 approved defaults initialization/media/content/relationship/preservation checks, clean ZIP install.
+PASS: 67 upgrade/preservation/retired-field checks on a 1.0.5 fixture with 52 published records.
+PASS: 1601 browser checks, all 10 products, 13 widths (320/375/390/480/600/768/820/991/992/1024/1280/1440/1920).
+PASS: tabs, gallery, buy modal, consent gating; no real forms submitted.
+PASS: no old instructions/two-column panels; full-width actives grid; 1/2/3 columns; four-card desktop 2x2; notes below cards.
+PASS: no browser console/runtime errors; fresh fixture has no debug log.
+PASS: desktop/mobile screenshots reviewed for representative products with 3/4/5 active cards and notes.
+PASS: ZIP roots, inventories, CRC and bytes match source; see package-report.json.
+Environment: XAMPP PHP 8.2.12, WordPress 7.1.3, Kadence 1.5.2, ACF Free 6.8.10.
+Scope: isolated local fixtures, mail blocked. No production deployment or working-site activation claimed.

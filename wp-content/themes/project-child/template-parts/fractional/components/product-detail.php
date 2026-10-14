@@ -6,15 +6,11 @@ $fragment = $args['fragment'];
 ?>
 <?php if ( 'gallery' === $fragment ) : ?>
 	<?php foreach ( $product['gallery'] as $index => $image ) : ?>
-	<button type="button" class="pd-thumb-btn <?php echo 0 === $index ? 'active' : ''; ?>" data-detail-image="<?php echo esc_url( $image ); ?>" data-detail-alt="<?php echo esc_attr( $product['galleryAlts'][ $image ] ); ?>" aria-label="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_gallery_view', 'shared' ) . ' ' . ( $index + 1 ) ); ?>"><img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $product['galleryAlts'][ $image ] ); ?>" loading="lazy"></button>
+	<button type="button" class="pd-thumb-btn <?php echo $image === $product['image'] ? 'active' : ''; ?>" data-detail-image="<?php echo esc_url( $image ); ?>" data-detail-alt="<?php echo esc_attr( $product['galleryAlts'][ $image ] ); ?>" aria-pressed="<?php echo $image === $product['image'] ? 'true' : 'false'; ?>" aria-label="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_gallery_view', 'shared' ) . ' ' . ( $index + 1 ) ); ?>"><?php echo project_child_fcc_picture_html( $product['galleryThumbs'][ $image ] ?? $image, $product['galleryAlts'][ $image ], '', array( 'loading' => 'lazy', 'sizes' => '90px' ) ); ?></button>
 	<?php endforeach; ?>
 <?php elseif ( 'actives' === $fragment ) : ?>
 	<?php foreach ( $product['actives'] as $active ) : ?>
 	<div class="pd-active-card"><span class="pd-active-tag"><?php echo esc_html( $active['tag'] ); ?></span><h3 class="pd-active-title"><?php echo esc_html( $active['name'] ); ?></h3><p class="pd-active-desc"><?php echo esc_html( $active['desc'] ); ?></p></div>
-	<?php endforeach; ?>
-<?php elseif ( 'steps' === $fragment ) : ?>
-	<?php foreach ( $product['howToUse'] as $index => $step ) : ?>
-	<div class="pd-step-row"><div class="pd-step-num"><?php echo esc_html( $index + 1 ); ?></div><p class="pd-step-text"><?php echo esc_html( preg_replace( '/^Bước\s*\d+[:.]\s*/iu', '', $step ) ); ?></p></div>
 	<?php endforeach; ?>
 <?php elseif ( 'combos' === $fragment ) : ?>
 	<?php $related_count = 0; foreach ( project_core_fcc_combos() as $combo ) : ?>

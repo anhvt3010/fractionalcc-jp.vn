@@ -6,19 +6,32 @@
           <div class="pd-showcase-left">
             <div class="pd-gallery-stage">
               
-              <div class="pd-hero-callout">
-                <span class="pd-callout-bar"></span>
-                <div class="pd-callout-text">
-                  <strong id="pd-callout-title"><?php echo esc_html( project_child_fcc_product_value( 'callout_title' ) ); ?></strong>
-                  <span id="pd-callout-sub"><?php echo esc_html( project_child_fcc_product_value( 'callout_subtitle' ) ); ?></span>
-                </div>
-              </div>
-
-              <img id="pd-main-image" class="pd-main-img" src="<?php echo esc_url( project_child_fcc_product_value( 'image' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_product_value( 'imageAlt' ) ); ?>">
+              <a id="pd-image-open" class="pd-image-open" href="<?php echo esc_url( project_child_fcc_product_value( 'image' ) ); ?>" aria-label="<?php echo esc_attr__( 'Phóng to ảnh sản phẩm', 'project-child' ); ?>" aria-haspopup="dialog" aria-controls="pd-image-dialog">
+                <img id="pd-main-image" class="pd-main-img" src="<?php echo esc_url( project_child_fcc_product_value( 'image' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_product_value( 'imageAlt' ) ); ?>">
+              </a>
             </div>
 
             
             <div class="pd-thumbs-row" id="pd-gallery-thumbs"><?php project_child_fcc_fragment( 'gallery' ); ?></div>
+            <dialog id="pd-image-dialog" class="pd-image-dialog" aria-labelledby="pd-image-dialog-title">
+              <div class="pd-image-dialog-header">
+                <h2 id="pd-image-dialog-title"><?php echo esc_html( project_child_fcc_product_value( 'name' ) ); ?></h2>
+                <span id="pd-image-dialog-count" class="pd-image-dialog-count" aria-live="polite" aria-atomic="true"></span>
+                <button type="button" class="pd-image-dialog-button" id="pd-image-close" aria-label="<?php echo esc_attr__( 'Đóng ảnh phóng to', 'project-child' ); ?>" autofocus>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"></path></svg>
+                </button>
+              </div>
+              <div class="pd-image-dialog-view">
+                <button type="button" class="pd-image-dialog-button pd-image-dialog-prev" id="pd-image-prev" aria-label="<?php echo esc_attr__( 'Ảnh trước', 'project-child' ); ?>">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg>
+                </button>
+                <img id="pd-dialog-image" alt="" decoding="async">
+                <button type="button" class="pd-image-dialog-button pd-image-dialog-next" id="pd-image-next" aria-label="<?php echo esc_attr__( 'Ảnh tiếp theo', 'project-child' ); ?>">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg>
+                </button>
+              </div>
+              <div class="pd-image-dialog-thumbs" id="pd-image-dialog-thumbs" role="group" aria-label="<?php echo esc_attr__( 'Chọn ảnh sản phẩm', 'project-child' ); ?>"></div>
+            </dialog>
           </div>
 
           
@@ -28,6 +41,20 @@
             </div>
 
             <h1 class="pd-cocoon-title heading-serif" id="pd-title"><?php echo esc_html( project_child_fcc_product_value( 'name' ) ); ?></h1>
+
+            <?php
+            $fcc_callout_title = project_child_fcc_product_value( 'callout_title' );
+            $fcc_callout_sub   = project_child_fcc_product_value( 'callout_subtitle' );
+            if ( '' !== trim( (string) $fcc_callout_title ) || '' !== trim( (string) $fcc_callout_sub ) ) :
+            ?>
+            <div class="pd-hero-callout">
+              <span class="pd-callout-bar" aria-hidden="true"></span>
+              <div class="pd-callout-text">
+                <strong id="pd-callout-title"><?php echo esc_html( $fcc_callout_title ); ?></strong>
+                <span id="pd-callout-sub"><?php echo esc_html( $fcc_callout_sub ); ?></span>
+              </div>
+            </div>
+            <?php endif; ?>
 
             
             <div class="pd-cocoon-price-row">
@@ -50,22 +77,22 @@
             
             <div class="pd-cocoon-claims">
               <div class="pd-claim-item">
-                <svg width="17" height="12" viewbox="0 0 24 16" fill="none" style="border-radius:2px;box-shadow:0 0 2px rgba(0,0,0,0.25);flex-shrink:0;"><rect width="24" height="16" fill="#FFFFFF"></rect><circle cx="12" cy="8" r="4.8" fill="#BC002D"></circle></svg>
+                <svg width="17" height="12" viewBox="0 0 24 16" fill="none" style="border-radius:2px;box-shadow:0 0 2px rgba(0,0,0,0.25);flex-shrink:0;"><rect width="24" height="16" fill="#FFFFFF"></rect><circle cx="12" cy="8" r="4.8" fill="#BC002D"></circle></svg>
                 <span><?php echo project_child_fcc_text( 'fcc_ui_476e0450734143', 'shared' ); ?></span>
               </div>
               <span class="pd-claim-sep">•</span>
               <div class="pd-claim-item">
-                <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
-                <span><?php echo project_child_fcc_text( 'fcc_ui_bcf7198870556e', 'shared' ); ?></span>
-              </div>
-              <span class="pd-claim-sep">•</span>
-              <div class="pd-claim-item">
-                <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
                 <span><?php echo project_child_fcc_text( 'fcc_ui_a4761e5516401e', 'shared' ); ?></span>
               </div>
               <span class="pd-claim-sep">•</span>
               <div class="pd-claim-item">
-                <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                <span><?php echo project_child_fcc_text( 'fcc_ui_bcf7198870556e', 'shared' ); ?></span>
+              </div>
+              <span class="pd-claim-sep">•</span>
+              <div class="pd-claim-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
                 <span><?php echo project_child_fcc_text( 'fcc_ui_3a43752a881468', 'shared' ); ?></span>
               </div>
             </div>
@@ -250,48 +277,25 @@
         </div>
 
         
-        <!-- COMBINED SECTION: INGREDIENTS & USAGE -->
-        <div class="pd-usage-section">
+        <!-- PRODUCT ACTIVES & NOTES -->
+        <section class="pd-actives-section" aria-labelledby="pd-actives-title">
           <div class="section-header">
             <span class="section-tag"><?php echo project_child_fcc_text( 'fcc_ui_8b8deb3c94c1ca', 'shared' ); ?></span>
-            <h2 class="section-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_42526f178a133b', 'shared' ); ?></h2>
+            <h2 class="section-title heading-serif" id="pd-actives-title"><?php echo project_child_fcc_text( 'fcc_ui_5adcdfe588f53d', 'shared' ); ?></h2>
             <p class="section-desc"><?php echo project_child_fcc_text( 'fcc_ui_2ec853bc877a83', 'shared' ); ?></p>
           </div>
-          <div class="pd-twocol-grid">
-            <!-- COLUMN 1: ACTIVES & MECHANISMS -->
-            <div class="pd-card-panel">
-              <div class="pd-panel-header">
-                <div class="pd-panel-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"></path><path d="M8.5 2h7"></path><path d="M7 16h10"></path></svg>
-                </div>
-                <h3 class="pd-panel-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_5adcdfe588f53d', 'shared' ); ?></h3>
-              </div>
-              <div class="pd-actives-grid" id="pd-actives-grid"><?php project_child_fcc_fragment( 'actives' ); ?></div>
-            </div>
+          <div class="pd-actives-grid" id="pd-actives-grid"><?php project_child_fcc_fragment( 'actives' ); ?></div>
 
-            <!-- COLUMN 2: HOW TO USE -->
-            <div class="pd-card-panel">
-              <div class="pd-panel-header">
-                <div class="pd-panel-icon">
-                  <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path><path d="M6 6h10"></path><path d="M6 10h10"></path></svg>
-                </div>
-                <h3 class="pd-panel-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_e9dfbe7e600722', 'shared' ); ?></h3>
-              </div>
-              <div class="pd-steps-list" id="pd-steps-list"><?php project_child_fcc_fragment( 'steps' ); ?></div>
-
-              <!-- TINGLING NOTICE -->
-              <?php $fcc_product_notes = project_child_fcc_product_value( 'notes' ); ?>
-              <?php if ( '' !== trim( (string) $fcc_product_notes ) ) : ?>
-              <div class="pd-tingling-box">
-                <div class="pd-tingling-icon">
-                  <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"></path><path d="m4.93 4.93 2.83 2.83"></path><path d="M2 12h4"></path><path d="m4.93 19.07 2.83-2.83"></path><path d="M12 22v-4"></path><path d="m19.07 19.07-2.83-2.83"></path><path d="M22 12h-4"></path><path d="m19.07 4.93-2.83 2.83"></path></svg>
-                </div>
-                <p class="pd-tingling-text" id="pd-note-text"><?php echo esc_html( $fcc_product_notes ); ?></p>
-              </div>
-              <?php endif; ?>
+          <?php $fcc_product_notes = project_child_fcc_product_value( 'notes' ); ?>
+          <?php if ( '' !== trim( (string) $fcc_product_notes ) ) : ?>
+          <div class="pd-tingling-box">
+            <div class="pd-tingling-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v5"></path><path d="M12 16h.01"></path></svg>
             </div>
+            <p class="pd-tingling-text" id="pd-note-text"><?php echo esc_html( $fcc_product_notes ); ?></p>
           </div>
-        </div>
+          <?php endif; ?>
+        </section>
 
         <?php
         $fcc_has_combos = false;

@@ -332,6 +332,12 @@ body.admin-bar #danh-sach-san-pham {
   gap: 24px;
 }
 
+/* Remove zoom effect on product and combo images upon hover in catalog list */
+.catalog-main .product-card:hover .product-thumb img,
+#product-catalog-grid .product-card:hover .product-thumb img {
+  transform: none;
+}
+
 @media (max-width: 1240px) and (min-width: 992px) {
   .catalog-main .brief-product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

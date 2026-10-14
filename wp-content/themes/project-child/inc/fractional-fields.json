@@ -5563,7 +5563,7 @@
             "fcc_ui_476e0450734143": {
                 "key": "field_fcc_ui_476e0450734143",
                 "name": "fcc_ui_476e0450734143",
-                "label": "Xuất xứ: Nhật Bản",
+                "label": "100% Chính Hãng Nhật Bản",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -5572,7 +5572,7 @@
             "fcc_ui_bcf7198870556e": {
                 "key": "field_fcc_ui_bcf7198870556e",
                 "name": "fcc_ui_bcf7198870556e",
-                "label": "Không Cồn & Paraben",
+                "label": "Lành Tính & Chuẩn Da Liễu",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -5581,7 +5581,7 @@
             "fcc_ui_a4761e5516401e": {
                 "key": "field_fcc_ui_a4761e5516401e",
                 "name": "fcc_ui_a4761e5516401e",
-                "label": "Bộ Y Tế Cấp Phép",
+                "label": "Đã Công Bố Bộ Y Tế",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -5590,7 +5590,7 @@
             "fcc_ui_3a43752a881468": {
                 "key": "field_fcc_ui_3a43752a881468",
                 "name": "fcc_ui_3a43752a881468",
-                "label": "Độc Quyền JP- BÙI ĐẶNG",
+                "label": "Đồng Kiểm Khi Nhận Hàng",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -5923,15 +5923,6 @@
                 "fcc_inline": true,
                 "fcc_refresh": false
             },
-            "fcc_ui_42526f178a133b": {
-                "key": "field_fcc_ui_42526f178a133b",
-                "name": "fcc_ui_42526f178a133b",
-                "label": "Hiệu Quả Ứng Dụng & Cách Dùng Chuẩn",
-                "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
-                "fcc_inline": true,
-                "fcc_refresh": false
-            },
             "fcc_ui_2ec853bc877a83": {
                 "key": "field_fcc_ui_2ec853bc877a83",
                 "name": "fcc_ui_2ec853bc877a83",
@@ -5945,15 +5936,6 @@
                 "key": "field_fcc_ui_7766fc9ecb857b",
                 "name": "fcc_ui_7766fc9ecb857b",
                 "label": "Làn Da Phù Hợp Nhất",
-                "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
-                "fcc_inline": true,
-                "fcc_refresh": false
-            },
-            "fcc_ui_e9dfbe7e600722": {
-                "key": "field_fcc_ui_e9dfbe7e600722",
-                "name": "fcc_ui_e9dfbe7e600722",
-                "label": "Hướng Dẫn Sử Dụng",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -6753,6 +6735,78 @@
                 "type": "text",
                 "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
                 "fcc_inline": true
+            }
+        },
+        "Avatar khách hàng": {
+            "fcc_review_avatar_1": {
+                "key": "field_fcc_review_avatar_1",
+                "name": "fcc_review_avatar_1",
+                "label": "Avatar khách hàng – thẻ 1",
+                "type": "image",
+                "return_format": "id",
+                "preview_size": "thumbnail",
+                "mime_types": "jpg,jpeg,png,webp",
+                "instructions": "Ảnh đại diện nhỏ của thẻ đánh giá; độc lập với ảnh lớn bên trong thẻ."
+            },
+            "fcc_review_avatar_2": {
+                "key": "field_fcc_review_avatar_2",
+                "name": "fcc_review_avatar_2",
+                "label": "Avatar khách hàng – thẻ 2",
+                "type": "image",
+                "return_format": "id",
+                "preview_size": "thumbnail",
+                "mime_types": "jpg,jpeg,png,webp",
+                "instructions": "Ảnh đại diện nhỏ của thẻ đánh giá; độc lập với ảnh lớn bên trong thẻ."
+            },
+            "fcc_review_avatar_3": {
+                "key": "field_fcc_review_avatar_3",
+                "name": "fcc_review_avatar_3",
+                "label": "Avatar khách hàng – thẻ 3",
+                "type": "image",
+                "return_format": "id",
+                "preview_size": "thumbnail",
+                "mime_types": "jpg,jpeg,png,webp",
+                "instructions": "Ảnh đại diện nhỏ của thẻ đánh giá; độc lập với ảnh lớn bên trong thẻ."
+            },
+            "fcc_review_avatar_4": {
+                "key": "field_fcc_review_avatar_4",
+                "name": "fcc_review_avatar_4",
+                "label": "Avatar khách hàng – thẻ 4",
+                "type": "image",
+                "return_format": "id",
+                "preview_size": "thumbnail",
+                "mime_types": "jpg,jpeg,png,webp",
+                "instructions": "Ảnh đại diện nhỏ của thẻ đánh giá; độc lập với ảnh lớn bên trong thẻ."
+            },
+            "fcc_review_avatar_5": {
+                "key": "field_fcc_review_avatar_5",
+                "name": "fcc_review_avatar_5",
+                "label": "Avatar khách hàng – thẻ 5",
+                "type": "image",
+                "return_format": "id",
+                "preview_size": "thumbnail",
+                "mime_types": "jpg,jpeg,png,webp",
+                "instructions": "Ảnh đại diện nhỏ của thẻ đánh giá; độc lập với ảnh lớn bên trong thẻ."
+            },
+            "fcc_review_avatar_6": {
+                "key": "field_fcc_review_avatar_6",
+                "name": "fcc_review_avatar_6",
+                "label": "Avatar khách hàng – thẻ 6",
+                "type": "image",
+                "return_format": "id",
+                "preview_size": "thumbnail",
+                "mime_types": "jpg,jpeg,png,webp",
+                "instructions": "Ảnh đại diện nhỏ của thẻ đánh giá; độc lập với ảnh lớn bên trong thẻ."
+            },
+            "fcc_review_avatar_7": {
+                "key": "field_fcc_review_avatar_7",
+                "name": "fcc_review_avatar_7",
+                "label": "Avatar khách hàng – thẻ 7",
+                "type": "image",
+                "return_format": "id",
+                "preview_size": "thumbnail",
+                "mime_types": "jpg,jpeg,png,webp",
+                "instructions": "Ảnh đại diện nhỏ của thẻ đánh giá; độc lập với ảnh lớn bên trong thẻ."
             }
         }
     },

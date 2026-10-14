@@ -1,5 +1,5 @@
 {
-    "version": "1.0.2",
+    "version": "1.0.9",
     "pages": {
         "shared": {
             "title": "Thông tin và giao diện chung Fractional CC",
@@ -683,22 +683,22 @@
                 "fcc_ui_476e0450734143": {
                     "type": "text",
                     "key": "field_fcc_ui_476e0450734143",
-                    "value": "Xuất xứ: Nhật Bản"
+                    "value": "100% Chính Hãng Nhật Bản"
                 },
                 "fcc_ui_bcf7198870556e": {
                     "type": "text",
                     "key": "field_fcc_ui_bcf7198870556e",
-                    "value": "Không Cồn & Paraben"
+                    "value": "Lành Tính & Chuẩn Da Liễu"
                 },
                 "fcc_ui_a4761e5516401e": {
                     "type": "text",
                     "key": "field_fcc_ui_a4761e5516401e",
-                    "value": "Bộ Y Tế Cấp Phép"
+                    "value": "Đã Công Bố Bộ Y Tế"
                 },
                 "fcc_ui_3a43752a881468": {
                     "type": "text",
                     "key": "field_fcc_ui_3a43752a881468",
-                    "value": "Độc Quyền JP- BÙI ĐẶNG"
+                    "value": "Đồng Kiểm Khi Nhận Hàng"
                 },
                 "fcc_ui_2cacb01c3941c0": {
                     "type": "text",
@@ -880,11 +880,6 @@
                     "key": "field_fcc_ui_f5310755fa3015",
                     "value": "Quy Trình & Làn Da Phù Hợp"
                 },
-                "fcc_ui_42526f178a133b": {
-                    "type": "text",
-                    "key": "field_fcc_ui_42526f178a133b",
-                    "value": "Hiệu Quả Ứng Dụng & Cách Dùng Chuẩn"
-                },
                 "fcc_ui_2ec853bc877a83": {
                     "type": "text",
                     "key": "field_fcc_ui_2ec853bc877a83",
@@ -894,11 +889,6 @@
                     "type": "text",
                     "key": "field_fcc_ui_7766fc9ecb857b",
                     "value": "Làn Da Phù Hợp Nhất"
-                },
-                "fcc_ui_e9dfbe7e600722": {
-                    "type": "text",
-                    "key": "field_fcc_ui_e9dfbe7e600722",
-                    "value": "Hướng Dẫn Sử Dụng"
                 },
                 "fcc_ui_cfd8da94dbbe98": {
                     "type": "text",
@@ -1529,6 +1519,41 @@
                     "type": "text",
                     "key": "field_fcc_phoneDisplay",
                     "value": "096 518 0859"
+                },
+                "fcc_review_avatar_1": {
+                    "type": "image",
+                    "key": "field_fcc_review_avatar_1",
+                    "value": "assets/images/thumbnail/review-avatar-1.webp"
+                },
+                "fcc_review_avatar_2": {
+                    "type": "image",
+                    "key": "field_fcc_review_avatar_2",
+                    "value": "assets/images/thumbnail/review-avatar-2.webp"
+                },
+                "fcc_review_avatar_3": {
+                    "type": "image",
+                    "key": "field_fcc_review_avatar_3",
+                    "value": "assets/images/thumbnail/review-avatar-3.webp"
+                },
+                "fcc_review_avatar_4": {
+                    "type": "image",
+                    "key": "field_fcc_review_avatar_4",
+                    "value": "assets/images/thumbnail/review-avatar-4.webp"
+                },
+                "fcc_review_avatar_5": {
+                    "type": "image",
+                    "key": "field_fcc_review_avatar_5",
+                    "value": "assets/images/thumbnail/review-avatar-5.webp"
+                },
+                "fcc_review_avatar_6": {
+                    "type": "image",
+                    "key": "field_fcc_review_avatar_6",
+                    "value": "assets/images/thumbnail/review-avatar-6.webp"
+                },
+                "fcc_review_avatar_7": {
+                    "type": "image",
+                    "key": "field_fcc_review_avatar_7",
+                    "value": "assets/images/thumbnail/review-avatar-7.webp"
                 }
             },
             "content": "",
@@ -5514,10 +5539,13 @@
             "name": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
             "slug": "mandelic-shot-peel-essence",
             "menuOrder": 0,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/mandelic-peel-essence.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/mandelic-peel-essence.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/mandelic-peel-essence.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/mandelic-shot-peel-essence-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/mandelic-shot-peel-essence-01.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/mandelic-shot-peel-essence-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/mandelic-shot-peel-essence-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/mandelic-shot-peel-essence-02.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/mandelic-shot-peel-essence-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/mandelic-shot-peel-essence-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/mandelic-shot-peel-essence-03.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/mandelic-shot-peel-essence-03.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/mandelic-shot-peel-essence-04.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/mandelic-shot-peel-essence-04.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/mandelic-shot-peel-essence-04.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/mandelic-peel-essence.png"
+                "assets/images/thumbnail/mandelic-shot-peel-essence-01.webp",
+                "assets/images/thumbnail/mandelic-shot-peel-essence-02.webp",
+                "assets/images/thumbnail/mandelic-shot-peel-essence-03.webp",
+                "assets/images/thumbnail/mandelic-shot-peel-essence-04.webp"
             ],
             "actives": [
                 {
@@ -5604,14 +5632,13 @@
             "volume": "30ml",
             "originalPrice": "850000",
             "salePrice": "628000",
-            "image": "assets/images/products/mandelic-peel-essence.png",
+            "image": "assets/images/thumbnail/mandelic-shot-peel-essence-01.webp",
             "cbmp": "312953/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.9",
             "reviewCount": "382",
             "uspBullets": "✅ Hỗ trợ loại bỏ tế bào chết trên bề mặt da.\n✅ Làm sạch sâu lỗ chân lông, giảm bít tắc.\n✅ Hỗ trợ cải thiện tình trạng da sần sùi, xỉn màu.\n✅ Cấp ẩm, làm dịu và hạn chế khô căng sau khi tẩy da chết.\n✅ Giúp bề mặt da mịn màng, thông thoáng và hấp thụ dưỡng chất tốt hơn.\n✅ Mang lại làn da khỏe mạnh, tươi sáng và rạng rỡ hơn mỗi ngày.",
             "targetUsers": "✔ Da sần sùi, thô ráp, xỉn màu.\n✔ Da dầu, da hỗn hợp hoặc da dễ bít tắc lỗ chân lông.\n✔ Da có mụn đầu đen, mụn đầu trắng hoặc nhiều bã nhờn.\n✔ Da có lỗ chân lông to, bề mặt kém mịn màng.\n✔ Người muốn tẩy tế bào chết hóa học nhẹ nhàng để cải thiện kết cấu da.",
-            "howToUse": "Đọc hướng dẫn trên bao bì và sử dụng đúng tần suất khuyến nghị của nhà sản xuất.\nKhông tự ý kết hợp các hoạt chất dễ gây kích ứng.\nNếu châm chích kéo dài, đỏ rát hoặc kích ứng, ngừng sử dụng và tham khảo ý kiến chuyên môn.",
             "notes": "",
             "origin": "Nhật Bản",
             "brand": "Fractional CC",
@@ -5625,10 +5652,13 @@
             "name": "Mặt nạ FractionalCC Needle Serum A Face Mask",
             "slug": "needle-serum-a-face-mask",
             "menuOrder": 1,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-mask-a.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-mask-a.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-mask-a.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-a-face-mask-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-a-face-mask-01.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-a-face-mask-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-a-face-mask-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-a-face-mask-02.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-a-face-mask-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-a-face-mask-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-a-face-mask-03.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-a-face-mask-03.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-a-face-mask-04.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-a-face-mask-04.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-a-face-mask-04.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/needle-mask-a.png"
+                "assets/images/thumbnail/needle-serum-a-face-mask-01.webp",
+                "assets/images/thumbnail/needle-serum-a-face-mask-02.webp",
+                "assets/images/thumbnail/needle-serum-a-face-mask-03.webp",
+                "assets/images/thumbnail/needle-serum-a-face-mask-04.webp"
             ],
             "actives": [
                 {
@@ -5667,14 +5697,13 @@
             "volume": "Hộp 5 miếng (25ml / miếng)",
             "originalPrice": "",
             "salePrice": "386000",
-            "image": "assets/images/products/needle-mask-a.png",
+            "image": "assets/images/thumbnail/needle-serum-a-face-mask-01.webp",
             "cbmp": "312932/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.9",
             "reviewCount": "429",
             "uspBullets": "Mặt nạ vi kim sinh học chứa 300.000 vi kim tự nhiên kết hợp Retinol, Bakuchiol và PDRN giúp tăng cường hấp thu dưỡng chất, hỗ trợ cải thiện lỗ chân lông, tăng độ săn chắc, đàn hồi và giảm các dấu hiệu lão hóa, mang lại làn da mịn màng và rạng rỡ hơn.",
             "targetUsers": "-Da có nếp nhăn li ti, thiếu độ đàn hồi, da chảy xệ nhẹ.\n-Da xỉn màu, không đều màu, thiếu sức sống.\n-Da có lỗ chân lông to, bề mặt da kém mịn màng.\n-Người muốn chăm sóc da chuyên sâu tại nhà với công nghệ vi kim sinh học.\n-Da khô hoặc da thiếu ẩm cần được cấp ẩm và phục hồi.",
-            "howToUse": "Bước 1: Rửa mặt sạch và cân bằng da với toner dịu nhẹ.\nBước 2: Lấy mặt nạ đắp ôm khít toàn mặt, dùng đầu ngón tay ấn nhẹ nhàng khắp bề mặt để các vi kim tiếp xúc da.\nBước 3: Thư giãn 15–20 phút để dưỡng chất thấm sâu. Gỡ mặt nạ và massage nhẹ phần dưỡng chất còn lại trên da.\nBước 4: Không cần rửa lại với nước. Khóa ẩm bằng kem dưỡng và thoa kem chống nắng vào ban ngày.",
             "notes": "",
             "origin": "Nhật Bản",
             "brand": "Fractional CC",
@@ -5688,10 +5717,13 @@
             "name": "Serum dưỡng da FractionalCC Needle Serum A",
             "slug": "needle-serum-a",
             "menuOrder": 2,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-serum-a.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-serum-a.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-serum-a.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-a-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-a-01.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-a-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-a-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-a-02.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-a-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-a-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-a-03.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-a-03.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-a-04.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-a-04.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-a-04.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/needle-serum-a.png"
+                "assets/images/thumbnail/needle-serum-a-01.webp",
+                "assets/images/thumbnail/needle-serum-a-02.webp",
+                "assets/images/thumbnail/needle-serum-a-03.webp",
+                "assets/images/thumbnail/needle-serum-a-04.webp"
             ],
             "actives": [
                 {
@@ -5737,14 +5769,13 @@
             "volume": "30ml",
             "originalPrice": "",
             "salePrice": "810000",
-            "image": "assets/images/products/needle-serum-a.png",
+            "image": "assets/images/thumbnail/needle-serum-a-01.webp",
             "cbmp": "312955/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.95",
             "reviewCount": "651",
             "uspBullets": "- Chứa khoảng 150.000 vi kim tự nhiên 99% tinh khiết trong mỗi chai serum.\n- Công nghệ vi kim giúp đưa hoạt chất tiếp cận bề mặt da hiệu quả hơn.\n- Kết hợp nhiều dạng Retinol và Bakuchiol trong một công thức.\n- Hỗ trợ cải thiện lỗ chân lông, độ đàn hồi và các dấu hiệu lão hóa.\n- Phù hợp cho người muốn chăm sóc da chuyên sâu tại nhà.",
             "targetUsers": "- Người từ 25 tuổi trở lên bắt đầu có dấu hiệu lão hóa.\n- Da thiếu đàn hồi, xuất hiện nếp nhăn nhỏ.\n- Da xỉn màu, thiếu sức sống.\n- Da có lỗ chân lông to hoặc bề mặt da kém mịn màng.\n- Người muốn tập trung vào chống lão hóa và cải thiện độ săn chắc da.",
-            "howToUse": "Bước 1: Rửa mặt sạch và dùng toner cân bằng độ ẩm.\nBước 2: Lấy 2–3 giọt serum thoa đều lên toàn bộ khuôn mặt, tránh vùng mắt sát bờ mi.\nBước 3: Dùng đầu ngón tay massage nhẹ nhàng và vỗ đều theo hướng nâng cơ để đưa vi kim vào da.\nBước 4: Khóa ẩm bằng kem dưỡng ẩm phục hồi. Luôn bôi kem chống nắng bảo vệ da vào ban ngày.",
             "notes": "",
             "origin": "Nhật Bản",
             "brand": "Fractional CC",
@@ -5758,10 +5789,13 @@
             "name": "Serum dưỡng da FractionalCC Needle Serum AX4",
             "slug": "needle-serum-ax4",
             "menuOrder": 3,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-serum-ax4.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-serum-ax4.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-serum-ax4.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-ax4-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-ax4-01.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-ax4-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-ax4-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-ax4-02.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-ax4-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-ax4-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-ax4-03.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-ax4-03.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-ax4-04.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-ax4-04.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-ax4-04.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/needle-serum-ax4.png"
+                "assets/images/thumbnail/needle-serum-ax4-01.webp",
+                "assets/images/thumbnail/needle-serum-ax4-02.webp",
+                "assets/images/thumbnail/needle-serum-ax4-03.webp",
+                "assets/images/thumbnail/needle-serum-ax4-04.webp"
             ],
             "actives": [
                 {
@@ -5800,14 +5834,13 @@
             "volume": "30ml",
             "originalPrice": "",
             "salePrice": "910000",
-            "image": "assets/images/products/needle-serum-ax4.png",
+            "image": "assets/images/thumbnail/needle-serum-ax4-01.webp",
             "cbmp": "312956/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.96",
             "reviewCount": "512",
             "uspBullets": "- 600.000 vi kim sinh học tự nhiên, gấp 4 lần phiên bản Needle Serum A.\n- Retinol + Exosome + Salmon PDRN hỗ trợ chăm sóc da lão hóa chuyên sâu.\n- Giúp cải thiện độ săn chắc và đàn hồi của da.\n- Hỗ trợ làm mịn bề mặt da và cải thiện lỗ chân lông.\n- Công nghệ vi kim giúp tăng cường hấp thu dưỡng chất vào da hiệu quả hơn.",
             "targetUsers": "- Da có dấu hiệu lão hóa rõ rệt.\n- Da thiếu săn chắc, thiếu đàn hồi.\n- Da khô, lỗ chân lông to do lão hóa.\n- Người đã từng sử dụng serum vi kim và muốn trải nghiệm dòng vi kim nồng độ cao hơn.",
-            "howToUse": "Bước 1: Làm sạch da kỹ càng bằng nước tẩy trang và sữa rửa mặt dịu nhẹ.\nBước 2: Nhỏ 2–3 giọt serum lên các vùng da lão hóa trọng điểm hoặc toàn mặt.\nBước 3: Ấn nhẹ và vỗ đều bằng lòng bàn tay theo hướng từ trong ra ngoài, từ dưới lên trên.\nBước 4: Bắt buộc dùng kem khóa ẩm giàu dưỡng chất (Ceramide / Panthenol) và chống nắng kỹ ban ngày.",
             "notes": "",
             "origin": "Nhật Bản",
             "brand": "Fractional CC",
@@ -5821,10 +5854,13 @@
             "name": "Mặt nạ FractionalCC Needle Serum C Face Mask",
             "slug": "needle-serum-c-face-mask",
             "menuOrder": 4,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-mask-c.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-mask-c.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-mask-c.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-c-face-mask-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-c-face-mask-01.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-c-face-mask-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-c-face-mask-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-c-face-mask-02.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-c-face-mask-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-c-face-mask-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-c-face-mask-03.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-c-face-mask-03.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-c-face-mask-04.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-c-face-mask-04.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-c-face-mask-04.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/needle-mask-c.png"
+                "assets/images/thumbnail/needle-serum-c-face-mask-01.webp",
+                "assets/images/thumbnail/needle-serum-c-face-mask-02.webp",
+                "assets/images/thumbnail/needle-serum-c-face-mask-03.webp",
+                "assets/images/thumbnail/needle-serum-c-face-mask-04.webp"
             ],
             "actives": [
                 {
@@ -5870,14 +5906,13 @@
             "volume": "Hộp 5 miếng (25ml / miếng)",
             "originalPrice": "",
             "salePrice": "386000",
-            "image": "assets/images/products/needle-mask-c.png",
+            "image": "assets/images/thumbnail/needle-serum-c-face-mask-01.webp",
             "cbmp": "312931/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.89",
             "reviewCount": "394",
             "uspBullets": "-300.000 vi kim sinh học tự nhiên giúp tăng cường hấp thu dưỡng chất vào da.\n- Chứa 5 dẫn xuất Vitamin C giúp hỗ trợ làm sáng da và cải thiện làn da xỉn màu.\n- Kết hợp Niacinamide, Glutathione và Arbutin hỗ trợ làm đều màu da và tăng độ rạng rỡ.\n- Bổ sung Hyaluronic Acid, Panthenol và CICA giúp dưỡng ẩm và làm dịu da.\n- Hỗ trợ cải thiện lỗ chân lông, độ mịn màng và độ trong trẻo của làn da.",
             "targetUsers": "- Da xỉn màu, thiếu sức sống.\n- Da có lỗ chân lông rõ.\n- Da không đều màu, cần tăng độ rạng rỡ.\n- Da khô thiếu ẩm.\n- Người muốn chăm sóc da sáng khỏe bằng Vitamin C kết hợp công nghệ vi kim.",
-            "howToUse": "Bước 1: Làm sạch da với tẩy trang và sữa rửa mặt dịu nhẹ.\nBước 2: Lấy mặt nạ đắp đều lên mặt, miết nhẹ các góc để mặt nạ ôm khít và vi kim tiếp xúc đều.\nBước 3: Đắp trong 15–20 phút, sau đó tháo mặt nạ và dùng tay vỗ nhẹ lượng tinh chất còn lại.\nBước 4: Không cần rửa lại với nước. Thoa kem dưỡng khóa ẩm để bảo toàn dưỡng chất.",
             "notes": "",
             "origin": "Nhật Bản",
             "brand": "Fractional CC",
@@ -5891,10 +5926,13 @@
             "name": "Serum dưỡng da FractionalCC Needle Serum C",
             "slug": "needle-serum-c",
             "menuOrder": 5,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-serum-c.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-serum-c.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-serum-c.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-c-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-c-01.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-c-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-c-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-c-02.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-c-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-c-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-c-03.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-c-03.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-c-04.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-c-04.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-c-04.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/needle-serum-c.png"
+                "assets/images/thumbnail/needle-serum-c-01.webp",
+                "assets/images/thumbnail/needle-serum-c-02.webp",
+                "assets/images/thumbnail/needle-serum-c-03.webp",
+                "assets/images/thumbnail/needle-serum-c-04.webp"
             ],
             "actives": [
                 {
@@ -5944,14 +5982,13 @@
             "volume": "30ml",
             "originalPrice": "",
             "salePrice": "790000",
-            "image": "assets/images/products/needle-serum-c.png",
+            "image": "assets/images/thumbnail/needle-serum-c-01.webp",
             "cbmp": "312954/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.94",
             "reviewCount": "785",
             "uspBullets": "- 150.000 vi kim sinh học tự nhiên 99% tinh khiết giúp tăng cường hấp thu dưỡng chất vào da.\n- Chứa 5 dẫn xuất Vitamin C giúp hỗ trợ làm sáng da và cải thiện tình trạng da xỉn màu.\n- Kết hợp Glutathione, Niacinamide và Arbutin giúp da đều màu và rạng rỡ hơn.\n- Bổ sung Hyaluronic Acid, Panthenol và CICA giúp dưỡng ẩm và làm dịu da.\n- Hỗ trợ cải thiện lỗ chân lông, độ mịn màng và độ trong trẻo của làn da.",
             "targetUsers": "- Da xỉn màu, thiếu sức sống.\n- Da không đều màu.\n- Da có lỗ chân lông to.\n- Da khô, thiếu ẩm.\n- Người muốn tập trung vào dưỡng sáng và cải thiện độ rạng rỡ của làn da.",
-            "howToUse": "Đọc hướng dẫn trên bao bì và sử dụng đúng tần suất khuyến nghị của nhà sản xuất.\nKhông tự ý kết hợp các hoạt chất dễ gây kích ứng.\nNếu châm chích kéo dài, đỏ rát hoặc kích ứng, ngừng sử dụng và tham khảo ý kiến chuyên môn.",
             "notes": "",
             "origin": "Nhật Bản",
             "brand": "Fractional CC",
@@ -5965,10 +6002,13 @@
             "name": "Serum dưỡng da FractionalCC Needle Serum CX4",
             "slug": "needle-serum-cx4",
             "menuOrder": 6,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-serum-cx4.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-serum-cx4.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-serum-cx4.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-cx4-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-cx4-01.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-cx4-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-cx4-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-cx4-02.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-cx4-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-cx4-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-cx4-03.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-cx4-03.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/needle-serum-cx4-04.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/needle-serum-cx4-04.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/needle-serum-cx4-04.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/needle-serum-cx4.png"
+                "assets/images/thumbnail/needle-serum-cx4-01.webp",
+                "assets/images/thumbnail/needle-serum-cx4-02.webp",
+                "assets/images/thumbnail/needle-serum-cx4-03.webp",
+                "assets/images/thumbnail/needle-serum-cx4-04.webp"
             ],
             "actives": [
                 {
@@ -6032,14 +6072,13 @@
             "volume": "30ml",
             "originalPrice": "",
             "salePrice": "910000",
-            "image": "assets/images/products/needle-serum-cx4.png",
+            "image": "assets/images/thumbnail/needle-serum-cx4-01.webp",
             "cbmp": "312957/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.97",
             "reviewCount": "620",
             "uspBullets": "- Chứa 5 dẫn xuất Vitamin C kết hợp trong một công thức chuyên sâu giúp hỗ trợ làm sáng và cải thiện làn da xỉn màu.\n- Bổ sung Glutathione, Niacinamide và Arbutin giúp da đều màu và rạng rỡ hơn.\n- Tăng cường CICA X và Ceramide Oil giúp dưỡng ẩm và hỗ trợ hàng rào bảo vệ da.\n- Hỗ trợ cải thiện lỗ chân lông, độ mịn màng và độ trong trẻo của làn da, hướng tới làn da căng bóng, sáng khỏe.",
             "targetUsers": "- Da xỉn màu, thiếu sức sống.\n- Da không đều màu, có thâm sau mụn.\n- Da có lỗ chân lông to.\n- Người muốn dưỡng sáng chuyên sâu bằng Vitamin C.\n- Người đã quen sử dụng serum vi kim và muốn hiệu quả mạnh hơn phiên bản Needle Serum C.",
-            "howToUse": "Đọc hướng dẫn trên bao bì và sử dụng đúng tần suất khuyến nghị của nhà sản xuất.\nKhông tự ý kết hợp các hoạt chất dễ gây kích ứng.\nNếu châm chích kéo dài, đỏ rát hoặc kích ứng, ngừng sử dụng và tham khảo ý kiến chuyên môn.",
             "notes": "",
             "origin": "Nhật Bản",
             "brand": "Fractional CC",
@@ -6053,10 +6092,13 @@
             "name": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence",
             "slug": "pdrn-shot-1000-toning-essence",
             "menuOrder": 7,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/pdrn-toning-essence.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/pdrn-toning-essence.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/pdrn-toning-essence.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-1000-toning-essence-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-1000-toning-essence-01.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-1000-toning-essence-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-1000-toning-essence-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-1000-toning-essence-02.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-1000-toning-essence-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-1000-toning-essence-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-1000-toning-essence-03.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-1000-toning-essence-03.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-1000-toning-essence-04.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-1000-toning-essence-04.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-1000-toning-essence-04.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/pdrn-toning-essence.png"
+                "assets/images/thumbnail/pdrn-shot-1000-toning-essence-01.webp",
+                "assets/images/thumbnail/pdrn-shot-1000-toning-essence-02.webp",
+                "assets/images/thumbnail/pdrn-shot-1000-toning-essence-03.webp",
+                "assets/images/thumbnail/pdrn-shot-1000-toning-essence-04.webp"
             ],
             "actives": [
                 {
@@ -6106,14 +6148,13 @@
             "volume": "50ml",
             "originalPrice": "",
             "salePrice": "630000",
-            "image": "assets/images/products/pdrn-toning-essence.png",
+            "image": "assets/images/thumbnail/pdrn-shot-1000-toning-essence-01.webp",
             "cbmp": "312958/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.93",
             "reviewCount": "472",
             "uspBullets": "✅ Phục hồi da\n✅ Làm sáng và đều màu\n✅ Mờ thâm sau mụn\n✅ Cấp ẩm sâu\n✅ Hỗ trợ chống lão hóa\n✅ Cho làn da căng bóng, khỏe mạnh mỗi ngày.",
             "targetUsers": "✔ Da xỉn màu, thiếu sức sống.\n✔ Da có thâm mụn, không đều màu.\n✔ Da khô, thiếu ẩm.\n✔ Da bắt đầu có dấu hiệu lão hóa.\n✔ Người muốn phục hồi da sau treatment nhẹ hoặc sau mụn.",
-            "howToUse": "Bước 1: Làm sạch da mặt bằng nước tẩy trang và sữa rửa mặt dịu nhẹ, thấm ráo bằng khăn mềm.\nBước 2: Lấy 2–3 giọt tinh chất PDRN Shot 1000+ Toning Essence ra lòng bàn tay hoặc chấm đều 5 điểm.\nBước 3: Thoa đều theo hướng nâng cơ và vỗ nhẹ bằng lòng bàn tay để các phân tử PDRN thẩm thấu sâu.\nBước 4: Khóa ẩm bằng kem dưỡng phục hồi Ceramide / B5. Thoa kem chống nắng phổ rộng vào ban ngày.",
             "notes": "",
             "origin": "Nhật Bản",
             "brand": "Fractional CC",
@@ -6127,10 +6168,13 @@
             "name": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence",
             "slug": "pdrn-shot-lip-essence",
             "menuOrder": 8,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/pdrn-lip-essence.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/pdrn-lip-essence.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/pdrn-lip-essence.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-lip-essence-01.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-lip-essence-02.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-lip-essence-03.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-03.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-04.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-lip-essence-04.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-04.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/pdrn-lip-essence.png"
+                "assets/images/thumbnail/pdrn-shot-lip-essence-01.webp",
+                "assets/images/thumbnail/pdrn-shot-lip-essence-02.webp",
+                "assets/images/thumbnail/pdrn-shot-lip-essence-03.webp",
+                "assets/images/thumbnail/pdrn-shot-lip-essence-04.webp"
             ],
             "actives": [
                 {
@@ -6179,14 +6223,13 @@
             "volume": "10ml",
             "originalPrice": "",
             "salePrice": "445000",
-            "image": "assets/images/products/pdrn-lip-essence.png",
+            "image": "assets/images/thumbnail/pdrn-shot-lip-essence-01.webp",
             "cbmp": "312950/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.88",
             "reviewCount": "310",
             "uspBullets": "- Công nghệ vi kim sinh học (Hydrolyzed Sponge) hỗ trợ tăng cường hấp thu dưỡng chất cho môi.\n- PDRN (Sodium DNA) hỗ trợ dưỡng và cải thiện vẻ ngoài của môi.\n- Hyaluronic Acid giúp cấp ẩm, làm mềm và giảm cảm giác khô môi.\n- Peptide + Glutathione + Arbutin hỗ trợ làm mịn và cải thiện vẻ ngoài đều màu của môi.\n- Tạo độ bóng và hiệu ứng môi trông căng đầy hơn, đồng thời chăm sóc môi khô, kém mịn.",
             "targetUsers": "- Người có môi khô, thiếu ẩm, dễ bong tróc.\n- Người có môi kém mịn, nhiều rãnh môi.\n- Người muốn dưỡng môi mềm mại, căng bóng hằng ngày.\n- Người muốn chăm sóc môi với PDRN + Hyaluronic Acid + Peptide.\n- Phù hợp với người thích essence dưỡng môi không cay/nóng, có cảm giác châm chích nhẹ do vi kim sinh học",
-            "howToUse": "Đọc hướng dẫn trên bao bì và sử dụng đúng tần suất khuyến nghị của nhà sản xuất.\nKhông tự ý kết hợp các hoạt chất dễ gây kích ứng.\nNếu châm chích kéo dài, đỏ rát hoặc kích ứng, ngừng sử dụng và tham khảo ý kiến chuyên môn.",
             "notes": "Lưu ý: \n* Có thể dùng hàng ngày, có thể dùng buổi sáng và tối\n* Châm chích là cảm giác tự nhiên khi sử dụng và sẽ giảm dần theo thời gian.",
             "origin": "Nhật Bản",
             "brand": "Fractional CC",
@@ -6200,10 +6243,13 @@
             "name": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper",
             "slug": "pdrn-shot-lip-plumper",
             "menuOrder": 9,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/pdrn-lip-plumper.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/pdrn-lip-plumper.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/pdrn-lip-plumper.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-plumper-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-lip-plumper-01.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-plumper-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-plumper-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-lip-plumper-02.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-plumper-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-lip-essence-03.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-03.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-04.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/pdrn-shot-lip-essence-04.webp}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/pdrn-shot-lip-essence-04.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/pdrn-lip-plumper.png"
+                "assets/images/thumbnail/pdrn-shot-lip-plumper-01.webp",
+                "assets/images/thumbnail/pdrn-shot-lip-plumper-02.webp",
+                "assets/images/thumbnail/pdrn-shot-lip-essence-03.webp",
+                "assets/images/thumbnail/pdrn-shot-lip-essence-04.webp"
             ],
             "actives": [
                 {
@@ -6241,14 +6287,13 @@
             "volume": "10ml",
             "originalPrice": "",
             "salePrice": "445000",
-            "image": "assets/images/products/pdrn-lip-plumper.png",
+            "image": "assets/images/thumbnail/pdrn-shot-lip-plumper-01.webp",
             "cbmp": "312959/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.91",
             "reviewCount": "358",
             "uspBullets": "- PDRN (Sodium DNA) – hỗ trợ chăm sóc và cải thiện vẻ ngoài của môi.\n- Hiệu ứng làm đầy môi – Capsicum và Vanillyl Butyl Ether tạo cảm giác môi căng mọng hơn.\n- Cấp ẩm chuyên sâu – kết hợp Hydrolyzed Hyaluronic Acid và Sodium Hyaluronate.\n- Micro-needle/spicule – hỗ trợ đưa các thành phần chăm sóc vào bề mặt môi.\n- Độ bóng cao – giúp môi trông mịn, căng và bóng khỏe hơn.",
             "targetUsers": "- Người muốn tạo hiệu ứng môi căng mọng, đầy đặn và bóng khỏe.\n- Người có môi khô, thiếu ẩm, nhiều đường vân môi.\n- Người muốn chăm sóc môi kết hợp dưỡng ẩm và hỗ trợ làm mềm bề mặt môi.\n- Phù hợp với người yêu thích sản phẩm lip plumper có cảm giác ấm/cay nhẹ khi sử dụng do thành phần tạo hiệu ứng làm đầy.",
-            "howToUse": "Đọc hướng dẫn trên bao bì và sử dụng đúng tần suất khuyến nghị của nhà sản xuất.\nKhông tự ý kết hợp các hoạt chất dễ gây kích ứng.\nNếu châm chích kéo dài, đỏ rát hoặc kích ứng, ngừng sử dụng và tham khảo ý kiến chuyên môn.",
             "notes": "Lưu ý: \n* Có thể dùng hàng ngày, có thể dùng buổi sáng và tối\n* Châm chích là cảm giác tự nhiên khi sử dụng và sẽ giảm dần theo thời gian.",
             "origin": "Nhật Bản",
             "brand": "Fractional CC",
@@ -6726,7 +6771,7 @@
         "blogname": "FractionalCC VN",
         "blogdescription": "",
         "timezone_string": "Asia/Ho_Chi_Minh",
-        "gmt_offset": "7",
+        "gmt_offset": 7,
         "date_format": "j F, Y",
         "time_format": "g:i a",
         "start_of_week": "1",
@@ -6734,42 +6779,273 @@
     },
     "approval": {
         "status": "approved",
-        "date": "2026-10-14",
+        "date": "2026-10-15",
         "source": "User-approved current WordPress content, media, catalog and selections."
     },
     "media": {
-        "assets/images/products/pdrn-lip-plumper.png": {
-            "sha256": "29480a720fa47a88d1182d95ca907eb094585d8da297d7463ecb905de5cc9ded",
-            "title": "pdrn-shot-lip-plumper-1",
-            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper",
+        "assets/images/thumbnail/pdrn-shot-lip-plumper-02.webp": {
+            "sha256": "0f1b87da2037e9d89a67879fd7a5aa972330df0c72ce8d552640faab4af53b78",
+            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh chi tiết 2",
+            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh chi tiết 2",
             "caption": "",
             "description": ""
         },
-        "assets/images/products/needle-mask-c.png": {
-            "sha256": "e7fb05663fd5de2b5c9b54d00a9de7213b87f491036120b668b3c2a1054e0bcd",
-            "title": "needle-serum-c-face-mask-1",
-            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask",
+        "assets/images/thumbnail/pdrn-shot-lip-plumper-01.webp": {
+            "sha256": "198986ebcdc7a14568e234ba766303140437419753baf1c349648e95a6d1d514",
+            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh đại diện",
+            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh đại diện",
             "caption": "",
             "description": ""
         },
-        "assets/images/products/needle-serum-ax4.png": {
-            "sha256": "bc39714a1ca83eaa4cc93e50686bf7d992f4893cea25209eb5205128c0a34d32",
-            "title": "needle-serum-ax4-4",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4",
+        "assets/images/thumbnail/pdrn-shot-lip-essence-04.webp": {
+            "sha256": "06f417fd15878c1cb7ed09d08e16fd9eef699dcdbab7547ddd5eef7a9a285bdc",
+            "title": "Ảnh hướng dẫn sản phẩm chăm sóc môi 4",
+            "alt": "Ảnh hướng dẫn sản phẩm chăm sóc môi 4",
             "caption": "",
             "description": ""
         },
-        "assets/images/products/needle-serum-a.png": {
-            "sha256": "ca3717b18a7cf6292c90195072c5307c490216c0b65b5f93ecc468c9780ed9b9",
-            "title": "needle-serum-a-4",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum A",
+        "assets/images/thumbnail/pdrn-shot-lip-essence-03.webp": {
+            "sha256": "21692aac6ac17d5d81f2265acbb02c357626b6728054b55f9add554c84644f9c",
+            "title": "Ảnh hướng dẫn sản phẩm chăm sóc môi 3",
+            "alt": "Ảnh hướng dẫn sản phẩm chăm sóc môi 3",
             "caption": "",
             "description": ""
         },
-        "assets/images/products/needle-mask-a.png": {
-            "sha256": "9fa7913643293f43581acadb8571dec034ff5d89a1d106eced7d02c3acfac469",
-            "title": "needle-serum-a-face-mask-1",
-            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask",
+        "assets/images/thumbnail/pdrn-shot-lip-essence-02.webp": {
+            "sha256": "4b2635b36baeba5b4dfabf4e8653a5c3d2ab349e62c75ef663698ac8afa822bc",
+            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh chi tiết 2",
+            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-lip-essence-01.webp": {
+            "sha256": "13c0f2d72590e7aa6635934e4eff4826b987005faf7d8ace1edcbcdedcf921f2",
+            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh đại diện",
+            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-04.webp": {
+            "sha256": "42aa01dc3dac7f4b04651f76306bd2646bf69509abc61f75ad34ff4bb8b00ede",
+            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 4",
+            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-03.webp": {
+            "sha256": "1c892546955b72d80148a7e436767bd24f91aea6442ea939601ca92d75708840",
+            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-02.webp": {
+            "sha256": "66430a1c819d89b12ef6d91f83fac6c5276eda64632e925ba42de1c63b6b3eef",
+            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 2",
+            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-01.webp": {
+            "sha256": "b863206e33b2d0b4f829a1c0c38ec03a44d95bc36707322a31215fdbfa5664eb",
+            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh đại diện",
+            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-cx4-04.webp": {
+            "sha256": "abb4355ad65baed88bf8546bce75a76abc0e89adcd4cf6adbdbc493fa4001bfc",
+            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-cx4-03.webp": {
+            "sha256": "8de7017b2bb488b9bcb874b0f228234ce39880be37dcbeb0598912d74965e92e",
+            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-cx4-02.webp": {
+            "sha256": "6b4fbe246f7fbc25634021afd7999daa7bf5675faf90b80cfe096983a4cd3e4f",
+            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 2",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-cx4-01.webp": {
+            "sha256": "6b16ee49bd814c65191197073c3fd8ef95320b0628188a65e8c678acb048321e",
+            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh đại diện",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-04.webp": {
+            "sha256": "e73c60dd8b31f7fe67a4183cd987f6b542900a2ef28f6aed115b5dbd7dcda9df",
+            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-03.webp": {
+            "sha256": "6f5ce9688aaf080285d54ac06e3642029dbeb0497eed6de7d2cf0c5f8d4f70d4",
+            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-02.webp": {
+            "sha256": "5de55b97f6c6f491ad1647ddcbaafcbecf80230b31255ca6d1cb56395882adda",
+            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 2",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-01.webp": {
+            "sha256": "d1029fffe632b34ccd69367be1976493b9ccbb0b86037f63aaa1f6f4431c9861",
+            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh đại diện",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-face-mask-04.webp": {
+            "sha256": "79a17385db1765c0ef55967cce7adead74db1088248178f5ac2f61a96a8880a2",
+            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 4",
+            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-face-mask-03.webp": {
+            "sha256": "5c33841a5e4e7dde67b58cc206cc8f8f0b47bc7bd4f29c8eeb29b91333bf9f8a",
+            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 3",
+            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-face-mask-02.webp": {
+            "sha256": "2921df491fdced5cb218ab9754f17d1007c9b453dddabe1f75bc99ddd510c59c",
+            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 2",
+            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-face-mask-01.webp": {
+            "sha256": "f477052f695a46566cd77414e53bf1c38e7160a9a511800ea970a77e7236a84d",
+            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh đại diện",
+            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-ax4-04.webp": {
+            "sha256": "cb22e7571cdb0158f97088321428eeff35cc76981b23a2a532d566b53caa8ff8",
+            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-ax4-03.webp": {
+            "sha256": "4892487cd1cd330863e8030076a90172a0d80f7b1e9f6d4c15a22b07f3e38859",
+            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-ax4-02.webp": {
+            "sha256": "377c53d7d1a980d3d4e6463450fec2fae7ab7edde672e9ff4d3d7d472c7cf762",
+            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 2",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-ax4-01.webp": {
+            "sha256": "a062b59e6e9b437f2b207a38cbf0830c85a1bd1f341d7f8c110d94750165c7c6",
+            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh đại diện",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-04.webp": {
+            "sha256": "63d4ec7ba9d9a4ac05081c2842b5ef09bccb57a80da03bfb3f4792fd4ee1b0ed",
+            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-03.webp": {
+            "sha256": "4a17c2a757806e3f1e8b97f5330e889a458a6d21952f0243422e63f14f06646c",
+            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-02.webp": {
+            "sha256": "015f30d8c2643cb403e7bc4928f965e93a04304b6513b75f02b4f0753a7e084b",
+            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 2",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-01.webp": {
+            "sha256": "05ecb62ed9348946279010a8844bbd8d02cb91ff601ea350d89a3d583eba43a3",
+            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh đại diện",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-face-mask-04.webp": {
+            "sha256": "90e3da7bc70536527f75159d137f290901eb3c75168b80a09c4f60029068bd82",
+            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 4",
+            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-face-mask-03.webp": {
+            "sha256": "f58c3f89bea469b21d972ed2dc939ecd1fc38fba740fd1dee095542cd61bc8cb",
+            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 3",
+            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-face-mask-02.webp": {
+            "sha256": "f8731cd6c067106563c4a22c7aa620bbcde975e224e044c0aea95930fa0cbb2e",
+            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 2",
+            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-face-mask-01.webp": {
+            "sha256": "dd84a3bef852fd20405a765a495572454832856ec593f18c1627c209e79f6faa",
+            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh đại diện",
+            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/mandelic-shot-peel-essence-04.webp": {
+            "sha256": "1e177a97d7ea2cdcb20d1a84e0c14131b1477f82c73c3063ca79bfc627c4e76d",
+            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 4",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/mandelic-shot-peel-essence-03.webp": {
+            "sha256": "b1f05d13ca8ace11bce5bed5daf7ca95dba1fef3e7d9771504056f0959cb5f4b",
+            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 3",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/mandelic-shot-peel-essence-02.webp": {
+            "sha256": "c25389021a99ac2348812577d16dd666f8f7f8cc45773ad0807e5dc5c1ef727e",
+            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 2",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/mandelic-shot-peel-essence-01.webp": {
+            "sha256": "0a528434c638cd857ef8fdb6d36e5c00027760dce7040a4c5e326b4cadc210b6",
+            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh đại diện",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh đại diện",
             "caption": "",
             "description": ""
         },
@@ -6826,6 +7102,55 @@
             "sha256": "165b8e33abf2f21f6e4e0625bb7c9b4f3ce753e2f878d2b66915aca67b41a834",
             "title": "fractional-lineup-full-2",
             "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-7.webp": {
+            "sha256": "f189f7a162dc657047f01e51a30a1de9587f9946c25f482c6467d509313731a2",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 7",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 7",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-6.webp": {
+            "sha256": "551d62eca41c1ba16cb9f47517942732bf0dea506fd5ed4b3bac1f07db297707",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 6",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 6",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-5.webp": {
+            "sha256": "71f64e0432aa8dcc4bcb83edd181444bc2ceebb1b2ac7a2ef3db2c6c2752f771",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 5",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 5",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-4.webp": {
+            "sha256": "d6a6d43f454008306b61bd97fcfc1e22d33a3b624dcf5fb19c1c1b90ba14cad0",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 4",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-3.webp": {
+            "sha256": "110924781d80a4e28666cc617ca68bd3254db191ca17a5108bb3754076352ffd",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 3",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-2.webp": {
+            "sha256": "f55e5f9ffd818d217c65dba793b36fa0d5c612ac25552229685d2673c3a1c969",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 2",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-1.webp": {
+            "sha256": "9d77fdf22cd41ec77755edaddc7216f3dd1fdb2c9d1224fbc4efdf7a117992a9",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 1",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 1",
             "caption": "",
             "description": ""
         },
@@ -6947,6 +7272,153 @@
             "alt": "",
             "caption": "",
             "description": ""
+        }
+    },
+    "mediaUpdate": {
+        "version": "1.0.5",
+        "products": [
+            {
+                "id": 1,
+                "previousImage": "assets/images/products/mandelic-peel-essence.png",
+                "previousGallery": [
+                    "assets/images/products/mandelic-peel-essence.png"
+                ]
+            },
+            {
+                "id": 2,
+                "previousImage": "assets/images/products/needle-mask-a.png",
+                "previousGallery": [
+                    "assets/images/products/needle-mask-a.png"
+                ]
+            },
+            {
+                "id": 3,
+                "previousImage": "assets/images/products/needle-serum-a.png",
+                "previousGallery": [
+                    "assets/images/products/needle-serum-a.png"
+                ]
+            },
+            {
+                "id": 4,
+                "previousImage": "assets/images/products/needle-serum-ax4.png",
+                "previousGallery": [
+                    "assets/images/products/needle-serum-ax4.png"
+                ]
+            },
+            {
+                "id": 5,
+                "previousImage": "assets/images/products/needle-mask-c.png",
+                "previousGallery": [
+                    "assets/images/products/needle-mask-c.png"
+                ]
+            },
+            {
+                "id": 6,
+                "previousImage": "assets/images/products/needle-serum-c.png",
+                "previousGallery": [
+                    "assets/images/products/needle-serum-c.png"
+                ]
+            },
+            {
+                "id": 7,
+                "previousImage": "assets/images/products/needle-serum-cx4.png",
+                "previousGallery": [
+                    "assets/images/products/needle-serum-cx4.png"
+                ]
+            },
+            {
+                "id": 8,
+                "previousImage": "assets/images/products/pdrn-toning-essence.png",
+                "previousGallery": [
+                    "assets/images/products/pdrn-toning-essence.png"
+                ]
+            },
+            {
+                "id": 9,
+                "previousImage": "assets/images/products/pdrn-lip-essence.png",
+                "previousGallery": [
+                    "assets/images/products/pdrn-lip-essence.png"
+                ]
+            },
+            {
+                "id": 10,
+                "previousImage": "assets/images/products/pdrn-lip-plumper.png",
+                "previousGallery": [
+                    "assets/images/products/pdrn-lip-plumper.png"
+                ]
+            }
+        ],
+        "previousMedia": {
+            "assets/images/products/mandelic-peel-essence.png": {
+                "sha256": "3cc24053e7f67b6d2204781e5dde22754db83cd9ca93fda3dbd1c53c6375f9f4",
+                "title": "mandelic-shot-peel-essence-1",
+                "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
+                "caption": "",
+                "description": ""
+            },
+            "assets/images/products/needle-mask-a.png": {
+                "sha256": "9fa7913643293f43581acadb8571dec034ff5d89a1d106eced7d02c3acfac469",
+                "title": "needle-serum-a-face-mask-1",
+                "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask",
+                "caption": "",
+                "description": ""
+            },
+            "assets/images/products/needle-serum-a.png": {
+                "sha256": "ca3717b18a7cf6292c90195072c5307c490216c0b65b5f93ecc468c9780ed9b9",
+                "title": "needle-serum-a-4",
+                "alt": "Serum dưỡng da FractionalCC Needle Serum A",
+                "caption": "",
+                "description": ""
+            },
+            "assets/images/products/needle-serum-ax4.png": {
+                "sha256": "bc39714a1ca83eaa4cc93e50686bf7d992f4893cea25209eb5205128c0a34d32",
+                "title": "needle-serum-ax4-4",
+                "alt": "Serum dưỡng da FractionalCC Needle Serum AX4",
+                "caption": "",
+                "description": ""
+            },
+            "assets/images/products/needle-mask-c.png": {
+                "sha256": "e7fb05663fd5de2b5c9b54d00a9de7213b87f491036120b668b3c2a1054e0bcd",
+                "title": "needle-serum-c-face-mask-1",
+                "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask",
+                "caption": "",
+                "description": ""
+            },
+            "assets/images/products/needle-serum-c.png": {
+                "sha256": "2d0e36b1081e55a304947022d62eb06eab06643c805510d5bd73a6c6aa42fa68",
+                "title": "needle-serum-c-4",
+                "alt": "Serum dưỡng da FractionalCC Needle Serum C",
+                "caption": "",
+                "description": ""
+            },
+            "assets/images/products/needle-serum-cx4.png": {
+                "sha256": "a065741b7c1376beff022be50c1eef0817877f9a87ad5517f90ba6edc8aed77f",
+                "title": "needle-serum-cx4-4",
+                "alt": "Serum dưỡng da FractionalCC Needle Serum CX4",
+                "caption": "",
+                "description": ""
+            },
+            "assets/images/products/pdrn-toning-essence.png": {
+                "sha256": "99c691616ac479212f9aa8708b683a3a85d7f30764e72f59fb75dffdeff8d5fd",
+                "title": "pdrn-shot-1000-toning-essence-1",
+                "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence",
+                "caption": "",
+                "description": ""
+            },
+            "assets/images/products/pdrn-lip-essence.png": {
+                "sha256": "06180560ad0b0a5e656b0a56aa0b54cf672523bbe62782fd6139794308989741",
+                "title": "pdrn-shot-lip-essence-1",
+                "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence",
+                "caption": "",
+                "description": ""
+            },
+            "assets/images/products/pdrn-lip-plumper.png": {
+                "sha256": "29480a720fa47a88d1182d95ca907eb094585d8da297d7463ecb905de5cc9ded",
+                "title": "pdrn-shot-lip-plumper-1",
+                "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper",
+                "caption": "",
+                "description": ""
+            }
         }
     }
 }

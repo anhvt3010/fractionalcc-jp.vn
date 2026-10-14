@@ -488,12 +488,102 @@ function initProductDetailView() {
   });
   const inlineSelect = document.getElementById('inline-product-select');
   if (inlineSelect) inlineSelect.value = 'prod_' + product.id;
+  initProductImageGallery();
+}
+
+function initProductImageGallery() {
   const image = document.getElementById('pd-main-image');
-  document.querySelectorAll('[data-detail-image]').forEach(button => button.addEventListener('click', () => {
-    if (image) { image.src = button.dataset.detailImage; image.alt = button.dataset.detailAlt || ''; }
-    document.querySelectorAll('[data-detail-image]').forEach(item => item.classList.remove('active'));
-    button.classList.add('active');
-  }));
+  const buttons = Array.from(document.querySelectorAll('#pd-gallery-thumbs [data-detail-image]'));
+  const trigger = document.getElementById('pd-image-open');
+  const dialog = document.getElementById('pd-image-dialog');
+  if (!image || !buttons.length) return;
+  let currentIndex = Math.max(0, buttons.findIndex(button => button.dataset.detailImage === image.src));
+  let popupButtons = [];
+
+  function selectImage(index) {
+    currentIndex = (index + buttons.length) % buttons.length;
+    const selected = buttons[currentIndex];
+    image.src = selected.dataset.detailImage;
+    image.alt = selected.dataset.detailAlt || '';
+    if (trigger) trigger.href = image.src;
+    buttons.forEach((button, position) => {
+      button.classList.toggle('active', position === currentIndex);
+      button.setAttribute('aria-pressed', String(position === currentIndex));
+    });
+    if (dialog?.open) syncDialog();
+  }
+  buttons.forEach((button, index) => button.addEventListener('click', () => selectImage(index)));
+  // The image link remains usable when the browser cannot open native dialogs.
+  if (!trigger || !dialog || typeof dialog.showModal !== 'function') return;
+
+  const dialogImage = document.getElementById('pd-dialog-image');
+  const dialogThumbs = document.getElementById('pd-image-dialog-thumbs');
+  const count = document.getElementById('pd-image-dialog-count');
+  const previous = document.getElementById('pd-image-prev');
+  const next = document.getElementById('pd-image-next');
+  let previousOverflow = '';
+
+  function syncDialog() {
+    dialogImage.src = image.src;
+    dialogImage.alt = image.alt;
+    count.textContent = `${currentIndex + 1} / ${buttons.length}`;
+    popupButtons.forEach((button, index) => {
+      button.classList.toggle('active', index === currentIndex);
+      button.setAttribute('aria-pressed', String(index === currentIndex));
+    });
+    popupButtons[currentIndex]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }
+
+  trigger.addEventListener('click', event => {
+    event.preventDefault();
+    if (dialog.open) return;
+    if (!popupButtons.length) {
+      popupButtons = buttons.map((button, index) => {
+        const thumbnail = button.cloneNode(true);
+        thumbnail.removeAttribute('data-detail-image');
+        thumbnail.removeAttribute('data-detail-alt');
+        thumbnail.addEventListener('click', () => selectImage(index));
+        return thumbnail;
+      });
+      dialogThumbs.replaceChildren(...popupButtons);
+    }
+    previousOverflow = document.body.style.overflow;
+    dialog.showModal();
+    document.body.style.overflow = 'hidden';
+    syncDialog();
+  });
+  previous.disabled = next.disabled = buttons.length < 2;
+  previous.addEventListener('click', () => selectImage(currentIndex - 1));
+  next.addEventListener('click', () => selectImage(currentIndex + 1));
+  document.getElementById('pd-image-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const rect = dialog.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+  });
+  dialog.addEventListener('keydown', event => {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.key === 'Tab') {
+      const controls = Array.from(dialog.querySelectorAll('button:not([disabled])'));
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      selectImage(currentIndex + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+  dialog.addEventListener('close', () => {
+    document.body.style.overflow = previousOverflow;
+    trigger.focus({ preventScroll: true });
+  });
 }
 
 function initProductDetailTabs() {

@@ -52,9 +52,9 @@ function project_core_render_website_guide() {
 		<h2><?php echo esc_html__( 'Cách chỉnh sửa', 'project-core' ); ?></h2>
 		<ol>
 			<li><?php echo esc_html__( 'Chọn nội dung ở trên. Với trang, mở tab theo section và sửa chữ/ảnh; không cần sửa HTML, CSS hoặc PHP.', 'project-core' ); ?></li>
-			<li><?php echo esc_html__( 'Với sản phẩm, mở tab Thông tin & giá để sửa tên ngắn, giá và ảnh chính. Các tab Công dụng & cách dùng, Thành phần, Hồ sơ, Bộ lọc và Đánh giá tách riêng theo nội dung. Mỗi ý trong danh sách là một dòng; để giá trống khi chưa có dữ liệu.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Với sản phẩm, mở tab Thông tin & giá để sửa tên ngắn, giá và ảnh chính. Các tab Công dụng & lưu ý, Thành phần, Hồ sơ, Bộ lọc và Đánh giá tách riêng theo nội dung. Mỗi ý trong danh sách là một dòng; để giá trống khi chưa có dữ liệu. Hướng dẫn sử dụng nằm trong ảnh thumbnail của từng sản phẩm.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Tại danh sách Sản phẩm, chọn Sửa nhanh để đổi giá bán, giá gốc, tên ngắn, quy cách, loại sản phẩm, xuất xứ, số CBMP, trạng thái hồ sơ và mô tả ngắn. Nhập giá bằng số VNĐ không có dấu phân cách; để trống khi chưa có giá.', 'project-core' ); ?></li>
-			<li><?php echo esc_html__( 'Thêm ảnh chi tiết bằng block Thư viện ảnh trong trình soạn thảo sản phẩm. Chọn hoạt chất trong trường liên kết, kéo để sắp xếp.', 'project-core' ); ?></li>
+			<li><?php echo esc_html__( 'Trong mỗi sản phẩm, dùng khung Ảnh sản phẩm – đại diện & thứ tự: chọn thêm ảnh từ Thư viện, bấm Đặt đại diện, kéo ảnh hoặc dùng nút lên/xuống để đổi thứ tự thumbnail. Bỏ ảnh chỉ loại khỏi sản phẩm, không xóa Media. Nhấn Cập nhật để lưu. Chọn hoạt chất trong trường liên kết, kéo để sắp xếp.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Để chọn thẻ trong Danh Mục Sản Phẩm & Các Combo Tối Ưu trên trang chủ, mở từng Sản phẩm hoặc Combo, bật Hiển thị trong danh mục trang chủ và nhập thứ tự. Tổng cộng tối đa 6 mục; bỏ chọn một mục trước khi thêm mục mới. Lựa chọn này độc lập với 2 sản phẩm chủ lực.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Nhấn Cập nhật rồi Xem trang. Không thay thiết kế hoặc thêm nội dung chưa được duyệt.', 'project-core' ); ?></li>
 			<li><?php echo esc_html__( 'Mở Vấn đề làn da & phác đồ để sửa chữ, chọn ảnh theo từng tình trạng, nguyên tắc, tư vấn và SEO. Nhóm Gợi ý phác đồ quản lý sản phẩm/combo và thứ tự, tối đa 6 mục mỗi tình trạng. Lựa chọn sản phẩm lưu trên site này, chưa đưa vào dữ liệu mặc định khởi tạo.', 'project-core' ); ?></li>
@@ -63,6 +63,7 @@ function project_core_render_website_guide() {
 		</ol>
 		<?php if ( current_user_can( 'manage_options' ) ) : ?>
 		<h2><?php echo esc_html__( 'Khởi tạo dữ liệu mặc định', 'project-core' ); ?></h2>
+		<p>Bộ ảnh Thumbnail 1.0.5 gồm ảnh đại diện, thư viện thumbnail cho 10 sản phẩm và 7 avatar riêng. Bấm nút bên dưới để nhập bộ ảnh mới. Ảnh mặc định cũ còn nguyên được cập nhật; ảnh/thứ tự đã tự chỉnh hoặc đã xóa được giữ lại. Toàn bộ ảnh mới vẫn có trong Thư viện để bạn chọn thủ công.</p>
 		<p><?php echo esc_html__( 'Site mới tự tạo dữ liệu mặc định khi kích hoạt Project Child và Project Core, sau khi ACF sẵn sàng. Bộ mặc định gồm 10 sản phẩm và combo C–CX4 theo Excel đã duyệt. Nút bên dưới bổ sung dữ liệu còn thiếu nếu cần.', 'project-core' ); ?></p>
 		<p><?php echo esc_html__( 'Chỉ tạo bản ghi/trường còn thiếu; chạy lại giữ nguyên nội dung đã sửa. Không tự đổi URL, homepage hoặc kích hoạt theme.', 'project-core' ); ?></p>
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">

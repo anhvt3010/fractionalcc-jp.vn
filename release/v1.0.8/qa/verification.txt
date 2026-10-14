@@ -1,0 +1,13 @@
+﻿PASS: 2724 defaults initialization/media/content/relationship checks on a clean ZIP installation, including rerun preservation.
+PASS: 2106 responsive/browser checks: 10 products, 13 widths; image dialog on 320/375/768/1440px, 320px-high landscape and single-image gallery.
+PASS: opening selected image, thumbnails/alt/order/counter, previous/next, keyboard arrows, Tab/Shift+Tab, Escape, close button, backdrop, scroll/focus restore, repeated opening.
+PASS: tabs, gallery, purchase modal and consent regression checks. No real forms submitted; mail blocked.
+PASS: 149 image/HTML/cache/security checks; originals and CMS content untouched.
+PASS: initialization upgrade to 1.0.8 preserves all saved content and metadata for 52 records.
+PASS: defaults unchanged versus 1.0.7 except version.
+PASS: hover scale/transition removed from product image styles, including source/minified/bundle; magnifying cursor present.
+PASS: PHP lint in both ZIPs and JS syntax for main.js/main.min.js/browser verifier.
+PASS: desktop/mobile popup screenshots and current product layout visually reviewed.
+PASS: ZIP roots, inventories, CRC and bytes match source; checksums in package-report.json.
+Environment: XAMPP PHP 8.2.12, WordPress 7.1.3, Kadence 1.5.2, ACF Free 6.8.10.
+Scope: isolated local fixtures only; no production deployment or working-site activation claimed.

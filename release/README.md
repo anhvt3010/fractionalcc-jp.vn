@@ -1,6 +1,6 @@
 # Build và release Fractional CC
 
-Bản cập nhật hiện hành là **[1.0.4](v1.0.4/RELEASE.md)**: sửa phân phối ảnh WebP sau migration, ảnh responsive/preload, font local, CSS bundle, cache tài nguyên và lỗi accessibility trong báo cáo PageSpeed. [1.0.3](v1.0.3/RELEASE.md) sửa ảnh email; [1.0.2](v1.0.2/RELEASE.md) đồng bộ sản phẩm và bảo mật biên lai. Xem [hướng dẫn cập nhật hosting và số đo](v1.0.4/RELEASE.md).
+Bản chốt hiện hành là **[1.0.9](v1.0.9/RELEASE.md)**, ngày 15/10/2026: tổng hợp code hiện tại và các thay đổi tối nay, xuất lại dữ liệu mặc định từ CMS XAMPP đang dùng. Gồm ảnh WebP, quản lý gallery/đại diện/thứ tự, bố cục chi tiết và nhãn thông tin hiện tại, popup ảnh lớn có thumbnail, bỏ hover phóng to ảnh tại các danh mục. Xem [hai gói và hướng dẫn cập nhật hosting](v1.0.9/RELEASE.md), [defaults đã chốt](../docs/APPROVED-DEFAULTS.md) và [quản lý ảnh](../docs/THUMBNAIL-MEDIA.md).
 
 Mỗi `release/vX.Y.Z/` chứa đúng hai ZIP cài qua WordPress: `project-core-vX.Y.Z.zip` và `project-child-vX.Y.Z.zip`, cùng `RELEASE.md` và hồ sơ `qa/`. Root ZIP tương ứng là `project-core/` và `project-child/`. Plugin chứa nghiệp vụ/defaults/initializer; child theme chứa giao diện/schema/ảnh đã duyệt. WordPress, Kadence và ACF cài riêng. Không đóng gói config, secrets, database, tài khoản, đơn hàng, logs, backup hoặc uploads.
 

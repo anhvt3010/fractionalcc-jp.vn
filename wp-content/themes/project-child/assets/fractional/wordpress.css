@@ -507,3 +507,8 @@ body.admin-bar .fcc-site .policy-card {
 .fcc-site .footer-bottom {
 	color: #A3A3A3;
 }
+
+/* Remove zoom effect on product and combo images upon hover in home catalog section */
+.fcc-site #danh-muc .product-card:hover .product-thumb img {
+	transform: none;
+}

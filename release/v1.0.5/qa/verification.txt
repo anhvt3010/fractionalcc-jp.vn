@@ -1,0 +1,26 @@
+Release/defaults/media update: 1.0.5
+Environment: isolated XAMPP fixture on D:; Kadence, ACF, Project Core and Project Child.
+No working-site database/config exists in the workspace. No production deployment.
+All outgoing mail blocked or captured; no external messages sent.
+
+PASS: 47 source files inspected; 45 unique WebP assets, 25249106 -> 2696906 total bytes.
+PASS: representative packshots mapped to the matching ten named product folders; four images per product.
+PASS: 7 separate editable avatar fields; review text and large feedback pictures unchanged.
+PASS: product copy/prices, combos and home review text unchanged versus previous Git snapshot.
+PASS: 25 existing-site media upgrade/history/customer-edit preservation checks.
+PASS: 2738 approved snapshot initialization/media/content/relationship checks on a NEW WordPress/database installed from release ZIPs.
+PASS: 83 real product media save/order/nonce/permission/invalid-input/clearing checks; fixture restored.
+PASS: 82 existing security regression checks; fixture changes restored.
+PASS: 149 image/HTML/cache/security checks.
+PASS: 181 order snapshot/receipt/render/privacy checks.
+PASS: 219 MIME email checks; no image attachments; image URLs HTTP 200.
+PASS: 1081 responsive browser checks for ten product pages and thirteen widths; gallery/tabs/buy modal.
+PASS: 11 authenticated browser checks: native Media Library selection, add/remove, choose representative, reorder, real WordPress save, persisted frontend order, correct active thumbnail, thumbnail click and seven supplied avatars.
+PASS: visual review of media editor and feedback on desktop/mobile.
+PASS: PHP lint on every packaged PHP file; JS syntax check for the media editor.
+PASS: ZIP CRC, exact inventory, single slug root and source byte equality (package-report.json).
+
+The candidate ZIPs were reviewed and rebuilt before handoff to refine the image-panel link and version guard. The final installed core and ZIP byte checks use the hashes in RELEASE.md.
+The Media Library initially opened its standard Upload tab; the browser test selected Media Library before choosing existing photos.
+WordPress removes message=1 from history after save; the browser test validates the actual success notice and persisted values.
+No claims of production activation or new PageSpeed scores. Local test sites disabled at completion.
