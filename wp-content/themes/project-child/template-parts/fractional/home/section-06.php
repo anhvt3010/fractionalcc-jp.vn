@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 $fcc_routine_video = get_post_meta( project_core_fcc_page_id( 'home' ), 'fcc_home_routine_video_url', true );
-$fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : project_child_fcc_link( 'https://zalo.me/0985561862' );
+$fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : project_child_fcc_contact_link( 'zalo' );
 ?>
 <section class="section" id="routine">
       <div class="container">
@@ -358,7 +358,7 @@ $fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : pro
             <div class="demo-player-preview">
               <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_555650f3e397c2' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_555650f3e397c2', 'fcc_ui_6df4668d328d6b' ) ); ?>" class="demo-player-img" loading="lazy">
               <div class="demo-player-overlay">
-                <a href="<?php echo esc_url( $fcc_routine_link ); ?>" target="_blank" rel="noopener noreferrer" class="demo-play-btn-wrap" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_7273916d822930', 'shared' ) ); ?>">
+                <a <?php echo $fcc_routine_link ? 'href="' . esc_url( $fcc_routine_link ) . '"' : 'hidden'; ?> target="_blank" rel="noopener noreferrer" class="demo-play-btn-wrap" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_7273916d822930', 'shared' ) ); ?>">
                   <div class="demo-play-btn">
                     <svg width="22" height="22" viewbox="0 0 24 24" fill="currentColor">
                       <polygon points="6,3 20,12 6,21"></polygon>
@@ -371,7 +371,7 @@ $fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : pro
               <div>
                 <div class="demo-player-caption"><?php echo project_child_fcc_text( 'fcc_ui_c70f7bac8522f7', 'home' ); ?></div>
               </div>
-              <a href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/0985561862' ) ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 12px; padding: 7px 14px;">
+              <a <?php project_child_fcc_contact_attributes( 'zalo' ); ?> target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 12px; padding: 7px 14px;">
                 <?php echo project_child_fcc_text( 'fcc_ui_4c38e0fae9a6b0', 'home', false ); ?>
               </a>
             </div>
@@ -406,7 +406,7 @@ $fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : pro
             </div>
 
             <div style="text-align: center;">
-              <a class="btn btn-gold" href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/0985561862' ) ); ?>" target="_blank" rel="noopener noreferrer" style="width: 100%; text-align: center; font-size: 13.5px; padding: 13px 20px;">
+              <a class="btn btn-gold" <?php project_child_fcc_contact_attributes( 'zalo' ); ?> target="_blank" rel="noopener noreferrer" style="width: 100%; text-align: center; font-size: 13.5px; padding: 13px 20px;">
                 <?php echo project_child_fcc_text( 'fcc_ui_245d74f1632439', 'home', false ); ?>
               </a>
             </div>

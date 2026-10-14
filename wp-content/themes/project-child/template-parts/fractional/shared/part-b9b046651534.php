@@ -34,7 +34,8 @@
             <label class="form-label" for="modal-order-form-customer_note"><?php echo project_child_fcc_text( 'fcc_ui_2ea28da43d47d0', 'shared', false ); ?></label>
                   <textarea name="customer_note" class="form-control" style="min-height: 60px;" placeholder="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_8ab23cd60b12f1', 'shared' ) ); ?>" id="modal-order-form-customer_note"></textarea>
           </div>
-          <button type="submit" class="btn-submit-order"><?php echo project_child_fcc_text( 'fcc_ui_9681bed187e219', 'shared', false ); ?></button>
+          <?php get_template_part( 'template-parts/fractional/shared/order-consent', null, array( 'label' => 'fcc_ui_1a2520ccc60375' ) ); ?>
+          <button type="submit" class="btn-submit-order" disabled><?php echo project_child_fcc_text( 'fcc_ui_9681bed187e219', 'shared', false ); ?></button>
         </div>
       <?php project_child_fcc_form_fields(); ?></form>
     </div>

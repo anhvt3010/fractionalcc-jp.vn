@@ -42,9 +42,35 @@ function project_core_fcc_register_regimen_fields() {
 		$fields[] = project_core_fcc_field( $regimen['name'] . '_tab', $regimen['label'], 'tab', array( 'name' => '' ) );
 		$fields[] = project_core_fcc_field( $regimen['name'], 'Sản phẩm / combo gợi ý', 'relationship', array( 'post_type' => array( 'fcc_product', 'fcc_combo' ), 'return_format' => 'id', 'filters' => array( 'search', 'post_type' ), 'max' => 6, 'instructions' => 'Chọn theo công dụng và đối tượng phù hợp trong hồ sơ sản phẩm. Thứ tự đã chọn là thứ tự hiển thị. Có thể để trống để không hiển thị sản phẩm cho tình trạng này.' ) );
 	}
-	acf_add_local_field_group( array( 'key' => 'group_fcc_regimens', 'title' => 'Gợi ý phác đồ – sản phẩm theo tình trạng da', 'fields' => $fields, 'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'templates/fractional-concerns.php' ) ) ), 'position' => 'normal', 'show_in_rest' => 0 ) );
+	acf_add_local_field_group( array(
+		'key' => 'group_fcc_regimens',
+		'title' => 'Gợi ý phác đồ – sản phẩm theo tình trạng da',
+		'fields' => $fields,
+		'location' => array( array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'templates/fractional-concerns.php' ) ) ),
+		'position' => 'normal',
+		'menu_order' => -1,
+		'show_in_rest' => 0,
+	) );
 }
 add_action( 'acf/init', 'project_core_fcc_register_regimen_fields' );
+
+/**
+ * Direct shortcut submenu in admin sidebar to manage recommended products by skin concern.
+ */
+function project_core_fcc_register_regimens_admin_menu() {
+	$pages       = get_option( 'project_core_fcc_pages', array() );
+	$concerns_id = isset( $pages['concerns'] ) ? absint( $pages['concerns'] ) : 0;
+	if ( $concerns_id && current_user_can( 'edit_post', $concerns_id ) ) {
+		add_submenu_page(
+			'project-website-content',
+			'Gợi ý sản phẩm theo vấn đề da',
+			'Gợi ý theo vấn đề da',
+			'edit_pages',
+			'post.php?post=' . $concerns_id . '&action=edit'
+		);
+	}
+}
+add_action( 'admin_menu', 'project_core_fcc_register_regimens_admin_menu', 20 );
 
 function project_core_fcc_regimen_query( $args ) {
 	$args['post_status'] = 'publish';

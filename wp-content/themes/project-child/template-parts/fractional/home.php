@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 <?php get_template_part( 'template-parts/fractional/home/section-10' ); ?>
 <?php get_template_part( 'template-parts/fractional/home/section-11' ); ?>
 </main>
-<?php get_template_part( 'template-parts/fractional/shared/part-dca07e40c97c' ); ?>
+<?php get_template_part( 'template-parts/fractional/shared/footer' ); ?>
 <?php get_template_part( 'template-parts/fractional/shared/part-50e69dbb0457' ); ?>
 <?php get_template_part( 'template-parts/fractional/shared/part-06227b06833a' ); ?>
 <?php get_template_part( 'template-parts/fractional/shared/part-8e6ab1da227f' ); ?>

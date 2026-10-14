@@ -263,7 +263,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 24px;">
-          <a class="btn btn-outline" href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/0985561862' ) ); ?>" target="_blank" rel="noopener noreferrer">
+          <a class="btn btn-outline" <?php project_child_fcc_contact_attributes( 'zalo' ); ?> target="_blank" rel="noopener noreferrer">
             <?php echo project_child_fcc_text( 'fcc_ui_db1c1b95dea8f4', 'home', false ); ?>
           </a>
         </div>

@@ -1,15 +1,22 @@
 # Dữ liệu đã chốt – release đầu tiên 1.0.0
 
-Ngày 14/10/2026, người dùng duyệt toàn bộ nội dung đang hiển thị, sản phẩm và dữ liệu liên quan làm dữ liệu khởi tạo. `1.0.0` mở đầu lịch sử release mới; các release cũ đã xóa theo yêu cầu.
+> Hiện hành: **[1.0.1](../release/v1.0.1/RELEASE.md)**. Giữ nội dung đã duyệt, liên hệ và 30 Media; cập nhật bảo mật/hiệu năng và version defaults. Chuyển seed active sang 1.0.1 giữ nguyên 54 bản ghi nội dung và 30 Media.
 
-Đóng gói 6 bản ghi nội dung website với **1.083 giá trị trường**, **10 sản phẩm, 1 combo, 35 hoạt chất và 30 ảnh**. Giữ chữ, ảnh, SEO, liên hệ, chính sách, giá, đánh giá, hồ sơ, nội dung Gutenberg/gallery, alt/caption Media và các giá trị để trống. Bao gồm thứ tự **2 mục chủ lực**, **6 mục danh mục trang chủ** và **4 danh sách phác đồ đã duyệt**.
+Ngày 14/10/2026, người dùng yêu cầu dọn release cũ và đóng gói site hiện tại thành bản đầu tiên **1.0.0**. Defaults và hai package cùng version, trạng thái `approved`. [Hồ sơ release](../release/v1.0.0/RELEASE.md) ghi kết quả kiểm tra thực tế.
 
-Defaults tại `wp-content/plugins/project-core/defaults/fractional.json`; schema, giao diện và ảnh nguồn thuộc child theme. Media được đối chiếu theo SHA-256 để dùng lại asset giống byte; ảnh khác được đóng gói bằng tên theo hash. Không khôi phục 81 ảnh uploads dư đã xóa.
+Snapshot chứa **6 bản ghi nội dung với 1.085 giá trị trường**, **10 sản phẩm, 1 combo, 35 hoạt chất và 30 ảnh Media**. Giữ nội dung, giá, SEO, chính sách, gallery, alt/caption, giá trị trống, thứ tự 2 mục chủ lực, 6 mục danh mục trang chủ và 4 danh sách phác đồ đã chọn.
 
-Tham chiếu sản phẩm/combo/hoạt chất dùng source key; gallery và URL nội bộ được ánh xạ sang ID/domain site đích. Khởi tạo giữ tiêu đề/slug/thứ tự, tên website, mô tả, múi giờ/offset, định dạng ngày/giờ, đầu tuần và cấu trúc permalink. Homepage được chọn khi cài mới theo initializer; chạy lại bảo toàn nội dung, Media metadata, gallery, ảnh đã xóa, phác đồ đã bỏ chọn, settings và lựa chọn Reading đã chỉnh.
+Thông tin liên hệ dùng nguồn chung ở **Nội dung website → Quản lý liên hệ**. Hai URL do người dùng cung cấp đã lưu active/defaults:
 
-Không export tài khoản, mật khẩu, SMTP secrets, đơn hàng, khách hàng, transient, URL môi trường, revision hoặc demo WordPress không thuộc website Fractional CC. Trạng thái nội dung mặc định là **approved**; local/development/staging vẫn noindex độc lập với trạng thái này, trang Cảm ơn luôn noindex. Không tự thay domain hoặc settings indexing production.
+- Zalo: `https://zalo.me/84985561862`
+- Facebook: `https://web.facebook.com/hangnhatchomoinha.vn`
 
-Site đang dùng đã ghi seed version **1.0.0**, trạng thái **approved**, bảo toàn nội dung cũ và vẫn có 30 ảnh uploads. [Hồ sơ release và kiểm tra](../release/v1.0.0/RELEASE.md) là tài liệu hiện hành.
+10 ảnh sản phẩm dùng file có sẵn trực tiếp trong `wp-content/themes/project-child/assets/fractional/assets/images/products/`; thư mục `excel-20261013` đã gỡ. [Dọn uploads](UPLOADS-CLEANUP-2026-10-14.md) giữ 30 ảnh đang dùng và loại 30 file thừa. Bộ cài không chứa các ảnh uploads dư.
 
-Khi người dùng duyệt một lần chốt tiếp theo, dùng XAMPP PHP chạy `scripts/export-fractional-defaults.php --user=<administrator-id> --version=<version> --approve`, tăng version hai package, build và kiểm tra cài mới. Exporter yêu cầu quyền quản trị/upload; không lấy dữ liệu riêng. Compiler HTML cũ bị chặn khi defaults đã approved để tránh ghi đè snapshot, CSS và ảnh đã chốt.
+Defaults thuộc `wp-content/plugins/project-core/defaults/fractional.json`; schema và ảnh nguồn thuộc child theme. Exporter đối chiếu SHA-256, dùng lại asset khớp byte hoặc đóng gói bản đã duyệt theo hash. Source key ánh xạ quan hệ, gallery và URL sang ID/domain site đích.
+
+Initializer chọn homepage khi cài mới chưa có lựa chọn. Chạy lại giữ nội dung, Media metadata, ảnh đã xóa, phác đồ đã bỏ chọn, settings và Reading đã chỉnh; không tạo bản ghi hoặc ảnh trùng. Trên site đang dùng, chuyển seed version sang 1.0.0 giữ nguyên 54 bản ghi nội dung và 30 Media.
+
+Không export tài khoản, credentials, SMTP secrets, đơn hàng, khách hàng, transient, revision, URL môi trường hoặc demo WordPress không thuộc website. Local/development/staging noindex độc lập với trạng thái approved; trang Cảm ơn luôn noindex. Domain public và indexing production cấu hình riêng.
+
+Lần chốt tiếp theo dùng `scripts/export-fractional-defaults.php --user=<administrator-id> --version=<version> --approve`, tăng version hai package rồi build và thử cài mới. Exporter yêu cầu quyền quản trị/upload. Compiler HTML cũ bị chặn khi defaults đã approved để bảo vệ dữ liệu đã chốt.

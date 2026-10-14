@@ -13,8 +13,13 @@ function project_child_fcc_kind() {
 	return '';
 }
 
+/** Public templates read metadata directly; register editor schemas only where needed. */
+function project_child_fcc_needs_editor_fields() {
+	return is_admin() || 'cli' === PHP_SAPI || isset( $GLOBALS['wp_customize'] );
+}
+
 function project_child_fcc_register_fields() {
-	if ( ! function_exists( 'acf_add_local_field_group' ) ) { return; }
+	if ( ! function_exists( 'acf_add_local_field_group' ) || ! project_child_fcc_needs_editor_fields() ) { return; }
 	$groups = project_child_fcc_schema();
 	$labels = array( 'shared' => 'Thông tin chung', 'home' => 'Trang chủ', 'catalog' => 'Danh mục', 'policies' => 'Chính sách', 'thankyou' => 'Cảm ơn', 'concerns' => 'Vấn đề làn da' );
 	foreach ( (array) $groups as $kind => $sections ) {
@@ -24,6 +29,17 @@ function project_child_fcc_register_fields() {
 			$fields[] = array( 'key' => 'field_fcc_tab_' . md5( $kind . $section ), 'label' => $section, 'type' => 'tab', 'placement' => 'left' );
 			if ( 'home' === $kind && isset( $section_fields['fcc_ui_44137315906c33'] ) ) {
 				$fields[] = array( 'key' => 'field_fcc_home_catalog_help', 'name' => '', 'label' => 'Chọn sản phẩm và combo hiển thị', 'type' => 'message', 'message' => 'Mở <a href="' . esc_url( admin_url( 'edit.php?post_type=fcc_product' ) ) . '">Sản phẩm</a> hoặc <a href="' . esc_url( admin_url( 'edit.php?post_type=fcc_combo' ) ) . '">Combo</a>, bật <strong>Hiển thị trong danh mục trang chủ</strong> và nhập thứ tự. Tối đa 6 mục tổng cộng; độc lập với 2 sản phẩm chủ lực. Tên, ảnh, mô tả và giá lấy từ sản phẩm/combo đã chọn.', 'new_lines' => '', 'esc_html' => 0 );
+			}
+			if ( 'concerns' === $kind && in_array( $section, array( '02. Đốm nâu & không đều màu', '03. Lỗ chân lông & da sần', '04. Lão hóa & nếp nhăn', '05. Thâm mụn sau viêm' ), true ) ) {
+				$fields[] = array(
+					'key'       => 'field_fcc_regimen_hint_' . md5( $section ),
+					'name'      => '',
+					'label'     => 'Sản phẩm gợi ý cho tình trạng da này',
+					'type'      => 'message',
+					'message'   => '💡 <em>Các sản phẩm / combo hiển thị trên website cho tình trạng da này được chọn và sắp xếp tại khung <strong>"Gợi ý phác đồ – sản phẩm theo tình trạng da"</strong> (nằm ở phía trên đầu trang, chọn tab tương ứng để thêm/bớt hoặc kéo thả đổi thứ tự).</em>',
+					'new_lines' => '',
+					'esc_html'  => 0,
+				);
 			}
 			$fields = array_merge( $fields, array_values( $section_fields ) );
 		}

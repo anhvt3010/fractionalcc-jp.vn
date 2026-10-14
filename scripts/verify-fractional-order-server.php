@@ -8,6 +8,10 @@ if ( $ajax ) { define( 'DOING_AJAX', true ); }
 require rtrim( $root, '/\\' ) . '/wp-load.php';
 if ( ! get_option( 'project_core_fcc_test_install' ) ) { throw new RuntimeException( 'Marked test installation required.' ); }
 wp_set_current_user( 0 );
+$_SERVER['REQUEST_METHOD'] = 'POST';
+$_SERVER['REMOTE_ADDR'] = '192.0.2.11';
+$rate_key = 'fcc_order_rate_' . hash_hmac( 'sha256', inet_pton( $_SERVER['REMOTE_ADDR'] ), wp_salt( 'nonce' ) );
+delete_transient( $rate_key );
 class FccOrderVerificationStop extends RuntimeException {}
 $mail_calls = 0;
 $mail_result = true;
@@ -73,6 +77,8 @@ try {
 	fcc_order_check( empty( $result['success'] ) && $before === $mail_calls, 'Failed order storage must not send mail or report success.' );
 } finally {
 	remove_filter( 'wp_insert_post_empty_content', '__return_true' );
+	delete_transient( $rate_key );
+	delete_option( $rate_key . '_lock' );
 	foreach ( $created as $id ) { wp_delete_post( $id, true ); }
 }
 echo 'PASS: ' . $checks . ' server form checks (' . ( $ajax ? 'AJAX' : 'native POST' ) . '); email captured, no external messages sent.' . PHP_EOL;

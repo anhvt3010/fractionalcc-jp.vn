@@ -30,8 +30,8 @@ File không cung cấp hồ sơ combo riêng. Giữ tên, thành phần C + CX4,
 
 ## Defaults, cập nhật và khởi tạo
 
-- `wp-content/plugins/project-core/defaults/fractional.json` là bộ mặc định runtime, version `0.3.3`; `defaults/catalog-excel.json` ghi dữ liệu nguồn từng ô/hàng và hash ảnh.
-- Ảnh Excel nằm trong child theme tại `assets/fractional/assets/images/products/excel-20261013/`, được đóng gói cùng theme. Không dùng attachment ID của site local làm giá trị mặc định.
+- `wp-content/plugins/project-core/defaults/fractional.json` là bộ mặc định runtime hiện tại, version `1.0.1`; `defaults/catalog-excel.json` ghi dữ liệu nguồn từng ô/hàng và provenance/hash ảnh.
+- Ngày 14/10/2026 người dùng yêu cầu bỏ ảnh trích từ Excel. Thư mục cũ đã gỡ; ảnh active/defaults dùng các file có sẵn trực tiếp trong `assets/fractional/assets/images/products/`. Không dùng attachment ID của site local làm giá trị mặc định. [Hồ sơ thay ảnh](../release/v1.0.0/RELEASE.md).
 - Site mới: kích hoạt ACF, Project Core và Project Child. Activation theme/plugin xếp lịch khởi tạo; lần vào quản trị khi ACF/theme sẵn sàng sẽ tạo đủ dữ liệu. Không tự đổi homepage, URL, menu hoặc theme của site.
 - Site đã có dữ liệu: reactivation và khởi tạo thường chỉ bổ sung phần thiếu, bảo toàn tên, giá, ảnh bị bỏ chọn, nội dung Gutenberg, hoạt chất, nội dung trang và sản phẩm chủ lực đã chỉnh.
 - Cập nhật có ghi đè từ Excel là thao tác riêng đã được người dùng cho phép cho site hiện tại: `php scripts/setup-fractional-site.php --update-catalog`. Chỉ CLI, yêu cầu quyền quản trị/upload; thay các trường catalog có nguồn, không đổi URL/permalink/homepage hoặc lựa chọn sản phẩm chủ lực. Gallery được khởi tạo trước đây được cập nhật ảnh; gallery/nội dung tự soạn được giữ.
@@ -39,7 +39,7 @@ File không cung cấp hồ sơ combo riêng. Giữ tên, thành phần C + CX4,
 
 ## Công cụ và kiểm tra
 
-Trích Excel bằng `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/import-fractional-excel.ps1`. Công cụ xác nhận header, STT/tên, CBMP, định dạng giá và ảnh mỗi hàng trước khi ghi defaults. Workbook nguồn không bị sửa.
+Compiler legacy `scripts/import-fractional-excel.ps1` xác nhận header, STT/tên, CBMP và định dạng giá; dùng ảnh có sẵn trong theme, không trích ảnh nhúng hoặc sửa workbook. Snapshot đã approved được bảo vệ khỏi ghi đè. Các lần chốt tiếp theo dùng CMS và `scripts/export-fractional-defaults.php` theo release workflow.
 
 `php scripts/verify-fractional-catalog.php` đối chiếu 305 điểm giữa nguồn Excel, defaults và database: từng trường, phân biệt trống/0, thành phần, giá, mapping/hash ảnh và combo. Site local và site mới từ hai ZIP đã đạt. Trên database kiểm thử riêng, chạy lại sau khi chỉnh nội dung không tạo trùng hoặc ghi đè edits; activation không đổi homepage; khởi tạo ẩn danh bị từ chối. HTTP của 10 trang sản phẩm, trang chủ và danh mục đạt; dữ liệu biểu mẫu đặt mua có giá mới. Không gửi email/đơn thử và không thay dữ liệu site đang làm việc để thử reset.
 

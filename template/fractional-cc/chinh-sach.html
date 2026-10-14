@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chính Sách Hoạt Động & Cam Kết Minh Bạch | Fractional CC Vietnam</title>
   
-  <meta name="description" content="Chính sách bảo hành, đổi trả trong 7 ngày, quyền kiểm tra hàng trước khi thanh toán (đồng kiểm), chính sách giao hàng toàn quốc và cam kết bảo mật thông tin tại Fractional CC Vietnam - Phân phối độc quyền bởi BUI DANG-JP.">
+  <meta name="description" content="Chính sách bảo hành, đổi trả trong 7 ngày, quyền kiểm tra hàng trước khi thanh toán (đồng kiểm), chính sách giao hàng toàn quốc và cam kết bảo mật thông tin tại Fractional CC Vietnam - Phân phối độc quyền bởi JP- BÙI ĐẶNG.">
   <link rel="canonical" href="https://fractional-cc.vn/chinh-sach.html">
   <meta name="robots" content="index, follow">
 
@@ -48,8 +48,22 @@
       border-radius: var(--radius-lg);
       padding: 24px;
       box-shadow: var(--shadow-sm);
-      position: sticky;
-      top: 96px;
+      position: static;
+    }
+    @media (min-width: 992px) {
+      .policy-sidebar {
+        position: sticky;
+        top: 116px;
+        max-height: calc(100vh - 136px);
+        overflow-y: auto;
+      }
+    }
+    .policy-sidebar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .policy-sidebar::-webkit-scrollbar-thumb {
+      background: rgba(197, 160, 89, 0.3);
+      border-radius: 4px;
     }
     .policy-sidebar-title {
       font-size: 14px;
@@ -134,6 +148,34 @@
       background: var(--color-accent-gold);
       color: #121212;
     }
+    .policy-sidebar-contact-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    .policy-sidebar-contact-btns .contact-pill-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: all var(--transition-fast);
+    }
+    .policy-sidebar-contact-btns .contact-pill-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .policy-sidebar-contact-btns .contact-pill-btn svg {
+      flex-shrink: 0;
+    }
 
     /* Policy Main Content */
     .policy-card {
@@ -143,10 +185,11 @@
       padding: 36px 32px;
       margin-bottom: 28px;
       box-shadow: var(--shadow-sm);
-      scroll-margin-top: 100px;
+      scroll-margin-top: 120px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 782px) {
       .policy-card {
+        scroll-margin-top: 100px;
         padding: 26px 20px;
       }
     }
@@ -170,6 +213,12 @@
       flex-shrink: 0;
       color: #8C6A28;
       font-size: 20px;
+    }
+    .policy-card-icon svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+      color: inherit;
     }
     .policy-card-title {
       font-size: 22px;
@@ -256,7 +305,7 @@
           <rect width="24" height="16" fill="#FFFFFF"/>
           <circle cx="12" cy="8" r="4.8" fill="#BC002D"/>
         </svg>
-        <strong>FRACTIONAL CC NHẬT BẢN</strong> | Phân phối độc quyền tại Việt Nam bởi <strong>Công ty TNHH BUI DANG–JP</strong> • Hotline: 0985 561 862
+        <strong>FRACTIONAL CC NHẬT BẢN</strong> | Phân phối độc quyền tại Việt Nam bởi <strong>CÔNG TY TNHH JP- BÙI ĐẶNG</strong> • Hotline: 0985 561 862
       </span>
     </div>
   </div>
@@ -271,13 +320,13 @@
         </ul>
       </nav>
 
-      <a href="index.html" class="brand-logo-center" title="Fractional CC Nhật Bản & BUI DANG-JP">
+      <a href="index.html" class="brand-logo-center" title="Fractional CC Nhật Bản & JP- BÙI ĐẶNG">
         <img src="assets/images/brand/fractional-cc-logo.png" alt="Logo Fractional CC" class="brand-logo-main-img">
         <span class="logo-divider"></span>
         <div class="distributor-badge">
-          <img src="assets/images/brand/bui-dang-jp-logo.png" alt="Công ty BUI DANG-JP" class="distributor-logo-img" title="BUI DANG-JP - Phân phối độc quyền tại Việt Nam">
+          <img src="assets/images/brand/bui-dang-jp-logo.png" alt="Công ty JP- BÙI ĐẶNG" class="distributor-logo-img" title="JP- BÙI ĐẶNG - Phân phối độc quyền tại Việt Nam">
           <div class="distributor-text">
-            <span class="distributor-title">BUI DANG–JP</span>
+            <span class="distributor-title">JP- BÙI ĐẶNG</span>
             <span class="distributor-sub">Độc quyền VN</span>
           </div>
         </div>
@@ -336,7 +385,7 @@
       <div class="section-header" style="margin-bottom: 36px;">
         <span class="section-tag">Cam Kết Minh Bạch & Pháp Lý</span>
         <h1 class="section-title heading-serif" style="font-size: 32px;">Chính Sách Hoạt Động & Bảo Vệ Quyền Lợi Khách Hàng</h1>
-        <p class="section-desc">Hệ thống quy chuẩn vận hành, giao nhận đồng kiểm, đổi trả và bảo mật thông tin tuân thủ theo Nghị định TMĐT Bộ Công Thương và tiêu chuẩn phân phối chính hãng từ Fractional CC Tokyo.</p>
+        <p class="section-desc">Hệ thống quy chuẩn vận hành, giao nhận đồng kiểm, đổi trả và bảo mật thông tin khách hàng và tiêu chuẩn nhận diện chính hãng từ Fractional CC Nhật Bản.</p>
       </div>
 
       <!-- LAYOUT GRID -->
@@ -347,7 +396,7 @@
           <div class="policy-sidebar-title">Mục Lục Chính Sách</div>
           <nav class="policy-nav-list">
             <a href="#doi-tra" class="policy-nav-link active">
-              <span>01.</span> Đổi Trả & Hoàn Tiền (7 Ngày)
+              <span>01.</span> Quy Định Đổi Trả
             </a>
             <a href="#giao-hang" class="policy-nav-link">
               <span>02.</span> Giao Hàng & Đồng Kiểm
@@ -369,10 +418,23 @@
           <div class="policy-sidebar-contact">
             <h4>Hỗ Trợ Trực Tiếp 24/7</h4>
             <p>Mọi thắc mắc về đơn hàng hoặc khiếu nại dịch vụ, vui lòng liên hệ:</p>
-            <a href="tel:0985561862" class="policy-sidebar-btn">
-              <span>📞 0985 561 862</span>
-            </a>
-            <div style="font-size: 11.5px; color: var(--color-text-muted); margin-top: 8px;">
+            <div class="policy-sidebar-contact-btns">
+              <a href="https://zalo.me/0985561862" target="_blank" rel="noopener noreferrer" class="contact-pill-btn contact-pill-zalo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.03 2 11C2 13.565 3.195 15.864 5.12 17.472L4.2 21.2C4.085 21.664 4.545 22.052 4.965 21.848L9.29 19.742C10.158 19.911 11.063 20 12 20C17.523 20 22 15.97 22 11C22 6.03 17.523 2 12 2Z" fill="#FFFFFF"></path><text x="12" y="14" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="7.2" font-weight="800" fill="#0068FF" text-anchor="middle" letter-spacing="-0.3">Zalo</text></svg>
+                <span>Chat Zalo</span>
+              </a>
+
+              <a href="https://m.me/buidangjp" target="_blank" rel="noopener noreferrer" class="contact-pill-btn contact-pill-messenger">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.12 7.15.16.14.26.35.26.57l-.37 2.21c-.08.47.38.86.82.7l2.58-1.02c.18-.07.38-.07.56-.01.95.26 1.97.4 3.03.4 5.64 0 10-4.13 10-9.7S17.64 2 12 2zm1 10.5-2.5-2.5-3.5 3.5 3-4.5 2.5 2.5 3.5-3.5-3 4.5z"/></svg>
+                <span>Messenger</span>
+              </a>
+
+              <a href="tel:0985561862" class="contact-pill-btn contact-pill-phone">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Hotline: 0985 561 862</span>
+              </a>
+            </div>
+            <div style="font-size: 11.5px; color: var(--color-text-muted); margin-top: 10px;">
               Email: jpbuidangco.ltd@gmail.com
             </div>
           </div>
@@ -381,19 +443,21 @@
         <!-- CỘT PHẢI: NỘI DUNG CHI TIẾT 6 PHẦN CHÍNH SÁCH -->
         <div class="policy-content-area">
 
-          <!-- MỤC 1: CHÍNH SÁCH ĐỔI TRẢ & HOÀN TIỀN -->
+          <!-- MỤC 1: QUY ĐỊNH ĐỔI TRẢ -->
           <article class="policy-card" id="doi-tra">
             <div class="policy-card-header">
-              <div class="policy-card-icon">↺</div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>
+              </div>
               <div>
                 <div class="policy-card-sub">Điều Khoản 01</div>
-                <h2 class="policy-card-title heading-serif">Chính Sách Đổi Trả & Hoàn Tiền Trong 07 Ngày</h2>
+                <h2 class="policy-card-title heading-serif">Quy Định Đổi Trả</h2>
               </div>
             </div>
             <div class="policy-body">
-              <p>Công ty TNHH BUI DANG-JP cam kết mang đến trải nghiệm an tâm tuyệt đối cho khách hàng khi đặt mua dòng dược mỹ phẩm vi kim sinh học Fractional CC chính ngạch Nhật Bản.</p>
+              <p>CÔNG TY TNHH JP- BÙI ĐẶNG cam kết mang đến trải nghiệm an tâm tuyệt đối cho khách hàng khi đặt mua dòng dược mỹ phẩm vi kim sinh học Fractional CC chính ngạch Nhật Bản.</p>
 
-              <h3 style="font-size: 16px; margin: 18px 0 10px; color: var(--color-primary);">1.1. Các Trường Hợp Được Đổi Trả Miễn Phí 100%:</h3>
+              <h3 style="font-size: 16px; margin: 18px 0 10px; color: var(--color-primary);">Các Trường Hợp Được Đổi Trả Miễn Phí 100%:</h3>
               <ul>
                 <li><strong>Lỗi kỹ thuật hoặc bao bì từ nhà sản xuất:</strong> Vòi xịt hoặc van bấm bị tắc nghẽn, nắp chai bị rạn vỡ, rò rỉ dung dịch trước khi mở niêm phong.</li>
                 <li><strong>Hư hại do quá trình vận chuyển:</strong> Hộp sản phẩm bị móp méo nặng, vỡ hỏng trong lúc shipper giao hàng.</li>
@@ -402,29 +466,24 @@
               </ul>
 
               <div class="policy-alert">
-                <strong>Thời hạn yêu cầu đổi trả:</strong> Trong vòng <strong>07 ngày</strong> kể từ ngày quý khách ký nhận kiện hàng từ đơn vị vận chuyển. Toàn bộ chi phí gửi trả hàng 2 chiều sẽ do <strong>BUI DANG-JP chi trả 100%</strong>.
+                <strong>Thời hạn yêu cầu đổi trả:</strong> Trong vòng <strong>07 ngày</strong> kể từ ngày quý khách ký nhận kiện hàng từ đơn vị vận chuyển. Toàn bộ chi phí gửi trả hàng 2 chiều sẽ do <strong>JP- BÙI ĐẶNG chi trả 100%</strong>.
               </div>
-
-              <h3 style="font-size: 16px; margin: 18px 0 10px; color: var(--color-primary);">1.2. Quy Trình Hoàn Tiền Nhanh:</h3>
-              <p>Nếu khách hàng không có nhu cầu đổi sản phẩm mới mà yêu cầu hoàn tiền:</p>
-              <ol>
-                <li>Khách hàng cung cấp hình ảnh/video mở hộp và thông tin số tài khoản ngân hàng chính chủ.</li>
-                <li>BUI DANG-JP thực hiện chuyển khoản hoàn tiền 100% trong vòng <strong>24 – 48 giờ làm việc</strong> sau khi xác nhận kiện hàng hoàn về kho.</li>
-              </ol>
             </div>
           </article>
 
           <!-- MỤC 2: CHÍNH SÁCH GIAO HÀNG & ĐỒNG KIỂM -->
           <article class="policy-card" id="giao-hang">
             <div class="policy-card-header">
-              <div class="policy-card-icon">📦</div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              </div>
               <div>
                 <div class="policy-card-sub">Điều Khoản 02</div>
                 <h2 class="policy-card-title heading-serif">Chính Sách Vận Chuyển, Giao Nhận & Quyền Đồng Kiểm</h2>
               </div>
             </div>
             <div class="policy-body">
-              <p>Nhằm đảm bảo sản phẩm được bảo quản ở điều kiện nhiệt độ tốt nhất trước khi đến tay người tiêu dùng, BUI DANG-JP hợp tác với các đơn vị chuyển phát nhanh hàng đầu (Viettel Post, GHTK, EMS).</p>
+              <p>Nhằm đảm bảo sản phẩm được bảo quản ở điều kiện nhiệt độ tốt nhất trước khi đến tay người tiêu dùng, JP- BÙI ĐẶNG hợp tác với các đơn vị chuyển phát nhanh hàng đầu (Viettel Post, GHTK, EMS).</p>
 
               <table class="policy-table">
                 <thead>
@@ -438,7 +497,7 @@
                   <tr>
                     <td><strong>Nội thành Hà Nội & TP. Hồ Chí Minh</strong></td>
                     <td>1 – 2 ngày làm việc</td>
-                    <td>Miễn phí cho đơn Combo</td>
+                    <td>Thông báo minh bạch khi xác nhận</td>
                   </tr>
                   <tr>
                     <td><strong>Các tỉnh thành & khu vực khác</strong></td>
@@ -449,7 +508,7 @@
               </table>
 
               <div class="policy-alert" style="background: #F2F8F4; border-color: #2E7D32;">
-                <strong style="color: #1E5622;">QUYỀN ĐỒNG KIỂM TỐI CAO:</strong> Quý khách có quyền <strong>MỞ HỘP CARTON BÊN NGOÀI ĐỂ KIỂM TRA</strong> đúng số lượng chai, nguyên vẹn tem chống hàng giả và nhãn phụ tiếng Việt trước khi thanh toán tiền cho nhân viên giao hàng.
+                <strong style="color: #1E5622;">LƯU Ý ĐỒNG KIỂM:</strong> Quý khách có quyền <strong>MỞ HỘP CARTON BÊN NGOÀI ĐỂ KIỂM TRA</strong> đúng số lượng chai, nguyên vẹn tem chống hàng giả và nhãn phụ tiếng Việt trước khi thanh toán tiền cho nhân viên giao hàng.
               </div>
               <p style="font-size: 13.5px; color: var(--color-text-muted);"><em>*Lưu ý: Không bóc rách tem niêm phong ni lông trực tiếp trên nắp chai serum nếu chưa đồng ý nhận hàng.</em></p>
             </div>
@@ -458,26 +517,27 @@
           <!-- MỤC 3: CHÍNH SÁCH BẢO MẬT THÔNG TIN -->
           <article class="policy-card" id="bao-mat">
             <div class="policy-card-header">
-              <div class="policy-card-icon">🔒</div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+              </div>
               <div>
                 <div class="policy-card-sub">Điều Khoản 03</div>
                 <h2 class="policy-card-title heading-serif">Chính Sách Bảo Mật Thông Tin Khách Hàng (Privacy Policy)</h2>
               </div>
             </div>
             <div class="policy-body">
-              <p>Tuân thủ nghiêm ngặt theo Nghị định 52/2013/NĐ-CP và Luật Bảo vệ quyền lợi người tiêu dùng, chúng tôi cam kết bảo vệ toàn vẹn thông tin riêng tư của quý khách:</p>
+              <p>Tuân thủ nghiêm ngặt theo quy định pháp luật Việt Nam hiện hành về bảo vệ dữ liệu cá nhân và bảo vệ quyền lợi người tiêu dùng, chúng tôi cam kết bảo vệ toàn vẹn thông tin riêng tư của quý khách:</p>
 
               <h3 style="font-size: 16px; margin: 18px 0 10px; color: var(--color-primary);">3.1. Mục Đích Thu Thập Dữ Liệu:</h3>
               <ul>
                 <li>Gọi điện thoại tư vấn phác đồ da và xác nhận thông tin giao nhận đơn hàng.</li>
-                <li>Chuyển tiếp địa chỉ nhận hàng cho đơn vị vận chuyển phát nhanh.</li>
-                <li>Hỗ trợ hướng dẫn quy trình sử dụng (routine sáng/tối) và chăm sóc phản hồi sau khi dùng thử Spicule.</li>
+                <li>Hỗ trợ hướng dẫn quy trình sử dụng (routine sáng/tối) và chăm sóc phản hồi.</li>
               </ul>
 
-              <h3 style="font-size: 16px; margin: 18px 0 10px; color: var(--color-primary);">3.2. Cam Kết Bảo Vệ & Quyền Của Khách Hàng:</h3>
+              <h3 style="font-size: 16px; margin: 18px 0 10px; color: var(--color-primary);">3.2. Cam kết bảo vệ và quyền của khách hàng:</h3>
               <ul>
-                <li><strong>Tuyệt đối không chia sẻ hoặc bán dữ liệu:</strong> Không cung cấp số điện thoại hoặc thông tin cá nhân của quý khách cho bất kỳ bên thứ ba nào vì mục đích quảng cáo rác.</li>
-                <li><strong>Quyền yêu cầu xóa thông tin:</strong> Khách hàng có quyền yêu cầu BUI DANG-JP xóa toàn bộ lịch sử tư vấn hoặc thông tin liên hệ khỏi hệ thống bất cứ lúc nào bằng cách nhắn tin Zalo hoặc gọi Hotline <code>0985 561 862</code>.</li>
+                <li>Chúng tôi không bán hoặc chia sẻ số điện thoại, thông tin cá nhân của quý khách cho bên thứ ba vì mục đích quảng cáo. Thông tin chỉ được chuyển cho đơn vị vận chuyển ở mức cần thiết để giao hàng.</li>
+                <li>Quý khách có quyền yêu cầu JP- BÙI ĐẶNG xóa toàn bộ lịch sử tư vấn hoặc thông tin liên hệ khỏi hệ thống bất cứ lúc nào bằng cách nhắn Zalo hoặc gọi Hotline <code>0985 561 862</code>.</li>
               </ul>
             </div>
           </article>
@@ -485,18 +545,20 @@
           <!-- MỤC 4: PHƯƠNG THỨC THANH TOÁN -->
           <article class="policy-card" id="thanh-toan">
             <div class="policy-card-header">
-              <div class="policy-card-icon">💳</div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><line x1="6" y1="15" x2="10" y2="15"></line></svg>
+              </div>
               <div>
                 <div class="policy-card-sub">Điều Khoản 04</div>
                 <h2 class="policy-card-title heading-serif">Phương Thức Thanh Toán Minh Bạch & An Toàn</h2>
               </div>
             </div>
             <div class="policy-body">
-              <p>Nhằm phòng ngừa triệt để các hình thức lừa đảo giả mạo trực tuyến, BUI DANG-JP áp dụng 2 phương thức thanh toán an toàn nhất hiện nay:</p>
+              <p>Nhằm phòng ngừa triệt để các hình thức lừa đảo giả mạo trực tuyến, JP- BÙI ĐẶNG áp dụng 2 phương thức thanh toán an toàn nhất hiện nay:</p>
 
               <ol>
                 <li><strong>Thanh toán tiền mặt khi nhận hàng (COD):</strong> Quý khách chỉ thanh toán tiền sau khi shipper giao hàng tận nơi và đã kiểm tra đúng kiện hàng.</li>
-                <li><strong>Thanh toán chuyển khoản ngân hàng:</strong> Được áp dụng khi khách hàng có nhu cầu gửi quà tặng hoặc chuyển khoản trước. Số tài khoản chính thức của công ty sẽ được chuyên viên cung cấp qua Zalo/Email có đuôi xác thực của BUI DANG-JP.</li>
+                <li><strong>Thanh toán chuyển khoản ngân hàng:</strong> Được áp dụng khi khách hàng có nhu cầu gửi quà tặng hoặc chuyển khoản trước. Số tài khoản chính thức của công ty sẽ được chuyên viên cung cấp qua Zalo/Email có đuôi xác thực của JP- BÙI ĐẶNG.</li>
               </ol>
             </div>
           </article>
@@ -504,7 +566,9 @@
           <!-- MỤC 5: NHẬN DIỆN HÀNG CHÍNH HÃNG -->
           <article class="policy-card" id="chinh-hang">
             <div class="policy-card-header">
-              <div class="policy-card-icon">🇯🇵</div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path><path d="m9 8 2 2 4-4"></path></svg>
+              </div>
               <div>
                 <div class="policy-card-sub">Điều Khoản 05</div>
                 <h2 class="policy-card-title heading-serif">Nhận Diện Sản Phẩm Fractional CC Nhập Khẩu Chính Ngạch</h2>
@@ -515,7 +579,7 @@
 
               <ul>
                 <li><strong>Tem niêm phong chống hàng giả:</strong> Tem vỡ hologram dán tại miệng mở hộp, đảm bảo chưa từng bị can thiệp.</li>
-                <li><strong>Nhãn phụ tiếng Việt đầy đủ 10 số CBMP:</strong> Thể hiện rõ số công bố được cấp bởi Cục Quản Lý Dược – Bộ Y Tế Việt Nam, thành phần chi tiết, xuất xứ nhà máy Tokyo Nhật Bản và pháp nhân nhập khẩu Công ty TNHH BUI DANG-JP.</li>
+                <li><strong>Nhãn phụ tiếng Việt đầy đủ 10 số CBMP:</strong> Thể hiện rõ số công bố được cấp bởi Cục Quản Lý Dược – Bộ Y Tế Việt Nam, thành phần chi tiết, xuất xứ nhà máy Tokyo Nhật Bản và pháp nhân nhập khẩu CÔNG TY TNHH JP- BÙI ĐẶNG.</li>
                 <li><strong>Mã vạch quốc gia Nhật Bản:</strong> Mã vạch chuẩn JAN Code bắt đầu bằng đầu số <code>45</code> hoặc <code>49</code>.</li>
               </ul>
             </div>
@@ -524,7 +588,9 @@
           <!-- MỤC 6: TIẾP NHẬN & GIẢI QUYẾT KHIẾU NẠI -->
           <article class="policy-card" id="khieu-nai">
             <div class="policy-card-header">
-              <div class="policy-card-icon">⚖️</div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+              </div>
               <div>
                 <div class="policy-card-sub">Điều Khoản 06</div>
                 <h2 class="policy-card-title heading-serif">Quy Trình Tiếp Nhận & Giải Quyết Khiếu Nại</h2>
@@ -542,7 +608,7 @@
               <div style="background: #F9F9F8; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 18px 22px; margin-top: 20px;">
                 <h4 style="margin: 0 0 6px; font-size: 14px; color: var(--color-primary); text-transform: uppercase;">Thông Tin Đơn Vị Phân Phối Độc Quyền:</h4>
                 <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--color-text-body);">
-                  <strong>CÔNG TY TNHH BUI DANG–JP</strong><br>
+                  <strong>CÔNG TY TNHH JP- BÙI ĐẶNG</strong><br>
                   Đại diện thương hiệu Fractional CC Tokyo tại thị trường Việt Nam<br>
                   Hotline tư vấn & CSKH: <strong>0985 561 862</strong><br>
                   Email hỗ trợ: <strong>jpbuidangco.ltd@gmail.com</strong>
@@ -557,7 +623,7 @@
   </main>
 
   <!-- FOOTER HOÀN CHỈNH ĐỒNG BỘ TOÀN HỆ THỐNG -->
-  <footer class="site-footer">
+    <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
@@ -568,32 +634,43 @@
           </div>
           <p>
             <strong>Đơn vị phân phối độc quyền tại Việt Nam:</strong><br>
-            Công ty TNHH BUI DANG-JP
+            <span class="footer-company-name">CÔNG TY TNHH JP- BÙI ĐẶNG</span>
           </p>
         </div>
 
         <div class="footer-col">
           <h4>Văn Phòng & Liên Hệ</h4>
-          <p><strong>Hotline:</strong> <a href="tel:0985561862" style="color: var(--color-accent-gold); font-weight: 700;">0985 561 862</a></p>
-          <p><strong>Email:</strong> jpbuidangco.ltd@gmail.com</p>
-          <p><strong>Xuất xứ:</strong> Made in Japan • Tokyo Cosmetics</p>
+          <p><strong>Địa chỉ:</strong> Tầng 1, CT2, Mễ Trì Thượng, Nam Từ Liêm, Hà Nội</p>
+          <p><strong>Hotline:</strong> <a href="tel:0985561862" style="color: var(--color-accent-gold); font-weight: 700;">098 556 1862</a></p>
+          <p><strong>Điện thoại:</strong> <a href="tel:0965180859" style="color: #FFFFFF; font-weight: 600;">096 518 0859</a></p>
+          <p><strong>Email:</strong> <a href="mailto:jpbuidangco.ltd@gmail.com">jpbuidangco.ltd@gmail.com</a></p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Liên Kết Nhanh</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="san-pham.html">Danh Mục 10 Sản Phẩm</a></li>
+            <li><a href="van-de-lan-da.html">Vấn Đề Làn Da &amp; Giải Pháp</a></li>
+            <li><a href="index.html#san-pham-chu-luc">Combo Chủ Lực C-CX4 Gold</a></li>
+          </ul>
         </div>
 
         <div class="footer-col">
           <h4>Chính Sách & Thông Tin</h4>
           <ul class="footer-links">
-            <li><a href="san-pham.html">Danh mục 10 sản phẩm chính hãng</a></li>
-            <li><a href="van-de-lan-da.html">Vấn đề làn da &amp; Giải pháp</a></li>
-            <li><a href="chinh-sach.html#doi-tra">Chính sách đổi trả & hỗ trợ</a></li>
-            <li><a href="chinh-sach.html#giao-hang">Chính sách giao hàng & kiểm tra</a></li>
-            <li><a href="chinh-sach.html#bao-mat">Chính sách bảo mật thông tin</a></li>
-            <li><a href="chinh-sach.html#chinh-hang">Hướng dẫn phân biệt hàng chính hãng</a></li>
+            <li><a href="chinh-sach.html#doi-tra">Quy Định Đổi Trả</a></li>
+            <li><a href="chinh-sach.html#giao-hang">Chính Sách Vận Chuyển &amp; Đồng Kiểm</a></li>
+            <li><a href="chinh-sach.html#bao-mat">Chính Sách Bảo Mật Thông Tin</a></li>
+            <li><a href="chinh-sach.html#thanh-toan">Phương Thức Thanh Toán</a></li>
+            <li><a href="chinh-sach.html#chinh-hang">Nhận Diện Hàng Chính Hãng</a></li>
+            <li><a href="chinh-sach.html#khieu-nai">Quy Trình Tiếp Nhận Khiếu Nại</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p style="margin: 0;">Copyright © 2026 Fractional CC Vietnam - Phân phối bởi Công ty TNHH BUI DANG-JP.</p>
+        <p style="margin: 0;">Copyright © 2026 Fractional CC Vietnam - Phân phối bởi CÔNG TY TNHH JP- BÙI ĐẶNG.</p>
         <p style="margin: 0; font-size: 12px; color: #757575;">Mỹ phẩm không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.</p>
       </div>
     </div>
@@ -606,6 +683,15 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2C6.477 2 2 6.03 2 11C2 13.565 3.195 15.864 5.12 17.472L4.2 21.2C4.085 21.664 4.545 22.052 4.965 21.848L9.29 19.742C10.158 19.911 11.063 20 12 20C17.523 20 22 15.97 22 11C22 6.03 17.523 2 12 2Z" fill="#0068FF"/>
         <text x="12" y="14" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="7.2" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.3">Zalo</text>
+      </svg>
+    </a>
+
+    <!-- Nút 2: Facebook / Messenger -->
+    <a href="https://m.me/buidangjp" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn-facebook" aria-label="Chat Facebook tư vấn">
+      <span class="floating-tooltip">Chat Facebook</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 17.9895 4.38823 22.954 10.125 23.8542V15.4688H7.07812V12H10.125V9.35625C10.125 6.34875 11.9165 4.6875 14.6576 4.6875C15.9701 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8306C14.3399 7.875 13.875 8.80001 13.875 9.74902V12H17.2031L16.6711 15.4688H13.875V23.8542C19.6118 22.954 24 17.9895 24 12Z" fill="#1877F2"/>
+        <path d="M16.6711 15.4688L17.2031 12H13.875V9.74902C13.875 8.80001 14.3399 7.875 15.8306 7.875H17.3438V4.92188C17.3438 4.92188 15.9701 4.6875 14.6576 4.6875C11.9165 4.6875 10.125 6.34875 10.125 9.35625V12H7.07812V15.4688H10.125V23.8542C10.7452 23.9515 11.3723 24 12 24C12.6277 24 13.2548 23.9515 13.875 23.8542V15.4688H16.6711Z" fill="#FFFFFF"/>
       </svg>
     </a>
 
@@ -628,13 +714,104 @@
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    // Smooth scrolling & active link highlighting for policy sidebar
-    document.querySelectorAll('.policy-nav-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        document.querySelectorAll('.policy-nav-link').forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
+    // Smooth scrolling with sticky header offset & active link scrollspy
+    (function() {
+      const sidebar = document.querySelector('.policy-sidebar');
+      if (!sidebar) return;
+      const links = sidebar.querySelectorAll('.policy-nav-link');
+      const cards = document.querySelectorAll('.policy-content-area .policy-card');
+      if (!links.length || !cards.length) return;
+
+      function getStickyOffset() {
+        const header = document.querySelector('.site-header');
+        const headerHeight = header ? header.offsetHeight : 88;
+        return headerHeight + 28;
+      }
+
+      function scrollToCard(targetCard, isSmooth) {
+        const offset = getStickyOffset();
+        const cardTop = targetCard.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: Math.max(0, Math.round(cardTop - offset)),
+          behavior: isSmooth ? 'smooth' : 'auto'
+        });
+      }
+
+      var isClickScrolling = false;
+      var clickTimeout = null;
+
+      links.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (!targetId || !targetId.startsWith('#')) return;
+          const targetCard = document.querySelector(targetId);
+          if (targetCard) {
+            e.preventDefault();
+            isClickScrolling = true;
+            clearTimeout(clickTimeout);
+            clickTimeout = setTimeout(function () {
+              isClickScrolling = false;
+            }, 900);
+
+            links.forEach(function (l) { l.classList.remove('active'); });
+            this.classList.add('active');
+
+            scrollToCard(targetCard, true);
+
+            if (window.history && window.history.pushState) {
+              window.history.pushState(null, null, targetId);
+            }
+          }
+        });
       });
-    });
+
+      if (window.location.hash) {
+        const initialTarget = document.querySelector(window.location.hash);
+        if (initialTarget && initialTarget.classList.contains('policy-card')) {
+          setTimeout(function () {
+            scrollToCard(initialTarget, false);
+          }, 150);
+        }
+      }
+
+      var ticking = false;
+      function updateActiveNav() {
+        if (isClickScrolling) return;
+        const triggerLine = getStickyOffset() + 30;
+        var currentActiveId = null;
+
+        cards.forEach(function (card) {
+          var rect = card.getBoundingClientRect();
+          if (rect.top <= triggerLine) {
+            currentActiveId = card.id;
+          }
+        });
+
+        if (!currentActiveId && cards.length) {
+          currentActiveId = cards[0].id;
+        }
+
+        if (currentActiveId) {
+          links.forEach(function (link) {
+            if (link.getAttribute('href') === '#' + currentActiveId) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            updateActiveNav();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html>

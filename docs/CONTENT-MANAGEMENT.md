@@ -1,6 +1,6 @@
 # Quản lý ảnh và nội dung Fractional CC
 
-> Ch?t 14/10/2026: to?n b? n?i dung/s?n ph?m/media/ph?c ?? hi?n t?i ?? ???c duy?t l?m [defaults 1.0.0](APPROVED-DEFAULTS.md). C?c release c? ?? x?a; [release ??u ti?n](../release/v1.0.0/RELEASE.md) l? h? s? hi?n h?nh. C?c m? t? ch? duy?t/local_sample c?a b?n tr??c d??i ??y l? l?ch s?.
+> Hiện hành ngày 14/10/2026: [release 1.0.1](../release/v1.0.1/RELEASE.md), [defaults đã duyệt](APPROVED-DEFAULTS.md), seed version 1.0.1. Runtime dùng Project Child/Kadence và Project Core/ACF, homepage ID 24, 30 Media. Các mô tả phiên bản trước bên dưới là lịch sử.
 
 Cập nhật 14/10/2026, bản 0.3.29. Các nội dung trước đây viết trực tiếp trong template đã có trường chỉnh sửa WordPress/ACF, giữ bố cục hiện tại. Dữ liệu cũ được chuyển sang các trường mới; cập nhật hoặc khởi tạo lại chỉ bổ sung giá trị còn thiếu, không ghi đè nội dung đã sửa hoặc ảnh đã xóa.
 
@@ -10,11 +10,12 @@ Cập nhật 14/10/2026, bản 0.3.29. Các nội dung trước đây viết tr�
 
 | Nội dung | Nơi chỉnh |
 | --- | --- |
+| Hotline, điện thoại phụ, địa chỉ, email, Zalo và Facebook/Messenger | **Nội dung website → [Quản lý liên hệ](http://localhost/fractionalcc-jp.vn/wp-admin/admin.php?page=fcc-contact-settings)**. Để trống để ẩn kênh; các nút và nhãn liên hệ dùng chung dữ liệu này |
 | Trang Vấn đề làn da: hero, 4 tình trạng, 4 ảnh, dấu hiệu, nguyên nhân, giải pháp, tiêu đề gợi ý, nguyên tắc, tư vấn và SEO | [Vấn đề làn da](http://localhost/fractionalcc-jp.vn/wp-admin/post.php?post=30&action=edit) → các tab 01–06 và SEO |
 | Sản phẩm/combo theo tình trạng da | Cùng trang → **Gợi ý phác đồ – sản phẩm theo tình trạng da**. Chọn bản ghi hiện có, sắp xếp và lưu; bỏ hết lựa chọn sẽ ẩn phần danh sách |
 | Nội dung công nghệ, giải thích chi tiết, 2 ảnh công nghệ/chu trình | [Trang chủ](http://localhost/fractionalcc-jp.vn/wp-admin/post.php?post=24&action=edit) → **Công nghệ – nội dung chi tiết** |
 | Link video chu trình | Trang chủ → **Chu trình – video**. Để trống giữ đường dẫn Zalo hiện có |
-| Tóm tắt giao hàng/thanh toán cạnh form và thông tin liên hệ | [Thông tin chung](http://localhost/fractionalcc-jp.vn/wp-admin/post.php?post=6&action=edit) → **Form đặt hàng – liên hệ & chính sách**; số hotline và số hiển thị ở nhóm thông tin thương hiệu |
+| Tóm tắt giao hàng/thanh toán cạnh form | [Thông tin chung](http://localhost/fractionalcc-jp.vn/wp-admin/post.php?post=6&action=edit) → **Form đặt hàng – liên hệ & chính sách** |
 | Chữ nút, nhãn thẻ, thông báo biểu mẫu | Thông tin chung → các nhóm **Nhãn…**, **Thông báo biểu mẫu & tương tác** |
 | Biểu tượng website và ảnh chia sẻ mặc định | Thông tin chung → **Ảnh chia sẻ & biểu tượng** |
 | Ảnh chia sẻ riêng cho từng trang | Trang chủ/Danh mục/Vấn đề làn da/Chính sách/Cảm ơn → **SEO** |

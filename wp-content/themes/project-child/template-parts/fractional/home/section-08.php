@@ -124,7 +124,7 @@
                 </div>
                 <div class="corporate-pillar-content">
                   <h5><?php echo project_child_fcc_text( 'fcc_ui_aca2a86286f849', 'home' ); ?></h5>
-                  <p><?php echo project_child_fcc_text( 'fcc_ui_36e815217673ad', 'home' ); ?> <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" style="font-weight: 700; color: var(--color-accent-gold);"><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></a> <?php echo project_child_fcc_text( 'fcc_ui_6175b716eac766', 'home' ); ?></p>
+                  <p><?php echo project_child_fcc_text( 'fcc_ui_36e815217673ad', 'home' ); ?> <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> style="font-weight: 700; color: var(--color-accent-gold);"><?php echo esc_html( project_core_fcc_contact( 'hotlineDisplay' ) ); ?></a> <?php echo project_child_fcc_text( 'fcc_ui_6175b716eac766', 'home' ); ?></p>
                 </div>
               </div>
             </div>
@@ -133,14 +133,14 @@
           
           <div class="corporate-footer-bar">
             <div class="corporate-footer-info">
-              <strong><?php echo project_child_fcc_text( 'fcc_ui_4d77ee5ccc1f01', 'home' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_2894eeaae5d690', 'home' ); ?> <a href="<?php echo esc_url( project_child_fcc_link( 'mailto:jpbuidangco.ltd@gmail.com' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_683e7bd699078b', 'home', false ); ?></a> <?php echo project_child_fcc_text( 'fcc_ui_aa8ed5f16dc5d8', 'home' ); ?> <a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_8e228d335d165a', 'home', false ); ?></a>
+              <strong><?php echo project_child_fcc_text( 'fcc_ui_4d77ee5ccc1f01', 'home' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_2894eeaae5d690', 'home' ); ?> <a <?php project_child_fcc_contact_attributes( 'email' ); ?>><?php echo project_child_fcc_text( 'fcc_ui_683e7bd699078b', 'home', false ); ?></a> <?php echo project_child_fcc_text( 'fcc_ui_aa8ed5f16dc5d8', 'home' ); ?> <a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_8e228d335d165a', 'home', false ); ?></a>
             </div>
             <div class="corporate-footer-actions">
-              <a href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/0985561862' ) ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 13px; padding: 10px 18px; border-color: var(--color-accent-gold); color: #8C6A28;">
+              <a <?php project_child_fcc_contact_attributes( 'zalo' ); ?> target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 13px; padding: 10px 18px; border-color: var(--color-accent-gold); color: #8C6A28;">
                 <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                 <?php echo project_child_fcc_text( 'fcc_ui_92651ca124d940', 'home', false ); ?>
               </a>
-              <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" class="btn btn-primary" style="font-size: 13px; padding: 10px 18px;">
+              <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> class="btn btn-primary" style="font-size: 13px; padding: 10px 18px;">
                 <?php echo project_child_fcc_text( 'fcc_ui_c49b8c00371154', 'home', false ); ?>
               </a>
             </div>

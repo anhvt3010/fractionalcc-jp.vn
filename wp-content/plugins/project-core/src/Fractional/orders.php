@@ -334,7 +334,7 @@ function project_core_fcc_render_order_metabox( $post ) {
 
 /** Save status update from order edit screen. */
 function project_core_fcc_save_order_metabox( $post_id ) {
-	if ( ! isset( $_POST['fcc_order_status_token'] ) || ! wp_verify_nonce( $_POST['fcc_order_status_token'], 'fcc_order_status_nonce' ) ) {
+	if ( ! isset( $_POST['fcc_order_status_token'] ) || ! is_string( $_POST['fcc_order_status_token'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['fcc_order_status_token'] ) ), 'fcc_order_status_nonce' ) ) {
 		return;
 	}
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
@@ -344,7 +344,7 @@ function project_core_fcc_save_order_metabox( $post_id ) {
 		return;
 	}
 
-	if ( isset( $_POST['fcc_order_status'] ) ) {
+	if ( isset( $_POST['fcc_order_status'] ) && is_string( $_POST['fcc_order_status'] ) ) {
 		$valid_statuses = array( 'pending', 'contacted', 'completed', 'cancelled' );
 		$status = sanitize_text_field( wp_unslash( $_POST['fcc_order_status'] ) );
 		if ( in_array( $status, $valid_statuses, true ) ) {
@@ -358,21 +358,149 @@ add_action( 'save_post_fcc_order', 'project_core_fcc_save_order_metabox' );
  * Handle order submissions from both AJAX and standard POST.
  */
 /** Resolve submitted IDs against published catalog data; client-supplied names are not authoritative. */
-function project_core_fcc_order_item_name( $item ) {
-	if ( ! preg_match( '/^(prod|combo)_([1-9][0-9]*)$/', $item, $match ) ) { return ''; }
+function project_core_fcc_order_item( $item ) {
+	if ( ! is_string( $item ) || ! preg_match( '/^(prod|combo)_([1-9][0-9]*)$/', $item, $match ) ) { return array(); }
 	$id = absint( $match[2] );
 	if ( 'prod' === $match[1] ) {
 		$product = project_core_fcc_product( $id, false );
-		if ( ! $product ) { return ''; }
+		if ( ! $product ) { return array(); }
 	} else {
 		$product = null;
 		foreach ( project_core_fcc_combos() as $combo ) { if ( $id === $combo['id'] ) { $product = $combo; break; } }
-		if ( ! $product ) { return ''; }
+		if ( ! $product ) { return array(); }
 	}
-	return $product['name'] . ( ! empty( $product['salePrice'] ) ? ' (' . number_format( $product['salePrice'], 0, ',', '.' ) . ' đ)' : '' );
+	return array(
+		'id'       => $id,
+		'type'     => $match[1],
+		'name'     => $product['name'],
+		'price'    => $product['salePrice'],
+		'image'    => (string) $product['image'],
+		'imageAlt' => $product['imageAlt'] ?? $product['name'],
+		'gift'     => 'combo' === $match[1] ? (string) $product['gift'] : '',
+	);
+}
+
+/** One order-time name/price representation for admin, mail and receipt. */
+function project_core_fcc_format_order_item( $item ) {
+	if ( ! $item ) { return ''; }
+	return $item['name'] . ( null !== $item['price'] ? ' (' . number_format( $item['price'], 0, ',', '.' ) . ' đ)' : '' );
+}
+
+function project_core_fcc_order_item_name( $item ) {
+	return project_core_fcc_format_order_item( project_core_fcc_order_item( $item ) );
+}
+
+/** Legacy orders retain their saved title/price; never apply a current price or template gift. */
+function project_core_fcc_saved_order_item( $order_id ) {
+	$snapshot = get_post_meta( $order_id, '_fcc_order_item_snapshot', true );
+	if ( is_array( $snapshot ) && isset( $snapshot['name'], $snapshot['image'], $snapshot['gift'] ) && array_key_exists( 'price', $snapshot ) ) { return $snapshot; }
+	$item = project_core_fcc_order_item( get_post_meta( $order_id, '_fcc_selected_item', true ) );
+	$item = array_merge( array( 'id' => 0, 'type' => '', 'name' => '', 'price' => null, 'image' => '', 'imageAlt' => '', 'gift' => '' ), $item );
+	$title = get_post_meta( $order_id, '_fcc_selected_item_name', true );
+	$item['name'] = is_string( $title ) ? $title : '';
+	$item['price'] = null;
+	$item['gift'] = '';
+	if ( preg_match( '/\s+\(([0-9.]+) đ\)$/u', $item['name'], $price ) ) {
+		$item['name'] = substr( $item['name'], 0, -strlen( $price[0] ) );
+		$item['price'] = (float) str_replace( '.', '', $price[1] );
+	}
+	return $item;
+}
+
+/** Guests need the unguessable receipt key; authorized order managers can review legacy URLs. */
+function project_core_fcc_order_receipt( $code, $key = '' ) {
+	if ( ! is_string( $code ) || ! preg_match( '/^FCC-[0-9]{6}$/', $code ) || ! is_string( $key ) || ( '' !== $key && ! preg_match( '/^[a-zA-Z0-9]{48}$/', $key ) ) ) { return array(); }
+	if ( '' === $key && ! current_user_can( 'edit_pages' ) ) { return array(); }
+	$meta = array( array( 'key' => '_fcc_order_code', 'value' => $code ) );
+	if ( '' !== $key ) { $meta[] = array( 'key' => '_fcc_receipt_key_hash', 'value' => hash( 'sha256', $key ) ); }
+	$orders = get_posts( array( 'post_type' => 'fcc_order', 'post_status' => 'publish', 'posts_per_page' => 1, 'fields' => 'ids', 'meta_query' => $meta, 'no_found_rows' => true ) );
+	if ( ! $orders || ( '' === $key && ! current_user_can( 'edit_post', $orders[0] ) ) ) { return array(); }
+	$id = $orders[0];
+	$phone = (string) get_post_meta( $id, '_fcc_customer_phone', true );
+	return array(
+		'code'  => (string) get_post_meta( $id, '_fcc_order_code', true ),
+		'name'  => (string) get_post_meta( $id, '_fcc_customer_name', true ),
+		'phone' => strlen( $phone ) >= 7 ? substr( $phone, 0, 4 ) . ' ••• ' . substr( $phone, -3 ) : $phone,
+		'item'  => project_core_fcc_saved_order_item( $id ),
+	);
+}
+
+/** Receipts contain private order data and must not be shared through page caches or referrers. */
+function project_core_fcc_private_receipt_headers() {
+	$id = project_core_fcc_page_id( 'thankyou' );
+	if ( $id && is_page( $id ) ) {
+		if ( ! defined( 'DONOTCACHEPAGE' ) ) { define( 'DONOTCACHEPAGE', true ); }
+		nocache_headers();
+		header( 'Referrer-Policy: no-referrer' );
+	}
+}
+add_action( 'template_redirect', 'project_core_fcc_private_receipt_headers', 1 );
+
+/** Send one consistent error for AJAX and native form submissions. */
+function project_core_fcc_order_error( $message, $status = 400 ) {
+	if ( wp_doing_ajax() ) {
+		wp_send_json_error( array( 'message' => $message ), $status );
+	}
+	wp_die( esc_html( $message ), '', array( 'response' => $status ) );
+}
+
+/** Count valid submission attempts without trusting spoofable forwarding headers. */
+function project_core_fcc_order_rate_limit() {
+	$ip = isset( $_SERVER['REMOTE_ADDR'] ) && is_string( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : '';
+	if ( ! filter_var( $ip, FILTER_VALIDATE_IP ) ) {
+		return new WP_Error( 'fcc_order_ip', 'Chưa xác định được kết nối. Vui lòng thử lại sau.', array( 'status' => 400 ) );
+	}
+	$key      = 'fcc_order_rate_' . hash_hmac( 'sha256', inet_pton( $ip ), wp_salt( 'nonce' ) );
+	$lock_key = $key . '_lock';
+	$lock     = array( 'token' => wp_generate_uuid4(), 'expires' => time() + 30 );
+	$busy     = new WP_Error( 'fcc_order_rate', 'Bạn đã gửi nhiều yêu cầu liên tiếp. Vui lòng chờ 10 phút hoặc liên hệ Hotline/Zalo.', array( 'status' => 429 ) );
+	// add_option is atomic; parallel requests cannot both increment the same counter.
+	if ( ! add_option( $lock_key, $lock, '', false ) ) {
+		$old = get_option( $lock_key );
+		if ( is_array( $old ) && isset( $old['expires'] ) && $old['expires'] < time() ) {
+			project_core_fcc_release_order_rate_lock( $lock_key, $old );
+			if ( ! add_option( $lock_key, $lock, '', false ) ) { return $busy; }
+		} else {
+			return $busy;
+		}
+	}
+	try {
+		$state = get_transient( $key );
+		if ( ! is_array( $state ) || empty( $state['expires'] ) || $state['expires'] <= time() ) {
+			$state = array( 'count' => 0, 'expires' => time() + 10 * MINUTE_IN_SECONDS );
+		}
+		if ( $state['count'] >= 10 ) { return $busy; }
+		++$state['count'];
+		if ( ! set_transient( $key, $state, max( 1, $state['expires'] - time() ) ) ) {
+			return new WP_Error( 'fcc_order_rate_storage', 'Chưa tiếp nhận được yêu cầu. Vui lòng thử lại sau.', array( 'status' => 503 ) );
+		}
+		return true;
+	} finally {
+		project_core_fcc_release_order_rate_lock( $lock_key, $lock );
+	}
+}
+
+/** Compare-and-delete avoids releasing a newer worker's lock after a timeout. */
+function project_core_fcc_release_order_rate_lock( $key, $lock ) {
+	global $wpdb;
+	$deleted = $wpdb->delete( $wpdb->options, array( 'option_name' => $key, 'option_value' => maybe_serialize( $lock ) ), array( '%s', '%s' ) );
+	if ( $deleted ) {
+		wp_cache_delete( $key, 'options' );
+		wp_cache_delete( 'notoptions', 'options' );
+	}
 }
 
 function project_core_fcc_handle_order_submission() {
+	if ( 'POST' !== ( $_SERVER['REQUEST_METHOD'] ?? '' ) ) {
+		project_core_fcc_order_error( 'Chỉ chấp nhận gửi yêu cầu bằng POST.', 405 );
+	}
+	// Reject arrays and oversized payloads before sanitizing or persisting any customer data.
+	$limits = array( '_fcc_nonce' => 128, 'website_url' => 512, 'customer_name' => 120, 'customer_phone' => 40, 'selected_item' => 40, 'customer_address' => 500, 'customer_note' => 2000, 'agree_terms' => 16, 'fcc_form_source' => 32 );
+	foreach ( $limits as $field => $limit ) {
+		if ( isset( $_POST[ $field ] ) && ( ! is_string( $_POST[ $field ] ) || mb_strlen( wp_unslash( $_POST[ $field ] ) ) > $limit ) ) {
+			project_core_fcc_order_error( 'Thông tin gửi lên không hợp lệ hoặc quá dài. Vui lòng kiểm tra lại.' );
+		}
+	}
 	// 1. Anti-spam honeypot
 	if ( ! empty( $_POST['website_url'] ) ) {
 		if ( wp_doing_ajax() ) {
@@ -386,12 +514,10 @@ function project_core_fcc_handle_order_submission() {
 	// 2. Nonce verification
 	$nonce = isset( $_POST['_fcc_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['_fcc_nonce'] ) ) : '';
 	if ( ! wp_verify_nonce( $nonce, 'fcc_order_action' ) && ! wp_verify_nonce( $nonce, 'project_core_fcc_lead' ) ) {
-		$error_msg = 'Phiên làm việc đã hết hạn hoặc không hợp lệ. Vui lòng tải lại trang.';
-		if ( wp_doing_ajax() ) {
-			wp_send_json_error( array( 'message' => $error_msg ) );
-		} else {
-			wp_die( esc_html( $error_msg ), '', array( 'response' => 403 ) );
-		}
+		project_core_fcc_order_error( 'Phiên làm việc đã hết hạn hoặc không hợp lệ. Vui lòng tải lại trang.', 403 );
+	}
+	if ( ! isset( $_POST['agree_terms'] ) || ! in_array( $_POST['agree_terms'], array( 'on', '1' ), true ) ) {
+		project_core_fcc_order_error( 'Vui lòng tích ô đồng ý điều khoản trước khi gửi yêu cầu.' );
 	}
 
 	// 3. Sanitize inputs
@@ -403,30 +529,27 @@ function project_core_fcc_handle_order_submission() {
 
 	// 4. Validate requirements
 	if ( mb_strlen( $name ) < 2 ) {
-		$error = 'Vui lòng nhập họ và tên của bạn (tối thiểu 2 ký tự).';
-		if ( wp_doing_ajax() ) { wp_send_json_error( array( 'message' => $error ) ); }
-		else { wp_die( esc_html( $error ) ); }
+		project_core_fcc_order_error( 'Vui lòng nhập họ và tên của bạn (tối thiểu 2 ký tự).' );
 	}
 
-	$phone_clean = preg_replace( '/[^0-9+]/', '', $phone );
+	$phone_clean = $phone;
 	if ( ! preg_match( '/^(0|\+84)(3|5|7|8|9)[0-9]{8}$/', $phone_clean ) ) {
-		$error = 'Số điện thoại không đúng định dạng Việt Nam (10 số, bắt đầu bằng 0 hoặc +84).';
-		if ( wp_doing_ajax() ) { wp_send_json_error( array( 'message' => $error ) ); }
-		else { wp_die( esc_html( $error ) ); }
+		project_core_fcc_order_error( 'Số điện thoại không đúng định dạng Việt Nam (10 số, bắt đầu bằng 0 hoặc +84).' );
 	}
 
 	if ( empty( $item ) ) {
-		$error = 'Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt.';
-		if ( wp_doing_ajax() ) { wp_send_json_error( array( 'message' => $error ) ); }
-		else { wp_die( esc_html( $error ) ); }
+		project_core_fcc_order_error( 'Vui lòng chọn Combo hoặc Sản phẩm bạn muốn đặt.' );
 	}
 
 	// 5. Resolve Product/Combo Name
-	$resolved_item_name = project_core_fcc_order_item_name( $item );
+	$item_snapshot = project_core_fcc_order_item( $item );
+	$resolved_item_name = project_core_fcc_format_order_item( $item_snapshot );
 	if ( empty( $resolved_item_name ) ) {
-		$error = 'Sản phẩm hoặc combo đã chọn không còn khả dụng. Vui lòng tải lại trang và chọn lại.';
-		if ( wp_doing_ajax() ) { wp_send_json_error( array( 'message' => $error ), 400 ); }
-		else { wp_die( esc_html( $error ), '', array( 'response' => 400 ) ); }
+		project_core_fcc_order_error( 'Sản phẩm hoặc combo đã chọn không còn khả dụng. Vui lòng tải lại trang và chọn lại.' );
+	}
+	$rate = project_core_fcc_order_rate_limit();
+	if ( is_wp_error( $rate ) ) {
+		project_core_fcc_order_error( $rate->get_error_message(), $rate->get_error_data()['status'] );
 	}
 
 	// 6. Generate order code and save to DB
@@ -440,12 +563,13 @@ function project_core_fcc_handle_order_submission() {
 		true
 	);
 	if ( is_wp_error( $post_id ) || ! $post_id ) {
-		$error = 'Chưa lưu được yêu cầu đặt hàng. Vui lòng thử lại sau hoặc liên hệ Hotline/Zalo.';
-		if ( wp_doing_ajax() ) { wp_send_json_error( array( 'message' => $error ), 500 ); }
-		else { wp_die( esc_html( $error ), '', array( 'response' => 500 ) ); }
+		project_core_fcc_order_error( 'Chưa lưu được yêu cầu đặt hàng. Vui lòng thử lại sau hoặc liên hệ Hotline/Zalo.', 500 );
 	}
 
 	if ( ! is_wp_error( $post_id ) ) {
+		$receipt_key = wp_generate_password( 48, false, false );
+		update_post_meta( $post_id, '_fcc_receipt_key_hash', hash( 'sha256', $receipt_key ) );
+		update_post_meta( $post_id, '_fcc_order_item_snapshot', wp_slash( $item_snapshot ) );
 		update_post_meta( $post_id, '_fcc_order_code', $order_code );
 		update_post_meta( $post_id, '_fcc_customer_name', $name );
 		update_post_meta( $post_id, '_fcc_customer_phone', $phone_clean );
@@ -463,13 +587,15 @@ function project_core_fcc_handle_order_submission() {
 	// 7. Dispatch Email Notification via SMTP/wp_mail()
 	$mail_sent = project_core_fcc_send_order_email(
 		array(
-			'order_code' => $order_code,
-			'name'       => $name,
-			'phone'      => $phone_clean,
-			'address'    => $address,
-			'note'       => $note,
-			'product'    => $resolved_item_name,
-			'post_id'    => is_numeric( $post_id ) ? $post_id : 0,
+			'order_code'    => $order_code,
+			'name'          => $name,
+			'phone'         => $phone_clean,
+			'address'       => $address,
+			'note'          => $note,
+			'product'       => $resolved_item_name,
+			'post_id'       => is_numeric( $post_id ) ? $post_id : 0,
+			'item'          => $item,
+			'item_snapshot' => $item_snapshot,
 		)
 	);
 	update_post_meta( $post_id, '_fcc_mail_status', $mail_sent ? 'sent' : 'failed' );
@@ -478,6 +604,7 @@ function project_core_fcc_handle_order_submission() {
 	$thankyou_url = add_query_arg(
 		array(
 			'order' => $order_code,
+			'key'   => $receipt_key,
 		),
 		project_core_fcc_url( 'thankyou' )
 	);
@@ -491,7 +618,7 @@ function project_core_fcc_handle_order_submission() {
 				'selectedItem'  => $resolved_item_name,
 				'mailSent'      => $mail_sent,
 				'redirectUrl'   => $thankyou_url,
-				'message'       => 'Đặt hàng thành công! BUI DANG-JP sẽ liên hệ với bạn trong thời gian sớm nhất.',
+				'message'       => 'Đặt hàng thành công! JP- BÙI ĐẶNG sẽ liên hệ với bạn trong thời gian sớm nhất.',
 			)
 		);
 	} else {
@@ -527,8 +654,79 @@ function project_core_fcc_send_order_email( $order ) {
 	);
 
 	$admin_order_url  = $order['post_id'] ? admin_url( 'post.php?post=' . $order['post_id'] . '&action=edit' ) : admin_url( 'edit.php?post_type=fcc_order' );
-	$current_time_str = current_time( 'd/m/Y • H:i' );
+
+	// Vietnam timezone UTC+7 for order placement time
+	$tz = wp_timezone();
+	if ( '+00:00' === $tz->getName() || 'UTC' === $tz->getName() ) {
+		try {
+			$tz = new DateTimeZone( 'Asia/Ho_Chi_Minh' );
+		} catch ( Exception $e ) {
+			$tz = wp_timezone();
+		}
+	}
+
+	$order_time = null;
+	if ( ! empty( $order['post_id'] ) ) {
+		$order_post = get_post( $order['post_id'] );
+		if ( $order_post ) {
+			if ( ! empty( $order_post->post_date_gmt ) && '0000-00-00 00:00:00' !== $order_post->post_date_gmt ) {
+				try {
+					$order_time = new DateTimeImmutable( $order_post->post_date_gmt, new DateTimeZone( 'UTC' ) );
+					$order_time = $order_time->setTimezone( $tz );
+				} catch ( Exception $e ) {
+					$order_time = null;
+				}
+			}
+			if ( ! $order_time ) {
+				$order_time = get_post_datetime( $order_post, 'date', $tz );
+			}
+		}
+	}
+	if ( ! $order_time ) {
+		$order_time = new DateTimeImmutable( 'now', $tz );
+	}
+	$current_time_str = $order_time->format( 'd/m/Y • H:i' );
 	$zalo_phone       = preg_replace( '/[^0-9]/', '', $order['phone'] );
+
+	// Resolve selected product image & thumbnail for email
+	$item_snapshot = ! empty( $order['item_snapshot'] ) && is_array( $order['item_snapshot'] ) ? $order['item_snapshot'] : array();
+	if ( empty( $item_snapshot ) && ! empty( $order['post_id'] ) ) {
+		$item_snapshot = project_core_fcc_saved_order_item( $order['post_id'] );
+	}
+	if ( empty( $item_snapshot ) && ! empty( $order['item'] ) ) {
+		$item_snapshot = project_core_fcc_order_item( $order['item'] );
+	}
+
+	$product_img_file = '';
+	$product_img_src  = '';
+	$product_img_alt  = ! empty( $item_snapshot['imageAlt'] ) ? $item_snapshot['imageAlt'] : ( ! empty( $item_snapshot['name'] ) ? $item_snapshot['name'] : 'Sản phẩm' );
+
+	if ( ! empty( $item_snapshot['id'] ) ) {
+		$item_post_id = absint( $item_snapshot['id'] );
+		$img_att_id   = absint( get_post_meta( $item_post_id, 'fcc_image', true ) );
+		if ( $img_att_id ) {
+			$file = get_attached_file( $img_att_id );
+			if ( $file && file_exists( $file ) ) {
+				$product_img_file = $file;
+			}
+		}
+	}
+
+	if ( ! $product_img_file && ! empty( $item_snapshot['image'] ) ) {
+		$att_id = attachment_url_to_postid( $item_snapshot['image'] );
+		if ( $att_id ) {
+			$file = get_attached_file( $att_id );
+			if ( $file && file_exists( $file ) ) {
+				$product_img_file = $file;
+			}
+		}
+	}
+
+	if ( $product_img_file ) {
+		$product_img_src = 'cid:fcc_order_product_img';
+	} elseif ( ! empty( $item_snapshot['image'] ) ) {
+		$product_img_src = esc_url( $item_snapshot['image'] );
+	}
 
 	$html = '<!DOCTYPE html>
 <html lang="vi">
@@ -563,7 +761,7 @@ function project_core_fcc_send_order_email( $order ) {
           <tr>
             <td class="email-header-inner" style="background-color:#18110D;background:linear-gradient(145deg,#251912 0%,#140E0A 100%);padding:28px 32px 24px;text-align:center;border-bottom:3px solid #C5A059;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
               
-              <!-- Brand Logo Duo: Fractional CC x BUI DANG-JP -->
+              <!-- Brand Logo Duo: Fractional CC x JP- BÙI ĐẶNG -->
               <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 <tr>
                   <!-- Fractional CC Logo -->
@@ -576,16 +774,16 @@ function project_core_fcc_send_order_email( $order ) {
                     <div style="width:1px;height:38px;background-color:rgba(197,160,89,0.4);line-height:38px;">&nbsp;</div>
                   </td>
                   
-                  <!-- BUI DANG-JP Distributor Badge -->
+                  <!-- JP- BÙI ĐẶNG Distributor Badge -->
                   <td align="left" valign="middle" style="padding-left:18px;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                     <table cellpadding="0" cellspacing="0" border="0" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                       <tr>
                         <td align="center" valign="middle" style="background-color:#FFFFFF;border-radius:50%;width:38px;height:38px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.3);padding:0;">
-                          <img src="cid:buidang_brand_logo" alt="BUI DANG-JP" width="30" height="30" style="display:block;margin:auto;width:30px;height:30px;border-radius:50%;border:0;">
+                          <img src="cid:buidang_brand_logo" alt="JP- BÙI ĐẶNG" width="30" height="30" style="display:block;margin:auto;width:30px;height:30px;border-radius:50%;border:0;">
                         </td>
                         <td valign="middle" style="padding-left:10px;text-align:left;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                           <span style="display:block;font-size:9px;color:#C5A059;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">PHÂN PHỐI ĐỘC QUYỀN</span>
-                          <span style="display:block;font-size:13px;color:#FFFFFF;font-weight:700;letter-spacing:0.8px;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">BUI DANG-JP</span>
+                          <span style="display:block;font-size:13px;color:#FFFFFF;font-weight:700;letter-spacing:0.8px;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">JP- BÙI ĐẶNG</span>
                         </td>
                       </tr>
                     </table>
@@ -658,13 +856,26 @@ function project_core_fcc_send_order_email( $order ) {
 
                 <!-- Sản phẩm / Combo -->
                 <tr>
-                  <td class="info-label" valign="top" style="padding:13px 16px;background-color:#F8F4EC;border-right:1px solid #D8C6AC;border-bottom:1px solid #D8C6AC;color:#4A3C31;font-size:13px;font-weight:700;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                  <td class="info-label" valign="middle" style="padding:13px 16px;background-color:#F8F4EC;border-right:1px solid #D8C6AC;border-bottom:1px solid #D8C6AC;color:#4A3C31;font-size:13px;font-weight:700;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                     Sản phẩm chọn
                   </td>
-                  <td class="info-val" valign="top" style="padding:13px 16px;background-color:#FFFFFF;border-bottom:1px solid #D8C6AC;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                  <td class="info-val" valign="middle" style="padding:13px 16px;background-color:#FFFFFF;border-bottom:1px solid #D8C6AC;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                    ' . ( $product_img_src ? '
+                    <table cellpadding="0" cellspacing="0" border="0" style="margin:0;padding:0;border-collapse:collapse;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                      <tr>
+                        <td valign="middle" style="padding-right:14px;width:60px;min-width:60px;vertical-align:middle;">
+                          <img src="' . esc_attr( $product_img_src ) . '" alt="' . esc_attr( $product_img_alt ) . '" width="60" height="60" style="display:block;width:60px;height:60px;max-width:60px;max-height:60px;object-fit:cover;border-radius:6px;border:1px solid #ECDDC5;background-color:#FAF8F5;">
+                        </td>
+                        <td valign="middle" style="vertical-align:middle;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                          <div style="font-size:15px;font-weight:700;color:#9E6B0D;line-height:1.45;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
+                            ' . esc_html( $order['product'] ) . '
+                          </div>
+                        </td>
+                      </tr>
+                    </table>' : '
                     <div style="font-size:15px;font-weight:700;color:#9E6B0D;line-height:1.45;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                       ' . esc_html( $order['product'] ) . '
-                    </div>
+                    </div>' ) . '
                   </td>
                 </tr>
 
@@ -706,9 +917,6 @@ function project_core_fcc_send_order_email( $order ) {
           <!-- Footer Information -->
           <tr>
             <td style="background-color:#FAF8F5;border-top:1px solid #EFE8DD;padding:24px 32px;text-align:center;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
-              <p style="margin:0 0 6px 0;font-size:12px;color:#4A4038;line-height:1.6;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
-                <strong style="color:#2B1E16;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">FRACTIONAL CC NHẬT BẢN</strong> &bull; Phân phối độc quyền bởi <strong style="color:#2B1E16;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">CÔNG TY TNHH BUI DANG-JP</strong>
-              </p>
               <p style="margin:0;font-size:11px;color:#A39990;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 Email thông báo tự động từ hệ thống quản trị Fractional CC Vietnam.
               </p>
@@ -730,7 +938,20 @@ function project_core_fcc_send_order_email( $order ) {
 		add_action( 'phpmailer_init', 'project_core_fcc_attach_brand_logos' );
 	}
 
+	$attach_product_img = null;
+	if ( $product_img_file && file_exists( $product_img_file ) ) {
+		$attach_product_img = function( $phpmailer ) use ( $product_img_file ) {
+			$mime = function_exists( 'wp_get_image_mime' ) ? ( wp_get_image_mime( $product_img_file ) ?: 'image/png' ) : 'image/png';
+			$phpmailer->addEmbeddedImage( $product_img_file, 'fcc_order_product_img', basename( $product_img_file ), 'base64', $mime );
+		};
+		add_action( 'phpmailer_init', $attach_product_img );
+	}
+
 	$sent = wp_mail( $recipient, $subject, $html, $headers );
+
+	if ( $attach_product_img ) {
+		remove_action( 'phpmailer_init', $attach_product_img );
+	}
 
 	if ( function_exists( 'project_core_fcc_attach_brand_logos' ) ) {
 		remove_action( 'phpmailer_init', 'project_core_fcc_attach_brand_logos' );

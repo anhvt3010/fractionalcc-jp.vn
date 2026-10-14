@@ -9,7 +9,7 @@ $topbar_text = '<span class="top-bar-item">'
 	. '<strong>' . project_child_fcc_text( 'fcc_ui_bbd01ed1192ea8', 'shared' ) . '</strong> '
 	. project_child_fcc_text( 'fcc_ui_e122cc77b5bbe5', 'shared' ) . ' '
 	. '<strong>' . project_child_fcc_text( 'fcc_ui_e28520e695bc79', 'shared' ) . '</strong> '
-	. project_child_fcc_text( 'fcc_ui_af94720c731fdb', 'shared' )
+	. ( project_core_fcc_contact( 'hotline' ) ? project_child_fcc_text( 'fcc_ui_af94720c731fdb', 'shared' ) : '' )
 	. '</span>';
 ?>
 <div class="top-bar">

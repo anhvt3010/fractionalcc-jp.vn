@@ -1,5 +1,7 @@
 # Thông tin ban đầu website Fractional CC
 
+> Cập nhật liên hệ được người dùng duyệt ngày 14/10/2026: Zalo `https://zalo.me/84985561862`, Facebook `https://web.facebook.com/hangnhatchomoinha.vn`. Đã lưu vào site và defaults 1.0.0; các mô tả thiếu/chưa chốt bên dưới ghi nhận trạng thái của nguồn ban đầu.
+
 > Ch?t 14/10/2026: to?n b? n?i dung/s?n ph?m/media/ph?c ?? hi?n t?i ?? ???c duy?t l?m [defaults 1.0.0](APPROVED-DEFAULTS.md). C?c release c? ?? x?a; [release ??u ti?n](../release/v1.0.0/RELEASE.md) l? h? s? hi?n h?nh. C?c m? t? ch? duy?t/local_sample c?a b?n tr??c d??i ??y l? l?ch s?.
 
 > Cập nhật 13/10/2026: người dùng đã duyệt [Excel sản phẩm mới](<../template/fractional-cc/List sản phẩm fractional CC.xlsx>) làm nguồn dữ liệu và defaults. Giá/nội dung mới thay bảng giá cũ dưới đây; xem [ánh xạ và trạng thái kiểm tra từng trường](PRODUCT-DATA-EXCEL.md). Các mục thiếu và khác biệt lịch sử vẫn được giữ để tra cứu.
@@ -30,7 +32,7 @@ Thông tin có nguồn được ghi lại theo tài liệu cung cấp. Các mụ
 | Tên website dự kiến | Fractional CC Nhật Bản | Theo title/nhận diện trong template; chưa áp dụng vào WordPress |
 | Nhóm sản phẩm | Mỹ phẩm chăm sóc da | Excel: `Mỹ Phẩm`; brief mô tả chăm sóc da |
 | Xuất xứ | Nhật Bản | Theo brief và cột F của Excel |
-| Đơn vị phân phối | Công ty TNHH BUI DANG-JP | Brief |
+| Đơn vị phân phối | CÔNG TY TNHH JP- BÙI ĐẶNG | Brief |
 | Vai trò phân phối | Phân phối độc quyền tại Việt Nam | Theo nội dung brief; giấy tờ chứng minh chưa được đối chiếu |
 | Thông điệp | Chăm sóc làn da khoa học – nâng niu vẻ đẹp tự nhiên. | Brief |
 | Ngôn ngữ nội dung | Tiếng Việt | Brief và `lang="vi"` trong HTML |
@@ -49,13 +51,13 @@ Môi trường hiện tại là XAMPP tại `C:\xampp\htdocs\fractionalcc-jp.vn`
 
 ## 3. Mục tiêu và nội dung trang chủ
 
-Theo brief, website giới thiệu thương hiệu và danh mục Fractional CC, làm nổi bật sản phẩm chủ lực, hỗ trợ khách chọn sản phẩm và gửi yêu cầu tư vấn/đặt hàng tới BUI DANG-JP. Phạm vi này chưa xác lập yêu cầu giỏ hàng, cổng thanh toán hoặc WooCommerce.
+Theo brief, website giới thiệu thương hiệu và danh mục Fractional CC, làm nổi bật sản phẩm chủ lực, hỗ trợ khách chọn sản phẩm và gửi yêu cầu tư vấn/đặt hàng tới JP- BÙI ĐẶNG. Phạm vi này chưa xác lập yêu cầu giỏ hàng, cổng thanh toán hoặc WooCommerce.
 
 ### Nội dung nhận diện đầu trang
 
 - Tiêu đề chính: **Đánh thức vẻ đẹp làn da với công nghệ chăm sóc da Nhật Bản**.
 - Tiêu đề phụ: **Khám phá giải pháp chăm sóc da cùng Fractional CC – thương hiệu mỹ phẩm Nhật Bản**.
-- Logo: Fractional CC và logo công ty BUI DANG-JP.
+- Logo: Fractional CC và logo công ty JP- BÙI ĐẶNG.
 - Hình ảnh chủ đạo theo brief: bộ sản phẩm, serum PDRN, kết cấu sản phẩm và hình ảnh làn da.
 - CTA: **MUA NGAY**.
 
@@ -136,11 +138,11 @@ Giữ 6 nhóm câu hỏi và nội dung nguồn sau khi nhập CMS; không thêm
 | Câu hỏi | Nội dung nguồn |
 | --- | --- |
 | Fractional CC là thương hiệu gì? | Thương hiệu chăm sóc da có dòng sản phẩm ứng dụng công nghệ vi kim; giới thiệu nhu cầu dưỡng sáng, chăm sóc và hỗ trợ tái tạo theo brief |
-| Sản phẩm có nguồn gốc từ đâu? | Nhật Bản; BUI DANG-JP phân phối độc quyền tại Việt Nam theo brief |
-| Nên chọn sản phẩm nào theo nhu cầu chăm sóc da? | Theo công dụng từng sản phẩm và nhu cầu cá nhân; liên hệ BUI DANG-JP để được tư vấn |
+| Sản phẩm có nguồn gốc từ đâu? | Nhật Bản; JP- BÙI ĐẶNG phân phối độc quyền tại Việt Nam theo brief |
+| Nên chọn sản phẩm nào theo nhu cầu chăm sóc da? | Theo công dụng từng sản phẩm và nhu cầu cá nhân; liên hệ JP- BÙI ĐẶNG để được tư vấn |
 | Cách sử dụng sản phẩm như thế nào? | Theo hướng dẫn nhà sản xuất và bao bì; giữ nguyên nội dung lưu ý trong brief, không tự xây lịch dùng |
 | Có thể sử dụng kết hợp các sản phẩm không? | Theo hướng dẫn của từng sản phẩm; giữ lưu ý về lựa chọn sản phẩm kết hợp trong brief |
-| Làm thế nào để mua hàng chính hãng từ BUI DANG-JP? | Qua kênh bán hàng chính thức, được tư vấn lựa chọn và cung cấp thông tin nguồn gốc theo brief |
+| Làm thế nào để mua hàng chính hãng từ JP- BÙI ĐẶNG? | Qua kênh bán hàng chính thức, được tư vấn lựa chọn và cung cấp thông tin nguồn gốc theo brief |
 
 ## 8. Tài nguyên và thiết kế tham chiếu
 
@@ -151,7 +153,7 @@ Toàn bộ đường dẫn ảnh dưới đây nằm trong `template/fractional-
 | Logo thương hiệu | `assets/images/brand/fractional-cc-logo.png` |
 | Logo thương hiệu nền tối | `assets/images/brand/fractional-cc-logo-white.png` |
 | Logo đơn vị phân phối | `assets/images/brand/bui-dang-jp-logo.png` |
-| File favicon sẵn có | `assets/images/brand/logo-favicon.png`; HTML hiện đang dùng logo BUI DANG-JP, chưa đổi lựa chọn |
+| File favicon sẵn có | `assets/images/brand/logo-favicon.png`; HTML hiện đang dùng logo JP- BÙI ĐẶNG, chưa đổi lựa chọn |
 | Ảnh combo chủ lực | `assets/images/banner/combo-c-cx4.png` |
 | Banner và hình phụ trợ | `assets/images/banner/` |
 | Ảnh sản phẩm | `assets/images/products/` |
@@ -177,8 +179,8 @@ Theo `assets/css/style.css`, template dùng Plus Jakarta Sans cho chữ sans, Pl
 
 ## 9. Thông tin SEO ban đầu
 
-- Title trang chủ theo mẫu: **Fractional CC Nhật Bản | Phân Phối Độc Quyền Bởi BUI DANG-JP**.
-- Description theo mẫu: **Đánh thức vẻ đẹp làn da với công nghệ chăm sóc da Nhật Bản. Khám phá giải pháp chăm sóc da cùng Fractional CC – thương hiệu mỹ phẩm Nhật Bản được phân phối độc quyền bởi BUI DANG-JP tại Việt Nam.**
+- Title trang chủ theo mẫu: **Fractional CC Nhật Bản | Phân Phối Độc Quyền Bởi JP- BÙI ĐẶNG**.
+- Description theo mẫu: **Đánh thức vẻ đẹp làn da với công nghệ chăm sóc da Nhật Bản. Khám phá giải pháp chăm sóc da cùng Fractional CC – thương hiệu mỹ phẩm Nhật Bản được phân phối độc quyền bởi JP- BÙI ĐẶNG tại Việt Nam.**
 - H1 nội dung theo brief: **Đánh thức vẻ đẹp làn da với công nghệ chăm sóc da Nhật Bản**.
 - Ảnh chia sẻ đang tham chiếu trong HTML: `assets/images/banner/combo-c-cx4.png`.
 - Domain/canonical/URL ảnh tuyệt đối: chờ xác nhận domain public; không sao chép mặc định `fractional-cc.vn` sang WordPress.

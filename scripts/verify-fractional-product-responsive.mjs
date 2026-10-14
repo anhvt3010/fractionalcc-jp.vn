@@ -96,7 +96,7 @@ try {
       check(layout.viewport === width && layout.documentWidth <= width, 'No viewport expansion: ' + label);
       check(layout.outside.length === 0, 'No off-screen content: ' + label + ' ' + layout.outside.join(', '));
       check(layout.imageLoaded && layout.gallery.width <= width, 'Main image fits: ' + label);
-      check(layout.buy.bottom < layout.tabs.y && layout.buy.height >= 44, 'Purchase appears before tabs with usable target: ' + label);
+      check(layout.buy.height >= 44 && layout.buy.width >= 44 && layout.buy.y >= layout.summary.y && layout.buy.bottom <= layout.summary.bottom + 1, 'Purchase target is usable within the current product summary: ' + label);
       check(layout.hasNoteBox === Boolean(layout.notes.trim()), 'No empty notes panel: ' + label);
       check(layout.heroColumns.split(' ').length === (width >= 992 ? 2 : 1), 'Correct one/two column layout: ' + label);
       if (width < 992) check(layout.tabButtons.every(button => button.left >= 0 && button.right <= width && button.height >= 44), 'All three mobile tabs fit: ' + label);
@@ -110,9 +110,38 @@ try {
     }
     const galleryWorks = await evaluate(`(async () => { const buttons=[...document.querySelectorAll('[data-detail-image]')], image=document.querySelector('#pd-main-image'); for(const button of buttons){ button.click(); await image.decode(); if(image.src!==button.dataset.detailImage || !button.classList.contains('active'))return false; } buttons[0]?.click(); return true; })()`);
     check(galleryWorks, 'Gallery switches images: ' + product.id);
-    const modalWorks = await evaluate(`(() => { document.querySelector('#pd-buy-now-btn').click(); const modal=document.querySelector('#order-modal'), selected=document.querySelector('#modal-product-select'); const ok=modal.classList.contains('active') && selected.value==='prod_'+window.FCC_CONFIG.productId; document.querySelector('#modal-close-btn').click(); return ok && !modal.classList.contains('active'); })()`);
-    check(modalWorks, 'Buy modal selects current product and closes: ' + product.id);
+    const modalWorks = await evaluate(`(() => { document.querySelector('#pd-buy-now-btn').click(); const modal=document.querySelector('#order-modal'), selected=document.querySelector('#modal-product-select'), form=modal.querySelector('form'), consent=form.querySelector('[name="agree_terms"]'), submit=form.querySelector('[type="submit"]'); let ok=modal.classList.contains('active') && selected.value==='prod_'+window.FCC_CONFIG.productId && consent?.required && !consent.checked && submit.disabled; if(consent){consent.click();ok=ok&&!submit.disabled;consent.click();ok=ok&&submit.disabled;} document.querySelector('#modal-close-btn').click(); return ok && !modal.classList.contains('active'); })()`);
+    check(modalWorks, 'Buy modal selects product, requires consent, gates submit and closes: ' + product.id);
     console.log('PASS: product ' + product.id + ' across ' + widths.length + ' widths, tabs, gallery and buy modal.');
+  }
+  // Cover all popup templates, including the home/catalog/concerns variants absent from product checks.
+  const consentPages = [new URL('', base).href, new URL('san-pham/', base).href, new URL('van-de-lan-da/', base).href, products[0].link];
+  for (const url of consentPages) {
+    for (const width of [390, 1440]) {
+      await cdp('Emulation.setDeviceMetricsOverride', {width, height:900, deviceScaleFactor:1, mobile:width < 600});
+      await cdp('Page.navigate', {url});
+      let ready = false;
+      for (let i = 0; i < 150; i++) {
+        ready = await evaluate(`location.href === ${JSON.stringify(url)} && document.readyState === 'complete' && !!document.querySelector('#modal-agree')`);
+        if (ready) break;
+        await delay(100);
+      }
+      check(ready, 'Popup consent exists: ' + url);
+      const initial = await evaluate(`(() => { document.querySelector('[data-open-order]').click(); const form=document.querySelector('#modal-order-form'), consent=form.querySelector('[name="agree_terms"]'), button=form.querySelector('[type="submit"]'), label=form.querySelector('label[for="'+consent.id+'"]'); consent.scrollIntoView({block:'center'}); return {required:consent.required,unchecked:!consent.checked,disabled:button.disabled,label:label?.textContent.trim(),count:form.querySelectorAll('[name="agree_terms"]').length,opacity:getComputedStyle(button).opacity,fits:document.querySelector('.modal-container').getBoundingClientRect().width <= innerWidth}; })()`);
+      check(initial.required && initial.unchecked && initial.disabled && initial.count === 1 && Boolean(initial.label), 'Initial consent gates submit: ' + width);
+      check(initial.fits && Number(initial.opacity) < 1, 'Popup fits and disabled button is visible: ' + width);
+      await evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+      const toggles = await evaluate(`(() => { const form=document.querySelector('#modal-order-form'), consent=form.querySelector('[name="agree_terms"]'), button=form.querySelector('[type="submit"]'); consent.click(); const enabled=!button.disabled && new FormData(form).get('agree_terms')==='on'; consent.click(); consent.focus(); return enabled && button.disabled; })()`);
+      check(toggles, 'Checked consent is submitted; unchecking disables: ' + width);
+      await cdp('Page.bringToFront');
+      await cdp('Input.dispatchKeyEvent', {type:'keyDown', key:' ', code:'Space', text:' ', unmodifiedText:' ', windowsVirtualKeyCode:32});
+      await cdp('Input.dispatchKeyEvent', {type:'keyUp', key:' ', code:'Space', windowsVirtualKeyCode:32});
+      check(await evaluate(`document.querySelector('#modal-agree').checked && !document.querySelector('#modal-order-form [type="submit"]').disabled`), 'Keyboard can give consent: ' + width);
+      const resets = await evaluate(`(async () => { const form=document.querySelector('#modal-order-form'); form.reset(); await new Promise(resolve=>setTimeout(resolve,20)); const ok=!form.querySelector('[name="agree_terms"]').checked && form.querySelector('[type="submit"]').disabled; closeOrderModal(); openOrderModal(); form.querySelector('[name="agree_terms"]').scrollIntoView({block:'center'}); return ok && form.querySelector('[type="submit"]').disabled; })()`);
+      check(resets, 'Reset/reopen require consent again: ' + width);
+      if (url === products[0].link) { await delay(350); await screenshot('consent-' + width, width, 900); }
+      await evaluate('closeOrderModal()');
+    }
   }
   check(errors.length === 0, 'No browser console/runtime errors: ' + errors.join('; '));
   fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify({ passed: true, checks, products: products.length, widths, layouts, errors }, null, 2));

@@ -8,12 +8,13 @@ if (!inputPath || !root) throw new Error('Provide workbook extraction and projec
 const source = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
 const defaultsPath = path.join(root, 'wp-content/plugins/project-core/defaults/fractional.json');
 const defaults = JSON.parse(fs.readFileSync(defaultsPath, 'utf8'));
+if (defaults.approval?.status === 'approved') throw new Error('Approved defaults must be exported from the CMS; this legacy workbook compiler cannot overwrite them.');
 const cell = address => String(source.cells[address] ?? '').trim().replace(/\r\n?/g, '\n');
 const lines = text => text.split('\n').map(value => value.trim()).filter(Boolean);
 const cleanBullet = text => text.replace(/^[\s\p{So}✅✓✔☑•*\-]+/u, '').trim();
 const headers = ['STT', 'Hình ảnh', 'Thương hiệu', 'Tên sản phẩm', 'Phân loại', 'Xuất xứ', 'Công dụng', 'Thành phần chính', 'Đối tượng phù hợp', 'USP / Điểm nổi bật', 'Tình trạng pháp lý', 'Số Công bố mỹ phẩm', 'Ghi chú', 'Giá', 'Giá combo'];
 headers.forEach((header, i) => { if (cell(String.fromCharCode(65 + i) + '3') !== header) throw new Error(`Unexpected column ${header}.`); });
-if (defaults.products.length !== 10 || source.images.length !== 10) throw new Error('Expected ten products and ten embedded images.');
+if (defaults.products.length !== 10) throw new Error('Expected ten products.');
 function price(text) {
   const normalized = text.replace(/\u0336/g, '').replace(/\s/g, '');
   const match = normalized.match(/^([\d.,]+)(?:\(([\d.,]+)\))?$/);
@@ -28,18 +29,20 @@ const ingredientNames = {
   1: ['50.000 vi kim tự nhiên (Microneedles)', '10% Mandelic Acid kết hợp 2% Lactic Acid (AHA)', 'Salicylic Acid (BHA)', '5% Niacinamide'],
   8: ['1000ppm PDRN (DNA cá hồi)', '12% Niacinamide và 2% Arbutin', 'Glutathione kết hợp Vitamin C'],
 };
-const stagedImages = [];
+const approvedImages = {
+  1: 'mandelic-peel-essence.png', 2: 'needle-mask-a.png', 3: 'needle-serum-a.png',
+  4: 'needle-serum-ax4.png', 5: 'needle-mask-c.png', 6: 'needle-serum-c.png',
+  7: 'needle-serum-cx4.png', 8: 'pdrn-toning-essence.png',
+  9: 'pdrn-lip-essence.png', 10: 'pdrn-lip-plumper.png',
+};
 const rows = [];
 for (let row = 4; row <= 13; row++) {
   const id = Number(cell('A' + row));
   const product = defaults.products.find(item => item.id === id);
   if (!product || id !== row - 3 || product.name !== cell('D' + row)) throw new Error(`Product identity mismatch at row ${row}.`);
-  const embedded = source.images.filter(image => image.row === row && image.column === 2);
-  if (embedded.length !== 1) throw new Error(`Image mapping is ambiguous at row ${row}.`);
-  const bytes = Buffer.from(embedded[0].data, 'base64');
-  if (!bytes.subarray(0, 8).equals(Buffer.from([137,80,78,71,13,10,26,10]))) throw new Error('Embedded image is not PNG.');
-  const image = `assets/images/products/excel-20261013/${product.slug}.png`;
-  stagedImages.push({ image, bytes });
+  const image = `assets/images/products/${approvedImages[id]}`;
+  const bytes = fs.readFileSync(path.join(root, 'wp-content/themes/project-child/assets/fractional', image));
+  if (!bytes.subarray(0, 8).equals(Buffer.from([137,80,78,71,13,10,26,10]))) throw new Error('Selected theme image is not PNG.');
   const record = Object.fromEntries(headers.map((header, i) => [header, cell(String.fromCharCode(65 + i) + row)]));
   record['Hình ảnh'] = image;
   rows.push({ row, id, values: record, imageSha256: crypto.createHash('sha256').update(bytes).digest('hex') });
@@ -72,20 +75,13 @@ const brandImage = defaults.pages.home.fields.fcc_ui_brand_image;
 if (brandImage?.type === 'image' && /^\d+$/.test(String(brandImage.value))) {
   brandImage.value = 'assets/images/brand/fractional-lineup-full.jpg';
 }
-defaults.catalogSource = { file: source.file, sheet: source.sheet, range: 'A3:O13', sha256: source.sha256, productFields: fields, comboFields: ['salePrice', 'originalPrice', 'saveAmount'] };
+defaults.catalogSource = { file: source.file, sheet: source.sheet, range: 'A3:O13', sha256: source.sha256, imagePolicy: 'Existing approved theme product images; embedded workbook photos are not used.', productFields: fields, comboFields: ['salePrice', 'originalPrice', 'saveAmount'] };
 // New installations must use the approved Excel card text, not old homepage snapshots.
 const featured = defaults.featured.find(item => item.source === 'product_1');
 if (featured) {
   const product = defaults.products.find(item => item.id === 1);
   for (const key of ['spotlightTitle', 'spotlightDescription', 'spotlightHighlights']) featured.fields[key] = { value: product[key] };
 }
-for (const { image, bytes } of stagedImages) {
-  for (const base of ['template/fractional-cc', 'wp-content/themes/project-child/assets/fractional']) {
-    const target = path.join(root, base, image);
-    fs.mkdirSync(path.dirname(target), { recursive: true });
-    fs.writeFileSync(target, bytes);
-  }
-}
 fs.writeFileSync(defaultsPath, JSON.stringify(defaults, null, 4) + '\n');
 fs.writeFileSync(path.join(root, 'wp-content/plugins/project-core/defaults/catalog-excel.json'), JSON.stringify({ ...defaults.catalogSource, headers, rows }, null, 2) + '\n');
-console.log(`Compiled ${rows.length} product records, ${stagedImages.length} exact embedded images and C–CX4 pricing. Workbook SHA-256: ${source.sha256}`);
+console.log(`Compiled ${rows.length} product records using existing theme images and C–CX4 pricing. Workbook SHA-256: ${source.sha256}`);

@@ -1,6 +1,6 @@
 # Setup và workflow XAMPP
 
-> Ch?t 14/10/2026: to?n b? n?i dung/s?n ph?m/media/ph?c ?? hi?n t?i ?? ???c duy?t l?m [defaults 1.0.0](APPROVED-DEFAULTS.md). C?c release c? ?? x?a; [release ??u ti?n](../release/v1.0.0/RELEASE.md) l? h? s? hi?n h?nh. C?c m? t? ch? duy?t/local_sample c?a b?n tr??c d??i ??y l? l?ch s?.
+> Hiện hành ngày 14/10/2026: [release 1.0.1](../release/v1.0.1/RELEASE.md), [defaults đã duyệt](APPROVED-DEFAULTS.md), seed version 1.0.1. Runtime dùng Project Child/Kadence và Project Core/ACF, homepage ID 24, 30 Media. Các mô tả phiên bản trước bên dưới là lịch sử.
 
 > Rà soát `0.3.5`: site hiện tại đã chạy lại initializer có kiểm soát, giữ nguyên 53 bản ghi nội dung, cấu hình trang chủ và số attachment. Cài mới đã kiểm tra thứ tự kích hoạt, dependency thiếu, khôi phục khóa quá hạn và các lỗi package. [Hồ sơ kiểm tra](../release/v1.0.0/RELEASE.md). Không cần reset hoặc cập nhật lại catalog của site đang dùng.
 

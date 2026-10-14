@@ -119,7 +119,7 @@ function project_core_fcc_combos() {
 }
 
 function project_core_fcc_frontend_data( $with_products = true ) {
-	$data = array( 'brand' => array( 'zaloLink' => project_core_fcc_site( 'zaloLink' ), 'email' => project_core_fcc_site( 'email' ), 'hotlineDisplay' => project_core_fcc_site( 'hotlineDisplay' ) ), 'products' => array(), 'combos' => array() );
+	$data = array( 'brand' => array( 'zaloLink' => project_core_fcc_contact( 'zaloLink' ), 'email' => project_core_fcc_contact( 'email' ), 'hotlineDisplay' => project_core_fcc_contact( 'hotlineDisplay' ) ), 'products' => array(), 'combos' => array() );
 	if ( ! $with_products ) { return $data; }
 	foreach ( array( 'products' => 'fcc_product', 'combos' => 'fcc_combo' ) as $list => $type ) {
 		foreach ( project_core_fcc_posts( $type ) as $post ) {

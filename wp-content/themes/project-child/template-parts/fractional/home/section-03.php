@@ -29,29 +29,15 @@
             if ( empty( trim( $brand_img_alt ) ) ) {
                 $brand_img_alt = 'Dòng sản phẩm Fractional CC';
             }
-            $brand_card_title = project_child_fcc_text( 'fcc_ui_brand_card_title', 'home' );
-            if ( empty( trim( wp_strip_all_tags( $brand_card_title ) ) ) ) {
-                $brand_card_title = 'Giảm đến 25% mỹ phẩm & TPCN Nhật';
-            }
-            $brand_card_desc = project_child_fcc_text( 'fcc_ui_brand_card_desc', 'home' );
-            if ( empty( trim( wp_strip_all_tags( $brand_card_desc ) ) ) ) {
-                $brand_card_desc = project_child_fcc_text( 'fcc_ui_brand_caption', 'home' );
-            }
-            if ( empty( trim( wp_strip_all_tags( $brand_card_desc ) ) ) || 'Hình ảnh sản phẩm, bao bì và phong cách thương hiệu' === trim( $brand_card_desc ) ) {
-                $brand_card_desc = 'Deal tốt cho skincare, vitamin và đặc sản Nhật Bản.';
+            $brand_caption = project_child_fcc_text( 'fcc_ui_brand_caption', 'home' );
+            if ( empty( trim( wp_strip_all_tags( $brand_caption ) ) ) ) {
+                $brand_caption = 'Hình ảnh sản phẩm, bao bì và phong cách thương hiệu.';
             }
             ?>
             <div class="brand-image-stage">
               <img src="<?php echo esc_url( $brand_img_url ); ?>" alt="<?php echo esc_attr( $brand_img_alt ); ?>" class="brand-lineup-img" loading="lazy">
             </div>
-            <div class="brand-visual-card">
-              <?php if ( ! empty( trim( wp_strip_all_tags( $brand_card_title ) ) ) ) : ?>
-                <h3 class="brand-visual-title heading-serif"><?php echo esc_html( $brand_card_title ); ?></h3>
-              <?php endif; ?>
-              <?php if ( ! empty( trim( wp_strip_all_tags( $brand_card_desc ) ) ) ) : ?>
-                <p class="brand-visual-desc"><?php echo esc_html( $brand_card_desc ); ?></p>
-              <?php endif; ?>
-            </div>
+            <p class="brand-visual-caption"><?php echo esc_html( $brand_caption ); ?></p>
           </div>
           <div class="brand-content-wrap">
             <?php 
@@ -147,7 +133,7 @@
             <?php endif; ?>
 
             <div class="brand-actions-row">
-              <a href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/0985561862' ) ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-gold brand-zalo-btn">
+              <a <?php project_child_fcc_contact_attributes( 'zalo' ); ?> target="_blank" rel="noopener noreferrer" class="btn btn-gold brand-zalo-btn">
                 <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                 <?php echo project_child_fcc_text( 'fcc_ui_7b13a0466f4818', 'home', false ); ?>
               </a>

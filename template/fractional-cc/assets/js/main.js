@@ -337,7 +337,7 @@ function renderOrderHandoff(container, order) {
   const heading = document.createElement('h3');
   heading.textContent = 'Kiểm tra & gửi yêu cầu đặt hàng';
   const note = document.createElement('p');
-  note.textContent = 'Yêu cầu chưa được gửi. Sao chép nội dung và gửi qua Zalo, hoặc mở email rồi nhấn Gửi. BUI DANG-JP sẽ xác nhận sản phẩm, phí vận chuyển và thanh toán với bạn.';
+  note.textContent = 'Yêu cầu chưa được gửi. Sao chép nội dung và gửi qua Zalo, hoặc mở email rồi nhấn Gửi. JP- BÙI ĐẶNG sẽ xác nhận sản phẩm, phí vận chuyển và thanh toán với bạn.';
   const message = ['Yêu cầu đặt hàng Fractional CC', `Họ tên: ${order.customerName}`, `Điện thoại: ${order.customerPhone}`, `Sản phẩm: ${order.selectedItemName}`, `Địa chỉ: ${order.customerAddress || 'Cung cấp khi xác nhận'}`, `Ghi chú: ${order.customerNote || 'Không'}`].join('\n');
   const text = document.createElement('textarea');
   text.value = message;
@@ -823,7 +823,7 @@ function initThankYouPage() {
   const title = document.createElement('h1');
   title.textContent = 'Liên hệ xác nhận đơn hàng';
   const note = document.createElement('p');
-  note.textContent = 'Vui lòng gửi yêu cầu qua Zalo 0985 561 862 hoặc email jpbuidangco.ltd@gmail.com để BUI DANG-JP nhận và xác nhận đơn.';
+  note.textContent = 'Vui lòng gửi yêu cầu qua Zalo 0985 561 862 hoặc email jpbuidangco.ltd@gmail.com để JP- BÙI ĐẶNG nhận và xác nhận đơn.';
   const link = document.createElement('a');
   link.className = 'btn btn-primary'; link.href = 'index.html#dat-hang'; link.textContent = 'Điền thông tin đặt hàng';
   box.append(title, note, link);

@@ -45,11 +45,24 @@
           <div class="policy-sidebar-contact">
             <h4><?php echo project_child_fcc_text( 'fcc_ui_8db5980aa8de00', 'policies' ); ?></h4>
             <p><?php echo project_child_fcc_text( 'fcc_ui_09af950ba57e78', 'policies' ); ?></p>
-            <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" class="policy-sidebar-btn">
-              <span><?php echo project_child_fcc_text( 'fcc_ui_ac4ff3b5b4b5e0', 'policies', false ); ?></span>
-            </a>
-            <div style="font-size: 11.5px; color: var(--color-text-muted); margin-top: 8px;">
-              <?php echo project_child_fcc_text( 'fcc_ui_95b2aca7868f6b', 'policies' ); ?>
+            <div class="policy-sidebar-contact-btns">
+              <a <?php project_child_fcc_contact_attributes( 'zalo' ); ?> target="_blank" rel="noopener noreferrer" class="contact-pill-btn contact-pill-zalo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.03 2 11C2 13.565 3.195 15.864 5.12 17.472L4.2 21.2C4.085 21.664 4.545 22.052 4.965 21.848L9.29 19.742C10.158 19.911 11.063 20 12 20C17.523 20 22 15.97 22 11C22 6.03 17.523 2 12 2Z" fill="#FFFFFF"></path><text x="12" y="14" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="7.2" font-weight="800" fill="#0068FF" text-anchor="middle" letter-spacing="-0.3">Zalo</text></svg>
+                <span><?php echo project_child_fcc_text( 'fcc_ui_m_db25d68f6300', 'shared' ); ?></span>
+              </a>
+
+              <a <?php project_child_fcc_contact_attributes( 'facebook' ); ?> target="_blank" rel="noopener noreferrer" class="contact-pill-btn contact-pill-messenger">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.12 7.15.16.14.26.35.26.57l-.37 2.21c-.08.47.38.86.82.7l2.58-1.02c.18-.07.38-.07.56-.01.95.26 1.97.4 3.03.4 5.64 0 10-4.13 10-9.7S17.64 2 12 2zm1 10.5-2.5-2.5-3.5 3.5 3-4.5 2.5 2.5 3.5-3.5-3 4.5z"/></svg>
+                <span><?php echo project_child_fcc_text( 'fcc_ui_m_5c77cd896de7', 'shared' ); ?></span>
+              </a>
+
+              <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> class="contact-pill-btn contact-pill-phone">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Hotline: <?php echo esc_html( project_core_fcc_contact( 'hotlineDisplay' ) ); ?></span>
+              </a>
+            </div>
+            <div style="font-size: 11.5px; color: var(--color-text-muted); margin-top: 10px;">
+              Email: <?php echo esc_html( project_core_fcc_contact( 'email' ) ); ?>
             </div>
           </div>
         </aside>
@@ -60,7 +73,9 @@
           
           <article class="policy-card" id="doi-tra">
             <div class="policy-card-header">
-              <div class="policy-card-icon"><?php echo project_child_fcc_text( 'fcc_ui_6d9d01b85824d4', 'policies' ); ?></div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>
+              </div>
               <div>
                 <div class="policy-card-sub"><?php echo project_child_fcc_text( 'fcc_ui_028a9dd96237dc', 'policies' ); ?></div>
                 <h2 class="policy-card-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_9e248e743e36d4', 'policies' ); ?></h2>
@@ -80,20 +95,15 @@
               <div class="policy-alert">
                 <strong><?php echo project_child_fcc_text( 'fcc_ui_4f8003099e959e', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_961834b71be631', 'policies' ); ?> <strong><?php echo project_child_fcc_text( 'fcc_ui_cbfa088a84db9e', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_c9b17e20d741b8', 'policies' ); ?> <strong><?php echo project_child_fcc_text( 'fcc_ui_8fad1a8b45610d', 'policies' ); ?></strong><?php echo project_child_fcc_text( 'fcc_ui_17a93d7c4c4b39', 'policies' ); ?>
               </div>
-
-              <h3 style="font-size: 16px; margin: 18px 0 10px; color: var(--color-primary);"><?php echo project_child_fcc_text( 'fcc_ui_24b7ceb823544d', 'policies' ); ?></h3>
-              <p><?php echo project_child_fcc_text( 'fcc_ui_c27479d9914be2', 'policies' ); ?></p>
-              <ol>
-                <li><?php echo project_child_fcc_text( 'fcc_ui_1164e6d639312c', 'policies' ); ?></li>
-                <li><?php echo project_child_fcc_text( 'fcc_ui_c66784266bb91f', 'policies' ); ?> <strong><?php echo project_child_fcc_text( 'fcc_ui_371f456f78a956', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_b8a2a8cef06fc3', 'policies' ); ?></li>
-              </ol>
             </div>
           </article>
 
           
           <article class="policy-card" id="giao-hang">
             <div class="policy-card-header">
-              <div class="policy-card-icon"><?php echo project_child_fcc_text( 'fcc_ui_7a6c0272eff15f', 'policies' ); ?></div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              </div>
               <div>
                 <div class="policy-card-sub"><?php echo project_child_fcc_text( 'fcc_ui_e298e90dc4cb8c', 'policies' ); ?></div>
                 <h2 class="policy-card-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_fc02840a2f5ebb', 'policies' ); ?></h2>
@@ -134,7 +144,9 @@
           
           <article class="policy-card" id="bao-mat">
             <div class="policy-card-header">
-              <div class="policy-card-icon"><?php echo project_child_fcc_text( 'fcc_ui_166c15fd5d2ba6', 'policies' ); ?></div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+              </div>
               <div>
                 <div class="policy-card-sub"><?php echo project_child_fcc_text( 'fcc_ui_8c3e3dad77161e', 'policies' ); ?></div>
                 <h2 class="policy-card-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_5e18731217089e', 'policies' ); ?></h2>
@@ -146,14 +158,13 @@
               <h3 style="font-size: 16px; margin: 18px 0 10px; color: var(--color-primary);"><?php echo project_child_fcc_text( 'fcc_ui_1e2fa7b10e4871', 'policies' ); ?></h3>
               <ul>
                 <li><?php echo project_child_fcc_text( 'fcc_ui_c7c248fd64420d', 'policies' ); ?></li>
-                <li><?php echo project_child_fcc_text( 'fcc_ui_d26139482bcc4c', 'policies' ); ?></li>
                 <li><?php echo project_child_fcc_text( 'fcc_ui_b32e927d2b6f7b', 'policies' ); ?></li>
               </ul>
 
               <h3 style="font-size: 16px; margin: 18px 0 10px; color: var(--color-primary);"><?php echo project_child_fcc_text( 'fcc_ui_1dc1abb1f5f624', 'policies' ); ?></h3>
               <ul>
-                <li><strong><?php echo project_child_fcc_text( 'fcc_ui_d139d0104af1f1', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_c1ba563b9871d6', 'policies' ); ?></li>
-                <li><strong><?php echo project_child_fcc_text( 'fcc_ui_6dbccd4e8f062f', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_64f415c6d1c400', 'policies' ); ?> <code><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></code><?php echo project_child_fcc_text( 'fcc_ui_974a12a81f8b5c', 'policies' ); ?></li>
+                <li><?php echo project_child_fcc_text( 'fcc_ui_c1ba563b9871d6', 'policies' ); ?></li>
+                <li><?php echo project_child_fcc_text( 'fcc_ui_64f415c6d1c400', 'policies' ); ?> <code><?php echo esc_html( project_core_fcc_contact( 'hotlineDisplay' ) ); ?></code><?php echo project_child_fcc_text( 'fcc_ui_974a12a81f8b5c', 'policies' ); ?></li>
               </ul>
             </div>
           </article>
@@ -161,7 +172,9 @@
           
           <article class="policy-card" id="thanh-toan">
             <div class="policy-card-header">
-              <div class="policy-card-icon"><?php echo project_child_fcc_text( 'fcc_ui_997f038cf0fe90', 'policies' ); ?></div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><line x1="6" y1="15" x2="10" y2="15"></line></svg>
+              </div>
               <div>
                 <div class="policy-card-sub"><?php echo project_child_fcc_text( 'fcc_ui_631ff1af445a0b', 'policies' ); ?></div>
                 <h2 class="policy-card-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_29603b83c66b35', 'policies' ); ?></h2>
@@ -180,7 +193,9 @@
           
           <article class="policy-card" id="chinh-hang">
             <div class="policy-card-header">
-              <div class="policy-card-icon"><?php echo project_child_fcc_text( 'fcc_ui_bab93d0d6723be', 'policies' ); ?></div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path><path d="m9 8 2 2 4-4"></path></svg>
+              </div>
               <div>
                 <div class="policy-card-sub"><?php echo project_child_fcc_text( 'fcc_ui_5c7d48e3768df2', 'policies' ); ?></div>
                 <h2 class="policy-card-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_c7ac75c25a6db3', 'policies' ); ?></h2>
@@ -200,7 +215,9 @@
           
           <article class="policy-card" id="khieu-nai">
             <div class="policy-card-header">
-              <div class="policy-card-icon"><?php echo project_child_fcc_text( 'fcc_ui_a8e6fef2d7d4af', 'policies' ); ?></div>
+              <div class="policy-card-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+              </div>
               <div>
                 <div class="policy-card-sub"><?php echo project_child_fcc_text( 'fcc_ui_205ee94887131f', 'policies' ); ?></div>
                 <h2 class="policy-card-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_683e127abd8fa6', 'policies' ); ?></h2>
@@ -210,7 +227,7 @@
               <p><?php echo project_child_fcc_text( 'fcc_ui_352957fa4aa925', 'policies' ); ?></p>
 
               <ol>
-                <li><strong><?php echo project_child_fcc_text( 'fcc_ui_3078a4e8be5f03', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_29fc9490f43d63', 'policies' ); ?> <code><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></code> <?php echo project_child_fcc_text( 'fcc_ui_037ff33a2a220a', 'policies' ); ?> <code><?php echo project_child_fcc_text( 'fcc_ui_7496ba7d0c475a', 'policies' ); ?></code><?php echo project_child_fcc_text( 'fcc_ui_e344bb52d30078', 'policies' ); ?></li>
+                <li><strong><?php echo project_child_fcc_text( 'fcc_ui_3078a4e8be5f03', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_29fc9490f43d63', 'policies' ); ?> <code><?php echo esc_html( project_core_fcc_contact( 'hotlineDisplay' ) ); ?></code> <?php echo project_child_fcc_text( 'fcc_ui_037ff33a2a220a', 'policies' ); ?> <code><?php echo project_child_fcc_text( 'fcc_ui_7496ba7d0c475a', 'policies' ); ?></code><?php echo project_child_fcc_text( 'fcc_ui_e344bb52d30078', 'policies' ); ?></li>
                 <li><strong><?php echo project_child_fcc_text( 'fcc_ui_da7e74dd5aceb6', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_70d7e8b71cf734', 'policies' ); ?></li>
                 <li><strong><?php echo project_child_fcc_text( 'fcc_ui_a35831dbf051fe', 'policies' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_9e38574d174260', 'policies' ); ?></li>
               </ol>
@@ -220,7 +237,7 @@
                 <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--color-text-body);">
                   <strong><?php echo project_child_fcc_text( 'fcc_ui_b2f17719051e8c', 'policies' ); ?></strong><br>
                   <?php echo project_child_fcc_text( 'fcc_ui_a7422ed566e213', 'policies' ); ?><br>
-                  <?php echo project_child_fcc_text( 'fcc_ui_8f73760042b523', 'policies' ); ?> <strong><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></strong><br>
+                  <?php echo project_child_fcc_text( 'fcc_ui_8f73760042b523', 'policies' ); ?> <strong><?php echo esc_html( project_core_fcc_contact( 'hotlineDisplay' ) ); ?></strong><br>
                   <?php echo project_child_fcc_text( 'fcc_ui_6d11f04edb7c01', 'policies' ); ?> <strong><?php echo project_child_fcc_text( 'fcc_ui_7496ba7d0c475a', 'policies' ); ?></strong>
                 </p>
               </div>

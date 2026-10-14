@@ -2,7 +2,7 @@
 const FCC_DATA = {
   "brand": {
     "name": "Fractional CC",
-    "distributor": "Công ty TNHH BUI DANG-JP",
+    "distributor": "CÔNG TY TNHH JP- BÙI ĐẶNG",
     "distributorRole": "Phân phối độc quyền tại Việt Nam",
     "distributorLogo": "assets/images/brand/bui-dang-jp-logo.png",
     "brandLogo": "assets/images/brand/fractional-cc-logo.png",
@@ -18,7 +18,7 @@ const FCC_DATA = {
     "addressHN": null,
     "addressHCM": null,
     "certifications": [
-      "Phân phối độc quyền bởi BUI DANG-JP tại Việt Nam",
+      "Phân phối độc quyền bởi JP- BÙI ĐẶNG tại Việt Nam",
       "Thông tin công bố mỹ phẩm theo hồ sơ sản phẩm"
     ]
   },
@@ -757,11 +757,11 @@ const FCC_DATA = {
     },
     {
       "q": "Sản phẩm có nguồn gốc từ đâu?",
-      "a": "Fractional CC là thương hiệu chăm sóc da Nhật Bản, được BUI DANG-JP độc quyền phân phối tại Việt Nam. Thương hiệu mang đến các sản phẩm ứng dụng công nghệ vi kim, đáp ứng nhu cầu chăm sóc da của người tiêu dùng Việt."
+      "a": "Fractional CC là thương hiệu chăm sóc da Nhật Bản, được JP- BÙI ĐẶNG độc quyền phân phối tại Việt Nam. Thương hiệu mang đến các sản phẩm ứng dụng công nghệ vi kim, đáp ứng nhu cầu chăm sóc da của người tiêu dùng Việt."
     },
     {
       "q": "Nên chọn sản phẩm nào theo nhu cầu chăm sóc da?",
-      "a": "Tùy theo tình trạng da và mục tiêu chăm sóc, bạn có thể lựa chọn sản phẩm phù hợp trong dòng Fractional CC, đặc biệt là các sản phẩm hướng đến dưỡng sáng, cấp ẩm và chăm sóc da chuyên sâu. Hãy tham khảo công dụng cụ thể của từng sản phẩm hoặc liên hệ BUI DANG-JP để được tư vấn."
+      "a": "Tùy theo tình trạng da và mục tiêu chăm sóc, bạn có thể lựa chọn sản phẩm phù hợp trong dòng Fractional CC, đặc biệt là các sản phẩm hướng đến dưỡng sáng, cấp ẩm và chăm sóc da chuyên sâu. Hãy tham khảo công dụng cụ thể của từng sản phẩm hoặc liên hệ JP- BÙI ĐẶNG để được tư vấn."
     },
     {
       "q": "Cách sử dụng sản phẩm như thế nào?",
@@ -772,8 +772,8 @@ const FCC_DATA = {
       "a": "Bạn có thể kết hợp các sản phẩm Fractional CC để xây dựng quy trình chăm sóc da phù hợp với nhu cầu của mình. Tuy nhiên, do dòng sản phẩm có ứng dụng công nghệ vi kim, bạn nên lựa chọn sản phẩm kết hợp phù hợp, tuân thủ hướng dẫn sử dụng và tránh dùng đồng thời các hoạt chất dễ gây kích ứng."
     },
     {
-      "q": "Làm thế nào để mua hàng chính hãng từ BUI DANG-JP?",
-      "a": "Khách hàng có thể đặt mua Fractional CC qua các kênh bán hàng chính thức của BUI DANG-JP – đơn vị độc quyền phân phối sản phẩm tại Việt Nam. Bạn sẽ được hỗ trợ tư vấn lựa chọn sản phẩm, hướng dẫn sử dụng và cung cấp thông tin về nguồn gốc sản phẩm."
+      "q": "Làm thế nào để mua hàng chính hãng từ JP- BÙI ĐẶNG?",
+      "a": "Khách hàng có thể đặt mua Fractional CC qua các kênh bán hàng chính thức của JP- BÙI ĐẶNG – đơn vị độc quyền phân phối sản phẩm tại Việt Nam. Bạn sẽ được hỗ trợ tư vấn lựa chọn sản phẩm, hướng dẫn sử dụng và cung cấp thông tin về nguồn gốc sản phẩm."
     }
   ]
 };

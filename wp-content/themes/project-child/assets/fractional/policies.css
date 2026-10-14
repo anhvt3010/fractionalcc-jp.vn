@@ -22,8 +22,26 @@
       border-radius: var(--radius-lg);
       padding: 24px;
       box-shadow: var(--shadow-sm);
-      position: sticky;
-      top: 96px;
+      position: static;
+    }
+    @media (min-width: 992px) {
+      .policy-sidebar {
+        position: sticky;
+        top: 116px;
+        max-height: calc(100vh - 136px);
+        overflow-y: auto;
+      }
+      body.admin-bar .policy-sidebar {
+        top: 148px;
+        max-height: calc(100vh - 168px);
+      }
+    }
+    .policy-sidebar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .policy-sidebar::-webkit-scrollbar-thumb {
+      background: rgba(197, 160, 89, 0.3);
+      border-radius: 4px;
     }
     .policy-sidebar-title {
       font-size: 14px;
@@ -108,6 +126,35 @@
       background: var(--color-accent-gold);
       color: #121212;
     }
+    .policy-sidebar-contact-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    .policy-sidebar-contact-btns .contact-pill-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: all var(--transition-fast);
+    }
+    .policy-sidebar-contact-btns .contact-pill-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .policy-sidebar-contact-btns .contact-pill-btn svg {
+      flex-shrink: 0;
+    }
+
 
     /* Policy Main Content */
     .policy-card {
@@ -117,11 +164,18 @@
       padding: 36px 32px;
       margin-bottom: 28px;
       box-shadow: var(--shadow-sm);
-      scroll-margin-top: 100px;
+      scroll-margin-top: 120px;
     }
-    @media (max-width: 768px) {
+    body.admin-bar .policy-card {
+      scroll-margin-top: 152px;
+    }
+    @media (max-width: 782px) {
       .policy-card {
+        scroll-margin-top: 100px;
         padding: 26px 20px;
+      }
+      body.admin-bar .policy-card {
+        scroll-margin-top: 146px;
       }
     }
     .policy-card-header {
@@ -144,6 +198,12 @@
       flex-shrink: 0;
       color: #8C6A28;
       font-size: 20px;
+    }
+    .policy-card-icon svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+      color: inherit;
     }
     .policy-card-title {
       font-size: 22px;

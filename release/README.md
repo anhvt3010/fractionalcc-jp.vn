@@ -1,35 +1,24 @@
-# Build v? release Fractional CC
+# Build và release Fractional CC
 
-Release ??u ti?n hi?n t?i l? **1.0.0**, ng?y 14/10/2026. Ng??i d?ng ?? ch?t to?n b? n?i dung, s?n ph?m, media v? l?a ch?n hi?n c? l?m defaults. C?c release tr??c ?? x?a theo y?u c?u. Xem [h? s? release](v1.0.0/RELEASE.md), [d? li?u ?? ch?t](../docs/APPROVED-DEFAULTS.md) v? [h??ng d?n qu?n l?](../docs/CONTENT-MANAGEMENT.md).
+Bản cập nhật hiện hành là **[1.0.2](v1.0.2/RELEASE.md)**: đồng bộ chính xác sản phẩm mua và màn cảm ơn (ảnh, giá, tên, quà tặng) và bảo mật biên lai đơn hàng. [1.0.1](v1.0.1/RELEASE.md) khôi phục checkbox đồng ý; [1.0.0](v1.0.0/RELEASE.md) là bản đầu tiên. Xem [hướng dẫn cập nhật hosting](v1.0.2/RELEASE.md).
 
-## C?u tr?c
+Mỗi `release/vX.Y.Z/` chứa đúng hai ZIP cài qua WordPress: `project-core-vX.Y.Z.zip` và `project-child-vX.Y.Z.zip`, cùng `RELEASE.md` và hồ sơ `qa/`. Root ZIP tương ứng là `project-core/` và `project-child/`. Plugin chứa nghiệp vụ/defaults/initializer; child theme chứa giao diện/schema/ảnh đã duyệt. WordPress, Kadence và ACF cài riêng. Không đóng gói config, secrets, database, tài khoản, đơn hàng, logs, backup hoặc uploads.
 
-```text
-release/
-??? README.md
-??? RELEASE-TEMPLATE.md
-??? v1.0.0/
-    ??? project-core-v1.0.0.zip
-    ??? project-child-v1.0.0.zip
-    ??? RELEASE.md
-    ??? qa/
-```
+## Build lần tiếp theo
 
-M?i version c? ??ng hai ZIP c?i qua WordPress: core plugin v? child theme. Root trong ZIP t??ng ?ng `project-core/`, `project-child/`; kh?ng l?ng `wp-content/` ho?c th? m?c version. Core ch?a domain/defaults/initializer, theme ch?a presentation/schema/assets. Kh?ng ??ng g?i WordPress core, parent theme, ACF, config, secrets, t?i kho?n, ??n h?ng, kh?ch h?ng, dump, logs, backup ho?c uploads ri?ng; ghi dependencies trong RELEASE.md.
+1. Dùng XAMPP tại `C:/xampp/htdocs/fractionalcc-jp.vn`; không yêu cầu Docker. Sao lưu riêng môi trường trước thao tác có rủi ro.
+2. Khi người dùng duyệt defaults mới, chạy XAMPP PHP với `scripts/export-fractional-defaults.php --user=<administrator-id> --version=X.Y.Z --approve`. Exporter chỉ lấy nội dung/ảnh/settings được cho phép, không lấy dữ liệu vận hành riêng.
+3. Cập nhật header version core và child theme khớp snapshot. Compiler HTML không được ghi đè defaults đã approved.
+4. Chạy `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-release.ps1 -Version X.Y.Z`. Script lint PHP và không ghi đè ZIP tồn tại.
+5. Kiểm tra root, file count, CRC, SHA-256 và byte khớp source. Cài/kích hoạt từ ZIP trên site/database riêng; thử dependencies thiếu, cài mới và chạy lại giữ edits, kể cả giá trị đã xóa.
+6. Kiểm tra frontend/admin và responsive; ghi kết quả thực tế, checksum, dependencies và giới hạn vào `RELEASE.md`. Không gửi form thật khi chưa được yêu cầu.
 
-## Quy tr?nh l?n ch?t ti?p theo
+Các kiểm tra defaults/liên hệ dùng `PROJECT_WORDPRESS_ROOT` trỏ đến fixture có marker riêng, không dùng database làm việc.
 
-1. D?ng site XAMPP ?ang ch?y t?i `D:/xampp/htdocs/fractionalcc-jp.vn`; kh?ng d?ng Docker. Sao l?u ri?ng database/uploads/config tr??c c?c thao t?c c? r?i ro.
-2. Khi ng??i d?ng duy?t n?i dung m?i, ch?y XAMPP PHP v?i `scripts/export-fractional-defaults.php --user=<administrator-id> --version=X.Y.Z --approve`. Exporter l?y gi? tr? CMS, ?nh/hash/alt/caption, ngu?n quan h? v? settings ???c cho ph?p; kh?ng export credentials ho?c d? li?u v?n h?nh ri?ng.
-3. T?ng header version core v? child theme theo snapshot. Gi? schema v? code runtime hi?n h?nh; compiler HTML m?u c? b? ch?n sau khi d? li?u ?? approved.
-4. Lint/ki?m tra nghi?p v? b? ?nh h??ng, r?i ch?y `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-release.ps1 -Version X.Y.Z`. Script build v?o `release/vX.Y.Z/`, lint PHP, ch?n file ri?ng v? kh?ng t? ghi ?? archive ?? t?n t?i. Review artifact tr??c khi s?a/rebuild.
-5. Ki?m tra root, entry count, byte/SHA-256 so v?i source, CRC, dependencies v? exclusions. Tr?n site/database ri?ng, c?i/k?ch ho?t ??ng hai ZIP v?i Kadence/ACF, ki?m tra d? li?u c?i m?i v? ch?y l?i gi? edits/gi? tr? ?? x?a. Kh?ng ch?y test destructive tr?n database l?m vi?c.
-6. Ki?m tra frontend/admin, mobile/tablet/desktop, SEO/noindex theo m?i tr??ng v? quy?n/nonce; kh?ng g?i form th?t khi ch?a ???c y?u c?u. Ghi checksum, migration, k?t qu? th?c t?, gi?i h?n v? rollback v?o RELEASE.md; d?ng RELEASE-TEMPLATE.md l?m khung khi ph? h?p.
+## Cài đặt và khởi tạo
 
-## Kh?i t?o v? c?p nh?t
+Cài Kadence và ACF, upload/kích hoạt plugin core và child theme cùng version. Kích hoạt xếp hàng khởi tạo; mở admin bằng administrator có quyền upload để thực hiện khi đủ dependencies. Có nút khởi tạo trong **Nội dung website**. Không cần ACF Sync.
 
-K?ch ho?t core/child theme tr?n site m?i s? x?p h?ng kh?i t?o; m?t l?n m? admin b?ng administrator c? quy?n upload s? ch?y khi ?? dependencies. C? n?t kh?i t?o trong **N?i dung website**. Kh?ng c?n ACF Sync. Tr?ng th?i d? li?u m?c ??nh l? `approved`, ??c l?p v?i noindex local/staging; trang C?m ?n lu?n noindex.
+Initializer ánh xạ source key, Media/gallery, URL nội bộ và quan hệ sang site đích. Cài mới chọn homepage khi chưa có lựa chọn; chạy lại giữ nội dung, ảnh, metadata, Reading và settings đã sửa hoặc đã xóa. Defaults có trạng thái `approved`; local/staging vẫn noindex, trang Cảm ơn luôn noindex.
 
-Initializer d?ng kh?a/version v? source key, ?nh x? media/gallery/URL/quan h? sang site ??ch. C?i m?i ch?n homepage khi ch?a c? l?a ch?n; kh?ng ??i theme/menu qua activation. Ch?y l?i/update gi? b?n ghi, settings, Reading, Media metadata, n?i dung v? l?a ch?n ?? ch?nh, k? c? ?nh/ph?c ?? ?? x?a. Migration ch? b? sung gi? tr? thi?u.
-
-Tr??c deploy sao l?u v? ki?m tra kh? n?ng kh?i ph?c tr?n m?i tr??ng ??ch. C?i ??ng c?p ZIP/dependencies, c?u h?nh URL v? secrets ri?ng, x?a cache v? smoke-test. Kh?ng ch?p database local/test ?? production. Rollback d?ng backup m?i tr??ng ??ch ho?c snapshot code ?? bi?t t?t, b?o to?n edits ph?t sinh; c?c release v0.x ?? x?a v? kh?ng c?n l? ngu?n rollback.
+Trước deploy, sao lưu môi trường đích và kiểm tra phục hồi. Cài đúng cặp ZIP/dependencies, cấu hình domain/secrets riêng rồi smoke-test. Không sao chép database thử nghiệm lên production. Rollback dùng backup môi trường đích và code đã kiểm chứng, bảo toàn dữ liệu phát sinh.

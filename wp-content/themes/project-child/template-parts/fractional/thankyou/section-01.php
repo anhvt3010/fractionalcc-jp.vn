@@ -1,37 +1,10 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-$order_code_param = isset( $_GET['order'] ) ? sanitize_text_field( wp_unslash( $_GET['order'] ) ) : '';
-$order_data = null;
-if ( $order_code_param ) {
-	$orders = get_posts(
-		array(
-			'post_type'      => 'fcc_order',
-			'meta_key'       => '_fcc_order_code',
-			'meta_value'     => $order_code_param,
-			'posts_per_page' => 1,
-			'post_status'    => 'publish',
-		)
-	);
-	if ( $orders ) {
-		$order_id   = $orders[0]->ID;
-		$order_data = array(
-			'code'    => get_post_meta( $order_id, '_fcc_order_code', true ) ?: $order_code_param,
-			'name'    => get_post_meta( $order_id, '_fcc_customer_name', true ),
-			'phone'   => get_post_meta( $order_id, '_fcc_customer_phone', true ),
-			'product' => get_post_meta( $order_id, '_fcc_selected_item_name', true ),
-		);
-	}
-}
-
-$display_code  = ! empty( $order_data['code'] ) ? '#' . $order_data['code'] : project_child_fcc_raw_text( 'fcc_ui_a65907ab27fa76', 'thankyou' );
-$display_name  = ! empty( $order_data['name'] ) ? $order_data['name'] : project_child_fcc_raw_text( 'fcc_ui_d2b5a409c75e1d', 'thankyou' );
-$display_phone = '0985 ••• •••';
-if ( ! empty( $order_data['phone'] ) ) {
-	$p = $order_data['phone'];
-	$display_phone = mb_strlen( $p ) >= 7 ? mb_substr( $p, 0, 4 ) . ' ••• ' . mb_substr( $p, -3 ) : $p;
-}
-$display_product = ! empty( $order_data['product'] ) ? $order_data['product'] : project_child_fcc_raw_text( 'fcc_ui_928a1a1b41ef6f', 'thankyou' );
+$order_code_param = isset( $_GET['order'] ) && is_string( $_GET['order'] ) ? sanitize_text_field( wp_unslash( $_GET['order'] ) ) : '';
+$receipt_key_param = isset( $_GET['key'] ) && is_string( $_GET['key'] ) ? wp_unslash( $_GET['key'] ) : '';
+$order_data = project_core_fcc_order_receipt( $order_code_param, $receipt_key_param );
+$order_item = $order_data ? $order_data['item'] : array();
 ?>
 <div class="container">
       
@@ -50,20 +23,21 @@ $display_product = ! empty( $order_data['product'] ) ? $order_data['product'] : 
         </div>
 
         
-        <div class="receipt-box" id="receipt-container">
+        <?php if ( $order_data ) : ?>
+        <div class="receipt-box" id="receipt-container" data-order-code="<?php echo esc_attr( $order_data['code'] ); ?>">
           <div class="receipt-head">
-            <span class="receipt-id-tag"><?php echo project_child_fcc_text( 'fcc_ui_1d9342e03ca91a', 'thankyou' ); ?> <strong id="order-id-val"><?php echo esc_html( $display_code ); ?></strong></span>
+            <span class="receipt-id-tag"><?php echo project_child_fcc_text( 'fcc_ui_1d9342e03ca91a', 'thankyou' ); ?> <strong id="order-id-val"><?php echo esc_html( '#' . $order_data['code'] ); ?></strong></span>
             <span class="receipt-status-badge"><?php echo project_child_fcc_text( 'fcc_ui_c65a1c5fa53533', 'thankyou' ); ?></span>
           </div>
 
           <div class="receipt-grid">
             <div class="receipt-item">
               <span class="receipt-label"><?php echo project_child_fcc_text( 'fcc_ui_516fb55969ee2b', 'thankyou' ); ?></span>
-              <span class="receipt-value" id="order-name-val"><?php echo esc_html( $display_name ); ?></span>
+              <span class="receipt-value" id="order-name-val"><?php echo esc_html( $order_data['name'] ); ?></span>
             </div>
             <div class="receipt-item">
               <span class="receipt-label"><?php echo project_child_fcc_text( 'fcc_ui_60ae7f2bd5a911', 'thankyou' ); ?></span>
-              <span class="receipt-value" id="order-phone-val"><?php echo esc_html( $display_phone ); ?></span>
+              <span class="receipt-value" id="order-phone-val"><?php echo esc_html( $order_data['phone'] ); ?></span>
             </div>
             <div class="receipt-item">
               <span class="receipt-label"><?php echo project_child_fcc_text( 'fcc_ui_7e24e0a28466d6', 'thankyou' ); ?></span>
@@ -77,15 +51,16 @@ $display_product = ! empty( $order_data['product'] ) ? $order_data['product'] : 
 
           
           <div class="receipt-product-row">
-            <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_453bd451ef0751' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_453bd451ef0751', 'fcc_ui_963cafcaa053a1' ) ); ?>" class="receipt-product-thumb" id="order-img-val">
+            <?php if ( $order_item['image'] ) : ?><img src="<?php echo esc_url( $order_item['image'] ); ?>" alt="<?php echo esc_attr( $order_item['imageAlt'] ); ?>" class="receipt-product-thumb" id="order-img-val"><?php endif; ?>
             <div class="receipt-product-info">
-              <div class="receipt-product-title" id="order-product-val"><?php echo esc_html( $display_product ); ?></div>
-              <div class="receipt-product-gift"><?php echo project_child_fcc_text( 'fcc_ui_7cb383d4ca10a5', 'thankyou' ); ?></div>
+              <div class="receipt-product-title" id="order-product-val"><?php echo esc_html( project_core_fcc_format_order_item( $order_item ) ); ?></div>
+              <?php if ( $order_item['gift'] ) : ?><div class="receipt-product-gift" id="order-gift-val"><?php echo esc_html( $order_item['gift'] ); ?></div><?php endif; ?>
             </div>
           </div>
         </div>
 
         
+        <?php endif; ?>
         <div class="timeline-wrap">
           <div class="timeline-title"><?php echo project_child_fcc_text( 'fcc_ui_8033b6b0a67bf5', 'thankyou' ); ?></div>
           <div class="timeline-steps">
@@ -118,13 +93,13 @@ $display_product = ! empty( $order_data['product'] ) ? $order_data['product'] : 
 
         
         <div class="thankyou-actions">
-          <a href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/0985561862' ) ); ?>" target="_blank" rel="noopener noreferrer" class="btn-zalo-priority">
+          <a <?php project_child_fcc_contact_attributes( 'zalo' ); ?> target="_blank" rel="noopener noreferrer" class="btn-zalo-priority">
             <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C6.477 2 2 6.03 2 11C2 13.565 3.195 15.864 5.12 17.472L4.2 21.2C4.085 21.664 4.545 22.052 4.965 21.848L9.29 19.742C10.158 19.911 11.063 20 12 20C17.523 20 22 15.97 22 11C22 6.03 17.523 2 12 2Z" fill="#FFFFFF"></path>
             </svg>
             <span><?php echo project_child_fcc_text( 'fcc_ui_a69dd64e68dae5', 'thankyou', false ); ?></span>
           </a>
-          <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" class="btn btn-outline" style="font-weight: 700;">
+          <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> class="btn btn-outline" style="font-weight: 700;">
             <span><?php echo project_child_fcc_text( 'fcc_ui_613f7131411222', 'thankyou', false ); ?></span>
           </a>
           <a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>" class="btn btn-outline">

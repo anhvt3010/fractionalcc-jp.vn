@@ -18,7 +18,7 @@ function project_core_fcc_default_smtp_settings() {
 		'username'       => '',
 		'password'       => '',
 		'from_email'     => get_option( 'admin_email' ),
-		'from_name'      => 'Fractional CC Việt Nam – BUI DANG-JP',
+		'from_name'      => 'Fractional CC Việt Nam – JP- BÙI ĐẶNG',
 		'notify_email'   => get_option( 'admin_email' ),
 		'notify_subject' => '[Đơn hàng mới] Yêu cầu từ {customer_name} – Fractional CC',
 	);
@@ -116,6 +116,45 @@ function project_core_fcc_register_smtp_menu() {
 }
 add_action( 'admin_menu', 'project_core_fcc_register_smtp_menu', 25 );
 
+/** Validate the whole admin form before changing settings or the saved password. */
+function project_core_fcc_validate_smtp_settings( $input, $current ) {
+	$invalid = new WP_Error( 'fcc_smtp_invalid', 'Cấu hình SMTP không hợp lệ. Kiểm tra host, cổng, email và kiểu dữ liệu.' );
+	$limits  = array( 'smtp_host' => 253, 'smtp_port' => 5, 'smtp_encryption' => 4, 'smtp_username' => 320, 'smtp_password' => 1024, 'smtp_from_email' => 254, 'smtp_from_name' => 160, 'notify_email' => 254, 'notify_subject' => 300, 'smtp_enabled' => 2, 'smtp_auth' => 2 );
+	foreach ( $limits as $field => $limit ) {
+		if ( isset( $input[ $field ] ) && ( ! is_string( $input[ $field ] ) || mb_strlen( wp_unslash( $input[ $field ] ) ) > $limit ) ) {
+			return $invalid;
+		}
+	}
+	$host       = trim( wp_unslash( $input['smtp_host'] ?? '' ) );
+	$port       = $input['smtp_port'] ?? '587';
+	$encryption = $input['smtp_encryption'] ?? 'tls';
+	if ( ( '' !== $host && ! filter_var( $host, FILTER_VALIDATE_IP ) && ! filter_var( $host, FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME ) ) || ! ctype_digit( $port ) || (int) $port < 1 || (int) $port > 65535 || ! in_array( $encryption, array( 'tls', 'ssl', 'none' ), true ) ) {
+		return $invalid;
+	}
+	foreach ( array( 'smtp_from_email', 'notify_email' ) as $field ) {
+		if ( ! empty( $input[ $field ] ) && ! is_email( wp_unslash( $input[ $field ] ) ) ) { return $invalid; }
+	}
+	$enabled = ! empty( $input['smtp_enabled'] );
+	$auth    = ! empty( $input['smtp_auth'] );
+	if ( $enabled && ( '' === $host || ( $auth && 'none' === $encryption ) ) ) {
+		return new WP_Error( 'fcc_smtp_transport', 'SMTP cần host hợp lệ và mã hóa TLS/SSL khi dùng tài khoản, mật khẩu.' );
+	}
+	$password = trim( wp_unslash( $input['smtp_password'] ?? '' ) );
+	return array(
+		'enabled'        => $enabled ? 1 : 0,
+		'host'           => $host,
+		'port'           => (int) $port,
+		'encryption'     => $encryption,
+		'auth'           => $auth ? 1 : 0,
+		'username'       => sanitize_text_field( wp_unslash( $input['smtp_username'] ?? '' ) ),
+		'password'       => '' !== $password ? $password : $current['password'],
+		'from_email'     => sanitize_email( wp_unslash( $input['smtp_from_email'] ?? '' ) ),
+		'from_name'      => sanitize_text_field( wp_unslash( $input['smtp_from_name'] ?? '' ) ),
+		'notify_email'   => sanitize_email( wp_unslash( $input['notify_email'] ?? '' ) ),
+		'notify_subject' => sanitize_text_field( wp_unslash( $input['notify_subject'] ?? '' ) ),
+	);
+}
+
 /** Render the SMTP settings and test console. */
 function project_core_fcc_render_smtp_page() {
 	if ( ! current_user_can( 'manage_options' ) ) {
@@ -128,31 +167,21 @@ function project_core_fcc_render_smtp_page() {
 
 	// Handle saving settings
 	if ( isset( $_POST['fcc_save_smtp'] ) && check_admin_referer( 'fcc_smtp_settings_nonce', 'fcc_smtp_nonce' ) ) {
-		$new_password = isset( $_POST['smtp_password'] ) ? trim( (string) wp_unslash( $_POST['smtp_password'] ) ) : '';
-		$password     = '' !== $new_password ? $new_password : $settings['password'];
-
-		$settings = array(
-			'enabled'        => ! empty( $_POST['smtp_enabled'] ) ? 1 : 0,
-			'host'           => sanitize_text_field( wp_unslash( $_POST['smtp_host'] ?? '' ) ),
-			'port'           => absint( $_POST['smtp_port'] ?? 587 ),
-			'encryption'     => in_array( $_POST['smtp_encryption'] ?? '', array( 'tls', 'ssl', 'none' ), true ) ? sanitize_text_field( $_POST['smtp_encryption'] ) : 'tls',
-			'auth'           => ! empty( $_POST['smtp_auth'] ) ? 1 : 0,
-			'username'       => sanitize_text_field( wp_unslash( $_POST['smtp_username'] ?? '' ) ),
-			'password'       => $password,
-			'from_email'     => sanitize_email( wp_unslash( $_POST['smtp_from_email'] ?? '' ) ),
-			'from_name'      => sanitize_text_field( wp_unslash( $_POST['smtp_from_name'] ?? '' ) ),
-			'notify_email'   => sanitize_email( wp_unslash( $_POST['notify_email'] ?? '' ) ),
-			'notify_subject' => sanitize_text_field( wp_unslash( $_POST['notify_subject'] ?? '' ) ),
-		);
-
-		update_option( 'project_core_fcc_smtp', $settings, false );
-		$notice = 'Đã lưu cấu hình SMTP thành công!';
-		$notice_type = 'success';
+		$validated = project_core_fcc_validate_smtp_settings( $_POST, $settings );
+		if ( is_wp_error( $validated ) ) {
+			$notice = $validated->get_error_message();
+			$notice_type = 'error';
+		} else {
+			$settings = $validated;
+			update_option( 'project_core_fcc_smtp', $settings, false );
+			$notice = 'Đã lưu cấu hình SMTP thành công!';
+			$notice_type = 'success';
+		}
 	}
 
 	// Handle sending test email
 	if ( isset( $_POST['fcc_test_smtp'] ) && check_admin_referer( 'fcc_smtp_settings_nonce', 'fcc_smtp_nonce' ) ) {
-		$test_recipient = sanitize_email( wp_unslash( $_POST['test_email'] ?? '' ) );
+		$test_recipient = isset( $_POST['test_email'] ) && is_string( $_POST['test_email'] ) ? sanitize_email( wp_unslash( $_POST['test_email'] ) ) : '';
 		if ( ! is_email( $test_recipient ) ) {
 			$test_recipient = $settings['notify_email'] ?: get_option( 'admin_email' );
 		}
@@ -201,11 +230,11 @@ function project_core_fcc_render_smtp_page() {
                     <table cellpadding="0" cellspacing="0" border="0" style="font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                       <tr>
                         <td align="center" valign="middle" style="background-color:#FFFFFF;border-radius:50%;width:38px;height:38px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.3);padding:0;">
-                          <img src="cid:buidang_brand_logo" alt="BUI DANG-JP" width="30" height="30" style="display:block;margin:auto;width:30px;height:30px;border-radius:50%;border:0;">
+                          <img src="cid:buidang_brand_logo" alt="JP- BÙI ĐẶNG" width="30" height="30" style="display:block;margin:auto;width:30px;height:30px;border-radius:50%;border:0;">
                         </td>
                         <td valign="middle" style="padding-left:10px;text-align:left;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                           <span style="display:block;font-size:9px;color:#C5A059;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">PHÂN PHỐI ĐỘC QUYỀN</span>
-                          <span style="display:block;font-size:13px;color:#FFFFFF;font-weight:700;letter-spacing:0.8px;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">BUI DANG-JP</span>
+                          <span style="display:block;font-size:13px;color:#FFFFFF;font-weight:700;letter-spacing:0.8px;line-height:1.2;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">JP- BÙI ĐẶNG</span>
                         </td>
                       </tr>
                     </table>
@@ -273,8 +302,6 @@ function project_core_fcc_render_smtp_page() {
           </tr>
           <tr>
             <td style="background-color:#FAF8F5;border-top:1px solid #EFE8DD;padding:22px 32px;text-align:center;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
-              <p style="margin:0 0 4px 0;font-size:12px;color:#4A4038;line-height:1.6;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
-                <strong style="color:#2B1E16;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">FRACTIONAL CC NHẬT BẢN</strong> &bull; Phân phối độc quyền bởi <strong style="color:#2B1E16;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">CÔNG TY TNHH BUI DANG-JP</strong>
               <p style="margin:0;font-size:11px;color:#A39990;line-height:1.5;font-family: \'Segoe UI\', -apple-system, BlinkMacSystemFont, Roboto, \'Helvetica Neue\', Arial, sans-serif;">
                 Email thông báo tự động từ hệ thống quản trị Fractional CC Vietnam.
               </p>
@@ -397,7 +424,7 @@ function project_core_fcc_render_smtp_page() {
 					<tr>
 						<th scope="row"><label for="smtp_from_name">Tên người gửi (From Name)</label></th>
 						<td>
-							<input name="smtp_from_name" type="text" id="smtp_from_name" value="<?php echo esc_attr( $settings['from_name'] ); ?>" class="regular-text" placeholder="Fractional CC Việt Nam – BUI DANG-JP">
+							<input name="smtp_from_name" type="text" id="smtp_from_name" value="<?php echo esc_attr( $settings['from_name'] ); ?>" class="regular-text" placeholder="Fractional CC Việt Nam – JP- BÙI ĐẶNG">
 						</td>
 					</tr>
 					<tr>

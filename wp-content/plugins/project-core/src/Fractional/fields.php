@@ -12,6 +12,9 @@ function project_core_fcc_register_fields() {
 	foreach ( array(
 		'hotline' => array( 'Số điện thoại cho nút Gọi', 'text', 'Dùng cho liên kết bấm gọi ở chân trang, nút nổi và thanh điện thoại. Nhập liền các chữ số, ví dụ 0985561862.' ),
 		'hotlineDisplay' => array( 'Số điện thoại hiển thị', 'text', 'Dùng trong các dòng hotline trên website; có thể thêm khoảng cách để dễ đọc.' ),
+		'phone' => array( 'Điện thoại liên hệ', 'text', 'Số điện thoại phụ ở chân trang. Để trống để ẩn.' ),
+		'phoneDisplay' => array( 'Điện thoại liên hệ hiển thị', 'text', 'Cách hiển thị số điện thoại phụ ở chân trang.' ),
+		'addressHN' => array( 'Địa chỉ văn phòng', 'text', 'Địa chỉ ở chân trang. Để trống để ẩn.' ),
 		'email' => array( 'Email liên hệ', 'email', 'Dùng trong thông tin liên hệ/chân trang và làm đích của nút bấm gửi email.' ),
 		'zaloLink' => array( 'Địa chỉ mở Zalo', 'url', 'Dùng cho các nút Zalo trên website. Nhập URL đầy đủ của kênh liên hệ.' ),
 		'messengerLink' => array( 'Địa chỉ mở Messenger', 'url', 'Dùng cho các liên kết Messenger trên website. Nhập URL đầy đủ của kênh liên hệ.' ),

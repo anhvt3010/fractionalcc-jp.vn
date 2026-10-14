@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 
 function project_child_fcc_spotlight_fields() {
-	if ( ! function_exists( 'acf_add_local_field_group' ) ) { return; }
+	if ( ! function_exists( 'acf_add_local_field_group' ) || ! project_child_fcc_needs_editor_fields() ) { return; }
 	$fields = array(
 		array( 'key' => 'field_fcc_spotlight_tab_content', 'label' => 'Nội dung thẻ', 'name' => '', 'type' => 'tab', 'selected' => 1 ),
 	);
@@ -29,7 +29,7 @@ add_action( 'acf/init', 'project_child_fcc_spotlight_fields' );
 
 /** Optional page-specific presentation; empty values use the product data. */
 function project_child_fcc_product_presentation_fields() {
-	if ( ! function_exists( 'acf_add_local_field_group' ) ) { return; }
+	if ( ! function_exists( 'acf_add_local_field_group' ) || ! project_child_fcc_needs_editor_fields() ) { return; }
 	$fields = array();
 	foreach ( array( 'seo_title' => array( 'Tiêu đề SEO riêng', 'text' ), 'seo_description' => array( 'Mô tả SEO riêng', 'textarea' ), 'seo_image' => array( 'Ảnh chia sẻ riêng', 'image' ), 'detail_callout_title' => array( 'Tiêu đề nhãn trên ảnh', 'text' ), 'detail_callout_subtitle' => array( 'Mô tả nhãn trên ảnh', 'text' ) ) as $name => $definition ) {
 		$meta_name = 0 === strpos( $name, 'seo_' ) ? 'fcc_product_' . $name : 'fcc_' . $name;

@@ -1,6 +1,14 @@
 /* WordPress integration only. Visual design stays in the supplied stylesheets. */
 .fcc-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .fcc-site [hidden] { display: none !important; }
+.fcc-site .btn-submit-order:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
+}
+/* Kadence focuses anchor sections with tabindex=-1; keep outlines on controls only. */
+.fcc-site .section[id][tabindex="-1"]:focus { outline: none; }
 .pd-cocoon-old-price:empty, .pd-cocoon-save-pill:empty { display: none; }
 body.admin-bar .site-header { top: 32px; }
 @media (max-width: 782px) { body.admin-bar .site-header { top: 46px; } }
@@ -10,6 +18,61 @@ body.admin-bar .site-header { top: 32px; }
 	.fcc-site {
 		--container-max: 1440px;
 		--container-narrow: 1020px;
+	}
+	/* Reduce section top spacing on desktop for a tighter, cohesive flow */
+	.fcc-site .section {
+		padding-top: 54px;
+		padding-bottom: 76px;
+	}
+	.fcc-site .section-duo-hero {
+		padding-top: 52px;
+	}
+	.fcc-site .section-brand-story {
+		padding-top: 54px;
+	}
+	.fcc-site .section-legal-guarantee {
+		padding-top: 52px;
+	}
+	.fcc-site #faq {
+		padding-top: 52px;
+	}
+}
+
+/* Distinct background and top divider for order section */
+.fcc-site .order-section {
+	background: #FFFFFF;
+	border-top: 1px solid #EAE3D2;
+	border-bottom: none;
+}
+
+/* Policy page sticky sidebar & anchor scroll offsets */
+@media (min-width: 992px) {
+	.fcc-site .policy-sidebar {
+		position: sticky;
+		top: 116px;
+		max-height: calc(100vh - 136px);
+		overflow-y: auto;
+	}
+	body.admin-bar.fcc-site .policy-sidebar,
+	body.admin-bar .fcc-site .policy-sidebar {
+		top: 148px;
+		max-height: calc(100vh - 168px);
+	}
+}
+.fcc-site .policy-card {
+	scroll-margin-top: 120px;
+}
+body.admin-bar.fcc-site .policy-card,
+body.admin-bar .fcc-site .policy-card {
+	scroll-margin-top: 152px;
+}
+@media (max-width: 782px) {
+	.fcc-site .policy-card {
+		scroll-margin-top: 100px;
+	}
+	body.admin-bar.fcc-site .policy-card,
+	body.admin-bar .fcc-site .policy-card {
+		scroll-margin-top: 146px;
 	}
 }
 
@@ -335,13 +398,29 @@ body.admin-bar .site-header { top: 32px; }
 	transform: scale(1.02);
 }
 .fcc-site .brand-visual-caption {
+	position: absolute;
+	bottom: 16px;
+	left: 16px;
+	width: auto;
+	max-width: calc(100% - 32px);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	margin: 0;
-	padding: 14px 20px 20px;
+	padding: 7px 16px;
 	font-size: 13px;
-	color: var(--color-text-muted, #666666);
-	line-height: 1.5;
+	font-weight: 500;
+	color: #121826;
+	line-height: 1.25;
 	text-align: center;
-	background: #FFFFFF;
+	background: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(20px) saturate(180%);
+	-webkit-backdrop-filter: blur(20px) saturate(180%);
+	border: 1px solid rgba(255, 255, 255, 0.9);
+	border-radius: 9999px;
+	box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+	z-index: 2;
+	pointer-events: none;
 }
 @media (max-width: 920px) {
 	.fcc-site .brand-visual-wrap {
@@ -356,7 +435,56 @@ body.admin-bar .site-header { top: 32px; }
 		border-top-right-radius: 22px;
 	}
 	.fcc-site .brand-visual-caption {
-		padding: 12px 16px 16px;
+		bottom: 12px;
+		left: 12px;
+		padding: 6px 14px;
+		font-size: 12px;
 	}
 }
 
+
+/* ==========================================================================
+   4-Column Unified Footer Layout
+   ========================================================================== */
+.fcc-site .site-footer .footer-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 32px;
+	margin-bottom: 40px;
+}
+
+@media (min-width: 640px) {
+	.fcc-site .site-footer .footer-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 36px 28px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.fcc-site .site-footer .footer-grid {
+		grid-template-columns: 1.35fr 1.35fr 0.95fr 1.35fr;
+		gap: 36px;
+	}
+}
+
+.fcc-site .site-footer .footer-col p {
+	margin-bottom: 10px;
+	line-height: 1.6;
+}
+
+.fcc-site .site-footer .footer-col .footer-company-name {
+	color: #FFFFFF;
+	font-weight: 700;
+	display: inline-block;
+	margin-top: 4px;
+}
+
+.fcc-site .site-footer .footer-links a {
+	display: inline-block;
+	transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.fcc-site .site-footer .footer-links a:hover {
+	color: #FFFFFF;
+	transform: translateX(3px);
+}

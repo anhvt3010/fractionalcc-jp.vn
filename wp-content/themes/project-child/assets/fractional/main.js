@@ -28,11 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initProductDetailView();
   }
 
-  // 7. Initialize Thank-you page data if on cam-on.html
-  if (document.getElementById('receipt-container') || document.getElementById('thank-you-summary')) {
-    initThankYouPage();
-  }
-
   // 8. Initialize Floating Actions & Scroll to top
   initFloatingActions();
 
@@ -52,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 13. Initialize Routine Process Stack Deck on Mobile (Section 06)
   initRoutineProcessStack();
+
+  // 14. Initialize Policy Page Navigation & Scrollspy
+  initPolicyNav();
 });
 
 /**
@@ -201,6 +199,14 @@ function initOrderSystem() {
   forms.forEach(form => {
     if (form) {
       form.addEventListener('submit', handleOrderSubmit);
+      form.addEventListener('change', event => {
+        if (event.target.name !== 'agree_terms') return;
+        syncOrderSubmitState(form);
+        const status = form.querySelector('.fcc-order-status');
+        if (event.target.checked && form.dataset.submitting !== 'true' && status) status.textContent = '';
+      });
+      form.addEventListener('reset', () => setTimeout(() => syncOrderSubmitState(form), 0));
+      syncOrderSubmitState(form);
       form.addEventListener('invalid', event => {
         const message = event.target.name === 'agree_terms'
           ? fccLabel('message_1')
@@ -260,6 +266,8 @@ function openOrderModal(preSelectValue) {
     modalSelect.value = preSelectValue;
   }
 
+  const form = modal.querySelector('form');
+  if (form) syncOrderSubmitState(form);
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -283,6 +291,13 @@ function showOrderFormMessage(form, message) {
     else form.appendChild(status);
   }
   status.textContent = message;
+}
+
+/** Consent and in-flight requests jointly control every order submit button. */
+function syncOrderSubmitState(form) {
+  const agreement = form.querySelector('[name="agree_terms"]');
+  const button = form.querySelector('button[type="submit"]');
+  if (button) button.disabled = !agreement?.checked || form.dataset.submitting === 'true';
 }
 
 async function handleOrderSubmit(e) {
@@ -322,7 +337,7 @@ async function handleOrderSubmit(e) {
     return;
   }
 
-  if (agreeCheck && !agreeCheck.checked) {
+  if (!agreeCheck || !agreeCheck.checked) {
     reportError(fccLabel('message_1'));
     agreeCheck?.focus();
     return;
@@ -360,13 +375,6 @@ async function handleOrderSubmit(e) {
       showToast(result.data?.message || fccLabel('message_12'));
       form.reset();
 
-      try {
-        sessionStorage.setItem('fcc_order_code', result.data?.orderCode || '');
-        sessionStorage.setItem('fcc_order_name', result.data?.customerName || name);
-        sessionStorage.setItem('fcc_order_phone', result.data?.customerPhone || phone);
-        sessionStorage.setItem('fcc_order_product', result.data?.selectedItem || '');
-      } catch (e) {}
-
       const modal = document.getElementById('order-modal');
       if (modal && modal.classList.contains('active')) {
         setTimeout(() => {
@@ -383,18 +391,18 @@ async function handleOrderSubmit(e) {
       reportError(errMsg);
       form.dataset.submitting = 'false';
       if (submitBtn) {
-        submitBtn.disabled = false;
         submitBtn.textContent = originalBtnText;
       }
+      syncOrderSubmitState(form);
     }
   } catch (err) {
     // A failed response can arrive after the server saved/sent the order; never resubmit automatically.
     reportError(fccLabel('message_14'));
     form.dataset.submitting = 'false';
     if (submitBtn) {
-      submitBtn.disabled = false;
       submitBtn.textContent = originalBtnText;
     }
+    syncOrderSubmitState(form);
   }
 }
 
@@ -519,43 +527,6 @@ function initProductDetailTabs() {
       }
     });
   });
-}
-
-function initThankYouPage() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const orderFromUrl = urlParams.get('order');
-  let orderCode = orderFromUrl || '';
-  let customerName = '';
-  let customerPhone = '';
-  let productName = '';
-
-  try {
-    orderCode = orderCode || sessionStorage.getItem('fcc_order_code') || '';
-    customerName = sessionStorage.getItem('fcc_order_name') || '';
-    customerPhone = sessionStorage.getItem('fcc_order_phone') || '';
-    productName = sessionStorage.getItem('fcc_order_product') || '';
-  } catch (e) {}
-
-  if (orderCode) {
-    const codeEl = document.getElementById('order-id-val');
-    if (codeEl) codeEl.textContent = orderCode;
-  }
-  if (customerName) {
-    const nameEl = document.getElementById('order-name-val');
-    if (nameEl) nameEl.textContent = customerName;
-  }
-  if (customerPhone) {
-    const phoneEl = document.getElementById('order-phone-val');
-    if (phoneEl) {
-      phoneEl.textContent = customerPhone.length >= 7 
-        ? customerPhone.slice(0, 4) + ' ••• ' + customerPhone.slice(-3) 
-        : customerPhone;
-    }
-  }
-  if (productName) {
-    const prodEl = document.getElementById('order-product-val');
-    if (prodEl) prodEl.textContent = productName;
-  }
 }
 
 function initFloatingActions() {
@@ -944,4 +915,112 @@ function initRoutineProcessStack() {
   });
 }
 
+/**
+ * 14. Policy Page Navigation & Scrollspy
+ */
+function initPolicyNav() {
+  const sidebar = document.querySelector('.policy-sidebar');
+  if (!sidebar) return;
 
+  const links = sidebar.querySelectorAll('.policy-nav-link');
+  const cards = document.querySelectorAll('.policy-content-area .policy-card');
+  if (!links.length || !cards.length) return;
+
+  function getStickyOffset() {
+    const header = document.querySelector('.site-header');
+    const headerHeight = header ? header.offsetHeight : 88;
+    const adminBar = document.querySelector('#wpadminbar');
+    var adminBarHeight = 0;
+    if (adminBar && window.getComputedStyle(adminBar).position === 'fixed') {
+      adminBarHeight = adminBar.offsetHeight;
+    }
+    // 28px comfortable clearance below the sticky header
+    return headerHeight + adminBarHeight + 28;
+  }
+
+  function scrollToCard(targetCard, isSmooth) {
+    const offset = getStickyOffset();
+    const cardTop = targetCard.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+      top: Math.max(0, Math.round(cardTop - offset)),
+      behavior: isSmooth ? 'smooth' : 'auto'
+    });
+  }
+
+  var isClickScrolling = false;
+  var clickTimeout = null;
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || !targetId.startsWith('#')) return;
+      const targetCard = document.querySelector(targetId);
+      if (targetCard) {
+        e.preventDefault();
+        isClickScrolling = true;
+        clearTimeout(clickTimeout);
+        clickTimeout = setTimeout(function () {
+          isClickScrolling = false;
+        }, 900);
+
+        links.forEach(function (l) { l.classList.remove('active'); });
+        this.classList.add('active');
+
+        scrollToCard(targetCard, true);
+
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, null, targetId);
+        }
+      }
+    });
+  });
+
+  // Handle direct hash navigation on initial page load
+  if (window.location.hash) {
+    const initialTarget = document.querySelector(window.location.hash);
+    if (initialTarget && initialTarget.classList.contains('policy-card')) {
+      setTimeout(function () {
+        scrollToCard(initialTarget, false);
+      }, 150);
+    }
+  }
+
+  // Scrollspy: update active sidebar link as user scrolls
+  var ticking = false;
+  function updateActiveNav() {
+    if (isClickScrolling) return;
+    const triggerLine = getStickyOffset() + 30;
+    var currentActiveId = null;
+
+    cards.forEach(function (card) {
+      var rect = card.getBoundingClientRect();
+      if (rect.top <= triggerLine) {
+        currentActiveId = card.id;
+      }
+    });
+
+    if (!currentActiveId && cards.length) {
+      currentActiveId = cards[0].id;
+    }
+
+    if (currentActiveId) {
+      links.forEach(function (link) {
+        if (link.getAttribute('href') === '#' + currentActiveId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        updateActiveNav();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}

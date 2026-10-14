@@ -51,7 +51,7 @@
       "id": 1,
       "values": {
         "STT": "1.0",
-        "Hình ảnh": "assets/images/products/excel-20261013/mandelic-shot-peel-essence.png",
+        "Hình ảnh": "assets/images/products/mandelic-peel-essence.png",
         "Thương hiệu": "Fractional CC",
         "Tên sản phẩm": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
         "Phân loại": "Mỹ Phẩm",
@@ -66,14 +66,15 @@
         "Giá": "628.000 (8̶5̶0̶.̶0̶0̶0̶)",
         "Giá combo": ""
       },
-      "imageSha256": "acd280bbc218ceb4d5af8fc6fc5d0a43870c5bc0d624c1d6ced5d7a57379befc"
+      "imageSha256": "3cc24053e7f67b6d2204781e5dde22754db83cd9ca93fda3dbd1c53c6375f9f4",
+      "workbookImageSha256": "acd280bbc218ceb4d5af8fc6fc5d0a43870c5bc0d624c1d6ced5d7a57379befc"
     },
     {
       "row": 5,
       "id": 2,
       "values": {
         "STT": "2.0",
-        "Hình ảnh": "assets/images/products/excel-20261013/needle-serum-a-face-mask.png",
+        "Hình ảnh": "assets/images/products/needle-mask-a.png",
         "Thương hiệu": "Fractional CC",
         "Tên sản phẩm": "Mặt nạ FractionalCC Needle Serum A Face Mask",
         "Phân loại": "Mỹ Phẩm",
@@ -88,14 +89,15 @@
         "Giá": "386000.0",
         "Giá combo": ""
       },
-      "imageSha256": "92fc4fe351d718b4090e46cbac7e3923e7a646bd9e9d323d344ca114f1886353"
+      "imageSha256": "9fa7913643293f43581acadb8571dec034ff5d89a1d106eced7d02c3acfac469",
+      "workbookImageSha256": "92fc4fe351d718b4090e46cbac7e3923e7a646bd9e9d323d344ca114f1886353"
     },
     {
       "row": 6,
       "id": 3,
       "values": {
         "STT": "3.0",
-        "Hình ảnh": "assets/images/products/excel-20261013/needle-serum-a.png",
+        "Hình ảnh": "assets/images/products/needle-serum-a.png",
         "Thương hiệu": "Fractional CC",
         "Tên sản phẩm": "Serum dưỡng da FractionalCC Needle Serum A",
         "Phân loại": "Mỹ Phẩm",
@@ -110,14 +112,15 @@
         "Giá": "810000.0",
         "Giá combo": ""
       },
-      "imageSha256": "9e6cb6fc63aa6b7a648c35a87f7966aa0d1ecdfdeff880ab785da4ec5963caa3"
+      "imageSha256": "ca3717b18a7cf6292c90195072c5307c490216c0b65b5f93ecc468c9780ed9b9",
+      "workbookImageSha256": "9e6cb6fc63aa6b7a648c35a87f7966aa0d1ecdfdeff880ab785da4ec5963caa3"
     },
     {
       "row": 7,
       "id": 4,
       "values": {
         "STT": "4.0",
-        "Hình ảnh": "assets/images/products/excel-20261013/needle-serum-ax4.png",
+        "Hình ảnh": "assets/images/products/needle-serum-ax4.png",
         "Thương hiệu": "Fractional CC",
         "Tên sản phẩm": "Serum dưỡng da FractionalCC Needle Serum AX4",
         "Phân loại": "Mỹ Phẩm",
@@ -132,14 +135,15 @@
         "Giá": "910000.0",
         "Giá combo": ""
       },
-      "imageSha256": "cf208ab4cd9f95063e2440846eb5c42ab8127eddfa3b6f8e56bb91f92456f91a"
+      "imageSha256": "bc39714a1ca83eaa4cc93e50686bf7d992f4893cea25209eb5205128c0a34d32",
+      "workbookImageSha256": "cf208ab4cd9f95063e2440846eb5c42ab8127eddfa3b6f8e56bb91f92456f91a"
     },
     {
       "row": 8,
       "id": 5,
       "values": {
         "STT": "5.0",
-        "Hình ảnh": "assets/images/products/excel-20261013/needle-serum-c-face-mask.png",
+        "Hình ảnh": "assets/images/products/needle-mask-c.png",
         "Thương hiệu": "Fractional CC",
         "Tên sản phẩm": "Mặt nạ FractionalCC Needle Serum C Face Mask",
         "Phân loại": "Mỹ Phẩm",
@@ -154,14 +158,15 @@
         "Giá": "386000.0",
         "Giá combo": ""
       },
-      "imageSha256": "acfe8258b204abfbacb7c5856601e6ec28b3bfb9c10803a7855b80509c596503"
+      "imageSha256": "e7fb05663fd5de2b5c9b54d00a9de7213b87f491036120b668b3c2a1054e0bcd",
+      "workbookImageSha256": "acfe8258b204abfbacb7c5856601e6ec28b3bfb9c10803a7855b80509c596503"
     },
     {
       "row": 9,
       "id": 6,
       "values": {
         "STT": "6.0",
-        "Hình ảnh": "assets/images/products/excel-20261013/needle-serum-c.png",
+        "Hình ảnh": "assets/images/products/needle-serum-c.png",
         "Thương hiệu": "Fractional CC",
         "Tên sản phẩm": "Serum dưỡng da FractionalCC Needle Serum C",
         "Phân loại": "Mỹ Phẩm",
@@ -176,14 +181,15 @@
         "Giá": "790000.0",
         "Giá combo": "1.237.500(1̶.̶7̶0̶0̶.̶0̶0̶0̶)"
       },
-      "imageSha256": "13f05cb4b0eb7408f514364bc63847fbd8455c81ea93283638323c7902e4a162"
+      "imageSha256": "2d0e36b1081e55a304947022d62eb06eab06643c805510d5bd73a6c6aa42fa68",
+      "workbookImageSha256": "13f05cb4b0eb7408f514364bc63847fbd8455c81ea93283638323c7902e4a162"
     },
     {
       "row": 10,
       "id": 7,
       "values": {
         "STT": "7.0",
-        "Hình ảnh": "assets/images/products/excel-20261013/needle-serum-cx4.png",
+        "Hình ảnh": "assets/images/products/needle-serum-cx4.png",
         "Thương hiệu": "Fractional CC",
         "Tên sản phẩm": "Serum dưỡng da FractionalCC Needle Serum CX4",
         "Phân loại": "Mỹ Phẩm",
@@ -198,14 +204,15 @@
         "Giá": "910000.0",
         "Giá combo": ""
       },
-      "imageSha256": "df391f46c70bcdf8b4042143a8ded84e0b2d0d797d926d573ad1599eb51ebbec"
+      "imageSha256": "a065741b7c1376beff022be50c1eef0817877f9a87ad5517f90ba6edc8aed77f",
+      "workbookImageSha256": "df391f46c70bcdf8b4042143a8ded84e0b2d0d797d926d573ad1599eb51ebbec"
     },
     {
       "row": 11,
       "id": 8,
       "values": {
         "STT": "8.0",
-        "Hình ảnh": "assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png",
+        "Hình ảnh": "assets/images/products/pdrn-toning-essence.png",
         "Thương hiệu": "Fractional CC",
         "Tên sản phẩm": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence",
         "Phân loại": "Mỹ Phẩm",
@@ -220,14 +227,15 @@
         "Giá": "630000.0",
         "Giá combo": ""
       },
-      "imageSha256": "fd979c66004a8a3a6a589be36a7798b7540c583b531c4a58cbf70dc4802a50f1"
+      "imageSha256": "99c691616ac479212f9aa8708b683a3a85d7f30764e72f59fb75dffdeff8d5fd",
+      "workbookImageSha256": "fd979c66004a8a3a6a589be36a7798b7540c583b531c4a58cbf70dc4802a50f1"
     },
     {
       "row": 12,
       "id": 9,
       "values": {
         "STT": "9.0",
-        "Hình ảnh": "assets/images/products/excel-20261013/pdrn-shot-lip-essence.png",
+        "Hình ảnh": "assets/images/products/pdrn-lip-essence.png",
         "Thương hiệu": "Fractional CC",
         "Tên sản phẩm": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence",
         "Phân loại": "Mỹ Phẩm",
@@ -242,14 +250,15 @@
         "Giá": "445000.0",
         "Giá combo": ""
       },
-      "imageSha256": "cace74c0dc2c1da74b5dba7fa51f18ec3fa574d581ead2aaab5a643332b12bdd"
+      "imageSha256": "06180560ad0b0a5e656b0a56aa0b54cf672523bbe62782fd6139794308989741",
+      "workbookImageSha256": "cace74c0dc2c1da74b5dba7fa51f18ec3fa574d581ead2aaab5a643332b12bdd"
     },
     {
       "row": 13,
       "id": 10,
       "values": {
         "STT": "10.0",
-        "Hình ảnh": "assets/images/products/excel-20261013/pdrn-shot-lip-plumper.png",
+        "Hình ảnh": "assets/images/products/pdrn-lip-plumper.png",
         "Thương hiệu": "Fractional CC",
         "Tên sản phẩm": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper",
         "Phân loại": "Mỹ Phẩm",
@@ -264,7 +273,9 @@
         "Giá": "445000.0",
         "Giá combo": ""
       },
-      "imageSha256": "566656f17ebe6146fc013fa7e92d9cb076e9e9af1d596478589a2db79916eedc"
+      "imageSha256": "29480a720fa47a88d1182d95ca907eb094585d8da297d7463ecb905de5cc9ded",
+      "workbookImageSha256": "566656f17ebe6146fc013fa7e92d9cb076e9e9af1d596478589a2db79916eedc"
     }
-  ]
+  ],
+  "imagePolicy": "Existing approved theme product images; embedded workbook photos are not used."
 }

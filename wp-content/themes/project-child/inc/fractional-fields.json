@@ -80,7 +80,7 @@
             "fcc_ui_1b556d0408712c": {
                 "key": "field_fcc_ui_1b556d0408712c",
                 "name": "fcc_ui_1b556d0408712c",
-                "label": "Độc Quyền BUI DANG-JP",
+                "label": "Độc Quyền JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -172,7 +172,7 @@
             "fcc_ui_7f36fd34e50688": {
                 "key": "field_fcc_ui_7f36fd34e50688",
                 "name": "fcc_ui_7f36fd34e50688",
-                "label": "Độc Quyền BUI DANG-JP",
+                "label": "Độc Quyền JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -625,7 +625,7 @@
             "fcc_ui_69055d77ba802f": {
                 "key": "field_fcc_ui_69055d77ba802f",
                 "name": "fcc_ui_69055d77ba802f",
-                "label": "Fractional CC mang đến các giải pháp chăm sóc da chuyên sâu, tập trung vào dưỡng sáng, cải thiện kết cấu da và chăm sóc các dấu hiệu lão hóa thông qua sự kết hợp giữa công nghệ vi kim và các thành phần chăm sóc da nổi bật. Tại Việt Nam, Fractional CC được phân phối độc quyền bởi BUI DANG-JP, hướng đến việc đưa các sản phẩm chăm sóc da Nhật Bản đến gần hơn với người tiêu dùng Việt.",
+                "label": "Fractional CC mang đến các giải pháp chăm sóc da chuyên sâu, tập trung vào dưỡng sáng, cải thiện kết cấu da và chăm sóc các dấu hiệu lão hóa thông qua sự kết hợp giữa công nghệ vi kim và các thành phần chăm sóc da nổi bật. Tại Việt Nam, Fractional CC được phân phối độc quyền bởi JP- BÙI ĐẶNG, hướng đến việc đưa các sản phẩm chăm sóc da Nhật Bản đến gần hơn với người tiêu dùng Việt.",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -735,7 +735,7 @@
             "fcc_ui_brand_msg_line2": {
                 "key": "field_fcc_ui_brand_msg_line2",
                 "name": "fcc_ui_brand_msg_line2",
-                "label": "Thông điệp dòng 2 (BUI DANG-JP)",
+                "label": "Thông điệp dòng 2 (JP- BÙI ĐẶNG)",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -819,7 +819,7 @@
             "fcc_ui_6b5c492b8ee8c7": {
                 "key": "field_fcc_ui_6b5c492b8ee8c7",
                 "name": "fcc_ui_6b5c492b8ee8c7",
-                "label": "Phân Phối BUI DANG-JP",
+                "label": "Phân Phối JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -993,7 +993,7 @@
             "fcc_ui_ab00a54528cf05": {
                 "key": "field_fcc_ui_ab00a54528cf05",
                 "name": "fcc_ui_ab00a54528cf05",
-                "label": "Chọn sản phẩm theo nhu cầu của bạn. Liên hệ BUI DANG-JP để xác nhận giá các sản phẩm ",
+                "label": "Chọn sản phẩm theo nhu cầu của bạn. Liên hệ JP- BÙI ĐẶNG để xác nhận giá các sản phẩm ",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -2144,7 +2144,8 @@
                 "rows": 3,
                 "new_lines": "",
                 "fcc_inline": true,
-                "fcc_refresh": false
+                "fcc_refresh": false,
+                "fcc_contact": "hotlineDisplay"
             }
         },
         "Đánh Giá Khách Hàng": {
@@ -2180,7 +2181,7 @@
             "fcc_ui_d372f01686d8a2": {
                 "key": "field_fcc_ui_d372f01686d8a2",
                 "name": "fcc_ui_d372f01686d8a2",
-                "label": "4.95",
+                "label": "5.0",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -2290,7 +2291,7 @@
             "fcc_ui_b87712fd5f7219": {
                 "key": "field_fcc_ui_b87712fd5f7219",
                 "name": "fcc_ui_b87712fd5f7219",
-                "label": "✓ Đã xác thực mua BUI DANG-JP",
+                "label": "✓ Đã xác thực mua JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -2409,7 +2410,7 @@
             "fcc_ui_ca99894f68667f": {
                 "key": "field_fcc_ui_ca99894f68667f",
                 "name": "fcc_ui_ca99894f68667f",
-                "label": "4.9 / 5.0",
+                "label": "5.0 / 5.0",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -2759,7 +2760,7 @@
                 "fcc_refresh": false
             }
         },
-        "Fractional CC – Phân Phối Độc Quyền Bởi BUI DANG-JP Tại Việt Nam": {
+        "Fractional CC – Phân Phối Độc Quyền Bởi JP- BÙI ĐẶNG Tại Việt Nam": {
             "fcc_ui_ffee9a4225722c": {
                 "key": "field_fcc_ui_ffee9a4225722c",
                 "name": "fcc_ui_ffee9a4225722c",
@@ -2772,7 +2773,7 @@
             "fcc_ui_b9b5752a78e7bd": {
                 "key": "field_fcc_ui_b9b5752a78e7bd",
                 "name": "fcc_ui_b9b5752a78e7bd",
-                "label": "Fractional CC – Phân Phối Độc Quyền Bởi BUI DANG-JP Tại Việt Nam",
+                "label": "Fractional CC – Phân Phối Độc Quyền Bởi JP- BÙI ĐẶNG Tại Việt Nam",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -2792,7 +2793,7 @@
             "fcc_ui_a2e7754f312ed0": {
                 "key": "field_fcc_ui_a2e7754f312ed0",
                 "name": "fcc_ui_a2e7754f312ed0",
-                "label": "CÔNG TY TNHH BUI DANG-JP",
+                "label": "CÔNG TY TNHH JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -2857,7 +2858,7 @@
             "fcc_ui_4d77ee5ccc1f01": {
                 "key": "field_fcc_ui_4d77ee5ccc1f01",
                 "name": "fcc_ui_4d77ee5ccc1f01",
-                "label": "Công ty TNHH BUI DANG-JP",
+                "label": "CÔNG TY TNHH JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3045,9 +3046,11 @@
                 "name": "fcc_ui_683e7bd699078b",
                 "label": "jpbuidangco.ltd@gmail.com",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "email",
+                "fcc_contact_only": true
             },
             "fcc_ui_aa8ed5f16dc5d8": {
                 "key": "field_fcc_ui_aa8ed5f16dc5d8",
@@ -3081,9 +3084,10 @@
                 "name": "fcc_ui_c49b8c00371154",
                 "label": "Hotline 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "hotlineDisplay"
             }
         },
         "Câu Hỏi Thường Gặp Về Fractional CC": {
@@ -3234,7 +3238,7 @@
             "fcc_ui_cbee97166e1823": {
                 "key": "field_fcc_ui_cbee97166e1823",
                 "name": "fcc_ui_cbee97166e1823",
-                "label": "BUI DANG-JP độc quyền phân phối tại Việt Nam",
+                "label": "JP- BÙI ĐẶNG độc quyền phân phối tại Việt Nam",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3333,7 +3337,7 @@
             "fcc_ui_1762024d7a1788": {
                 "key": "field_fcc_ui_1762024d7a1788",
                 "name": "fcc_ui_1762024d7a1788",
-                "label": "liên hệ BUI DANG-JP",
+                "label": "liên hệ JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3576,7 +3580,7 @@
             "fcc_ui_47dace935cab9f": {
                 "key": "field_fcc_ui_47dace935cab9f",
                 "name": "fcc_ui_47dace935cab9f",
-                "label": "Làm thế nào để mua hàng chính hãng từ BUI DANG-JP?",
+                "label": "Làm thế nào để mua hàng chính hãng từ JP- BÙI ĐẶNG?",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
@@ -3594,7 +3598,7 @@
             "fcc_ui_81fc1b5eb38e46": {
                 "key": "field_fcc_ui_81fc1b5eb38e46",
                 "name": "fcc_ui_81fc1b5eb38e46",
-                "label": "đặt mua Fractional CC qua các kênh bán hàng chính thức của BUI DANG-JP",
+                "label": "đặt mua Fractional CC qua các kênh bán hàng chính thức của JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3664,7 +3668,7 @@
                 "fcc_refresh": false
             }
         },
-        "Đăng Ký Đặt Hàng Trực Tiếp Từ BUI DANG-JP": {
+        "Đăng Ký Đặt Hàng Trực Tiếp Từ JP- BÙI ĐẶNG": {
             "fcc_ui_4e46f443e4f763": {
                 "key": "field_fcc_ui_4e46f443e4f763",
                 "name": "fcc_ui_4e46f443e4f763",
@@ -3677,7 +3681,7 @@
             "fcc_ui_25a82794037d75": {
                 "key": "field_fcc_ui_25a82794037d75",
                 "name": "fcc_ui_25a82794037d75",
-                "label": "Đăng Ký Đặt Hàng Trực Tiếp Từ BUI DANG-JP",
+                "label": "Đăng Ký Đặt Hàng Trực Tiếp Từ JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3686,7 +3690,7 @@
             "fcc_ui_1d8af52afe2c00": {
                 "key": "field_fcc_ui_1d8af52afe2c00",
                 "name": "fcc_ui_1d8af52afe2c00",
-                "label": "Điền thông tin, kiểm tra nội dung rồi gửi qua Zalo hoặc email để BUI DANG-JP tư vấn v",
+                "label": "Điền thông tin, kiểm tra nội dung rồi gửi qua Zalo hoặc email để JP- BÙI ĐẶNG tư vấn v",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3749,7 +3753,7 @@
             "fcc_ui_1194cfb117972b": {
                 "key": "field_fcc_ui_1194cfb117972b",
                 "name": "fcc_ui_1194cfb117972b",
-                "label": "Tôi đồng ý để chuyên viên BUI DANG-JP liên hệ tư vấn và xác nhận đơn hàng theo",
+                "label": "Tôi đồng ý để chuyên viên JP- BÙI ĐẶNG liên hệ tư vấn và xác nhận đơn hàng theo",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
@@ -3796,14 +3800,15 @@
                 "name": "fcc_ui_e3aaf9923353d9",
                 "label": "Hotline 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "hotlineDisplay"
             },
             "fcc_ui_07bd799199d8cf": {
                 "key": "field_fcc_ui_07bd799199d8cf",
                 "name": "fcc_ui_07bd799199d8cf",
-                "label": "✓ Phân phối độc quyền BUI DANG-JP",
+                "label": "✓ Phân phối độc quyền JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3850,7 +3855,7 @@
             "fcc_ui_d7e807fe2d526b": {
                 "key": "field_fcc_ui_d7e807fe2d526b",
                 "name": "fcc_ui_d7e807fe2d526b",
-                "label": "BUI DANG - JP",
+                "label": "JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3859,7 +3864,7 @@
             "fcc_ui_cb085d11a08144": {
                 "key": "field_fcc_ui_cb085d11a08144",
                 "name": "fcc_ui_cb085d11a08144",
-                "label": "FRACTIONAL CC NHẬT BẢN • ĐỘC QUYỀN BUI DANG-JP",
+                "label": "FRACTIONAL CC NHẬT BẢN • ĐỘC QUYỀN JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3913,7 +3918,7 @@
             "fcc_ui_17e4ce8db84c3e": {
                 "key": "field_fcc_ui_17e4ce8db84c3e",
                 "name": "fcc_ui_17e4ce8db84c3e",
-                "label": "Phân Phối Độc Quyền BUI DANG-JP",
+                "label": "Phân Phối Độc Quyền JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -3944,9 +3949,10 @@
                 "name": "fcc_ui_cc7b04dcadfd45",
                 "label": "Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "hotlineDisplay"
             }
         },
         "floating-scroll-top": {
@@ -4329,7 +4335,7 @@
             "fcc_ui_e28520e695bc79": {
                 "key": "field_fcc_ui_e28520e695bc79",
                 "name": "fcc_ui_e28520e695bc79",
-                "label": "Công ty TNHH BUI DANG-JP",
+                "label": "CÔNG TY TNHH JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4340,9 +4346,10 @@
                 "name": "fcc_ui_af94720c731fdb",
                 "label": "• Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": true,
-                "fcc_refresh": false
+                "fcc_refresh": false,
+                "fcc_contact": "hotlineDisplay"
             },
             "fcc_ui_030d29589ecca2": {
                 "key": "field_fcc_ui_030d29589ecca2",
@@ -4374,7 +4381,7 @@
             "fcc_ui_f2b1ceab0294d6": {
                 "key": "field_fcc_ui_f2b1ceab0294d6",
                 "name": "fcc_ui_f2b1ceab0294d6",
-                "label": "BUI DANG-JP",
+                "label": "JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
@@ -4511,9 +4518,10 @@
                 "name": "fcc_ui_ff8b62e42bfee6",
                 "label": "📞 Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "hotlineDisplay"
             },
             "fcc_ui_8c686c3909c590": {
                 "key": "field_fcc_ui_8c686c3909c590",
@@ -4556,9 +4564,11 @@
                 "name": "fcc_ui_73944c222e59fa",
                 "label": "jpbuidangco.ltd@gmail.com",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": true,
-                "fcc_refresh": false
+                "fcc_refresh": false,
+                "fcc_contact": "email",
+                "fcc_contact_only": true
             },
             "fcc_ui_337affe9cef2fd": {
                 "key": "field_fcc_ui_337affe9cef2fd",
@@ -4581,7 +4591,7 @@
             "fcc_ui_8aa241ea23c189": {
                 "key": "field_fcc_ui_8aa241ea23c189",
                 "name": "fcc_ui_8aa241ea23c189",
-                "label": "Chính sách đổi trả & hỗ trợ",
+                "label": "Quy định đổi trả",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
@@ -4590,7 +4600,7 @@
             "fcc_ui_369ace7ad7eef2": {
                 "key": "field_fcc_ui_369ace7ad7eef2",
                 "name": "fcc_ui_369ace7ad7eef2",
-                "label": "Chính sách giao hàng & kiểm tra",
+                "label": "Chính sách vận chuyển & đồng kiểm",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
@@ -4608,7 +4618,7 @@
             "fcc_ui_0a8730dc13bdc0": {
                 "key": "field_fcc_ui_0a8730dc13bdc0",
                 "name": "fcc_ui_0a8730dc13bdc0",
-                "label": "Hướng dẫn phân biệt hàng chính hãng",
+                "label": "Nhận diện hàng chính hãng",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
@@ -4617,7 +4627,7 @@
             "fcc_ui_3e12c24e7634b2": {
                 "key": "field_fcc_ui_3e12c24e7634b2",
                 "name": "fcc_ui_3e12c24e7634b2",
-                "label": "Copyright © 2026 Fractional CC Vietnam - Phân phối bởi Công ty TNHH BUI DANG-JP.",
+                "label": "Copyright © 2026 Fractional CC Vietnam - Phân phối bởi CÔNG TY TNHH JP- BÙI ĐẶNG.",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4662,7 +4672,7 @@
             "fcc_ui_f2b083aef82352": {
                 "key": "field_fcc_ui_f2b083aef82352",
                 "name": "fcc_ui_f2b083aef82352",
-                "label": "BUI DANG-JP PHÂN PHỐI ĐỘC QUYỀN",
+                "label": "JP- BÙI ĐẶNG PHÂN PHỐI ĐỘC QUYỀN",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4833,7 +4843,7 @@
             "fcc_ui_329c1993aecb38": {
                 "key": "field_fcc_ui_329c1993aecb38",
                 "name": "fcc_ui_329c1993aecb38",
-                "label": "Thương hiệu chăm sóc da Nhật Bản, phân phối độc quyền tại Việt Nam bởi BUI DANG-JP.",
+                "label": "Thương hiệu chăm sóc da Nhật Bản, phân phối độc quyền tại Việt Nam bởi JP- BÙI ĐẶNG.",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4887,7 +4897,7 @@
             "fcc_ui_c3e7324c41894e": {
                 "key": "field_fcc_ui_c3e7324c41894e",
                 "name": "fcc_ui_c3e7324c41894e",
-                "label": "Công ty TNHH BUI DANG–JP",
+                "label": "CÔNG TY TNHH JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4896,7 +4906,7 @@
             "fcc_ui_fc9b4ff0aa7808": {
                 "key": "field_fcc_ui_fc9b4ff0aa7808",
                 "name": "fcc_ui_fc9b4ff0aa7808",
-                "label": "BUI DANG–JP",
+                "label": "JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
@@ -4952,9 +4962,10 @@
                 "name": "fcc_ui_e6c36702ec3d1c",
                 "label": "| Tiếp nhận đơn hàng chính ngạch • Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": true,
-                "fcc_refresh": false
+                "fcc_refresh": false,
+                "fcc_contact": "hotlineDisplay"
             },
             "fcc_ui_ea01b6a3caa0ce": {
                 "key": "field_fcc_ui_ea01b6a3caa0ce",
@@ -4979,7 +4990,7 @@
             "fcc_ui_ab373a90954b36": {
                 "key": "field_fcc_ui_ab373a90954b36",
                 "name": "fcc_ui_ab373a90954b36",
-                "label": "title – Fractional CC Nhật Bản & BUI DANG-JP",
+                "label": "title – Fractional CC Nhật Bản & JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế."
             },
@@ -4993,14 +5004,14 @@
             "fcc_ui_61ed77463dff18": {
                 "key": "field_fcc_ui_61ed77463dff18",
                 "name": "fcc_ui_61ed77463dff18",
-                "label": "alt – Công ty BUI DANG-JP",
+                "label": "alt – Công ty JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế."
             },
             "fcc_ui_a941b421c5e005": {
                 "key": "field_fcc_ui_a941b421c5e005",
                 "name": "fcc_ui_a941b421c5e005",
-                "label": "title – BUI DANG-JP - Phân phối độc quyền tại Việt Nam",
+                "label": "title – JP- BÙI ĐẶNG - Phân phối độc quyền tại Việt Nam",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế."
             },
@@ -5021,14 +5032,14 @@
             "fcc_ui_0db343ac35a4d7": {
                 "key": "field_fcc_ui_0db343ac35a4d7",
                 "name": "fcc_ui_0db343ac35a4d7",
-                "label": "title – Phân phối độc quyền bởi BUI DANG-JP",
+                "label": "title – Phân phối độc quyền bởi JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế."
             },
             "fcc_ui_6d82420f357692": {
                 "key": "field_fcc_ui_6d82420f357692",
                 "name": "fcc_ui_6d82420f357692",
-                "label": "alt – BUI DANG-JP",
+                "label": "alt – JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế."
             },
@@ -5231,7 +5242,7 @@
             "fcc_ui_dc30959abe8847": {
                 "key": "field_fcc_ui_dc30959abe8847",
                 "name": "fcc_ui_dc30959abe8847",
-                "label": "alt – Logo Công ty TNHH BUI DANG-JP",
+                "label": "alt – Logo CÔNG TY TNHH JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế."
             },
@@ -5245,7 +5256,7 @@
             "fcc_ui_43470c268bc605": {
                 "key": "field_fcc_ui_43470c268bc605",
                 "name": "fcc_ui_43470c268bc605",
-                "label": "title – Mở văn bản chứng nhận phân phối do BUI DANG-JP cung cấp trên Goog",
+                "label": "title – Mở văn bản chứng nhận phân phối do JP- BÙI ĐẶNG cung cấp trên Goog",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế."
             },
@@ -5287,7 +5298,7 @@
             "fcc_ui_435f1980942f04": {
                 "key": "field_fcc_ui_435f1980942f04",
                 "name": "fcc_ui_435f1980942f04",
-                "label": "alt – BUI DANG-JP Logo",
+                "label": "alt – JP- BÙI ĐẶNG Logo",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế."
             },
@@ -5579,7 +5590,7 @@
             "fcc_ui_3a43752a881468": {
                 "key": "field_fcc_ui_3a43752a881468",
                 "name": "fcc_ui_3a43752a881468",
-                "label": "Độc Quyền BUI DANG-JP",
+                "label": "Độc Quyền JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -5660,7 +5671,7 @@
             "fcc_ui_f1cf9cbf3a1a05": {
                 "key": "field_fcc_ui_f1cf9cbf3a1a05",
                 "name": "fcc_ui_f1cf9cbf3a1a05",
-                "label": "Phân Phối BUI DANG-JP",
+                "label": "Phân Phối JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -5680,9 +5691,10 @@
                 "name": "fcc_ui_d0f30a260b8018",
                 "label": "Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "hotlineDisplay"
             },
             "fcc_ui_82c0e470cd9121": {
                 "key": "field_fcc_ui_82c0e470cd9121",
@@ -5842,7 +5854,7 @@
             "fcc_ui_2812b49f68fc1b": {
                 "key": "field_fcc_ui_2812b49f68fc1b",
                 "name": "fcc_ui_2812b49f68fc1b",
-                "label": "Công ty TNHH BUI DANG-JP",
+                "label": "CÔNG TY TNHH JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -5995,7 +6007,7 @@
             "fcc_ui_162da04035299f": {
                 "key": "field_fcc_ui_162da04035299f",
                 "name": "fcc_ui_162da04035299f",
-                "label": "Điền thông tin nhận hàng nhanh chóng. Chuyên viên BUI DANG-JP sẽ liên hệ xác nhận đơn",
+                "label": "Điền thông tin nhận hàng nhanh chóng. Chuyên viên JP- BÙI ĐẶNG sẽ liên hệ xác nhận đơn",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -6091,9 +6103,10 @@
                 "name": "fcc_ui_e2b5b5e41063f4",
                 "label": "Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "hotlineDisplay"
             }
         },
         "floating-scroll-top": {
@@ -6226,8 +6239,9 @@
                 "name": "fcc_ui_m_f412d16b3a3e",
                 "label": "Nội dung: Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
-                "fcc_inline": true
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
+                "fcc_inline": true,
+                "fcc_contact": "hotlineDisplay"
             },
             "fcc_ui_m_a4ad94c43d5b": {
                 "key": "field_fcc_ui_m_a4ad94c43d5b",
@@ -6304,7 +6318,7 @@
             "fcc_ui_m_65d268dfc2a2": {
                 "key": "field_fcc_ui_m_65d268dfc2a2",
                 "name": "fcc_ui_m_65d268dfc2a2",
-                "label": "Nội dung: ✓ Phân phối độc quyền BUI DANG-JP",
+                "label": "Nội dung: ✓ Phân phối độc quyền JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Nội dung hiển thị tại Form đặt hàng – liên hệ & chính sách. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
                 "fcc_inline": true
@@ -6524,8 +6538,9 @@
                 "name": "fcc_ui_m_e49c4bed29ca",
                 "label": "Nhãn / thuộc tính: Gọi Hotline 0985 561 862",
                 "type": "text",
-                "instructions": "Nội dung hiển thị tại Nhãn giao diện dùng chung. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
-                "fcc_inline": true
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
+                "fcc_inline": true,
+                "fcc_contact": "hotlineDisplay"
             },
             "fcc_ui_m_6a7a3ceef1f1": {
                 "key": "field_fcc_ui_m_6a7a3ceef1f1",
@@ -6662,7 +6677,7 @@
             "fcc_ui_msg_f6aa50ef87": {
                 "key": "field_fcc_ui_msg_f6aa50ef87",
                 "name": "fcc_ui_msg_f6aa50ef87",
-                "label": "Thông báo: Đặt hàng thành công! BUI DANG-JP sẽ liên hệ với bạn sớm nhất.",
+                "label": "Thông báo: Đặt hàng thành công! JP- BÙI ĐẶNG sẽ liên hệ với bạn sớm nhất.",
                 "type": "text",
                 "instructions": "Nội dung hiển thị tại Thông báo biểu mẫu & tương tác. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
                 "fcc_inline": true
@@ -7147,7 +7162,7 @@
             "fcc_ui_dcbe07c7fc3d6a": {
                 "key": "field_fcc_ui_dcbe07c7fc3d6a",
                 "name": "fcc_ui_dcbe07c7fc3d6a",
-                "label": "Liên hệ BUI DANG-JP để được tư vấn lựa chọn sản phẩm và cách dùng theo hướng dẫn trên",
+                "label": "Liên hệ JP- BÙI ĐẶNG để được tư vấn lựa chọn sản phẩm và cách dùng theo hướng dẫn trên",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -7178,9 +7193,10 @@
                 "name": "fcc_ui_b252d60ef1bb17",
                 "label": "Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "hotlineDisplay"
             }
         },
         "floating-scroll-top": {
@@ -7290,8 +7306,9 @@
                 "name": "fcc_ui_m_5a19a5862bce",
                 "label": "Nội dung: Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Nội dung hiển thị tại Danh mục – tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
-                "fcc_inline": true
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
+                "fcc_inline": true,
+                "fcc_contact": "hotlineDisplay"
             }
         }
     },
@@ -7371,7 +7388,7 @@
             "fcc_ui_5436b60da36ee9": {
                 "key": "field_fcc_ui_5436b60da36ee9",
                 "name": "fcc_ui_5436b60da36ee9",
-                "label": "Hệ thống quy chuẩn vận hành, giao nhận đồng kiểm, đổi trả và bảo mật thông tin tuân t",
+                "label": "Hệ thống quy chuẩn vận hành, giao nhận đồng kiểm, đổi trả và bảo mật thông tin khách",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -7400,7 +7417,7 @@
             "fcc_ui_4271e487f9792c": {
                 "key": "field_fcc_ui_4271e487f9792c",
                 "name": "fcc_ui_4271e487f9792c",
-                "label": "Đổi Trả & Hoàn Tiền (7 Ngày)",
+                "label": "Quy Định Đổi Trả",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": false,
@@ -7519,18 +7536,20 @@
                 "name": "fcc_ui_ac4ff3b5b4b5e0",
                 "label": "📞 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "hotlineDisplay"
             },
             "fcc_ui_95b2aca7868f6b": {
                 "key": "field_fcc_ui_95b2aca7868f6b",
                 "name": "fcc_ui_95b2aca7868f6b",
                 "label": "Email: jpbuidangco.ltd@gmail.com",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": true,
-                "fcc_refresh": false
+                "fcc_refresh": false,
+                "fcc_contact": "email"
             },
             "fcc_ui_299f67471be60a": {
                 "key": "field_fcc_ui_299f67471be60a",
@@ -7546,12 +7565,13 @@
                 "name": "fcc_ui_7fd4447672a27b",
                 "label": "Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "hotlineDisplay"
             }
         },
-        "Chính Sách Đổi Trả & Hoàn Tiền Trong 07 Ngày": {
+        "Quy Định Đổi Trả": {
             "fcc_ui_6d9d01b85824d4": {
                 "key": "field_fcc_ui_6d9d01b85824d4",
                 "name": "fcc_ui_6d9d01b85824d4",
@@ -7573,7 +7593,7 @@
             "fcc_ui_9e248e743e36d4": {
                 "key": "field_fcc_ui_9e248e743e36d4",
                 "name": "fcc_ui_9e248e743e36d4",
-                "label": "Chính Sách Đổi Trả & Hoàn Tiền Trong 07 Ngày",
+                "label": "Quy Định Đổi Trả",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -7582,7 +7602,7 @@
             "fcc_ui_7c832934d178c1": {
                 "key": "field_fcc_ui_7c832934d178c1",
                 "name": "fcc_ui_7c832934d178c1",
-                "label": "Công ty TNHH BUI DANG-JP cam kết mang đến trải nghiệm an tâm tuyệt đối cho khách hàng",
+                "label": "CÔNG TY TNHH JP- BÙI ĐẶNG cam kết mang đến trải nghiệm an tâm tuyệt đối cho khách hàng",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -7593,7 +7613,7 @@
             "fcc_ui_650e66a6706f4f": {
                 "key": "field_fcc_ui_650e66a6706f4f",
                 "name": "fcc_ui_650e66a6706f4f",
-                "label": "1.1. Các Trường Hợp Được Đổi Trả Miễn Phí 100%:",
+                "label": "Các Trường Hợp Được Đổi Trả Miễn Phí 100%:",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -7710,7 +7730,7 @@
             "fcc_ui_8fad1a8b45610d": {
                 "key": "field_fcc_ui_8fad1a8b45610d",
                 "name": "fcc_ui_8fad1a8b45610d",
-                "label": "BUI DANG-JP chi trả 100%",
+                "label": "JP- BÙI ĐẶNG chi trả 100%",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -7755,7 +7775,7 @@
             "fcc_ui_c66784266bb91f": {
                 "key": "field_fcc_ui_c66784266bb91f",
                 "name": "fcc_ui_c66784266bb91f",
-                "label": "BUI DANG-JP thực hiện chuyển khoản hoàn tiền 100% trong vòng",
+                "label": "JP- BÙI ĐẶNG thực hiện chuyển khoản hoàn tiền 100% trong vòng",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -7867,7 +7887,7 @@
             "fcc_ui_1ebdbdb8c90566": {
                 "key": "field_fcc_ui_1ebdbdb8c90566",
                 "name": "fcc_ui_1ebdbdb8c90566",
-                "label": "Miễn phí cho đơn Combo",
+                "label": "Thông báo minh bạch khi xác nhận",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -7903,7 +7923,7 @@
             "fcc_ui_e627ccf6c2a176": {
                 "key": "field_fcc_ui_e627ccf6c2a176",
                 "name": "fcc_ui_e627ccf6c2a176",
-                "label": "QUYỀN ĐỒNG KIỂM TỐI CAO:",
+                "label": "LƯU Ý ĐỒNG KIỂM:",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -7979,7 +7999,7 @@
             "fcc_ui_1c78b374951fd2": {
                 "key": "field_fcc_ui_1c78b374951fd2",
                 "name": "fcc_ui_1c78b374951fd2",
-                "label": "Tuân thủ nghiêm ngặt theo Nghị định 52/2013/NĐ-CP và Luật Bảo vệ quyền lợi người tiêu",
+                "label": "Tuân thủ nghiêm ngặt theo quy định pháp luật Việt Nam hiện hành về bảo vệ dữ liệu cá ",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -8017,7 +8037,7 @@
             "fcc_ui_b32e927d2b6f7b": {
                 "key": "field_fcc_ui_b32e927d2b6f7b",
                 "name": "fcc_ui_b32e927d2b6f7b",
-                "label": "Hỗ trợ hướng dẫn quy trình sử dụng (routine sáng/tối) và chăm sóc phản hồi sau khi dù",
+                "label": "Hỗ trợ hướng dẫn quy trình sử dụng (routine sáng/tối) và chăm sóc phản hồi",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -8026,7 +8046,7 @@
             "fcc_ui_1dc1abb1f5f624": {
                 "key": "field_fcc_ui_1dc1abb1f5f624",
                 "name": "fcc_ui_1dc1abb1f5f624",
-                "label": "3.2. Cam Kết Bảo Vệ & Quyền Của Khách Hàng:",
+                "label": "3.2. Cam kết bảo vệ và quyền của khách hàng:",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -8044,7 +8064,7 @@
             "fcc_ui_c1ba563b9871d6": {
                 "key": "field_fcc_ui_c1ba563b9871d6",
                 "name": "fcc_ui_c1ba563b9871d6",
-                "label": "Không cung cấp số điện thoại hoặc thông tin cá nhân của quý khách cho bất kỳ bên thứ ",
+                "label": "Chúng tôi không bán hoặc chia sẻ số điện thoại, thông tin cá nhân của quý khách",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -8064,7 +8084,7 @@
             "fcc_ui_64f415c6d1c400": {
                 "key": "field_fcc_ui_64f415c6d1c400",
                 "name": "fcc_ui_64f415c6d1c400",
-                "label": "Khách hàng có quyền yêu cầu BUI DANG-JP xóa toàn bộ lịch sử tư vấn hoặc thông tin liê",
+                "label": "Quý khách có quyền yêu cầu JP- BÙI ĐẶNG xóa toàn bộ lịch sử tư vấn hoặc thông tin",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -8113,7 +8133,7 @@
             "fcc_ui_a691eb957a5044": {
                 "key": "field_fcc_ui_a691eb957a5044",
                 "name": "fcc_ui_a691eb957a5044",
-                "label": "Nhằm phòng ngừa triệt để các hình thức lừa đảo giả mạo trực tuyến, BUI DANG-JP áp dụn",
+                "label": "Nhằm phòng ngừa triệt để các hình thức lừa đảo giả mạo trực tuyến, JP- BÙI ĐẶNG áp dụn",
                 "type": "textarea",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "rows": 3,
@@ -8343,9 +8363,11 @@
                 "name": "fcc_ui_7496ba7d0c475a",
                 "label": "jpbuidangco.ltd@gmail.com",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": true,
-                "fcc_refresh": false
+                "fcc_refresh": false,
+                "fcc_contact": "email",
+                "fcc_contact_only": true
             },
             "fcc_ui_e344bb52d30078": {
                 "key": "field_fcc_ui_e344bb52d30078",
@@ -8404,7 +8426,7 @@
             "fcc_ui_b2f17719051e8c": {
                 "key": "field_fcc_ui_b2f17719051e8c",
                 "name": "fcc_ui_b2f17719051e8c",
-                "label": "CÔNG TY TNHH BUI DANG–JP",
+                "label": "CÔNG TY TNHH JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -8508,7 +8530,7 @@
             "fcc_ui_2386e32559e6dd": {
                 "key": "field_fcc_ui_2386e32559e6dd",
                 "name": "fcc_ui_2386e32559e6dd",
-                "label": "Công ty TNHH BUI DANG–JP",
+                "label": "CÔNG TY TNHH JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -8618,9 +8640,10 @@
                 "name": "fcc_ui_613f7131411222",
                 "label": "Hotline: 0985 561 862",
                 "type": "text",
-                "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
+                "instructions": "Số điện thoại/email lấy từ Nội dung website → Quản lý liên hệ. Trường này chỉnh phần chữ đi kèm.",
                 "fcc_inline": false,
-                "fcc_refresh": true
+                "fcc_refresh": true,
+                "fcc_contact": "hotlineDisplay"
             },
             "fcc_ui_ca97c6451400a2": {
                 "key": "field_fcc_ui_ca97c6451400a2",
@@ -9466,7 +9489,7 @@
             "fcc_ui_m_24517189950b": {
                 "key": "field_fcc_ui_m_24517189950b",
                 "name": "fcc_ui_m_24517189950b",
-                "label": "Nội dung: TƯ VẤN 1:1 MIỄN PHÍ TỪ BUI DANG-JP",
+                "label": "Nội dung: TƯ VẤN 1:1 MIỄN PHÍ TỪ JP- BÙI ĐẶNG",
                 "type": "text",
                 "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
                 "fcc_inline": true

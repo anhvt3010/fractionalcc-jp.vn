@@ -1,6 +1,6 @@
 /* ==========================================================================
    Skin Concerns & Scientific Solutions Page
-   Fractional CC – BUI DANG-JP
+   Fractional CC – JP- BÙI ĐẶNG
    Redesigned: Clean, Unified, Tab-based Layout
    ========================================================================== */
 
@@ -177,7 +177,7 @@
 
 @media (min-width: 992px) {
   .concern-overview-grid {
-    grid-template-columns: 380px 1fr;
+    grid-template-columns: 430px 1fr;
     gap: 36px;
     align-items: start;
   }
@@ -185,7 +185,7 @@
 
 @media (min-width: 1200px) {
   .concern-overview-grid {
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 480px 1fr;
     gap: 40px;
   }
 }
@@ -254,17 +254,20 @@
 
 .concern-img-frame {
   width: 100%;
-  height: 280px;
+  height: auto;
   overflow: hidden;
   border-radius: 10px;
   background: #F4EFE6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .concern-skin-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   border-radius: 10px;
   display: block;
 }
@@ -383,15 +386,382 @@
 
 .concern-products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 340px));
-  justify-content: start;
-  gap: 24px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
   align-items: stretch;
 }
 
-@media (max-width: 680px) {
+.concern-products-grid .product-card {
+  background: #FFFFFF;
+  border: 1px solid #EAE3D6;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+  height: 100%;
+}
+
+.concern-products-grid .product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(197, 160, 89, 0.16);
+  border-color: #C5A059;
+}
+
+.concern-products-grid .product-thumb {
+  background: #FFFFFF;
+  padding: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  min-height: unset;
+  border-bottom: 1px solid #F0ECE4;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concern-products-grid .product-thumb img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.concern-products-grid .product-card:hover .product-thumb img {
+  transform: scale(1.05);
+}
+
+.concern-products-grid .product-cbmp-tag {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  max-width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  z-index: 2;
+}
+
+.concern-products-grid .product-info {
+  padding: 16px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.concern-products-grid .product-category-name {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-accent-gold, #C5A059);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.concern-products-grid .card-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--color-text-muted, #718096);
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.concern-products-grid .card-rating-stars {
+  color: #FAAD14;
+  font-size: 11.5px;
+  letter-spacing: 0.5px;
+}
+
+.concern-products-grid .product-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-text-main, #181818);
+  line-height: 1.35;
+  margin-bottom: 6px;
+  height: 2.7em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.concern-products-grid .product-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.concern-products-grid .product-title a:hover {
+  color: var(--color-accent-gold, #C5A059);
+}
+
+.concern-products-grid .product-info > p {
+  font-size: 11.5px !important;
+  line-height: 1.4 !important;
+  color: var(--color-text-body, #4A4A4A) !important;
+  margin-bottom: 10px !important;
+  height: 2.8em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.concern-products-grid .product-price-row {
+  margin-top: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.concern-products-grid .product-price-current {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-accent-red, #C53030);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.concern-products-grid .product-price-original {
+  font-size: 11.5px;
+  color: #9A9A9A;
+  text-decoration: line-through;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.concern-products-grid .product-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.concern-products-grid .btn-card-view,
+.concern-products-grid .btn-card-buy {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 8px 4px;
+  border-radius: 6px;
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.concern-products-grid .btn-card-view {
+  background-color: var(--color-bg-soft, #FAF8F5);
+  color: var(--color-text-main, #181818);
+  border: 1px solid var(--color-border, #E2D9CC);
+}
+
+.concern-products-grid .btn-card-view:hover {
+  background-color: var(--color-primary, #181818);
+  color: #FFFFFF;
+  border-color: var(--color-primary, #181818);
+}
+
+.concern-products-grid .btn-card-buy {
+  background-color: var(--color-primary, #181818);
+  color: #FFFFFF;
+  border: 1px solid var(--color-primary, #181818);
+}
+
+.concern-products-grid .btn-card-buy:hover {
+  background-color: #2D2823;
+  border-color: #2D2823;
+}
+
+@media (max-width: 991px) {
   .concern-products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .concern-pane-card {
+    padding: 20px 14px;
+    border-radius: 16px;
+  }
+
+  .concern-regimen-section {
+    margin-top: 28px;
+    padding-top: 24px;
+  }
+
+  .concern-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .concern-products-grid .product-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  .concern-products-grid .product-card:hover {
+    transform: none;
+  }
+
+  .concern-products-grid .product-cbmp-tag {
+    bottom: 6px;
+    right: 6px;
+    font-size: 8.5px;
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 3px;
+    max-width: 85%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .concern-products-grid .product-info {
+    padding: 10px 10px 12px;
+  }
+
+  .concern-products-grid .product-category-name {
+    font-size: 9.5px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+
+  .concern-products-grid .card-rating-row {
+    font-size: 10px;
+    gap: 4px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+  }
+
+  .concern-products-grid .card-rating-stars {
+    font-size: 10.5px;
+    letter-spacing: 0.5px;
+  }
+
+  .concern-products-grid .product-title {
+    font-size: 12.5px;
+    line-height: 1.35;
+    margin-bottom: 5px;
+    height: 2.7em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .concern-products-grid .product-info > p {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 8px !important;
+    height: 2.7em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .concern-products-grid .product-price-row {
+    margin-top: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 3px 6px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .concern-products-grid .product-price-current {
+    font-size: 14.5px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .concern-products-grid .product-price-original {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .concern-products-grid .product-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .concern-products-grid .btn-card-view,
+  .concern-products-grid .btn-card-buy {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 7px 2px;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .concern-pane-card {
+    padding: 16px 10px;
+  }
+
+  .concern-products-grid {
+    gap: 8px;
+  }
+
+  .concern-products-grid .product-info {
+    padding: 8px 8px 10px;
+  }
+
+  .concern-products-grid .product-title {
+    font-size: 11.5px;
+  }
+
+  .concern-products-grid .product-price-current {
+    font-size: 13px;
+  }
+
+  .concern-products-grid .product-price-original {
+    font-size: 10px;
+  }
+
+  .concern-products-grid .product-actions {
+    gap: 4px;
+  }
+
+  .concern-products-grid .btn-card-view,
+  .concern-products-grid .btn-card-buy {
+    font-size: 10px;
+    padding: 6px 1px;
   }
 }
 
@@ -659,20 +1029,71 @@
 /* 6. RESPONSIVE OPTIMIZATIONS */
 @media (max-width: 768px) {
   .concerns-tab-nav {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    -webkit-overflow-scrolling: touch;
-    flex-wrap: nowrap;
-    scrollbar-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    overflow-x: visible;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
   }
   .concerns-tab-nav::-webkit-scrollbar {
     display: none;
   }
   .concern-tab-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    min-height: 54px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    text-align: left;
+    white-space: normal;
+    border: 1.5px solid #DFD7CA;
+    background: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transform: none;
+    flex-shrink: 1;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .concern-tab-btn .tab-btn-num {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
     flex-shrink: 0;
-    padding: 10px 18px;
-    font-size: 13px;
+    color: #C5A059;
+  }
+  .concern-tab-btn .tab-btn-title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #38342E;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .concern-tab-btn.active {
+    background: #1A1715;
+    border-color: #1A1715;
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(26, 23, 21, 0.16);
+    transform: none;
+  }
+  .concern-tab-btn.active .tab-btn-num {
+    color: #DFBA73;
+  }
+  .concern-tab-btn.active .tab-btn-title {
+    color: #FFFFFF;
+  }
+  .concern-tab-btn:hover {
+    transform: none;
+  }
+  .concern-pane-card {
+    padding: 20px 16px;
+    border-radius: 18px;
   }
   .concern-pane-grid {
     padding: 24px 20px;

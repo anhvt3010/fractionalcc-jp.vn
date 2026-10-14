@@ -1,3 +1,34 @@
+# ----------------------------------------------------------------------
+# Fractional CC Security Hardening
+# ----------------------------------------------------------------------
+
+# 1. Disable Directory Browsing
+Options -Indexes
+
+# 2. Block sensitive files, hidden directories (.git, .env) & xmlrpc
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Block access to hidden files and directories (except .well-known for SSL)
+RewriteRule "(^|/)\.(?!well-known)" - [F,L]
+
+# Block access to sensitive data files
+RewriteRule \.(log|sql|bak|config|dist|fla|inc|ini|psd|sh|env)$ - [F,L]
+
+# Block access to informational WordPress files
+RewriteRule ^(readme\.html|license\.txt|composer\.(json|lock)|package(-lock)?\.json)$ - [F,L]
+
+# Block XML-RPC requests
+RewriteRule ^xmlrpc\.php$ - [F,L]
+</IfModule>
+
+# 3. Defensive Security Headers
+<IfModule mod_headers.c>
+Header setifempty X-Frame-Options "SAMEORIGIN"
+Header setifempty X-Content-Type-Options "nosniff"
+Header setifempty Referrer-Policy "strict-origin-when-cross-origin"
+Header setifempty Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
 
 # BEGIN WordPress
 # Các nội dung nằm giữa "BEGIN WordPress" và "END WordPress" được tạo ra tự động, và chỉ nên được thay đổi thông qua các filter của WordPress. Mọi thay đổi tới thành phần này có thể sẽ bị mất và ghi đè.

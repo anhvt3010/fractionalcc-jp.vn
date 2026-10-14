@@ -1,44 +1,38 @@
-# Fractional CC 1.0.0 – Release đầu tiên
+# Fractional CC 1.0.0
 
-Ngày 14/10/2026. Người dùng đã duyệt toàn bộ nội dung hiện tại làm dữ liệu mặc định. Các thư mục release trước đã xóa; thư mục version duy nhất là `release/v1.0.0/`. Đã áp dụng trên XAMPP `D:\xampp\htdocs\fractionalcc-jp.vn`, chưa deploy production hoặc tạo commit/tag.
+Ngày 14/10/2026. Bản đầu tiên được build lại theo yêu cầu người dùng, bao gồm các sửa bảo mật và tối ưu ACF đã duyệt; giữ nội dung, giao diện, liên hệ và 30 Media. Các bản trước đã được dọn khỏi release/, lưu riêng ngoài dự án để phục hồi. Không deploy production, cập nhật dependency hoặc gửi email thật.
 
-## Nội dung
+## Bộ cài
 
-[Snapshot đã chốt](../../docs/APPROVED-DEFAULTS.md): 6 bản ghi nội dung, 1.083 giá trị trường, 10 sản phẩm, 1 combo, 35 hoạt chất, 30 ảnh và metadata Media; giữ nội dung/gallery Gutenberg, giá, SEO, liên hệ/chính sách, nhãn, bộ lọc, settings giao diện, thứ tự 2 mục chủ lực/6 mục danh mục trang chủ và 4 danh sách phác đồ. Không có tài khoản, secrets, đơn hàng, khách hàng hoặc uploads dư trong defaults/ZIP.
+| Package | Số file | SHA-256 |
+| --- | --- | --- |
+| [Project Core 1.0.0](project-core-v1.0.0.zip) | 21 | `7b09271186dc73e72a2fb58ccdae529ff6fe6c8ada55f0ac06784245ba8a3303` |
+| [Project Child 1.0.0](project-child-v1.0.0.zip) | 129 | `58489796de3d164d4610a015bc33bf2497d2d7e87bd9b12b22cd8307c5cdf5d8` |
 
-Core plugin quản lý domain, media mapping, phác đồ và initializer; child theme giữ giao diện, responsive, schema và asset đã chốt. Các tham chiếu dùng source key/token, được chuyển sang ID/URL tại site cài mới. Snapshot có version và hash media; initializer từ chối package thiếu/sai ảnh hoặc quan hệ trước khi ghi. Lần chạy lại bổ sung dữ liệu thiếu, không ghi đè edits, gallery, Media metadata, ảnh đã bỏ, lựa chọn phác đồ đã xóa hoặc settings đã thay.
+Đúng hai ZIP, root project-core/project-child, byte/CRC khớp source. Không có config, secrets, database, uploads, orders, logs hoặc profiles. [Báo cáo package](qa/package-report.json).
 
-## Cài đặt
+Dependencies đã thử: WordPress 7.1.3, Kadence 1.5.2, ACF 6.8.10, PHP XAMPP 8.0.30; cài riêng. Header WordPress 6.3+, PHP 7.4+ không chứng minh PHP cũ phù hợp production.
 
-1. Sao lưu riêng database/uploads/config môi trường đích. Cài WordPress, Kadence và ACF Free từ nguồn chính thức; hai ZIP không chứa các dependency này.
-2. Cài/kích hoạt `project-core-v1.0.0.zip`, cài/kích hoạt `project-child-v1.0.0.zip`, giữ ACF hoạt động. Mỗi ZIP có đúng một root `project-core/` hoặc `project-child/`.
-3. Mở một trang admin bằng administrator có quyền upload. Initializer tự chạy khi đủ dependency trên site mới; nếu cần dùng nút khởi tạo tại **Nội dung website**. Không cần ACF Sync. Dependency thiếu sẽ báo và chờ, không tự đổi active theme.
-4. Site mới nhận homepage/nội dung/settings đã chốt. Site đã dùng giữ các chỉnh sửa hiện có. Kiểm tra giao diện, liên hệ, permalink và xóa cache nếu môi trường có cache. Cấu hình SMTP/URL/tài khoản riêng cho môi trường đích, không lấy credentials local.
+## Thay đổi
 
-Dependencies đã kiểm tra: WordPress **7.1.3**, XAMPP PHP **8.2.12**, Kadence **1.5.2**, ACF Free **6.8.10**. Trạng thái nội dung mặc định **approved**; localhost và môi trường không phải production vẫn noindex; trang Cảm ơn luôn noindex. Không thay setting indexing hoặc xác định domain production trong tác vụ này.
+- REST users dùng route đã phân giải, kể cả rest_route/batch; chặn XML-RPC/pingback trong plugin; author redirect trước canonical; thêm Permissions-Policy.
+- Form yêu cầu POST/nonce/đồng ý điều khoản, kiểm tra kiểu/độ dài/phone/catalog; giới hạn 10 yêu cầu hợp lệ mỗi IP/10 phút, khóa nguyên tử cho concurrency.
+- Validate SMTP trước lưu, giữ settings/password khi sai; không bật SMTP tài khoản thiếu TLS/SSL. Nonce/status order từ chối array.
+- Schema trình bày ACF chỉ đăng ký tại admin/CLI/Customizer; public giảm 1.160 xuống 94 field, giữ editor/preview/UI. Thời gian local dao động, chưa kết luận tăng tốc đồng đều.
+- .env/wp-config.php ngừng được Git theo dõi, local giữ nguyên. Không xóa credentials trong commit cũ.
 
-## Packages
+[Báo cáo bảo mật/hiệu năng](../../docs/SECURITY-AUDIT-2026-10-14.md) ghi phạm vi và giới hạn.
 
-```text
-1116A92A6AAB7BE2E116BA5EA73C052B517DDE69CDC806360D6BCA4B88CE2937  project-core-v1.0.0.zip
-FE1CF236E6629AE64D930378AF4219DBBCBC2C71891221227845B2464F887364  project-child-v1.0.0.zip
-```
+Defaults approved 1.0.0 gồm 6 bản ghi/1.085 trường, 10 sản phẩm, 1 combo, 35 hoạt chất, 30 Media. Zalo `https://zalo.me/84985561862`, Facebook `https://web.facebook.com/hangnhatchomoinha.vn`; không phục hồi ảnh Excel/uploads dư. Seed active 1.0.0 giữ nguyên 54 bản ghi và 30 Media.
 
-[Báo cáo file/root/hash/CRC](qa/package-report.json): plugin 19 file, theme 135 file, mọi entry khớp source và CRC hợp lệ. ZIP chỉ chứa custom runtime/defaults/schema/assets; không chứa core, parent theme, ACF, config, DB dump, logs, backup hoặc uploads riêng. Source là snapshot workspace đã kiểm tra, không có commit/tag mới.
+## Kiểm tra và cài đặt
 
-## Kiểm tra
+PHP lint/build và hai ZIP đạt. Cài/kích hoạt từ ZIP trên database riêng; thiếu dependency không ghi nội dung. Đạt 2.644 defaults, 291 contacts, 82 security, 56 HTTP security, 44 AJAX order và 44 native POST checks; mail được capture/chặn. Editor/Customizer/preview hoạt động. [HTTP](qa/security-http-report.json), [admin](qa/admin-report.json).
 
-- Cài/kích hoạt từ hai ZIP trên WordPress/database riêng: **53 kiểm tra initializer** và **2.640 kiểm tra snapshot** đạt. Kiểm tra toàn bộ field, tiêu đề/slug/thứ tự, block gallery, byte/hash/alt/caption Media, combo, hoạt chất, phác đồ, settings và bảo toàn edits khi chạy lại. Package sai hash, quan hệ không tồn tại, setting ngoài allowlist và khởi tạo ẩn danh bị từ chối.
-- **15 trang cài mới** khớp chữ hiển thị, byte và thứ tự ảnh của site đang dùng; tất cả trang/ảnh trả HTTP 200, HTML không có PHP warning. [Báo cáo đối chiếu](qa/public-comparison.json).
-- **104 kiểm tra phác đồ**, **904 kiểm tra editor WordPress/ACF, ảnh, SEO, quyền và nonce** đạt trên fixture riêng.
-- **1.033 kiểm tra Chromium** trên 10 sản phẩm × 13 viewport: 320, 375, 390, 480, 600, 768, 820, 991, 992, 1024, 1280, 1440, 1920px. Layout, gallery, tabs, modal chọn sản phẩm và console đạt. [Báo cáo](qa/product-responsive-report.json), [mobile Mandelic](qa/mandelic-375-top.png), [tablet](qa/mandelic-768-top.png), [desktop](qa/mandelic-1440-top.png).
-- PHP runtime được lint khi build; cú pháp JS và kiểm tra luồng client đặt hàng đạt. Compiler mẫu cũ dừng trước khi ghi khi thấy approval đã chốt.
-- Site đang dùng cập nhật version/trạng thái approved: mọi tiêu đề, nội dung, slug, thứ tự và metadata đã có khác trạng thái duyệt giữ nguyên; uploads vẫn 30 ảnh. Không gửi đơn/email/tin nhắn thật trong QA.
+Đạt 1.033 browser checks, 10 sản phẩm/13 widths 320–1.920px, không lỗi console; 15 trang và byte ảnh khớp active. [Responsive](qa/report.json), [public](qa/public-comparison.json), [hiệu năng](qa/performance-report.json). Database QA đã gỡ, fixture/sessions/profiles lưu riêng ngoài htdocs/release.
 
-Browser dùng profile headless riêng. Chưa kiểm tra Safari/iOS hoặc thiết bị thật. Một assertion test ban đầu so sánh title qua filter HTML thay vì giá trị lưu thô đã được sửa; kiểm tra lại đạt. Các kiểm tra ghi dữ liệu chỉ chạy trên fixture có marker; không chạy script kiểm thử phá dữ liệu trên site làm việc. Hai database fixture đã xóa sau khi kiểm tra marker và site URL; credentials và thư mục fixture đã được dọn, giữ nguyên targets của junction Kadence/ACF.
+Cài Kadence/ACF, upload/kích hoạt đúng hai ZIP 1.0.0, mở admin bằng administrator có upload_files hoặc dùng nút khởi tạo trong Nội dung website. Không cần ACF Sync. Initializer giữ edits/giá trị xóa/Reading/settings, không nhân bản Media. Local/staging noindex, Cảm ơn luôn noindex.
 
-## Khôi phục
+Trước production sao lưu môi trường đích, cấu hình domain/secrets/HTTPS/server và chọn PHP còn hỗ trợ. .htaccess local không thuộc ZIP, cần luật chặn file nhạy cảm tương đương. Chưa kiểm tra hosting/Safari/email delivery/load lớn/pentest độc lập. Rollback dùng backup môi trường đích và code đã kiểm chứng, giữ dữ liệu phát sinh. Các bộ cài trước reset được lưu riêng ngoài dự án, không nằm trong release phân phối.
 
-Snapshot source/CMS trước chốt lưu riêng trong `first-release-*` dưới `C:\Users\anhvt\.codex\backups\fractionalcc-jp.vn\`, không đóng gói. Đây không thay thế full backup database/uploads/config trước deploy. Các ZIP release cũ đã xóa theo yêu cầu; không dùng đường dẫn v0.x để rollback.
-
-Khi cần khôi phục, dùng backup riêng của môi trường đích hoặc snapshot code trước chốt, giữ database/uploads và edits phát sinh. Không reset toàn bộ initializer hoặc chép database fixture/local đè production. Trạng thái duyệt và seed version có thể đối chiếu snapshot private; không tự hạ dữ liệu đã được người dùng chốt.
+Báo cáo hiệu năng trước/sau được kế thừa từ lần rà soát code vừa duyệt; lần reset này đổi version và đóng gói lại, không đo lại hiệu năng trước/sau.

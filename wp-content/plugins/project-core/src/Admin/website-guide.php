@@ -38,8 +38,14 @@ function project_core_render_website_guide() {
 			<?php foreach ( array( 'fcc_product' => 'Sản phẩm', 'fcc_combo' => 'Combo', 'fcc_ingredient' => 'Hoạt chất', 'fcc_order' => 'Đơn hàng khách đặt' ) as $type => $label ) : ?>
 				<tr><td><?php echo esc_html( $label ); ?></td><td><a class="button" href="<?php echo esc_url( admin_url( 'edit.php?post_type=' . $type ) ); ?>"><?php echo esc_html__( 'Mở danh sách', 'project-core' ); ?></a></td></tr>
 			<?php endforeach; ?>
+			<?php if ( ! empty( $pages['concerns'] ) && current_user_can( 'edit_post', $pages['concerns'] ) ) : ?>
+				<tr><td><strong>Gợi ý phác đồ (Quản lý sản phẩm / combo gợi ý cho từng vấn đề da)</strong></td><td><a class="button button-primary" href="<?php echo esc_url( get_edit_post_link( $pages['concerns'], 'raw' ) ); ?>">Quản lý sản phẩm gợi ý</a></td></tr>
+			<?php endif; ?>
+			<?php if ( current_user_can( 'edit_pages' ) ) : ?>
+				<tr><td><strong>Quản lý liên hệ (Hotline, Chat Zalo, Messenger Facebook, Email)</strong></td><td><a class="button button-primary" href="<?php echo esc_url( admin_url( 'admin.php?page=fcc-contact-settings' ) ); ?>">Quản lý liên hệ</a></td></tr>
+			<?php endif; ?>
 			<?php if ( current_user_can( 'manage_options' ) ) : ?>
-				<tr><td><strong>Cài đặt SMTP & Email thông báo</strong></td><td><a class="button button-primary" href="<?php echo esc_url( admin_url( 'admin.php?page=fcc-smtp-settings' ) ); ?>">Cấu hình SMTP</a></td></tr>
+				<tr><td><strong>Cài đặt SMTP & Email thông báo</strong></td><td><a class="button" href="<?php echo esc_url( admin_url( 'admin.php?page=fcc-smtp-settings' ) ); ?>">Cấu hình SMTP</a></td></tr>
 			<?php endif; ?>
 			</tbody>
 		</table>

@@ -13,9 +13,35 @@ function project_child_fcc_raw_text( $key, $scope ) {
 	if ( ! is_scalar( $text ) ) { return ''; }
 	$text = (string) $text;
 	// Keep contact information consistent without making customers edit every label.
-	foreach ( array( '0985 561 862' => 'hotlineDisplay', '0985561862' => 'hotline', 'jpbuidangco.ltd@gmail.com' => 'email', 'Công ty TNHH BUI DANG-JP' => 'distributor' ) as $source => $field ) {
+	$distributor_replacements = array(
+		'Công ty TNHH BUI DANG-JP' => 'distributor',
+		'Công ty TNHH BUI DANG–JP' => 'distributor',
+		'CÔNG TY TNHH BUI DANG-JP' => 'distributor',
+		'CÔNG TY TNHH BUI DANG–JP' => 'distributor',
+	);
+	foreach ( $distributor_replacements as $source => $field ) {
 		$value = project_core_fcc_site( $field );
 		if ( '' !== $value ) { $text = str_replace( $source, $value, $text ); }
+	}
+	// Only designated contact labels follow the central fields; customer phone examples do not.
+	static $contacts;
+	if ( null === $contacts ) {
+		$contacts = array();
+		foreach ( project_child_fcc_schema() as $kind => $sections ) {
+			foreach ( $sections as $fields ) {
+				foreach ( $fields as $field ) {
+					if ( ! empty( $field['fcc_contact'] ) ) { $contacts[ $kind ][ $field['name'] ] = $field; }
+				}
+			}
+		}
+	}
+	if ( isset( $contacts[ $scope ][ $key ] ) ) {
+		$field = $contacts[ $scope ][ $key ];
+		$value = project_core_fcc_contact( $field['fcc_contact'] );
+		if ( ! empty( $field['fcc_contact_only'] ) ) { return $value; }
+		if ( '' === $value && 'text' === $field['type'] ) { return ''; }
+		$pattern = 'email' === $field['fcc_contact'] ? '/[a-zA-Z0-9.!#$%&\x27*+\/=?^_`{|}~-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/' : '/(?<!\d)\+?\d(?:[ .()-]*\d){8,14}(?!\d)/';
+		$text = preg_replace_callback( $pattern, static function () use ( $value ) { return $value; }, $text );
 	}
 	return $text;
 }
@@ -114,13 +140,34 @@ function project_child_fcc_hero_product_image_alt() {
 	return project_child_fcc_image_alt( 'fcc_ui_453bd451ef0751', 'fcc_ui_eeddc60a6e4bec' );
 }
 
+/** Build a link from the saved channel, without reviving removed contacts. */
+function project_child_fcc_contact_link( $channel ) {
+	$fields = array( 'hotline' => 'hotline', 'phone' => 'phone', 'email' => 'email', 'zalo' => 'zaloLink', 'facebook' => 'messengerLink' );
+	if ( ! isset( $fields[ $channel ] ) ) { return ''; }
+	$value = project_core_fcc_contact( $fields[ $channel ] );
+	if ( '' === $value ) { return ''; }
+	if ( in_array( $channel, array( 'hotline', 'phone' ), true ) ) { return 'tel:' . $value; }
+	return 'email' === $channel ? 'mailto:' . $value : $value;
+}
+
+/** Empty channels have neither a visible link nor an empty href. */
+function project_child_fcc_contact_attributes( $channel ) {
+	$link = project_child_fcc_contact_link( $channel );
+	echo $link ? 'href="' . esc_url( $link ) . '"' : 'hidden';
+}
+
 function project_child_fcc_link( $source ) {
-	if ( 0 === strpos( $source, 'tel:' ) ) { return 'tel:' . preg_replace( '/[^0-9+]/', '', project_core_fcc_site( 'hotline' ) ); }
-	if ( 0 === strpos( $source, 'mailto:' ) ) { return 'mailto:' . sanitize_email( project_core_fcc_site( 'email' ) ); }
-	if ( 0 === strpos( $source, 'https://zalo.me/' ) ) { return project_core_fcc_site( 'zaloLink' ); }
-	if ( 0 === strpos( $source, 'https://m.me/' ) ) {
-		$messenger = project_core_fcc_site( 'messengerLink' );
-		return ! empty( $messenger ) ? $messenger : 'https://m.me/buidangjp';
+	if ( 0 === strpos( $source, 'tel:' ) ) {
+		return project_child_fcc_contact_link( 'hotline' );
+	}
+	if ( 0 === strpos( $source, 'mailto:' ) ) {
+		return project_child_fcc_contact_link( 'email' );
+	}
+	if ( 0 === strpos( $source, 'https://zalo.me/' ) ) {
+		return project_child_fcc_contact_link( 'zalo' );
+	}
+	if ( preg_match( '#^https?://(?:m\.me|(?:www\.|web\.|m\.)?facebook\.com)/#i', $source ) ) {
+		return project_child_fcc_contact_link( 'facebook' );
 	}
 	$parts = wp_parse_url( $source );
 	$fragment = isset( $parts['fragment'] ) ? '#' . $parts['fragment'] : '';

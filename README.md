@@ -1,5 +1,8 @@
 # Website Fractional CC
 
+> Hiện hành ngày 14/10/2026: [release 1.0.1](release/v1.0.1/RELEASE.md), [defaults approved](docs/APPROVED-DEFAULTS.md), [rà soát bảo mật/hiệu năng](docs/SECURITY-AUDIT-2026-10-14.md). Runtime homepage ID 24, 10 sản phẩm, 1 combo, 35 hoạt chất, 30 Media. Các mô tả phiên bản trước bên dưới là lịch sử.
+
+
 > Ch?t 14/10/2026: [release ??u ti?n 1.0.0](release/v1.0.0/RELEASE.md) ch?a to?n b? [d? li?u hi?n t?i ?? duy?t](docs/APPROVED-DEFAULTS.md). C?c b?n release tr??c ?? x?a theo y?u c?u.
 
 Website giới thiệu Fractional CC và tiếp nhận yêu cầu tư vấn/đặt hàng theo brief của Công ty TNHH BUI DANG-JP. [Hồ sơ thông tin website ban đầu](docs/WEBSITE-BRIEF.md) tổng hợp nội dung từ `template/fractional-cc`, danh mục 10 sản phẩm, giá có nguồn, tài nguyên thiết kế và các thông tin chờ xác nhận.

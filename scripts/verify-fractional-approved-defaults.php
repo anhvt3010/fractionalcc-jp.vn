@@ -20,7 +20,7 @@ fcc_approved_check( is_wp_error( project_core_fcc_validate_defaults( $bad ) ), '
 fcc_approved_check( ! is_wp_error( project_core_fcc_initialize() ), 'Approved initialization succeeds.' );
 $pages = get_option( 'project_core_fcc_pages' );
 fcc_approved_check( 'approved' === project_core_fcc_site( 'content_status' ), 'Approved status is the default.' );
-fcc_approved_check( '1.0.0' === get_option( 'project_core_fcc_seed_version' ), 'First release version recorded.' );
+fcc_approved_check( $data['version'] === get_option( 'project_core_fcc_seed_version' ), 'Packaged defaults version recorded.' );
 function fcc_approved_fields( $id, $fields ) {
 	foreach ( $fields as $name => $field ) {
 		$actual = get_post_meta( $id, $name, true );

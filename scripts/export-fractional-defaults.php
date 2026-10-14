@@ -70,7 +70,7 @@ foreach ( project_core_fcc_posts( 'fcc_product' ) as $post ) {
 	$old = array_values( array_filter( $data['products'], function ( $entry ) use ( $source_id ) { return $source_id === $entry['id']; } ) );
 	$product = array( 'id' => $source_id, 'name' => $post->post_title, 'slug' => $post->post_name, 'menuOrder' => (int) $post->menu_order, 'content' => fcc_export_value( $post->post_content ), 'excerpt' => fcc_export_value( $post->post_excerpt ), 'gallery' => array(), 'actives' => array(), 'fields' => array() );
 	foreach ( array_keys( $old[0] ?? project_core_fcc_product( $post->ID ) ) as $name ) {
-		if ( in_array( $name, array( 'id', 'name', 'slug', 'gallery', 'actives', 'fields', 'url', 'imageAlt', 'galleryAlts', 'saveAmount' ), true ) ) { continue; }
+		if ( in_array( $name, array( 'id', 'name', 'slug', 'menuOrder', 'content', 'excerpt', 'gallery', 'actives', 'fields', 'url', 'imageAlt', 'galleryAlts', 'saveAmount' ), true ) ) { continue; }
 		$product[ $name ] = 'image' === $name ? fcc_export_media( get_post_meta( $post->ID, 'fcc_image', true ) ) : fcc_export_value( get_post_meta( $post->ID, 'fcc_' . $name, true ) );
 	}
 	foreach ( parse_blocks( $post->post_content ) as $block ) { if ( 'core/gallery' === $block['blockName'] ) { foreach ( $block['innerBlocks'] as $image ) { if ( ! empty( $image['attrs']['id'] ) ) { $product['gallery'][] = fcc_export_media( $image['attrs']['id'] ); } } } }
@@ -86,7 +86,7 @@ foreach ( project_core_fcc_posts( 'fcc_combo' ) as $post ) {
 	$combo_id = substr( $sources[ $post->ID ], strlen( 'combo_' ) );
 	$old = array_values( array_filter( $data['combos'], function ( $entry ) use ( $combo_id ) { return $combo_id === (string) $entry['id']; } ) );
 	$combo = array( 'id' => $combo_id, 'name' => $post->post_title, 'slug' => $post->post_name, 'menuOrder' => (int) $post->menu_order, 'content' => fcc_export_value( $post->post_content ), 'excerpt' => fcc_export_value( $post->post_excerpt ), 'fields' => array() );
-	foreach ( array_keys( $old[0] ?? array() ) as $name ) { if ( in_array( $name, array( 'id', 'name' ), true ) ) { continue; } $value = get_post_meta( $post->ID, 'fcc_' . $name, true ); if ( 'image' === $name ) { $value = fcc_export_media( $value ); } elseif ( 'productIds' === $name ) { $value = array_map( function ( $id ) { return absint( get_post_meta( $id, '_fcc_source_id', true ) ); }, (array) $value ); } $combo[ $name ] = fcc_export_value( $value ); }
+	foreach ( array_keys( $old[0] ?? array() ) as $name ) { if ( in_array( $name, array( 'id', 'name', 'slug', 'menuOrder', 'content', 'excerpt', 'fields' ), true ) ) { continue; } $value = get_post_meta( $post->ID, 'fcc_' . $name, true ); if ( 'image' === $name ) { $value = fcc_export_media( $value ); } elseif ( 'productIds' === $name ) { $value = array_map( function ( $id ) { return absint( get_post_meta( $id, '_fcc_source_id', true ) ); }, (array) $value ); } $combo[ $name ] = fcc_export_value( $value ); }
 	foreach ( array_keys( get_post_meta( $post->ID ) ) as $name ) { if ( 0 === strpos( $name, 'fcc_' ) && ! array_key_exists( substr( $name, 4 ), $combo ) ) { $combo['fields'][ $name ] = fcc_export_field( $post->ID, $name ); } }
 	$combos[] = $combo;
 }

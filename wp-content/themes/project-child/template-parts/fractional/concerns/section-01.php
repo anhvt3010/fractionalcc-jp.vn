@@ -7,8 +7,7 @@
  */
 defined( 'ABSPATH' ) || exit;
 
-$hotline_display = function_exists( 'project_core_fcc_site' ) ? project_core_fcc_site( 'hotlineDisplay', '0985 561 862' ) : '0985 561 862';
-$hotline         = function_exists( 'project_core_fcc_site' ) ? project_core_fcc_site( 'hotline', '0985561862' ) : '0985561862';
+$hotline_display = project_core_fcc_contact( 'hotlineDisplay' );
 ?>
 
 <!-- BREADCRUMB & HERO HEADER -->
@@ -369,11 +368,11 @@ $hotline         = function_exists( 'project_core_fcc_site' ) ? project_core_fcc
             <span><?php echo project_child_fcc_text( 'fcc_ui_m_1e850dd54933', 'concerns' ); ?></span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </button>
-          <a href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/' . $hotline ) ); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-consult-zalo">
+          <a <?php project_child_fcc_contact_attributes( 'zalo' ); ?> target="_blank" rel="noopener noreferrer" class="btn btn-consult-zalo">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.03 2 11C2 13.565 3.195 15.864 5.12 17.472L4.2 21.2C4.085 21.664 4.545 22.052 4.965 21.848L9.29 19.742C10.158 19.911 11.063 20 12 20C17.523 20 22 15.97 22 11C22 6.03 17.523 2 12 2Z"></path></svg>
             <span><?php echo project_child_fcc_text( 'fcc_ui_m_32e4397e39fe', 'concerns' ); ?></span>
           </a>
-          <a href="<?php echo esc_url( project_child_fcc_link( 'tel:' . $hotline ) ); ?>" class="btn btn-consult-phone">
+          <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> class="btn btn-consult-phone">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             <span><?php echo project_child_fcc_text( 'fcc_ui_m_1fd1da925638', 'concerns' ); ?> <?php echo esc_html( $hotline_display ); ?></span>
           </a>

@@ -83,33 +83,7 @@
             $fcc_actives = ! empty( $fcc_current_product['actives'] ) ? (array) $fcc_current_product['actives'] : array();
             $fcc_usps    = ! empty( $fcc_current_product['uspBullets'] ) ? (array) $fcc_current_product['uspBullets'] : array();
             ?>
-            <div class="pd-cocoon-meta-line">
-              <span><strong><?php echo project_child_fcc_text( 'fcc_ui_7c2ab4b4eda5ba', 'shared' ); ?></strong> <span id="pd-volume"><?php echo esc_html( project_child_fcc_product_value( 'volume' ) ); ?></span></span>
-              <span>•</span>
-              <span><strong><?php echo project_child_fcc_text( 'fcc_ui_09caa8fe5fdc81', 'shared' ); ?></strong> <span id="pd-spec-cbmp" class="text-gold"><?php echo esc_html( project_child_fcc_product_value( 'cbmp' ) ); ?></span></span>
-            </div>
-
-
-
-            <button class="btn-pd-cocoon-buy" data-open-order data-product-select="prod_<?php echo esc_attr( get_queried_object_id() ); ?>" id="pd-buy-now-btn">
-              <span id="pd-buy-btn-label"><?php echo esc_html( project_child_fcc_product_value( 'buy' ) ); ?></span>
-              <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-            </button>
-
-
-            <div class="pd-cocoon-sub-bar">
-              <a href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/0985561862' ) ); ?>" target="_blank" rel="noopener noreferrer" class="pd-cocoon-sub-link">
-                <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                <span><?php echo project_child_fcc_text( 'fcc_ui_20748aba1fa4a2', 'shared', false ); ?></span>
-              </a>
-              <span>•</span>
-              <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" class="pd-cocoon-sub-link">
-                <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                <span><?php echo project_child_fcc_text( 'fcc_ui_d0f30a260b8018', 'shared', false ); ?></span>
-              </a>
-              <span>•</span>
-              <span><?php echo project_child_fcc_text( 'fcc_ui_82c0e470cd9121', 'shared' ); ?></span>
-            </div>
+            <!-- Section: Tabs (Thích hợp với / Thành phần chính / Điểm Nổi Bật) -->
             <div class="pd-cocoon-section pd-tabs-section">
               <div class="pd-tabs-nav" role="tablist" aria-label="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_m_19d74a6b4cae', 'shared' ) ); ?>">
                 <button type="button" role="tab" class="pd-tab-btn is-active" id="pd-tab-targets-btn" aria-selected="true" aria-controls="pd-tab-targets-pane">
@@ -192,6 +166,31 @@
               </div>
             </div>
 
+            <div class="pd-cocoon-meta-line">
+              <span><strong><?php echo project_child_fcc_text( 'fcc_ui_7c2ab4b4eda5ba', 'shared' ); ?></strong> <span id="pd-volume"><?php echo esc_html( project_child_fcc_product_value( 'volume' ) ); ?></span></span>
+              <span>•</span>
+              <span><strong><?php echo project_child_fcc_text( 'fcc_ui_09caa8fe5fdc81', 'shared' ); ?></strong> <span id="pd-spec-cbmp" class="text-gold"><?php echo esc_html( project_child_fcc_product_value( 'cbmp' ) ); ?></span></span>
+            </div>
+
+            <button class="btn-pd-cocoon-buy" data-open-order data-product-select="prod_<?php echo esc_attr( get_queried_object_id() ); ?>" id="pd-buy-now-btn">
+              <span id="pd-buy-btn-label"><?php echo esc_html( project_child_fcc_product_value( 'buy' ) ); ?></span>
+              <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            </button>
+
+            <div class="pd-cocoon-sub-bar">
+              <a <?php project_child_fcc_contact_attributes( 'zalo' ); ?> target="_blank" rel="noopener noreferrer" class="pd-cocoon-sub-link">
+                <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span><?php echo project_child_fcc_text( 'fcc_ui_20748aba1fa4a2', 'shared', false ); ?></span>
+              </a>
+              <span>•</span>
+              <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> class="pd-cocoon-sub-link">
+                <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span><?php echo project_child_fcc_text( 'fcc_ui_d0f30a260b8018', 'shared', false ); ?></span>
+              </a>
+              <span>•</span>
+              <span><?php echo project_child_fcc_text( 'fcc_ui_82c0e470cd9121', 'shared' ); ?></span>
+            </div>
+
             
           </div>
         </div>
@@ -244,7 +243,7 @@
             </div>
             <div class="pd-dossier-item">
               <span class="pd-dossier-item-label"><?php echo project_child_fcc_text( 'fcc_ui_3b59a86c555faa', 'shared' ); ?></span>
-              <span class="pd-dossier-item-value"><?php echo esc_html( project_core_fcc_site( 'hotlineDisplay' ) ); ?></span>
+              <span class="pd-dossier-item-value"><?php echo esc_html( project_core_fcc_contact( 'hotlineDisplay' ) ); ?></span>
               <span class="pd-dossier-item-sub"><?php echo project_child_fcc_text( 'fcc_ui_a93e048327d51f', 'shared' ); ?></span>
             </div>
           </div>

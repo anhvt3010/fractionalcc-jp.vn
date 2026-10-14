@@ -15,9 +15,9 @@
 
         <div class="consultation-quick-text">
           <span><?php echo project_child_fcc_text( 'fcc_ui_m_955ba00d5b32', 'catalog' ); ?></span>
-          <a href="<?php echo esc_url( project_child_fcc_link( 'https://zalo.me/0985561862' ) ); ?>" target="_blank" rel="noopener noreferrer" class="consultation-link"><?php echo project_child_fcc_text( 'fcc_ui_m_6d64ee9c2e3b', 'catalog' ); ?></a>
+          <a <?php project_child_fcc_contact_attributes( 'zalo' ); ?> target="_blank" rel="noopener noreferrer" class="consultation-link"><?php echo project_child_fcc_text( 'fcc_ui_m_6d64ee9c2e3b', 'catalog' ); ?></a>
           <span class="consultation-sep" aria-hidden="true">•</span>
-          <a href="<?php echo esc_url( project_child_fcc_link( 'tel:0985561862' ) ); ?>" class="consultation-link"><?php echo project_child_fcc_text( 'fcc_ui_m_5a19a5862bce', 'catalog' ); ?></a>
+          <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> class="consultation-link"><?php echo project_child_fcc_text( 'fcc_ui_m_5a19a5862bce', 'catalog' ); ?></a>
         </div>
       </div>
     </div>

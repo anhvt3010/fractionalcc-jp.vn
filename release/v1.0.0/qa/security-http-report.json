@@ -1,0 +1,230 @@
+{
+  "passed": true,
+  "checks": 56,
+  "results": [
+    {
+      "name": "No PHP diagnostics: ",
+      "passed": true
+    },
+    {
+      "name": "Homepage available: /fcc-security-qa-100/",
+      "passed": true
+    },
+    {
+      "name": "Security header x-frame-options: /fcc-security-qa-100/",
+      "passed": true
+    },
+    {
+      "name": "Security header x-content-type-options: /fcc-security-qa-100/",
+      "passed": true
+    },
+    {
+      "name": "Security header referrer-policy: /fcc-security-qa-100/",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-json/wp/v2/users",
+      "passed": true
+    },
+    {
+      "name": "REST users denied: /fcc-security-qa-100/wp-json/wp/v2/users",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: ?rest_route=/wp/v2/users",
+      "passed": true
+    },
+    {
+      "name": "REST users denied: /fcc-security-qa-100/?rest_route=/wp/v2/users",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: ?rest_route=%2Fwp%2Fv2%2Fusers",
+      "passed": true
+    },
+    {
+      "name": "REST users denied: /fcc-security-qa-100/?rest_route=%2Fwp%2Fv2%2Fusers",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-json/wp/v2/%75sers",
+      "passed": true
+    },
+    {
+      "name": "REST users denied: /fcc-security-qa-100/wp-json/wp/v2/%75sers",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-json/wp/v2/users/1",
+      "passed": true
+    },
+    {
+      "name": "REST users denied: /fcc-security-qa-100/wp-json/wp/v2/users/1",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: ?author=1",
+      "passed": true
+    },
+    {
+      "name": "Author scan redirects to home: /fcc-security-qa-100/",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: xmlrpc.php",
+      "passed": true
+    },
+    {
+      "name": "XML-RPC denied: /fcc-security-qa-100/",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: ",
+      "passed": true
+    },
+    {
+      "name": "Homepage available: /fractionalcc-jp.vn/",
+      "passed": true
+    },
+    {
+      "name": "Security header x-frame-options: /fractionalcc-jp.vn/",
+      "passed": true
+    },
+    {
+      "name": "Security header x-content-type-options: /fractionalcc-jp.vn/",
+      "passed": true
+    },
+    {
+      "name": "Security header referrer-policy: /fractionalcc-jp.vn/",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-json/wp/v2/users",
+      "passed": true
+    },
+    {
+      "name": "REST users denied: /fractionalcc-jp.vn/wp-json/wp/v2/users",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: ?rest_route=/wp/v2/users",
+      "passed": true
+    },
+    {
+      "name": "REST users denied: /fractionalcc-jp.vn/?rest_route=/wp/v2/users",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: ?rest_route=%2Fwp%2Fv2%2Fusers",
+      "passed": true
+    },
+    {
+      "name": "REST users denied: /fractionalcc-jp.vn/?rest_route=%2Fwp%2Fv2%2Fusers",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-json/wp/v2/%75sers",
+      "passed": true
+    },
+    {
+      "name": "REST users denied: /fractionalcc-jp.vn/wp-json/wp/v2/%75sers",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-json/wp/v2/users/1",
+      "passed": true
+    },
+    {
+      "name": "REST users denied: /fractionalcc-jp.vn/wp-json/wp/v2/users/1",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: ?author=1",
+      "passed": true
+    },
+    {
+      "name": "Author scan redirects to home: /fractionalcc-jp.vn/",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: xmlrpc.php",
+      "passed": true
+    },
+    {
+      "name": "XML-RPC denied: /fractionalcc-jp.vn/",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: .env",
+      "passed": true
+    },
+    {
+      "name": "Sensitive file path inaccessible: .env",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: .git/HEAD",
+      "passed": true
+    },
+    {
+      "name": "Sensitive file path inaccessible: .git/HEAD",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-config.php.bak",
+      "passed": true
+    },
+    {
+      "name": "Sensitive file path inaccessible: wp-config.php.bak",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: readme.html",
+      "passed": true
+    },
+    {
+      "name": "Sensitive file path inaccessible: readme.html",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: ",
+      "passed": true
+    },
+    {
+      "name": "QA form nonce rendered.",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-admin/admin-ajax.php",
+      "passed": true
+    },
+    {
+      "name": "Malformed HTTP order rejected: _fcc_nonce",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-admin/admin-ajax.php",
+      "passed": true
+    },
+    {
+      "name": "Malformed HTTP order rejected: agree_terms",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-admin/admin-ajax.php",
+      "passed": true
+    },
+    {
+      "name": "Malformed HTTP order rejected: customer_name[]",
+      "passed": true
+    },
+    {
+      "name": "No PHP diagnostics: wp-admin/admin-ajax.php",
+      "passed": true
+    },
+    {
+      "name": "Malformed HTTP order rejected: customer_note",
+      "passed": true
+    }
+  ]
+}

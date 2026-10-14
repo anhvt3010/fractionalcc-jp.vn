@@ -1,18 +1,19 @@
-[
-  {
-    "package": "project-core-v1.0.0.zip",
-    "files": 19,
-    "sha256": "1116A92A6AAB7BE2E116BA5EA73C052B517DDE69CDC806360D6BCA4B88CE2937",
-    "all_entries_match_source": true,
-    "crc_pass": true,
-    "root": "project-core/"
-  },
-  {
-    "package": "project-child-v1.0.0.zip",
-    "files": 135,
-    "sha256": "FE1CF236E6629AE64D930378AF4219DBBCBC2C71891221227845B2464F887364",
-    "all_entries_match_source": true,
-    "crc_pass": true,
-    "root": "project-child/"
-  }
-]
+{
+  "passed": true,
+  "packages": [
+    {
+      "package": "project-core-v1.0.0.zip",
+      "sha256": "7b09271186dc73e72a2fb58ccdae529ff6fe6c8ada55f0ac06784245ba8a3303",
+      "entries": 21,
+      "sourceMatches": true,
+      "crcValid": true
+    },
+    {
+      "package": "project-child-v1.0.0.zip",
+      "sha256": "58489796de3d164d4610a015bc33bf2497d2d7e87bd9b12b22cd8307c5cdf5d8",
+      "entries": 129,
+      "sourceMatches": true,
+      "crcValid": true
+    }
+  ]
+}

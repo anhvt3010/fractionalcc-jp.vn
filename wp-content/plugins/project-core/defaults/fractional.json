@@ -1,5 +1,5 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.2",
     "pages": {
         "shared": {
             "title": "Thông tin và giao diện chung Fractional CC",
@@ -18,7 +18,7 @@
                 "fcc_ui_e28520e695bc79": {
                     "type": "text",
                     "key": "field_fcc_ui_e28520e695bc79",
-                    "value": "Công ty TNHH BUI DANG-JP"
+                    "value": "CÔNG TY TNHH JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_af94720c731fdb": {
                     "type": "text",
@@ -43,7 +43,7 @@
                 "fcc_ui_f2b1ceab0294d6": {
                     "type": "text",
                     "key": "field_fcc_ui_f2b1ceab0294d6",
-                    "value": "BUI DANG-JP"
+                    "value": "JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_bb054f8c102d4d": {
                     "type": "text",
@@ -158,12 +158,12 @@
                 "fcc_ui_8aa241ea23c189": {
                     "type": "text",
                     "key": "field_fcc_ui_8aa241ea23c189",
-                    "value": "Chính sách đổi trả & hỗ trợ"
+                    "value": "Quy định đổi trả"
                 },
                 "fcc_ui_369ace7ad7eef2": {
                     "type": "text",
                     "key": "field_fcc_ui_369ace7ad7eef2",
-                    "value": "Chính sách giao hàng & kiểm tra"
+                    "value": "Chính sách vận chuyển & đồng kiểm"
                 },
                 "fcc_ui_9e1d7490e3a45a": {
                     "type": "text",
@@ -173,12 +173,12 @@
                 "fcc_ui_0a8730dc13bdc0": {
                     "type": "text",
                     "key": "field_fcc_ui_0a8730dc13bdc0",
-                    "value": "Hướng dẫn phân biệt hàng chính hãng"
+                    "value": "Nhận diện hàng chính hãng"
                 },
                 "fcc_ui_3e12c24e7634b2": {
                     "type": "text",
                     "key": "field_fcc_ui_3e12c24e7634b2",
-                    "value": "Copyright © 2026 Fractional CC Vietnam - Phân phối bởi Công ty TNHH BUI DANG-JP."
+                    "value": "Copyright © 2026 Fractional CC Vietnam - Phân phối bởi CÔNG TY TNHH JP- BÙI ĐẶNG."
                 },
                 "fcc_ui_f8b498e754b279": {
                     "type": "text",
@@ -203,7 +203,7 @@
                 "fcc_ui_f2b083aef82352": {
                     "type": "text",
                     "key": "field_fcc_ui_f2b083aef82352",
-                    "value": "BUI DANG-JP PHÂN PHỐI ĐỘC QUYỀN"
+                    "value": "JP- BÙI ĐẶNG PHÂN PHỐI ĐỘC QUYỀN"
                 },
                 "fcc_ui_e97d9d953b50ea": {
                     "type": "text",
@@ -258,12 +258,12 @@
                 "fcc_ui_ab373a90954b36": {
                     "type": "text",
                     "key": "field_fcc_ui_ab373a90954b36",
-                    "value": "Fractional CC Nhật Bản & BUI DANG-JP"
+                    "value": "Fractional CC Nhật Bản & JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_1a0029c547f307": {
                     "type": "image",
                     "key": "field_fcc_ui_1a0029c547f307",
-                    "value": "assets/images/brand/fractional-cc-logo.png"
+                    "value": "assets/images/approved/497b2c703e610b15-fractional-cc-logo.png"
                 },
                 "fcc_ui_9426ed1ade78ab": {
                     "type": "text",
@@ -273,17 +273,17 @@
                 "fcc_ui_be08f7c57f78ec": {
                     "type": "image",
                     "key": "field_fcc_ui_be08f7c57f78ec",
-                    "value": "assets/images/brand/bui-dang-jp-logo.png"
+                    "value": "assets/images/approved/dabad47cad701da5-bui-dang-jp-logo.png"
                 },
                 "fcc_ui_61ed77463dff18": {
                     "type": "text",
                     "key": "field_fcc_ui_61ed77463dff18",
-                    "value": "Công ty BUI DANG-JP"
+                    "value": "CÔNG TY TNHH JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_a941b421c5e005": {
                     "type": "text",
                     "key": "field_fcc_ui_a941b421c5e005",
-                    "value": "BUI DANG-JP - Phân phối độc quyền tại Việt Nam"
+                    "value": "JP- BÙI ĐẶNG - Phân phối độc quyền tại Việt Nam"
                 },
                 "fcc_ui_453bd451ef0751": {
                     "type": "image",
@@ -303,12 +303,12 @@
                 "fcc_ui_0db343ac35a4d7": {
                     "type": "text",
                     "key": "field_fcc_ui_0db343ac35a4d7",
-                    "value": "Phân phối độc quyền bởi BUI DANG-JP"
+                    "value": "Phân phối độc quyền bởi JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_6d82420f357692": {
                     "type": "text",
                     "key": "field_fcc_ui_6d82420f357692",
-                    "value": "BUI DANG-JP"
+                    "value": "JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_2e477cc3b39cf0": {
                     "type": "text",
@@ -323,7 +323,7 @@
                 "fcc_ui_a614a94ea4e266": {
                     "type": "image",
                     "key": "field_fcc_ui_a614a94ea4e266",
-                    "value": "assets/images/products/excel-20261013/mandelic-shot-peel-essence.png"
+                    "value": "assets/images/products/mandelic-peel-essence.png"
                 },
                 "fcc_ui_65ad6ef34a2704": {
                     "type": "text",
@@ -348,7 +348,7 @@
                 "fcc_ui_fcb9a5558a4aa3": {
                     "type": "image",
                     "key": "field_fcc_ui_fcb9a5558a4aa3",
-                    "value": "assets/images/products/excel-20261013/needle-serum-c.png"
+                    "value": "assets/images/products/needle-serum-c.png"
                 },
                 "fcc_ui_f7797e05b4a8ae": {
                     "type": "text",
@@ -358,7 +358,7 @@
                 "fcc_ui_1a1ddc977ed16f": {
                     "type": "image",
                     "key": "field_fcc_ui_1a1ddc977ed16f",
-                    "value": "assets/images/products/excel-20261013/needle-serum-cx4.png"
+                    "value": "assets/images/products/needle-serum-cx4.png"
                 },
                 "fcc_ui_b710ed3cad3b13": {
                     "type": "text",
@@ -368,7 +368,7 @@
                 "fcc_ui_22aa1c028e8ab6": {
                     "type": "image",
                     "key": "field_fcc_ui_22aa1c028e8ab6",
-                    "value": "assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png"
+                    "value": "assets/images/products/pdrn-toning-essence.png"
                 },
                 "fcc_ui_7480dd983a2559": {
                     "type": "text",
@@ -378,7 +378,7 @@
                 "fcc_ui_80f56b22dbc19b": {
                     "type": "image",
                     "key": "field_fcc_ui_80f56b22dbc19b",
-                    "value": "assets/images/products/excel-20261013/pdrn-shot-lip-essence.png"
+                    "value": "assets/images/products/pdrn-lip-essence.png"
                 },
                 "fcc_ui_0f4c7a9a698f94": {
                     "type": "text",
@@ -508,7 +508,7 @@
                 "fcc_ui_dc30959abe8847": {
                     "type": "text",
                     "key": "field_fcc_ui_dc30959abe8847",
-                    "value": "Logo Công ty TNHH BUI DANG-JP"
+                    "value": "Logo CÔNG TY TNHH JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_97054d25b36218": {
                     "type": "text",
@@ -518,7 +518,7 @@
                 "fcc_ui_43470c268bc605": {
                     "type": "text",
                     "key": "field_fcc_ui_43470c268bc605",
-                    "value": "Mở văn bản chứng nhận phân phối do BUI DANG-JP cung cấp trên Google Drive"
+                    "value": "Mở văn bản chứng nhận phân phối do JP- BÙI ĐẶNG cung cấp trên Google Drive"
                 },
                 "fcc_ui_e92a39efe375cb": {
                     "type": "text",
@@ -553,7 +553,7 @@
                 "fcc_ui_435f1980942f04": {
                     "type": "text",
                     "key": "field_fcc_ui_435f1980942f04",
-                    "value": "BUI DANG-JP Logo"
+                    "value": "JP- BÙI ĐẶNG Logo"
                 },
                 "fcc_ui_484f408cddfc35": {
                     "type": "text",
@@ -618,7 +618,7 @@
                 "fcc_ui_329c1993aecb38": {
                     "type": "text",
                     "key": "field_fcc_ui_329c1993aecb38",
-                    "value": "Thương hiệu chăm sóc da Nhật Bản, phân phối độc quyền tại Việt Nam bởi BUI DANG-JP."
+                    "value": "Thương hiệu chăm sóc da Nhật Bản, phân phối độc quyền tại Việt Nam bởi CÔNG TY TNHH JP- BÙI ĐẶNG."
                 },
                 "fcc_ui_46ad108e0789e5": {
                     "type": "text",
@@ -698,7 +698,7 @@
                 "fcc_ui_3a43752a881468": {
                     "type": "text",
                     "key": "field_fcc_ui_3a43752a881468",
-                    "value": "Độc Quyền BUI DANG-JP"
+                    "value": "Độc Quyền JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_2cacb01c3941c0": {
                     "type": "text",
@@ -743,7 +743,7 @@
                 "fcc_ui_f1cf9cbf3a1a05": {
                     "type": "text",
                     "key": "field_fcc_ui_f1cf9cbf3a1a05",
-                    "value": "Phân Phối BUI DANG-JP"
+                    "value": "Phân Phối JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_20748aba1fa4a2": {
                     "type": "text",
@@ -843,7 +843,7 @@
                 "fcc_ui_2812b49f68fc1b": {
                     "type": "text",
                     "key": "field_fcc_ui_2812b49f68fc1b",
-                    "value": "Công ty TNHH BUI DANG-JP"
+                    "value": "CÔNG TY TNHH JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_81827da6a441bb": {
                     "type": "text",
@@ -928,7 +928,7 @@
                 "fcc_ui_162da04035299f": {
                     "type": "textarea",
                     "key": "field_fcc_ui_162da04035299f",
-                    "value": "Điền thông tin nhận hàng nhanh chóng. Chuyên viên BUI DANG-JP sẽ liên hệ xác nhận đơn và gửi hàng tận nơi cho bạn."
+                    "value": "Điền thông tin nhận hàng nhanh chóng. Chuyên viên JP- BÙI ĐẶNG sẽ liên hệ xác nhận đơn và gửi hàng tận nơi cho bạn."
                 },
                 "fcc_ui_c0f92fda1faf20": {
                     "type": "text",
@@ -998,12 +998,12 @@
                 "fcc_ui_c3e7324c41894e": {
                     "type": "text",
                     "key": "field_fcc_ui_c3e7324c41894e",
-                    "value": "Công ty TNHH BUI DANG–JP"
+                    "value": "CÔNG TY TNHH JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_fc9b4ff0aa7808": {
                     "type": "text",
                     "key": "field_fcc_ui_fc9b4ff0aa7808",
-                    "value": "BUI DANG–JP"
+                    "value": "JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_8b675966c60cc0": {
                     "type": "text",
@@ -1118,7 +1118,7 @@
                 "fcc_ui_m_5c77cd896de7": {
                     "type": "text",
                     "key": "field_fcc_ui_m_5c77cd896de7",
-                    "value": "Messenger"
+                    "value": "Facebook"
                 },
                 "fcc_ui_m_f412d16b3a3e": {
                     "type": "text",
@@ -1173,7 +1173,7 @@
                 "fcc_ui_m_65d268dfc2a2": {
                     "type": "text",
                     "key": "field_fcc_ui_m_65d268dfc2a2",
-                    "value": "✓ Phân phối độc quyền BUI DANG-JP"
+                    "value": "✓ Phân phối độc quyền JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_m_f0739114e699": {
                     "type": "text",
@@ -1223,7 +1223,7 @@
                 "fcc_site_favicon": {
                     "type": "image",
                     "key": "field_fcc_site_favicon",
-                    "value": "assets/images/brand/bui-dang-jp-logo.png"
+                    "value": "assets/images/approved/dabad47cad701da5-bui-dang-jp-logo.png"
                 },
                 "fcc_ui_rating_reviews": {
                     "type": "text",
@@ -1378,7 +1378,7 @@
                 "fcc_ui_msg_f6aa50ef87": {
                     "type": "text",
                     "key": "field_fcc_ui_msg_f6aa50ef87",
-                    "value": "Đặt hàng thành công! BUI DANG-JP sẽ liên hệ với bạn sớm nhất."
+                    "value": "Đặt hàng thành công! JP- BÙI ĐẶNG sẽ liên hệ với bạn sớm nhất."
                 },
                 "fcc_ui_msg_989ccc6d21": {
                     "type": "text",
@@ -1443,7 +1443,7 @@
                 "fcc_distributor": {
                     "type": "text",
                     "key": "field_fcc_distributor",
-                    "value": "Công ty TNHH BUI DANG-JP"
+                    "value": "CÔNG TY TNHH JP- BÙI ĐẶNG"
                 },
                 "fcc_distributorRole": {
                     "type": "text",
@@ -1488,17 +1488,17 @@
                 "fcc_hotlineDisplay": {
                     "type": "text",
                     "key": "field_fcc_hotlineDisplay",
-                    "value": "0985 561 862"
+                    "value": "098 556 1862"
                 },
                 "fcc_zaloLink": {
                     "type": "url",
                     "key": "field_fcc_zaloLink",
-                    "value": "https://zalo.me/0985561862"
+                    "value": "https://zalo.me/84985561862"
                 },
                 "fcc_messengerLink": {
                     "type": "url",
                     "key": "field_fcc_messengerLink",
-                    "value": ""
+                    "value": "https://web.facebook.com/hangnhatchomoinha.vn"
                 },
                 "fcc_email": {
                     "type": "email",
@@ -1508,7 +1508,7 @@
                 "fcc_addressHN": {
                     "type": "text",
                     "key": "field_fcc_addressHN",
-                    "value": ""
+                    "value": "Tầng 1, CT2, Mễ Trì Thượng, Nam Từ Liêm, Hà Nội"
                 },
                 "fcc_addressHCM": {
                     "type": "text",
@@ -1519,6 +1519,16 @@
                     "type": "select",
                     "key": "field_fcc_content_status",
                     "value": "approved"
+                },
+                "fcc_phone": {
+                    "type": "text",
+                    "key": "field_fcc_phone",
+                    "value": "0965180859"
+                },
+                "fcc_phoneDisplay": {
+                    "type": "text",
+                    "key": "field_fcc_phoneDisplay",
+                    "value": "096 518 0859"
                 }
             },
             "content": "",
@@ -1533,12 +1543,12 @@
                 "fcc_home_seo_title": {
                     "type": "text",
                     "key": "field_fcc_home_seo_title",
-                    "value": "Fractional CC Nhật Bản | Phân Phối Độc Quyền Bởi BUI DANG-JP"
+                    "value": "Fractional CC Nhật Bản | Phân Phối Độc Quyền Bởi JP- BÙI ĐẶNG"
                 },
                 "fcc_home_seo_description": {
                     "type": "textarea",
                     "key": "field_fcc_home_seo_description",
-                    "value": "Đánh thức vẻ đẹp làn da với công nghệ chăm sóc da Nhật Bản. Khám phá giải pháp chăm sóc da cùng Fractional CC – thương hiệu mỹ phẩm Nhật Bản được phân phối độc quyền bởi BUI DANG-JP tại Việt Nam."
+                    "value": "Đánh thức vẻ đẹp làn da với công nghệ chăm sóc da Nhật Bản. Khám phá giải pháp chăm sóc da cùng Fractional CC – thương hiệu mỹ phẩm Nhật Bản được phân phối độc quyền bởi JP- BÙI ĐẶNG tại Việt Nam."
                 },
                 "fcc_ui_fbc8886b40af10": {
                     "type": "text",
@@ -1548,7 +1558,7 @@
                 "fcc_ui_1b556d0408712c": {
                     "type": "text",
                     "key": "field_fcc_ui_1b556d0408712c",
-                    "value": "Độc Quyền BUI DANG-JP"
+                    "value": "Độc Quyền JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_487435027051ea": {
                     "type": "text",
@@ -1603,7 +1613,7 @@
                 "fcc_ui_7f36fd34e50688": {
                     "type": "text",
                     "key": "field_fcc_ui_7f36fd34e50688",
-                    "value": "Độc Quyền BUI DANG-JP"
+                    "value": "Độc Quyền JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_3cb5377b9686ad": {
                     "type": "text",
@@ -1838,7 +1848,7 @@
                 "fcc_ui_72e21cf4e1c4e6": {
                     "type": "textarea",
                     "key": "field_fcc_ui_72e21cf4e1c4e6",
-                    "value": "Fractional CC mang đến các giải pháp chăm sóc da chuyên sâu, tập trung vào dưỡng sáng, cải thiện kết cấu da và chăm sóc các dấu hiệu lão hóa thông qua sự kết hợp giữa công nghệ vi kim và các thành phần chăm sóc da nổi bật. Tại Việt Nam, Fractional CC được phân phối độc quyền bởi BUI DANG-JP, hướng đến việc đưa các sản phẩm chăm sóc da Nhật Bản đến gần hơn với người tiêu dùng Việt."
+                    "value": "Fractional CC mang đến các giải pháp chăm sóc da chuyên sâu, tập trung vào dưỡng sáng, cải thiện kết cấu da và chăm sóc các dấu hiệu lão hóa thông qua sự kết hợp giữa công nghệ vi kim và các thành phần chăm sóc da nổi bật. Tại Việt Nam, Fractional CC được phân phối độc quyền bởi JP- BÙI ĐẶNG, hướng đến việc đưa các sản phẩm chăm sóc da Nhật Bản đến gần hơn với người tiêu dùng Việt."
                 },
                 "fcc_ui_89f836dd883298": {
                     "type": "text",
@@ -1908,12 +1918,12 @@
                 "fcc_ui_brand_msg_line2": {
                     "type": "text",
                     "key": "field_fcc_ui_brand_msg_line2",
-                    "value": "BUI DANG-JP – Đồng hành cùng bạn khám phá tinh hoa chăm sóc da Nhật Bản."
+                    "value": "JP- BÙI ĐẶNG – Đồng hành cùng bạn khám phá tinh hoa chăm sóc da Nhật Bản."
                 },
                 "fcc_ui_brand_image": {
                     "type": "image",
                     "key": "field_fcc_ui_brand_image",
-                    "value": "assets/images/approved/165b8e33abf2f21f-fractional-lineup-full-2.jpg"
+                    "value": "assets/images/approved/165b8e33abf2f21f-165b8e33abf2f21f-fractional-lineup-full-2.jpg"
                 },
                 "fcc_ui_brand_image_alt": {
                     "type": "text",
@@ -1923,17 +1933,17 @@
                 "fcc_ui_brand_card_title": {
                     "type": "text",
                     "key": "field_fcc_ui_brand_card_title",
-                    "value": "Giảm đến 25% mỹ phẩm & TPCN Nhật"
+                    "value": ""
                 },
                 "fcc_ui_brand_card_desc": {
                     "type": "text",
                     "key": "field_fcc_ui_brand_card_desc",
-                    "value": "Deal tốt cho skincare, vitamin và đặc sản Nhật Bản."
+                    "value": "Hình ảnh sản phẩm, bao bì và phong cách thương hiệu."
                 },
                 "fcc_ui_brand_caption": {
                     "type": "text",
                     "key": "field_fcc_ui_brand_caption",
-                    "value": "Hình ảnh sản phẩm, bao bì và phong cách thương hiệu"
+                    "value": "Hình ảnh sản phẩm, bao bì và phong cách thương hiệu."
                 },
                 "fcc_ui_ffed63b9bad263": {
                     "type": "text",
@@ -1953,7 +1963,7 @@
                 "fcc_ui_6b5c492b8ee8c7": {
                     "type": "text",
                     "key": "field_fcc_ui_6b5c492b8ee8c7",
-                    "value": "Phân Phối BUI DANG-JP"
+                    "value": "Phân Phối JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_46606573b70ffc": {
                     "type": "text",
@@ -2043,7 +2053,7 @@
                 "fcc_ui_ab00a54528cf05": {
                     "type": "textarea",
                     "key": "field_fcc_ui_ab00a54528cf05",
-                    "value": "Chọn sản phẩm theo nhu cầu của bạn. Liên hệ BUI DANG-JP để xác nhận giá các sản phẩm chưa niêm yết và được tư vấn cách dùng."
+                    "value": "Chọn sản phẩm theo nhu cầu của bạn. Liên hệ JP- BÙI ĐẶNG để xác nhận giá các sản phẩm chưa niêm yết và được tư vấn cách dùng."
                 },
                 "fcc_ui_cd76fad1d8c8da": {
                     "type": "text",
@@ -2668,7 +2678,7 @@
                 "fcc_ui_3dcdc80e3c2a9a": {
                     "type": "textarea",
                     "key": "field_fcc_ui_3dcdc80e3c2a9a",
-                    "value": "Lưu ý: Không tự ý kết hợp các hoạt chất treatment nồng độ cao cùng lúc. Nếu da có châm chích kéo dài hoặc đỏ rát bất thường, ngưng sử dụng và liên hệ chuyên viên BUI DANG-JP qua Hotline 0985 561 862 để được hỗ trợ."
+                    "value": "Lưu ý: Không tự ý kết hợp các hoạt chất treatment nồng độ cao cùng lúc. Nếu da có châm chích kéo dài hoặc đỏ rát bất thường, ngưng sử dụng và liên hệ chuyên viên JP- BÙI ĐẶNG qua Hotline 0985 561 862 để được hỗ trợ."
                 },
                 "fcc_ui_120d1c810750c2": {
                     "type": "text",
@@ -2683,12 +2693,12 @@
                 "fcc_ui_ae9582f3595962": {
                     "type": "textarea",
                     "key": "field_fcc_ui_ae9582f3595962",
-                    "value": "Những chia sẻ chân thực từ khách hàng và chuyên gia chăm sóc da sau khi trải nghiệm sản phẩm Fractional CC phân phối bởi BUI DANG-JP."
+                    "value": "Những chia sẻ chân thực từ khách hàng và chuyên gia chăm sóc da sau khi trải nghiệm sản phẩm Fractional CC phân phối bởi JP- BÙI ĐẶNG."
                 },
                 "fcc_ui_d372f01686d8a2": {
                     "type": "text",
                     "key": "field_fcc_ui_d372f01686d8a2",
-                    "value": "4.95"
+                    "value": "5.0"
                 },
                 "fcc_ui_f3a639284cdbeb": {
                     "type": "text",
@@ -2748,7 +2758,7 @@
                 "fcc_ui_b87712fd5f7219": {
                     "type": "text",
                     "key": "field_fcc_ui_b87712fd5f7219",
-                    "value": "✓ Đã xác thực mua BUI DANG-JP"
+                    "value": "✓ Đã xác thực mua JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_601a57d8bbdd68": {
                     "type": "text",
@@ -2813,7 +2823,7 @@
                 "fcc_ui_ca99894f68667f": {
                     "type": "text",
                     "key": "field_fcc_ui_ca99894f68667f",
-                    "value": "4.9 / 5.0"
+                    "value": "5.0 / 5.0"
                 },
                 "fcc_ui_e06ce21cb42c3e": {
                     "type": "text",
@@ -2958,7 +2968,7 @@
                 "fcc_ui_b9b5752a78e7bd": {
                     "type": "text",
                     "key": "field_fcc_ui_b9b5752a78e7bd",
-                    "value": "Fractional CC – Phân Phối Độc Quyền Bởi BUI DANG-JP Tại Việt Nam"
+                    "value": "Fractional CC – Phân Phối Độc Quyền Bởi JP- BÙI ĐẶNG Tại Việt Nam"
                 },
                 "fcc_ui_890efa08eba42c": {
                     "type": "textarea",
@@ -2968,7 +2978,7 @@
                 "fcc_ui_a2e7754f312ed0": {
                     "type": "text",
                     "key": "field_fcc_ui_a2e7754f312ed0",
-                    "value": "CÔNG TY TNHH BUI DANG-JP"
+                    "value": "CÔNG TY TNHH JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_7b67317f0bc70d": {
                     "type": "text",
@@ -3003,7 +3013,7 @@
                 "fcc_ui_4d77ee5ccc1f01": {
                     "type": "text",
                     "key": "field_fcc_ui_4d77ee5ccc1f01",
-                    "value": "Công ty TNHH BUI DANG-JP"
+                    "value": "CÔNG TY TNHH JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_3488d054a6146a": {
                     "type": "text",
@@ -3208,7 +3218,7 @@
                 "fcc_ui_cbee97166e1823": {
                     "type": "text",
                     "key": "field_fcc_ui_cbee97166e1823",
-                    "value": "BUI DANG-JP độc quyền phân phối tại Việt Nam"
+                    "value": "JP- BÙI ĐẶNG độc quyền phân phối tại Việt Nam"
                 },
                 "fcc_ui_5cfb422b9c2d84": {
                     "type": "text",
@@ -3263,7 +3273,7 @@
                 "fcc_ui_1762024d7a1788": {
                     "type": "text",
                     "key": "field_fcc_ui_1762024d7a1788",
-                    "value": "liên hệ BUI DANG-JP"
+                    "value": "liên hệ JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_d8553b71a83147": {
                     "type": "text",
@@ -3398,7 +3408,7 @@
                 "fcc_ui_47dace935cab9f": {
                     "type": "text",
                     "key": "field_fcc_ui_47dace935cab9f",
-                    "value": "Làm thế nào để mua hàng chính hãng từ BUI DANG-JP?"
+                    "value": "Làm thế nào để mua hàng chính hãng từ JP- BÙI ĐẶNG?"
                 },
                 "fcc_ui_7a1eecc3ae4069": {
                     "type": "text",
@@ -3408,7 +3418,7 @@
                 "fcc_ui_81fc1b5eb38e46": {
                     "type": "text",
                     "key": "field_fcc_ui_81fc1b5eb38e46",
-                    "value": "đặt mua Fractional CC qua các kênh bán hàng chính thức của BUI DANG-JP"
+                    "value": "đặt mua Fractional CC qua các kênh bán hàng chính thức của JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_905bfb60b1175b": {
                     "type": "text",
@@ -3453,12 +3463,12 @@
                 "fcc_ui_25a82794037d75": {
                     "type": "text",
                     "key": "field_fcc_ui_25a82794037d75",
-                    "value": "Đăng Ký Đặt Hàng Trực Tiếp Từ BUI DANG-JP"
+                    "value": "Đăng Ký Đặt Hàng Trực Tiếp Từ JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_1d8af52afe2c00": {
                     "type": "text",
                     "key": "field_fcc_ui_1d8af52afe2c00",
-                    "value": "Điền thông tin, kiểm tra nội dung rồi gửi qua Zalo hoặc email để BUI DANG-JP tư vấn và xác nhận đơn hàng."
+                    "value": "Điền thông tin, kiểm tra nội dung rồi gửi qua Zalo hoặc email để JP- BÙI ĐẶNG tư vấn và xác nhận đơn hàng."
                 },
                 "fcc_ui_37595032923f43": {
                     "type": "text",
@@ -3493,7 +3503,7 @@
                 "fcc_ui_1194cfb117972b": {
                     "type": "text",
                     "key": "field_fcc_ui_1194cfb117972b",
-                    "value": "Tôi đồng ý để chuyên viên BUI DANG-JP liên hệ tư vấn và xác nhận đơn hàng theo"
+                    "value": "Tôi đồng ý để chuyên viên JP- BÙI ĐẶNG liên hệ tư vấn và xác nhận đơn hàng theo"
                 },
                 "fcc_ui_b972bd8a95f745": {
                     "type": "text",
@@ -3523,7 +3533,7 @@
                 "fcc_ui_07bd799199d8cf": {
                     "type": "text",
                     "key": "field_fcc_ui_07bd799199d8cf",
-                    "value": "✓ Phân phối độc quyền BUI DANG-JP"
+                    "value": "✓ Phân phối độc quyền JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_0c54117f7f63bc": {
                     "type": "text",
@@ -3548,12 +3558,12 @@
                 "fcc_ui_d7e807fe2d526b": {
                     "type": "text",
                     "key": "field_fcc_ui_d7e807fe2d526b",
-                    "value": "BUI DANG - JP"
+                    "value": "JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_cb085d11a08144": {
                     "type": "text",
                     "key": "field_fcc_ui_cb085d11a08144",
-                    "value": "FRACTIONAL CC NHẬT BẢN • ĐỘC QUYỀN BUI DANG-JP"
+                    "value": "FRACTIONAL CC NHẬT BẢN • ĐỘC QUYỀN JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_2c8d427ab152ee": {
                     "type": "text",
@@ -3568,7 +3578,7 @@
                 "fcc_ui_04e30839b767fe": {
                     "type": "text",
                     "key": "field_fcc_ui_04e30839b767fe",
-                    "value": "Khám phá giải pháp chăm sóc da chuẩn salon Tokyo và nhận tư vấn cách dùng chuyên sâu từ BUI DANG-JP."
+                    "value": "Khám phá giải pháp chăm sóc da chuẩn salon Tokyo và nhận tư vấn cách dùng chuyên sâu từ JP- BÙI ĐẶNG."
                 },
                 "fcc_ui_afd0f22490cecf": {
                     "type": "text",
@@ -3583,7 +3593,7 @@
                 "fcc_ui_17e4ce8db84c3e": {
                     "type": "text",
                     "key": "field_fcc_ui_17e4ce8db84c3e",
-                    "value": "Phân Phối Độc Quyền BUI DANG-JP"
+                    "value": "Phân Phối Độc Quyền JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_2a43e9c02aef8d": {
                     "type": "text",
@@ -4108,7 +4118,7 @@
                 "fcc_ui_dcbe07c7fc3d6a": {
                     "type": "text",
                     "key": "field_fcc_ui_dcbe07c7fc3d6a",
-                    "value": "Liên hệ BUI DANG-JP để được tư vấn lựa chọn sản phẩm và cách dùng theo hướng dẫn trên bao bì."
+                    "value": "Liên hệ JP- BÙI ĐẶNG để được tư vấn lựa chọn sản phẩm và cách dùng theo hướng dẫn trên bao bì."
                 },
                 "fcc_ui_b39d8a84e1bf08": {
                     "type": "text",
@@ -4213,7 +4223,7 @@
                 "fcc_policies_seo_description": {
                     "type": "textarea",
                     "key": "field_fcc_policies_seo_description",
-                    "value": "Chính sách bảo hành, đổi trả trong 7 ngày, quyền kiểm tra hàng trước khi thanh toán (đồng kiểm), chính sách giao hàng toàn quốc và cam kết bảo mật thông tin tại Fractional CC Vietnam - Phân phối độc quyền bởi BUI DANG-JP."
+                    "value": "Chính sách bảo hành, đổi trả trong 7 ngày, quyền kiểm tra hàng trước khi thanh toán (đồng kiểm), chính sách giao hàng toàn quốc và cam kết bảo mật thông tin tại Fractional CC Vietnam - Phân phối độc quyền bởi JP- BÙI ĐẶNG."
                 },
                 "fcc_ui_d38e7b5cf6c56f": {
                     "type": "text",
@@ -4243,7 +4253,7 @@
                 "fcc_ui_5436b60da36ee9": {
                     "type": "textarea",
                     "key": "field_fcc_ui_5436b60da36ee9",
-                    "value": "Hệ thống quy chuẩn vận hành, giao nhận đồng kiểm, đổi trả và bảo mật thông tin tuân thủ theo Nghị định TMĐT Bộ Công Thương và tiêu chuẩn phân phối chính hãng từ Fractional CC Tokyo."
+                    "value": "Hệ thống quy chuẩn vận hành, giao nhận đồng kiểm, đổi trả và bảo mật thông tin khách hàng và tiêu chuẩn nhận diện chính hãng từ Fractional CC Nhật Bản."
                 },
                 "fcc_ui_e69482d70a2e57": {
                     "type": "text",
@@ -4258,7 +4268,7 @@
                 "fcc_ui_4271e487f9792c": {
                     "type": "text",
                     "key": "field_fcc_ui_4271e487f9792c",
-                    "value": "Đổi Trả & Hoàn Tiền (7 Ngày)"
+                    "value": "Quy Định Đổi Trả"
                 },
                 "fcc_ui_e15773bc94c833": {
                     "type": "text",
@@ -4343,17 +4353,17 @@
                 "fcc_ui_9e248e743e36d4": {
                     "type": "text",
                     "key": "field_fcc_ui_9e248e743e36d4",
-                    "value": "Chính Sách Đổi Trả & Hoàn Tiền Trong 07 Ngày"
+                    "value": "Quy Định Đổi Trả"
                 },
                 "fcc_ui_7c832934d178c1": {
                     "type": "textarea",
                     "key": "field_fcc_ui_7c832934d178c1",
-                    "value": "Công ty TNHH BUI DANG-JP cam kết mang đến trải nghiệm an tâm tuyệt đối cho khách hàng khi đặt mua dòng dược mỹ phẩm vi kim sinh học Fractional CC chính ngạch Nhật Bản."
+                    "value": "CÔNG TY TNHH JP- BÙI ĐẶNG cam kết mang đến trải nghiệm an tâm tuyệt đối cho khách hàng khi đặt mua dòng dược mỹ phẩm vi kim sinh học Fractional CC chính ngạch Nhật Bản."
                 },
                 "fcc_ui_650e66a6706f4f": {
                     "type": "text",
                     "key": "field_fcc_ui_650e66a6706f4f",
-                    "value": "1.1. Các Trường Hợp Được Đổi Trả Miễn Phí 100%:"
+                    "value": "Các Trường Hợp Được Đổi Trả Miễn Phí 100%:"
                 },
                 "fcc_ui_4f404a15ff759b": {
                     "type": "text",
@@ -4418,7 +4428,7 @@
                 "fcc_ui_8fad1a8b45610d": {
                     "type": "text",
                     "key": "field_fcc_ui_8fad1a8b45610d",
-                    "value": "BUI DANG-JP chi trả 100%"
+                    "value": "JP- BÙI ĐẶNG chi trả 100%"
                 },
                 "fcc_ui_17a93d7c4c4b39": {
                     "type": "text",
@@ -4443,7 +4453,7 @@
                 "fcc_ui_c66784266bb91f": {
                     "type": "text",
                     "key": "field_fcc_ui_c66784266bb91f",
-                    "value": "BUI DANG-JP thực hiện chuyển khoản hoàn tiền 100% trong vòng"
+                    "value": "JP- BÙI ĐẶNG thực hiện chuyển khoản hoàn tiền 100% trong vòng"
                 },
                 "fcc_ui_371f456f78a956": {
                     "type": "text",
@@ -4473,7 +4483,7 @@
                 "fcc_ui_f89f301b606b5f": {
                     "type": "textarea",
                     "key": "field_fcc_ui_f89f301b606b5f",
-                    "value": "Nhằm đảm bảo sản phẩm được bảo quản ở điều kiện nhiệt độ tốt nhất trước khi đến tay người tiêu dùng, BUI DANG-JP hợp tác với các đơn vị chuyển phát nhanh hàng đầu (Viettel Post, GHTK, EMS)."
+                    "value": "Nhằm đảm bảo sản phẩm được bảo quản ở điều kiện nhiệt độ tốt nhất trước khi đến tay người tiêu dùng, JP- BÙI ĐẶNG hợp tác với các đơn vị chuyển phát nhanh hàng đầu (Viettel Post, GHTK, EMS)."
                 },
                 "fcc_ui_b16d676f798371": {
                     "type": "text",
@@ -4503,7 +4513,7 @@
                 "fcc_ui_1ebdbdb8c90566": {
                     "type": "text",
                     "key": "field_fcc_ui_1ebdbdb8c90566",
-                    "value": "Miễn phí cho đơn Combo"
+                    "value": "Thông báo minh bạch khi xác nhận"
                 },
                 "fcc_ui_aeb8df6d4b2d5d": {
                     "type": "text",
@@ -4523,7 +4533,7 @@
                 "fcc_ui_e627ccf6c2a176": {
                     "type": "text",
                     "key": "field_fcc_ui_e627ccf6c2a176",
-                    "value": "QUYỀN ĐỒNG KIỂM TỐI CAO:"
+                    "value": "LƯU Ý ĐỒNG KIỂM:"
                 },
                 "fcc_ui_0489d302ae2365": {
                     "type": "text",
@@ -4563,7 +4573,7 @@
                 "fcc_ui_1c78b374951fd2": {
                     "type": "textarea",
                     "key": "field_fcc_ui_1c78b374951fd2",
-                    "value": "Tuân thủ nghiêm ngặt theo Nghị định 52/2013/NĐ-CP và Luật Bảo vệ quyền lợi người tiêu dùng, chúng tôi cam kết bảo vệ toàn vẹn thông tin riêng tư của quý khách:"
+                    "value": "Tuân thủ nghiêm ngặt theo quy định pháp luật Việt Nam hiện hành về bảo vệ dữ liệu cá nhân và bảo vệ quyền lợi người tiêu dùng, chúng tôi cam kết bảo vệ toàn vẹn thông tin riêng tư của quý khách:"
                 },
                 "fcc_ui_1e2fa7b10e4871": {
                     "type": "text",
@@ -4583,12 +4593,12 @@
                 "fcc_ui_b32e927d2b6f7b": {
                     "type": "text",
                     "key": "field_fcc_ui_b32e927d2b6f7b",
-                    "value": "Hỗ trợ hướng dẫn quy trình sử dụng (routine sáng/tối) và chăm sóc phản hồi sau khi dùng thử Spicule."
+                    "value": "Hỗ trợ hướng dẫn quy trình sử dụng (routine sáng/tối) và chăm sóc phản hồi."
                 },
                 "fcc_ui_1dc1abb1f5f624": {
                     "type": "text",
                     "key": "field_fcc_ui_1dc1abb1f5f624",
-                    "value": "3.2. Cam Kết Bảo Vệ & Quyền Của Khách Hàng:"
+                    "value": "3.2. Cam kết bảo vệ và quyền của khách hàng:"
                 },
                 "fcc_ui_d139d0104af1f1": {
                     "type": "text",
@@ -4598,7 +4608,7 @@
                 "fcc_ui_c1ba563b9871d6": {
                     "type": "textarea",
                     "key": "field_fcc_ui_c1ba563b9871d6",
-                    "value": "Không cung cấp số điện thoại hoặc thông tin cá nhân của quý khách cho bất kỳ bên thứ ba nào vì mục đích quảng cáo rác."
+                    "value": "Chúng tôi không bán hoặc chia sẻ số điện thoại, thông tin cá nhân của quý khách cho bên thứ ba vì mục đích quảng cáo. Thông tin chỉ được chuyển cho đơn vị vận chuyển ở mức cần thiết để giao hàng."
                 },
                 "fcc_ui_6dbccd4e8f062f": {
                     "type": "text",
@@ -4608,7 +4618,7 @@
                 "fcc_ui_64f415c6d1c400": {
                     "type": "textarea",
                     "key": "field_fcc_ui_64f415c6d1c400",
-                    "value": "Khách hàng có quyền yêu cầu BUI DANG-JP xóa toàn bộ lịch sử tư vấn hoặc thông tin liên hệ khỏi hệ thống bất cứ lúc nào bằng cách nhắn tin Zalo hoặc gọi Hotline"
+                    "value": "Quý khách có quyền yêu cầu JP- BÙI ĐẶNG xóa toàn bộ lịch sử tư vấn hoặc thông tin liên hệ khỏi hệ thống bất cứ lúc nào bằng cách nhắn Zalo hoặc gọi Hotline"
                 },
                 "fcc_ui_974a12a81f8b5c": {
                     "type": "text",
@@ -4633,7 +4643,7 @@
                 "fcc_ui_a691eb957a5044": {
                     "type": "textarea",
                     "key": "field_fcc_ui_a691eb957a5044",
-                    "value": "Nhằm phòng ngừa triệt để các hình thức lừa đảo giả mạo trực tuyến, BUI DANG-JP áp dụng 2 phương thức thanh toán an toàn nhất hiện nay:"
+                    "value": "Nhằm phòng ngừa triệt để các hình thức lừa đảo giả mạo trực tuyến, JP- BÙI ĐẶNG áp dụng 2 phương thức thanh toán an toàn nhất hiện nay:"
                 },
                 "fcc_ui_94d0dbd5becd1c": {
                     "type": "text",
@@ -4653,7 +4663,7 @@
                 "fcc_ui_2c691acb847762": {
                     "type": "textarea",
                     "key": "field_fcc_ui_2c691acb847762",
-                    "value": "Được áp dụng khi khách hàng có nhu cầu gửi quà tặng hoặc chuyển khoản trước. Số tài khoản chính thức của công ty sẽ được chuyên viên cung cấp qua Zalo/Email có đuôi xác thực của BUI DANG-JP."
+                    "value": "Được áp dụng khi khách hàng có nhu cầu gửi quà tặng hoặc chuyển khoản trước. Số tài khoản chính thức của công ty sẽ được chuyên viên cung cấp qua Zalo/Email có đuôi xác thực của JP- BÙI ĐẶNG."
                 },
                 "fcc_ui_bab93d0d6723be": {
                     "type": "text",
@@ -4693,7 +4703,7 @@
                 "fcc_ui_9fc406403d545d": {
                     "type": "textarea",
                     "key": "field_fcc_ui_9fc406403d545d",
-                    "value": "Thể hiện rõ số công bố được cấp bởi Cục Quản Lý Dược – Bộ Y Tế Việt Nam, thành phần chi tiết, xuất xứ nhà máy Tokyo Nhật Bản và pháp nhân nhập khẩu Công ty TNHH BUI DANG-JP."
+                    "value": "Thể hiện rõ số công bố được cấp bởi Cục Quản Lý Dược – Bộ Y Tế Việt Nam, thành phần chi tiết, xuất xứ nhà máy Tokyo Nhật Bản và pháp nhân nhập khẩu CÔNG TY TNHH JP- BÙI ĐẶNG."
                 },
                 "fcc_ui_05ebf3db2d7867": {
                     "type": "text",
@@ -4788,7 +4798,7 @@
                 "fcc_ui_b2f17719051e8c": {
                     "type": "text",
                     "key": "field_fcc_ui_b2f17719051e8c",
-                    "value": "CÔNG TY TNHH BUI DANG–JP"
+                    "value": "CÔNG TY TNHH JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_a7422ed566e213": {
                     "type": "text",
@@ -4843,7 +4853,7 @@
                 "fcc_thankyou_seo_description": {
                     "type": "textarea",
                     "key": "field_fcc_thankyou_seo_description",
-                    "value": "Đơn hàng của bạn tại Fractional CC Vietnam đã được tiếp nhận thành công. Chuyên viên BUI DANG-JP sẽ liên hệ xác nhận và hướng dẫn sử dụng trong ít phút."
+                    "value": "Đơn hàng của bạn tại Fractional CC Vietnam đã được tiếp nhận thành công. Chuyên viên JP- BÙI ĐẶNG sẽ liên hệ xác nhận và hướng dẫn sử dụng trong ít phút."
                 },
                 "fcc_ui_81d7044ccd69d4": {
                     "type": "text",
@@ -4863,7 +4873,7 @@
                 "fcc_ui_2386e32559e6dd": {
                     "type": "text",
                     "key": "field_fcc_ui_2386e32559e6dd",
-                    "value": "Công ty TNHH BUI DANG–JP"
+                    "value": "CÔNG TY TNHH JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_f5f79bb78ebd83": {
                     "type": "text",
@@ -5418,7 +5428,7 @@
                 "fcc_ui_m_24517189950b": {
                     "type": "text",
                     "key": "field_fcc_ui_m_24517189950b",
-                    "value": "TƯ VẤN 1:1 MIỄN PHÍ TỪ BUI DANG-JP"
+                    "value": "TƯ VẤN 1:1 MIỄN PHÍ TỪ JP- BÙI ĐẶNG"
                 },
                 "fcc_ui_m_11c8950d9cde": {
                     "type": "text",
@@ -5428,7 +5438,7 @@
                 "fcc_ui_m_74f09950bc89": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_74f09950bc89",
-                    "value": "Mỗi làn da có cấu trúc và lịch sử chăm sóc riêng biệt. Hãy liên hệ với chuyên viên BUI DANG-JP để được soi xét tình trạng da và tư vấn phác đồ Fractional CC phù hợp nhất với bạn."
+                    "value": "Mỗi làn da có cấu trúc và lịch sử chăm sóc riêng biệt. Hãy liên hệ với chuyên viên JP- BÙI ĐẶNG để được soi xét tình trạng da và tư vấn phác đồ Fractional CC phù hợp nhất với bạn."
                 },
                 "fcc_ui_m_1e850dd54933": {
                     "type": "text",
@@ -5478,7 +5488,7 @@
     },
     "brand": {
         "name": "Fractional CC",
-        "distributor": "Công ty TNHH BUI DANG-JP",
+        "distributor": "CÔNG TY TNHH JP- BÙI ĐẶNG",
         "distributorRole": "Phân phối độc quyền tại Việt Nam",
         "distributorLogo": "assets/images/brand/bui-dang-jp-logo.png",
         "brandLogo": "assets/images/brand/fractional-cc-logo.png",
@@ -5487,14 +5497,14 @@
         "subheadline": "Khám phá giải pháp chăm sóc da cùng Fractional CC – thương hiệu mỹ phẩm Nhật Bản",
         "origin": "Nhật Bản",
         "hotline": "0985561862",
-        "hotlineDisplay": "0985 561 862",
-        "zaloLink": "https://zalo.me/0985561862",
-        "messengerLink": "",
+        "hotlineDisplay": "098 556 1862",
+        "zaloLink": "https://zalo.me/84985561862",
+        "messengerLink": "https://web.facebook.com/hangnhatchomoinha.vn",
         "email": "jpbuidangco.ltd@gmail.com",
-        "addressHN": "",
+        "addressHN": "Tầng 1, CT2, Mễ Trì Thượng, Nam Từ Liêm, Hà Nội",
         "addressHCM": "",
         "certifications": [
-            "Phân phối độc quyền bởi BUI DANG-JP tại Việt Nam",
+            "Phân phối độc quyền bởi JP- BÙI ĐẶNG tại Việt Nam",
             "Thông tin công bố mỹ phẩm theo hồ sơ sản phẩm"
         ]
     },
@@ -5504,10 +5514,10 @@
             "name": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
             "slug": "mandelic-shot-peel-essence",
             "menuOrder": 0,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/excel-20261013/mandelic-shot-peel-essence.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/excel-20261013/mandelic-shot-peel-essence.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/excel-20261013/mandelic-shot-peel-essence.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/mandelic-peel-essence.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/mandelic-peel-essence.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/mandelic-peel-essence.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/excel-20261013/mandelic-shot-peel-essence.png"
+                "assets/images/products/mandelic-peel-essence.png"
             ],
             "actives": [
                 {
@@ -5594,7 +5604,7 @@
             "volume": "30ml",
             "originalPrice": "850000",
             "salePrice": "628000",
-            "image": "assets/images/products/excel-20261013/mandelic-shot-peel-essence.png",
+            "image": "assets/images/products/mandelic-peel-essence.png",
             "cbmp": "312953/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.9",
@@ -5615,10 +5625,10 @@
             "name": "Mặt nạ FractionalCC Needle Serum A Face Mask",
             "slug": "needle-serum-a-face-mask",
             "menuOrder": 1,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-a-face-mask.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/excel-20261013/needle-serum-a-face-mask.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-a-face-mask.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-mask-a.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-mask-a.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-mask-a.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/excel-20261013/needle-serum-a-face-mask.png"
+                "assets/images/products/needle-mask-a.png"
             ],
             "actives": [
                 {
@@ -5657,7 +5667,7 @@
             "volume": "Hộp 5 miếng (25ml / miếng)",
             "originalPrice": "",
             "salePrice": "386000",
-            "image": "assets/images/products/excel-20261013/needle-serum-a-face-mask.png",
+            "image": "assets/images/products/needle-mask-a.png",
             "cbmp": "312932/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.9",
@@ -5678,10 +5688,10 @@
             "name": "Serum dưỡng da FractionalCC Needle Serum A",
             "slug": "needle-serum-a",
             "menuOrder": 2,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-a.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/excel-20261013/needle-serum-a.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-a.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-serum-a.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-serum-a.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-serum-a.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/excel-20261013/needle-serum-a.png"
+                "assets/images/products/needle-serum-a.png"
             ],
             "actives": [
                 {
@@ -5727,7 +5737,7 @@
             "volume": "30ml",
             "originalPrice": "",
             "salePrice": "810000",
-            "image": "assets/images/products/excel-20261013/needle-serum-a.png",
+            "image": "assets/images/products/needle-serum-a.png",
             "cbmp": "312955/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.95",
@@ -5748,10 +5758,10 @@
             "name": "Serum dưỡng da FractionalCC Needle Serum AX4",
             "slug": "needle-serum-ax4",
             "menuOrder": 3,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-ax4.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/excel-20261013/needle-serum-ax4.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-ax4.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-serum-ax4.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-serum-ax4.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-serum-ax4.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/excel-20261013/needle-serum-ax4.png"
+                "assets/images/products/needle-serum-ax4.png"
             ],
             "actives": [
                 {
@@ -5790,7 +5800,7 @@
             "volume": "30ml",
             "originalPrice": "",
             "salePrice": "910000",
-            "image": "assets/images/products/excel-20261013/needle-serum-ax4.png",
+            "image": "assets/images/products/needle-serum-ax4.png",
             "cbmp": "312956/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.96",
@@ -5811,10 +5821,10 @@
             "name": "Mặt nạ FractionalCC Needle Serum C Face Mask",
             "slug": "needle-serum-c-face-mask",
             "menuOrder": 4,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-c-face-mask.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/excel-20261013/needle-serum-c-face-mask.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-c-face-mask.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-mask-c.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-mask-c.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-mask-c.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/excel-20261013/needle-serum-c-face-mask.png"
+                "assets/images/products/needle-mask-c.png"
             ],
             "actives": [
                 {
@@ -5860,7 +5870,7 @@
             "volume": "Hộp 5 miếng (25ml / miếng)",
             "originalPrice": "",
             "salePrice": "386000",
-            "image": "assets/images/products/excel-20261013/needle-serum-c-face-mask.png",
+            "image": "assets/images/products/needle-mask-c.png",
             "cbmp": "312931/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.89",
@@ -5881,10 +5891,10 @@
             "name": "Serum dưỡng da FractionalCC Needle Serum C",
             "slug": "needle-serum-c",
             "menuOrder": 5,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-c.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/excel-20261013/needle-serum-c.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-c.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-serum-c.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-serum-c.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-serum-c.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/excel-20261013/needle-serum-c.png"
+                "assets/images/products/needle-serum-c.png"
             ],
             "actives": [
                 {
@@ -5934,7 +5944,7 @@
             "volume": "30ml",
             "originalPrice": "",
             "salePrice": "790000",
-            "image": "assets/images/products/excel-20261013/needle-serum-c.png",
+            "image": "assets/images/products/needle-serum-c.png",
             "cbmp": "312954/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.94",
@@ -5955,10 +5965,10 @@
             "name": "Serum dưỡng da FractionalCC Needle Serum CX4",
             "slug": "needle-serum-cx4",
             "menuOrder": 6,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-cx4.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/excel-20261013/needle-serum-cx4.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/excel-20261013/needle-serum-cx4.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/needle-serum-cx4.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/needle-serum-cx4.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/needle-serum-cx4.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/excel-20261013/needle-serum-cx4.png"
+                "assets/images/products/needle-serum-cx4.png"
             ],
             "actives": [
                 {
@@ -6022,7 +6032,7 @@
             "volume": "30ml",
             "originalPrice": "",
             "salePrice": "910000",
-            "image": "assets/images/products/excel-20261013/needle-serum-cx4.png",
+            "image": "assets/images/products/needle-serum-cx4.png",
             "cbmp": "312957/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.97",
@@ -6043,10 +6053,10 @@
             "name": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence",
             "slug": "pdrn-shot-1000-toning-essence",
             "menuOrder": 7,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/pdrn-toning-essence.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/pdrn-toning-essence.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/pdrn-toning-essence.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png"
+                "assets/images/products/pdrn-toning-essence.png"
             ],
             "actives": [
                 {
@@ -6096,7 +6106,7 @@
             "volume": "50ml",
             "originalPrice": "",
             "salePrice": "630000",
-            "image": "assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png",
+            "image": "assets/images/products/pdrn-toning-essence.png",
             "cbmp": "312958/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.93",
@@ -6117,10 +6127,10 @@
             "name": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence",
             "slug": "pdrn-shot-lip-essence",
             "menuOrder": 8,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/excel-20261013/pdrn-shot-lip-essence.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/excel-20261013/pdrn-shot-lip-essence.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/excel-20261013/pdrn-shot-lip-essence.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/pdrn-lip-essence.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/pdrn-lip-essence.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/pdrn-lip-essence.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/excel-20261013/pdrn-shot-lip-essence.png"
+                "assets/images/products/pdrn-lip-essence.png"
             ],
             "actives": [
                 {
@@ -6169,7 +6179,7 @@
             "volume": "10ml",
             "originalPrice": "",
             "salePrice": "445000",
-            "image": "assets/images/products/excel-20261013/pdrn-shot-lip-essence.png",
+            "image": "assets/images/products/pdrn-lip-essence.png",
             "cbmp": "312950/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.88",
@@ -6190,10 +6200,10 @@
             "name": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper",
             "slug": "pdrn-shot-lip-plumper",
             "menuOrder": 9,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/excel-20261013/pdrn-shot-lip-plumper.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/excel-20261013/pdrn-shot-lip-plumper.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/excel-20261013/pdrn-shot-lip-plumper.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/products/pdrn-lip-plumper.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/products/pdrn-lip-plumper.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/products/pdrn-lip-plumper.png}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "gallery": [
-                "assets/images/products/excel-20261013/pdrn-shot-lip-plumper.png"
+                "assets/images/products/pdrn-lip-plumper.png"
             ],
             "actives": [
                 {
@@ -6231,7 +6241,7 @@
             "volume": "10ml",
             "originalPrice": "",
             "salePrice": "445000",
-            "image": "assets/images/products/excel-20261013/pdrn-shot-lip-plumper.png",
+            "image": "assets/images/products/pdrn-lip-plumper.png",
             "cbmp": "312959/26/CBMP-QLD",
             "legalStatus": "Đã đủ CBMP",
             "rating": "4.91",
@@ -6378,7 +6388,8 @@
             "originalPrice",
             "saveAmount"
         ],
-        "snapshotOverrides": "Current CMS values approved by the user; Excel remains historical provenance."
+        "snapshotOverrides": "Current CMS values approved by the user; Excel remains historical provenance.",
+        "imagePolicy": "Existing approved theme product images; embedded workbook photos are not used."
     },
     "homeCatalog": [
         "combo_C-CX4",
@@ -6714,8 +6725,8 @@
     "settings": {
         "blogname": "FractionalCC VN",
         "blogdescription": "",
-        "timezone_string": "",
-        "gmt_offset": "0",
+        "timezone_string": "Asia/Ho_Chi_Minh",
+        "gmt_offset": "7",
         "date_format": "j F, Y",
         "time_format": "g:i a",
         "start_of_week": "1",
@@ -6723,21 +6734,42 @@
     },
     "approval": {
         "status": "approved",
-        "date": "2026-10-13",
+        "date": "2026-10-14",
         "source": "User-approved current WordPress content, media, catalog and selections."
     },
     "media": {
-        "assets/images/mechanism/mechanism-skincare-routine.jpg": {
-            "sha256": "ed4b4a09e7ebd39a71d95f4efc2882c375493bf67213e84d664d30d912329f1f",
-            "title": "mechanism-skincare-routine",
-            "alt": "",
+        "assets/images/products/pdrn-lip-plumper.png": {
+            "sha256": "29480a720fa47a88d1182d95ca907eb094585d8da297d7463ecb905de5cc9ded",
+            "title": "pdrn-shot-lip-plumper-1",
+            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper",
             "caption": "",
             "description": ""
         },
-        "assets/images/approved/51e11fdc0492d8c5-mechanism-breakthrough.jpg": {
-            "sha256": "51e11fdc0492d8c50d845800214304a2681c18050cafc8042c6d25316b4724f0",
-            "title": "mechanism-breakthrough",
-            "alt": "",
+        "assets/images/products/needle-mask-c.png": {
+            "sha256": "e7fb05663fd5de2b5c9b54d00a9de7213b87f491036120b668b3c2a1054e0bcd",
+            "title": "needle-serum-c-face-mask-1",
+            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/products/needle-serum-ax4.png": {
+            "sha256": "bc39714a1ca83eaa4cc93e50686bf7d992f4893cea25209eb5205128c0a34d32",
+            "title": "needle-serum-ax4-4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/products/needle-serum-a.png": {
+            "sha256": "ca3717b18a7cf6292c90195072c5307c490216c0b65b5f93ecc468c9780ed9b9",
+            "title": "needle-serum-a-4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum A",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/products/needle-mask-a.png": {
+            "sha256": "9fa7913643293f43581acadb8571dec034ff5d89a1d106eced7d02c3acfac469",
+            "title": "needle-serum-a-face-mask-1",
+            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask",
             "caption": "",
             "description": ""
         },
@@ -6769,38 +6801,17 @@
             "caption": "",
             "description": ""
         },
-        "assets/images/products/excel-20261013/pdrn-shot-lip-plumper.png": {
-            "sha256": "566656f17ebe6146fc013fa7e92d9cb076e9e9af1d596478589a2db79916eedc",
-            "title": "pdrn-shot-lip-plumper-1",
-            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper",
+        "assets/images/mechanism/mechanism-skincare-routine.jpg": {
+            "sha256": "ed4b4a09e7ebd39a71d95f4efc2882c375493bf67213e84d664d30d912329f1f",
+            "title": "mechanism-skincare-routine",
+            "alt": "",
             "caption": "",
             "description": ""
         },
-        "assets/images/products/excel-20261013/needle-serum-c-face-mask.png": {
-            "sha256": "acfe8258b204abfbacb7c5856601e6ec28b3bfb9c10803a7855b80509c596503",
-            "title": "needle-serum-c-face-mask-1",
-            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/products/excel-20261013/needle-serum-ax4.png": {
-            "sha256": "cf208ab4cd9f95063e2440846eb5c42ab8127eddfa3b6f8e56bb91f92456f91a",
-            "title": "needle-serum-ax4-4",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/products/excel-20261013/needle-serum-a.png": {
-            "sha256": "9e6cb6fc63aa6b7a648c35a87f7966aa0d1ecdfdeff880ab785da4ec5963caa3",
-            "title": "needle-serum-a-4",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum A",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/products/excel-20261013/needle-serum-a-face-mask.png": {
-            "sha256": "92fc4fe351d718b4090e46cbac7e3923e7a646bd9e9d323d344ca114f1886353",
-            "title": "needle-serum-a-face-mask-1",
-            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask",
+        "assets/images/approved/51e11fdc0492d8c5-mechanism-breakthrough.jpg": {
+            "sha256": "51e11fdc0492d8c50d845800214304a2681c18050cafc8042c6d25316b4724f0",
+            "title": "mechanism-breakthrough",
+            "alt": "",
             "caption": "",
             "description": ""
         },
@@ -6811,7 +6822,7 @@
             "caption": "",
             "description": ""
         },
-        "assets/images/approved/165b8e33abf2f21f-fractional-lineup-full-2.jpg": {
+        "assets/images/approved/165b8e33abf2f21f-165b8e33abf2f21f-fractional-lineup-full-2.jpg": {
             "sha256": "165b8e33abf2f21f6e4e0625bb7c9b4f3ce753e2f878d2b66915aca67b41a834",
             "title": "fractional-lineup-full-2",
             "alt": "",
@@ -6881,36 +6892,36 @@
             "caption": "",
             "description": ""
         },
-        "assets/images/products/excel-20261013/pdrn-shot-lip-essence.png": {
-            "sha256": "cace74c0dc2c1da74b5dba7fa51f18ec3fa574d581ead2aaab5a643332b12bdd",
+        "assets/images/products/pdrn-lip-essence.png": {
+            "sha256": "06180560ad0b0a5e656b0a56aa0b54cf672523bbe62782fd6139794308989741",
             "title": "pdrn-shot-lip-essence-1",
             "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence",
             "caption": "",
             "description": ""
         },
-        "assets/images/products/excel-20261013/pdrn-shot-1000-toning-essence.png": {
-            "sha256": "fd979c66004a8a3a6a589be36a7798b7540c583b531c4a58cbf70dc4802a50f1",
+        "assets/images/products/pdrn-toning-essence.png": {
+            "sha256": "99c691616ac479212f9aa8708b683a3a85d7f30764e72f59fb75dffdeff8d5fd",
             "title": "pdrn-shot-1000-toning-essence-1",
             "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence",
             "caption": "",
             "description": ""
         },
-        "assets/images/products/excel-20261013/needle-serum-cx4.png": {
-            "sha256": "df391f46c70bcdf8b4042143a8ded84e0b2d0d797d926d573ad1599eb51ebbec",
+        "assets/images/products/needle-serum-cx4.png": {
+            "sha256": "a065741b7c1376beff022be50c1eef0817877f9a87ad5517f90ba6edc8aed77f",
             "title": "needle-serum-cx4-4",
             "alt": "Serum dưỡng da FractionalCC Needle Serum CX4",
             "caption": "",
             "description": ""
         },
-        "assets/images/products/excel-20261013/needle-serum-c.png": {
-            "sha256": "13f05cb4b0eb7408f514364bc63847fbd8455c81ea93283638323c7902e4a162",
+        "assets/images/products/needle-serum-c.png": {
+            "sha256": "2d0e36b1081e55a304947022d62eb06eab06643c805510d5bd73a6c6aa42fa68",
             "title": "needle-serum-c-4",
             "alt": "Serum dưỡng da FractionalCC Needle Serum C",
             "caption": "",
             "description": ""
         },
-        "assets/images/products/excel-20261013/mandelic-shot-peel-essence.png": {
-            "sha256": "0e43a8638f92962621e964270c17ddcfaffdedd22f61c517678e2b5b1e587b37",
+        "assets/images/products/mandelic-peel-essence.png": {
+            "sha256": "3cc24053e7f67b6d2204781e5dde22754db83cd9ca93fda3dbd1c53c6375f9f4",
             "title": "mandelic-shot-peel-essence-1",
             "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
             "caption": "",
@@ -6923,14 +6934,14 @@
             "caption": "",
             "description": ""
         },
-        "assets/images/brand/bui-dang-jp-logo.png": {
+        "assets/images/approved/dabad47cad701da5-bui-dang-jp-logo.png": {
             "sha256": "dabad47cad701da52d28948c960418155ade5b05e9b28289e15a5536ee4cd139",
             "title": "bui-dang-jp-logo-3",
             "alt": "",
             "caption": "",
             "description": ""
         },
-        "assets/images/brand/fractional-cc-logo.png": {
+        "assets/images/approved/497b2c703e610b15-fractional-cc-logo.png": {
             "sha256": "497b2c703e610b15bf8b7d6d642e97cc6df480430afbae0ae023278c399cd02e",
             "title": "fractional-cc-logo-3",
             "alt": "",
