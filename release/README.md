@@ -1,6 +1,8 @@
 # Build và release Fractional CC
 
-Hiện hành **[2.0.0](v2.0.0/RELEASE.md)**, ngày 15/10/2026: chốt toàn bộ code và dữ liệu CMS hiện tại theo yêu cầu người dùng. Hai ZIP gồm 10 sản phẩm, 1 combo, 35 hoạt chất và 71 Media, nhãn và ảnh hover hiện có. Đã kiểm tra cài mới, nâng cấp giữ edits, SEO và đối chiếu browser; hạn chế popup Mandelic ở 320–375 px được ghi rõ trong release notes. Chưa triển khai hosting. Các phiên bản bên dưới là lịch sử.
+Hiện hành **[2.1.0](v2.1.0/RELEASE.md)**, ngày 15/10/2026: chốt CMS hiện tại và các thay đổi trang chủ, quản lý 6 sản phẩm cùng một combo nổi bật, sửa ảnh và câu chữ. Hai ZIP gồm 10 sản phẩm, 1 combo, 35 hoạt chất, 71 Media và 1.096 field. Cài mới đạt 3.021 kiểm tra; nâng từ 2.0.0 đạt 7.906 kiểm tra giữ edits/giá trị trống. Browser đối chiếu khớp site nguồn. Giữ hạn chế popup Mandelic ở 320–375 px, đã ghi rõ trong release notes. Chưa triển khai hosting.
+
+Mốc **[2.0.0](v2.0.0/RELEASE.md)**, ngày 15/10/2026: chốt toàn bộ code và dữ liệu CMS tại thời điểm đó. Hai ZIP gồm 10 sản phẩm, 1 combo, 35 hoạt chất và 71 Media, nhãn và ảnh hover. Các phiên bản bên dưới là lịch sử.
 
 Mốc **[1.0.11](v1.0.11/RELEASE.md)**, ngày 15/10/2026: bổ sung bấm ảnh mở chi tiết sản phẩm ở trang chủ/danh sách, giữ SEO và dữ liệu của 1.0.10. Đã kiểm tra cài mới, nâng cấp giữ edits và desktop/mobile từ hai ZIP. Chưa triển khai hosting.
 

@@ -1,7 +1,7 @@
 <?php defined( 'ABSPATH' ) || exit; ?>
 <div class="hero-viewport-wrap">
       
-      <section <?php project_child_fcc_hero_background_attributes(); ?>>
+      <section <?php project_child_fcc_hero_background_attributes(); ?><?php echo project_child_fcc_image_edit_attributes( 'fcc_home_hero_background', 'home' ); ?>>
         <div class="container hero-grid fcc-hero-product-first">
           <div class="hero-content">
             <div class="hero-badge-wrap">
@@ -21,7 +21,7 @@
           </div>
 
           <div class="hero-visual">
-            <div class="hero-card">
+            <div class="hero-card"<?php echo project_child_fcc_image_edit_attributes( 'fcc_home_hero_product_image', 'home' ); ?>>
               <?php
               echo project_child_fcc_picture_html(
                   project_child_fcc_hero_product_image_url(),
@@ -41,7 +41,7 @@
 
           <div class="hero-conversion">
             <div class="hero-cta-group">
-              <button class="btn btn-primary" data-open-order data-product-select="<?php echo esc_attr( project_child_fcc_order_code( 'combo_C-CX4' ) ); ?>">
+              <button class="btn btn-primary" data-open-order data-product-select="<?php echo esc_attr( project_child_fcc_featured_combo_order_code() ); ?>">
                 <?php echo project_child_fcc_text( 'fcc_ui_e05dc8077446a2', 'home', false ); ?>
               </button>
               <a href="#san-pham-chu-luc" class="btn btn-outline">

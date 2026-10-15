@@ -94,7 +94,7 @@ foreach ( project_core_fcc_posts( 'fcc_combo' ) as $post ) {
 	$old = array_values( array_filter( $data['combos'], function ( $entry ) use ( $combo_id ) { return $combo_id === (string) $entry['id']; } ) );
 	$combo = array( 'id' => $combo_id, 'name' => $post->post_title, 'slug' => $post->post_name, 'menuOrder' => (int) $post->menu_order, 'content' => fcc_export_value( $post->post_content ), 'excerpt' => fcc_export_value( $post->post_excerpt ), 'fields' => array() );
 	foreach ( array_keys( $old[0] ?? array() ) as $name ) { if ( in_array( $name, array( 'id', 'name', 'slug', 'menuOrder', 'content', 'excerpt', 'fields' ), true ) ) { continue; } $value = get_post_meta( $post->ID, 'fcc_' . $name, true ); if ( 'image' === $name ) { $value = fcc_export_media( $value ); } elseif ( 'productIds' === $name ) { $value = array_map( function ( $id ) { return absint( get_post_meta( $id, '_fcc_source_id', true ) ); }, (array) $value ); } $combo[ $name ] = fcc_export_value( $value ); }
-	foreach ( array_keys( get_post_meta( $post->ID ) ) as $name ) { if ( 0 === strpos( $name, 'fcc_' ) && ! array_key_exists( substr( $name, 4 ), $combo ) && acf_get_field( get_post_meta( $post->ID, '_' . $name, true ) ?: 'field_' . $name ) ) { $combo['fields'][ $name ] = fcc_export_field( $post->ID, $name ); } }
+	foreach ( array_keys( get_post_meta( $post->ID ) ) as $name ) { if ( in_array( $name, array( 'fcc_featured', 'fcc_featured_order', 'fcc_home_catalog', 'fcc_home_catalog_order' ), true ) ) { continue; } if ( 0 === strpos( $name, 'fcc_' ) && ! array_key_exists( substr( $name, 4 ), $combo ) && acf_get_field( get_post_meta( $post->ID, '_' . $name, true ) ?: 'field_' . $name ) ) { $combo['fields'][ $name ] = fcc_export_field( $post->ID, $name ); } }
 	$combos[] = $combo;
 }
 $data['ingredients'] = array();
@@ -104,8 +104,10 @@ foreach ( $data['brand'] as $name => &$value ) { if ( metadata_exists( 'post', $
 $data['pages']['shared']['fields']['fcc_content_status']['value'] = 'approved';
 $data['regimens'] = array();
 foreach ( project_core_fcc_regimens() as $slug => $definition ) { $data['regimens'][ $slug ] = array_map( function ( $id ) use ( $sources ) { return $sources[ $id ]; }, project_core_fcc_regimen_ids( get_post_meta( $pages['concerns'], 'fcc_' . $definition['name'], true ) ) ); }
-$data['featured'] = array_map( function ( $post ) use ( $sources ) { return array( 'source' => $sources[ $post->ID ], 'fields' => array() ); }, project_core_fcc_featured_posts() );
-$data['homeCatalog'] = array_map( function ( $post ) use ( $sources ) { return $sources[ $post->ID ]; }, project_core_fcc_selected_posts( 'home_catalog', 6 ) );
+$data['featured'] = array_map( function ( $post ) use ( $sources ) { return array( 'source' => $sources[ $post->ID ], 'fields' => array() ); }, project_core_fcc_selected_posts( 'featured', 2, 0, 'fcc_product' ) );
+$featured_combo = project_core_fcc_featured_combo();
+$data['featuredCombo'] = $featured_combo ? $sources[ $featured_combo['id'] ] : '';
+$data['homeCatalog'] = array_map( function ( $post ) use ( $sources ) { return $sources[ $post->ID ]; }, project_core_fcc_home_catalog_posts() );
 $data['settings'] = array();
 foreach ( array( 'blogname', 'blogdescription', 'timezone_string', 'gmt_offset', 'date_format', 'time_format', 'start_of_week', 'permalink_structure' ) as $name ) { $data['settings'][ $name ] = get_option( $name ); }
 $data['version'] = $args['version'];

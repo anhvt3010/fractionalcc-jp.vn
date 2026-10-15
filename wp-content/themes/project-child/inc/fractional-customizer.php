@@ -9,6 +9,10 @@ defined( 'ABSPATH' ) || exit;
 
 /** Return a stable control/setting identifier without creating another content store. */
 function project_child_fcc_customizer_id( $scope, $key ) {
+	if ( 'home' === $scope && 'fcc_home_hero_product_image' === $key ) {
+		// A pending image change must never be rebound to a different combo after selection changes.
+		return 'fcc_text_' . $scope . '_' . $key . '_combo_' . absint( get_option( 'project_core_fcc_featured_combo_id', 0 ) );
+	}
 	return 'fcc_text_' . $scope . '_' . $key;
 }
 
@@ -47,14 +51,25 @@ function project_child_fcc_customize_register( $manager ) {
 				$key     = $field['name'];
 				$id      = project_child_fcc_customizer_id( $scope, $key );
 				$inline  = ! empty( $field['fcc_inline'] ) && isset( $manager->selective_refresh );
+				$image_shortcut = 'image' === $field['type'] && isset( $manager->selective_refresh );
 				$choices = isset( $field['choices'] ) ? $field['choices'] : array();
+				$setting_post_id = $post_id;
+				$setting_key = $key;
+				$acf_key = $field['key'];
+				if ( 'home' === $scope && 'fcc_home_hero_product_image' === $key ) {
+					$featured_combo = project_core_fcc_featured_combo();
+					if ( ! $featured_combo || ! current_user_can( 'edit_post', $featured_combo['id'] ) ) { continue; }
+					$setting_post_id = $featured_combo['id'];
+					$setting_key = 'fcc_image';
+					$acf_key = 'field_fcc_combo_image';
+				}
 				$setting = new Project_Child_FCC_Customize_Setting(
 					$manager,
 					$id,
 					array(
-						'post_id'           => $post_id,
-						'meta_key'          => $key,
-						'acf_key'           => $field['key'],
+						'post_id'           => $setting_post_id,
+						'meta_key'          => $setting_key,
+						'acf_key'           => $acf_key,
 						'field_type'        => $field['type'],
 						'choices'           => $choices,
 						'transport'         => $inline && empty( $field['fcc_refresh'] ) ? 'postMessage' : 'refresh',
@@ -82,15 +97,17 @@ function project_child_fcc_customize_register( $manager ) {
 				} else {
 					$manager->add_control( $id, $args );
 				}
-				if ( $inline ) {
+				if ( $inline || $image_shortcut ) {
 					$manager->selective_refresh->add_partial(
 						$id,
 						array(
 							'settings'            => array( $id ),
-							'selector'            => '[data-fcc-setting="' . $id . '"]',
+							'selector'            => '[' . ( $image_shortcut ? 'data-fcc-image-setting' : 'data-fcc-setting' ) . '="' . $id . '"]',
 							'container_inclusive' => true,
 							'fallback_refresh'    => true,
-							'render_callback'     => static function () use ( $key, $scope ) {
+							'render_callback'     => static function () use ( $key, $scope, $image_shortcut ) {
+								// Images retain their existing layout, alt text and responsive sources on a full preview refresh.
+								if ( $image_shortcut ) { return false; }
 								return project_child_fcc_text( $key, $scope );
 							},
 						)
@@ -113,7 +130,7 @@ function project_child_fcc_customizer_validate( $validity, $value, $setting ) {
 		}
 		$is_id = '' === $value || ( is_int( $value ) && $value >= 0 ) || ( is_string( $value ) && ctype_digit( $value ) );
 		if ( ! $is_id || ( absint( $value ) && ( ! wp_attachment_is_image( absint( $value ) ) || ! in_array( get_post_mime_type( absint( $value ) ), array( 'image/jpeg', 'image/png', 'image/webp' ), true ) ) ) ) {
-			$validity->add( 'fcc_image_invalid', 'Chọn ảnh JPG, PNG hoặc WebP trong Thư viện; xóa ảnh để dùng lại nền mặc định.' );
+			$validity->add( 'fcc_image_invalid', 'Chọn ảnh JPG, PNG hoặc WebP trong Thư viện.' );
 		}
 	} elseif ( 'select' === $setting->field_type ) {
 		if ( ! is_string( $value ) || ! array_key_exists( $value, $setting->choices ) ) {
@@ -136,6 +153,16 @@ function project_child_fcc_customizer_markup( $text, $key, $scope, $editable ) {
 		return $text;
 	}
 	return '<span class="fcc-editable-text" data-fcc-setting="' . esc_attr( $id ) . '">' . $text . '</span>';
+}
+
+/** Attach native image pencils to existing containers in authorized previews only. */
+function project_child_fcc_image_edit_attributes( $key, $scope = 'shared' ) {
+	global $wp_customize;
+	if ( ! is_customize_preview() || ! current_user_can( 'edit_theme_options' ) || ! current_user_can( 'upload_files' ) || ! current_user_can( 'edit_post', project_core_fcc_page_id( $scope ) ) ) { return ''; }
+	$id = project_child_fcc_customizer_id( $scope, $key );
+	$setting = $wp_customize ? $wp_customize->get_setting( $id ) : null;
+	if ( ! $setting || 'image' !== $setting->field_type || ! isset( $wp_customize->selective_refresh ) || ! $wp_customize->selective_refresh->get_partial( $id ) ) { return ''; }
+	return ' data-fcc-image-setting="' . esc_attr( $id ) . '"';
 }
 
 /** Keep preview pencil positioning local to each text fragment. */

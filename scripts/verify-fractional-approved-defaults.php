@@ -55,8 +55,10 @@ foreach ( array( 'products' => 'product_', 'combos' => 'combo_' ) as $list => $p
 	}
 }
 foreach ( $data['regimens'] as $slug => $sources ) { fcc_approved_check( array_map( 'project_core_fcc_snapshot_source', $sources ) === wp_list_pluck( project_core_fcc_regimen_posts( $slug, $pages['concerns'] ), 'ID' ), 'Approved regimen order restored: ' . $slug ); }
-fcc_approved_check( array_column( $data['featured'], 'source' ) === array_map( static function ( $p ) { return get_post_meta( $p->ID, '_fcc_source_key', true ); }, project_core_fcc_featured_posts() ), 'Featured product order restored.' );
-fcc_approved_check( $data['homeCatalog'] === array_map( static function ( $p ) { return get_post_meta( $p->ID, '_fcc_source_key', true ); }, project_core_fcc_selected_posts( 'home_catalog', 6 ) ), 'Home catalog order restored.' );
+fcc_approved_check( array_column( $data['featured'], 'source' ) === array_map( static function ( $p ) { return get_post_meta( $p->ID, '_fcc_source_key', true ); }, project_core_fcc_selected_posts( 'featured', 2, 0, 'fcc_product' ) ), 'Featured product order restored.' );
+$featured_combo = project_core_fcc_featured_combo();
+fcc_approved_check( ( $data['featuredCombo'] ?? '' ) === ( $featured_combo ? get_post_meta( $featured_combo['id'], '_fcc_source_key', true ) : '' ), 'Independent featured combo restored.' );
+fcc_approved_check( $data['homeCatalog'] === array_map( static function ( $p ) { return get_post_meta( $p->ID, '_fcc_source_key', true ); }, project_core_fcc_home_catalog_posts() ), 'Home catalog order restored.' );
 foreach ( $data['settings'] as $name => $value ) { fcc_approved_check( (string) $value === (string) get_option( $name ), 'Presentation setting: ' . $name ); }
 $media = get_posts( array( 'post_type' => 'attachment', 'post_status' => 'inherit', 'posts_per_page' => -1 ) );
 fcc_approved_check( count( $media ) === count( $data['media'] ) && 0 === $before, 'Exactly the approved media imported; no duplicate uploads.' );

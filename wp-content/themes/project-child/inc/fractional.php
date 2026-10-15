@@ -29,7 +29,10 @@ function project_child_fcc_register_fields() {
 		foreach ( $sections as $section => $section_fields ) {
 			$fields[] = array( 'key' => 'field_fcc_tab_' . md5( $kind . $section ), 'label' => $section, 'type' => 'tab', 'placement' => 'left' );
 			if ( 'home' === $kind && isset( $section_fields['fcc_ui_44137315906c33'] ) ) {
-				$fields[] = array( 'key' => 'field_fcc_home_catalog_help', 'name' => '', 'label' => 'Chọn sản phẩm và combo hiển thị', 'type' => 'message', 'message' => 'Mở <a href="' . esc_url( admin_url( 'edit.php?post_type=fcc_product' ) ) . '">Sản phẩm</a> hoặc <a href="' . esc_url( admin_url( 'edit.php?post_type=fcc_combo' ) ) . '">Combo</a>, bật <strong>Hiển thị trong danh mục trang chủ</strong> và nhập thứ tự. Tối đa 6 mục tổng cộng; độc lập với 2 sản phẩm chủ lực. Tên, ảnh, mô tả và giá lấy từ sản phẩm/combo đã chọn.', 'new_lines' => '', 'esc_html' => 0 );
+				$fields[] = array( 'key' => 'field_fcc_home_catalog_help', 'name' => '', 'label' => 'Chọn sản phẩm và combo hiển thị', 'type' => 'message', 'message' => 'Mở <a href="' . esc_url( admin_url( 'edit.php?post_type=fcc_product' ) ) . '">Sản phẩm</a>, bật <strong>Hiển thị trong danh mục trang chủ</strong> và nhập thứ tự, tối đa 6 sản phẩm. Mở <a href="' . esc_url( admin_url( 'edit.php?post_type=fcc_combo' ) ) . '">Combo</a> để bật <strong>Hiển thị combo nổi bật</strong>, chỉ một combo trên website. Combo nổi bật không tính vào giới hạn 6 sản phẩm.', 'new_lines' => '', 'esc_html' => 0 );
+			}
+			if ( 'catalog' === $kind && isset( $section_fields['fcc_ui_e5c68acce9a1e4'] ) ) {
+				$fields[] = array( 'key' => 'field_fcc_catalog_combo_help', 'name' => '', 'label' => 'Nội dung combo nổi bật', 'type' => 'message', 'message' => 'Ảnh, tên, mô tả, giá và quà tặng lấy từ <a href="' . esc_url( admin_url( 'edit.php?post_type=fcc_combo' ) ) . '">Combo nổi bật đã chọn</a>. Sửa nội dung trong Combo để đồng bộ các vị trí trên website.', 'esc_html' => 0 );
 			}
 			if ( 'concerns' === $kind && in_array( $section, array( '02. Đốm nâu & không đều màu', '03. Lỗ chân lông & da sần', '04. Lão hóa & nếp nhăn', '05. Thâm mụn sau viêm' ), true ) ) {
 				$fields[] = array(
@@ -50,6 +53,23 @@ function project_child_fcc_register_fields() {
 }
 add_action( 'acf/init', 'project_child_fcc_register_fields' );
 
+/** The native page editor must not offer the retired independent hero image. */
+function project_child_fcc_prepare_hero_image_field( $field ) {
+	$combo = project_core_fcc_featured_combo();
+	$field['type'] = 'message';
+	$field['name'] = '';
+	$field['instructions'] = '';
+	$field['esc_html'] = 0;
+	$field['new_lines'] = '';
+	if ( $combo && current_user_can( 'edit_post', $combo['id'] ) ) {
+		$field['message'] = 'Ảnh Hero dùng chung ảnh của combo nổi bật. <a href="' . esc_url( get_edit_post_link( $combo['id'], 'raw' ) ) . '">Sửa ảnh combo ' . esc_html( $combo['shortName'] ?: $combo['name'] ) . '</a>, hoặc dùng nút sửa ảnh trong Tùy biến để thay ảnh và xem trước.';
+	} else {
+		$field['message'] = 'Chọn combo nổi bật trong phần Combo để hiển thị ảnh Hero.';
+	}
+	return $field;
+}
+add_filter( 'acf/prepare_field/key=field_fcc_home_hero_product_image', 'project_child_fcc_prepare_hero_image_field' );
+
 /** Native editor submissions must select real, supported media attachments. */
 function project_child_fcc_validate_image_field( $valid, $value, $field ) {
 	if ( true !== $valid || empty( $value ) || empty( $field['name'] ) || 0 !== strpos( $field['name'], 'fcc_' ) ) { return $valid; }
@@ -63,6 +83,8 @@ function project_child_fcc_schema() {
 	static $schema;
 	if ( null === $schema ) {
 		$schema = json_decode( file_get_contents( __DIR__ . '/fractional-fields.json' ), true );
+		unset( $schema['home']['hero-section']['fcc_home_hero_product_alt'] );
+		$schema['home']['hero-section']['fcc_home_hero_product_image']['instructions'] = 'Ảnh lấy từ combo nổi bật đang chọn. Thay ảnh ở đây cũng cập nhật ảnh combo trong CMS và các vị trí nổi bật. Sửa văn bản thay thế tại Thư viện Media.';
 		// Individual card content is now edited on the selected product/combo.
 		foreach ( isset( $schema['home'] ) ? $schema['home'] : array() as $section => $fields ) {
 			$schema['home'][ $section ] = array_diff_key( $fields, array_flip( array( 'fcc_ui_ffed63b9bad263', 'fcc_ui_3c6bdffa7d9479', 'fcc_ui_5fdb1175c7533c', 'fcc_ui_6b5c492b8ee8c7', 'fcc_ui_46606573b70ffc', 'fcc_ui_4177f27e6977cf' ) ) );
@@ -74,6 +96,9 @@ function project_child_fcc_schema() {
 				$schema['home'][ $section ] = array_intersect_key( $fields, array_flip( array( 'fcc_ui_63b89170181142', 'fcc_ui_44137315906c33', 'fcc_ui_ab00a54528cf05', 'fcc_ui_573d0aefa67d9b', 'fcc_ui_839b3de79eb53b' ) ) );
 			}
 		}
+		// Retain legacy saved copy for rollback; the selected combo now owns this content.
+		$retired_combo_fields = array( 'fcc_ui_f742617136c8f0', 'fcc_ui_071145cc904429', 'fcc_ui_481ddc3afebd12', 'fcc_ui_99ce1d649bf94a', 'fcc_ui_201efb207d823a', 'fcc_ui_389ffc845e3eda', 'fcc_ui_c6968594a69f05', 'fcc_ui_cb726a38e532ec', 'fcc_ui_0726567f5d6c24' );
+		foreach ( $schema['catalog'] as $section => $fields ) { $schema['catalog'][ $section ] = array_diff_key( $fields, array_flip( $retired_combo_fields ) ); }
 	}
 	return is_array( $schema ) ? $schema : array();
 }

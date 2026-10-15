@@ -150,6 +150,18 @@ function project_core_fcc_product( $post_id, $with_details = true ) {
 	return $data;
 }
 
+/** Resolve the selected published products in their configured order. */
+function project_core_fcc_combo_contents( $combo ) {
+	$ids = array_values( array_unique( array_filter( array_map( 'absint', (array) ( $combo['productIds'] ?? array() ) ) ) ) );
+	$result = array( 'products' => array() );
+	if ( ! $ids ) { return $result; }
+	$posts = get_posts( array( 'post_type' => 'fcc_product', 'post_status' => 'publish', 'post__in' => $ids, 'posts_per_page' => count( $ids ), 'orderby' => 'post__in', 'no_found_rows' => true ) );
+	foreach ( $posts as $post ) {
+		$result['products'][] = project_core_fcc_product( $post->ID, false );
+	}
+	return $result;
+}
+
 function project_core_fcc_combos() {
 	$data = array();
 	foreach ( project_core_fcc_posts( 'fcc_combo' ) as $combo ) {

@@ -191,37 +191,21 @@ function project_child_fcc_hero_image_sizes() {
 
 /** Render the featured product image for the home hero card. */
 function project_child_fcc_hero_product_image_url() {
-	$home_id = project_core_fcc_page_id( 'home' );
-	if ( $home_id ) {
-		$image_id = absint( get_post_meta( $home_id, 'fcc_home_hero_product_image', true ) );
-		if ( $image_id ) {
-			$url = wp_get_attachment_image_url( $image_id, 'full' );
-			if ( $url ) {
-				return (string) $url;
-			}
-		}
-	}
-	$shared_url = project_child_fcc_image( 'fcc_ui_453bd451ef0751' );
-	return $shared_url ? $shared_url : project_child_fcc_asset( 'assets/images/banner/combo-c-cx4-gold.png' );
+	$combo = project_core_fcc_featured_combo();
+	return $combo ? (string) $combo['image'] : '';
 }
 
 /** Render the featured product image alt text for the home hero card. */
 function project_child_fcc_hero_product_image_alt() {
-	$home_id = project_core_fcc_page_id( 'home' );
-	if ( $home_id ) {
-		$alt = get_post_meta( $home_id, 'fcc_home_hero_product_alt', true );
-		if ( is_scalar( $alt ) && '' !== (string) $alt ) {
-			return (string) $alt;
-		}
-		$image_id = absint( get_post_meta( $home_id, 'fcc_home_hero_product_image', true ) );
-		if ( $image_id ) {
-			$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-			if ( is_scalar( $image_alt ) && '' !== (string) $image_alt ) {
-				return (string) $image_alt;
-			}
-		}
-	}
-	return project_child_fcc_image_alt( 'fcc_ui_453bd451ef0751', 'fcc_ui_eeddc60a6e4bec' );
+	$combo = project_core_fcc_featured_combo();
+	if ( ! $combo ) { return ''; }
+	$image_id = absint( get_post_meta( $combo['id'], 'fcc_image', true ) );
+	return (string) get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ?: $combo['name'];
+}
+
+function project_child_fcc_featured_combo_order_code() {
+	$combo = project_core_fcc_featured_combo();
+	return $combo ? 'combo_' . $combo['id'] : '';
 }
 
 /** Build a link from the saved channel, without reviving removed contacts. */

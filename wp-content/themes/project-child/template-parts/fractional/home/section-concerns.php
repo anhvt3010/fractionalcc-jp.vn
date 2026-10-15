@@ -1,27 +1,27 @@
 <?php
 /**
  * Skin Concerns Section on Homepage (Mục 11 trong brief.docx - Nỗi đau khách hàng).
- * Connects directly to Combo C-CX4 solution and details on /van-de-lan-da/.
+ * Connects to the selected featured combo and details on /van-de-lan-da/.
  *
  * @package Project_Child
  */
 defined( 'ABSPATH' ) || exit;
 
 $concerns_page_url = project_child_fcc_link( 'van-de-lan-da.html' );
-$combo_order_code  = project_child_fcc_order_code( 'combo_C-CX4' );
+$combo_order_code  = project_child_fcc_featured_combo_order_code();
+$featured_combo   = project_core_fcc_featured_combo();
 
 $dom_nau_img    = project_child_fcc_asset( 'assets/images/concerns/concern-dom-nau.webp' );
 $tham_mun_img   = project_child_fcc_asset( 'assets/images/concerns/concern-tham-mun.webp' );
 $lo_chan_long_img = project_child_fcc_asset( 'assets/images/concerns/concern-lo-chan-long.webp' );
 $lao_hoa_img    = project_child_fcc_asset( 'assets/images/concerns/concern-lao-hoa.webp' );
-$combo_img      = project_child_fcc_asset( 'assets/images/banner/combo-c-cx4-gold.webp' );
 ?>
 <section class="section section-skin-concerns" id="van-de-lan-da">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag"><?php echo project_child_fcc_text( 'fcc_ui_m_649eb3367b80', 'concerns', false ) ?: 'KHOA HỌC LÀN DA • CHUẨN SALON NHẬT BẢN'; ?></span>
+      <span class="section-tag"><?php echo project_child_fcc_text( 'fcc_ui_m_649eb3367b80', 'concerns', false ) ?: 'VẤN ĐỀ LÀN DA'; ?></span>
       <h2 class="section-title heading-serif"><?php echo project_child_fcc_text( 'fcc_ui_m_cfab75cee336', 'concerns', false ) ?: 'LÀN DA CỦA BẠN ĐANG GẶP NHỮNG VẤN ĐỀ GÌ?'; ?></h2>
-      <p class="section-desc"><?php echo project_child_fcc_text( 'fcc_ui_m_c8c79f67f1e0', 'concerns', false ) ?: 'Bạn đã chăm sóc da mỗi ngày nhưng làn da vẫn chưa đạt được vẻ rạng rỡ như mong muốn? Khám phá giải pháp vi kim sinh học Fractional CC được thiết kế riêng biệt cho từng tình trạng da.'; ?></p>
+      <p class="section-desc"><?php echo project_child_fcc_text( 'fcc_ui_m_c8c79f67f1e0', 'concerns', false ) ?: 'Tìm hiểu các nhu cầu chăm sóc da thường gặp và tham khảo sản phẩm Fractional CC phù hợp với nhu cầu của bạn.'; ?></p>
     </div>
 
     <!-- LƯỚI 4 NỖI ĐAU LÀN DA BÁM SÁT BRIEF -->
@@ -37,15 +37,15 @@ $combo_img      = project_child_fcc_asset( 'assets/images/banner/combo-c-cx4-gol
         </div>
         <div class="concern-card-body">
           <h3 class="concern-card-title"><?php echo project_child_fcc_text( 'fcc_ui_m_f06dd395969c', 'concerns', false ) ?: 'Đốm Nâu & Không Đều Màu'; ?></h3>
-          <p class="concern-card-desc"><?php echo project_child_fcc_text( 'fcc_ui_m_beda867aa60c', 'concerns', false ) ?: 'Những vùng da sậm màu khiến tổng thể gương mặt thiếu tươi tắn, bạn ngại để mặt mộc và phải phụ thuộc nhiều hơn vào lớp trang điểm.'; ?></p>
-          <div class="concern-solution-box">
-            <span class="solution-label">Phác đồ khuyên dùng:</span>
-            <div class="solution-product-name">Combo Vi Kim C–CX4 Giảm Thâm</div>
+          <p class="concern-card-desc"><?php echo project_child_fcc_text( 'fcc_ui_m_beda867aa60c', 'concerns', false ) ?: 'Đốm nâu và các vùng da sậm màu khiến màu da trông không đồng đều.'; ?></p>
+          <?php if ( $featured_combo ) : ?><div class="concern-solution-box">
+            <span class="solution-label">Khuyên dùng</span>
+            <div class="solution-product-name"><?php echo esc_html( $featured_combo['shortName'] ?: $featured_combo['name'] ); ?></div>
             <button class="btn-concern-action" data-open-order data-product-select="<?php echo esc_attr( $combo_order_code ); ?>">
-              <span>Chọn phác đồ này</span>
+              <span>Chọn combo này</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
-          </div>
+          </div><?php endif; ?>
         </div>
       </article>
 
@@ -59,15 +59,15 @@ $combo_img      = project_child_fcc_asset( 'assets/images/banner/combo-c-cx4-gol
         </div>
         <div class="concern-card-body">
           <h3 class="concern-card-title"><?php echo project_child_fcc_text( 'fcc_ui_m_5b5204b02fc1', 'concerns', false ) ?: 'Da Thâm Mụn Sau Viêm'; ?></h3>
-          <p class="concern-card-desc"><?php echo project_child_fcc_text( 'fcc_ui_m_c98495147be1', 'concerns', false ) ?: 'Da thâm mụn, không đều màu khiến lớp nền khó tiệp vào da, dễ lộ khuyết điểm và kém tự nhiên, khiến bạn mất thêm thời gian che phủ mỗi khi trang điểm.'; ?></p>
-          <div class="concern-solution-box">
-            <span class="solution-label">Phác đồ khuyên dùng:</span>
-            <div class="solution-product-name">Combo Vi Kim C–CX4 Giảm Thâm</div>
+          <p class="concern-card-desc"><?php echo project_child_fcc_text( 'fcc_ui_m_c98495147be1', 'concerns', false ) ?: 'Vết thâm có thể còn lại sau mụn, khiến màu da trông không đồng đều.'; ?></p>
+          <?php if ( $featured_combo ) : ?><div class="concern-solution-box">
+            <span class="solution-label">Khuyên dùng</span>
+            <div class="solution-product-name"><?php echo esc_html( $featured_combo['shortName'] ?: $featured_combo['name'] ); ?></div>
             <button class="btn-concern-action" data-open-order data-product-select="<?php echo esc_attr( $combo_order_code ); ?>">
-              <span>Chọn phác đồ này</span>
+              <span>Chọn combo này</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
-          </div>
+          </div><?php endif; ?>
         </div>
       </article>
 
@@ -81,9 +81,9 @@ $combo_img      = project_child_fcc_asset( 'assets/images/banner/combo-c-cx4-gol
         </div>
         <div class="concern-card-body">
           <h3 class="concern-card-title"><?php echo project_child_fcc_text( 'fcc_ui_m_401a2fca51b8', 'concerns', false ) ?: 'Lỗ Chân Lông To & Da Sần'; ?></h3>
-          <p class="concern-card-desc"><?php echo project_child_fcc_text( 'fcc_ui_m_a9e9a444a956', 'concerns', false ) ?: 'Lỗ chân lông to khiến bề mặt da kém mịn, lớp nền dễ lộ khuyết điểm, khiến làn da trông kém rạng rỡ dù bạn vẫn chăm sóc da đều đặn.'; ?></p>
+          <p class="concern-card-desc"><?php echo project_child_fcc_text( 'fcc_ui_m_a9e9a444a956', 'concerns', false ) ?: 'Lỗ chân lông dễ thấy và bề mặt da sần là những nhu cầu chăm sóc thường gặp.'; ?></p>
           <div class="concern-solution-box">
-            <span class="solution-label">Phác đồ khuyên dùng:</span>
+            <span class="solution-label">Khuyên dùng</span>
             <div class="solution-product-name">Serum Tẩy Da Chết Mandelic Shot</div>
             <a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>#danh-sach-san-pham" class="btn-concern-action">
               <span>Xem chi tiết</span>
@@ -103,9 +103,9 @@ $combo_img      = project_child_fcc_asset( 'assets/images/banner/combo-c-cx4-gol
         </div>
         <div class="concern-card-body">
           <h3 class="concern-card-title"><?php echo project_child_fcc_text( 'fcc_ui_m_e420d47dc084', 'concerns', false ) ?: 'Da Lão Hóa & Nếp Nhăn'; ?></h3>
-          <p class="concern-card-desc"><?php echo project_child_fcc_text( 'fcc_ui_m_73b5443ca20d', 'concerns', false ) ?: 'Các dấu hiệu lão hóa dần xuất hiện, làn da không còn giữ được vẻ căng mịn, đàn hồi như trước.'; ?></p>
+          <p class="concern-card-desc"><?php echo project_child_fcc_text( 'fcc_ui_m_73b5443ca20d', 'concerns', false ) ?: 'Nếp nhăn và thay đổi về độ đàn hồi là những dấu hiệu da có thể gặp theo thời gian.'; ?></p>
           <div class="concern-solution-box">
-            <span class="solution-label">Phác đồ khuyên dùng:</span>
+            <span class="solution-label">Khuyên dùng</span>
             <div class="solution-product-name">Needle Serum AX4 &amp; PDRN Shot</div>
             <a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>#danh-sach-san-pham" class="btn-concern-action">
               <span>Xem chi tiết</span>
@@ -117,21 +117,22 @@ $combo_img      = project_child_fcc_asset( 'assets/images/banner/combo-c-cx4-gol
 
     </div>
 
-    <!-- THANH CHUYỂN TIẾP ĐIỀU HƯỚNG XUỐNG DANH MỤC & TRANG PHÁC ĐỒ -->
+    <!-- THANH ĐIỀU HƯỚNG XUỐNG DANH MỤC & TRANG VẤN ĐỀ LÀN DA -->
     <div class="concerns-transition-bar">
       <div class="concerns-transition-tip">
         <span class="tip-icon">💡</span>
         <div class="tip-content">
-          <strong>Lời khuyên từ chuyên gia da liễu:</strong> Đốm nâu và thâm mụn dai dẳng nên được chăm sóc theo <em>phác đồ hiệp đồng kép (Vitamin C + Vi kim mật độ cao CX4)</em> để đạt hiệu quả tái tạo nhanh gấp đôi.
+          <strong><?php echo project_child_fcc_text( 'fcc_home_concerns_advice_title', 'concerns' ); ?></strong>
+          <?php echo project_child_fcc_text( 'fcc_home_concerns_advice_text', 'concerns' ); ?>
         </div>
       </div>
       <div class="concerns-transition-actions">
         <a href="#danh-muc" class="btn btn-transition-catalog">
-          <span>Xem Combo C–CX4 ưu đãi bên dưới</span>
+          <span><?php echo esc_html( $featured_combo ? 'Xem ' . ( $featured_combo['shortName'] ?: $featured_combo['name'] ) . ' bên dưới' : 'Xem danh mục sản phẩm bên dưới' ); ?></span>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </a>
         <a href="<?php echo esc_url( $concerns_page_url ); ?>" class="btn-transition-more">
-          <span>Chi tiết cả 4 phác đồ khoa học</span>
+          <span>Xem chi tiết 4 vấn đề da</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </a>
       </div>

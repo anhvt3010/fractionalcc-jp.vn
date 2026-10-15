@@ -31,6 +31,7 @@ function project_core_fcc_validate_snapshot( $data ) {
 	foreach ( $data['combos'] as $combo ) { $sources[] = 'combo_' . $combo['id']; }
 	foreach ( $data['ingredients'] ?? array() as $active ) { if ( empty( $active['source'] ) || ! isset( $active['name'], $active['tag'], $active['desc'] ) ) { return $error; } $sources[] = $active['source']; }
 	foreach ( $sources as $source ) { if ( ! is_string( $source ) || ! preg_match( '/^(page|product|combo|ingredient)_[a-zA-Z0-9_-]+$/', $source ) ) { return $error; } }
+	if ( array_key_exists( 'featuredCombo', $data ) && ( ! is_string( $data['featuredCombo'] ) || ( '' !== $data['featuredCombo'] && ( 0 !== strpos( $data['featuredCombo'], 'combo_' ) || ! in_array( $data['featuredCombo'], $sources, true ) ) ) ) ) { return $error; }
 	foreach ( array_merge( array_values( $data['pages'] ), $data['products'], $data['combos'] ) as $record ) {
 		foreach ( $record['fields'] ?? array() as $name => $field ) {
 			if ( ! preg_match( '/^fcc_[a-zA-Z0-9_]+$/', $name ) || ! isset( $field['type'], $field['value'] ) || ! is_string( $field['type'] ) || ( isset( $field['key'] ) && ! preg_match( '/^field_fcc_[a-zA-Z0-9_]+$/', $field['key'] ) ) ) { return $error; }

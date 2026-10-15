@@ -1,5 +1,7 @@
 # Dữ liệu đã chốt – release đầu tiên 1.0.0
 
+> Release hiện hành **[2.1.0](../release/v2.1.0/RELEASE.md)**, 15/10/2026: người dùng duyệt hiện trạng làm mặc định. Snapshot xuất từ CMS đang dùng có 6 bản ghi nội dung/1.096 field, 10 sản phẩm, 1 combo, 35 hoạt chất và 71 Media. Danh mục trang chủ chọn 6 sản phẩm riêng, combo nổi bật `combo_C-CX4` quản lý độc lập. Gồm sửa câu chữ, ảnh và thứ tự section hiện tại. Cài mới khôi phục cả ảnh thư viện chưa được sử dụng; chạy lại/nâng cấp giữ edits, giá trị trống và lựa chọn rỗng. Core, Child và defaults cùng 2.1.0, `contentManagement.version=2`. Không chạy initializer trên site làm việc; seed nguồn giữ 2.0.0. Xem release notes cho kết quả kiểm tra và hạn chế popup ở màn hình nhỏ.
+
 > Release hiện hành **[2.0.0](../release/v2.0.0/RELEASE.md)**, 15/10/2026: người dùng chốt toàn bộ code và data hiện tại. Đã xuất lại CMS XAMPP: 6 bản ghi nội dung/1.090 field, 10 sản phẩm, 1 combo, 35 hoạt chất, 71 Media và 8 settings công khai. Giữ giá, SEO, liên hệ, nhãn, ảnh đại diện/hover, gallery/thứ tự và các lựa chọn hiện tại, gồm giá trị trống. Exporter lấy ảnh hover của editor native bằng đường dẫn portable; cài mới và nâng cấp giữ edits đã được kiểm tra từ hai ZIP. Không chạy initializer trên site làm việc. Các mốc bên dưới là lịch sử.
 
 > Mốc **[1.0.11](../release/v1.0.11/RELEASE.md)**, 15/10/2026: toàn bộ defaults đã duyệt 1.0.10 được giữ nguyên, chỉ tăng version snapshot. Không xuất lại dữ liệu CMS hoặc thay nội dung/giá/ảnh/SEO/quan hệ/settings. Cài mới và nâng cấp giữ edits đã được kiểm tra từ hai ZIP.

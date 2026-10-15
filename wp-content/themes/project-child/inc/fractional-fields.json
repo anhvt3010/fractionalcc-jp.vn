@@ -6482,6 +6482,13 @@
                 "type": "text",
                 "instructions": "Nội dung hiển thị tại Nhãn thẻ sản phẩm & combo. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
                 "fcc_inline": true
+            },
+            "fcc_ui_combo_contents_heading": {
+                "key": "field_fcc_ui_combo_contents_heading",
+                "name": "fcc_ui_combo_contents_heading",
+                "label": "Tiêu đề danh sách sản phẩm trong combo",
+                "type": "text",
+                "fcc_inline": true
             }
         },
         "Ảnh chia sẻ & biểu tượng": {
@@ -9186,6 +9193,13 @@
                 "preview_size": "medium",
                 "mime_types": "jpg,jpeg,png,webp",
                 "fcc_refresh": true
+            },
+            "fcc_ui_m_a9e9a444a956": {
+                "key": "field_fcc_ui_m_a9e9a444a956",
+                "name": "fcc_ui_m_a9e9a444a956",
+                "label": "M? t? v?n ?? da tr?n trang ch?",
+                "type": "textarea",
+                "fcc_inline": true
             }
         },
         "04. Lão hóa & nếp nhăn": {
@@ -9323,6 +9337,13 @@
                 "preview_size": "medium",
                 "mime_types": "jpg,jpeg,png,webp",
                 "fcc_refresh": true
+            },
+            "fcc_ui_m_73b5443ca20d": {
+                "key": "field_fcc_ui_m_73b5443ca20d",
+                "name": "fcc_ui_m_73b5443ca20d",
+                "label": "M? t? v?n ?? da tr?n trang ch?",
+                "type": "textarea",
+                "fcc_inline": true
             }
         },
         "05. Thâm mụn sau viêm": {
@@ -9461,6 +9482,13 @@
                 "preview_size": "medium",
                 "mime_types": "jpg,jpeg,png,webp",
                 "fcc_refresh": true
+            },
+            "fcc_ui_m_c98495147be1": {
+                "key": "field_fcc_ui_m_c98495147be1",
+                "name": "fcc_ui_m_c98495147be1",
+                "label": "M? t? v?n ?? da tr?n trang ch?",
+                "type": "textarea",
+                "fcc_inline": true
             }
         },
         "06. Nguyên tắc & tư vấn": {
@@ -9587,6 +9615,20 @@
                 "label": "Nội dung: Hotline:",
                 "type": "text",
                 "instructions": "Nội dung hiển thị tại 06. Nguyên tắc & tư vấn. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_home_concerns_advice_title": {
+                "key": "field_fcc_home_concerns_advice_title",
+                "name": "fcc_home_concerns_advice_title",
+                "label": "Nhãn lời khuyên trên trang chủ",
+                "type": "text",
+                "fcc_inline": true
+            },
+            "fcc_home_concerns_advice_text": {
+                "key": "field_fcc_home_concerns_advice_text",
+                "name": "fcc_home_concerns_advice_text",
+                "label": "Nội dung lời khuyên trên trang chủ",
+                "type": "textarea",
                 "fcc_inline": true
             }
         },

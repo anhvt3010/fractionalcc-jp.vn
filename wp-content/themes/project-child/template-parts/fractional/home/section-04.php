@@ -10,7 +10,7 @@ $s04_tag   = project_child_fcc_text( 'fcc_ui_ec3420476525fd', 'home' );
 $s04_title = project_child_fcc_text( 'fcc_ui_e72702f2e64e16', 'home' );
 $s04_desc  = project_child_fcc_text( 'fcc_ui_80ae9607363601', 'home' );
 ?>
-<section class="section" id="diem-noi-bat">
+<section class="section section-soft" id="diem-noi-bat">
   <div class="container">
     <div class="section-header">
       <span class="section-tag"><?php echo $s04_tag; ?></span>
@@ -137,7 +137,7 @@ $s04_desc  = project_child_fcc_text( 'fcc_ui_80ae9607363601', 'home' );
     <div class="fcc-deepdive-card fcc-deepdive-breakthrough">
       <div class="fcc-deepdive-grid">
         <div class="fcc-deepdive-visual">
-          <div class="fcc-visual-frame">
+          <div class="fcc-visual-frame"<?php echo project_child_fcc_image_edit_attributes( 'fcc_ui_mechanism_breakthrough_image', 'home' ); ?>>
             <?php
             if ( $breakthrough_img_url ) {
                 echo project_child_fcc_picture_html(
@@ -252,17 +252,10 @@ $s04_desc  = project_child_fcc_text( 'fcc_ui_80ae9607363601', 'home' );
             </div>
           </div>
 
-          <!-- Lời khuyên thao tác từ chuyên gia -->
-          <div class="fcc-exp-note-bar">
-            <span class="fcc-exp-note-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-            </span>
-            <p><strong>Thao tác chuẩn Nhật:</strong> Áp nhẹ và vỗ đều lòng bàn tay khắp mặt để hạt vi kim tự nhiên đi sâu vào lớp sừng, kích hoạt hiệu quả tái tạo tối đa.</p>
-          </div>
         </div>
 
         <div class="fcc-deepdive-visual">
-          <div class="fcc-visual-frame">
+          <div class="fcc-visual-frame"<?php echo project_child_fcc_image_edit_attributes( 'fcc_ui_mechanism_routine_image', 'home' ); ?>>
             <?php
             if ( $routine_img_url ) {
                 echo project_child_fcc_picture_html(

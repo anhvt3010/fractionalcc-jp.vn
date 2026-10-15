@@ -11,7 +11,7 @@
           
           <div class="corporate-partnership-bar">
             <div class="partner-entity">
-              <div class="partner-logo-box">
+              <div class="partner-logo-box"<?php echo project_child_fcc_image_edit_attributes( 'fcc_ui_be08f7c57f78ec' ); ?>>
                 <?php
                 echo project_child_fcc_picture_html(
                     project_child_fcc_image( 'fcc_ui_be08f7c57f78ec' ),
@@ -28,7 +28,7 @@
             </div>
 
             <div class="partner-entity">
-              <div class="partner-brand-logo-box">
+              <div class="partner-brand-logo-box"<?php echo project_child_fcc_image_edit_attributes( 'fcc_ui_1a0029c547f307' ); ?>>
                 <?php
                 echo project_child_fcc_picture_html(
                     project_child_fcc_image( 'fcc_ui_1a0029c547f307' ),

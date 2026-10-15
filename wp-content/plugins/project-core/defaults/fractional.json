@@ -1,5 +1,5 @@
 {
-    "version": "2.0.0",
+    "version": "2.1.0",
     "pages": {
         "shared": {
             "title": "Thông tin và giao diện chung Fractional CC",
@@ -58,7 +58,7 @@
                 "fcc_ui_23be8881d2ac63": {
                     "type": "text",
                     "key": "field_fcc_ui_23be8881d2ac63",
-                    "value": "Bảo Chứng Pháp Lý"
+                    "value": "Thông Tin Phân Phối"
                 },
                 "fcc_ui_9681bed187e219": {
                     "type": "text",
@@ -73,7 +73,7 @@
                 "fcc_ui_75c0b9744b7141": {
                     "type": "text",
                     "key": "field_fcc_ui_75c0b9744b7141",
-                    "value": "Công Nghệ Vi Kim Spicule Tokyo"
+                    "value": "Công Nghệ Vi Kim Spicule"
                 },
                 "fcc_ui_7765c53f3b0cc4": {
                     "type": "text",
@@ -88,7 +88,7 @@
                 "fcc_ui_1b9b25c3ff94b1": {
                     "type": "text",
                     "key": "field_fcc_ui_1b9b25c3ff94b1",
-                    "value": "Chu Trình Chăm Sóc Da Chuẩn"
+                    "value": "Chu Trình Chăm Sóc Da"
                 },
                 "fcc_ui_8e50f2be218967": {
                     "type": "text",
@@ -98,7 +98,7 @@
                 "fcc_ui_04f8a3a25234b4": {
                     "type": "text",
                     "key": "field_fcc_ui_04f8a3a25234b4",
-                    "value": "Bảo Chứng Pháp Lý Bộ Y Tế"
+                    "value": "Thông Tin Sản Phẩm & CBMP"
                 },
                 "fcc_ui_52b1954ad7b65f": {
                     "type": "text",
@@ -683,12 +683,12 @@
                 "fcc_ui_476e0450734143": {
                     "type": "text",
                     "key": "field_fcc_ui_476e0450734143",
-                    "value": "100% Chính Hãng Nhật Bản"
+                    "value": "Mỹ Phẩm Nhật Bản"
                 },
                 "fcc_ui_bcf7198870556e": {
                     "type": "text",
                     "key": "field_fcc_ui_bcf7198870556e",
-                    "value": "Lành Tính & Chuẩn Da Liễu"
+                    "value": "Thông Tin Sử Dụng"
                 },
                 "fcc_ui_a4761e5516401e": {
                     "type": "text",
@@ -733,12 +733,12 @@
                 "fcc_ui_07d4db9057c1e0": {
                     "type": "text",
                     "key": "field_fcc_ui_07d4db9057c1e0",
-                    "value": "Tiêu Chuẩn Tokyo"
+                    "value": "Xuất Xứ Nhật Bản"
                 },
                 "fcc_ui_d1f450c933841c": {
                     "type": "text",
                     "key": "field_fcc_ui_d1f450c933841c",
-                    "value": "Đã Cấp Phép CBMP"
+                    "value": "Thông Tin CBMP"
                 },
                 "fcc_ui_f1cf9cbf3a1a05": {
                     "type": "text",
@@ -773,7 +773,7 @@
                 "fcc_ui_5d5f80440bfe3c": {
                     "type": "text",
                     "key": "field_fcc_ui_5d5f80440bfe3c",
-                    "value": "Ứng dụng công nghệ vi kim sinh học tự nhiên Spicule kết hợp phức hợp hoạt chất chuyên sâu từ Tokyo."
+                    "value": "Ứng dụng công nghệ vi kim Spicule kết hợp các thành phần theo công thức từng sản phẩm."
                 },
                 "fcc_ui_00dbdd876ed3f1": {
                     "type": "text",
@@ -813,7 +813,7 @@
                 "fcc_ui_e8e91f7268d663": {
                     "type": "text",
                     "key": "field_fcc_ui_e8e91f7268d663",
-                    "value": "Tiêu chuẩn chất lượng nội địa Nhật Bản"
+                    "value": "Thông tin xuất xứ theo hồ sơ sản phẩm"
                 },
                 "fcc_ui_62e8c9b9513489": {
                     "type": "text",
@@ -863,7 +863,7 @@
                 "fcc_ui_8b8deb3c94c1ca": {
                     "type": "text",
                     "key": "field_fcc_ui_8b8deb3c94c1ca",
-                    "value": "Công Thức Tầng Sâu & Hoạt Chất Đột Phá"
+                    "value": "Thành Phần Theo Từng Sản Phẩm"
                 },
                 "fcc_ui_5adcdfe588f53d": {
                     "type": "text",
@@ -873,7 +873,7 @@
                 "fcc_ui_79ee3469c0cac9": {
                     "type": "text",
                     "key": "field_fcc_ui_79ee3469c0cac9",
-                    "value": "Hội tụ các phức hợp tinh khiết nồng độ chuẩn y khoa được kiểm chứng lâm sàng nghiêm ngặt."
+                    "value": "Tham khảo bảng thành phần và công dụng trong hồ sơ từng sản phẩm."
                 },
                 "fcc_ui_f5310755fa3015": {
                     "type": "text",
@@ -883,7 +883,7 @@
                 "fcc_ui_2ec853bc877a83": {
                     "type": "text",
                     "key": "field_fcc_ui_2ec853bc877a83",
-                    "value": "Tối ưu hóa khả năng hấp thu hoạt chất và đảm bảo an toàn tối đa cho hàng rào bảo vệ da."
+                    "value": "Lựa chọn và sử dụng theo hướng dẫn của từng sản phẩm."
                 },
                 "fcc_ui_7766fc9ecb857b": {
                     "type": "text",
@@ -1018,7 +1018,7 @@
                 "fcc_ui_a2642b697a4c65": {
                     "type": "text",
                     "key": "field_fcc_ui_a2642b697a4c65",
-                    "value": "Made in Japan • Tokyo Cosmetics"
+                    "value": "Mỹ phẩm Nhật Bản"
                 },
                 "fcc_ui_e6c36702ec3d1c": {
                     "type": "text",
@@ -1083,7 +1083,7 @@
                 "fcc_nav_legal": {
                     "type": "text",
                     "key": "field_fcc_nav_legal",
-                    "value": "Bảo chứng pháp lý"
+                    "value": "Thông tin phân phối"
                 },
                 "fcc_ui_m_4f498b8722ef": {
                     "type": "text",
@@ -1168,7 +1168,7 @@
                 "fcc_ui_m_f0739114e699": {
                     "type": "text",
                     "key": "field_fcc_ui_m_f0739114e699",
-                    "value": "✓ 100% Chính hãng Nhật Bản"
+                    "value": "Mỹ phẩm Nhật Bản"
                 },
                 "fcc_ui_m_d43decf568f2": {
                     "type": "text",
@@ -1263,12 +1263,12 @@
                 "fcc_ui_callout_technology": {
                     "type": "text",
                     "key": "field_fcc_ui_callout_technology",
-                    "value": "CÔNG NGHỆ CHUẨN NHẬT"
+                    "value": "CÔNG NGHỆ VI KIM"
                 },
                 "fcc_ui_callout_default_title": {
                     "type": "text",
                     "key": "field_fcc_ui_callout_default_title",
-                    "value": "CHUẨN TOKYO"
+                    "value": "FRACTIONAL CC"
                 },
                 "fcc_ui_callout_default_subtitle": {
                     "type": "text",
@@ -1554,6 +1554,11 @@
                     "type": "image",
                     "key": "field_fcc_review_avatar_7",
                     "value": "assets/images/thumbnail/review-avatar-7.webp"
+                },
+                "fcc_ui_combo_contents_heading": {
+                    "type": "text",
+                    "key": "field_fcc_ui_combo_contents_heading",
+                    "value": "Sản phẩm trong combo & quà tặng"
                 }
             },
             "content": "",
@@ -1623,17 +1628,17 @@
                 "fcc_ui_898c9707cbc6fb": {
                     "type": "text",
                     "key": "field_fcc_ui_898c9707cbc6fb",
-                    "value": "Kiểm nghiệm da liễu Tokyo • Đầy đủ 10 số CBMP Cục Quản Lý Dược"
+                    "value": "Thông tin thành phần, công dụng và số CBMP theo từng sản phẩm"
                 },
                 "fcc_ui_c92fd3458a307a": {
                     "type": "text",
                     "key": "field_fcc_ui_c92fd3458a307a",
-                    "value": "100% Made In Japan"
+                    "value": "Mỹ phẩm Nhật Bản"
                 },
                 "fcc_ui_18645916ec2e37": {
                     "type": "text",
                     "key": "field_fcc_ui_18645916ec2e37",
-                    "value": "Công nghệ vi kim sinh học Tokyo"
+                    "value": "Ứng dụng công nghệ vi kim"
                 },
                 "fcc_ui_7f36fd34e50688": {
                     "type": "text",
@@ -1678,7 +1683,7 @@
                 "fcc_ui_a12e257cd86c9f": {
                     "type": "textarea",
                     "key": "field_fcc_ui_a12e257cd86c9f",
-                    "value": "Khám phá giải pháp chăm sóc da tối ưu với serum peel tái tạo Mandelic và combo siêu tinh chất Needle Serum C–CX4 ứng dụng vi kim tự nhiên Spicule."
+                    "value": "Tham khảo Mandelic Shot Peel Essence và combo Needle Serum C–CX4 trong danh mục Fractional CC."
                 },
                 "fcc_ui_ae637fc282cec5": {
                     "type": "text",
@@ -1938,12 +1943,12 @@
                 "fcc_ui_brand_msg_line1": {
                     "type": "text",
                     "key": "field_fcc_ui_brand_msg_line1",
-                    "value": "Fractional CC – Công nghệ vi kim, nâng tầm trải nghiệm chăm sóc da chuyên sâu."
+                    "value": "Fractional CC – Chăm sóc da với công nghệ vi kim."
                 },
                 "fcc_ui_brand_msg_line2": {
                     "type": "text",
                     "key": "field_fcc_ui_brand_msg_line2",
-                    "value": "JP- BÙI ĐẶNG – Đồng hành cùng bạn khám phá tinh hoa chăm sóc da Nhật Bản."
+                    "value": "JP- BÙI ĐẶNG – Hỗ trợ lựa chọn sản phẩm chăm sóc da Nhật Bản."
                 },
                 "fcc_ui_brand_image": {
                     "type": "image",
@@ -2023,7 +2028,7 @@
                 "fcc_ui_80ae9607363601": {
                     "type": "text",
                     "key": "field_fcc_ui_80ae9607363601",
-                    "value": "Bốn trụ cột tạo nên dấu ấn thương hiệu chăm sóc da vi kim thế hệ mới từ Nhật Bản."
+                    "value": "Tìm hiểu công nghệ, thành phần, cách dùng và các dòng sản phẩm Fractional CC."
                 },
                 "fcc_ui_d59186701a2723": {
                     "type": "text",
@@ -2398,7 +2403,7 @@
                 "fcc_ui_c04f4ad85f5d1e": {
                     "type": "text",
                     "key": "field_fcc_ui_c04f4ad85f5d1e",
-                    "value": "Rửa mặt bằng nước ấm, xoa đều bọt mịn 30 giây rồi thấm ráo bằng khăn bông mềm, không chà xát mạnh."
+                    "value": "Làm sạch da và thấm nhẹ bằng khăn mềm, tránh chà xát mạnh."
                 },
                 "fcc_ui_a3fa1d9cfddbd7": {
                     "type": "text",
@@ -2423,7 +2428,7 @@
                 "fcc_ui_51e5d06c4bd994": {
                     "type": "text",
                     "key": "field_fcc_ui_51e5d06c4bd994",
-                    "value": "Nhấn 2–3 giọt serum, chấm 5 điểm trên mặt."
+                    "value": "Lấy lượng serum theo hướng dẫn trên bao bì."
                 },
                 "fcc_ui_4b1b0491df1109": {
                     "type": "text",
@@ -2433,7 +2438,7 @@
                 "fcc_ui_1a64c1577ac190": {
                     "type": "text",
                     "key": "field_fcc_ui_1a64c1577ac190",
-                    "value": "để các đầu vi kim Spicule đưa Vitamin C tinh khiết & Glutathione thẩm thấu sâu."
+                    "value": "theo hướng dẫn của từng sản phẩm."
                 },
                 "fcc_ui_508c5d6efc0914": {
                     "type": "text",
@@ -2443,7 +2448,7 @@
                 "fcc_ui_e5928455565afc": {
                     "type": "text",
                     "key": "field_fcc_ui_e5928455565afc",
-                    "value": "Cảm giác châm chích 1–2s kích thích tuần hoàn"
+                    "value": "Theo dõi cảm nhận của da khi làm quen với sản phẩm"
                 },
                 "fcc_ui_44246cf815a4c5": {
                     "type": "text",
@@ -2453,7 +2458,7 @@
                 "fcc_ui_3e2fcae617ec9f": {
                     "type": "textarea",
                     "key": "field_fcc_ui_3e2fcae617ec9f",
-                    "value": "Sau serum 1–2 phút, thoa một lớp kem dưỡng mỏng nhẹ để khóa ẩm, củng cố màng lipid và giữ các đầu vi kim hoạt động êm ái cả ngày."
+                    "value": "Tham khảo bước dưỡng ẩm và thứ tự sử dụng được hướng dẫn trên bao bì từng sản phẩm."
                 },
                 "fcc_ui_c9bfb772712c09": {
                     "type": "text",
@@ -2468,7 +2473,7 @@
                 "fcc_ui_6b7f58ab228d9e": {
                     "type": "text",
                     "key": "field_fcc_ui_6b7f58ab228d9e",
-                    "value": "Bảo Vệ Toàn Diện"
+                    "value": "Sử Dụng Kem Chống Nắng"
                 },
                 "fcc_ui_b7e3dd1158d51b": {
                     "type": "text",
@@ -2478,17 +2483,17 @@
                 "fcc_ui_a305d919504297": {
                     "type": "textarea",
                     "key": "field_fcc_ui_a305d919504297",
-                    "value": "Thoa đủ lượng khoảng 2 đốt ngón tay cho toàn mặt và cổ trước khi ra ngoài 20 phút. Thoa lại sau 4–5 tiếng nếu hoạt động ngoài trời."
+                    "value": "Thoa và thoa lại kem chống nắng theo hướng dẫn của sản phẩm."
                 },
                 "fcc_ui_8829cf33691b9b": {
                     "type": "text",
                     "key": "field_fcc_ui_8829cf33691b9b",
-                    "value": "Bắt buộc:"
+                    "value": "Lưu ý:"
                 },
                 "fcc_ui_51e9c718a35f5f": {
                     "type": "text",
                     "key": "field_fcc_ui_51e9c718a35f5f",
-                    "value": "Bảo vệ tuyệt đối làn da đang trong chu kỳ tái tạo vi kim"
+                    "value": "Sử dụng kem chống nắng theo hướng dẫn trên bao bì"
                 },
                 "fcc_ui_f9b251f5e92008": {
                     "type": "text",
@@ -2503,7 +2508,7 @@
                 "fcc_ui_9ba02722fc9988": {
                     "type": "text",
                     "key": "field_fcc_ui_9ba02722fc9988",
-                    "value": "Tái Tạo Collagen • Mờ Thâm Sâu • Tái Sinh Làn Da"
+                    "value": "Làm Sạch • Dưỡng Ẩm • Chăm Sóc Môi"
                 },
                 "fcc_ui_b4179608806e68": {
                     "type": "text",
@@ -2513,7 +2518,7 @@
                 "fcc_ui_423d9f2734335f": {
                     "type": "text",
                     "key": "field_fcc_ui_423d9f2734335f",
-                    "value": "Làm sạch kép → Vi kim Needle Serum CX4 (300.000 vi kim) / Peel → Mặt nạ Needle Mask A → Dưỡng môi PDRN."
+                    "value": "Tham khảo các bước làm sạch, sử dụng serum hoặc sản phẩm tẩy da chết, dưỡng ẩm và chăm sóc môi. Cách kết hợp phụ thuộc vào hướng dẫn của từng sản phẩm."
                 },
                 "fcc_ui_14b2deb9407a0b": {
                     "type": "text",
@@ -2538,17 +2543,17 @@
                 "fcc_ui_34d868a51106b1": {
                     "type": "text",
                     "key": "field_fcc_ui_34d868a51106b1",
-                    "value": "Da sạch thông thoáng giúp vi kim Spicule đi thẳng góc"
+                    "value": "Làm sạch da theo chu trình phù hợp trước khi sử dụng sản phẩm"
                 },
                 "fcc_ui_a83c273956fe47": {
                     "type": "text",
                     "key": "field_fcc_ui_a83c273956fe47",
-                    "value": "Vi Kim Tái Tạo Ban Đêm"
+                    "value": "Sử Dụng Serum Buổi Tối"
                 },
                 "fcc_ui_fd8cef5c370ae0": {
                     "type": "text",
                     "key": "field_fcc_ui_fd8cef5c370ae0",
-                    "value": "Needle Serum CX4 (300.000 Vi Kim) hoặc Mandelic Peel"
+                    "value": "Needle Serum CX4 hoặc Mandelic Shot Peel Essence"
                 },
                 "fcc_ui_324d7d6b400595": {
                     "type": "text",
@@ -2558,27 +2563,27 @@
                 "fcc_ui_2c1c3d6e8ddd5f": {
                     "type": "text",
                     "key": "field_fcc_ui_2c1c3d6e8ddd5f",
-                    "value": "Lấy 2 pump, vỗ nhẹ theo hướng nâng cơ từ dưới lên trên."
+                    "value": "Tham khảo lượng dùng và cách thoa trên bao bì sản phẩm."
                 },
                 "fcc_ui_969271ba333dfa": {
                     "type": "text",
                     "key": "field_fcc_ui_969271ba333dfa",
-                    "value": "Ngày Peel da (2–3 lần/tuần):"
+                    "value": "Khi dùng sản phẩm tẩy da chết:"
                 },
                 "fcc_ui_f2c5feb4cea311": {
                     "type": "text",
                     "key": "field_fcc_ui_f2c5feb4cea311",
-                    "value": "Thoa 1 ống Mandelic Shot Peel Essence loại bỏ tế bào sừng già cỗi."
+                    "value": "Sử dụng Mandelic Shot Peel Essence theo lượng dùng và tần suất ghi trên bao bì."
                 },
                 "fcc_ui_cc4571efa0412e": {
                     "type": "text",
                     "key": "field_fcc_ui_cc4571efa0412e",
-                    "value": "Tái tạo đêm:"
+                    "value": "Lưu ý khi dùng:"
                 },
                 "fcc_ui_bb2d5539d6b824": {
                     "type": "text",
                     "key": "field_fcc_ui_bb2d5539d6b824",
-                    "value": "Nồng độ vi kim cao kích hoạt collagen trong giấc ngủ"
+                    "value": "Sử dụng theo hướng dẫn riêng của từng sản phẩm"
                 },
                 "fcc_ui_3bf276be1945ac": {
                     "type": "text",
@@ -2593,22 +2598,22 @@
                 "fcc_ui_f0881d05c30652": {
                     "type": "textarea",
                     "key": "field_fcc_ui_f0881d05c30652",
-                    "value": "Sau serum 3–5 phút, đắp mặt nạ Needle Serum A (chứa Retinol, PDRN & NMN) 15–20 phút để làm dịu cảm giác châm chích; hoặc thoa kem khóa ẩm chuyên sâu."
+                    "value": "Tham khảo bước mặt nạ hoặc kem dưỡng ẩm trong chu trình chăm sóc. Thứ tự và thời gian sử dụng theo hướng dẫn của từng sản phẩm."
                 },
                 "fcc_ui_6e913bd4e6c3f2": {
                     "type": "text",
                     "key": "field_fcc_ui_6e913bd4e6c3f2",
-                    "value": "Phục hồi sâu:"
+                    "value": "Dưỡng ẩm:"
                 },
                 "fcc_ui_5b5a0f9a1ed2ec": {
                     "type": "text",
                     "key": "field_fcc_ui_5b5a0f9a1ed2ec",
-                    "value": "Làm dịu da tức thì, ngậm nước căng bóng suốt đêm"
+                    "value": "Bổ sung độ ẩm trong chu trình chăm sóc da buổi tối"
                 },
                 "fcc_ui_5b96c21053a95f": {
                     "type": "text",
                     "key": "field_fcc_ui_5b96c21053a95f",
-                    "value": "Dưỡng Môi Tái Sinh PDRN"
+                    "value": "Dưỡng Môi PDRN"
                 },
                 "fcc_ui_9ab417ab0fa52a": {
                     "type": "text",
@@ -2618,7 +2623,7 @@
                 "fcc_ui_c0732fa1d841b5": {
                     "type": "textarea",
                     "key": "field_fcc_ui_c0732fa1d841b5",
-                    "value": "Thoa một lớp dày êm ái lên môi trước khi ngủ. Tinh chất cá hồi PDRN tinh khiết thẩm thấu giúp phục hồi rãnh nhăn môi và nuôi dưỡng sắc môi căng mọng."
+                    "value": "Sử dụng PDRN Shot Lip Essence theo hướng dẫn trên bao bì để chăm sóc và dưỡng ẩm cho môi."
                 },
                 "fcc_ui_07e520da0d6f38": {
                     "type": "text",
@@ -2628,12 +2633,12 @@
                 "fcc_ui_a68cbd7823a42a": {
                     "type": "text",
                     "key": "field_fcc_ui_a68cbd7823a42a",
-                    "value": "Đôi môi hồng hào, căng mướt tràn đầy sức sống sáng hôm sau"
+                    "value": "Tham khảo công dụng dưỡng ẩm và làm mềm môi của từng sản phẩm"
                 },
                 "fcc_ui_c621d87bd038db": {
                     "type": "text",
                     "key": "field_fcc_ui_c621d87bd038db",
-                    "value": "Demo Video Chuẩn Spa Nhật"
+                    "value": "Video Hướng Dẫn Sử Dụng"
                 },
                 "fcc_ui_3ef8f48058a977": {
                     "type": "text",
@@ -2643,12 +2648,12 @@
                 "fcc_ui_c70f7bac8522f7": {
                     "type": "text",
                     "key": "field_fcc_ui_c70f7bac8522f7",
-                    "value": "Kỹ thuật thoa vi kim Spicule không đỏ rát"
+                    "value": "Tham khảo cách sử dụng sản phẩm vi kim Spicule"
                 },
                 "fcc_ui_d470f372912db2": {
                     "type": "text",
                     "key": "field_fcc_ui_d470f372912db2",
-                    "value": "Thời lượng: 01:45 HD • Thao tác vỗ nhẹ chuẩn dược mỹ phẩm Tokyo"
+                    "value": "Tham khảo hướng dẫn riêng của từng sản phẩm"
                 },
                 "fcc_ui_4c38e0fae9a6b0": {
                     "type": "text",
@@ -2658,12 +2663,12 @@
                 "fcc_ui_0c6cfecb6d2c1d": {
                     "type": "text",
                     "key": "field_fcc_ui_0c6cfecb6d2c1d",
-                    "value": "3 Nguyên Tắc Vàng Khi Dùng Vi Kim"
+                    "value": "3 Lưu Ý Khi Dùng Sản Phẩm Vi Kim"
                 },
                 "fcc_ui_9a91ae567b1c6d": {
                     "type": "text",
                     "key": "field_fcc_ui_9a91ae567b1c6d",
-                    "value": "Khuyến nghị từ chuyên gia da liễu Fractional CC để đạt hiệu quả trắng sáng và căng bóng tối đa:"
+                    "value": "Tham khảo các lưu ý dưới đây và hướng dẫn trên bao bì từng sản phẩm:"
                 },
                 "fcc_ui_1d369fe064bf5f": {
                     "type": "text",
@@ -2673,17 +2678,17 @@
                 "fcc_ui_df627228705065": {
                     "type": "textarea",
                     "key": "field_fcc_ui_df627228705065",
-                    "value": "Luôn dùng đầu ngón tay vỗ nhẹ để đưa vi kim Spicule tự nhiên đi thẳng góc vào lớp sừng, tránh ma sát làm đỏ rát da."
+                    "value": "Thao tác nhẹ nhàng và thực hiện theo hướng dẫn của từng sản phẩm."
                 },
                 "fcc_ui_0ba4bb71e9634f": {
                     "type": "text",
                     "key": "field_fcc_ui_0ba4bb71e9634f",
-                    "value": "Tần suất tăng dần theo phản ứng da:"
+                    "value": "Tần suất theo từng sản phẩm:"
                 },
                 "fcc_ui_695f6c07cc3bce": {
                     "type": "textarea",
                     "key": "field_fcc_ui_695f6c07cc3bce",
-                    "value": "Tuần 1 làm quen với Serum C (150.000 vi kim) hàng ngày. Tuần 2 trở đi kết hợp Serum CX4 (300.000 vi kim) 2–3 buổi tối/tuần."
+                    "value": "Đọc hướng dẫn trên bao bì trước khi sử dụng. Không tự tăng tần suất hoặc kết hợp nhiều sản phẩm khi da chưa làm quen."
                 },
                 "fcc_ui_c20f5e21b85662": {
                     "type": "text",
@@ -2693,12 +2698,12 @@
                 "fcc_ui_5bf565980d9ff8": {
                     "type": "text",
                     "key": "field_fcc_ui_5bf565980d9ff8",
-                    "value": "Vi kim mở ra hàng triệu vi kênh hấp thụ, việc bôi kem khóa ẩm và kem chống nắng SPF 50+ ban ngày là bắt buộc."
+                    "value": "Tham khảo bước dưỡng ẩm và sử dụng kem chống nắng theo hướng dẫn của từng sản phẩm."
                 },
                 "fcc_ui_245d74f1632439": {
                     "type": "text",
                     "key": "field_fcc_ui_245d74f1632439",
-                    "value": "Nhắn Zalo Nhận Phác Đồ Skincare Cho Da Của Bạn (Miễn Phí)"
+                    "value": "Nhắn Zalo Để Được Tư Vấn Cách Dùng"
                 },
                 "fcc_ui_3dcdc80e3c2a9a": {
                     "type": "textarea",
@@ -2718,7 +2723,7 @@
                 "fcc_ui_ae9582f3595962": {
                     "type": "textarea",
                     "key": "field_fcc_ui_ae9582f3595962",
-                    "value": "Những chia sẻ chân thực từ khách hàng và chuyên gia chăm sóc da sau khi trải nghiệm sản phẩm Fractional CC phân phối bởi JP- BÙI ĐẶNG."
+                    "value": "Những chia sẻ từ khách hàng sau khi sử dụng sản phẩm Fractional CC."
                 },
                 "fcc_ui_d372f01686d8a2": {
                     "type": "text",
@@ -2783,7 +2788,7 @@
                 "fcc_ui_b87712fd5f7219": {
                     "type": "text",
                     "key": "field_fcc_ui_b87712fd5f7219",
-                    "value": "✓ Đã xác thực mua JP- BÙI ĐẶNG"
+                    "value": "Nhận xét khách hàng"
                 },
                 "fcc_ui_601a57d8bbdd68": {
                     "type": "text",
@@ -2988,7 +2993,7 @@
                 "fcc_ui_ffee9a4225722c": {
                     "type": "text",
                     "key": "field_fcc_ui_ffee9a4225722c",
-                    "value": "Bảo Chứng Pháp Lý & Độc Quyền"
+                    "value": "Thông Tin Nguồn Gốc & Phân Phối"
                 },
                 "fcc_ui_b9b5752a78e7bd": {
                     "type": "text",
@@ -2998,7 +3003,7 @@
                 "fcc_ui_890efa08eba42c": {
                     "type": "textarea",
                     "key": "field_fcc_ui_890efa08eba42c",
-                    "value": "Minh bạch nguồn gốc pháp lý, 100% hồ sơ công bố mỹ phẩm (CBMP) được cấp phép bởi Cục Quản Lý Dược – Bộ Y Tế. Cam kết bảo vệ quyền lợi tối đa cho người tiêu dùng Việt."
+                    "value": "Tham khảo thông tin phân phối và số CBMP được ghi trong hồ sơ từng sản phẩm Fractional CC."
                 },
                 "fcc_ui_a2e7754f312ed0": {
                     "type": "text",
@@ -3013,7 +3018,7 @@
                 "fcc_ui_ece1ba16c464ad": {
                     "type": "text",
                     "key": "field_fcc_ui_ece1ba16c464ad",
-                    "value": "FRACTIONAL CC TOKYO"
+                    "value": "FRACTIONAL CC"
                 },
                 "fcc_ui_410151f6a96765": {
                     "type": "text",
@@ -3053,12 +3058,12 @@
                 "fcc_ui_e8419886b6ea60": {
                     "type": "text",
                     "key": "field_fcc_ui_e8419886b6ea60",
-                    "value": "Nhập khẩu 100% trực tiếp từ nhà máy Nhật Bản."
+                    "value": "Sản phẩm Fractional CC có xuất xứ Nhật Bản."
                 },
                 "fcc_ui_3dc073adcde435": {
                     "type": "text",
                     "key": "field_fcc_ui_3dc073adcde435",
-                    "value": "Bảo chứng Bộ Y Tế:"
+                    "value": "Thông tin CBMP:"
                 },
                 "fcc_ui_3af00fb91f2ca9": {
                     "type": "text",
@@ -3093,7 +3098,7 @@
                 "fcc_ui_ae982933774491": {
                     "type": "textarea",
                     "key": "field_fcc_ui_ae982933774491",
-                    "value": "Cam kết 100% sản phẩm từ nhà sản xuất Fractional CC tại Nhật Bản. Tem mác đầy đủ, không qua bất kỳ trung gian nào."
+                    "value": "Sản phẩm Fractional CC được JP- BÙI ĐẶNG phân phối tại Việt Nam."
                 },
                 "fcc_ui_5b8df6b10deeed": {
                     "type": "text",
@@ -3103,7 +3108,7 @@
                 "fcc_ui_7edb9ddcb9e50a": {
                     "type": "textarea",
                     "key": "field_fcc_ui_7edb9ddcb9e50a",
-                    "value": "Toàn bộ 10 sản phẩm lưu hành đã được Cục Quản Lý Dược – Bộ Y Tế Việt Nam cấp số tiếp nhận Phiếu công bố mỹ phẩm chuẩn quy chuẩn."
+                    "value": "Số CBMP của từng sản phẩm được trình bày trong phần thông tin sản phẩm."
                 },
                 "fcc_ui_e847590dad784e": {
                     "type": "text",
@@ -3128,7 +3133,7 @@
                 "fcc_ui_6175b716eac766": {
                     "type": "text",
                     "key": "field_fcc_ui_6175b716eac766",
-                    "value": "& Zalo luôn sẵn sàng hỗ trợ phác đồ và giải đáp mọi thắc mắc trong suốt quá trình sử dụng."
+                    "value": "và Zalo hỗ trợ thông tin sản phẩm, lựa chọn và cách sử dụng."
                 },
                 "fcc_ui_2894eeaae5d690": {
                     "type": "text",
@@ -3173,7 +3178,7 @@
                 "fcc_ui_7ef079b83d85ee": {
                     "type": "text",
                     "key": "field_fcc_ui_7ef079b83d85ee",
-                    "value": "Những thông tin cốt lõi giúp bạn an tâm trải nghiệm công nghệ vi kim sinh học chuẩn Nhật."
+                    "value": "Thông tin về sản phẩm, lựa chọn và cách sử dụng Fractional CC."
                 },
                 "fcc_ui_bcc150a50681e7": {
                     "type": "text",
@@ -3603,7 +3608,7 @@
                 "fcc_ui_04e30839b767fe": {
                     "type": "text",
                     "key": "field_fcc_ui_04e30839b767fe",
-                    "value": "Khám phá giải pháp chăm sóc da chuẩn salon Tokyo và nhận tư vấn cách dùng chuyên sâu từ JP- BÙI ĐẶNG."
+                    "value": "Tham khảo các sản phẩm Fractional CC và liên hệ JP- BÙI ĐẶNG để được hỗ trợ lựa chọn, cách dùng."
                 },
                 "fcc_ui_afd0f22490cecf": {
                     "type": "text",
@@ -3613,7 +3618,7 @@
                 "fcc_ui_349de68dc325e9": {
                     "type": "text",
                     "key": "field_fcc_ui_349de68dc325e9",
-                    "value": "100% Mỹ Phẩm Tokyo Chuẩn Nhật"
+                    "value": "Mỹ Phẩm Nhật Bản"
                 },
                 "fcc_ui_17e4ce8db84c3e": {
                     "type": "text",
@@ -3903,7 +3908,7 @@
                 "fcc_ui_mechanism_routine_image": {
                     "type": "image",
                     "key": "field_fcc_ui_mechanism_routine_image",
-                    "value": "assets/images/mechanism/mechanism-skincare-routine.jpg"
+                    "value": "assets/images/thumbnail/needle-serum-cx4-02.webp"
                 },
                 "fcc_home_seo_image": {
                     "type": "image",
@@ -3953,7 +3958,7 @@
                 "fcc_ui_82f87c6d9e5ac2": {
                     "type": "text",
                     "key": "field_fcc_ui_82f87c6d9e5ac2",
-                    "value": "100% Made In Japan"
+                    "value": "Mỹ phẩm Nhật Bản"
                 },
                 "fcc_ui_6ec6ad1a68e2f2": {
                     "type": "text",
@@ -5068,7 +5073,7 @@
                 "fcc_ui_m_649eb3367b80": {
                     "type": "text",
                     "key": "field_fcc_ui_m_649eb3367b80",
-                    "value": "KHOA HỌC LÀN DA • CHUẨN SALON TOKYO"
+                    "value": "VẤN ĐỀ LÀN DA"
                 },
                 "fcc_ui_m_cfab75cee336": {
                     "type": "text",
@@ -5078,7 +5083,7 @@
                 "fcc_ui_m_c8c79f67f1e0": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_c8c79f67f1e0",
-                    "value": "Bạn đã chăm sóc da mỗi ngày nhưng làn da vẫn chưa đạt được vẻ rạng rỡ như mong muốn? Khám phá nguyên nhân khoa học và phác đồ vi kim sinh học Fractional CC chuẩn Nhật Bản được thiết kế riêng biệt cho từng tình trạng da."
+                    "value": "Tìm hiểu các nhu cầu chăm sóc da thường gặp và tham khảo sản phẩm Fractional CC phù hợp với nhu cầu của bạn."
                 },
                 "fcc_ui_m_1aac9f5963a3": {
                     "type": "text",
@@ -5118,7 +5123,7 @@
                 "fcc_ui_m_beda867aa60c": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_beda867aa60c",
-                    "value": "“Những vùng da sậm màu khiến tổng thể gương mặt thiếu tươi tắn, bạn ngại để mặt mộc và phải phụ thuộc nhiều hơn vào lớp trang điểm.”"
+                    "value": "Đốm nâu và các vùng da sậm màu khiến màu da trông không đồng đều."
                 },
                 "fcc_ui_m_7f9a48bcc23a": {
                     "type": "text",
@@ -5133,42 +5138,42 @@
                 "fcc_ui_m_ffa7ee5fe96b": {
                     "type": "text",
                     "key": "field_fcc_ui_m_ffa7ee5fe96b",
-                    "value": "CƠ CHẾ KHOA HỌC"
+                    "value": "THÔNG TIN THAM KHẢO"
                 },
                 "fcc_ui_m_455c002eaf62": {
                     "type": "text",
                     "key": "field_fcc_ui_m_455c002eaf62",
-                    "value": "Nguyên Nhân Sinh Học & Giải Pháp Chuẩn Nhật"
+                    "value": "Thông Tin & Gợi Ý Chăm Sóc"
                 },
                 "fcc_ui_m_17a6eb86cfe3": {
                     "type": "text",
                     "key": "field_fcc_ui_m_17a6eb86cfe3",
-                    "value": "Hiểu rõ cơ chế ở tầng tế bào để lựa chọn phác đồ điều hòa biểu bì tối ưu."
+                    "value": "Tham khảo nhu cầu của da và công dụng của từng sản phẩm trước khi lựa chọn."
                 },
                 "fcc_ui_m_451a423cf5c2": {
                     "type": "text",
                     "key": "field_fcc_ui_m_451a423cf5c2",
-                    "value": "Nguyên nhân từ góc nhìn khoa học"
+                    "value": "Nhu cầu chăm sóc da"
                 },
                 "fcc_ui_m_ee317c6cecd4": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_ee317c6cecd4",
-                    "value": "Tia UV và các gốc tự do kích hoạt tế bào hắc tố melanocyte sản sinh melanin phân tán không đều. Các serum Vitamin C dạng bôi thoa ngoài rất dễ bị oxy hóa trên bề mặt trước khi kịp tiếp cận tầng sinh sắc tố, khiến việc cải thiện màu da diễn ra chậm chạp."
+                    "value": "Khi lựa chọn sản phẩm cho da không đều màu hoặc có đốm nâu, hãy tham khảo công dụng được ghi trên hồ sơ của từng sản phẩm."
                 },
                 "fcc_ui_m_15ab5f794c38": {
                     "type": "text",
                     "key": "field_fcc_ui_m_15ab5f794c38",
-                    "value": "Giải pháp vi kim Fractional CC"
+                    "value": "Gợi ý từ danh mục Fractional CC"
                 },
                 "fcc_ui_m_b914dd02a446": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_b914dd02a446",
-                    "value": "Hệ vi kim sinh học Hydrolyzed Sponge tạo hàng ngàn đường dẫn siêu vi đưa trực tiếp dẫn xuất Vitamin C nồng độ cao vào biểu bì, phân tán nhẹ nhàng mảng sẫm màu và hỗ trợ làm sáng đều tông da mà không gây lột tẩy bào mòn."
+                    "value": "Các sản phẩm dòng Needle Serum C hướng đến nhu cầu dưỡng ẩm, dưỡng sáng và hỗ trợ chăm sóc da không đều màu theo hồ sơ sản phẩm."
                 },
                 "fcc_ui_m_9758ca3fb681": {
                     "type": "text",
                     "key": "field_fcc_ui_m_9758ca3fb681",
-                    "value": "GỢI Ý PHÁC ĐỒ"
+                    "value": "SẢN PHẨM GỢI Ý"
                 },
                 "fcc_ui_m_6ca8ac0a58fa": {
                     "type": "text",
@@ -5208,22 +5213,22 @@
                 "fcc_ui_m_20801d2b44e3": {
                     "type": "text",
                     "key": "field_fcc_ui_m_20801d2b44e3",
-                    "value": "CƠ CHẾ KHOA HỌC"
+                    "value": "THÔNG TIN THAM KHẢO"
                 },
                 "fcc_ui_m_a1d45865fa01": {
                     "type": "text",
                     "key": "field_fcc_ui_m_a1d45865fa01",
-                    "value": "Nguyên Nhân Sinh Học & Giải Pháp Chuẩn Nhật"
+                    "value": "Thông Tin & Gợi Ý Chăm Sóc"
                 },
                 "fcc_ui_m_70b6625c50ea": {
                     "type": "text",
                     "key": "field_fcc_ui_m_70b6625c50ea",
-                    "value": "Hiểu rõ cơ chế ở tầng tế bào để lựa chọn phác đồ điều hòa biểu bì tối ưu."
+                    "value": "Tham khảo nhu cầu của da và công dụng của từng sản phẩm trước khi lựa chọn."
                 },
                 "fcc_ui_m_305f2711c20c": {
                     "type": "text",
                     "key": "field_fcc_ui_m_305f2711c20c",
-                    "value": "Nguyên nhân từ góc nhìn khoa học"
+                    "value": "Nhu cầu chăm sóc da"
                 },
                 "fcc_ui_m_73519e2fc8b1": {
                     "type": "textarea",
@@ -5233,17 +5238,17 @@
                 "fcc_ui_m_d064bb5fcb12": {
                     "type": "text",
                     "key": "field_fcc_ui_m_d064bb5fcb12",
-                    "value": "Giải pháp vi kim Fractional CC"
+                    "value": "Gợi ý từ danh mục Fractional CC"
                 },
                 "fcc_ui_m_cfc5818a1f4e": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_cfc5818a1f4e",
-                    "value": "Quy trình làm sạch sâu cổ nang lông với acid phân tử lớn dịu nhẹ (Mandelic Acid) giải phóng bã nhờn bít tắc, phối hợp cùng tinh chất PDRN phục hồi giúp lấp đầy độ ẩm, thu nhỏ vẻ ngoài của lỗ chân lông."
+                    "value": "Mandelic Shot Peel Essence là lựa chọn tẩy tế bào chết trong danh mục Fractional CC. Tham khảo hướng dẫn riêng của sản phẩm khi kết hợp vào chu trình chăm sóc da."
                 },
                 "fcc_ui_m_dcdcfc792794": {
                     "type": "text",
                     "key": "field_fcc_ui_m_dcdcfc792794",
-                    "value": "GỢI Ý PHÁC ĐỒ"
+                    "value": "SẢN PHẨM GỢI Ý"
                 },
                 "fcc_ui_m_7b8f8f082a7a": {
                     "type": "text",
@@ -5283,22 +5288,22 @@
                 "fcc_ui_m_76c6f45b84b1": {
                     "type": "text",
                     "key": "field_fcc_ui_m_76c6f45b84b1",
-                    "value": "CƠ CHẾ KHOA HỌC"
+                    "value": "THÔNG TIN THAM KHẢO"
                 },
                 "fcc_ui_m_d3dcadafdded": {
                     "type": "text",
                     "key": "field_fcc_ui_m_d3dcadafdded",
-                    "value": "Nguyên Nhân Sinh Học & Giải Pháp Chuẩn Nhật"
+                    "value": "Thông Tin & Gợi Ý Chăm Sóc"
                 },
                 "fcc_ui_m_3eda3804b1c1": {
                     "type": "text",
                     "key": "field_fcc_ui_m_3eda3804b1c1",
-                    "value": "Hiểu rõ cơ chế ở tầng tế bào để lựa chọn phác đồ điều hòa biểu bì tối ưu."
+                    "value": "Tham khảo nhu cầu của da và công dụng của từng sản phẩm trước khi lựa chọn."
                 },
                 "fcc_ui_m_75b59cceb48d": {
                     "type": "text",
                     "key": "field_fcc_ui_m_75b59cceb48d",
-                    "value": "Nguyên nhân từ góc nhìn khoa học"
+                    "value": "Nhu cầu chăm sóc da"
                 },
                 "fcc_ui_m_3b83ce4eb80b": {
                     "type": "textarea",
@@ -5308,17 +5313,17 @@
                 "fcc_ui_m_653b87d4dfd4": {
                     "type": "text",
                     "key": "field_fcc_ui_m_653b87d4dfd4",
-                    "value": "Giải pháp vi kim Fractional CC"
+                    "value": "Gợi ý từ danh mục Fractional CC"
                 },
                 "fcc_ui_m_abb850c5218b": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_abb850c5218b",
-                    "value": "Sức mạnh từ công nghệ vi kim sinh học bọc hoạt chất vàng Retinol: Dòng Needle Serum AX4 sở hữu khoảng 600.000 vi kim (gấp 4 lần dòng A) kích hoạt phản xạ phục hồi nội sinh, hỗ trợ cải thiện độ săn chắc và làm mờ vẻ ngoài nếp nhăn."
+                    "value": "Needle Serum AX4 được giới thiệu với khoảng 600.000 vi kim, gấp 4 lần dòng A theo thông tin sản phẩm. Tham khảo công dụng và cách dùng trong hồ sơ từng sản phẩm."
                 },
                 "fcc_ui_m_561888c8085f": {
                     "type": "text",
                     "key": "field_fcc_ui_m_561888c8085f",
-                    "value": "GỢI Ý PHÁC ĐỒ"
+                    "value": "SẢN PHẨM GỢI Ý"
                 },
                 "fcc_ui_m_69872d42c4cb": {
                     "type": "text",
@@ -5358,22 +5363,22 @@
                 "fcc_ui_m_46a4e3691cea": {
                     "type": "text",
                     "key": "field_fcc_ui_m_46a4e3691cea",
-                    "value": "CƠ CHẾ KHOA HỌC"
+                    "value": "THÔNG TIN THAM KHẢO"
                 },
                 "fcc_ui_m_8b887d541a3f": {
                     "type": "text",
                     "key": "field_fcc_ui_m_8b887d541a3f",
-                    "value": "Nguyên Nhân Sinh Học & Giải Pháp Chuẩn Nhật"
+                    "value": "Thông Tin & Gợi Ý Chăm Sóc"
                 },
                 "fcc_ui_m_c9fd8e80cc6b": {
                     "type": "text",
                     "key": "field_fcc_ui_m_c9fd8e80cc6b",
-                    "value": "Hiểu rõ cơ chế ở tầng tế bào để lựa chọn phác đồ điều hòa biểu bì tối ưu."
+                    "value": "Tham khảo nhu cầu của da và công dụng của từng sản phẩm trước khi lựa chọn."
                 },
                 "fcc_ui_m_442fda7a3914": {
                     "type": "text",
                     "key": "field_fcc_ui_m_442fda7a3914",
-                    "value": "Nguyên nhân từ góc nhìn khoa học"
+                    "value": "Nhu cầu chăm sóc da"
                 },
                 "fcc_ui_m_78efcb0d16cf": {
                     "type": "textarea",
@@ -5383,17 +5388,17 @@
                 "fcc_ui_m_6613aa307a5d": {
                     "type": "text",
                     "key": "field_fcc_ui_m_6613aa307a5d",
-                    "value": "Giải pháp vi kim Fractional CC"
+                    "value": "Gợi ý từ danh mục Fractional CC"
                 },
                 "fcc_ui_m_8bdc88a333b9": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_8bdc88a333b9",
-                    "value": "Phác đồ hiệp đồng bước đệm và bước tăng cường: Bắt đầu làm quen dịu nhẹ với Serum C để củng cố nền da, sau đó nâng cấp lên Serum CX4 để tác động tầng sâu vào các gốc thâm mụn, giúp đẩy nhanh chu trình mờ thâm một cách an toàn và bền vững."
+                    "value": "Tham khảo các sản phẩm dòng C và công dụng ghi trên hồ sơ sản phẩm cho nhu cầu chăm sóc da không đều màu. Không tự tăng tần suất sử dụng khi chưa đối chiếu hướng dẫn trên bao bì."
                 },
                 "fcc_ui_m_be3346100dcf": {
                     "type": "text",
                     "key": "field_fcc_ui_m_be3346100dcf",
-                    "value": "GỢI Ý PHÁC ĐỒ"
+                    "value": "SẢN PHẨM GỢI Ý"
                 },
                 "fcc_ui_m_cf4ae9d38b97": {
                     "type": "text",
@@ -5408,17 +5413,17 @@
                 "fcc_ui_m_02f1df1d5599": {
                     "type": "text",
                     "key": "field_fcc_ui_m_02f1df1d5599",
-                    "value": "TRIẾT LÝ DƯỠNG DA TOKYO"
+                    "value": "LƯU Ý KHI CHĂM SÓC DA"
                 },
                 "fcc_ui_m_acdc2bebc18e": {
                     "type": "text",
                     "key": "field_fcc_ui_m_acdc2bebc18e",
-                    "value": "3 NGUYÊN TẮC VÀNG ĐỂ CHĂM SÓC DA HIỆU QUẢ"
+                    "value": "3 LƯU Ý KHI SỬ DỤNG SẢN PHẨM"
                 },
                 "fcc_ui_m_bd7a8e23590b": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_bd7a8e23590b",
-                    "value": "Làn da không thể thay đổi sau một đêm. Hiểu đúng và kiên nhẫn đồng hành cùng chu trình sinh học là chìa khóa để đạt kết quả bền lâu."
+                    "value": "Lựa chọn sản phẩm theo nhu cầu của da và sử dụng theo hướng dẫn riêng của từng sản phẩm."
                 },
                 "fcc_ui_m_dd8055ab472e": {
                     "type": "text",
@@ -5428,7 +5433,7 @@
                 "fcc_ui_m_6f7efa3c3475": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_6f7efa3c3475",
-                    "value": "Với serum vi kim, cảm giác châm chích nhẹ là phản ứng tự nhiên khi vi kim sinh học tiếp xúc biểu bì. Hãy bắt đầu với tần suất 2–3 lần/tuần trước khi dùng hàng ngày."
+                    "value": "Làm quen với sản phẩm theo hướng dẫn trên bao bì và theo dõi cảm nhận của da trong quá trình sử dụng."
                 },
                 "fcc_ui_m_c7586281721f": {
                     "type": "text",
@@ -5438,7 +5443,7 @@
                 "fcc_ui_m_a1c0ddeffd83": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_a1c0ddeffd83",
-                    "value": "Khi vi kim kích thích quá trình thay mới tế bào, da rất cần độ ẩm để tăng sinh. Hãy kết hợp kem dưỡng ẩm hoặc serum phục hồi (như PDRN) để duy trì màng ẩm mượt mà."
+                    "value": "Tham khảo các bước dưỡng ẩm trong chu trình chăm sóc và công dụng cụ thể của từng sản phẩm."
                 },
                 "fcc_ui_m_a9b77c4c9196": {
                     "type": "text",
@@ -5448,7 +5453,7 @@
                 "fcc_ui_m_43e1f28e55cf": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_43e1f28e55cf",
-                    "value": "Bảo vệ thành quả dưỡng da bằng kem chống nắng SPF50+ PA++++ mỗi sáng để ngăn chặn tia UV kích hoạt lại hắc tố melanin trên nền da đang tái tạo."
+                    "value": "Sử dụng kem chống nắng theo hướng dẫn trên bao bì, kết hợp với các bước chăm sóc da phù hợp."
                 },
                 "fcc_ui_m_24517189950b": {
                     "type": "text",
@@ -5463,7 +5468,7 @@
                 "fcc_ui_m_74f09950bc89": {
                     "type": "textarea",
                     "key": "field_fcc_ui_m_74f09950bc89",
-                    "value": "Mỗi làn da có cấu trúc và lịch sử chăm sóc riêng biệt. Hãy liên hệ với chuyên viên JP- BÙI ĐẶNG để được soi xét tình trạng da và tư vấn phác đồ Fractional CC phù hợp nhất với bạn."
+                    "value": "Liên hệ JP- BÙI ĐẶNG để được hỗ trợ lựa chọn sản phẩm Fractional CC và cách dùng theo nhu cầu của bạn."
                 },
                 "fcc_ui_m_1e850dd54933": {
                     "type": "text",
@@ -5504,6 +5509,31 @@
                     "type": "image",
                     "key": "field_fcc_concerns_seo_image",
                     "value": "assets/images/banner/combo-c-cx4-gold.png"
+                },
+                "fcc_home_concerns_advice_title": {
+                    "type": "text",
+                    "key": "field_fcc_home_concerns_advice_title",
+                    "value": "Gợi ý chăm sóc da:"
+                },
+                "fcc_home_concerns_advice_text": {
+                    "type": "textarea",
+                    "key": "field_fcc_home_concerns_advice_text",
+                    "value": "Chọn sản phẩm theo nhu cầu của da và sử dụng theo hướng dẫn trên bao bì. Liên hệ JP- BÙI ĐẶNG nếu cần hỗ trợ lựa chọn."
+                },
+                "fcc_ui_m_c98495147be1": {
+                    "type": "textarea",
+                    "key": "field_fcc_ui_m_c98495147be1",
+                    "value": "Vết thâm có thể còn lại sau mụn, khiến màu da trông không đồng đều."
+                },
+                "fcc_ui_m_a9e9a444a956": {
+                    "type": "textarea",
+                    "key": "field_fcc_ui_m_a9e9a444a956",
+                    "value": "Lỗ chân lông dễ thấy và bề mặt da sần là những nhu cầu chăm sóc thường gặp."
+                },
+                "fcc_ui_m_73b5443ca20d": {
+                    "type": "textarea",
+                    "key": "field_fcc_ui_m_73b5443ca20d",
+                    "value": "Nếp nhăn và thay đổi về độ đàn hồi là những dấu hiệu da có thể gặp theo thời gian."
                 }
             },
             "content": "",
@@ -5672,7 +5702,7 @@
                 "oil",
                 "rough"
             ],
-            "tagline": "Serum tẩy tế bào chết – làm sạch lỗ chân lông – mịn da chỉ trong 1 bước",
+            "tagline": "Serum tẩy tế bào chết – làm sạch lỗ chân lông – mịn da",
             "spiculeCount": "50.000 vi kim tự nhiên",
             "volume": "30ml",
             "originalPrice": "850000",
@@ -5689,7 +5719,7 @@
             "brand": "Fractional CC",
             "ingredientsText": "💜 50.000 vi kim tự nhiên (Microneedles) hỗ trợ đưa các hoạt chất thẩm thấu tốt hơn vào da, góp phần tăng hiệu quả chăm sóc và tái tạo bề mặt da.\r\n✨ 10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) giúp loại bỏ tế bào chết trên bề mặt, cải thiện tình trạng da xỉn màu, sần sùi, mang lại làn da mềm mịn và tươi sáng hơn.\r\n🌿 Salicylic Acid (BHA) hỗ trợ làm sạch sâu lỗ chân lông, loại bỏ bã nhờn dư thừa và giảm tình trạng bít tắc – một trong những nguyên nhân gây mụn.\r\n💧 5% Niacinamide kết hợp cùng Hyaluronic Acid, Panthenol và chiết xuất rau má (CICA) giúp bổ sung độ ẩm, làm dịu da và hỗ trợ phục hồi hàng rào bảo vệ da sau quá trình tẩy tế bào chết, hạn chế cảm giác khô căng.",
             "spotlightTitle": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
-            "spotlightDescription": "Serum tẩy tế bào chết – làm sạch lỗ chân lông – mịn da chỉ trong 1 bước",
+            "spotlightDescription": "Serum tẩy tế bào chết – làm sạch lỗ chân lông – mịn da",
             "spotlightHighlights": "50.000 vi kim tự nhiên (Microneedles) | 50.000 vi kim tự nhiên (Microneedles) hỗ trợ đưa các hoạt chất thẩm thấu tốt hơn vào da, góp phần tăng hiệu quả chăm sóc và tái tạo bề mặt da.\r\n10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) | 10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) giúp loại bỏ tế bào chết trên bề mặt, cải thiện tình trạng da xỉn màu, sần sùi, mang lại làn da mềm mịn và tươi sáng hơn.\r\nSalicylic Acid (BHA) | Salicylic Acid (BHA) hỗ trợ làm sạch sâu lỗ chân lông, loại bỏ bã nhờn dư thừa và giảm tình trạng bít tắc – một trong những nguyên nhân gây mụn.\r\n5% Niacinamide | 5% Niacinamide kết hợp cùng Hyaluronic Acid, Panthenol và chiết xuất rau má (CICA) giúp bổ sung độ ẩm, làm dịu da và hỗ trợ phục hồi hàng rào bảo vệ da sau quá trình tẩy tế bào chết, hạn chế cảm giác khô căng."
         },
         {
@@ -6065,12 +6095,12 @@
                 "fcc_home_catalog": {
                     "type": "true_false",
                     "key": "field_fcc_home_catalog",
-                    "value": "0"
+                    "value": "1"
                 },
                 "fcc_home_catalog_order": {
                     "type": "number",
                     "key": "field_fcc_home_catalog_order",
-                    "value": "0"
+                    "value": "6"
                 },
                 "fcc_spotlightSpecs": {
                     "type": "text",
@@ -6115,7 +6145,7 @@
                 "fcc_hoverImage": {
                     "type": "image",
                     "key": "field_fcc_hoverImage",
-                    "value": ""
+                    "value": "assets/images/thumbnail/needle-serum-ax4-02.webp"
                 }
             },
             "shortName": "Needle Serum AX4 (Chuyên sâu X4)",
@@ -6742,7 +6772,7 @@
                 "dark-spot",
                 "recovery"
             ],
-            "tagline": "Serum phục hồi – làm sáng – mờ thâm – căng bóng chỉ trong 1 bước",
+            "tagline": "Serum phục hồi – làm sáng – mờ thâm – căng bóng",
             "spiculeCount": "Công nghệ Tế bào PDRN 1000ppm",
             "volume": "50ml",
             "originalPrice": "",
@@ -6759,7 +6789,7 @@
             "brand": "Fractional CC",
             "ingredientsText": "💗 Sản phẩm nổi bật với 1000ppm PDRN (DNA cá hồi) giúp hỗ trợ tái tạo và phục hồi làn da, cải thiện độ đàn hồi, cho da mềm mịn và khỏe khoắn hơn.\r\nBên cạnh đó, sự kết hợp của 12% Niacinamide và 2% Arbutin giúp hỗ trợ làm sáng da, cải thiện tình trạng thâm mụn, da xỉn màu và mang lại làn da đều màu, rạng rỡ hơn theo thời gian.\r\nKhông chỉ vậy, Glutathione kết hợp Vitamin C còn giúp chống oxy hóa, nuôi dưỡng làn da tươi sáng, trong khi CICA, Panthenol và Hyaluronic Acid cấp ẩm sâu, làm dịu da và hỗ trợ củng cố hàng rào bảo vệ da, giúp da luôn căng mướt và tràn đầy sức sống.",
             "spotlightTitle": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence",
-            "spotlightDescription": "Serum phục hồi – làm sáng – mờ thâm – căng bóng chỉ trong 1 bước",
+            "spotlightDescription": "Serum phục hồi – làm sáng – mờ thâm – căng bóng",
             "spotlightHighlights": "1000ppm PDRN (DNA cá hồi) | Sản phẩm nổi bật với 1000ppm PDRN (DNA cá hồi) giúp hỗ trợ tái tạo và phục hồi làn da, cải thiện độ đàn hồi, cho da mềm mịn và khỏe khoắn hơn.\r\n12% Niacinamide và 2% Arbutin | Bên cạnh đó, sự kết hợp của 12% Niacinamide và 2% Arbutin giúp hỗ trợ làm sáng da, cải thiện tình trạng thâm mụn, da xỉn màu và mang lại làn da đều màu, rạng rỡ hơn theo thời gian.\r\nGlutathione kết hợp Vitamin C | Không chỉ vậy, Glutathione kết hợp Vitamin C còn giúp chống oxy hóa, nuôi dưỡng làn da tươi sáng, trong khi CICA, Panthenol và Hyaluronic Acid cấp ẩm sâu, làm dịu da và hỗ trợ củng cố hàng rào bảo vệ da, giúp da luôn căng mướt và tràn đầy sức sống."
         },
         {
@@ -7062,16 +7092,6 @@
             "content": "",
             "excerpt": "",
             "fields": {
-                "fcc_featured": {
-                    "type": "true_false",
-                    "key": "field_fcc_featured",
-                    "value": "1"
-                },
-                "fcc_featured_order": {
-                    "type": "number",
-                    "key": "field_fcc_featured_order",
-                    "value": "2"
-                },
                 "fcc_spotlightDescription": {
                     "type": "textarea",
                     "key": "field_fcc_spotlightDescription",
@@ -7090,7 +7110,7 @@
                 "fcc_spotlightHighlights": {
                     "type": "textarea",
                     "key": "field_fcc_spotlightHighlights",
-                    "value": "Needle Serum C (150.000 vi kim): | Vitamin C tinh khiết & Glutathione làm sáng đều màu da hàng ngày.\r\nNeedle Serum CX4 (Mật độ X4): | Dòng C chuyên sâu nồng độ cao hỗ trợ mờ thâm nám và tái sinh làn da.\r\nQuà Tặng PDRN Shot: | Serum dưỡng môi DNA cá hồi Nhật Bản cấp ẩm căng bóng tự nhiên.\r\nCông Nghệ Vi Kim Tokyo: | 100% Made In Japan, kiểm nghiệm nghiêm ngặt, hồ sơ CBMP minh bạch."
+                    "value": "Needle Serum C (150.000 vi kim): | Tham khảo công dụng dưỡng ẩm và chăm sóc da không đều màu theo hồ sơ sản phẩm.\nNeedle Serum CX4 (Mật độ X4): | Tham khảo công dụng và hướng dẫn sử dụng riêng của dòng CX4.\nQuà tặng PDRN Shot: | Thông tin quà tặng được xác nhận khi đặt hàng.\nThông tin sản phẩm: | Xuất xứ Nhật Bản; số CBMP theo hồ sơ từng sản phẩm."
                 },
                 "fcc_spotlightGift": {
                     "type": "text",
@@ -7106,16 +7126,6 @@
                     "type": "text",
                     "key": "field_fcc_spotlightBuyLabel",
                     "value": "MUA COMBO C–CX4 NGAY"
-                },
-                "fcc_home_catalog": {
-                    "type": "true_false",
-                    "key": "field_fcc_home_catalog",
-                    "value": "1"
-                },
-                "fcc_home_catalog_order": {
-                    "type": "number",
-                    "key": "field_fcc_home_catalog_order",
-                    "value": "1"
                 },
                 "fcc_cardTags": {
                     "type": "checkbox",
@@ -7133,7 +7143,7 @@
             },
             "code": "C-CX4",
             "shortName": "Combo Serum C–CX4",
-            "badge": "COMBO CHỦ LỰC",
+            "badge": "COMBO BÁN CHẠY",
             "isBestSeller": "1",
             "productIds": [
                 6,
@@ -7154,10 +7164,6 @@
     "featured": [
         {
             "source": "product_1",
-            "fields": []
-        },
-        {
-            "source": "combo_C-CX4",
             "fields": []
         }
     ],
@@ -7195,15 +7201,15 @@
         "imagePolicy": "Existing approved theme product images; embedded workbook photos are not used."
     },
     "homeCatalog": [
-        "combo_C-CX4",
         "product_1",
         "product_6",
         "product_7",
         "product_8",
+        "product_4",
         "product_9"
     ],
     "contentManagement": {
-        "version": "1",
+        "version": "2",
         "pages": {
             "concerns": [
                 "fcc_ui_m_14b8ce911f21",
@@ -7298,7 +7304,12 @@
                 "fcc_concerns_tham_mun_image",
                 "fcc_concerns_seo_title",
                 "fcc_concerns_seo_description",
-                "fcc_concerns_seo_image"
+                "fcc_concerns_seo_image",
+                "fcc_home_concerns_advice_title",
+                "fcc_home_concerns_advice_text",
+                "fcc_ui_m_c98495147be1",
+                "fcc_ui_m_a9e9a444a956",
+                "fcc_ui_m_73b5443ca20d"
             ],
             "home": [
                 "fcc_ui_m_03206086d152",
@@ -7411,7 +7422,8 @@
                 "fcc_ui_msg_e30c937169",
                 "fcc_ui_msg_b123316808",
                 "fcc_ui_saving_prefix",
-                "fcc_ui_gallery_view"
+                "fcc_ui_gallery_view",
+                "fcc_ui_combo_contents_heading"
             ],
             "catalog": [
                 "fcc_ui_m_e49982d492e8",
@@ -7541,13 +7553,6 @@
         "source": "User-approved current WordPress content, media, catalog and selections."
     },
     "media": {
-        "assets/images/thumbnail/mandelic-shot-peel-essence-hover.webp": {
-            "sha256": "7a4b01da4caa6e3e6bd7360b784cfc6de40e342820e9a618be13ec85dfc6453a",
-            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh hover card",
-            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết hover",
-            "caption": "",
-            "description": ""
-        },
         "assets/images/thumbnail/pdrn-shot-lip-plumper-02.webp": {
             "sha256": "0f1b87da2037e9d89a67879fd7a5aa972330df0c72ce8d552640faab4af53b78",
             "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh chi tiết 2",
@@ -7625,17 +7630,17 @@
             "caption": "",
             "description": ""
         },
-        "assets/images/thumbnail/needle-serum-cx4-03.webp": {
-            "sha256": "8de7017b2bb488b9bcb874b0f228234ce39880be37dcbeb0598912d74965e92e",
-            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 3",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 3",
-            "caption": "",
-            "description": ""
-        },
         "assets/images/thumbnail/needle-serum-cx4-02.webp": {
             "sha256": "6b4fbe246f7fbc25634021afd7999daa7bf5675faf90b80cfe096983a4cd3e4f",
             "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 2",
             "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-cx4-03.webp": {
+            "sha256": "8de7017b2bb488b9bcb874b0f228234ce39880be37dcbeb0598912d74965e92e",
+            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 3",
             "caption": "",
             "description": ""
         },
@@ -7804,6 +7809,13 @@
             "sha256": "c25389021a99ac2348812577d16dd666f8f7f8cc45773ad0807e5dc5c1ef727e",
             "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 2",
             "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/mandelic-shot-peel-essence-hover.webp": {
+            "sha256": "7a4b01da4caa6e3e6bd7360b784cfc6de40e342820e9a618be13ec85dfc6453a",
+            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh hover card",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết hover",
             "caption": "",
             "description": ""
         },
@@ -8185,5 +8197,6 @@
                 "description": ""
             }
         }
-    }
+    },
+    "featuredCombo": "combo_C-CX4"
 }

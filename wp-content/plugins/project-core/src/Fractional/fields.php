@@ -70,7 +70,7 @@ function project_core_fcc_register_fields() {
 	$combo[] = project_core_fcc_field( 'combo_cardTags', 'Nhãn trên card combo', 'checkbox', array( 'choices' => project_core_fcc_product_card_tag_choices(), 'layout' => 'horizontal', 'return_format' => 'value', 'default_value' => array(), 'instructions' => 'Tích chọn một hoặc nhiều nhãn: Sale – đang khuyến mại, New – sản phẩm mới, Best – bán chạy, Sold Out – hết hàng. Chỉ chọn khi phù hợp với thông tin đã xác nhận. Nhãn xuất hiện ở góc trên bên trái ảnh trên các card combo dạng danh sách và trang chủ (không hiển thị ở mục sản phẩm chủ lực trên trang chủ); bỏ chọn hết để ẩn. Nhãn không tự thay đổi giá.' ) );
 	$combo[ count( $combo ) - 1 ]['name'] = 'fcc_cardTags';
 	$combo[] = project_core_fcc_field( 'combo_productsIncluded', 'Mô tả sản phẩm bên trong', 'textarea', array( 'instructions' => 'Mỗi ý một dòng.' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_productsIncluded';
-	$combo[] = project_core_fcc_field( 'combo_productIds', 'Sản phẩm trong combo', 'relationship', array( 'post_type' => array( 'fcc_product' ), 'return_format' => 'id' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_productIds';
+	$combo[] = project_core_fcc_field( 'combo_productIds', 'Sản phẩm trong combo', 'relationship', array( 'post_type' => array( 'fcc_product' ), 'return_format' => 'id', 'instructions' => 'Danh sách thành phần trên thẻ combo trang chủ lấy tên và giá bán hiện tại của các sản phẩm đã xuất bản được chọn ở đây. Kéo thả để đổi thứ tự.' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_productIds';
 	$combo[] = project_core_fcc_field( 'combo_image', 'Ảnh combo', 'image', array( 'return_format' => 'id', 'preview_size' => 'medium' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_image';
 	$combo[] = project_core_fcc_field( 'combo_hoverImage', 'Ảnh khi rê chuột (Hover card)', 'image', array( 'return_format' => 'id', 'preview_size' => 'medium', 'instructions' => 'Chọn ảnh hiển thị khi khách rê chuột vào card combo (tùy chọn).' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_hoverImage';
 	$combo[] = project_core_fcc_field( 'combo_isBestSeller', 'Hiện nhãn bán chạy (cần có nguồn)', 'true_false', array( 'ui' => 1 ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_isBestSeller';
@@ -85,18 +85,23 @@ function project_core_fcc_register_fields() {
 	acf_add_local_field_group( array(
 		'key' => 'group_fcc_featured', 'title' => 'Sản phẩm chủ lực trên trang chủ', 'menu_order' => 10,
 		'fields' => array(
-			project_core_fcc_field( 'featured', 'Sản phẩm chủ lực', 'true_false', array( 'wrapper' => array( 'width' => 75 ), 'ui' => 1, 'instructions' => 'Bật để hiển thị ở mục sản phẩm chủ lực trên trang chủ. Chọn tối đa 2 sản phẩm hoặc combo đã xuất bản; bỏ chọn mục cũ trước khi thay thế.' ) ),
+			project_core_fcc_field( 'featured', 'Sản phẩm chủ lực', 'true_false', array( 'wrapper' => array( 'width' => 75 ), 'ui' => 1, 'instructions' => 'Chọn tối đa 2 sản phẩm đã xuất bản. Khi có combo nổi bật, mục chủ lực hiển thị sản phẩm đứng đầu và combo đó. Combo nổi bật được chọn riêng trong phần Combo.' ) ),
 			project_core_fcc_field( 'featured_order', 'Thứ tự hiển thị', 'number', array( 'wrapper' => array( 'width' => 25 ), 'min' => 0, 'step' => 1, 'default_value' => 0, 'instructions' => 'Số nhỏ hơn đứng trước. Chỉ có tác dụng khi bật Sản phẩm chủ lực.' ) ),
 		),
-		'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ), array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_combo' ) ) ),
+		'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ) ),
 	) );
 	acf_add_local_field_group( array(
 		'key' => 'group_fcc_home_catalog', 'title' => 'Danh Mục Sản Phẩm & Các Combo Tối Ưu – Trang chủ', 'menu_order' => 11,
 		'fields' => array(
-			project_core_fcc_field( 'home_catalog', 'Hiển thị trong danh mục trang chủ', 'true_false', array( 'wrapper' => array( 'width' => 75 ), 'ui' => 1, 'instructions' => 'Bật để hiển thị trong mục Danh Mục Sản Phẩm & Các Combo Tối Ưu. Tối đa 6 sản phẩm và combo tổng cộng đã xuất bản. Độc lập với lựa chọn 2 sản phẩm chủ lực; bỏ chọn mục cũ trước khi thay thế.' ) ),
-			project_core_fcc_field( 'home_catalog_order', 'Thứ tự trong danh mục trang chủ', 'number', array( 'wrapper' => array( 'width' => 25 ), 'min' => 0, 'step' => 1, 'default_value' => 0, 'instructions' => 'Số nhỏ hơn đứng trước, dùng chung thứ tự cho sản phẩm và combo. Chỉ có tác dụng khi bật hiển thị danh mục trang chủ.' ) ),
+			project_core_fcc_field( 'home_catalog', 'Hiển thị trong danh mục trang chủ', 'true_false', array( 'wrapper' => array( 'width' => 75 ), 'ui' => 1, 'instructions' => 'Chọn tối đa 6 sản phẩm đã xuất bản, không tính combo nổi bật. Bỏ chọn một sản phẩm trước khi thêm sản phẩm mới. Độc lập với lựa chọn sản phẩm chủ lực.' ) ),
+			project_core_fcc_field( 'home_catalog_order', 'Thứ tự trong danh mục trang chủ', 'number', array( 'wrapper' => array( 'width' => 25 ), 'min' => 0, 'step' => 1, 'default_value' => 0, 'instructions' => 'Số nhỏ hơn đứng trước. Chỉ sắp xếp 6 sản phẩm trong danh mục trang chủ.' ) ),
 		),
-		'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ), array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_combo' ) ) ),
+		'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ) ),
+	) );
+	acf_add_local_field_group( array(
+		'key' => 'group_fcc_featured_combo', 'title' => 'Combo nổi bật trên website', 'menu_order' => 10,
+		'fields' => array( project_core_fcc_field( 'featured_combo', 'Hiển thị combo nổi bật', 'true_false', array( 'ui' => 1, 'instructions' => 'Website chỉ dùng một combo nổi bật đã xuất bản. Bật combo này sẽ thay thế combo đang chọn tại ảnh Hero, mục chủ lực, khung combo trang chủ, combo nổi bật trong danh mục và các nút mua combo. Ảnh, tên và giá lấy từ combo này.' ) ) ),
+		'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_combo' ) ) ),
 	) );
 }
 add_action( 'acf/init', 'project_core_fcc_register_fields' );

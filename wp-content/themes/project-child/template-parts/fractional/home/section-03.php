@@ -34,7 +34,7 @@
                 $brand_caption = 'Hình ảnh sản phẩm, bao bì và phong cách thương hiệu.';
             }
             ?>
-            <div class="brand-image-stage">
+            <div class="brand-image-stage"<?php echo project_child_fcc_image_edit_attributes( 'fcc_ui_brand_image', 'home' ); ?>>
               <?php
               echo project_child_fcc_picture_html(
                   $brand_img_url,

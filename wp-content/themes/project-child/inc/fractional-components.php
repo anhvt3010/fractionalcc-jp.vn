@@ -4,13 +4,10 @@ defined( 'ABSPATH' ) || exit;
 
 function project_child_fcc_fragment( $name ) {
 	if ( 'home_catalog' === $name ) {
-		$combos = array_column( project_core_fcc_combos(), null, 'id' );
+		$combo = project_core_fcc_featured_combo();
+		if ( $combo ) { get_template_part( 'template-parts/fractional/components/combo-card', null, array( 'combo' => $combo, 'home' => true ) ); }
 		foreach ( project_core_fcc_home_catalog_posts() as $post ) {
-			if ( 'fcc_combo' === $post->post_type ) {
-				if ( isset( $combos[ $post->ID ] ) ) { get_template_part( 'template-parts/fractional/components/combo-card', null, array( 'combo' => $combos[ $post->ID ], 'home' => true ) ); }
-			} else {
-				get_template_part( 'template-parts/fractional/components/product-card', null, array( 'product' => project_core_fcc_product( $post->ID, false ) ) );
-			}
+			get_template_part( 'template-parts/fractional/components/product-card', null, array( 'product' => project_core_fcc_product( $post->ID, false ) ) );
 		}
 		return;
 	}

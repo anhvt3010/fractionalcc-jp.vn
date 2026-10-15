@@ -11,7 +11,7 @@ $right = array(
 	array( 'field' => 'fcc_nav_concerns', 'url' => project_core_fcc_url( 'concerns' ), 'current' => 'concerns' === $kind ? 'page' : '' ),
 	array( 'field' => 'fcc_nav_legal', 'url' => project_core_fcc_url( 'home', '#cam-ket-phap-ly' ), 'current' => '' ),
 );
-$order_code = 'product' === $kind ? 'prod_' . get_queried_object_id() : project_child_fcc_order_code( 'combo_C-CX4' );
+$order_code = 'product' === $kind ? 'prod_' . get_queried_object_id() : project_child_fcc_featured_combo_order_code();
 get_template_part( 'template-parts/fractional/shared/part-8fe73eaef545' );
 ?>
 <header class="site-header fcc-unified-header">
@@ -19,7 +19,7 @@ get_template_part( 'template-parts/fractional/shared/part-8fe73eaef545' );
 		<nav class="header-nav-side header-nav-left" aria-label="Menu chính bên trái">
 			<ul class="nav-split-list"><?php get_template_part( 'template-parts/fractional/shared/header-links', null, array( 'items' => $left ) ); ?></ul>
 		</nav>
-		<a href="<?php echo esc_url( project_core_fcc_url( 'home' ) ); ?>" class="brand-logo-center" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_ab373a90954b36', 'shared' ) ); ?>">
+		<a href="<?php echo esc_url( project_core_fcc_url( 'home' ) ); ?>" class="brand-logo-center" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_ab373a90954b36', 'shared' ) ); ?>"<?php echo project_child_fcc_image_edit_attributes( 'fcc_ui_1a0029c547f307' ); ?>>
 			<?php
 			echo project_child_fcc_picture_html(
 				project_child_fcc_image( 'fcc_ui_1a0029c547f307' ),
@@ -29,7 +29,7 @@ get_template_part( 'template-parts/fractional/shared/part-8fe73eaef545' );
 			);
 			?>
 			<span class="logo-divider"></span>
-			<span class="distributor-badge">
+			<span class="distributor-badge"<?php echo project_child_fcc_image_edit_attributes( 'fcc_ui_be08f7c57f78ec' ); ?>>
 				<?php
 				echo project_child_fcc_picture_html(
 					project_child_fcc_image( 'fcc_ui_be08f7c57f78ec' ),

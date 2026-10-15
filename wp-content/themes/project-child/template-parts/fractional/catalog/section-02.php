@@ -1,14 +1,10 @@
 <?php
 defined( 'ABSPATH' ) || exit;
-$fcc_combo_products = array();
-foreach ( project_core_fcc_combos() as $fcc_combo ) {
-	if ( 'C-CX4' !== $fcc_combo['code'] ) { continue; }
-	foreach ( array_unique( $fcc_combo['productIds'] ) as $fcc_product_id ) {
-		$fcc_product = project_core_fcc_product( $fcc_product_id, false );
-		if ( $fcc_product ) { $fcc_combo_products[] = $fcc_product; }
-	}
-	break;
-}
+$fcc_combo = project_core_fcc_featured_combo();
+if ( ! $fcc_combo ) { echo '<div id="danh-sach-combo"></div>'; return; }
+$fcc_combo_products = project_core_fcc_combo_contents( $fcc_combo )['products'];
+$fcc_combo_description = (string) get_post_meta( $fcc_combo['id'], 'fcc_spotlightDescription', true );
+if ( '' === $fcc_combo_description ) { $fcc_combo_description = $fcc_combo['idealFor']; }
 ?>
 <section class="section" id="danh-sach-combo">
       <div class="container">
@@ -20,13 +16,11 @@ foreach ( project_core_fcc_combos() as $fcc_combo ) {
 
         <div class="brief-brand">
           <div class="brand-visual-wrap">
-            <img src="<?php echo esc_url( project_child_fcc_image( 'fcc_ui_453bd451ef0751' ) ); ?>" alt="<?php echo esc_attr( project_child_fcc_image_alt( 'fcc_ui_453bd451ef0751', 'fcc_ui_b9912a532ed31f' ) ); ?>" loading="lazy">
+            <?php echo project_child_fcc_picture_html( $fcc_combo['image'], project_child_fcc_hero_product_image_alt(), '', array( 'loading' => 'lazy' ) ); ?>
           </div>
           <div class="brand-content-wrap">
-            <h3 class="brand-content-quote combo-spotlight-title"><?php echo project_child_fcc_text( 'fcc_ui_f742617136c8f0', 'catalog' ); ?></h3>
-            <p class="brand-content-desc">
-              <?php echo project_child_fcc_text( 'fcc_ui_071145cc904429', 'catalog' ); ?> <strong><?php echo project_child_fcc_text( 'fcc_ui_481ddc3afebd12', 'catalog' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_99ce1d649bf94a', 'catalog' ); ?> <strong><?php echo project_child_fcc_text( 'fcc_ui_201efb207d823a', 'catalog' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_389ffc845e3eda', 'catalog' ); ?>
-            </p>
+            <h3 class="brand-content-quote combo-spotlight-title"><?php echo esc_html( $fcc_combo['name'] ); ?></h3>
+            <p class="brand-content-desc"><?php echo esc_html( $fcc_combo_description ); ?></p>
             <?php if ( $fcc_combo_products ) : ?>
               <div class="combo-included-products">
                 <p class="combo-included-heading">Sản phẩm trong combo</p>
@@ -45,29 +39,20 @@ foreach ( project_core_fcc_combos() as $fcc_combo ) {
                 </ul>
               </div>
             <?php endif; ?>
-            <div class="combo-gift-box">
-              <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M20 12v10H4V12"></path><path d="M2 7h20v5H2z"></path><path d="M12 22V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg><strong><?php echo project_child_fcc_text( 'fcc_ui_61773f36920e41', 'catalog' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_c6968594a69f05', 'catalog' ); ?>
+            <?php if ( $fcc_combo['gift'] ) : ?><div class="combo-gift-box">
+              <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M20 12v10H4V12"></path><path d="M2 7h20v5H2z"></path><path d="M12 22V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg><strong><?php echo project_child_fcc_text( 'fcc_ui_61773f36920e41', 'catalog' ); ?></strong> <?php echo esc_html( $fcc_combo['gift'] ); ?>
             </div>
+            <?php endif; ?>
             <div class="combo-price-wrap" style="border: none; padding: 0; margin-bottom: 8px;">
               <div class="combo-sale-price-row">
-                <span class="combo-sale-price"><?php echo esc_html( project_child_fcc_reference_text( '1.237.500đ', 'combo_C-CX4' ) ); ?></span>
-                <span class="combo-original-price"><?php echo esc_html( project_child_fcc_reference_text( '1.275.600đ', 'combo_C-CX4' ) ); ?></span>
+                <span class="combo-sale-price"><?php echo esc_html( project_child_fcc_price( $fcc_combo['salePrice'] ) ); ?></span>
+                <?php if ( null !== $fcc_combo['salePrice'] && $fcc_combo['originalPrice'] > $fcc_combo['salePrice'] ) : ?><span class="combo-original-price"><?php echo esc_html( project_child_fcc_price( $fcc_combo['originalPrice'] ) ); ?></span><?php endif; ?>
               </div>
             </div>
-            <p class="combo-spotlight-benefit-text" style="font-size: 13.5px; color: var(--color-text-body, #333333); line-height: 1.6; margin: 0 0 18px;">
-              <?php
-              $fcc_benefit_text = project_child_fcc_text( 'fcc_ui_cb726a38e532ec', 'catalog' );
-              $fcc_benefit_html = str_replace(
-                array( '462.500đ', '462.500d', 'tặng kèm 01 Son dưỡng vi kim PDRN Shot', 'Tặng kèm 01 Son dưỡng vi kim PDRN Shot' ),
-                array( '<strong>462.500đ</strong>', '<strong>462.500đ</strong>', '<strong>tặng kèm 01 Son dưỡng vi kim PDRN Shot</strong>', '<strong>Tặng kèm 01 Son dưỡng vi kim PDRN Shot</strong>' ),
-                $fcc_benefit_text
-              );
-              echo $fcc_benefit_html;
-              ?>
-            </p>
+            <?php if ( null !== $fcc_combo['salePrice'] && $fcc_combo['saveAmount'] > 0 ) : ?><p class="combo-spotlight-benefit-text">Tiết kiệm <strong><?php echo esc_html( project_child_fcc_price( $fcc_combo['saveAmount'] ) ); ?></strong></p><?php endif; ?>
             <div>
-              <button class="btn btn-primary" data-open-order data-product-select="<?php echo esc_attr( project_child_fcc_order_code( 'combo_C-CX4' ) ); ?>" style="padding: 14px 28px;">
-                <?php echo project_child_fcc_text( 'fcc_ui_0726567f5d6c24', 'catalog', false ); ?>
+              <button class="btn btn-primary" data-open-order data-product-select="<?php echo esc_attr( project_child_fcc_featured_combo_order_code() ); ?>" style="padding: 14px 28px;">
+                <?php echo esc_html( 'MUA ' . ( $fcc_combo['shortName'] ?: $fcc_combo['name'] ) ); ?>
               </button>
             </div>
           </div>

@@ -13,7 +13,7 @@ $data = project_core_fcc_default_document();
 foreach ( $data['products'] as $entry ) {
 	$id = project_core_fcc_legacy_product_id( $entry['id'] );
 	$gallery = project_core_fcc_gallery_ids( $id );
-	fcc_media_check( 4 === count( $gallery ), 'Four supplied images available for every product.' );
+	fcc_media_check( count( $entry['gallery'] ) === count( $gallery ), 'All approved gallery images are available, including the optional hover photo.' );
 	fcc_media_check( $entry['gallery'] === array_map( static function ( $image_id ) { return get_post_meta( $image_id, '_fcc_asset_source', true ); }, $gallery ), 'Product folder mapping and default gallery order match.' );
 	foreach ( $gallery as $image_id ) { fcc_media_check( 'image/webp' === get_post_mime_type( $image_id ), 'Every new product photo is WebP.' ); }
 }

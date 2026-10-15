@@ -21,7 +21,7 @@ $email           = project_core_fcc_contact( 'email' );
     <div class="footer-grid">
       <!-- CỘT 1: THƯƠNG HIỆU & ĐƠN VỊ PHÂN PHỐI -->
       <div class="footer-col">
-        <div class="brand-logo-duo">
+        <div class="brand-logo-duo"<?php echo project_child_fcc_image_edit_attributes( 'fcc_ui_73ad1fb64a971c' ); ?>>
           <?php
           echo project_child_fcc_picture_html(
               project_child_fcc_image( 'fcc_ui_73ad1fb64a971c' ),
@@ -62,7 +62,7 @@ $email           = project_core_fcc_contact( 'email' );
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'index.html' ) ); ?>">Trang Chủ</a></li>
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>">Danh Mục 10 Sản Phẩm</a></li>
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'van-de-lan-da.html' ) ); ?>">Vấn Đề Làn Da &amp; Giải Pháp</a></li>
-          <li><a href="<?php echo esc_url( project_child_fcc_link( 'index.html#san-pham-chu-luc' ) ); ?>">Combo Chủ Lực C-CX4 Gold</a></li>
+          <?php $footer_combo = project_core_fcc_featured_combo(); if ( $footer_combo ) : ?><li><a href="<?php echo esc_url( project_child_fcc_link( 'index.html#san-pham-chu-luc' ) ); ?>"><?php echo esc_html( $footer_combo['shortName'] ?: $footer_combo['name'] ); ?></a></li><?php endif; ?>
         </ul>
       </div>
 

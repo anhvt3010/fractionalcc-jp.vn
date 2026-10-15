@@ -977,6 +977,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3;
 }
 
+.page-template-fractional-home .section-title,
+.page-template-fractional-home .final-cta-title {
+  text-transform: uppercase;
+}
+
 @media (min-width: 768px) {
   .section-title {
     font-size: 34px;
@@ -988,7 +993,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 15px;
   color: var(--color-text-muted);
   line-height: 1.6;
-  max-width: 740px;
+  max-width: 810px;
   margin-left: auto;
   margin-right: auto;
 }/* ==========================================================================
@@ -4801,229 +4806,6 @@ textarea.form-control {
 /* ==========================================================================
    6. DAY & NIGHT ROUTINE (CHU TRÌNH CHĂM SÓC DA SÁNG & TỐI CHUẨN NHẬT)
    ========================================================================== */
-.routine-process-bar {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin: 28px 0 36px;
-}
-
-.routine-process-step {
-  background: #FFFFFF;
-  border: 1px solid #ECE7DE;
-  border-radius: var(--radius-md);
-  padding: 18px 16px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-  transition: all var(--transition-fast);
-}
-
-.routine-process-step:hover {
-  border-color: var(--color-accent-gold);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(197, 160, 89, 0.12);
-}
-
-.process-step-num {
-  font-size: 11px;
-  font-weight: 800;
-  color: #8C6A28;
-  background: #FAF5E8;
-  border: 1px solid rgba(197, 160, 89, 0.35);
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 8px;
-  letter-spacing: 0.05em;
-}
-
-.process-step-title {
-  font-size: 14.5px;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 4px;
-}
-
-.process-step-desc {
-  font-size: 12px;
-  color: var(--color-text-muted);
-  line-height: 1.45;
-  margin: 0;
-}
-
-@media (min-width: 992px) {
-  .routine-process-step:not(:last-child)::after {
-    content: "→";
-    position: absolute;
-    right: -14px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: #C5A059;
-    font-weight: 800;
-    z-index: 2;
-  }
-}
-
-/* Desktop preservation for routine process steps */
-@media (min-width: 768px) {
-  .routine-process-header,
-  .routine-process-body {
-    display: contents;
-  }
-  .routine-process-indicator {
-    display: none !important;
-  }
-  .routine-process-step {
-    cursor: default;
-  }
-}
-
-/* Mobile Stacked Deck for Routine Process 4 Steps (< 768px) */
-@media (max-width: 767px) {
-  .routine-process-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin: 20px 0 32px;
-    padding-top: 4px;
-    position: relative;
-  }
-
-  .routine-process-step {
-    background: #FFFFFF;
-    border: 1px solid #ECE7DE;
-    border-radius: 18px 18px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    text-align: left;
-    padding: 0;
-    margin-bottom: 0;
-    box-shadow: 0 -4px 14px rgba(18, 18, 18, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03);
-    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .routine-process-step:hover {
-    transform: none;
-  }
-
-  .routine-process-step:not(:first-child) {
-    margin-top: -14px;
-  }
-
-  /* Stacking order */
-  .routine-process-step:nth-child(1) { z-index: 1; }
-  .routine-process-step:nth-child(2) { z-index: 2; }
-  .routine-process-step:nth-child(3) { z-index: 3; }
-  .routine-process-step:nth-child(4) { z-index: 4; }
-
-  /* Thẻ số 4 (thẻ cuối cùng) bo tròn cả phía dưới */
-  .routine-process-step:last-child {
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-  }
-
-  .routine-process-step.is-active {
-    border-color: var(--color-accent-gold);
-    box-shadow: 0 -4px 18px rgba(197, 160, 89, 0.16), 0 8px 24px rgba(0, 0, 0, 0.06);
-  }
-
-  /* Header */
-  .routine-process-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 14px 16px;
-    width: 100%;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-
-  .routine-process-step:not(.is-active) .routine-process-header {
-    padding-bottom: 26px;
-  }
-
-  .routine-process-step:last-child:not(.is-active) .routine-process-header {
-    padding-bottom: 14px;
-  }
-
-  .routine-process-header .process-step-num {
-    margin-bottom: 0;
-    flex-shrink: 0;
-    font-size: 11px;
-    font-weight: 800;
-    color: #8C6A28;
-    background: #FAF5E8;
-    border: 1px solid rgba(197, 160, 89, 0.35);
-    padding: 4px 10px;
-    border-radius: var(--radius-pill);
-    letter-spacing: 0.04em;
-  }
-
-  .routine-process-header .process-step-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 0;
-    flex: 1;
-    line-height: 1.35;
-    text-align: left;
-  }
-
-  .routine-process-indicator {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: rgba(18, 18, 18, 0.04);
-    color: #666666;
-    flex-shrink: 0;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.25s ease, color 0.25s ease;
-  }
-
-  .routine-process-step.is-active .routine-process-indicator {
-    transform: rotate(180deg);
-    background: #FAF5E8;
-    color: #8C6A28;
-  }
-
-  /* Body Content */
-  .routine-process-body {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    padding: 0 16px;
-    transition: max-height 0.38s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.28s ease, padding 0.38s ease;
-  }
-
-  .routine-process-step.is-active .routine-process-body {
-    max-height: 280px;
-    opacity: 1;
-    padding: 0 16px 26px;
-  }
-
-  .routine-process-step:last-child.is-active .routine-process-body {
-    padding-bottom: 18px;
-  }
-
-  .routine-process-body .process-step-desc {
-    font-size: 13.5px;
-    line-height: 1.6;
-    color: var(--color-text-body);
-    margin: 0;
-    text-align: left;
-  }
-}
-
 /* Master Routine Grid (2 Columns: Day & Night) */
 .brief-routine-grid {
   display: grid;
@@ -5498,12 +5280,6 @@ textarea.form-control {
 
 .demo-rule-text strong {
   color: var(--color-primary);
-}
-
-@media (min-width: 768px) and (max-width: 992px) {
-  .routine-process-bar {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 992px) {
@@ -6854,7 +6630,7 @@ textarea.form-control {
    HOMEPAGE: SKIN CONCERNS & TRANSITION BAR (#van-de-lan-da)
    ========================================================================== */
 .section-skin-concerns {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+  background-color: var(--color-bg);
   padding: 70px 0 65px;
   position: relative;
 }
@@ -7218,7 +6994,8 @@ textarea.form-control {
   align-items: center;
   background: linear-gradient(180deg, #FAF8F5 0%, #F5EFE6 100%);
   border-radius: 14px;
-  padding: 24px 16px 20px;
+  padding: 0;
+  overflow: hidden;
   border: 1px solid rgba(197, 160, 89, 0.2);
 }
 
@@ -7240,18 +7017,27 @@ textarea.form-control {
 
 .combo-spotlight-thumb {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  min-height: 310px;
+  aspect-ratio: 1;
+  display: block;
+  position: relative;
+}
+
+.combo-spotlight-thumb picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .combo-spotlight-thumb img {
   width: 100%;
-  max-width: 250px;
-  height: auto;
-  max-height: 230px;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.12));
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -7320,14 +7106,6 @@ textarea.form-control {
   justify-content: space-between;
   gap: 8px;
   margin-bottom: 8px;
-}
-
-.combo-spotlight-cat-tag {
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  color: #8c8577;
 }
 
 .combo-spotlight-info-wrap .card-rating-row {
@@ -7449,19 +7227,6 @@ textarea.form-control {
   flex-shrink: 0;
 }
 
-.synergy-total-summary {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px dashed rgba(197, 160, 89, 0.25);
-  font-size: 11.5px;
-  color: #777;
-  text-align: right;
-}
-
-.synergy-total-summary del {
-  color: #999;
-}
-
 .combo-spotlight-action-wrap {
   background: #FDFBF8;
   border-radius: 14px;
@@ -7555,22 +7320,6 @@ textarea.form-control {
   box-shadow: 0 8px 22px rgba(197, 160, 89, 0.5);
 }
 
-.btn-spotlight-learn-more {
-  font-size: 12px;
-  color: #666;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  transition: color 0.2s ease;
-}
-
-.btn-spotlight-learn-more:hover {
-  color: #C5A059;
-  text-decoration: underline;
-}
-
 .spotlight-guarantee-row {
   display: flex;
   flex-direction: column;
@@ -7621,10 +7370,12 @@ textarea.form-control {
     padding: 20px 16px;
   }
   .combo-spotlight-media-wrap {
-    max-width: 320px;
     width: 100%;
-    margin: 0 auto;
-    padding: 20px 14px 16px;
+    padding: 0;
+  }
+  .combo-spotlight-thumb {
+    min-height: 0;
+    height: auto;
   }
   .combo-spotlight-main-title {
     font-size: 18px;

@@ -94,7 +94,7 @@
           </p>
 
           <div class="final-cta-actions">
-            <button class="btn-final-cta-buy" data-open-order data-product-select="<?php echo esc_attr( project_child_fcc_order_code( 'combo_C-CX4' ) ); ?>">
+            <button class="btn-final-cta-buy" data-open-order data-product-select="<?php echo esc_attr( project_child_fcc_featured_combo_order_code() ); ?>">
               <span><?php echo project_child_fcc_text( 'fcc_ui_afd0f22490cecf', 'home', false ); ?></span>
               <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"></path>

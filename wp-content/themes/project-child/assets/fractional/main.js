@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initFeaturePillarsStack();
 
   // 13. Initialize Routine Process Stack Deck on Mobile (Section 06)
-  initRoutineProcessStack();
 
   // 14. Initialize Policy Page Navigation & Scrollspy
   initPolicyNav();
@@ -937,69 +936,6 @@ function initFeaturePillarsStack() {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         toggleCard(card);
-      }
-    });
-  });
-}
-
-/**
- * 13. Routine Process Stack Deck on Mobile (Section 06)
- * Allows tapping stacked 4-step routine cards to expand active card and collapse others.
- */
-function initRoutineProcessStack() {
-  const bar = document.querySelector('.routine-process-bar');
-  if (!bar) return;
-
-  const steps = bar.querySelectorAll('.routine-process-step');
-  if (!steps.length) return;
-
-  function isMobileDeck() {
-    return window.matchMedia('(max-width: 767px)').matches;
-  }
-
-  function toggleStep(targetStep) {
-    if (!isMobileDeck()) return;
-
-    const isAlreadyActive = targetStep.classList.contains('is-active');
-
-    // Close all steps
-    steps.forEach(function (step) {
-      step.classList.remove('is-active');
-      step.setAttribute('aria-expanded', 'false');
-    });
-
-    // If not active, expand it; if active, collapse it back into the stack
-    if (!isAlreadyActive) {
-      targetStep.classList.add('is-active');
-      targetStep.setAttribute('aria-expanded', 'true');
-    }
-  }
-
-  steps.forEach(function (step) {
-    // Header click toggles open/close
-    const header = step.querySelector('.routine-process-header');
-    if (header) {
-      header.addEventListener('click', function (e) {
-        if (!isMobileDeck()) return;
-        e.stopPropagation();
-        toggleStep(step);
-      });
-    }
-
-    // Step click: clicking anywhere on an inactive card expands it
-    step.addEventListener('click', function () {
-      if (!isMobileDeck()) return;
-      if (!step.classList.contains('is-active')) {
-        toggleStep(step);
-      }
-    });
-
-    // Accessibility keyboard support
-    step.addEventListener('keydown', function (e) {
-      if (!isMobileDeck()) return;
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleStep(step);
       }
     });
   });

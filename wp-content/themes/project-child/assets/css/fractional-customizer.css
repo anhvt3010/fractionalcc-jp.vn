@@ -2,3 +2,18 @@
 .fcc-editable-text {
 	position: relative;
 }
+
+[data-fcc-image-setting] {
+	position: relative;
+}
+
+[data-fcc-image-setting] > .customize-partial-edit-shortcut {
+	top: 12px;
+	left: 12px;
+	z-index: 20;
+}
+
+[data-fcc-image-setting] > .customize-partial-edit-shortcut > button {
+	top: 0;
+	left: 0;
+}

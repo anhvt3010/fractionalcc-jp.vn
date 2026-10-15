@@ -12,64 +12,6 @@ $fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : pro
         </div>
 
         
-        <div class="routine-process-bar">
-          <!-- Bước 1 -->
-          <div class="routine-process-step is-active" data-step-index="1" role="button" tabindex="0" aria-expanded="true">
-            <div class="routine-process-header">
-              <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_1150d5032f811b', 'home' ); ?></span>
-              <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_bee9c4b00c61ec', 'home' ); ?></div>
-              <span class="routine-process-indicator" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </span>
-            </div>
-            <div class="routine-process-body">
-              <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_96ce48e4a6ec44', 'home' ); ?></p>
-            </div>
-          </div>
-
-          <!-- Bước 2 -->
-          <div class="routine-process-step" data-step-index="2" role="button" tabindex="0" aria-expanded="false">
-            <div class="routine-process-header">
-              <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_715f3de32d7627', 'home' ); ?></span>
-              <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_7f7d50245bffe1', 'home' ); ?></div>
-              <span class="routine-process-indicator" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </span>
-            </div>
-            <div class="routine-process-body">
-              <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_bf297687475994', 'home' ); ?></p>
-            </div>
-          </div>
-
-          <!-- Bước 3 -->
-          <div class="routine-process-step" data-step-index="3" role="button" tabindex="0" aria-expanded="false">
-            <div class="routine-process-header">
-              <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_42b60390b14af9', 'home' ); ?></span>
-              <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_a10e07eb3754d6', 'home' ); ?></div>
-              <span class="routine-process-indicator" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </span>
-            </div>
-            <div class="routine-process-body">
-              <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_6bba06b88e4314', 'home' ); ?></p>
-            </div>
-          </div>
-
-          <!-- Bước 4 -->
-          <div class="routine-process-step" data-step-index="4" role="button" tabindex="0" aria-expanded="false">
-            <div class="routine-process-header">
-              <span class="process-step-num"><?php echo project_child_fcc_text( 'fcc_ui_1f4c916e18b01b', 'home' ); ?></span>
-              <div class="process-step-title"><?php echo project_child_fcc_text( 'fcc_ui_4445a75a4d80d3', 'home' ); ?></div>
-              <span class="routine-process-indicator" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </span>
-            </div>
-            <div class="routine-process-body">
-              <p class="process-step-desc"><?php echo project_child_fcc_text( 'fcc_ui_5fb7949360f1f3', 'home' ); ?></p>
-            </div>
-          </div>
-        </div>
-
         <div class="brief-routine-grid">
           
           <article class="routine-column-card routine-card-day collapsed">
@@ -355,7 +297,7 @@ $fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : pro
         <div class="routine-demo-banner">
           
           <div class="demo-player-card">
-            <div class="demo-player-preview">
+            <div class="demo-player-preview"<?php echo project_child_fcc_image_edit_attributes( 'fcc_ui_555650f3e397c2' ); ?>>
               <?php
               echo project_child_fcc_picture_html(
                   project_child_fcc_image( 'fcc_ui_555650f3e397c2' ),

@@ -3,13 +3,16 @@
 defined( 'ABSPATH' ) || exit;
 
 function project_core_fcc_featured_posts( $exclude = 0 ) {
-	return project_core_fcc_selected_posts( 'featured', 2, $exclude );
+	$combo = project_core_fcc_featured_combo();
+	$posts = project_core_fcc_selected_posts( 'featured', $combo ? 1 : 2, $exclude, 'fcc_product' );
+	if ( $combo && $combo['id'] !== absint( $exclude ) ) { $posts[] = get_post( $combo['id'] ); }
+	return $posts;
 }
 
 /** Query a homepage selection, sharing ordering and publication rules. */
-function project_core_fcc_selected_posts( $selection, $limit, $exclude = 0 ) {
+function project_core_fcc_selected_posts( $selection, $limit, $exclude = 0, $types = array( 'fcc_product', 'fcc_combo' ) ) {
 	return get_posts( array(
-		'post_type' => array( 'fcc_product', 'fcc_combo' ), 'post_status' => 'publish',
+		'post_type' => $types, 'post_status' => 'publish',
 		'posts_per_page' => $limit, 'post__not_in' => $exclude ? array( absint( $exclude ) ) : array(),
 		'meta_query' => array( 'selection' => array( 'key' => 'fcc_' . $selection, 'value' => '1' ), 'position' => array( 'key' => 'fcc_' . $selection . '_order', 'compare' => 'EXISTS', 'type' => 'NUMERIC' ) ),
 		'orderby' => array( 'position' => 'ASC', 'ID' => 'ASC' ), 'no_found_rows' => true,
@@ -20,9 +23,9 @@ function project_core_fcc_validate_featured( $valid, $value ) {
 	if ( true !== $valid || ! $value ) { return $valid; }
 	$id = absint( acf_get_form_data( 'post_id' ) );
 	if ( ! $id ) { $id = absint( acf_maybe_get_POST( '_acf_post_id', acf_maybe_get_POST( 'post_ID', 0 ) ) ); }
-	if ( ! in_array( get_post_type( $id ), array( 'fcc_product', 'fcc_combo' ), true ) || ! current_user_can( 'edit_post', $id ) ) { $id = 0; }
-	if ( count( project_core_fcc_featured_posts( $id ) ) >= 2 ) {
-		return 'Trang chủ chỉ hiển thị 2 sản phẩm chủ lực. Hãy bỏ chọn một sản phẩm hoặc combo hiện tại trước.';
+	if ( 'fcc_product' !== get_post_type( $id ) || ! current_user_can( 'edit_post', $id ) ) { return 'Chỉ chọn sản phẩm có quyền chỉnh sửa làm sản phẩm chủ lực.'; }
+	if ( count( project_core_fcc_selected_posts( 'featured', 2, $id, 'fcc_product' ) ) >= 2 ) {
+		return 'Trang chủ chỉ chọn tối đa 2 sản phẩm chủ lực. Hãy bỏ chọn một sản phẩm hiện tại trước.';
 	}
 	return $valid;
 }
@@ -40,10 +43,8 @@ function project_core_fcc_featured_columns( $columns ) {
 function project_core_fcc_featured_column( $column, $id ) {
 	if ( 'fcc_featured' === $column ) { echo get_post_meta( $id, 'fcc_featured', true ) ? esc_html( 'Có · Thứ tự ' . absint( get_post_meta( $id, 'fcc_featured_order', true ) ) ) : '—'; }
 }
-foreach ( array( 'fcc_product', 'fcc_combo' ) as $type ) {
-	add_filter( 'manage_' . $type . '_posts_columns', 'project_core_fcc_featured_columns' );
-	add_action( 'manage_' . $type . '_posts_custom_column', 'project_core_fcc_featured_column', 10, 2 );
-}
+add_filter( 'manage_fcc_product_posts_columns', 'project_core_fcc_featured_columns' );
+add_action( 'manage_fcc_product_posts_custom_column', 'project_core_fcc_featured_column', 10, 2 );
 
 /** Fill missing fields only; explicit deselection and existing edits survive reruns. */
 function project_core_fcc_initialize_featured() {

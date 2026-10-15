@@ -148,6 +148,14 @@ function project_core_fcc_import_document( $data, $content_status, $update_catal
 	$combo_fields = isset( $data['catalogSource']['comboFields'] ) ? $data['catalogSource']['comboFields'] : array();
 	$ids = get_option( 'project_core_fcc_pages', array() );
 	$first = ! get_option( 'project_core_fcc_seed_version' );
+	// A fresh site restores the entire approved library, including currently unused images.
+	// Upgrades only import media needed for missing values and preserve existing choices.
+	if ( $first ) {
+		foreach ( array_keys( $data['media'] ?? array() ) as $path ) {
+			$media_id = project_core_fcc_seed_media( $path );
+			if ( is_wp_error( $media_id ) ) { return $media_id; }
+		}
+	}
 	foreach ( $data['pages'] as $kind => $page ) {
 		$id = project_core_fcc_seed_post( 'shared' === $kind ? 'fcc_site' : 'page', 'page_' . $kind, $page['title'], $page['slug'], $page['menuOrder'] ?? 0, false, $page );
 		if ( is_wp_error( $id ) ) { return $id; }
@@ -223,6 +231,7 @@ function project_core_fcc_import_document( $data, $content_status, $update_catal
 	project_core_fcc_seed_snapshot_selections( $data, $ids, $first );
 	project_core_fcc_initialize_featured();
 	project_core_fcc_initialize_home_catalog();
+	project_core_fcc_initialize_featured_combo();
 	if ( $update_catalog && isset( $data['catalogSource']['sha256'] ) ) { update_option( 'project_core_fcc_catalog_source_hash', $data['catalogSource']['sha256'], false ); }
 	// Select the generated homepage once; subsequent setup must preserve Reading settings.
 	if ( ! get_option( 'project_core_fcc_seed_version' ) && 'posts' === get_option( 'show_on_front' ) && ! get_option( 'page_on_front' ) ) {
