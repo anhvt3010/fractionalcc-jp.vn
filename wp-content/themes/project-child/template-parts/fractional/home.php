@@ -7,6 +7,7 @@ defined( 'ABSPATH' ) || exit;
 <?php get_template_part( 'template-parts/fractional/home/section-02' ); ?>
 <?php get_template_part( 'template-parts/fractional/home/section-03' ); ?>
 <?php get_template_part( 'template-parts/fractional/home/section-04' ); ?>
+<?php get_template_part( 'template-parts/fractional/home/section-concerns' ); ?>
 <?php get_template_part( 'template-parts/fractional/home/section-05' ); ?>
 <?php get_template_part( 'template-parts/fractional/home/section-06' ); ?>
 <?php get_template_part( 'template-parts/fractional/home/section-07' ); ?>
