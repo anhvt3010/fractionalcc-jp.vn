@@ -8,7 +8,6 @@ function project_child_fcc_spotlight_fields() {
 		array( 'key' => 'field_fcc_spotlight_tab_content', 'label' => 'Nội dung thẻ', 'name' => '', 'type' => 'tab', 'selected' => 1 ),
 	);
 	$definitions = array(
-		'spotlightTitle' => array( 'Tiêu đề trên thẻ', 'text', 100, 'Chỉ dùng ở mục sản phẩm chủ lực trên trang chủ. Để trống để dùng tên đầy đủ của sản phẩm hoặc combo.' ),
 		'spotlightDescription' => array( 'Mô tả trên thẻ', 'textarea', 100, 'Để trống để dùng Công dụng / mô tả ngắn của sản phẩm hoặc Nhu cầu phù hợp của combo.' ),
 		'spotlightSpecs' => array( 'Thông số trong nhãn', 'text', 50, 'Để trống để dùng số CBMP và quy cách của sản phẩm, hoặc mô tả các sản phẩm trong combo.' ),
 		'spotlightRating' => array( 'Dòng đánh giá / thông tin bổ sung', 'text', 50, 'Chỉ nhập thông tin đã xác nhận. Để trống để dùng điểm và số đánh giá của sản phẩm nếu có.' ),
@@ -50,7 +49,6 @@ function project_child_fcc_spotlight_data( $post, $combos ) {
 	$image_id = absint( get_post_meta( $post->ID, 'fcc_image', true ) );
 	$data['alt'] = get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ?: $data['name'];
 	$fallbacks = array(
-		'spotlightTitle' => $data['name'],
 		'spotlightDescription' => $is_combo ? $data['idealFor'] : $data['tagline'],
 		'spotlightRating' => ! $is_combo && null !== $data['rating'] ? $data['rating'] . ( null !== $data['reviewCount'] ? ' (' . $data['reviewCount'] . ' đánh giá)' : '' ) : '',
 		'spotlightSpecs' => $is_combo ? implode( ' • ', $data['productsIncluded'] ) : implode( ' • ', array_filter( array( $data['cbmp'] ? 'Số CBMP: ' . $data['cbmp'] : '', $data['volume'] ? 'Dung tích: ' . $data['volume'] : '' ) ) ),

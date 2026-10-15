@@ -1,5 +1,7 @@
 # Website Fractional CC
 
+> Bản chốt hiện hành ngày 15/10/2026: **[release 2.0.0](release/v2.0.0/RELEASE.md)** gồm hai ZIP Core/Child và toàn bộ data CMS đã duyệt hiện tại: 10 sản phẩm, 1 combo, 35 hoạt chất, 71 Media, nhãn và ảnh hover. Đã kiểm tra cài mới, nâng cấp giữ edits và SEO; hạn chế popup Mandelic trên màn hình nhỏ ghi trong release notes. Chưa triển khai hosting. Các mô tả phiên bản bên dưới là lịch sử.
+
 > Hiện hành ngày 14/10/2026: [release 1.0.1](release/v1.0.1/RELEASE.md), [defaults approved](docs/APPROVED-DEFAULTS.md), [rà soát bảo mật/hiệu năng](docs/SECURITY-AUDIT-2026-10-14.md). Runtime homepage ID 24, 10 sản phẩm, 1 combo, 35 hoạt chất, 30 Media. Các mô tả phiên bản trước bên dưới là lịch sử.
 
 

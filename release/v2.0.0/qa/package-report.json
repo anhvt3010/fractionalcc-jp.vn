@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "passed": true,
+    "packages": [
+        {
+            "file": "project-core-v2.0.0.zip",
+            "root": "project-core/",
+            "files": 27,
+            "bytes": 139505,
+            "sha256": "8d6d72f2636b2b2ef929df595f06148a82f2d6e2d16643ee385ece05018ea589",
+            "crc_and_source_bytes": "passed"
+        },
+        {
+            "file": "project-child-v2.0.0.zip",
+            "root": "project-child/",
+            "files": 294,
+            "bytes": 26098884,
+            "sha256": "42397e09a039dc04f6618ec07403d1e90d8121d2a4d9bdce45d365ac0e791364",
+            "crc_and_source_bytes": "passed"
+        }
+    ],
+    "defaults": {
+        "pages": 6,
+        "page_fields": 1090,
+        "products": 10,
+        "combos": 1,
+        "media": 71,
+        "sha256": "3548aa2f39fc169394b644eb7df9d06c00039a2e2630966d18a1119a7598d5ac"
+    }
+}

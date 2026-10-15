@@ -11,6 +11,16 @@ function project_core_fcc_product_category_choices() {
 	return array( 'peel' => 'Tẩy tế bào chết', 'serum' => 'Serum', 'mask' => 'Mặt nạ', 'lip' => 'Dưỡng môi' );
 }
 
+function project_core_fcc_product_card_tag_choices() {
+	return array( 'sale' => 'Sale', 'new' => 'New', 'best' => 'Best', 'sold_out' => 'Sold Out' );
+}
+
+/** Only supported tag keys, in a consistent order, may reach product cards. */
+function project_core_fcc_normalize_card_tags( $value ) {
+	if ( ! is_array( $value ) ) { return array(); }
+	return array_values( array_intersect( array_keys( project_core_fcc_product_card_tag_choices() ), array_filter( $value, 'is_string' ) ) );
+}
+
 function project_core_fcc_register_content() {
 	$types = array(
 		'fcc_product'    => array( 'Sản phẩm', 'Sản phẩm', true ),
@@ -105,10 +115,14 @@ function project_core_fcc_product( $post_id, $with_details = true ) {
 		$data[ $field ] = project_core_fcc_lines( get_post_meta( $post->ID, 'fcc_' . $field, true ) );
 	}
 	$data['skinConcerns'] = (array) get_post_meta( $post->ID, 'fcc_skinConcerns', true );
+	$data['cardTags'] = project_core_fcc_normalize_card_tags( get_post_meta( $post->ID, 'fcc_cardTags', true ) );
 	$image_id = absint( get_post_meta( $post->ID, 'fcc_image', true ) );
 	$data['image'] = $image_id ? wp_get_attachment_image_url( $image_id, 'full' ) : '';
 	$data['imageAlt'] = $image_id ? (string) get_post_meta( $image_id, '_wp_attachment_image_alt', true ) : '';
 	if ( '' === $data['imageAlt'] ) { $data['imageAlt'] = $data['name']; }
+	$hover_image_id = absint( get_post_meta( $post->ID, 'fcc_hoverImage', true ) );
+	$data['hoverImage'] = $hover_image_id ? wp_get_attachment_image_url( $hover_image_id, 'full' ) : '';
+	$data['hoverImageAlt'] = $hover_image_id ? ( (string) get_post_meta( $hover_image_id, '_wp_attachment_image_alt', true ) ?: $data['name'] ) : '';
 	if ( ! $with_details ) { return $data; }
 	$data['gallery'] = array();
 	$data['galleryAlts'] = array();
@@ -145,7 +159,11 @@ function project_core_fcc_combos() {
 		$item['saveAmount'] = max( 0, (float) $item['originalPrice'] - (float) $item['salePrice'] );
 		$item['productsIncluded'] = project_core_fcc_lines( get_post_meta( $combo->ID, 'fcc_productsIncluded', true ) );
 		$item['image'] = wp_get_attachment_image_url( absint( get_post_meta( $combo->ID, 'fcc_image', true ) ), 'full' );
+		$hover_image_id = absint( get_post_meta( $combo->ID, 'fcc_hoverImage', true ) );
+		$item['hoverImage'] = $hover_image_id ? wp_get_attachment_image_url( $hover_image_id, 'full' ) : '';
+		$item['hoverImageAlt'] = $hover_image_id ? ( (string) get_post_meta( $hover_image_id, '_wp_attachment_image_alt', true ) ?: $item['name'] ) : '';
 		$item['isBestSeller'] = (bool) get_post_meta( $combo->ID, 'fcc_isBestSeller', true );
+		$item['cardTags'] = project_core_fcc_normalize_card_tags( get_post_meta( $combo->ID, 'fcc_cardTags', true ) );
 		$data[] = $item;
 	}
 	return $data;

@@ -40,7 +40,8 @@ function project_core_fcc_register_fields() {
 		project_core_fcc_field( 'volume', 'Quy cách', 'text', array( 'wrapper' => array( 'width' => 25 ), 'instructions' => 'Dung tích, khối lượng hoặc số lượng theo bao bì; ghi kèm đơn vị.' ) ),
 		project_core_fcc_field( 'category', 'Phân loại theo hồ sơ', 'text', array( 'wrapper' => array( 'width' => 25 ), 'instructions' => 'Phân loại ghi trong hồ sơ. Bộ lọc website chọn ở tab Bộ lọc.' ) ),
 		project_core_fcc_field( 'tagline', 'Công dụng / mô tả ngắn', 'text', array( 'instructions' => 'Tóm tắt công dụng theo hồ sơ; hiển thị trên thẻ và trang chi tiết sản phẩm.' ) ),
-		project_core_fcc_field( 'product_images_help', 'Ảnh sản phẩm', 'message', array( 'name' => '', 'message' => 'Chọn ảnh đại diện và sắp xếp thumbnail tại <a href="#fcc-product-media">khung Ảnh sản phẩm – đại diện & thứ tự</a> bên dưới. Dữ liệu lưu bằng thư viện ảnh WordPress hiện có.', 'esc_html' => 0 ) ),
+		project_core_fcc_field( 'cardTags', 'Nhãn trên card sản phẩm', 'checkbox', array( 'choices' => project_core_fcc_product_card_tag_choices(), 'layout' => 'horizontal', 'return_format' => 'value', 'default_value' => array(), 'instructions' => 'Tích chọn một hoặc nhiều nhãn: Sale – đang khuyến mại, New – sản phẩm mới, Best – bán chạy, Sold Out – hết hàng. Chỉ chọn khi phù hợp với thông tin đã xác nhận. Nhãn xuất hiện ở góc trên bên trái ảnh trên các card sản phẩm dạng danh sách (không hiển thị ở mục sản phẩm chủ lực trên trang chủ); bỏ chọn hết để ẩn. Nhãn không tự thay đổi giá.' ) ),
+		project_core_fcc_field( 'product_images_help', 'Ảnh sản phẩm', 'message', array( 'name' => '', 'message' => 'Chọn ảnh đại diện, đánh dấu ảnh khi rê chuột (Hover card) và sắp xếp thumbnail tại <a href="#fcc-product-media">khung Ảnh sản phẩm – đại diện & thứ tự</a> bên dưới. Dữ liệu lưu bằng thư viện ảnh WordPress hiện có.', 'esc_html' => 0 ) ),
 		project_core_fcc_field( 'product_tab_content', 'Công dụng & lưu ý', 'tab', array( 'name' => '' ) ),
 	);
 	foreach ( array(
@@ -66,9 +67,12 @@ function project_core_fcc_register_fields() {
 	$combo = array();
 	foreach ( array( 'code' => 'Mã combo', 'shortName' => 'Tên ngắn', 'badge' => 'Nhãn hiển thị', 'idealFor' => 'Nhu cầu phù hợp', 'routine' => 'Hướng dẫn', 'gift' => 'Quà tặng đã xác nhận' ) as $name => $label ) { $combo[] = project_core_fcc_field( 'combo_' . $name, $label ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_' . $name; }
 	foreach ( array( 'originalPrice' => 'Giá gốc (VNĐ)', 'salePrice' => 'Giá combo (VNĐ)' ) as $name => $label ) { $combo[] = project_core_fcc_field( 'combo_' . $name, $label, 'number', array( 'min' => 0 ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_' . $name; }
+	$combo[] = project_core_fcc_field( 'combo_cardTags', 'Nhãn trên card combo', 'checkbox', array( 'choices' => project_core_fcc_product_card_tag_choices(), 'layout' => 'horizontal', 'return_format' => 'value', 'default_value' => array(), 'instructions' => 'Tích chọn một hoặc nhiều nhãn: Sale – đang khuyến mại, New – sản phẩm mới, Best – bán chạy, Sold Out – hết hàng. Chỉ chọn khi phù hợp với thông tin đã xác nhận. Nhãn xuất hiện ở góc trên bên trái ảnh trên các card combo dạng danh sách và trang chủ (không hiển thị ở mục sản phẩm chủ lực trên trang chủ); bỏ chọn hết để ẩn. Nhãn không tự thay đổi giá.' ) );
+	$combo[ count( $combo ) - 1 ]['name'] = 'fcc_cardTags';
 	$combo[] = project_core_fcc_field( 'combo_productsIncluded', 'Mô tả sản phẩm bên trong', 'textarea', array( 'instructions' => 'Mỗi ý một dòng.' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_productsIncluded';
 	$combo[] = project_core_fcc_field( 'combo_productIds', 'Sản phẩm trong combo', 'relationship', array( 'post_type' => array( 'fcc_product' ), 'return_format' => 'id' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_productIds';
 	$combo[] = project_core_fcc_field( 'combo_image', 'Ảnh combo', 'image', array( 'return_format' => 'id', 'preview_size' => 'medium' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_image';
+	$combo[] = project_core_fcc_field( 'combo_hoverImage', 'Ảnh khi rê chuột (Hover card)', 'image', array( 'return_format' => 'id', 'preview_size' => 'medium', 'instructions' => 'Chọn ảnh hiển thị khi khách rê chuột vào card combo (tùy chọn).' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_hoverImage';
 	$combo[] = project_core_fcc_field( 'combo_isBestSeller', 'Hiện nhãn bán chạy (cần có nguồn)', 'true_false', array( 'ui' => 1 ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_isBestSeller';
 	foreach ( array( 'rating' => 'Điểm đánh giá combo có nguồn', 'reviewCount' => 'Số đánh giá combo có nguồn' ) as $name => $label ) {
 		$combo[] = project_core_fcc_field( 'combo_' . $name, $label, 'number', array( 'min' => 0, 'max' => 'rating' === $name ? 5 : '', 'step' => 'rating' === $name ? '0.01' : 1, 'wrapper' => array( 'width' => 50 ), 'instructions' => 'Dùng cho thẻ combo trong danh mục. Nội dung cũ được giữ để quản lý; cần xác nhận nguồn, để trống nếu chưa có đánh giá.' ) );
@@ -96,6 +100,19 @@ function project_core_fcc_register_fields() {
 	) );
 }
 add_action( 'acf/init', 'project_core_fcc_register_fields' );
+
+/** Native WordPress/ACF editing handles post permissions and nonces. */
+function project_core_fcc_validate_card_tags( $valid, $value ) {
+	if ( true !== $valid || empty( $value ) ) { return $valid; }
+	if ( ! is_array( $value ) ) { return 'Chọn nhãn Sale, New, Best hoặc Sold Out trong danh sách.'; }
+	$choices = project_core_fcc_product_card_tag_choices();
+	foreach ( $value as $tag ) {
+		if ( ! is_string( $tag ) || ! isset( $choices[ $tag ] ) ) { return 'Chọn nhãn Sale, New, Best hoặc Sold Out trong danh sách.'; }
+	}
+	return $valid;
+}
+add_filter( 'acf/validate_value/name=fcc_cardTags', 'project_core_fcc_validate_card_tags', 10, 2 );
+add_filter( 'acf/update_value/name=fcc_cardTags', 'project_core_fcc_normalize_card_tags' );
 
 /** Stack native ACF columns on small screens, retaining the standard admin UI. */
 function project_core_fcc_product_editor_styles( $hook ) {

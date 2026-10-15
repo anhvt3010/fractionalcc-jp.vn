@@ -9,7 +9,7 @@ $item = $args['item'];
 			<?php echo project_child_fcc_picture_html( $item['image'], $item['alt'], '', array( 'loading' => 'lazy', 'sizes' => '(min-width: 992px) 360px, 80vw' ) ); ?>
 		</a>
 		<div class="duo-card-primary-info">
-			<h3 class="duo-title heading-serif"><?php echo esc_html( $item['spotlightTitle'] ); ?></h3>
+			<h3 class="duo-title heading-serif"><?php echo esc_html( $item['name'] ); ?></h3>
 			<?php if ( $item['spotlightRating'] ) : ?><div class="card-rating-row" style="margin-bottom: 8px;"><span class="card-rating-stars" aria-hidden="true">★★★★★</span><span><?php echo esc_html( $item['spotlightRating'] ); ?></span></div><?php endif; ?>
 			<p class="duo-subtitle"><?php echo esc_html( $item['spotlightDescription'] ); ?></p>
 		</div>

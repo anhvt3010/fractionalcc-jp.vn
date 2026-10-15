@@ -1,6 +1,8 @@
 # Dữ liệu đã chốt – release đầu tiên 1.0.0
 
-> Release hiện hành **[1.0.11](../release/v1.0.11/RELEASE.md)**, 15/10/2026: toàn bộ defaults đã duyệt 1.0.10 được giữ nguyên, chỉ tăng version snapshot. Không xuất lại dữ liệu CMS hoặc thay nội dung/giá/ảnh/SEO/quan hệ/settings. Cài mới và nâng cấp giữ edits đã được kiểm tra từ hai ZIP; các mốc bên dưới là lịch sử.
+> Release hiện hành **[2.0.0](../release/v2.0.0/RELEASE.md)**, 15/10/2026: người dùng chốt toàn bộ code và data hiện tại. Đã xuất lại CMS XAMPP: 6 bản ghi nội dung/1.090 field, 10 sản phẩm, 1 combo, 35 hoạt chất, 71 Media và 8 settings công khai. Giữ giá, SEO, liên hệ, nhãn, ảnh đại diện/hover, gallery/thứ tự và các lựa chọn hiện tại, gồm giá trị trống. Exporter lấy ảnh hover của editor native bằng đường dẫn portable; cài mới và nâng cấp giữ edits đã được kiểm tra từ hai ZIP. Không chạy initializer trên site làm việc. Các mốc bên dưới là lịch sử.
+
+> Mốc **[1.0.11](../release/v1.0.11/RELEASE.md)**, 15/10/2026: toàn bộ defaults đã duyệt 1.0.10 được giữ nguyên, chỉ tăng version snapshot. Không xuất lại dữ liệu CMS hoặc thay nội dung/giá/ảnh/SEO/quan hệ/settings. Cài mới và nâng cấp giữ edits đã được kiểm tra từ hai ZIP.
 
 > Hiện hành **[1.0.10](../release/v1.0.10/RELEASE.md)**, ngày 15/10/2026: theo yêu cầu tích hợp SEO, kế thừa snapshot 1.0.9 và chỉ cập nhật 26 title/description cho trang chủ, danh mục, vấn đề làn da và 10 sản phẩm. Mọi nội dung/ảnh/giá/quan hệ/thiết lập khác giữ nguyên; không xuất lại CMS local. Bản đồ 7 nhóm/62 truy vấn là kế hoạch biên tập trong quản trị, không phải bài đã xuất bản hoặc số liệu lượng tìm kiếm. Xem [SEO](SEO.md). Các mốc bên dưới là lịch sử.
 

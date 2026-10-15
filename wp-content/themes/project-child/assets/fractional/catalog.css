@@ -4,6 +4,77 @@
    - Properly centered and balanced section header
    ========================================================================== */
 
+/* Live constituent products in the featured combo. */
+.combo-included-products {
+  margin: 0 0 18px;
+}
+.combo-included-heading {
+  margin: 0 0 8px;
+  color: var(--color-text-main);
+  font-size: 13px;
+  font-weight: 700;
+}
+.combo-included-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.combo-included-product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-soft);
+  color: var(--color-text-main);
+  text-decoration: none;
+}
+.combo-included-product:hover {
+  border-color: var(--color-accent-gold);
+}
+.combo-included-product:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 3px;
+}
+.combo-included-thumb {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  background: var(--color-bg);
+}
+.combo-included-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.combo-included-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.combo-included-name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.combo-included-price {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+.combo-included-price strong {
+  color: var(--color-accent-red);
+  font-size: 15px;
+  font-weight: 700;
+}
+
 /* Catalog Hero Header (Section 01) */
 .catalog-hero-header {
   padding: 36px 0 30px;
@@ -289,7 +360,6 @@ body.admin-bar #danh-sach-san-pham {
 }
 
 .product-card-combo:hover {
-  border-color: var(--color-accent-gold) !important;
   box-shadow: 0 16px 36px rgba(197, 160, 89, 0.2) !important;
 }
 

@@ -84,6 +84,8 @@ foreach ( project_core_fcc_posts( 'fcc_product' ) as $post ) {
 		$product['actives'][] = array( 'name' => $ingredient->post_title, 'slug' => $ingredient->post_name, 'source' => $sources[ $ingredient_id ], 'tag' => get_post_meta( $ingredient_id, 'fcc_tag', true ), 'desc' => get_post_meta( $ingredient_id, 'fcc_description', true ) );
 	}
 	foreach ( array_keys( get_post_meta( $post->ID ) ) as $name ) { if ( 0 === strpos( $name, 'fcc_' ) && ! array_key_exists( substr( $name, 4 ), $product ) && acf_get_field( get_post_meta( $post->ID, '_' . $name, true ) ?: 'field_' . $name ) ) { $product['fields'][ $name ] = fcc_export_field( $post->ID, $name ); } }
+	// The native media editor owns this image; it has no registered ACF field.
+	$product['fields']['fcc_hoverImage'] = fcc_export_field( $post->ID, 'fcc_hoverImage', array( 'type' => 'image' ) );
 	$products[] = $product;
 }
 $combos = array();
