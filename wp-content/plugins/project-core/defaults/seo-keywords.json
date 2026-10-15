@@ -1,0 +1,76 @@
+{
+    "reviewed": "2026-10-15",
+    "method": "Ưu tiên theo mức phù hợp với danh mục đã duyệt và ý định tìm kiếm. Chưa có dữ liệu Search Console, Keyword Planner hoặc lượng tìm kiếm hiện tại để xác nhận thứ hạng hot/volume. Đây là bản đồ biên tập; các cụm từ không tự được xuất vào metadata hoặc tạo trang công khai.",
+    "groups": [
+        {
+            "name": "Thương hiệu & mua hàng",
+            "intent": "Mua hàng / BOFU",
+            "priority": "Ưu tiên 1",
+            "status": "Áp dụng cho trang chủ, danh mục và sản phẩm hiện có",
+            "keywords": ["Fractional CC Nhật Bản", "Fractional CC chính hãng", "bảng giá mỹ phẩm Fractional CC", "mua serum Fractional CC", "Needle Serum C giá bao nhiêu", "Needle Serum CX4 giá bao nhiêu", "Mandelic Shot Peel Essence giá", "PDRN Shot 1000 Toning Essence giá", "combo Needle Serum C CX4"],
+            "scope": "home",
+            "note": "Giá lấy từ CMS. Không tạo địa chỉ showroom Hà Nội/TP.HCM khi chưa có địa chỉ được xác nhận. Từ chính hãng dùng theo nội dung nguồn gốc và kênh phân phối đã duyệt."
+        },
+        {
+            "name": "Vấn đề làn da & nhu cầu chăm sóc",
+            "intent": "Tìm hiểu / lựa chọn, TOFU–MOFU",
+            "priority": "Ưu tiên 1",
+            "status": "Trang Vấn đề làn da hiện có; bài chuyên đề cần biên tập thêm",
+            "keywords": ["chăm sóc da không đều màu", "chăm sóc da có đốm nâu", "thâm mụn sau viêm", "serum hỗ trợ mờ thâm", "da sần và lỗ chân lông to", "chăm sóc da có nếp nhăn", "serum dưỡng ẩm cho da khô", "phục hồi hàng rào bảo vệ da", "chăm sóc môi khô", "phân biệt thâm mụn và sẹo mụn", "khi nào cần khám da liễu vì mụn"],
+            "scope": "concerns",
+            "note": "Giữ phạm vi mỹ phẩm hỗ trợ chăm sóc. Từ điều trị mụn, trị nám, viêm da hoặc sẹo chỉ là chủ đề giáo dục cần nguồn y khoa và người có chuyên môn duyệt; không quảng cáo website là cơ sở điều trị. Không tạo bốn URL từ bốn tab cùng một trang."
+        },
+        {
+            "name": "Hoạt chất & thành phần",
+            "intent": "Tìm hiểu / TOFU",
+            "priority": "Ưu tiên 1",
+            "status": "Đối chiếu thành phần từng sản phẩm; câu hỏi hướng dẫn cần bài riêng",
+            "keywords": ["retinol là gì", "cách dùng retinol cho người mới bắt đầu", "tác dụng của niacinamide", "serum BHA trị mụn", "hyaluronic acid dưỡng ẩm", "vitamin C sáng da", "AHA và BHA khác nhau thế nào", "mandelic acid là gì", "PDRN trong mỹ phẩm là gì", "B5 panthenol trong mỹ phẩm", "ceramide và hàng rào bảo vệ da", "retinol và vitamin C có dùng chung được không"],
+            "scope": "catalog",
+            "note": "Liên kết tới sản phẩm chỉ khi hồ sơ có thành phần tương ứng. Không suy ra cách phối hợp, lịch dùng hoặc nồng độ. AX4 có mô tả thành phần chung dòng A/C trong nguồn; không tự chốt retinol hoặc vitamin C cho AX4. Cụm trị mụn là truy vấn nghiên cứu, không phải claim của Mandelic."
+        },
+        {
+            "name": "Sản phẩm + loại da / nhu cầu",
+            "intent": "Lựa chọn / MOFU",
+            "priority": "Ưu tiên 2",
+            "status": "Serum, mặt nạ, tẩy tế bào chết và dưỡng môi có sẵn; nhóm khác chờ danh mục",
+            "keywords": ["serum vitamin C dưỡng sáng da", "serum retinol dưỡng ẩm", "mặt nạ dưỡng ẩm cho da khô", "tẩy tế bào chết mandelic acid", "serum PDRN chăm sóc da", "serum dưỡng môi PDRN", "kem chống nắng cho da dầu mụn", "sữa rửa mặt cho da nhạy cảm", "serum mờ thâm cho da khô", "tẩy trang không gây cay mắt", "kem dưỡng ẩm không chứa cồn"],
+            "scope": "catalog",
+            "note": "Không thêm danh mục kem chống nắng, sữa rửa mặt, tẩy trang hoặc kem dưỡng khi chưa bán. Các đặc tính không cồn, không cay mắt, phù hợp da nhạy cảm cần bằng chứng theo sản phẩm; không suy từ tên hoạt chất."
+        },
+        {
+            "name": "So sánh & đánh giá",
+            "intent": "Cân nhắc mua / MOFU",
+            "priority": "Ưu tiên 2",
+            "status": "Kế hoạch bài viết, chưa xuất bản review hoặc bảng xếp hạng",
+            "keywords": ["Needle Serum C và CX4 khác nhau thế nào", "Needle Serum A và AX4 khác nhau thế nào", "PDRN Lip Essence và Lip Plumper khác nhau thế nào", "review kem chống nắng [Tên thương hiệu]", "top serum trị mụn tốt nhất hiện nay", "so sánh BHA Obagi và BHA Paula's Choice", "kem chống nắng vật lý hay hóa học tốt hơn"],
+            "scope": "catalog",
+            "note": "Bài so sánh cần nhãn và phiên bản cụ thể, tiêu chí rõ ràng, nguồn công khai và trải nghiệm thật nếu tự nhận review. Không tạo sao đánh giá hoặc cam kết tốt nhất. [Tên thương hiệu] là mẫu truy vấn nội bộ, không phải nội dung để công bố."
+        },
+        {
+            "name": "Mỹ phẩm xanh, organic & thuần chay",
+            "intent": "Tìm hiểu / TOFU",
+            "priority": "Ưu tiên 3",
+            "status": "Chờ bài kiến thức và bằng chứng chứng nhận; không gán nhãn cho Fractional CC",
+            "keywords": ["mỹ phẩm thuần chay là gì", "mỹ phẩm organic Việt Nam", "thành phần thiên nhiên lành tính", "mỹ phẩm thuần chay và cruelty free khác nhau thế nào", "cách đọc chứng nhận organic mỹ phẩm"],
+            "scope": "",
+            "note": "Thiên nhiên không đồng nghĩa an toàn cho mọi người. Hồ sơ hiện có PDRN nguồn DNA cá hồi; không tự gắn toàn thương hiệu nhãn vegan, organic hoặc cruelty-free. Xuất xứ Nhật Bản không đổi thành Việt Nam để khớp từ khóa."
+        },
+        {
+            "name": "Mua sắm mở rộng & tìm kiếm địa phương",
+            "intent": "Mua hàng / BOFU",
+            "priority": "Ưu tiên 3",
+            "status": "Chờ sản phẩm, giá, địa chỉ và hồ sơ liên quan",
+            "keywords": ["[Tên thương hiệu] chính hãng", "bảng giá mỹ phẩm [Tên thương hiệu]", "showroom [Tên thương hiệu] tại Hà Nội", "showroom [Tên thương hiệu] tại TP.HCM", "mua serum B5 chính hãng giá tốt", "mỹ phẩm uy tín mua ở đâu", "kem chống nắng [Tên thương hiệu] giá bao nhiêu"],
+            "scope": "",
+            "note": "Chỉ thay tên thương hiệu khi có sản phẩm thật và nội dung được duyệt. Có Panthenol trong công thức không có nghĩa đang bán serum B5 riêng. Không tạo LocalBusiness hoặc showroom giả."
+        }
+    ],
+    "sources": [
+        {"title": "Google Search Central: SEO Starter Guide", "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", "note": "Tiêu đề/mô tả riêng, nội dung hữu ích; Google không dùng meta keywords."},
+        {"title": "Google Search Central: Product snippets", "url": "https://developers.google.com/search/docs/appearance/structured-data/product-snippet", "note": "Schema sản phẩm phải đúng nội dung thực tế; không tự tạo review hoặc tình trạng tồn kho."},
+        {"title": "Think with Google: Vietnam – Search for Tomorrow", "url": "https://www.thinkwithgoogle.com/_qs/documents/10586/Vietnam_-_Search_for_tomorrow_EN_version.pdf", "note": "Báo cáo lịch sử dùng dữ liệu 2017–2020. Tham khảo cách phân nhóm nhu cầu; không dùng làm số liệu xu hướng năm 2026."},
+        {"title": "American Academy of Dermatology: Retinoid or retinol?", "url": "https://www.aad.org/public/everyday-care/skin-care-secrets/anti-aging/retinoid-retinol", "note": "Nguồn tham khảo cho biên tập kiến thức retinoid; không thay nhãn hoặc hướng dẫn của sản phẩm."},
+        {"title": "Google Trends – Việt Nam", "url": "https://trends.google.com/trends/explore?geo=VN", "note": "Công cụ để kiểm tra mùa vụ và mức quan tâm tương đối; chưa có bảng dữ liệu so sánh hiện tại trong lần tích hợp này."}
+    ]
+}

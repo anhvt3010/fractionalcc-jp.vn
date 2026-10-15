@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Fractional CC – Project Core
  * Description: Fractional CC content management, products, combos and versioned default initialization.
- * Version: 1.0.9
+ * Version: 1.0.10
  * Requires at least: 6.3
  * Requires PHP: 7.4
  * Text Domain: project-core
@@ -29,3 +29,4 @@ require_once __DIR__ . '/src/Fractional/smtp.php';
 require_once __DIR__ . '/src/Fractional/contact-settings.php';
 require_once __DIR__ . '/src/Fractional/orders.php';
 require_once __DIR__ . '/src/Fractional/security.php';
+require_once __DIR__ . '/src/Fractional/seo.php';

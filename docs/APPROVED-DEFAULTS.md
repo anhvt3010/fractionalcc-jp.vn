@@ -1,5 +1,7 @@
 # Dữ liệu đã chốt – release đầu tiên 1.0.0
 
+> Hiện hành **[1.0.10](../release/v1.0.10/RELEASE.md)**, ngày 15/10/2026: theo yêu cầu tích hợp SEO, kế thừa snapshot 1.0.9 và chỉ cập nhật 26 title/description cho trang chủ, danh mục, vấn đề làn da và 10 sản phẩm. Mọi nội dung/ảnh/giá/quan hệ/thiết lập khác giữ nguyên; không xuất lại CMS local. Bản đồ 7 nhóm/62 truy vấn là kế hoạch biên tập trong quản trị, không phải bài đã xuất bản hoặc số liệu lượng tìm kiếm. Xem [SEO](SEO.md). Các mốc bên dưới là lịch sử.
+
 > Bản chốt hiện hành **[1.0.9](../release/v1.0.9/RELEASE.md)** theo yêu cầu ngày 15/10/2026: xuất lại từ CMS XAMPP đang dùng, giữ nguyên nội dung và bốn nhãn thông tin hiện tại. Snapshot có **6 bản ghi nội dung với 1.090 giá trị field, 10 sản phẩm, 1 combo, 35 hoạt chất và 70 Media**, kèm gallery/thứ tự, avatar, alt/caption, lựa chọn danh mục/phác đồ, liên hệ, SEO và 8 thiết lập website công khai. Exporter loại các field không còn đăng ký để không đưa phần hướng dẫn đã bỏ trở lại; không xóa dữ liệu lịch sử trong database. Core, Child và defaults cùng version 1.0.9; trạng thái `approved`.
 
 > Cập nhật theo yêu cầu ngày 15/10/2026: defaults **[1.0.6](../release/v1.0.6/RELEASE.md)** bỏ hai nhãn của khối cách dùng cũ và nội dung `howToUse` không còn hiển thị. Tiêu đề phần thành phần dùng lại nhãn đã duyệt “Bảng Thành Phần & Cơ Chế Hoạt Động”. Giữ 70 Media, gallery và lưu ý sản phẩm; không xóa metadata lịch sử trên site đã cài.

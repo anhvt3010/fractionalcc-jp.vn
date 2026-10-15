@@ -1,5 +1,5 @@
 {
-    "version": "1.0.9",
+    "version": "1.0.10",
     "pages": {
         "shared": {
             "title": "Thông tin và giao diện chung Fractional CC",
@@ -1568,12 +1568,12 @@
                 "fcc_home_seo_title": {
                     "type": "text",
                     "key": "field_fcc_home_seo_title",
-                    "value": "Fractional CC Nhật Bản | Phân Phối Độc Quyền Bởi JP- BÙI ĐẶNG"
+                    "value": "Fractional CC Nhật Bản | Serum vi kim & chăm sóc da"
                 },
                 "fcc_home_seo_description": {
                     "type": "textarea",
                     "key": "field_fcc_home_seo_description",
-                    "value": "Đánh thức vẻ đẹp làn da với công nghệ chăm sóc da Nhật Bản. Khám phá giải pháp chăm sóc da cùng Fractional CC – thương hiệu mỹ phẩm Nhật Bản được phân phối độc quyền bởi JP- BÙI ĐẶNG tại Việt Nam."
+                    "value": "Khám phá mỹ phẩm Fractional CC Nhật Bản: serum vi kim, PDRN, mặt nạ và dưỡng môi. Xem sản phẩm, giá và tư vấn từ JP- BÙI ĐẶNG."
                 },
                 "fcc_ui_fbc8886b40af10": {
                     "type": "text",
@@ -3928,12 +3928,12 @@
                 "fcc_catalog_seo_title": {
                     "type": "text",
                     "key": "field_fcc_catalog_seo_title",
-                    "value": "Sản Phẩm Fractional CC Nhật Bản | Danh Mục 10 Sản Phẩm & Combo C–CX4"
+                    "value": "Sản phẩm & bảng giá Fractional CC | Serum, mặt nạ, dưỡng môi"
                 },
                 "fcc_catalog_seo_description": {
                     "type": "textarea",
                     "key": "field_fcc_catalog_seo_description",
-                    "value": "Danh mục đầy đủ 10 sản phẩm Fractional CC Nhật Bản: Serum vi kim Needle Serum C & A, Mandelic Shot, PDRN Shot 1000+, mặt nạ vi kim và dưỡng môi PDRN. Đã đủ CBMP Bộ Y Tế."
+                    "value": "Xem danh mục và giá mỹ phẩm Fractional CC Nhật Bản: Needle Serum A, C, AX4, CX4, Mandelic, PDRN, mặt nạ và dưỡng môi. Chọn theo nhu cầu chăm sóc da."
                 },
                 "fcc_ui_b45e15d873b0e1": {
                     "type": "text",
@@ -5043,12 +5043,12 @@
                 "fcc_concerns_seo_title": {
                     "type": "text",
                     "key": "field_fcc_concerns_seo_title",
-                    "value": "Vấn Đề Làn Da & Giải Pháp Khoa Học Chuẩn Nhật | Fractional CC"
+                    "value": "Đốm nâu, thâm mụn & chăm sóc da lão hóa | Fractional CC"
                 },
                 "fcc_concerns_seo_description": {
                     "type": "textarea",
                     "key": "field_fcc_concerns_seo_description",
-                    "value": "Khám phá giải pháp chuyên sâu cho các vấn đề: đốm nâu, da không đều màu, lỗ chân lông to, lão hóa nếp nhăn và thâm mụn từ công nghệ vi kim sinh học Fractional CC."
+                    "value": "Tìm hiểu chăm sóc da không đều màu, đốm nâu, da sần, lỗ chân lông và nếp nhăn. Tham khảo sản phẩm Fractional CC theo nhu cầu làn da."
                 },
                 "fcc_ui_m_14b8ce911f21": {
                     "type": "text",
@@ -5617,6 +5617,16 @@
                     "type": "number",
                     "key": "field_fcc_home_catalog_order",
                     "value": "2"
+                },
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
+                    "value": "Mandelic Shot Peel Essence | Tẩy tế bào chết Fractional CC"
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": "Tìm hiểu Fractional CC Mandelic Shot Peel Essence với AHA, BHA và niacinamide. Xem thành phần, công dụng chăm sóc da, giá và lưu ý sản phẩm."
                 }
             },
             "shortName": "Mandelic Shot Peel Essence",
@@ -5683,7 +5693,18 @@
                     "desc": "Niaciamide, Nicotinamide: Dưỡng trắng da"
                 }
             ],
-            "fields": [],
+            "fields": {
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
+                    "value": "Needle Serum A Face Mask | Mặt nạ dưỡng ẩm Fractional CC"
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": "Mặt nạ Fractional CC Needle Serum A Face Mask giúp dưỡng ẩm và làm dịu da khô. Xem thành phần theo hồ sơ, quy cách, giá và thông tin sản phẩm."
+                }
+            },
             "shortName": "Needle Serum A Face Mask",
             "category": "Mỹ Phẩm",
             "categoryType": "mask",
@@ -5755,7 +5776,18 @@
                     "desc": "PDRN & Exosome: Bộ đôi công nghệ tế bào giúp sửa chữa các tổn thương, mang lại hiệu ứng da căng bóng và rạng rỡ."
                 }
             ],
-            "fields": [],
+            "fields": {
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
+                    "value": "Needle Serum A | Serum retinol dưỡng ẩm Fractional CC"
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": "Tìm hiểu serum Fractional CC Needle Serum A với retinol và niacinamide, giúp dưỡng ẩm và hỗ trợ giảm sự xuất hiện của nếp nhăn. Xem thành phần và giá."
+                }
+            },
             "shortName": "Needle Serum A (Chống lão hóa)",
             "category": "Mỹ Phẩm",
             "categoryType": "serum",
@@ -5820,7 +5852,18 @@
                     "desc": "Niacinamide & Peptide: Dưỡng trắng, củng cố hàng rào bảo vệ và giúp da săn chắc, khỏe mạnh hơn."
                 }
             ],
-            "fields": [],
+            "fields": {
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
+                    "value": "Needle Serum AX4 | Serum dưỡng ẩm Fractional CC"
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": "Serum Fractional CC Needle Serum AX4 giúp dưỡng ẩm, làm dịu da khô và hỗ trợ giảm sự xuất hiện của nếp nhăn. Xem hồ sơ thành phần, quy cách và giá."
+                }
+            },
             "shortName": "Needle Serum AX4 (Chuyên sâu X4)",
             "category": "Mỹ Phẩm",
             "categoryType": "serum",
@@ -5892,7 +5935,18 @@
                     "desc": "Chiết xuất CICA (Rau má): Làm dịu da, phục hồi những vùng da nhạy cảm hoặc bị tổn thương, giúp da khỏe khoắn hơn."
                 }
             ],
-            "fields": [],
+            "fields": {
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
+                    "value": "Needle Serum C Face Mask | Mặt nạ dưỡng sáng Fractional CC"
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": "Mặt nạ Fractional CC Needle Serum C Face Mask giúp dưỡng ẩm, dưỡng sáng và làm mềm da. Xem vitamin C, niacinamide trong hồ sơ thành phần và giá."
+                }
+            },
             "shortName": "Needle Serum C Face Mask",
             "category": "Mỹ Phẩm",
             "categoryType": "mask",
@@ -5967,6 +6021,16 @@
                     "type": "number",
                     "key": "field_fcc_home_catalog_order",
                     "value": "3"
+                },
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
+                    "value": "Needle Serum C | Serum vitamin C dưỡng sáng Fractional CC"
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": "Serum Fractional CC Needle Serum C với vitamin C và niacinamide, giúp dưỡng ẩm và hỗ trợ làm đều màu da. Xem công dụng, quy cách và giá hiện tại."
                 }
             },
             "shortName": "Needle Serum C (Dưỡng sáng)",
@@ -6057,6 +6121,16 @@
                     "type": "number",
                     "key": "field_fcc_home_catalog_order",
                     "value": "4"
+                },
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
+                    "value": "Needle Serum CX4 | Serum dưỡng sáng Fractional CC"
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": "Tìm hiểu Fractional CC Needle Serum CX4 với vitamin C và niacinamide, giúp dưỡng ẩm và hỗ trợ làm mờ đốm nâu. Xem thành phần, quy cách và giá."
                 }
             },
             "shortName": "Needle Serum CX4 (Dưỡng sáng X4)",
@@ -6133,6 +6207,16 @@
                     "type": "number",
                     "key": "field_fcc_home_catalog_order",
                     "value": "5"
+                },
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
+                    "value": "PDRN Shot 1000+ Toning Essence | Serum Fractional CC"
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": "Serum Fractional CC PDRN Shot 1000+ Toning Essence với PDRN, niacinamide và arbutin. Xem hồ sơ thành phần, công dụng chăm sóc da, giá và lưu ý."
                 }
             },
             "shortName": "PDRN Shot 1000+ Toning Essence",
@@ -6209,6 +6293,16 @@
                     "type": "number",
                     "key": "field_fcc_home_catalog_order",
                     "value": "6"
+                },
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
+                    "value": "PDRN Shot Lip Essence | Serum dưỡng môi Fractional CC"
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": "Fractional CC PDRN Shot Lip Essence không màu giúp dưỡng ẩm, làm mềm môi và tạo hiệu ứng căng mọng. Xem thành phần, quy cách và giá sản phẩm."
                 }
             },
             "shortName": "PDRN Shot Lip Essence (Không màu)",
@@ -6274,7 +6368,18 @@
                     "desc": "Phức hợp dưỡng ẩm chuyên sâu với vitamin C, Glutathione: Cung cấp độ ẩm tức thì, giúp đôi môi ngậm nước, loại bỏ tình trạng bong tróc, nứt nẻ ngay sau lần sử dụng đầu tiên."
                 }
             ],
-            "fields": [],
+            "fields": {
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
+                    "value": "PDRN Shot Lip Plumper | Dưỡng môi có màu Fractional CC"
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": "Fractional CC PDRN Shot Lip Plumper có màu giúp dưỡng ẩm, làm mềm môi và tạo hiệu ứng căng mọng. Xem thành phần, quy cách và giá sản phẩm."
+                }
+            },
             "shortName": "PDRN Shot Lip Plumper (Có màu)",
             "category": "Mỹ Phẩm",
             "categoryType": "lip",

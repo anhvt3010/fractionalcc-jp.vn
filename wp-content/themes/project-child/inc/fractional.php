@@ -5,6 +5,7 @@ require_once __DIR__ . '/fractional-render.php';
 require_once __DIR__ . '/fractional-components.php';
 require_once __DIR__ . '/fractional-spotlight.php';
 require_once __DIR__ . '/fractional-admin.php';
+require_once __DIR__ . '/seo.php';
 
 function project_child_fcc_kind() {
 	if ( is_singular( 'fcc_product' ) ) { return 'product'; }
@@ -163,47 +164,12 @@ function project_child_fcc_render( $kind ) {
 		$message = current_user_can( 'manage_options' ) ? 'Cần kích hoạt Project Core để hiển thị website.' : 'Trang web tạm thời chưa sẵn sàng.';
 		wp_die( esc_html( $message ), '', array( 'response' => 503 ) );
 	}
-	remove_action( 'wp_head', 'rel_canonical' );
 	?><!doctype html>
 	<html lang="vi"><head><meta charset="<?php bloginfo( 'charset' ); ?>"><meta name="viewport" content="width=device-width, initial-scale=1"><?php wp_head(); ?></head>
 	<body <?php body_class( 'fcc-site' ); ?>><?php wp_body_open(); ?>
 	<?php get_template_part( 'template-parts/fractional/' . $kind ); ?>
 	<?php wp_footer(); ?></body></html><?php
 }
-
-function project_child_fcc_title( $title ) {
-	$kind = project_child_fcc_kind();
-	if ( ! $kind || ! function_exists( 'project_core_fcc_page_id' ) ) { return $title; }
-	if ( 'product' === $kind ) { return get_post_meta( get_queried_object_id(), 'fcc_product_seo_title', true ) ?: get_the_title( get_queried_object_id() ) . ' | ' . project_core_fcc_site( 'name' ); }
-	$value = get_post_meta( project_core_fcc_page_id( $kind ), 'fcc_' . $kind . '_seo_title', true );
-	return $value ?: $title;
-}
-add_filter( 'pre_get_document_title', 'project_child_fcc_title' );
-
-function project_child_fcc_metadata() {
-	$kind = project_child_fcc_kind();
-	if ( ! $kind || ! function_exists( 'project_core_fcc_page_id' ) ) { return; }
-	$description = 'product' === $kind ? ( get_post_meta( get_queried_object_id(), 'fcc_product_seo_description', true ) ?: project_child_fcc_product_value( 'tagline' ) ) : get_post_meta( project_core_fcc_page_id( $kind ), 'fcc_' . $kind . '_seo_description', true );
-	$url = get_permalink( get_queried_object_id() );
-	$product_share = 'product' === $kind ? wp_get_attachment_image_url( absint( get_post_meta( get_queried_object_id(), 'fcc_product_seo_image', true ) ), 'full' ) : '';
-	$image = 'product' === $kind ? ( $product_share ?: project_child_fcc_product_value( 'image' ) ) : project_child_fcc_image( 'fcc_' . $kind . '_seo_image', $kind );
-	echo '<meta name="description" content="' . esc_attr( $description ) . '"><link rel="canonical" href="' . esc_url( $url ) . '">';
-	echo '<meta property="og:type" content="website"><meta property="og:title" content="' . esc_attr( wp_get_document_title() ) . '"><meta property="og:description" content="' . esc_attr( $description ) . '"><meta property="og:url" content="' . esc_url( $url ) . '">';
-	if ( $image ) { echo '<meta property="og:image" content="' . esc_url( $image ) . '"><meta name="twitter:card" content="summary_large_image">'; }
-	$favicon = project_child_fcc_image( 'fcc_site_favicon' );
-	$favicon = project_child_fcc_webp_url( $favicon ) ?: $favicon;
-	if ( $favicon ) { remove_action( 'wp_head', 'wp_site_icon', 99 ); echo '<link rel="icon" href="' . esc_url( $favicon ) . '">'; }
-}
-add_action( 'wp_head', 'project_child_fcc_metadata', 2 );
-
-function project_child_fcc_robots( $robots ) {
-	$local = 'production' !== wp_get_environment_type() || in_array( wp_parse_url( home_url(), PHP_URL_HOST ), array( 'localhost', '127.0.0.1', '::1' ), true );
-	if ( project_child_fcc_kind() && function_exists( 'project_core_fcc_site' ) && ( $local || 'approved' !== project_core_fcc_site( 'content_status' ) || 'thankyou' === project_child_fcc_kind() ) ) {
-		$robots['noindex'] = true; unset( $robots['index'] );
-	}
-	return $robots;
-}
-add_filter( 'wp_robots', 'project_child_fcc_robots' );
 
 function project_child_fcc_block_editor( $use, $post ) {
 	return 'page' === $post->post_type && 0 === strpos( (string) get_page_template_slug( $post->ID ), 'templates/fractional-' ) ? false : $use;
