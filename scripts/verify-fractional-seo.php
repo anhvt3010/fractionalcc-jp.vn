@@ -74,6 +74,7 @@ if ( in_array( '--fixture', $argv, true ) ) {
 	$old_description = get_post_meta( $id, 'fcc_product_seo_description', true );
 	$old_price = get_post_meta( $id, 'fcc_salePrice', true );
 	$old_seed = get_option( 'project_core_fcc_seed_version' );
+	$target_version = project_core_fcc_default_document()['version'];
 	try {
 		update_post_meta( $id, 'fcc_product_seo_title', 'Serum "A&B" <script>unsafe()</script>' );
 		update_post_meta( $id, 'fcc_product_seo_description', 'Mô tả "dưỡng ẩm" & <b>chăm sóc</b>' );
@@ -81,7 +82,7 @@ if ( in_array( '--fixture', $argv, true ) ) {
 		fcc_seo_check( ! is_wp_error( project_core_fcc_initialize() ) && $custom_title === get_post_meta( $id, 'fcc_product_seo_title', true ), 'Rerun preserves edited SEO metadata.' );
 		update_option( 'project_core_fcc_seed_version', '1.0.9' );
 		update_post_meta( $id, 'fcc_product_seo_description', '' );
-		fcc_seo_check( ! is_wp_error( project_core_fcc_initialize() ) && '1.0.10' === get_option( 'project_core_fcc_seed_version' ) && $custom_title === get_post_meta( $id, 'fcc_product_seo_title', true ) && '' === get_post_meta( $id, 'fcc_product_seo_description', true ), 'Upgrade from seed 1.0.9 preserves edited title and cleared description.' );
+		fcc_seo_check( ! is_wp_error( project_core_fcc_initialize() ) && $target_version === get_option( 'project_core_fcc_seed_version' ) && $custom_title === get_post_meta( $id, 'fcc_product_seo_title', true ) && '' === get_post_meta( $id, 'fcc_product_seo_description', true ), 'Upgrade from seed 1.0.9 preserves edited title and cleared description.' );
 		update_post_meta( $id, 'fcc_product_seo_description', 'Mô tả "dưỡng ẩm" & <b>chăm sóc</b>' );
 		ob_start(); project_child_fcc_metadata(); $html = ob_get_clean();
 		fcc_seo_check( false === strpos( $html, '<script>unsafe()' ) && false !== strpos( $html, '&quot;' ), 'Editable metadata escapes HTML and quotes.' );

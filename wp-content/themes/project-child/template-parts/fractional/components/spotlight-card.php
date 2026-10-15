@@ -5,9 +5,9 @@ $item = $args['item'];
 ?>
 <div class="duo-spotlight-card" data-featured-id="<?php echo esc_attr( $item['id'] ); ?>">
 	<div class="duo-card-main-split">
-		<div class="duo-card-visual">
+		<a class="duo-card-visual" href="<?php echo esc_url( $item['url'] ); ?>" aria-label="<?php echo esc_attr( $item['name'] ); ?>">
 			<?php echo project_child_fcc_picture_html( $item['image'], $item['alt'], '', array( 'loading' => 'lazy', 'sizes' => '(min-width: 992px) 360px, 80vw' ) ); ?>
-		</div>
+		</a>
 		<div class="duo-card-primary-info">
 			<h3 class="duo-title heading-serif"><?php echo esc_html( $item['spotlightTitle'] ); ?></h3>
 			<?php if ( $item['spotlightRating'] ) : ?><div class="card-rating-row" style="margin-bottom: 8px;"><span class="card-rating-stars" aria-hidden="true">★★★★★</span><span><?php echo esc_html( $item['spotlightRating'] ); ?></span></div><?php endif; ?>
