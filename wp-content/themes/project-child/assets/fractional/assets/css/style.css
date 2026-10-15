@@ -4027,16 +4027,21 @@ textarea.form-control {
   align-items: stretch;
 }
 
-.fcc-deepdive-breakthrough .fcc-deepdive-content,
-.fcc-deepdive-routine .fcc-deepdive-content {
+.fcc-deepdive-breakthrough .fcc-deepdive-content {
   padding: 48px 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.fcc-deepdive-breakthrough .fcc-deepdive-visual,
-.fcc-deepdive-routine .fcc-deepdive-visual {
+.fcc-deepdive-routine .fcc-deepdive-content {
+  padding: 38px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fcc-deepdive-breakthrough .fcc-deepdive-visual {
   height: 100%;
   width: 100%;
   display: flex;
@@ -4044,18 +4049,21 @@ textarea.form-control {
   align-items: stretch;
   justify-content: stretch;
   background: #FAF8F5;
-}
-
-.fcc-deepdive-breakthrough .fcc-deepdive-visual {
   border-right: 1px solid var(--color-border);
 }
 
 .fcc-deepdive-routine .fcc-deepdive-visual {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #1E192B 0%, #100E17 100%);
   border-left: 1px solid var(--color-border);
 }
 
-.fcc-deepdive-breakthrough .fcc-visual-frame,
-.fcc-deepdive-routine .fcc-visual-frame {
+.fcc-deepdive-breakthrough .fcc-visual-frame {
   max-width: none;
   width: 100%;
   height: 100%;
@@ -4068,6 +4076,23 @@ textarea.form-control {
   justify-content: center;
 }
 
+.fcc-deepdive-routine .fcc-visual-frame {
+  position: relative;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: #141024;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 .fcc-deepdive-breakthrough .fcc-visual-frame:hover,
 .fcc-deepdive-routine .fcc-visual-frame:hover {
   transform: none;
@@ -4075,11 +4100,28 @@ textarea.form-control {
   border-color: transparent;
 }
 
-.fcc-deepdive-breakthrough .fcc-deepdive-img,
-.fcc-deepdive-routine .fcc-deepdive-img {
+.fcc-deepdive-breakthrough .fcc-deepdive-img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.fcc-deepdive-routine .fcc-deepdive-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  border-radius: var(--radius-sm, 8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: none !important;
+  transform: none !important;
+}
+
+.fcc-deepdive-routine:hover .fcc-deepdive-img {
+  transform: none !important;
 }
 
 .fcc-deepdive-breakthrough .fcc-visual-caption,
@@ -4245,13 +4287,13 @@ textarea.form-control {
 .fcc-experience-steps-wrap {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 11px;
 }
 
 .fcc-exp-step-item {
   display: flex;
-  gap: 16px;
-  padding: 16px;
+  gap: 14px;
+  padding: 12px 16px;
   background: #FAF8F5;
   border: 1px solid #EFEAE1;
   border-radius: var(--radius-sm);
@@ -4261,18 +4303,19 @@ textarea.form-control {
 .fcc-exp-step-item:hover {
   background: #FFFFFF;
   border-color: var(--color-accent-gold);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.12);
+  transform: translateX(4px);
 }
 
 .fcc-exp-step-num {
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: #FAF5E8;
-  border: 1px solid rgba(197, 160, 89, 0.4);
+  border: 1px solid rgba(197, 160, 89, 0.45);
   color: #8C6A28;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -4280,17 +4323,52 @@ textarea.form-control {
 }
 
 .fcc-exp-step-info h4 {
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--color-text-main);
-  margin: 0 0 4px 0;
+  margin: 0 0 3px 0;
 }
 
 .fcc-exp-step-info p {
   font-size: 12.5px;
-  line-height: 1.55;
+  line-height: 1.5;
   color: var(--color-text-body);
   margin: 0;
+}
+
+.fcc-exp-note-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 11px 16px;
+  background: rgba(197, 160, 89, 0.08);
+  border: 1px solid rgba(197, 160, 89, 0.28);
+  border-left: 3.5px solid var(--color-accent-gold, #C5A059);
+  border-radius: var(--radius-sm);
+}
+
+.fcc-exp-note-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(197, 160, 89, 0.15);
+}
+
+.fcc-exp-note-bar p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #5C4B29;
+  margin: 0;
+}
+
+.fcc-exp-note-bar strong {
+  color: #1A1713;
 }
 
 .fcc-highlights-bottom-guide {
@@ -4378,8 +4456,7 @@ textarea.form-control {
   }
 
   /* Khung ảnh tràn viền 3 cạnh trên cùng của thẻ */
-  .fcc-deepdive-breakthrough .fcc-deepdive-visual,
-  .fcc-deepdive-routine .fcc-deepdive-visual {
+  .fcc-deepdive-breakthrough .fcc-deepdive-visual {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -4393,13 +4470,22 @@ textarea.form-control {
     overflow: hidden !important;
   }
 
-  /* Đưa ảnh của thẻ routine lên trên đầu giống thẻ breakthrough */
   .fcc-deepdive-routine .fcc-deepdive-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    border-radius: 18px 18px 0 0 !important;
+    background: #141024 !important;
+    overflow: hidden !important;
     order: -1;
   }
 
-  .fcc-deepdive-breakthrough .fcc-visual-frame,
-  .fcc-deepdive-routine .fcc-visual-frame {
+  .fcc-deepdive-breakthrough .fcc-visual-frame {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
@@ -4412,14 +4498,39 @@ textarea.form-control {
     display: block !important;
   }
 
-  .fcc-deepdive-breakthrough .fcc-deepdive-img,
-  .fcc-deepdive-routine .fcc-deepdive-img {
+  .fcc-deepdive-routine .fcc-visual-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    border: none !important;
+    border-radius: 18px 18px 0 0 !important;
+    box-shadow: none !important;
+    background: #141024 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .fcc-deepdive-breakthrough .fcc-deepdive-img {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
     display: block !important;
     border-radius: 18px 18px 0 0 !important;
     object-fit: cover !important;
+  }
+
+  .fcc-deepdive-routine .fcc-deepdive-img {
+    max-width: 100% !important;
+    max-height: 480px !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: var(--radius-sm, 8px) !important;
+    object-fit: contain !important;
+    transform: none !important;
   }
 
   .fcc-deepdive-breakthrough .fcc-deepdive-content,

@@ -215,29 +215,49 @@ $s04_desc  = project_child_fcc_text( 'fcc_ui_80ae9607363601', 'home' );
           </p>
 
           <div class="fcc-experience-steps-wrap">
+            <!-- 01: Kết cấu sản phẩm -->
             <div class="fcc-exp-step-item">
               <div class="fcc-exp-step-num">01</div>
+              <div class="fcc-exp-step-info">
+                <h4><?php echo project_child_fcc_text( 'fcc_ui_m_exp_tex_title', 'home', false ) ?: 'Kết cấu đặc trưng'; ?></h4>
+                <p><?php echo project_child_fcc_text( 'fcc_ui_m_exp_tex_desc', 'home', false ) ?: 'Tùy từng dòng serum, sản phẩm mang lại cảm giác đặc trưng khi thoa do chứa thành phần vi kim mỹ phẩm sinh học từ bọt biển thủy phân (Hydrolyzed Sponge).'; ?></p>
+              </div>
+            </div>
+
+            <!-- 02: Cảm giác trên da -->
+            <div class="fcc-exp-step-item">
+              <div class="fcc-exp-step-num">02</div>
               <div class="fcc-exp-step-info">
                 <h4><?php echo project_child_fcc_text( 'fcc_ui_m_9e881650e66d', 'home' ); ?></h4>
                 <p><?php echo project_child_fcc_text( 'fcc_ui_m_46bc3f224820', 'home' ); ?></p>
               </div>
             </div>
 
+            <!-- 03: Cách dùng & Vị trí -->
             <div class="fcc-exp-step-item">
-              <div class="fcc-exp-step-num">02</div>
+              <div class="fcc-exp-step-num">03</div>
               <div class="fcc-exp-step-info">
                 <h4><?php echo project_child_fcc_text( 'fcc_ui_m_90436c65261d', 'home' ); ?></h4>
                 <p><?php echo project_child_fcc_text( 'fcc_ui_m_6f4b3c1262c8', 'home' ); ?></p>
               </div>
             </div>
 
+            <!-- 04: Lưu ý khi sử dụng -->
             <div class="fcc-exp-step-item">
-              <div class="fcc-exp-step-num">03</div>
+              <div class="fcc-exp-step-num">04</div>
               <div class="fcc-exp-step-info">
                 <h4><?php echo project_child_fcc_text( 'fcc_ui_m_a573c3d5d316', 'home' ); ?></h4>
                 <p><?php echo project_child_fcc_text( 'fcc_ui_m_8b213687c068', 'home' ); ?></p>
               </div>
             </div>
+          </div>
+
+          <!-- Lời khuyên thao tác từ chuyên gia -->
+          <div class="fcc-exp-note-bar">
+            <span class="fcc-exp-note-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </span>
+            <p><strong>Thao tác chuẩn Nhật:</strong> Áp nhẹ và vỗ đều lòng bàn tay khắp mặt để hạt vi kim tự nhiên đi sâu vào lớp sừng, kích hoạt hiệu quả tái tạo tối đa.</p>
           </div>
         </div>
 
@@ -249,7 +269,7 @@ $s04_desc  = project_child_fcc_text( 'fcc_ui_80ae9607363601', 'home' );
                     $routine_img_url,
                     project_child_fcc_raw_text( 'fcc_ui_m_722d801f8aa1', 'home' ),
                     'fcc-deepdive-img',
-                    array( 'width' => 540, 'height' => 360, 'loading' => 'lazy' )
+                    array( 'width' => 540, 'height' => 540, 'loading' => 'lazy' )
                 );
             }
             ?>
