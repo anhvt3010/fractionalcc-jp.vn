@@ -36,7 +36,9 @@ function project_core_fcc_validate_snapshot( $data ) {
 		foreach ( $record['fields'] ?? array() as $name => $field ) {
 			if ( ! preg_match( '/^fcc_[a-zA-Z0-9_]+$/', $name ) || ! isset( $field['type'], $field['value'] ) || ! is_string( $field['type'] ) || ( isset( $field['key'] ) && ! preg_match( '/^field_fcc_[a-zA-Z0-9_]+$/', $field['key'] ) ) ) { return $error; }
 			if ( 'relationship' === $field['type'] ) { if ( ! is_array( $field['value'] ) || array_diff( $field['value'], $sources ) ) { return $error; } }
-			elseif ( 'image' === $field['type'] && '' !== $field['value'] && 0 !== $field['value'] && ! isset( $data['media'][ $field['value'] ] ) ) { return $error; }
+			elseif ( in_array( $field['type'], array( 'image', 'file' ), true ) && '' !== $field['value'] && 0 !== $field['value'] ) {
+				if ( ! is_string( $field['value'] ) || ! isset( $data['media'][ $field['value'] ] ) || ( 'image' === $field['type'] ? 'image' : 'video' ) !== project_core_fcc_media_path_type( $field['value'] ) ) { return $error; }
+			}
 			elseif ( ! is_scalar( $field['value'] ) && ! is_array( $field['value'] ) ) { return $error; }
 		}
 		foreach ( array( 'content', 'excerpt' ) as $key ) {
@@ -59,9 +61,16 @@ function project_core_fcc_validate_snapshot( $data ) {
 		}
 	}
 	foreach ( array_merge( $data['media'] ?? array(), $data['mediaUpdate']['previousMedia'] ?? array() ) as $path => $media ) {
-		if ( ! preg_match( '#^assets/images/[a-zA-Z0-9/_-]+\.(png|jpe?g|webp)$#', $path ) || ! isset( $media['sha256'] ) || ! preg_match( '/^[a-f0-9]{64}$/', $media['sha256'] ) ) { return $error; }
+		$kind = project_core_fcc_media_path_type( $path );
+		if ( ! $kind || ! isset( $media['sha256'] ) || ! preg_match( '/^[a-f0-9]{64}$/', $media['sha256'] ) ) { return $error; }
 		$file = get_stylesheet_directory() . '/assets/fractional/' . $path;
-		if ( ! is_readable( $file ) || hash_file( 'sha256', $file ) !== $media['sha256'] || ! in_array( wp_get_image_mime( $file ), array( 'image/png', 'image/jpeg', 'image/webp' ), true ) ) { return new WP_Error( 'fcc_snapshot_media', 'Ảnh đóng gói không khớp nội dung đã chốt.' ); }
+		if ( ! is_readable( $file ) || hash_file( 'sha256', $file ) !== $media['sha256'] ) { return new WP_Error( 'fcc_snapshot_media', 'Media đóng gói không khớp nội dung đã chốt.' ); }
+		if ( 'image' === $kind && ! in_array( wp_get_image_mime( $file ), array( 'image/png', 'image/jpeg', 'image/webp' ), true ) ) { return new WP_Error( 'fcc_snapshot_media', 'Ảnh đóng gói không hợp lệ.' ); }
+		if ( 'video' === $kind ) {
+			require_once ABSPATH . 'wp-admin/includes/media.php';
+			$metadata = wp_read_video_metadata( $file );
+			if ( empty( $metadata['width'] ) || empty( $metadata['height'] ) || ! in_array( $metadata['mime_type'] ?? '', array( 'video/mp4', 'video/webm', 'video/ogg' ), true ) ) { return new WP_Error( 'fcc_snapshot_media', 'Video đóng gói không hợp lệ.' ); }
+		}
 	}
 	foreach ( $data['regimens'] ?? array() as $slug => $items ) { if ( ! isset( project_core_fcc_regimens()[ $slug ] ) || ! is_array( $items ) || count( $items ) > 6 || count( array_unique( $items ) ) !== count( $items ) || array_diff( $items, $sources ) ) { return $error; } foreach ( $items as $source ) { if ( ! preg_match( '/^(product|combo)_/', $source ) ) { return $error; } } }
 	if ( array_diff( array_keys( $data['settings'] ?? array() ), project_core_fcc_snapshot_setting_names() ) ) { return $error; }
@@ -77,7 +86,7 @@ function project_core_fcc_seed_snapshot_fields( $id, $fields ) {
 	foreach ( $fields as $name => $field ) {
 		if ( metadata_exists( 'post', $id, $name ) ) { continue; }
 		$value = $field['value'];
-		if ( 'image' === $field['type'] ) { $value = $value ? project_core_fcc_seed_media( $value ) : 0; }
+		if ( in_array( $field['type'], array( 'image', 'file' ), true ) ) { $value = $value ? project_core_fcc_seed_media( $value ) : 0; }
 		elseif ( 'relationship' === $field['type'] ) { $value = array_map( 'project_core_fcc_snapshot_source', $value ); }
 		else { $value = project_core_fcc_resolve_default( $value ); }
 		if ( is_wp_error( $value ) ) { return $value; }

@@ -26,12 +26,20 @@ function project_core_fcc_seed_post( $type, $source_key, $title, $slug, $order =
 	return wp_insert_post( wp_slash( array( 'post_type' => $type, 'post_status' => 'publish', 'post_title' => $title, 'post_name' => $slug, 'post_content' => $content, 'post_excerpt' => $excerpt, 'menu_order' => $order, 'post_author' => get_current_user_id(), 'meta_input' => array( '_fcc_source_key' => $source_key ) ) ), true );
 }
 
+/** Only public, packaged image/video assets may be imported. */
+function project_core_fcc_media_path_type( $path ) {
+	if ( ! is_string( $path ) ) { return ''; }
+	if ( preg_match( '#^assets/images/[a-zA-Z0-9/_-]+\.(png|jpe?g|webp)$#', $path ) ) { return 'image'; }
+	if ( preg_match( '#^assets/videos/[a-zA-Z0-9/_-]+\.(mp4|webm|ogv|ogg)$#', $path ) ) { return 'video'; }
+	return '';
+}
+
 function project_core_fcc_seed_media( $relative_path ) {
-	if ( ! preg_match( '#^assets/images/[a-zA-Z0-9/_-]+\.(png|jpe?g|webp)$#', $relative_path ) ) { return new WP_Error( 'fcc_asset_path', 'Đường dẫn ảnh không hợp lệ.' ); }
+	if ( ! project_core_fcc_media_path_type( $relative_path ) ) { return new WP_Error( 'fcc_asset_path', 'Đường dẫn Media không hợp lệ.' ); }
 	$existing = get_posts( array( 'post_type' => 'attachment', 'post_status' => 'inherit', 'posts_per_page' => 1, 'fields' => 'ids', 'meta_key' => '_fcc_asset_source', 'meta_value' => $relative_path ) );
 	if ( $existing ) { return (int) $existing[0]; }
 	$source = get_stylesheet_directory() . '/assets/fractional/' . $relative_path;
-	if ( ! is_readable( $source ) ) { return new WP_Error( 'fcc_asset_missing', 'Thiếu ảnh mặc định: ' . $relative_path ); }
+	if ( ! is_readable( $source ) ) { return new WP_Error( 'fcc_asset_missing', 'Thiếu Media mặc định: ' . $relative_path ); }
 	require_once ABSPATH . 'wp-admin/includes/file.php';
 	require_once ABSPATH . 'wp-admin/includes/media.php';
 	require_once ABSPATH . 'wp-admin/includes/image.php';

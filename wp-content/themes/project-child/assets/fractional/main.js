@@ -49,6 +49,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 14. Initialize Policy Page Navigation & Scrollspy
   initPolicyNav();
+
+  // 15. Initialize Video Modal Lightbox
+  initVideoModal();
 });
 
 /**
@@ -1052,4 +1055,124 @@ function initPolicyNav() {
       ticking = true;
     }
   }, { passive: true });
+}
+
+
+/**
+ * 15. Video Modal Lightbox Controller (Beauty Istanbul & Brand Videos)
+ */
+function initVideoModal() {
+  const triggers = document.querySelectorAll('[data-fcc-video-modal]');
+  if (!triggers.length) return;
+
+  let modal = document.getElementById('fcc-video-modal');
+  let activeTrigger = null;
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'fcc-video-modal';
+    modal.className = 'fcc-video-modal';
+    modal.innerHTML = `
+      <div class="fcc-video-modal-backdrop"></div>
+      <div class="fcc-video-modal-container" role="dialog" aria-modal="true" aria-label="Trình phát video sự kiện">
+        <button type="button" class="fcc-video-modal-close" aria-label="Đóng video">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="fcc-video-modal-header">
+          <span class="fcc-video-modal-tag">Beauty Istanbul 2025</span>
+          <h4 class="fcc-video-modal-title">Gian Hàng Fractional CC Tokyo</h4>
+        </div>
+        <div class="fcc-video-modal-frame-wrap"></div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    const closeBtn = modal.querySelector('.fcc-video-modal-close');
+    const backdrop = modal.querySelector('.fcc-video-modal-backdrop');
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.classList.remove('fcc-video-modal-open');
+      const video = modal.querySelector('video');
+      if (video) {
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+      }
+      modal.querySelector('.fcc-video-modal-frame-wrap').replaceChildren();
+      if (activeTrigger) activeTrigger.focus({ preventScroll: true });
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+      if (e.key === 'Tab' && modal.classList.contains('active')) {
+        const player = modal.querySelector('video, iframe');
+        if (e.shiftKey && document.activeElement === closeBtn && player) {
+          e.preventDefault();
+          player.focus();
+        } else if (!e.shiftKey && document.activeElement === player) {
+          e.preventDefault();
+          closeBtn.focus();
+        }
+      }
+    });
+  }
+
+  triggers.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const videoUrl = btn.getAttribute('data-fcc-video-modal');
+      const videoTitle = btn.getAttribute('data-video-title') || 'Gian Hàng Fractional CC Tokyo – Beauty Istanbul 2025';
+      const videoTag = btn.getAttribute('data-video-tag') || 'Triển Lãm Quốc Tế Beauty Istanbul 2025';
+
+      if (!videoUrl) return;
+
+      const frameWrap = modal.querySelector('.fcc-video-modal-frame-wrap');
+      const titleEl = modal.querySelector('.fcc-video-modal-title');
+      const tagEl = modal.querySelector('.fcc-video-modal-tag');
+
+      if (titleEl) titleEl.textContent = videoTitle;
+      if (tagEl) tagEl.textContent = videoTag;
+      const isFile = btn.getAttribute('data-video-type') === 'file';
+      const player = document.createElement(isFile ? 'video' : 'iframe');
+      if (isFile) {
+        player.controls = true;
+        player.playsInline = true;
+        player.preload = 'metadata';
+        player.setAttribute('aria-label', videoTitle);
+      } else {
+        player.id = 'fcc-video-modal-iframe';
+        player.title = videoTitle;
+        player.allow = 'autoplay; fullscreen; picture-in-picture';
+        player.allowFullscreen = true;
+      }
+      player.tabIndex = 0;
+      player.src = videoUrl;
+      frameWrap.replaceChildren(player);
+
+      activeTrigger = btn;
+      modal.classList.add('active');
+      document.body.classList.add('fcc-video-modal-open');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          if (modal.classList.contains('active')) modal.querySelector('.fcc-video-modal-close').focus({ preventScroll: true });
+        });
+      });
+    });
+
+    if (btn.tagName !== 'BUTTON' && btn.getAttribute('role') === 'button') {
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    }
+  });
 }

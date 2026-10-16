@@ -36,7 +36,7 @@ function project_core_fcc_regimen_posts( $concern, $page_id ) {
 function project_core_fcc_register_regimen_fields() {
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) { return; }
 	$fields = array(
-		project_core_fcc_field( 'regimen_help', 'Chọn sản phẩm theo phác đồ', 'message', array( 'name' => '', 'message' => 'Mỗi tab tương ứng một tình trạng da trên trang Vấn đề làn da. Chọn sản phẩm hoặc combo đã xuất bản ở bên trái, kéo các mục bên phải để đổi thứ tự; bấm dấu trừ để bỏ chọn. Tối đa 6 mục mỗi tình trạng. Tên, ảnh, công dụng và giá lấy trực tiếp từ catalog. Lưu ở đây chỉ cập nhật website này, không đưa lựa chọn vào dữ liệu mặc định khởi tạo. Danh sách đề xuất đang chờ chủ nội dung duyệt; không thay thế hướng dẫn sử dụng từng sản phẩm.', 'esc_html' => 1 ) ),
+		project_core_fcc_field( 'regimen_help', 'Chọn sản phẩm theo phác đồ', 'message', array( 'name' => '', 'message' => 'Mỗi tab tương ứng một tình trạng da trên trang Vấn đề làn da. Chọn sản phẩm hoặc combo đã xuất bản ở bên trái, kéo các mục bên phải để đổi thứ tự; bấm dấu trừ để bỏ chọn. Tối đa 6 mục mỗi tình trạng. Tên, ảnh, công dụng và giá lấy trực tiếp từ catalog. Thẻ Lỗ chân lông và Lão hóa trên trang chủ hiển thị mục đầu tiên đã chọn trong tab tương ứng; bỏ chọn hết để ẩn gợi ý. Hai thẻ Đốm nâu và Thâm mụn trên trang chủ dùng combo nổi bật đang chọn. Danh sách đề xuất không thay thế hướng dẫn sử dụng từng sản phẩm.', 'esc_html' => 1 ) ),
 	);
 	foreach ( project_core_fcc_regimens() as $regimen ) {
 		$fields[] = project_core_fcc_field( $regimen['name'] . '_tab', $regimen['label'], 'tab', array( 'name' => '' ) );

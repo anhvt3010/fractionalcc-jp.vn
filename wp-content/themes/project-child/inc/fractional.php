@@ -5,6 +5,7 @@ require_once __DIR__ . '/fractional-render.php';
 require_once __DIR__ . '/fractional-components.php';
 require_once __DIR__ . '/fractional-spotlight.php';
 require_once __DIR__ . '/fractional-admin.php';
+require_once __DIR__ . '/fractional-video.php';
 require_once __DIR__ . '/seo.php';
 
 function project_child_fcc_kind() {

@@ -14,10 +14,11 @@ function project_child_fcc_raw_text( $key, $scope ) {
 	$text = (string) $text;
 	// Keep contact information consistent without making customers edit every label.
 	$distributor_replacements = array(
-		'Công ty TNHH BUI DANG-JP' => 'distributor',
-		'Công ty TNHH BUI DANG–JP' => 'distributor',
-		'CÔNG TY TNHH BUI DANG-JP' => 'distributor',
-		'CÔNG TY TNHH BUI DANG–JP' => 'distributor',
+		'CÔNG TY TNHH JP- BÙI ĐẶNG' => 'distributor',
+		'Công ty TNHH BUI DANG-JP'  => 'distributor',
+		'Công ty TNHH BUI DANG–JP'  => 'distributor',
+		'CÔNG TY TNHH BUI DANG-JP'  => 'distributor',
+		'CÔNG TY TNHH BUI DANG–JP'  => 'distributor',
 	);
 	foreach ( $distributor_replacements as $source => $field ) {
 		$value = project_core_fcc_site( $field );

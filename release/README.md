@@ -1,5 +1,9 @@
 # Build và release Fractional CC
 
+Cập nhật giao diện **[Project Child 3.0.1](v3.0.1/RELEASE.md)**: nền các section trang chủ xen kẽ trắng/be, không còn hai section liền nhau trùng nền. Theo yêu cầu chỉ build một ZIP theme, dùng cùng **Core/defaults 3.0.0**; chỉ kiểm tra màu nền, không chạy lại bộ test đầy đủ. Cập nhật hosting chỉ cần thay gói theme này. Build riêng theme bằng `scripts/build-release.ps1 -Version 3.0.1 -Package project-child`; mặc định script vẫn build cả hai gói.
+
+Hiện hành **[3.0.0](v3.0.0/RELEASE.md)**, ngày 16/10/2026: chốt CMS và code hiện tại theo yêu cầu. Hai ZIP gồm 10 sản phẩm, 1 combo, 35 hoạt chất, 75 Media và 1.104 field; quản lý hai popup video bằng Media/URL, xuất/nhập video portable. Đã kiểm tra cài mới, nâng từ 2.2.1 giữ edits, dữ liệu, quyền/nonce, SEO, form, desktop/mobile và đối chiếu giao diện nguồn. [Hướng dẫn cập nhật hosting, checksum và kết quả](v3.0.0/RELEASE.md). Giữ hạn chế cũ popup ảnh Mandelic tại 320–375 px. Chưa triển khai hosting; các mốc dưới đây là lịch sử.
+
 Đã đóng gói lại **[2.2.1](v2.2.1/RELEASE.md)** cùng phiên bản theo yêu cầu sửa câu quà tặng: **Serum dưỡng môi PDRN Shot theo ảnh combo; xác nhận khi đặt hàng.** CMS làm việc và defaults đã cập nhật; checksum mới nằm trong release notes. Chỉ đổi một câu trong defaults, không thay code khởi tạo; 22 kiểm tra chống dữ liệu trùng đạt sau khi giải nén lại ZIP trên fixture riêng.
 
 Hiện hành **[2.2.1](v2.2.1/RELEASE.md)**, ngày 16/10/2026: đóng gói phiên bản kế tiếp theo yêu cầu, giữ nguyên giao diện, trang chi tiết combo, 3 ảnh combo mới và defaults của 2.2.0. Core/Child/defaults đồng bộ 2.2.1. Kiểm tra cài mới đạt 3.027; cập nhật/chạy lại từ 2.2.0 đạt 280 kiểm tra giữ edits và giá trị đã xóa. Đã kiểm tra lưu ảnh quản trị, client và dependencies. Chưa kiểm tra trực quan desktop/mobile do chưa có kết nối trình duyệt; chưa triển khai hosting.

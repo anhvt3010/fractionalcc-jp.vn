@@ -609,7 +609,8 @@ body.admin-bar .fcc-site .policy-card {
 }
 
 /* Remove zoom effect on product and combo images upon hover in home catalog section */
-.fcc-site #danh-muc .product-card:hover .product-thumb img {
+.fcc-site #danh-muc .product-card:hover .product-thumb img,
+.fcc-site .duo-spotlight-card:hover .duo-card-visual img {
 	transform: none;
 }
 /* Remove hover gold border on product cards while preserving elevation and lift */
@@ -622,11 +623,13 @@ body.admin-bar .fcc-site .policy-card {
 }
 
 /* Product card secondary hover image with smooth reveal and subtle zoom-in */
-.fcc-site .product-thumb {
+.fcc-site .product-thumb,
+.fcc-site .duo-card-visual {
 	position: relative;
 	overflow: hidden;
 }
-.fcc-site .product-thumb .product-thumb-primary {
+.fcc-site .product-thumb .product-thumb-primary,
+.fcc-site .duo-card-visual .product-thumb-primary {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -637,12 +640,13 @@ body.admin-bar .fcc-site .policy-card {
 	backface-visibility: hidden;
 	will-change: opacity, transform;
 }
-.fcc-site .product-thumb .product-thumb-hover {
+.fcc-site .product-thumb .product-thumb-hover,
+.fcc-site .duo-card-visual .product-thumb-hover {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	width: 100% !important;
+	height: 100% !important;
 	object-fit: cover;
 	display: block;
 	opacity: 0;
@@ -659,34 +663,48 @@ body.admin-bar .fcc-site .policy-card {
 .fcc-site .product-card:hover .product-thumb.has-hover-image .product-thumb-hover,
 .fcc-site .product-card:focus-within .product-thumb.has-hover-image .product-thumb-hover,
 .fcc-site #danh-muc .product-card:hover .product-thumb.has-hover-image .product-thumb-hover,
-.fcc-site #danh-muc .product-card:focus-within .product-thumb.has-hover-image .product-thumb-hover {
+.fcc-site #danh-muc .product-card:focus-within .product-thumb.has-hover-image .product-thumb-hover,
+.fcc-site .duo-spotlight-card:hover .duo-card-visual.has-hover-image .product-thumb-hover,
+.fcc-site .duo-spotlight-card:focus-within .duo-card-visual.has-hover-image .product-thumb-hover,
+.fcc-site .duo-card-visual.has-hover-image:hover .product-thumb-hover {
 	opacity: 1 !important;
 	transform: scale(1.030) !important;
 }
 .fcc-site .product-card:hover .product-thumb.has-hover-image .product-thumb-primary,
 .fcc-site .product-card:focus-within .product-thumb.has-hover-image .product-thumb-primary,
 .fcc-site #danh-muc .product-card:hover .product-thumb.has-hover-image .product-thumb-primary,
-.fcc-site #danh-muc .product-card:focus-within .product-thumb.has-hover-image .product-thumb-primary {
+.fcc-site #danh-muc .product-card:focus-within .product-thumb.has-hover-image .product-thumb-primary,
+.fcc-site .duo-spotlight-card:hover .duo-card-visual.has-hover-image .product-thumb-primary,
+.fcc-site .duo-spotlight-card:focus-within .duo-card-visual.has-hover-image .product-thumb-primary,
+.fcc-site .duo-card-visual.has-hover-image:hover .product-thumb-primary {
 	opacity: 0 !important;
 	transform: scale(1.015) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
 	.fcc-site .product-thumb .product-thumb-primary,
-	.fcc-site .product-thumb .product-thumb-hover {
+	.fcc-site .product-thumb .product-thumb-hover,
+	.fcc-site .duo-card-visual .product-thumb-primary,
+	.fcc-site .duo-card-visual .product-thumb-hover {
 		transition: opacity 0.2s ease !important;
 		transform: none !important;
 	}
 	.fcc-site .product-card:hover .product-thumb.has-hover-image .product-thumb-hover,
 	.fcc-site .product-card:focus-within .product-thumb.has-hover-image .product-thumb-hover,
 	.fcc-site #danh-muc .product-card:hover .product-thumb.has-hover-image .product-thumb-hover,
-	.fcc-site #danh-muc .product-card:focus-within .product-thumb.has-hover-image .product-thumb-hover {
+	.fcc-site #danh-muc .product-card:focus-within .product-thumb.has-hover-image .product-thumb-hover,
+	.fcc-site .duo-spotlight-card:hover .duo-card-visual.has-hover-image .product-thumb-hover,
+	.fcc-site .duo-spotlight-card:focus-within .duo-card-visual.has-hover-image .product-thumb-hover,
+	.fcc-site .duo-card-visual.has-hover-image:hover .product-thumb-hover {
 		transform: none !important;
 	}
 	.fcc-site .product-card:hover .product-thumb.has-hover-image .product-thumb-primary,
 	.fcc-site .product-card:focus-within .product-thumb.has-hover-image .product-thumb-primary,
 	.fcc-site #danh-muc .product-card:hover .product-thumb.has-hover-image .product-thumb-primary,
-	.fcc-site #danh-muc .product-card:focus-within .product-thumb.has-hover-image .product-thumb-primary {
+	.fcc-site #danh-muc .product-card:focus-within .product-thumb.has-hover-image .product-thumb-primary,
+	.fcc-site .duo-spotlight-card:hover .duo-card-visual.has-hover-image .product-thumb-primary,
+	.fcc-site .duo-spotlight-card:focus-within .duo-card-visual.has-hover-image .product-thumb-primary,
+	.fcc-site .duo-card-visual.has-hover-image:hover .product-thumb-primary {
 		transform: none !important;
 	}
 }
@@ -740,4 +758,16 @@ body.admin-bar .fcc-site .policy-card {
 	color: #121212;
 }
 
-
+/* Brand video play badge placed in top-left corner above brand lineup stage */
+.fcc-site .brand-video-play-badge {
+	top: 14px;
+	bottom: auto;
+	left: 14px;
+}
+@media (max-width: 600px) {
+	.fcc-site .brand-video-play-badge {
+		top: 10px;
+		bottom: auto;
+		left: 10px;
+	}
+}

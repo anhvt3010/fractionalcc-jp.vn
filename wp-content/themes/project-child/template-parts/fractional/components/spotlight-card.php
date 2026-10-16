@@ -1,12 +1,16 @@
 <?php
 /** @package Project_Child */
 defined( 'ABSPATH' ) || exit;
-$item = $args['item'];
+$item      = $args['item'];
+$has_hover = ! empty( $item['hoverImage'] );
 ?>
 <div class="duo-spotlight-card" data-featured-id="<?php echo esc_attr( $item['id'] ); ?>">
 	<div class="duo-card-main-split">
-		<a class="duo-card-visual" href="<?php echo esc_url( $item['url'] ); ?>" aria-label="<?php echo esc_attr( $item['name'] ); ?>">
-			<?php echo project_child_fcc_picture_html( $item['image'], $item['alt'], '', array( 'loading' => 'lazy', 'sizes' => '(min-width: 992px) 360px, 80vw' ) ); ?>
+		<a class="duo-card-visual<?php echo $has_hover ? ' has-hover-image' : ''; ?>" href="<?php echo esc_url( $item['url'] ); ?>" aria-label="<?php echo esc_attr( $item['name'] ); ?>">
+			<?php echo project_child_fcc_picture_html( $item['image'], $item['alt'], 'duo-thumb-primary product-thumb-primary', array( 'loading' => 'lazy', 'sizes' => '(min-width: 992px) 360px, 80vw' ) ); ?>
+			<?php if ( $has_hover ) : ?>
+				<?php echo project_child_fcc_picture_html( $item['hoverImage'], $item['hoverImageAlt'] ?: $item['alt'], 'duo-thumb-hover product-thumb-hover', array( 'loading' => 'lazy', 'sizes' => '(min-width: 992px) 360px, 80vw' ) ); ?>
+			<?php endif; ?>
 		</a>
 		<div class="duo-card-primary-info">
 			<h3 class="duo-title heading-serif"><?php echo esc_html( $item['name'] ); ?></h3>

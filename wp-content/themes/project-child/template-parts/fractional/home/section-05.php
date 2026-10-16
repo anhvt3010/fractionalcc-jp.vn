@@ -1,5 +1,5 @@
 <?php defined( 'ABSPATH' ) || exit; ?>
-<section class="section section-soft" id="danh-muc">
+<section class="section" id="danh-muc">
       <div class="container">
         <div class="section-header">
           <span class="section-tag"><?php echo project_child_fcc_text( 'fcc_ui_63b89170181142', 'home' ); ?></span>

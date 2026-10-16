@@ -971,7 +971,7 @@
                 "fcc_refresh": false
             }
         },
-        "Danh Mục Sản Phẩm & Các Combo Tối Ưu Chi Phí": {
+        "Danh Mục Sản Phẩm & Các Combo Tối Ưu": {
             "fcc_ui_63b89170181142": {
                 "key": "field_fcc_ui_63b89170181142",
                 "name": "fcc_ui_63b89170181142",
@@ -984,7 +984,7 @@
             "fcc_ui_44137315906c33": {
                 "key": "field_fcc_ui_44137315906c33",
                 "name": "fcc_ui_44137315906c33",
-                "label": "Danh Mục Sản Phẩm & Các Combo Tối Ưu Chi Phí",
+                "label": "Danh Mục Sản Phẩm & Các Combo Tối Ưu",
                 "type": "text",
                 "instructions": "Chỉ chỉnh nội dung; bố cục và kiểu trình bày được giữ theo thiết kế.",
                 "fcc_inline": true,
@@ -4208,6 +4208,23 @@
                 "fcc_inline": true,
                 "rows": 4
             },
+            "fcc_ui_m_exp_tex_title": {
+                "key": "field_fcc_ui_m_exp_tex_title",
+                "name": "fcc_ui_m_exp_tex_title",
+                "label": "Nội dung: Kết cấu đặc trưng",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_exp_tex_desc": {
+                "key": "field_fcc_ui_m_exp_tex_desc",
+                "name": "fcc_ui_m_exp_tex_desc",
+                "label": "Nội dung: Tùy từng dòng serum, sản phẩm mang lại cảm giác đặc trưng khi thoa do chứa thành phần vi k",
+                "type": "textarea",
+                "instructions": "Nội dung hiển thị tại Công nghệ – nội dung chi tiết. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true,
+                "rows": 4
+            },
             "fcc_ui_m_9e881650e66d": {
                 "key": "field_fcc_ui_m_9e881650e66d",
                 "name": "fcc_ui_m_9e881650e66d",
@@ -4298,6 +4315,44 @@
                 "preview_size": "medium",
                 "mime_types": "jpg,jpeg,png,webp",
                 "fcc_refresh": true
+            }
+        },
+        "Video popup – thương hiệu và đánh giá": {
+            "fcc_ui_brand_video_file": {
+                "key": "field_fcc_ui_brand_video_file",
+                "name": "fcc_ui_brand_video_file",
+                "label": "Giới thiệu thương hiệu – video từ Thư viện Media",
+                "type": "file",
+                "return_format": "id",
+                "library": "all",
+                "mime_types": "mp4,webm,ogv,ogg",
+                "instructions": "Tải video lên hoặc chọn video có sẵn. Ưu tiên MP4 để tương thích nhiều trình duyệt. File đã chọn được ưu tiên hơn URL; bỏ chọn file để dùng URL bên dưới."
+            },
+            "fcc_ui_brand_video_url": {
+                "key": "field_fcc_ui_brand_video_url",
+                "name": "fcc_ui_brand_video_url",
+                "label": "Giới thiệu thương hiệu – URL video công khai",
+                "type": "url",
+                "default_value": "https://drive.google.com/file/d/1OGBTCSUTvzjI4kulOUmRqrY9mgB0m8TY/preview",
+                "instructions": "Dùng khi chưa chọn file ở trên. Dán URL trực tiếp đến MP4/WebM/OGV hoặc liên kết YouTube, Vimeo, Google Drive. Video phải cho phép xem công khai và nhúng. Để trống sẽ dùng video ban đầu."
+            },
+            "fcc_ui_review_video_file": {
+                "key": "field_fcc_ui_review_video_file",
+                "name": "fcc_ui_review_video_file",
+                "label": "Đánh giá khách hàng – video từ Thư viện Media",
+                "type": "file",
+                "return_format": "id",
+                "library": "all",
+                "mime_types": "mp4,webm,ogv,ogg",
+                "instructions": "Tải video lên hoặc chọn video có sẵn. Ưu tiên MP4 để tương thích nhiều trình duyệt. File đã chọn được ưu tiên hơn URL; bỏ chọn file để dùng URL bên dưới."
+            },
+            "fcc_ui_review_video_url": {
+                "key": "field_fcc_ui_review_video_url",
+                "name": "fcc_ui_review_video_url",
+                "label": "Đánh giá khách hàng – URL video công khai",
+                "type": "url",
+                "default_value": "https://drive.google.com/file/d/1zQq81OnZVzq3EmrQOU8UP_Gz0ccaxSBo/preview",
+                "instructions": "Dùng khi chưa chọn file ở trên. Dán URL trực tiếp đến MP4/WebM/OGV hoặc liên kết YouTube, Vimeo, Google Drive. Video phải cho phép xem công khai và nhúng. Để trống sẽ dùng video ban đầu."
             }
         },
         "Chu trình – video": {
@@ -6518,6 +6573,22 @@
                 "key": "field_fcc_ui_m_11c56f1da0dd",
                 "name": "fcc_ui_m_11c56f1da0dd",
                 "label": "Nhãn / thuộc tính: Chat Zalo tư vấn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn giao diện dùng chung. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_fb_label": {
+                "key": "field_fcc_ui_m_fb_label",
+                "name": "fcc_ui_m_fb_label",
+                "label": "Nhãn / thuộc tính: Chat Facebook tư vấn",
+                "type": "text",
+                "instructions": "Nội dung hiển thị tại Nhãn giao diện dùng chung. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
+                "fcc_inline": true
+            },
+            "fcc_ui_m_fb_tooltip": {
+                "key": "field_fcc_ui_m_fb_tooltip",
+                "name": "fcc_ui_m_fb_tooltip",
+                "label": "Nội dung: Chat Facebook",
                 "type": "text",
                 "instructions": "Nội dung hiển thị tại Nhãn giao diện dùng chung. Giữ nội dung có nguồn; thay đổi tại đây không làm đổi bố cục.",
                 "fcc_inline": true
@@ -9197,7 +9268,7 @@
             "fcc_ui_m_a9e9a444a956": {
                 "key": "field_fcc_ui_m_a9e9a444a956",
                 "name": "fcc_ui_m_a9e9a444a956",
-                "label": "M? t? v?n ?? da tr?n trang ch?",
+                "label": "Mô tả vấn đề da trên trang chủ",
                 "type": "textarea",
                 "fcc_inline": true
             }
@@ -9341,7 +9412,7 @@
             "fcc_ui_m_73b5443ca20d": {
                 "key": "field_fcc_ui_m_73b5443ca20d",
                 "name": "fcc_ui_m_73b5443ca20d",
-                "label": "M? t? v?n ?? da tr?n trang ch?",
+                "label": "Mô tả vấn đề da trên trang chủ",
                 "type": "textarea",
                 "fcc_inline": true
             }
@@ -9486,7 +9557,7 @@
             "fcc_ui_m_c98495147be1": {
                 "key": "field_fcc_ui_m_c98495147be1",
                 "name": "fcc_ui_m_c98495147be1",
-                "label": "M? t? v?n ?? da tr?n trang ch?",
+                "label": "Mô tả vấn đề da trên trang chủ",
                 "type": "textarea",
                 "fcc_inline": true
             }

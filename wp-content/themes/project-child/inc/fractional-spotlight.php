@@ -11,8 +11,8 @@ function project_child_fcc_spotlight_fields() {
 		'spotlightDescription' => array( 'Mô tả trên thẻ', 'textarea', 100, 'Để trống để dùng Công dụng / mô tả ngắn của sản phẩm hoặc Nhu cầu phù hợp của combo.' ),
 		'spotlightSpecs' => array( 'Thông số trong nhãn', 'text', 50, 'Để trống để dùng số CBMP và quy cách của sản phẩm, hoặc mô tả các sản phẩm trong combo.' ),
 		'spotlightRating' => array( 'Dòng đánh giá / thông tin bổ sung', 'text', 50, 'Chỉ nhập thông tin đã xác nhận. Để trống để dùng điểm và số đánh giá của sản phẩm nếu có.' ),
-		'spotlightHighlights' => array( 'Các điểm nổi bật', 'textarea', 100, 'Mỗi ý một dòng theo dạng Nhãn | Mô tả. Để trống để dùng các thẻ hoạt chất của sản phẩm nếu có.' ),
-		'spotlightGift' => array( 'Thông tin quà tặng', 'text', 100, 'Chỉ nhập quà tặng đã xác nhận. Để trống để dùng quà tặng của combo nếu có; sản phẩm không có thông tin thay thế.' ),
+		'spotlightHighlights' => array( 'Các điểm nổi bật', 'textarea', 100, 'Nhập các ý điểm nhấn thuyết phục người mua, mỗi ý một dòng theo cú pháp: Tiêu đề | Mô tả chi tiết.' ),
+		'spotlightGift' => array( 'Thông tin quà tặng trên thẻ', 'text', 100, 'Chỉ nhập nếu sản phẩm chủ lực này có quà tặng kèm riêng; để trống nếu không có quà tặng.' ),
 		'spotlightDetailLabel' => array( 'Chữ nút xem chi tiết', 'text', 50, 'Để trống để dùng Xem Chi Tiết (sản phẩm) hoặc Xem combo (combo).' ),
 		'spotlightBuyLabel' => array( 'Chữ nút mua', 'text', 50, 'Để trống để dùng MUA NGAY (sản phẩm) hoặc MUA COMBO NGAY (combo).' ),
 	);
@@ -22,9 +22,21 @@ function project_child_fcc_spotlight_fields() {
 		}
 		$fields[] = array( 'key' => 'field_fcc_' . $name, 'name' => 'fcc_' . $name, 'label' => $definition[0], 'type' => $definition[1], 'wrapper' => array( 'width' => $definition[2] ), 'rows' => 4, 'instructions' => $definition[3] );
 	}
-	acf_add_local_field_group( array( 'key' => 'group_fcc_spotlight', 'title' => 'Thông tin thẻ sản phẩm chủ lực', 'menu_order' => 20, 'fields' => $fields, 'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ), array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_combo' ) ) ) ) );
+	acf_add_local_field_group( array( 'key' => 'group_fcc_spotlight', 'title' => 'Tùy chỉnh thẻ chủ lực trên trang chủ (Bộ Đôi Sản Phẩm Chủ Lực)', 'menu_order' => 12, 'fields' => $fields, 'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ), array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_combo' ) ) ) ) );
 }
 add_action( 'acf/init', 'project_child_fcc_spotlight_fields' );
+
+/** Hide duplicate spotlight gift field on combos so gifts are managed from a single source. */
+function project_child_fcc_hide_spotlight_gift_on_combo( $field ) {
+	$post_id = function_exists( 'acf_get_form_data' ) ? acf_get_form_data( 'post_id' ) : 0;
+	if ( ! $post_id && isset( $_GET['post'] ) ) { $post_id = absint( $_GET['post'] ); }
+	$type = get_post_type( is_numeric( $post_id ) ? (int) $post_id : 0 ) ?: get_post_type();
+	if ( 'fcc_combo' === $type ) {
+		return false;
+	}
+	return $field;
+}
+add_filter( 'acf/prepare_field/key=field_fcc_spotlightGift', 'project_child_fcc_hide_spotlight_gift_on_combo' );
 
 /** Optional page-specific presentation; empty values use the product data. */
 function project_child_fcc_product_presentation_fields() {
@@ -58,8 +70,16 @@ function project_child_fcc_spotlight_data( $post, $combos ) {
 		'spotlightBuyLabel' => $is_combo ? 'MUA COMBO NGAY' : 'MUA NGAY',
 	);
 	foreach ( $fallbacks as $name => $fallback ) {
+		if ( $is_combo && 'spotlightGift' === $name ) {
+			$data[ $name ] = $data['gift'];
+			continue;
+		}
 		$value = get_post_meta( $post->ID, 'fcc_' . $name, true );
 		$data[ $name ] = is_string( $value ) && '' !== $value ? $value : $fallback;
+	}
+	if ( $is_combo && '' !== $data['spotlightHighlights'] ) {
+		$lines = preg_grep( '/^\s*quà\s+tặng\b/iu', project_core_fcc_lines( $data['spotlightHighlights'] ), PREG_GREP_INVERT );
+		$data['spotlightHighlights'] = implode( "\n", $lines );
 	}
 	return $data;
 }

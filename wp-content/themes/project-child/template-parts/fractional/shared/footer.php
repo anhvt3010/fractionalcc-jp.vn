@@ -1,10 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-$company_name = project_child_fcc_text( 'fcc_ui_e28520e695bc79', 'shared' );
-if ( empty( $company_name ) || 'Công ty TNHH BUI DANG-JP' === $company_name ) {
-	$company_name = 'CÔNG TY TNHH JP- BÙI ĐẶNG';
-}
+$company_name = project_child_fcc_raw_text( 'fcc_ui_e28520e695bc79', 'shared' );
 
 $address = project_core_fcc_contact( 'addressHN' );
 
@@ -50,18 +47,18 @@ $email           = project_core_fcc_contact( 'email' );
       <div class="footer-col">
         <h2><?php echo project_child_fcc_text( 'fcc_ui_0f36c14dea884e', 'shared' ); ?></h2>
         <?php if ( $address ) : ?><p><strong>Địa chỉ:</strong> <?php echo esc_html( $address ); ?></p><?php endif; ?>
-        <?php if ( $hotline ) : ?><p><strong>Hotline:</strong> <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> style="color: var(--color-accent-gold); font-weight: 700;"><?php echo esc_html( $hotline_display ); ?></a></p><?php endif; ?>
+        <?php if ( $hotline ) : ?><p><strong><?php echo project_child_fcc_text( 'fcc_ui_984783bd913b86', 'shared' ); ?></strong> <a <?php project_child_fcc_contact_attributes( 'hotline' ); ?> style="color: var(--color-accent-gold); font-weight: 700;"><?php echo esc_html( $hotline_display ); ?></a></p><?php endif; ?>
         <?php if ( $phone ) : ?><p><strong>Điện thoại:</strong> <a <?php project_child_fcc_contact_attributes( 'phone' ); ?> style="color: #FFFFFF; font-weight: 600;"><?php echo esc_html( $phone_display ); ?></a></p><?php endif; ?>
-        <?php if ( $email ) : ?><p><strong>Email:</strong> <a <?php project_child_fcc_contact_attributes( 'email' ); ?>><?php echo esc_html( $email ); ?></a></p><?php endif; ?>
+        <?php if ( $email ) : ?><p><strong><?php echo project_child_fcc_text( 'fcc_ui_7374e1f6e37820', 'shared' ); ?></strong> <a <?php project_child_fcc_contact_attributes( 'email' ); ?>><?php echo project_child_fcc_text( 'fcc_ui_73944c222e59fa', 'shared', false ); ?></a></p><?php endif; ?>
       </div>
 
       <!-- CỘT 3: LIÊN KẾT NHANH -->
       <div class="footer-col">
         <h2>Liên Kết Nhanh</h2>
         <ul class="footer-links">
-          <li><a href="<?php echo esc_url( project_child_fcc_link( 'index.html' ) ); ?>">Trang Chủ</a></li>
-          <li><a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>">Danh Mục 10 Sản Phẩm</a></li>
-          <li><a href="<?php echo esc_url( project_child_fcc_link( 'van-de-lan-da.html' ) ); ?>">Vấn Đề Làn Da &amp; Giải Pháp</a></li>
+          <li><a href="<?php echo esc_url( project_child_fcc_link( 'index.html' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_nav_home', 'shared', false ); ?></a></li>
+          <li><a href="<?php echo esc_url( project_child_fcc_link( 'san-pham.html' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_13f874efa5726a', 'shared', false ); ?></a></li>
+          <li><a href="<?php echo esc_url( project_child_fcc_link( 'van-de-lan-da.html' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_m_a613489f0d9c', 'shared', false ); ?></a></li>
           <?php $footer_combo = project_core_fcc_featured_combo(); if ( $footer_combo ) : ?><li><a href="<?php echo esc_url( project_child_fcc_link( 'index.html#san-pham-chu-luc' ) ); ?>"><?php echo esc_html( $footer_combo['shortName'] ?: $footer_combo['name'] ); ?></a></li><?php endif; ?>
         </ul>
       </div>
@@ -73,9 +70,9 @@ $email           = project_core_fcc_contact( 'email' );
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#doi-tra' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_8aa241ea23c189', 'shared', false ); ?></a></li>
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#giao-hang' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_369ace7ad7eef2', 'shared', false ); ?></a></li>
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#bao-mat' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_9e1d7490e3a45a', 'shared', false ); ?></a></li>
-          <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#thanh-toan' ) ); ?>">Phương Thức Thanh Toán</a></li>
+          <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#thanh-toan' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_a33080e0eed912', 'policies', false ); ?></a></li>
           <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#chinh-hang' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_0a8730dc13bdc0', 'shared', false ); ?></a></li>
-          <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#khieu-nai' ) ); ?>">Quy Trình Tiếp Nhận Khiếu Nại</a></li>
+          <li><a href="<?php echo esc_url( project_child_fcc_link( 'chinh-sach.html#khieu-nai' ) ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_26c96d0e06946b', 'policies', false ); ?></a></li>
         </ul>
       </div>
     </div>

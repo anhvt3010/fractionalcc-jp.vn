@@ -25,7 +25,7 @@ function fcc_approved_fields( $id, $fields ) {
 	foreach ( $fields as $name => $field ) {
 		$actual = get_post_meta( $id, $name, true );
 		fcc_approved_check( metadata_exists( 'post', $id, $name ), 'Field exists: ' . $name );
-		if ( 'image' === $field['type'] ) { fcc_approved_check( $field['value'] ? get_post_meta( $actual, '_fcc_asset_source', true ) === $field['value'] : ! $actual, 'Image field uses the approved image or stays cleared: ' . $name ); }
+		if ( in_array( $field['type'], array( 'image', 'file' ), true ) ) { fcc_approved_check( $field['value'] ? get_post_meta( $actual, '_fcc_asset_source', true ) === $field['value'] : ! $actual, 'Media field uses the approved asset or stays cleared: ' . $name ); }
 		elseif ( 'relationship' === $field['type'] ) { fcc_approved_check( array_map( 'project_core_fcc_snapshot_source', $field['value'] ) === array_map( 'intval', $actual ), 'Portable relationship restored.' ); }
 		else { fcc_approved_check( fcc_approved_normalize( project_core_fcc_resolve_default( $field['value'] ) ) === fcc_approved_normalize( $actual ), 'Exact saved field value: ' . $name ); }
 	}

@@ -20,11 +20,13 @@ function fcc_export_media( $id ) {
 	if ( ! $id ) { return ''; }
 	if ( isset( $media_ids[ $id ] ) ) { return $media_ids[ $id ]; }
 	$file = get_attached_file( $id );
-	if ( ! wp_attachment_is_image( $id ) || ! is_readable( $file ) ) { throw new RuntimeException( 'Missing CMS image: ' . $id ); }
+	$is_image = wp_attachment_is_image( $id );
+	if ( ( ! $is_image && ! in_array( get_post_mime_type( $id ), array( 'video/mp4', 'video/webm', 'video/ogg' ), true ) ) || ! is_readable( $file ) ) { throw new RuntimeException( 'Missing or unsupported CMS media: ' . $id ); }
 	$hash = hash_file( 'sha256', $file );
 	$source = (string) get_post_meta( $id, '_fcc_asset_source', true );
-	if ( ! preg_match( '#^assets/images/[a-zA-Z0-9/_-]+\.(png|jpe?g|webp)$#', $source ) || ! is_readable( $theme . $source ) || hash_file( 'sha256', $theme . $source ) !== $hash ) {
-		$source = $hash_paths[ $hash ] ?? 'assets/images/approved/' . substr( $hash, 0, 16 ) . '-' . sanitize_file_name( basename( $file ) );
+	if ( ( $is_image ? 'image' : 'video' ) !== project_core_fcc_media_path_type( $source ) || ! is_readable( $theme . $source ) || hash_file( 'sha256', $theme . $source ) !== $hash ) {
+		$source = $is_image ? ( $hash_paths[ $hash ] ?? 'assets/images/approved/' . substr( $hash, 0, 16 ) . '-' . sanitize_file_name( basename( $file ) ) ) : 'assets/videos/approved/' . substr( $hash, 0, 16 ) . '.' . strtolower( pathinfo( $file, PATHINFO_EXTENSION ) );
+		if ( ! project_core_fcc_media_path_type( $source ) ) { throw new RuntimeException( 'Unsupported packaged media path.' ); }
 		if ( ! is_readable( $theme . $source ) ) { wp_mkdir_p( dirname( $theme . $source ) ); if ( ! copy( $file, $theme . $source ) ) { throw new RuntimeException( 'Image export failed.' ); } }
 	}
 	$post = get_post( $id );
@@ -49,7 +51,7 @@ function fcc_export_field( $id, $name, $fallback = array() ) {
 	$field = acf_get_field( $key );
 	$type = $field['type'] ?? ( $fallback['type'] ?? 'text' );
 	$value = metadata_exists( 'post', $id, $name ) ? get_post_meta( $id, $name, true ) : ( $fallback['value'] ?? '' );
-	if ( 'image' === $type ) { $value = is_numeric( $value ) ? fcc_export_media( $value ) : $value; }
+	if ( in_array( $type, array( 'image', 'file' ), true ) ) { $value = is_numeric( $value ) ? fcc_export_media( $value ) : $value; }
 	elseif ( 'relationship' === $type ) { $value = array_map( function ( $post_id ) use ( $sources ) { if ( ! isset( $sources[ $post_id ] ) ) { throw new RuntimeException( 'Unmapped relationship.' ); } return $sources[ $post_id ]; }, (array) $value ); }
 	else { $value = fcc_export_value( $value ); }
 	return array( 'type' => $type, 'key' => $key, 'value' => $value );
@@ -60,6 +62,16 @@ foreach ( project_core_fcc_posts( array( 'fcc_product', 'fcc_combo', 'fcc_ingred
 foreach ( $data['pages'] as $scope => &$page ) {
 	$id = $pages[ $scope ]; $post = get_post( $id );
 	$page['title'] = $post->post_title; $page['slug'] = $post->post_name; $page['content'] = fcc_export_value( $post->post_content ); $page['excerpt'] = fcc_export_value( $post->post_excerpt ); $page['menuOrder'] = (int) $post->menu_order;
+	// New video controls may never have been saved; capture their effective initial values too.
+	if ( 'home' === $scope ) {
+		foreach ( array( 'brand', 'review' ) as $slot ) {
+			foreach ( array( 'file', 'url' ) as $type ) {
+				$name = 'fcc_ui_' . $slot . '_video_' . $type;
+				$field = acf_get_field( 'field_' . $name );
+				if ( $field && ! isset( $page['fields'][ $name ] ) ) { $page['fields'][ $name ] = array( 'type' => $type, 'key' => $field['key'], 'value' => $field['default_value'] ?? '' ); }
+			}
+		}
+	}
 	$names = array_unique( array_merge( array_keys( $page['fields'] ), array_filter( array_keys( get_post_meta( $id ) ), function ( $name ) { return 0 === strpos( $name, 'fcc_' ) && 0 !== strpos( $name, 'fcc_regimen_' ); } ) ) );
 	foreach ( $names as $name ) {
 		$key = get_post_meta( $id, '_' . $name, true ) ?: 'field_' . $name;
@@ -113,6 +125,8 @@ foreach ( array( 'blogname', 'blogdescription', 'timezone_string', 'gmt_offset',
 $data['version'] = $args['version'];
 $data['approval'] = array( 'status' => 'approved', 'date' => current_time( 'Y-m-d' ), 'source' => 'User-approved current WordPress content, media, catalog and selections.' );
 $data['media'] = $media;
+$valid = project_core_fcc_validate_defaults( $data );
+if ( is_wp_error( $valid ) ) { throw new RuntimeException( 'Export validation failed: ' . $valid->get_error_code() ); }
 if ( ! empty( $data['catalogSource'] ) ) { $data['catalogSource']['snapshotOverrides'] = 'Current CMS values approved by the user; Excel remains historical provenance.'; }
 $json = wp_json_encode( $data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . "\n";
 if ( false !== strpos( $json, 'http://localhost' ) || false !== strpos( $json, 'D:\\xampp' ) ) { throw new RuntimeException( 'Local references remain in exported defaults.' ); }

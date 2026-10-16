@@ -185,6 +185,10 @@ function project_core_fcc_combos() {
 	foreach ( project_core_fcc_posts( 'fcc_combo' ) as $combo ) {
 		$item = array( 'id' => $combo->ID, 'name' => get_the_title( $combo ), 'url' => get_permalink( $combo ), 'productIds' => array_map( 'absint', (array) get_post_meta( $combo->ID, 'fcc_productIds', true ) ) );
 		foreach ( array( 'code', 'shortName', 'badge', 'idealFor', 'routine', 'gift' ) as $name ) { $item[ $name ] = (string) get_post_meta( $combo->ID, 'fcc_' . $name, true ); }
+		$has_gift_meta = get_post_meta( $combo->ID, 'fcc_has_gift', true );
+		$has_gift = metadata_exists( 'post', $combo->ID, 'fcc_has_gift' ) ? ( '1' === (string) $has_gift_meta || true === $has_gift_meta ) : ! empty( $item['gift'] );
+		$item['hasGift'] = $has_gift;
+		if ( ! $has_gift ) { $item['gift'] = ''; }
 		foreach ( array( 'originalPrice', 'salePrice', 'rating', 'reviewCount' ) as $name ) { $value = get_post_meta( $combo->ID, 'fcc_' . $name, true ); $item[ $name ] = '' === $value ? null : (float) $value; }
 		$item['saveAmount'] = null !== $item['salePrice'] && null !== $item['originalPrice'] ? max( 0, $item['originalPrice'] - $item['salePrice'] ) : 0;
 		$item['productsIncluded'] = project_core_fcc_lines( get_post_meta( $combo->ID, 'fcc_productsIncluded', true ) );

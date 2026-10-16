@@ -59,11 +59,23 @@ if ( file_exists( $jsPath ) ) {
 // One blocking stylesheet; font URLs already resolve relative to the bundle directory.
 $bundle = '';
 foreach ( array( 'fonts.css', 'assets/css/style.min.css', 'assets/css/responsive.min.css', 'wordpress.css' ) as $part ) {
-    $css = file_get_contents( $themeDir . $part );
-    $css = preg_replace( '!/\*.*?\*/!s', '', $css );
-    $css = preg_replace( '/\s+/', ' ', $css );
-    $css = preg_replace( '/\s*([{};])\s*/', '$1', $css );
-    $bundle .= trim( $css ) . "\n";
+	$filePath = $themeDir . $part;
+	if ( ! file_exists( $filePath ) ) {
+		throw new RuntimeException( "Missing file: $filePath" );
+	}
+	$css = file_get_contents( $filePath );
+	$cleaned = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
+	if ( null !== $cleaned ) {
+		$css = $cleaned;
+	}
+	$css = str_replace( array( "\r\n", "\r", "\n", "\t" ), ' ', $css );
+	$css = preg_replace( '/\s+/', ' ', $css );
+	$css = preg_replace( '/\s*([{};])\s*/', '$1', $css );
+	$css = preg_replace( '/;}/', '}', $css );
+	if ( empty( trim( $css ) ) ) {
+		throw new RuntimeException( "Empty CSS after minifying: $part" );
+	}
+	$bundle .= trim( $css ) . "\n";
 }
 file_put_contents( $themeDir . 'site.min.css', $bundle );
 echo "Minification and site CSS bundle completed!\n";

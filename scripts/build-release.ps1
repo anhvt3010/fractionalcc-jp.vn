@@ -1,7 +1,9 @@
 param(
     [Parameter(Mandatory=$true)]
     [ValidatePattern('^\d+\.\d+\.\d+(?:-[a-zA-Z0-9.-]+)?$')]
-    [string]$Version
+    [string]$Version,
+    [ValidateSet('all','project-core','project-child')]
+    [string]$Package = 'all'
 )
 $ErrorActionPreference = 'Stop'
 $taskPhp = @('C:/xampp/php/php.exe', 'D:/xampp/php/php.exe') | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
@@ -25,6 +27,7 @@ $taskPackages = @(
     @{Slug='project-core';Source=(Join-Path $taskRoot 'wp-content/plugins/project-core');Header='project-core.php'},
     @{Slug='project-child';Source=(Join-Path $taskRoot 'wp-content/themes/project-child');Header='style.css'}
 )
+if ($Package -ne 'all') { $taskPackages = @($taskPackages | Where-Object {$_.Slug -eq $Package}) }
 $taskChecksums = @()
 foreach($taskPackage in $taskPackages) {
     $taskHeader = [System.IO.File]::ReadAllText((Join-Path $taskPackage.Source $taskPackage.Header))

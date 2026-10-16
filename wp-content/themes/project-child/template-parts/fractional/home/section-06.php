@@ -38,7 +38,7 @@ $fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : pro
                 <span class="routine-header-sub"><?php echo project_child_fcc_text( 'fcc_ui_33b2876f22ec35', 'home' ); ?></span>
               </div>
               <button type="button" class="routine-toggle-btn" aria-expanded="false" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_56bfb850da0788', 'shared' ) ); ?>">
-                <span class="toggle-text"><?php echo project_child_fcc_text( 'fcc_ui_msg_e30c937169', 'home', false ) ?: 'Xem chi tiết'; ?></span>
+                <span class="toggle-text"><?php echo project_child_fcc_text( 'fcc_ui_msg_e30c937169', 'shared', false ); ?></span>
                 <svg class="routine-toggle-icon" width="13" height="13" viewbox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="4 10 8 6 12 10"></polyline>
                 </svg>
@@ -173,7 +173,7 @@ $fcc_routine_link = $fcc_routine_video ? esc_url_raw( $fcc_routine_video ) : pro
               <span class="routine-header-sub"><?php echo project_child_fcc_text( 'fcc_ui_9ba02722fc9988', 'home' ); ?></span>
             </div>
             <button type="button" class="routine-toggle-btn" aria-expanded="false" title="<?php echo esc_attr( project_child_fcc_raw_text( 'fcc_ui_56bfb850da0788', 'shared' ) ); ?>">
-              <span class="toggle-text"><?php echo project_child_fcc_text( 'fcc_ui_msg_e30c937169', 'home', false ) ?: 'Xem chi tiết'; ?></span>
+              <span class="toggle-text"><?php echo project_child_fcc_text( 'fcc_ui_msg_e30c937169', 'shared', false ); ?></span>
               <svg class="routine-toggle-icon" width="13" height="13" viewbox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="4 10 8 6 12 10"></polyline>
               </svg>

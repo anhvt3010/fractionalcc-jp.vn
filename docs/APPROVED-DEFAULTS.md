@@ -1,5 +1,7 @@
 # Dữ liệu đã chốt – release đầu tiên 1.0.0
 
+> Bản chốt hiện hành **[3.0.0](../release/v3.0.0/RELEASE.md)**, 16/10/2026: người dùng duyệt toàn bộ nội dung hiện tại. Đã xuất lại CMS gồm 6 bản ghi nội dung/1.104 field, 10 sản phẩm, 1 combo, 35 hoạt chất và 75 ảnh, cùng lựa chọn/quan hệ/settings công khai. Kèm 4 trường quản lý hai popup video bằng file Media hoặc URL; hiện dùng hai URL Drive cũ, chưa chọn file upload. Core/Child/defaults đồng bộ 3.0.0. Đối chiếu snapshot với CMS, cài mới từ ZIP, nâng từ 2.2.1 giữ edits và giao diện desktop/mobile đã kiểm tra. Nội dung/seed site làm việc giữ nguyên; các mốc dưới đây là lịch sử.
+
 > Đóng gói lại **2.2.1**, 16/10/2026: sửa đúng trường quà tặng combo thành `Serum dưỡng môi PDRN Shot theo ảnh combo; xác nhận khi đặt hàng.` theo yêu cầu người dùng. Các defaults khác và version giữ nguyên. CMS làm việc đã sửa trường tương ứng; không chạy initializer. Hosting có dữ liệu cũ cần sửa trường Quà tặng đã xác nhận trong Combo vì initializer bảo toàn nội dung đã lưu.
 
 > Build **[2.2.1](../release/v2.2.1/RELEASE.md)**, 16/10/2026: kế thừa nguyên vẹn defaults 2.2.0, chỉ tăng version; không xuất lại CMS hoặc đổi dữ liệu đã duyệt. Gồm 74 Media, 10 sản phẩm và combo C–CX4 với 4 ảnh. Đã kiểm tra cài mới và nâng cấp giữ edits/xóa từ ZIP trên database riêng. Site làm việc giữ seed 2.1.0.

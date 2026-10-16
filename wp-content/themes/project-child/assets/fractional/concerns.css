@@ -168,69 +168,105 @@
   }
 }
 
-/* 3.1. Overview Grid: Left (Visual + Sign) & Right (Causes + Solutions + Regimen) */
+/* 3.1. Overview Grid: Left (Visual Showcase) & Right (Header + Science + Solutions) */
 .concern-overview-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  grid-template-areas:
+    "header"
+    "visual"
+    "science";
+  gap: 22px;
+}
+
+.concern-visual-col {
+  display: contents;
+}
+
+.concern-info-header {
+  grid-area: header;
+  border-bottom: 1px solid #EFEAE0;
+  padding-bottom: 16px;
+}
+
+.concern-visual-card {
+  grid-area: visual;
+  background: #FCFAF6;
+  border: 1px solid #E6DEC8;
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-shadow: 0 6px 20px rgba(26, 23, 21, 0.04);
+}
+
+.concern-science-col {
+  grid-area: science;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  height: 100%;
 }
 
 @media (min-width: 992px) {
   .concern-overview-grid {
-    grid-template-columns: 430px 1fr;
-    gap: 36px;
-    align-items: start;
+    grid-template-columns: 360px minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "visual header"
+      "visual science";
+    column-gap: 32px;
+    row-gap: 16px;
+    align-items: stretch;
   }
 }
 
 @media (min-width: 1200px) {
   .concern-overview-grid {
-    grid-template-columns: 480px 1fr;
-    gap: 40px;
+    grid-template-columns: 380px minmax(0, 1fr);
+    column-gap: 36px;
+    row-gap: 18px;
   }
 }
 
-/* Left Column: Visual & Symptoms */
-.concern-visual-col {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.concern-info-header {
-  border-bottom: 1px solid #F0EAE1;
-  padding-bottom: 14px;
-}
-
 .concern-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
   background: #F4EFE6;
   color: #8C6A28;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  border: 1px solid #E5D8C1;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
 }
 
 .concern-pane-heading {
-  font-size: clamp(20px, 1.8vw, 24px);
+  font-size: clamp(22px, 2.1vw, 27px);
   font-weight: 700;
   color: #1A1715;
-  margin: 0;
-  line-height: 1.35;
+  margin: 0 0 12px;
+  line-height: 1.3;
 }
 
-/* Elegant empathetic quote for customer pain points from brief.docx */
+/* Elegant empathetic quote for customer pain points */
 .concern-pain-quote {
   font-size: 14px;
   line-height: 1.6;
-  color: #5C5245;
+  color: #2D261E;
   font-style: italic;
-  margin: 10px 0 0;
-  padding-left: 14px;
-  border-left: 2.5px solid #C5A059;
+  margin: 0;
+  padding: 12px 18px;
+  background: linear-gradient(90deg, #FBF7EF 0%, #FDFCF9 100%);
+  border: 1px solid #EDE4D4;
+  border-left: 3.5px solid #C5A059;
+  border-radius: 0 12px 12px 0;
 }
 
 .concern-pain-desc {
@@ -244,19 +280,14 @@
   border-radius: 0 8px 8px 0;
 }
 
-/* Visual Card */
-.concern-visual-card {
-  background: #FCFAF6;
-  border: 1px solid #EAE2D4;
-  border-radius: 16px;
-  padding: 12px;
-}
-
+/* Visual Frame & Caption */
 .concern-img-frame {
   width: 100%;
-  height: auto;
+  height: 440px;
+  min-height: 380px;
+  max-height: 480px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #F4EFE6;
   display: flex;
   align-items: center;
@@ -265,85 +296,118 @@
 
 .concern-skin-img {
   width: 100%;
-  height: auto;
-  aspect-ratio: auto;
-  object-fit: contain;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 12px;
   display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.concern-visual-card:hover .concern-skin-img {
+  transform: scale(1.03);
 }
 
 .concern-visual-caption {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-size: 12.5px;
-  color: #7A6F62;
-  margin-top: 10px;
-  padding: 0 4px;
+  font-weight: 500;
+  color: #5C5245;
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #F5EFE4;
+  border: 1px solid #E8DFD1;
+  border-radius: 10px;
   line-height: 1.45;
 }
 
 .concern-visual-caption svg {
   flex-shrink: 0;
-  color: #C5A059;
+  color: #B88E3B;
+  margin-top: 2px;
 }
 
 /* Right Column: Science, Causes & Solution */
-.concern-science-col {
+.concern-science-header {
+  border-bottom: none;
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 5px;
 }
 
-.concern-science-header {
-  border-bottom: 1px solid #F0EAE1;
-  padding-bottom: 14px;
+.concern-science-header .section-tag {
+  align-self: flex-start;
+  margin-bottom: 2px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #8C6A28;
+}
+
+.concern-science-header .section-tag::before,
+.concern-science-header .section-tag::after {
+  display: none;
 }
 
 .concern-science-title {
-  font-size: clamp(20px, 1.8vw, 24px);
+  font-size: clamp(17px, 1.4vw, 20px);
   font-weight: 700;
   color: #1A1715;
-  margin: 6px 0 6px;
+  margin: 0;
   line-height: 1.35;
 }
 
 .concern-science-desc {
-  font-size: 14px;
+  font-size: 13.5px;
   color: #6E6457;
   line-height: 1.55;
   margin: 0;
 }
 
-/* Detail Cards */
+/* Detail Cards: Stacked Vertically to Harmonize with 440px Portrait Image */
 .concern-detail-cards {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  flex: 1;
 }
 
 .concern-detail-card {
   background: #FCFAF7;
-  border: 1px solid #ECE4D8;
+  border: 1px solid #EAE1D3;
+  border-left: 3.5px solid #D5C5AA;
   border-radius: 14px;
-  padding: 16px 18px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
   transition: all var(--transition-fast);
 }
 
+.concern-detail-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 23, 21, 0.05);
+}
+
 .concern-detail-card.highlight-card {
-  background: #FAF6ED;
-  border-color: #E2D3B8;
-  border-left: 4px solid #C5A059;
+  background: linear-gradient(145deg, #FAF5E8 0%, #FDFBF5 100%);
+  border-color: #DFCEAF;
+  border-left: 3.5px solid #C5A059;
 }
 
 .detail-card-title {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14.5px;
+  gap: 8px;
+  font-size: 14px;
   font-weight: 700;
   color: #1A1715;
   margin: 0 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.18);
 }
 
 .detail-card-title svg {
@@ -351,10 +415,11 @@
 }
 
 .concern-detail-card p {
-  font-size: 13.5px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.6;
   color: #4D453C;
   margin: 0;
+  flex: 1;
 }
 
 /* 3.2. Regimen Section: Spans full width underneath Overview Grid */
@@ -1099,6 +1164,10 @@
   .concern-pane-card {
     padding: 20px 16px;
     border-radius: 18px;
+  }
+  .concern-img-frame {
+    height: 260px;
+    min-height: 230px;
   }
   .concern-pane-grid {
     padding: 24px 20px;

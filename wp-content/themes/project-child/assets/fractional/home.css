@@ -1,0 +1,16 @@
+/* Alternate the homepage sections using the existing neutral palette. */
+.fcc-site.home #san-pham-chu-luc,
+.fcc-site.home #van-de-lan-da,
+.fcc-site.home #danh-muc,
+.fcc-site.home #danh-gia,
+.fcc-site.home #faq {
+	background: var(--color-bg);
+}
+
+.fcc-site.home #gioi-thieu,
+.fcc-site.home #diem-noi-bat,
+.fcc-site.home #routine,
+.fcc-site.home #cam-ket-phap-ly,
+.fcc-site.home #dat-hang {
+	background-color: var(--color-bg-subtle);
+}

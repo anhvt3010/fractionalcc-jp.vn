@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) || exit; ?>
+<?php
+defined( 'ABSPATH' ) || exit;
+$review_video = project_child_fcc_home_video( 'review' );
+?>
 <section class="section section-soft" id="danh-gia">
       <div class="container">
         <div class="section-header" style="margin-bottom: 24px;">
@@ -7,7 +10,7 @@
           <p class="section-desc"><?php echo project_child_fcc_text( 'fcc_ui_ae9582f3595962', 'home' ); ?></p>
         </div>
 
-        
+
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--color-border);">
           <div style="display: flex; align-items: center; gap: 12px;">
             <div style="font-size: 28px; font-weight: 800; color: var(--color-primary); line-height: 1;"><?php echo project_child_fcc_text( 'fcc_ui_d372f01686d8a2', 'home' ); ?></div>
@@ -19,7 +22,7 @@
 
           <div style="display: flex; align-items: center; gap: 14px;">
             <div style="font-size: 13px; font-weight: 700; color: var(--color-text-muted);">
-              <span id="review-counter-current">01</span> / <span id="review-counter-total">07</span>
+              <span id="review-counter-current">01</span> / <span id="review-counter-total">08</span>
             </div>
             <div style="display: flex; gap: 8px;">
               <button id="review-prev-btn" class="review-nav-btn" aria-label="Đánh giá trước" style="width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--color-border); background: #FFF; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px;"><?php echo project_child_fcc_text( 'fcc_ui_856500a8b8ce5b', 'home', false ); ?></button>
@@ -28,10 +31,50 @@
           </div>
         </div>
 
-        
+
         <div class="reviews-slider-wrap">
           <div class="reviews-slider-track" id="reviews-slider-track">
-            
+
+            <!-- Thẻ 01: Video Sự Kiện Quốc Tế - Beauty Istanbul 2025 -->
+            <article class="review-card review-video-card">
+              <div class="review-card-top">
+                <div class="review-author-info">
+                  <div class="review-avatar-wrap review-avatar-event">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  </div>
+                  <div class="review-author-names">
+                    <h3>Beauty Istanbul 2025</h3>
+                    <span>Triển Lãm Thẩm Mỹ &amp; Mỹ Phẩm Quốc Tế</span>
+                  </div>
+                </div>
+                <span class="review-badge badge-event">Sự Kiện Quốc Tế</span>
+              </div>
+              <div class="review-rating-row">
+                <span class="review-stars">★★★★★</span>
+                <span class="review-rating-score">Trải Nghiệm Thực Tế</span>
+              </div>
+              <span class="review-skin-concern">Gian Hàng Fractional CC Tokyo</span>
+              <div class="review-product-tag">Trải Nghiệm Dòng Serum &amp; Peel Salon</div>
+              <p class="review-text">
+                Khách tham quan và đối tác quốc tế trực tiếp trải nghiệm dòng tinh chất Fractional CC và công nghệ phục hồi da chuẩn salon Nhật Bản tại hội chợ Beauty Istanbul 2025.
+              </p>
+              <div class="review-ugc-photo review-video-preview-stage" data-fcc-video-modal="<?php echo esc_url( $review_video['url'] ?? '' ); ?>" data-video-type="<?php echo esc_attr( $review_video['type'] ?? '' ); ?>" data-video-title="Khách Quốc Tế Trải Nghiệm Tại Beauty Istanbul 2025" data-video-tag="Beauty Istanbul 2025 · Trải Nghiệm Thực Tế" role="button" tabindex="0" aria-label="Bấm xem video trải nghiệm tại Beauty Istanbul 2025">
+                <div class="review-video-cover-bg">
+                  <div class="review-play-pulse-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"></polygon></svg>
+                  </div>
+                  <div class="review-video-tag-pill">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                    <span>Xem video thực tế</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-meta">
+                <span class="verified-badge">Đã xác minh sự kiện</span>
+                <span>Beauty Istanbul, Thổ Nhĩ Kỳ</span>
+              </div>
+            </article>
+
             <article class="review-card">
               <div class="review-card-top">
                 <div class="review-author-info">
@@ -63,7 +106,7 @@
               </div>
             </article>
 
-            
+
             <article class="review-card">
               <div class="review-card-top">
                 <div class="review-author-info">
@@ -95,7 +138,7 @@
               </div>
             </article>
 
-            
+
             <article class="review-card">
               <div class="review-card-top">
                 <div class="review-author-info">
@@ -127,7 +170,7 @@
               </div>
             </article>
 
-            
+
             <article class="review-card">
               <div class="review-card-top">
                 <div class="review-author-info">
@@ -159,7 +202,7 @@
               </div>
             </article>
 
-            
+
             <article class="review-card">
               <div class="review-card-top">
                 <div class="review-author-info">
@@ -191,7 +234,7 @@
               </div>
             </article>
 
-            
+
             <article class="review-card">
               <div class="review-card-top">
                 <div class="review-author-info">
@@ -223,7 +266,7 @@
               </div>
             </article>
 
-            
+
             <article class="review-card">
               <div class="review-card-top">
                 <div class="review-author-info">
@@ -257,9 +300,9 @@
           </div>
         </div>
 
-        
+
         <div class="reviews-slider-dots" id="reviews-slider-dots">
-          
+
         </div>
 
         <div style="text-align: center; margin-top: 24px;">

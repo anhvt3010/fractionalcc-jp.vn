@@ -29,10 +29,11 @@
             if ( empty( trim( $brand_img_alt ) ) ) {
                 $brand_img_alt = 'Dòng sản phẩm Fractional CC';
             }
-            $brand_caption = project_child_fcc_text( 'fcc_ui_brand_caption', 'home' );
+            $brand_caption   = project_child_fcc_text( 'fcc_ui_brand_caption', 'home' );
             if ( empty( trim( wp_strip_all_tags( $brand_caption ) ) ) ) {
                 $brand_caption = 'Hình ảnh sản phẩm, bao bì và phong cách thương hiệu.';
             }
+            $brand_video = project_child_fcc_home_video( 'brand' );
             ?>
             <div class="brand-image-stage"<?php echo project_child_fcc_image_edit_attributes( 'fcc_ui_brand_image', 'home' ); ?>>
               <?php
@@ -47,6 +48,15 @@
                   )
               );
               ?>
+              <button type="button" class="brand-video-play-badge" data-fcc-video-modal="<?php echo esc_url( $brand_video['url'] ?? '' ); ?>" data-video-type="<?php echo esc_attr( $brand_video['type'] ?? '' ); ?>" data-video-title="Gian Hàng Fractional CC Tokyo – Triển Lãm Beauty Istanbul 2025" data-video-tag="Triển Lãm Quốc Tế Beauty Istanbul 2025" aria-label="Xem video gian hàng Beauty Istanbul 2025">
+                <span class="video-play-icon-box">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"></polygon></svg>
+                </span>
+                <span class="video-play-text">
+                  <strong>Beauty Istanbul 2025</strong>
+                  <span>Xem video gian hàng</span>
+                </span>
+              </button>
             </div>
             <p class="brand-visual-caption"><?php echo esc_html( $brand_caption ); ?></p>
           </div>

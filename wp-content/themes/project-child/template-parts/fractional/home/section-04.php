@@ -219,8 +219,8 @@ $s04_desc  = project_child_fcc_text( 'fcc_ui_80ae9607363601', 'home' );
             <div class="fcc-exp-step-item">
               <div class="fcc-exp-step-num">01</div>
               <div class="fcc-exp-step-info">
-                <h4><?php echo project_child_fcc_text( 'fcc_ui_m_exp_tex_title', 'home', false ) ?: 'Kết cấu đặc trưng'; ?></h4>
-                <p><?php echo project_child_fcc_text( 'fcc_ui_m_exp_tex_desc', 'home', false ) ?: 'Tùy từng dòng serum, sản phẩm mang lại cảm giác đặc trưng khi thoa do chứa thành phần vi kim mỹ phẩm sinh học từ bọt biển thủy phân (Hydrolyzed Sponge).'; ?></p>
+                <h4><?php echo project_child_fcc_text( 'fcc_ui_m_exp_tex_title', 'home' ); ?></h4>
+                <p><?php echo project_child_fcc_text( 'fcc_ui_m_exp_tex_desc', 'home' ); ?></p>
               </div>
             </div>
 

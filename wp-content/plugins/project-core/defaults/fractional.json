@@ -1,5 +1,5 @@
 {
-    "version": "2.2.1",
+    "version": "3.0.0",
     "pages": {
         "shared": {
             "title": "Thông tin và giao diện chung Fractional CC",
@@ -1285,6 +1285,16 @@
                     "key": "field_fcc_ui_m_11c56f1da0dd",
                     "value": "Chat Zalo tư vấn"
                 },
+                "fcc_ui_m_fb_label": {
+                    "type": "text",
+                    "key": "field_fcc_ui_m_fb_label",
+                    "value": "Chat Facebook tư vấn"
+                },
+                "fcc_ui_m_fb_tooltip": {
+                    "type": "text",
+                    "key": "field_fcc_ui_m_fb_tooltip",
+                    "value": "Chat Facebook"
+                },
                 "fcc_ui_m_e49c4bed29ca": {
                     "type": "text",
                     "key": "field_fcc_ui_m_e49c4bed29ca",
@@ -2078,7 +2088,7 @@
                 "fcc_ui_44137315906c33": {
                     "type": "text",
                     "key": "field_fcc_ui_44137315906c33",
-                    "value": "Danh Mục Sản Phẩm & Các Combo Tối Ưu Chi Phí"
+                    "value": "Danh Mục Sản Phẩm & Các Combo Tối Ưu"
                 },
                 "fcc_ui_ab00a54528cf05": {
                     "type": "textarea",
@@ -3860,6 +3870,16 @@
                     "key": "field_fcc_ui_m_777a11e43efc",
                     "value": "Tùy từng dòng serum, sản phẩm có thể mang lại cảm giác đặc trưng khi thoa do chứa thành phần vi kim mỹ phẩm. Dưới đây là những lưu ý và hướng dẫn theo tài liệu sản phẩm:"
                 },
+                "fcc_ui_m_exp_tex_title": {
+                    "type": "text",
+                    "key": "field_fcc_ui_m_exp_tex_title",
+                    "value": "Kết cấu đặc trưng"
+                },
+                "fcc_ui_m_exp_tex_desc": {
+                    "type": "textarea",
+                    "key": "field_fcc_ui_m_exp_tex_desc",
+                    "value": "Tùy từng dòng serum, sản phẩm mang lại cảm giác đặc trưng khi thoa do chứa thành phần vi kim mỹ phẩm sinh học từ bọt biển thủy phân (Hydrolyzed Sponge)."
+                },
                 "fcc_ui_m_9e881650e66d": {
                     "type": "text",
                     "key": "field_fcc_ui_m_9e881650e66d",
@@ -3919,6 +3939,26 @@
                     "type": "url",
                     "key": "field_fcc_home_routine_video_url",
                     "value": ""
+                },
+                "fcc_ui_brand_video_file": {
+                    "type": "file",
+                    "key": "field_fcc_ui_brand_video_file",
+                    "value": ""
+                },
+                "fcc_ui_brand_video_url": {
+                    "type": "url",
+                    "key": "field_fcc_ui_brand_video_url",
+                    "value": "https://drive.google.com/file/d/1OGBTCSUTvzjI4kulOUmRqrY9mgB0m8TY/preview"
+                },
+                "fcc_ui_review_video_file": {
+                    "type": "file",
+                    "key": "field_fcc_ui_review_video_file",
+                    "value": ""
+                },
+                "fcc_ui_review_video_url": {
+                    "type": "url",
+                    "key": "field_fcc_ui_review_video_url",
+                    "value": "https://drive.google.com/file/d/1zQq81OnZVzq3EmrQOU8UP_Gz0ccaxSBo/preview"
                 }
             },
             "content": "",
@@ -5720,7 +5760,7 @@
             "ingredientsText": "💜 50.000 vi kim tự nhiên (Microneedles) hỗ trợ đưa các hoạt chất thẩm thấu tốt hơn vào da, góp phần tăng hiệu quả chăm sóc và tái tạo bề mặt da.\r\n✨ 10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) giúp loại bỏ tế bào chết trên bề mặt, cải thiện tình trạng da xỉn màu, sần sùi, mang lại làn da mềm mịn và tươi sáng hơn.\r\n🌿 Salicylic Acid (BHA) hỗ trợ làm sạch sâu lỗ chân lông, loại bỏ bã nhờn dư thừa và giảm tình trạng bít tắc – một trong những nguyên nhân gây mụn.\r\n💧 5% Niacinamide kết hợp cùng Hyaluronic Acid, Panthenol và chiết xuất rau má (CICA) giúp bổ sung độ ẩm, làm dịu da và hỗ trợ phục hồi hàng rào bảo vệ da sau quá trình tẩy tế bào chết, hạn chế cảm giác khô căng.",
             "spotlightTitle": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
             "spotlightDescription": "Serum tẩy tế bào chết – làm sạch lỗ chân lông – mịn da",
-            "spotlightHighlights": "50.000 vi kim tự nhiên (Microneedles) | 50.000 vi kim tự nhiên (Microneedles) hỗ trợ đưa các hoạt chất thẩm thấu tốt hơn vào da, góp phần tăng hiệu quả chăm sóc và tái tạo bề mặt da.\r\n10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) | 10% Mandelic Acid kết hợp 2% Lactic Acid (AHA) giúp loại bỏ tế bào chết trên bề mặt, cải thiện tình trạng da xỉn màu, sần sùi, mang lại làn da mềm mịn và tươi sáng hơn.\r\nSalicylic Acid (BHA) | Salicylic Acid (BHA) hỗ trợ làm sạch sâu lỗ chân lông, loại bỏ bã nhờn dư thừa và giảm tình trạng bít tắc – một trong những nguyên nhân gây mụn.\r\n5% Niacinamide | 5% Niacinamide kết hợp cùng Hyaluronic Acid, Panthenol và chiết xuất rau má (CICA) giúp bổ sung độ ẩm, làm dịu da và hỗ trợ phục hồi hàng rào bảo vệ da sau quá trình tẩy tế bào chết, hạn chế cảm giác khô căng."
+            "spotlightHighlights": "Dọn sạch bã nhờn & mụn cám | Thẩm thấu sâu vào nang lông, giải phóng dầu thừa và bít tắc – nguyên nhân chính gây mụn ẩn và mụn đầu đen.\nLàm mịn da sần sùi, thô ráp | Phức hợp AHA (Mandelic + Lactic) bẻ gãy liên kết sừng già cỗi, cải thiện bề mặt da xỉn màu, sần vỏ cam.\nPeel vi kim êm ái tại nhà | 50.000 vi kim Spicule tự nhiên mở đường dưỡng chất, hoàn toàn không đau rát, không bong tróc từng mảng và không cần nghỉ dưỡng.\nCấp ẩm phục hồi tức thì | Bổ sung Niacinamide, B5 và Rau má (CICA) giữ màng ẩm mềm mượt, da căng mướt ngay sau khi dùng."
         },
         {
             "id": 2,
@@ -7089,7 +7129,7 @@
             "name": "Combo Siêu tinh chất vi kim giảm thâm Fractional CC | Serum C–CX4",
             "slug": "c-cx4",
             "menuOrder": 0,
-            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/banner/combo-c-cx4-gold.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/banner/combo-c-cx4-gold.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/banner/combo-c-cx4-gold.png}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/combo-c-cx4-detail-01.webp}}\" alt=\"Combo Serum C–CX4 – ảnh chi tiết 1\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/combo-c-cx4-detail-02.webp}}\" alt=\"Combo Serum C–CX4 – ảnh chi tiết 2\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/combo-c-cx4-detail-03.webp}}\" alt=\"Combo Serum C–CX4 – ảnh chi tiết 3\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-03.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/approved/e444c335b9011e92-PQA-4.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/approved/e444c335b9011e92-PQA-4.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/approved/e444c335b9011e92-PQA-4.png}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/combo-c-cx4-detail-01.webp}}\" alt=\"Combo Serum C–CX4 – ảnh chi tiết 1\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/combo-c-cx4-detail-02.webp}}\" alt=\"Combo Serum C–CX4 – ảnh chi tiết 2\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/combo-c-cx4-detail-03.webp}}\" alt=\"Combo Serum C–CX4 – ảnh chi tiết 3\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-03.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "fields": {
                 "fcc_spotlightDescription": {
@@ -7110,12 +7150,7 @@
                 "fcc_spotlightHighlights": {
                     "type": "textarea",
                     "key": "field_fcc_spotlightHighlights",
-                    "value": "Needle Serum C (150.000 vi kim): | Tham khảo công dụng dưỡng ẩm và chăm sóc da không đều màu theo hồ sơ sản phẩm.\nNeedle Serum CX4 (Mật độ X4): | Tham khảo công dụng và hướng dẫn sử dụng riêng của dòng CX4.\nQuà tặng PDRN Shot: | Thông tin quà tặng được xác nhận khi đặt hàng.\nThông tin sản phẩm: | Xuất xứ Nhật Bản; số CBMP theo hồ sơ từng sản phẩm."
-                },
-                "fcc_spotlightGift": {
-                    "type": "text",
-                    "key": "field_fcc_spotlightGift",
-                    "value": "Serum dưỡng môi PDRN Shot theo ảnh combo; xác nhận khi đặt hàng."
+                    "value": "Phác đồ sáng da đa tầng | Kết hợp Serum C (150.000 vi kim) dùng hàng ngày và CX4 (Mật độ X4) tập trung mờ thâm nám, đốm nâu lâu năm.\r\nDẫn truyền hoạt chất vào sâu | Công nghệ vi kim mở đường cho Vitamin C tinh khiết đi sâu xuống đáy biểu bì thay vì chỉ nằm oxy hóa trên bề mặt.\r\nTăng sinh đàn hồi & Căng bóng | Kích hoạt quá trình tự tái sinh của làn da, hỗ trợ da săn chắc, đều màu và rạng rỡ rõ rệt.\r\nTiết kiệm tối đa 462.500đ | Mua trọn bộ để có đủ liệu trình kép với mức giá ưu đãi nhất so với mua rời từng lọ."
                 },
                 "fcc_spotlightDetailLabel": {
                     "type": "text",
@@ -7125,7 +7160,7 @@
                 "fcc_spotlightBuyLabel": {
                     "type": "text",
                     "key": "field_fcc_spotlightBuyLabel",
-                    "value": "MUA COMBO C–CX4 NGAY"
+                    "value": "MUA COMBO NGAY"
                 },
                 "fcc_cardTags": {
                     "type": "checkbox",
@@ -7138,7 +7173,42 @@
                 "fcc_hoverImage": {
                     "type": "image",
                     "key": "field_fcc_combo_hoverImage",
+                    "value": "assets/images/thumbnail/combo-c-cx4-detail-01.webp"
+                },
+                "fcc_product_seo_title": {
+                    "type": "text",
+                    "key": "field_fcc_product_seo_title",
                     "value": ""
+                },
+                "fcc_product_seo_description": {
+                    "type": "textarea",
+                    "key": "field_fcc_product_seo_description",
+                    "value": ""
+                },
+                "fcc_product_seo_image": {
+                    "type": "image",
+                    "key": "field_fcc_product_seo_image",
+                    "value": ""
+                },
+                "fcc_detail_callout_title": {
+                    "type": "text",
+                    "key": "field_fcc_detail_callout_title",
+                    "value": ""
+                },
+                "fcc_detail_callout_subtitle": {
+                    "type": "text",
+                    "key": "field_fcc_detail_callout_subtitle",
+                    "value": ""
+                },
+                "fcc_has_gift": {
+                    "type": "true_false",
+                    "key": "field_fcc_combo_has_gift",
+                    "value": "1"
+                },
+                "fcc_spotlightGift": {
+                    "type": "text",
+                    "key": "field_fcc_spotlightGift",
+                    "value": "Chọn 1 trong 2 quà tặng trong ảnh. Xác nhận khi đặt hàng"
                 }
             },
             "code": "C-CX4",
@@ -7152,11 +7222,11 @@
             "productsIncluded": "01 Needle Serum C\r\n01 Needle Serum CX4",
             "idealFor": "Nhu cầu dưỡng sáng và chăm sóc làn da không đều màu",
             "routine": "Sử dụng theo hướng dẫn riêng của từng sản phẩm.",
-            "originalPrice": "1700000",
-            "salePrice": "1237500",
+            "originalPrice": "1989000",
+            "salePrice": "1689000",
             "saveAmount": "462500",
-            "gift": "Serum dưỡng môi PDRN Shot theo ảnh combo; xác nhận khi đặt hàng.",
-            "image": "assets/images/banner/combo-c-cx4-gold.png",
+            "gift": "Chọn 1 trong 2 quà tặng trong ảnh. Xác nhận khi đặt hàng",
+            "image": "assets/images/approved/e444c335b9011e92-PQA-4.png",
             "rating": "5",
             "reviewCount": "1200"
         }
@@ -7341,6 +7411,8 @@
                 "fcc_ui_m_ab30ba7fd2c0",
                 "fcc_ui_m_3e4fdc742dfd",
                 "fcc_ui_m_777a11e43efc",
+                "fcc_ui_m_exp_tex_title",
+                "fcc_ui_m_exp_tex_desc",
                 "fcc_ui_m_9e881650e66d",
                 "fcc_ui_m_46bc3f224820",
                 "fcc_ui_m_90436c65261d",
@@ -7395,6 +7467,8 @@
                 "fcc_ui_callout_default_subtitle",
                 "fcc_ui_m_4ff6a4a13bca",
                 "fcc_ui_m_11c56f1da0dd",
+                "fcc_ui_m_fb_label",
+                "fcc_ui_m_fb_tooltip",
                 "fcc_ui_m_e49c4bed29ca",
                 "fcc_ui_m_6a7a3ceef1f1",
                 "fcc_ui_m_acb57503d846",
@@ -7549,489 +7623,41 @@
     },
     "approval": {
         "status": "approved",
-        "date": "2026-10-15",
+        "date": "2026-10-16",
         "source": "User-approved current WordPress content, media, catalog and selections."
     },
     "media": {
-        "assets/images/thumbnail/pdrn-shot-lip-plumper-02.webp": {
-            "sha256": "0f1b87da2037e9d89a67879fd7a5aa972330df0c72ce8d552640faab4af53b78",
-            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh chi tiết 2",
-            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh chi tiết 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/pdrn-shot-lip-plumper-01.webp": {
-            "sha256": "198986ebcdc7a14568e234ba766303140437419753baf1c349648e95a6d1d514",
-            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh đại diện",
-            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh đại diện",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/pdrn-shot-lip-essence-04.webp": {
-            "sha256": "06f417fd15878c1cb7ed09d08e16fd9eef699dcdbab7547ddd5eef7a9a285bdc",
-            "title": "Ảnh hướng dẫn sản phẩm chăm sóc môi 4",
-            "alt": "Ảnh hướng dẫn sản phẩm chăm sóc môi 4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/pdrn-shot-lip-essence-03.webp": {
-            "sha256": "21692aac6ac17d5d81f2265acbb02c357626b6728054b55f9add554c84644f9c",
-            "title": "Ảnh hướng dẫn sản phẩm chăm sóc môi 3",
-            "alt": "Ảnh hướng dẫn sản phẩm chăm sóc môi 3",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/pdrn-shot-lip-essence-02.webp": {
-            "sha256": "4b2635b36baeba5b4dfabf4e8653a5c3d2ab349e62c75ef663698ac8afa822bc",
-            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh chi tiết 2",
-            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh chi tiết 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/pdrn-shot-lip-essence-01.webp": {
-            "sha256": "13c0f2d72590e7aa6635934e4eff4826b987005faf7d8ace1edcbcdedcf921f2",
-            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh đại diện",
-            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh đại diện",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-04.webp": {
-            "sha256": "42aa01dc3dac7f4b04651f76306bd2646bf69509abc61f75ad34ff4bb8b00ede",
-            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 4",
-            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-03.webp": {
-            "sha256": "1c892546955b72d80148a7e436767bd24f91aea6442ea939601ca92d75708840",
-            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 3",
-            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 3",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-02.webp": {
-            "sha256": "66430a1c819d89b12ef6d91f83fac6c5276eda64632e925ba42de1c63b6b3eef",
-            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 2",
-            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-01.webp": {
-            "sha256": "b863206e33b2d0b4f829a1c0c38ec03a44d95bc36707322a31215fdbfa5664eb",
-            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh đại diện",
-            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh đại diện",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-cx4-04.webp": {
-            "sha256": "abb4355ad65baed88bf8546bce75a76abc0e89adcd4cf6adbdbc493fa4001bfc",
-            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 4",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-cx4-02.webp": {
-            "sha256": "6b4fbe246f7fbc25634021afd7999daa7bf5675faf90b80cfe096983a4cd3e4f",
-            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 2",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-cx4-03.webp": {
-            "sha256": "8de7017b2bb488b9bcb874b0f228234ce39880be37dcbeb0598912d74965e92e",
-            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 3",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 3",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-cx4-01.webp": {
-            "sha256": "6b16ee49bd814c65191197073c3fd8ef95320b0628188a65e8c678acb048321e",
-            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh đại diện",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh đại diện",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-c-04.webp": {
-            "sha256": "e73c60dd8b31f7fe67a4183cd987f6b542900a2ef28f6aed115b5dbd7dcda9df",
-            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 4",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-c-03.webp": {
-            "sha256": "6f5ce9688aaf080285d54ac06e3642029dbeb0497eed6de7d2cf0c5f8d4f70d4",
-            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 3",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 3",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-c-02.webp": {
-            "sha256": "5de55b97f6c6f491ad1647ddcbaafcbecf80230b31255ca6d1cb56395882adda",
-            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 2",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-c-01.webp": {
-            "sha256": "d1029fffe632b34ccd69367be1976493b9ccbb0b86037f63aaa1f6f4431c9861",
-            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh đại diện",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh đại diện",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-c-face-mask-04.webp": {
-            "sha256": "79a17385db1765c0ef55967cce7adead74db1088248178f5ac2f61a96a8880a2",
-            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 4",
-            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-c-face-mask-03.webp": {
-            "sha256": "5c33841a5e4e7dde67b58cc206cc8f8f0b47bc7bd4f29c8eeb29b91333bf9f8a",
-            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 3",
-            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 3",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-c-face-mask-02.webp": {
-            "sha256": "2921df491fdced5cb218ab9754f17d1007c9b453dddabe1f75bc99ddd510c59c",
-            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 2",
-            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-c-face-mask-01.webp": {
-            "sha256": "f477052f695a46566cd77414e53bf1c38e7160a9a511800ea970a77e7236a84d",
-            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh đại diện",
-            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh đại diện",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-ax4-04.webp": {
-            "sha256": "cb22e7571cdb0158f97088321428eeff35cc76981b23a2a532d566b53caa8ff8",
-            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 4",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-ax4-03.webp": {
-            "sha256": "4892487cd1cd330863e8030076a90172a0d80f7b1e9f6d4c15a22b07f3e38859",
-            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 3",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 3",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-ax4-02.webp": {
-            "sha256": "377c53d7d1a980d3d4e6463450fec2fae7ab7edde672e9ff4d3d7d472c7cf762",
-            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 2",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-ax4-01.webp": {
-            "sha256": "a062b59e6e9b437f2b207a38cbf0830c85a1bd1f341d7f8c110d94750165c7c6",
-            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh đại diện",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh đại diện",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-a-04.webp": {
-            "sha256": "63d4ec7ba9d9a4ac05081c2842b5ef09bccb57a80da03bfb3f4792fd4ee1b0ed",
-            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 4",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-a-03.webp": {
-            "sha256": "4a17c2a757806e3f1e8b97f5330e889a458a6d21952f0243422e63f14f06646c",
-            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 3",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 3",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-a-02.webp": {
-            "sha256": "015f30d8c2643cb403e7bc4928f965e93a04304b6513b75f02b4f0753a7e084b",
-            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 2",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-a-01.webp": {
-            "sha256": "05ecb62ed9348946279010a8844bbd8d02cb91ff601ea350d89a3d583eba43a3",
-            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh đại diện",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh đại diện",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-a-face-mask-04.webp": {
-            "sha256": "90e3da7bc70536527f75159d137f290901eb3c75168b80a09c4f60029068bd82",
-            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 4",
-            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-a-face-mask-03.webp": {
-            "sha256": "f58c3f89bea469b21d972ed2dc939ecd1fc38fba740fd1dee095542cd61bc8cb",
-            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 3",
-            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 3",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-a-face-mask-02.webp": {
-            "sha256": "f8731cd6c067106563c4a22c7aa620bbcde975e224e044c0aea95930fa0cbb2e",
-            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 2",
-            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/needle-serum-a-face-mask-01.webp": {
-            "sha256": "dd84a3bef852fd20405a765a495572454832856ec593f18c1627c209e79f6faa",
-            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh đại diện",
-            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh đại diện",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/mandelic-shot-peel-essence-04.webp": {
-            "sha256": "1e177a97d7ea2cdcb20d1a84e0c14131b1477f82c73c3063ca79bfc627c4e76d",
-            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 4",
-            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/mandelic-shot-peel-essence-03.webp": {
-            "sha256": "b1f05d13ca8ace11bce5bed5daf7ca95dba1fef3e7d9771504056f0959cb5f4b",
-            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 3",
-            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 3",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/mandelic-shot-peel-essence-02.webp": {
-            "sha256": "c25389021a99ac2348812577d16dd666f8f7f8cc45773ad0807e5dc5c1ef727e",
-            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 2",
-            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/mandelic-shot-peel-essence-hover.webp": {
-            "sha256": "7a4b01da4caa6e3e6bd7360b784cfc6de40e342820e9a618be13ec85dfc6453a",
-            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh hover card",
-            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết hover",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/mandelic-shot-peel-essence-01.webp": {
-            "sha256": "0a528434c638cd857ef8fdb6d36e5c00027760dce7040a4c5e326b4cadc210b6",
-            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh đại diện",
-            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh đại diện",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/concerns/concern-tham-mun.png": {
-            "sha256": "ca9b916845194253b74d742135da914bdb68dff259ecdde17cda4f6f61a696c4",
-            "title": "concern-tham-mun",
+        "assets/images/approved/e444c335b9011e92-PQA-4.png": {
+            "sha256": "e444c335b9011e928e44a015090a8a1e66ec290992ec0b2fa9ddd22bbcb09a61",
+            "title": "PQA (4)",
             "alt": "",
             "caption": "",
             "description": ""
         },
-        "assets/images/concerns/concern-lao-hoa.png": {
-            "sha256": "7b404bcf585142a4afcc012c343082ba73924efb0d5e35ad0613b27d7e0536e4",
-            "title": "concern-lao-hoa",
-            "alt": "",
+        "assets/images/thumbnail/combo-c-cx4-detail-03.webp": {
+            "sha256": "954c061209f3bcc7f370c93bbb0b8ba0fcb7f843c11acb532a2324b782a3926c",
+            "title": "Combo Serum C–CX4 – ảnh chi tiết 3",
+            "alt": "Combo Serum C–CX4 – ảnh chi tiết 3",
             "caption": "",
             "description": ""
         },
-        "assets/images/concerns/concern-lo-chan-long.png": {
-            "sha256": "4a3ff5dc7ad55cb21434f36121cd73c1cceee8ea3b2ab1c74e098bbd8e637f7d",
-            "title": "concern-lo-chan-long",
-            "alt": "",
+        "assets/images/thumbnail/combo-c-cx4-detail-02.webp": {
+            "sha256": "7e46e46164556fffc199654404fb934668d07b9a259dcfcf13e9a33ddf9f94be",
+            "title": "Combo Serum C–CX4 – ảnh chi tiết 2",
+            "alt": "Combo Serum C–CX4 – ảnh chi tiết 2",
             "caption": "",
             "description": ""
         },
-        "assets/images/concerns/concern-dom-nau.png": {
-            "sha256": "11d085395034b932f461b30ced4002599b83719a87e4112042e43a60793e66c7",
-            "title": "concern-dom-nau",
-            "alt": "",
+        "assets/images/thumbnail/combo-c-cx4-detail-01.webp": {
+            "sha256": "388d587bdf8f0d018853f381baf3cc347185070636102db80f96d204519db186",
+            "title": "Combo Serum C–CX4 – ảnh chi tiết 1",
+            "alt": "Combo Serum C–CX4 – ảnh chi tiết 1",
             "caption": "",
             "description": ""
         },
-        "assets/images/mechanism/mechanism-skincare-routine.jpg": {
-            "sha256": "ed4b4a09e7ebd39a71d95f4efc2882c375493bf67213e84d664d30d912329f1f",
-            "title": "mechanism-skincare-routine",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/approved/51e11fdc0492d8c5-mechanism-breakthrough.jpg": {
-            "sha256": "51e11fdc0492d8c50d845800214304a2681c18050cafc8042c6d25316b4724f0",
-            "title": "mechanism-breakthrough",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/banner/hero-background.jpg": {
-            "sha256": "95f902e18c8e426ee5b8ab09e3e9204d429b4f691d9fa4103283c20add1b4bbe",
-            "title": "hero-background-3",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/approved/165b8e33abf2f21f-165b8e33abf2f21f-fractional-lineup-full-2.jpg": {
-            "sha256": "165b8e33abf2f21f6e4e0625bb7c9b4f3ce753e2f878d2b66915aca67b41a834",
-            "title": "fractional-lineup-full-2",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/review-avatar-7.webp": {
-            "sha256": "f189f7a162dc657047f01e51a30a1de9587f9946c25f482c6467d509313731a2",
-            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 7",
-            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 7",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/review-avatar-6.webp": {
-            "sha256": "551d62eca41c1ba16cb9f47517942732bf0dea506fd5ed4b3bac1f07db297707",
-            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 6",
-            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 6",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/review-avatar-5.webp": {
-            "sha256": "71f64e0432aa8dcc4bcb83edd181444bc2ceebb1b2ac7a2ef3db2c6c2752f771",
-            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 5",
-            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 5",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/review-avatar-4.webp": {
-            "sha256": "d6a6d43f454008306b61bd97fcfc1e22d33a3b624dcf5fb19c1c1b90ba14cad0",
-            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 4",
-            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/review-avatar-3.webp": {
-            "sha256": "110924781d80a4e28666cc617ca68bd3254db191ca17a5108bb3754076352ffd",
-            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 3",
-            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 3",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/review-avatar-2.webp": {
-            "sha256": "f55e5f9ffd818d217c65dba793b36fa0d5c612ac25552229685d2673c3a1c969",
-            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 2",
-            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 2",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/thumbnail/review-avatar-1.webp": {
-            "sha256": "9d77fdf22cd41ec77755edaddc7216f3dd1fdb2c9d1224fbc4efdf7a117992a9",
-            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 1",
-            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 1",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/feedback/feedback-7.png": {
-            "sha256": "9e0b546663f4b7ecb1d9c42cb62127aada81e328de4941d75070c4abb6f8e53d",
-            "title": "feedback-7-1",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/feedback/feedback-6.png": {
-            "sha256": "2ac01ab6909bcbdb18a7b6f4d2b805d015d31a4fc6b4bc9c2bcd1dbf527e016b",
-            "title": "feedback-6-1",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/brand/fractional-cc-logo-white.png": {
-            "sha256": "e0814697ef4538a1dd225f528ce96a351cea1a70e4ea388ead77da61279705cc",
-            "title": "fractional-cc-logo-white-3",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/feedback/feedback-5.png": {
-            "sha256": "d774aa8629a3b4b62beb6fbb275afb551449a7c34f7f74fb02cc3b6e9a7be363",
-            "title": "feedback-5-1",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/feedback/feedback-4.png": {
-            "sha256": "93494332db2f17821ba63ef2648797c6d353b85031d2f04556fa4723fb489de3",
-            "title": "feedback-4-1",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/feedback/feedback-3.png": {
-            "sha256": "ce48ce121e7ec50b22f4a28ad1e7aadb278f19eaa389f40a7aa26f4dc66f4ff4",
-            "title": "feedback-3-1",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/feedback/feedback-2.png": {
-            "sha256": "71efa66b9101a92cf43c51c539acb2491aec2e50a23a51e1054cd69997f55eca",
-            "title": "feedback-2-1",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/feedback/feedback-1.png": {
-            "sha256": "411f9fe77b2e1eead2980ab747712dfe38c3b7bc3853f2a8a9541a54eb1b3d12",
-            "title": "feedback-1-1",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/banner/combo-visual.jpg": {
-            "sha256": "d90d8a7988d5b85d4149464c1addb4732975c87c0520acb6a3f5cf5fc4352452",
-            "title": "combo-visual-3",
-            "alt": "",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/products/pdrn-lip-essence.png": {
-            "sha256": "06180560ad0b0a5e656b0a56aa0b54cf672523bbe62782fd6139794308989741",
-            "title": "pdrn-shot-lip-essence-1",
-            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/products/pdrn-toning-essence.png": {
-            "sha256": "99c691616ac479212f9aa8708b683a3a85d7f30764e72f59fb75dffdeff8d5fd",
-            "title": "pdrn-shot-1000-toning-essence-1",
-            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/products/needle-serum-cx4.png": {
-            "sha256": "a065741b7c1376beff022be50c1eef0817877f9a87ad5517f90ba6edc8aed77f",
-            "title": "needle-serum-cx4-4",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/products/needle-serum-c.png": {
-            "sha256": "2d0e36b1081e55a304947022d62eb06eab06643c805510d5bd73a6c6aa42fa68",
-            "title": "needle-serum-c-4",
-            "alt": "Serum dưỡng da FractionalCC Needle Serum C",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/products/mandelic-peel-essence.png": {
-            "sha256": "3cc24053e7f67b6d2204781e5dde22754db83cd9ca93fda3dbd1c53c6375f9f4",
-            "title": "mandelic-shot-peel-essence-1",
-            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
-            "caption": "",
-            "description": ""
-        },
-        "assets/images/banner/combo-c-cx4-gold.png": {
-            "sha256": "b65161dc5cafed72ff899677c75cc64ef11251ba5811546f2ae499630f1f9042",
-            "title": "combo-c-cx4-gold-1",
+        "assets/images/approved/497b2c703e610b15-fractional-cc-logo.png": {
+            "sha256": "497b2c703e610b15bf8b7d6d642e97cc6df480430afbae0ae023278c399cd02e",
+            "title": "fractional-cc-logo-3",
             "alt": "",
             "caption": "",
             "description": ""
@@ -8043,31 +7669,486 @@
             "caption": "",
             "description": ""
         },
-        "assets/images/approved/497b2c703e610b15-fractional-cc-logo.png": {
-            "sha256": "497b2c703e610b15bf8b7d6d642e97cc6df480430afbae0ae023278c399cd02e",
-            "title": "fractional-cc-logo-3",
+        "assets/images/banner/combo-c-cx4-gold.png": {
+            "sha256": "b65161dc5cafed72ff899677c75cc64ef11251ba5811546f2ae499630f1f9042",
+            "title": "combo-c-cx4-gold-1",
             "alt": "",
             "caption": "",
             "description": ""
         },
-        "assets/images/thumbnail/combo-c-cx4-detail-01.webp": {
-            "sha256": "388d587bdf8f0d018853f381baf3cc347185070636102db80f96d204519db186",
-            "title": "Combo Serum C–CX4 – ảnh chi tiết 1",
-            "alt": "Combo Serum C–CX4 – ảnh chi tiết 1",
+        "assets/images/products/mandelic-peel-essence.png": {
+            "sha256": "3cc24053e7f67b6d2204781e5dde22754db83cd9ca93fda3dbd1c53c6375f9f4",
+            "title": "mandelic-shot-peel-essence-1",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence",
             "caption": "",
             "description": ""
         },
-        "assets/images/thumbnail/combo-c-cx4-detail-02.webp": {
-            "sha256": "7e46e46164556fffc199654404fb934668d07b9a259dcfcf13e9a33ddf9f94be",
-            "title": "Combo Serum C–CX4 – ảnh chi tiết 2",
-            "alt": "Combo Serum C–CX4 – ảnh chi tiết 2",
+        "assets/images/products/needle-serum-c.png": {
+            "sha256": "2d0e36b1081e55a304947022d62eb06eab06643c805510d5bd73a6c6aa42fa68",
+            "title": "needle-serum-c-4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum C",
             "caption": "",
             "description": ""
         },
-        "assets/images/thumbnail/combo-c-cx4-detail-03.webp": {
-            "sha256": "954c061209f3bcc7f370c93bbb0b8ba0fcb7f843c11acb532a2324b782a3926c",
-            "title": "Combo Serum C–CX4 – ảnh chi tiết 3",
-            "alt": "Combo Serum C–CX4 – ảnh chi tiết 3",
+        "assets/images/products/needle-serum-cx4.png": {
+            "sha256": "a065741b7c1376beff022be50c1eef0817877f9a87ad5517f90ba6edc8aed77f",
+            "title": "needle-serum-cx4-4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/products/pdrn-toning-essence.png": {
+            "sha256": "99c691616ac479212f9aa8708b683a3a85d7f30764e72f59fb75dffdeff8d5fd",
+            "title": "pdrn-shot-1000-toning-essence-1",
+            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/products/pdrn-lip-essence.png": {
+            "sha256": "06180560ad0b0a5e656b0a56aa0b54cf672523bbe62782fd6139794308989741",
+            "title": "pdrn-shot-lip-essence-1",
+            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/banner/combo-visual.jpg": {
+            "sha256": "d90d8a7988d5b85d4149464c1addb4732975c87c0520acb6a3f5cf5fc4352452",
+            "title": "combo-visual-3",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/feedback/feedback-1.png": {
+            "sha256": "411f9fe77b2e1eead2980ab747712dfe38c3b7bc3853f2a8a9541a54eb1b3d12",
+            "title": "feedback-1-1",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/feedback/feedback-2.png": {
+            "sha256": "71efa66b9101a92cf43c51c539acb2491aec2e50a23a51e1054cd69997f55eca",
+            "title": "feedback-2-1",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/feedback/feedback-3.png": {
+            "sha256": "ce48ce121e7ec50b22f4a28ad1e7aadb278f19eaa389f40a7aa26f4dc66f4ff4",
+            "title": "feedback-3-1",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/feedback/feedback-4.png": {
+            "sha256": "93494332db2f17821ba63ef2648797c6d353b85031d2f04556fa4723fb489de3",
+            "title": "feedback-4-1",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/feedback/feedback-5.png": {
+            "sha256": "d774aa8629a3b4b62beb6fbb275afb551449a7c34f7f74fb02cc3b6e9a7be363",
+            "title": "feedback-5-1",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/brand/fractional-cc-logo-white.png": {
+            "sha256": "e0814697ef4538a1dd225f528ce96a351cea1a70e4ea388ead77da61279705cc",
+            "title": "fractional-cc-logo-white-3",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/feedback/feedback-6.png": {
+            "sha256": "2ac01ab6909bcbdb18a7b6f4d2b805d015d31a4fc6b4bc9c2bcd1dbf527e016b",
+            "title": "feedback-6-1",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/feedback/feedback-7.png": {
+            "sha256": "9e0b546663f4b7ecb1d9c42cb62127aada81e328de4941d75070c4abb6f8e53d",
+            "title": "feedback-7-1",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-1.webp": {
+            "sha256": "9d77fdf22cd41ec77755edaddc7216f3dd1fdb2c9d1224fbc4efdf7a117992a9",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 1",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 1",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-2.webp": {
+            "sha256": "f55e5f9ffd818d217c65dba793b36fa0d5c612ac25552229685d2673c3a1c969",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 2",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-3.webp": {
+            "sha256": "110924781d80a4e28666cc617ca68bd3254db191ca17a5108bb3754076352ffd",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 3",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-4.webp": {
+            "sha256": "d6a6d43f454008306b61bd97fcfc1e22d33a3b624dcf5fb19c1c1b90ba14cad0",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 4",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-5.webp": {
+            "sha256": "71f64e0432aa8dcc4bcb83edd181444bc2ceebb1b2ac7a2ef3db2c6c2752f771",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 5",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 5",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-6.webp": {
+            "sha256": "551d62eca41c1ba16cb9f47517942732bf0dea506fd5ed4b3bac1f07db297707",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 6",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 6",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/review-avatar-7.webp": {
+            "sha256": "f189f7a162dc657047f01e51a30a1de9587f9946c25f482c6467d509313731a2",
+            "title": "Ảnh đại diện khách hàng – thẻ đánh giá 7",
+            "alt": "Ảnh đại diện khách hàng – thẻ đánh giá 7",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/approved/165b8e33abf2f21f-165b8e33abf2f21f-fractional-lineup-full-2.jpg": {
+            "sha256": "165b8e33abf2f21f6e4e0625bb7c9b4f3ce753e2f878d2b66915aca67b41a834",
+            "title": "fractional-lineup-full-2",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/banner/hero-background.jpg": {
+            "sha256": "95f902e18c8e426ee5b8ab09e3e9204d429b4f691d9fa4103283c20add1b4bbe",
+            "title": "hero-background-3",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/approved/51e11fdc0492d8c5-mechanism-breakthrough.jpg": {
+            "sha256": "51e11fdc0492d8c50d845800214304a2681c18050cafc8042c6d25316b4724f0",
+            "title": "mechanism-breakthrough",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/mechanism/mechanism-skincare-routine.jpg": {
+            "sha256": "ed4b4a09e7ebd39a71d95f4efc2882c375493bf67213e84d664d30d912329f1f",
+            "title": "mechanism-skincare-routine",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/concerns/concern-dom-nau.png": {
+            "sha256": "11d085395034b932f461b30ced4002599b83719a87e4112042e43a60793e66c7",
+            "title": "concern-dom-nau",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/concerns/concern-lo-chan-long.png": {
+            "sha256": "4a3ff5dc7ad55cb21434f36121cd73c1cceee8ea3b2ab1c74e098bbd8e637f7d",
+            "title": "concern-lo-chan-long",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/concerns/concern-lao-hoa.png": {
+            "sha256": "7b404bcf585142a4afcc012c343082ba73924efb0d5e35ad0613b27d7e0536e4",
+            "title": "concern-lao-hoa",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/concerns/concern-tham-mun.png": {
+            "sha256": "ca9b916845194253b74d742135da914bdb68dff259ecdde17cda4f6f61a696c4",
+            "title": "concern-tham-mun",
+            "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/mandelic-shot-peel-essence-01.webp": {
+            "sha256": "0a528434c638cd857ef8fdb6d36e5c00027760dce7040a4c5e326b4cadc210b6",
+            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh đại diện",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/mandelic-shot-peel-essence-hover.webp": {
+            "sha256": "7a4b01da4caa6e3e6bd7360b784cfc6de40e342820e9a618be13ec85dfc6453a",
+            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh hover card",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết hover",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/mandelic-shot-peel-essence-02.webp": {
+            "sha256": "c25389021a99ac2348812577d16dd666f8f7f8cc45773ad0807e5dc5c1ef727e",
+            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 2",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/mandelic-shot-peel-essence-03.webp": {
+            "sha256": "b1f05d13ca8ace11bce5bed5daf7ca95dba1fef3e7d9771504056f0959cb5f4b",
+            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 3",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/mandelic-shot-peel-essence-04.webp": {
+            "sha256": "1e177a97d7ea2cdcb20d1a84e0c14131b1477f82c73c3063ca79bfc627c4e76d",
+            "title": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 4",
+            "alt": "Serum tẩy da chết FractionalCC Mandelic Shot Peel Essence – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-face-mask-01.webp": {
+            "sha256": "dd84a3bef852fd20405a765a495572454832856ec593f18c1627c209e79f6faa",
+            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh đại diện",
+            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-face-mask-02.webp": {
+            "sha256": "f8731cd6c067106563c4a22c7aa620bbcde975e224e044c0aea95930fa0cbb2e",
+            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 2",
+            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-face-mask-03.webp": {
+            "sha256": "f58c3f89bea469b21d972ed2dc939ecd1fc38fba740fd1dee095542cd61bc8cb",
+            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 3",
+            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-face-mask-04.webp": {
+            "sha256": "90e3da7bc70536527f75159d137f290901eb3c75168b80a09c4f60029068bd82",
+            "title": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 4",
+            "alt": "Mặt nạ FractionalCC Needle Serum A Face Mask – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-01.webp": {
+            "sha256": "05ecb62ed9348946279010a8844bbd8d02cb91ff601ea350d89a3d583eba43a3",
+            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh đại diện",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-02.webp": {
+            "sha256": "015f30d8c2643cb403e7bc4928f965e93a04304b6513b75f02b4f0753a7e084b",
+            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 2",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-03.webp": {
+            "sha256": "4a17c2a757806e3f1e8b97f5330e889a458a6d21952f0243422e63f14f06646c",
+            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-a-04.webp": {
+            "sha256": "63d4ec7ba9d9a4ac05081c2842b5ef09bccb57a80da03bfb3f4792fd4ee1b0ed",
+            "title": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum A – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-ax4-01.webp": {
+            "sha256": "a062b59e6e9b437f2b207a38cbf0830c85a1bd1f341d7f8c110d94750165c7c6",
+            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh đại diện",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-ax4-02.webp": {
+            "sha256": "377c53d7d1a980d3d4e6463450fec2fae7ab7edde672e9ff4d3d7d472c7cf762",
+            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 2",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-ax4-03.webp": {
+            "sha256": "4892487cd1cd330863e8030076a90172a0d80f7b1e9f6d4c15a22b07f3e38859",
+            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-ax4-04.webp": {
+            "sha256": "cb22e7571cdb0158f97088321428eeff35cc76981b23a2a532d566b53caa8ff8",
+            "title": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum AX4 – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-face-mask-01.webp": {
+            "sha256": "f477052f695a46566cd77414e53bf1c38e7160a9a511800ea970a77e7236a84d",
+            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh đại diện",
+            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-face-mask-02.webp": {
+            "sha256": "2921df491fdced5cb218ab9754f17d1007c9b453dddabe1f75bc99ddd510c59c",
+            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 2",
+            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-face-mask-03.webp": {
+            "sha256": "5c33841a5e4e7dde67b58cc206cc8f8f0b47bc7bd4f29c8eeb29b91333bf9f8a",
+            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 3",
+            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-face-mask-04.webp": {
+            "sha256": "79a17385db1765c0ef55967cce7adead74db1088248178f5ac2f61a96a8880a2",
+            "title": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 4",
+            "alt": "Mặt nạ FractionalCC Needle Serum C Face Mask – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-01.webp": {
+            "sha256": "d1029fffe632b34ccd69367be1976493b9ccbb0b86037f63aaa1f6f4431c9861",
+            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh đại diện",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-02.webp": {
+            "sha256": "5de55b97f6c6f491ad1647ddcbaafcbecf80230b31255ca6d1cb56395882adda",
+            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 2",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-03.webp": {
+            "sha256": "6f5ce9688aaf080285d54ac06e3642029dbeb0497eed6de7d2cf0c5f8d4f70d4",
+            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-c-04.webp": {
+            "sha256": "e73c60dd8b31f7fe67a4183cd987f6b542900a2ef28f6aed115b5dbd7dcda9df",
+            "title": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum C – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-cx4-01.webp": {
+            "sha256": "6b16ee49bd814c65191197073c3fd8ef95320b0628188a65e8c678acb048321e",
+            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh đại diện",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-cx4-03.webp": {
+            "sha256": "8de7017b2bb488b9bcb874b0f228234ce39880be37dcbeb0598912d74965e92e",
+            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-cx4-02.webp": {
+            "sha256": "6b4fbe246f7fbc25634021afd7999daa7bf5675faf90b80cfe096983a4cd3e4f",
+            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 2",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/needle-serum-cx4-04.webp": {
+            "sha256": "abb4355ad65baed88bf8546bce75a76abc0e89adcd4cf6adbdbc493fa4001bfc",
+            "title": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 4",
+            "alt": "Serum dưỡng da FractionalCC Needle Serum CX4 – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-01.webp": {
+            "sha256": "b863206e33b2d0b4f829a1c0c38ec03a44d95bc36707322a31215fdbfa5664eb",
+            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh đại diện",
+            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-02.webp": {
+            "sha256": "66430a1c819d89b12ef6d91f83fac6c5276eda64632e925ba42de1c63b6b3eef",
+            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 2",
+            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-03.webp": {
+            "sha256": "1c892546955b72d80148a7e436767bd24f91aea6442ea939601ca92d75708840",
+            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 3",
+            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-1000-toning-essence-04.webp": {
+            "sha256": "42aa01dc3dac7f4b04651f76306bd2646bf69509abc61f75ad34ff4bb8b00ede",
+            "title": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 4",
+            "alt": "Serum dưỡng da FractionalCC PDRN Shot 1000+ Toning Essence – ảnh chi tiết 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-lip-essence-01.webp": {
+            "sha256": "13c0f2d72590e7aa6635934e4eff4826b987005faf7d8ace1edcbcdedcf921f2",
+            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh đại diện",
+            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-lip-essence-02.webp": {
+            "sha256": "4b2635b36baeba5b4dfabf4e8653a5c3d2ab349e62c75ef663698ac8afa822bc",
+            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh chi tiết 2",
+            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Essence – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-lip-essence-03.webp": {
+            "sha256": "21692aac6ac17d5d81f2265acbb02c357626b6728054b55f9add554c84644f9c",
+            "title": "Ảnh hướng dẫn sản phẩm chăm sóc môi 3",
+            "alt": "Ảnh hướng dẫn sản phẩm chăm sóc môi 3",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-lip-essence-04.webp": {
+            "sha256": "06f417fd15878c1cb7ed09d08e16fd9eef699dcdbab7547ddd5eef7a9a285bdc",
+            "title": "Ảnh hướng dẫn sản phẩm chăm sóc môi 4",
+            "alt": "Ảnh hướng dẫn sản phẩm chăm sóc môi 4",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-lip-plumper-01.webp": {
+            "sha256": "198986ebcdc7a14568e234ba766303140437419753baf1c349648e95a6d1d514",
+            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh đại diện",
+            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh đại diện",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/pdrn-shot-lip-plumper-02.webp": {
+            "sha256": "0f1b87da2037e9d89a67879fd7a5aa972330df0c72ce8d552640faab4af53b78",
+            "title": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh chi tiết 2",
+            "alt": "Serum Dưỡng Môi FractionalCC PDRN Shot Lip Plumper – ảnh chi tiết 2",
             "caption": "",
             "description": ""
         }

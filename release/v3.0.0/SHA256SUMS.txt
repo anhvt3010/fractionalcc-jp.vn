@@ -1,0 +1,2 @@
+a3c3af4387b76003ea9e54fc61091a012bacc15d7288ad0c83dd5cdf246c4c62  project-core-v3.0.0.zip
+36b800c774dea46eeafbe1e0118cf90e911bed338482f447b1749ac13f9b5295  project-child-v3.0.0.zip

@@ -50,10 +50,6 @@
             
             <div class="cert-document-card">
               <div class="cert-doc-header">
-                <span class="cert-doc-tag">
-                  <svg width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  <?php echo project_child_fcc_text( 'fcc_ui_8ccc25df8193a6', 'home' ); ?>
-                </span>
                 <h3 class="cert-doc-title"><?php echo project_child_fcc_text( 'fcc_ui_2d3e1f914a5333', 'home' ); ?></h3>
                 <p class="cert-doc-desc">
                   <?php echo project_child_fcc_text( 'fcc_ui_43f1891bf7ab82', 'home' ); ?> <strong><?php echo project_child_fcc_text( 'fcc_ui_4d77ee5ccc1f01', 'home' ); ?></strong> <?php echo project_child_fcc_text( 'fcc_ui_3488d054a6146a', 'home' ); ?>

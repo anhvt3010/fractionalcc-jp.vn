@@ -12,6 +12,18 @@ function fcc_managed_check( $ok, $label ) { global $checks; if ( ! $ok ) { throw
 fcc_managed_check( true === project_core_fcc_initialize_content_management(), 'Management migration succeeds.' );
 $data = project_core_fcc_default_document();
 $pages = get_option( 'project_core_fcc_pages' );
+$restore_fields = array(
+	$pages['concerns'] => array( $data['contentManagement']['pages']['concerns'][1], 'fcc_concerns_dom_nau_image', 'fcc_concerns_seo_title', 'fcc_concerns_seo_description', 'fcc_concerns_seo_image' ),
+	$pages['shared'] => array( 'fcc_site_favicon', 'fcc_hotline', 'fcc_hotlineDisplay' ),
+	project_core_fcc_legacy_product_id( 1 ) => array( 'fcc_rating', 'fcc_reviewCount', 'fcc_product_seo_title', 'fcc_product_seo_description' ),
+	project_core_fcc_posts( 'fcc_combo' )[0]->ID => array( 'fcc_rating', 'fcc_reviewCount' ),
+);
+$restore = array();
+foreach ( $restore_fields as $id => $names ) {
+	foreach ( $names as $name ) {
+		foreach ( array( $name, '_' . $name ) as $key ) { $restore[ $id ][ $key ] = array( metadata_exists( 'post', $id, $key ), get_post_meta( $id, $key, true ) ); }
+	}
+}
 foreach ( $data['contentManagement']['pages'] as $scope => $names ) {
 	foreach ( $names as $name ) {
 		$field = acf_get_field( 'field_' . $name );
@@ -93,7 +105,9 @@ try {
 	fcc_managed_check( false !== strpos( $html, '<title>Managed concern SEO title</title>' ) && false !== strpos( $html, 'content="Managed concern SEO description"' ) && false !== strpos( $html, '<meta property="og:image" content="' . wp_get_attachment_image_url( $image, 'full' ) ), 'Page SEO controls render.' );
 	fcc_managed_save( $pages['shared'], array( 'field_fcc_site_favicon' => $image, 'field_fcc_hotline' => '0123456789', 'field_fcc_hotlineDisplay' => '0123 456 789' ) );
 	$r = fcc_managed_request( get_permalink( $concern ), null, false ); $html = wp_remote_retrieve_body( $r );
-	fcc_managed_check( 1 === substr_count( $html, '<link rel="icon"' ) && false !== strpos( $html, '<link rel="icon" href="' . wp_get_attachment_image_url( $image, 'full' ) ), 'Managed favicon has a single owner.' );
+	$favicon = wp_get_attachment_image_url( $image, 'full' );
+	$favicon = project_child_fcc_webp_url( $favicon ) ?: $favicon;
+	fcc_managed_check( 1 === substr_count( $html, '<link rel="icon"' ) && false !== strpos( $html, '<link rel="icon" href="' . esc_url( $favicon ) ), 'Managed favicon has a single owner and uses the optimized asset.' );
 	foreach ( array( 'home', 'catalog', 'policies' ) as $scope ) {
 		$r = fcc_managed_request( get_permalink( $pages[ $scope ] ), null, false ); $html = wp_remote_retrieve_body( $r );
 		fcc_managed_check( false !== strpos( $html, 'tel:0123456789' ) && false === strpos( $html, '0985 561 862' ), 'Hotline labels and links sync on ' . $scope );
@@ -111,5 +125,10 @@ try {
 	fcc_managed_check( $text === get_post_meta( $concern, $concern_name, true ) && 0 === (int) get_post_meta( $concern, $image_name, true ) && 'Managed concern SEO title' === get_post_meta( $concern, 'fcc_concerns_seo_title', true ), 'Reruns preserve edited text, cleared image and SEO.' );
 	wp_set_current_user( 0 );
 	fcc_managed_check( is_wp_error( project_core_fcc_initialize_content_management() ), 'Anonymous migration denied.' );
-} finally { $sessions->destroy( $token ); }
+} finally {
+	$sessions->destroy( $token );
+	foreach ( $restore as $id => $values ) {
+		foreach ( $values as $key => $saved ) { if ( $saved[0] ) { update_post_meta( $id, $key, $saved[1] ); } else { delete_post_meta( $id, $key ); } }
+	}
+}
 echo "PASS: {$checks} management fields/native editor/security/render/migration checks.\n";

@@ -176,6 +176,12 @@
             },
             "fcc_ui_c147e4bc37f96e": {
                 "label": "Mô tả nút Lên đầu trang – trang sản phẩm"
+            },
+            "fcc_ui_m_fb_label": {
+                "label": "Nhãn trợ năng nút Facebook nổi"
+            },
+            "fcc_ui_m_fb_tooltip": {
+                "label": "Chữ hiển thị khi rê chuột nút Facebook nổi"
             }
         }
     },
@@ -477,32 +483,32 @@
                 "note": "Mô tả cho công cụ tìm kiếm và trình đọc màn hình. Mô tả đã lưu trong Thư viện ảnh được ưu tiên khi có."
             },
             "fcc_review_avatar_1": {
-                "label": "Avatar nh? ? th? ??nh gi? 1",
-                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+                "label": "Avatar nhỏ ở thẻ đánh giá 1",
+                "note": "Chỉ đổi ảnh tròn đại diện; không đổi ảnh lớn hoặc nội dung đánh giá."
             },
             "fcc_review_avatar_2": {
-                "label": "Avatar nh? ? th? ??nh gi? 2",
-                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+                "label": "Avatar nhỏ ở thẻ đánh giá 2",
+                "note": "Chỉ đổi ảnh tròn đại diện; không đổi ảnh lớn hoặc nội dung đánh giá."
             },
             "fcc_review_avatar_3": {
-                "label": "Avatar nh? ? th? ??nh gi? 3",
-                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+                "label": "Avatar nhỏ ở thẻ đánh giá 3",
+                "note": "Chỉ đổi ảnh tròn đại diện; không đổi ảnh lớn hoặc nội dung đánh giá."
             },
             "fcc_review_avatar_4": {
-                "label": "Avatar nh? ? th? ??nh gi? 4",
-                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+                "label": "Avatar nhỏ ở thẻ đánh giá 4",
+                "note": "Chỉ đổi ảnh tròn đại diện; không đổi ảnh lớn hoặc nội dung đánh giá."
             },
             "fcc_review_avatar_5": {
-                "label": "Avatar nh? ? th? ??nh gi? 5",
-                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+                "label": "Avatar nhỏ ở thẻ đánh giá 5",
+                "note": "Chỉ đổi ảnh tròn đại diện; không đổi ảnh lớn hoặc nội dung đánh giá."
             },
             "fcc_review_avatar_6": {
-                "label": "Avatar nh? ? th? ??nh gi? 6",
-                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+                "label": "Avatar nhỏ ở thẻ đánh giá 6",
+                "note": "Chỉ đổi ảnh tròn đại diện; không đổi ảnh lớn hoặc nội dung đánh giá."
             },
             "fcc_review_avatar_7": {
-                "label": "Avatar nh? ? th? ??nh gi? 7",
-                "note": "Ch? ??i ?nh tr?n ??i di?n; kh?ng ??i ?nh l?n ho?c n?i dung ??nh gi?."
+                "label": "Avatar nhỏ ở thẻ đánh giá 7",
+                "note": "Chỉ đổi ảnh tròn đại diện; không đổi ảnh lớn hoặc nội dung đánh giá."
             }
         }
     },
@@ -540,7 +546,7 @@
             },
             "fcc_ui_2bd71effeb0585": {
                 "label": "Dòng thông tin đánh giá trên trang sản phẩm",
-                "note": "D?ng ??nh gi? d?ng chung c?a b? c?c c?, hi?n kh?ng s? d?ng. S?a ?i?m v? s? ??nh gi? ? t?ng S?n ph?m; trang chi ti?t v? danh m?c d?ng c?ng d? li?u."
+                "note": "Dòng đánh giá dùng chung của bố cục cũ, hiện không sử dụng. Sửa điểm và số đánh giá ở từng Sản phẩm; trang chi tiết và danh mục dùng cùng dữ liệu."
             },
             "fcc_ui_476e0450734143": {
                 "label": "Nhãn cam kết 100% Chính Hãng Nhật Bản"

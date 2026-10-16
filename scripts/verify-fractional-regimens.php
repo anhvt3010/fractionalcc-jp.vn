@@ -21,6 +21,11 @@ $combo = project_core_fcc_posts( 'fcc_combo' )[0]->ID;
 $draft = wp_insert_post( array( 'post_type' => 'fcc_product', 'post_status' => 'draft', 'post_title' => 'Regimen test draft' ) );
 $posts_before = count( project_core_fcc_posts( array( 'fcc_product', 'fcc_combo' ) ) );
 $fields = project_core_fcc_regimens();
+$original_regimens = array();
+foreach ( $fields as $definition ) { $original_regimens[ $definition['name'] ] = get_post_meta( $page, 'fcc_' . $definition['name'], true ); }
+$original_status = get_post_status( $first );
+$original_query = $GLOBALS['wp_query'];
+try {
 foreach ( $fields as $slug => $definition ) {
 	$key = 'field_fcc_' . $definition['name'];
 	$defaults = project_core_fcc_default_document();
@@ -76,6 +81,12 @@ foreach ( $fields as $slug => $definition ) {
 	$cards = $xpath->query( '//*[@data-id]' );
 	fcc_regimen_check( 3 === $cards->length && (string) $second === $cards[0]->getAttribute( 'data-id' ) && 'combo-' . $combo === $cards[1]->getAttribute( 'data-id' ) && (string) $first === $cards[2]->getAttribute( 'data-id' ), 'Mixed card markup follows configured order.' );
 	foreach ( $xpath->query( '//*[@data-product-select]' ) as $button ) { fcc_regimen_check( in_array( $button->getAttribute( 'data-product-select' ), $order_codes, true ), 'Order button points to a real catalog item.' ); }
-	fcc_regimen_check( false !== strpos( $html, project_core_fcc_url( 'catalog', '#danh-sach-combo' ) ), 'Combo detail link points to catalog.' );
+	fcc_regimen_check( false !== strpos( $html, esc_url( get_permalink( $combo ) ) ), 'Combo detail link points to the public combo page.' );
+}
+} finally {
+	foreach ( $original_regimens as $name => $value ) { update_field( 'field_fcc_' . $name, $value, $page ); }
+	wp_update_post( array( 'ID' => $first, 'post_status' => $original_status ) );
+	wp_delete_post( $draft, true );
+	$GLOBALS['wp_query'] = $original_query;
 }
 echo "PASS: {$checks} regimen validation/save/render/initialization checks.\n";

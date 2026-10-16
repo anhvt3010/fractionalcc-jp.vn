@@ -429,6 +429,18 @@
         },
         "revision": "39f2e51dc9ac"
     },
+    "e444c335b9011e928e44a015090a8a1e66ec290992ec0b2fa9ddd22bbcb09a61": {
+        "source": "assets/images/approved/e444c335b9011e92-PQA-4.png",
+        "width": 1200,
+        "height": 1200,
+        "webp": "assets/images/approved/e444c335b9011e92-PQA-4.webp",
+        "srcset": {
+            "480": "assets/images/approved/e444c335b9011e92-PQA-4-480.webp",
+            "768": "assets/images/approved/e444c335b9011e92-PQA-4-768.webp",
+            "1200": "assets/images/approved/e444c335b9011e92-PQA-4.webp"
+        },
+        "revision": "a1565660a221"
+    },
     "e7fb05663fd5de2b5c9b54d00a9de7213b87f491036120b668b3c2a1054e0bcd": {
         "source": "assets/images/products/needle-mask-c.png",
         "width": 645,

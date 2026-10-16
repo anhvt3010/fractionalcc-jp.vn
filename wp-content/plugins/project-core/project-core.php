@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Fractional CC – Project Core
  * Description: Fractional CC content management, products, combos and versioned default initialization.
- * Version: 2.2.1
+ * Version: 3.0.0
  * Requires at least: 6.3
  * Requires PHP: 7.4
  * Text Domain: project-core
