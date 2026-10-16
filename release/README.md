@@ -1,5 +1,11 @@
 # Build và release Fractional CC
 
+Đã đóng gói lại **[2.2.1](v2.2.1/RELEASE.md)** cùng phiên bản theo yêu cầu sửa câu quà tặng: **Serum dưỡng môi PDRN Shot theo ảnh combo; xác nhận khi đặt hàng.** CMS làm việc và defaults đã cập nhật; checksum mới nằm trong release notes. Chỉ đổi một câu trong defaults, không thay code khởi tạo; 22 kiểm tra chống dữ liệu trùng đạt sau khi giải nén lại ZIP trên fixture riêng.
+
+Hiện hành **[2.2.1](v2.2.1/RELEASE.md)**, ngày 16/10/2026: đóng gói phiên bản kế tiếp theo yêu cầu, giữ nguyên giao diện, trang chi tiết combo, 3 ảnh combo mới và defaults của 2.2.0. Core/Child/defaults đồng bộ 2.2.1. Kiểm tra cài mới đạt 3.027; cập nhật/chạy lại từ 2.2.0 đạt 280 kiểm tra giữ edits và giá trị đã xóa. Đã kiểm tra lưu ảnh quản trị, client và dependencies. Chưa kiểm tra trực quan desktop/mobile do chưa có kết nối trình duyệt; chưa triển khai hosting.
+
+Hiện hành **[2.2.0](v2.2.0/RELEASE.md)**, ngày 16/10/2026: bổ sung chi tiết combo dùng chung giao diện/gallery sản phẩm và quản lý nhiều ảnh. Combo C–CX4 giữ ảnh đại diện, thêm 3 ảnh người dùng gửi. Hai ZIP kèm defaults 74 Media, kiểm tra khởi tạo mới, nâng gallery cũ, lưu ảnh qua quản trị, quyền/nonce và giữ edits khi chạy lại. Chưa kiểm tra trực quan desktop/mobile do công cụ trình duyệt không kết nối; chưa triển khai hosting.
+
 Hiện hành **[2.1.0](v2.1.0/RELEASE.md)**, ngày 15/10/2026: chốt CMS hiện tại và các thay đổi trang chủ, quản lý 6 sản phẩm cùng một combo nổi bật, sửa ảnh và câu chữ. Hai ZIP gồm 10 sản phẩm, 1 combo, 35 hoạt chất, 71 Media và 1.096 field. Cài mới đạt 3.021 kiểm tra; nâng từ 2.0.0 đạt 7.906 kiểm tra giữ edits/giá trị trống. Browser đối chiếu khớp site nguồn. Giữ hạn chế popup Mandelic ở 320–375 px, đã ghi rõ trong release notes. Chưa triển khai hosting.
 
 Mốc **[2.0.0](v2.0.0/RELEASE.md)**, ngày 15/10/2026: chốt toàn bộ code và dữ liệu CMS tại thời điểm đó. Hai ZIP gồm 10 sản phẩm, 1 combo, 35 hoạt chất và 71 Media, nhãn và ảnh hover. Các phiên bản bên dưới là lịch sử.

@@ -1,0 +1,22 @@
+[
+    {
+        "package": "project-core-v2.2.1.zip",
+        "version": "2.2.1",
+        "files": 28,
+        "bytes": 141074,
+        "sha256": "a77d548ce24d82038bfc4101bcf9dcdb9b3a6cb1713de794b08fe5d20325c61a",
+        "crcAndSourceMatch": true,
+        "changesFromPrevious221Build": [
+            "defaults/fractional.json"
+        ]
+    },
+    {
+        "package": "project-child-v2.2.1.zip",
+        "version": "2.2.1",
+        "files": 300,
+        "bytes": 26487768,
+        "sha256": "e954f28d46aeee3b0ddbad6080404feb37ba922f8d7e0f0ba006e7c2b6a25954",
+        "crcAndSourceMatch": true,
+        "changesFromPrevious221Build": []
+    }
+]

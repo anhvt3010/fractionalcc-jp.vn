@@ -71,8 +71,10 @@ function project_core_fcc_register_fields() {
 	$combo[ count( $combo ) - 1 ]['name'] = 'fcc_cardTags';
 	$combo[] = project_core_fcc_field( 'combo_productsIncluded', 'Mô tả sản phẩm bên trong', 'textarea', array( 'instructions' => 'Mỗi ý một dòng.' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_productsIncluded';
 	$combo[] = project_core_fcc_field( 'combo_productIds', 'Sản phẩm trong combo', 'relationship', array( 'post_type' => array( 'fcc_product' ), 'return_format' => 'id', 'instructions' => 'Danh sách thành phần trên thẻ combo trang chủ lấy tên và giá bán hiện tại của các sản phẩm đã xuất bản được chọn ở đây. Kéo thả để đổi thứ tự.' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_productIds';
+	// Keep the image schemas available for defaults/customizer, with one visible media editor.
+	$combo[] = project_core_fcc_field( 'combo_images_help', 'Ảnh combo', 'message', array( 'name' => '', 'message' => 'Chọn nhiều ảnh, đặt ảnh đại diện / hover và kéo thả thứ tự thumbnail tại <a href="#fcc-product-media">khung Ảnh sản phẩm / combo – đại diện & thứ tự</a>. Nhấn Cập nhật để lưu.', 'esc_html' => 0 ) );
 	$combo[] = project_core_fcc_field( 'combo_image', 'Ảnh combo', 'image', array( 'return_format' => 'id', 'preview_size' => 'medium' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_image';
-	$combo[] = project_core_fcc_field( 'combo_hoverImage', 'Ảnh khi rê chuột (Hover card)', 'image', array( 'return_format' => 'id', 'preview_size' => 'medium', 'instructions' => 'Chọn ảnh hiển thị khi khách rê chuột vào card combo (tùy chọn).' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_hoverImage';
+	$combo[] = project_core_fcc_field( 'combo_hoverImage', 'Ảnh khi rê chuột (Hover card)', 'image', array( 'return_format' => 'id', 'preview_size' => 'medium' ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_hoverImage';
 	$combo[] = project_core_fcc_field( 'combo_isBestSeller', 'Hiện nhãn bán chạy (cần có nguồn)', 'true_false', array( 'ui' => 1 ) ); $combo[ count( $combo ) - 1 ]['name'] = 'fcc_isBestSeller';
 	foreach ( array( 'rating' => 'Điểm đánh giá combo có nguồn', 'reviewCount' => 'Số đánh giá combo có nguồn' ) as $name => $label ) {
 		$combo[] = project_core_fcc_field( 'combo_' . $name, $label, 'number', array( 'min' => 0, 'max' => 'rating' === $name ? 5 : '', 'step' => 'rating' === $name ? '0.01' : 1, 'wrapper' => array( 'width' => 50 ), 'instructions' => 'Dùng cho thẻ combo trong danh mục. Nội dung cũ được giữ để quản lý; cần xác nhận nguồn, để trống nếu chưa có đánh giá.' ) );
@@ -105,6 +107,13 @@ function project_core_fcc_register_fields() {
 	) );
 }
 add_action( 'acf/init', 'project_core_fcc_register_fields' );
+
+/** Schemas remain readable by the initializer and exporter without duplicate controls. */
+function project_core_fcc_combo_media_field( $field ) {
+	return false;
+}
+add_filter( 'acf/prepare_field/key=field_fcc_combo_image', 'project_core_fcc_combo_media_field' );
+add_filter( 'acf/prepare_field/key=field_fcc_combo_hoverImage', 'project_core_fcc_combo_media_field' );
 
 /** Native WordPress/ACF editing handles post permissions and nonces. */
 function project_core_fcc_validate_card_tags( $valid, $value ) {

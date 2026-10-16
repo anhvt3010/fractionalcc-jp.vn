@@ -22,7 +22,7 @@ function project_child_fcc_fragment( $name ) {
 		}
 		return;
 	}
-	$product = project_core_fcc_product( get_queried_object_id(), in_array( $name, array( 'gallery', 'actives' ), true ) );
+	$product = project_child_fcc_detail_data( in_array( $name, array( 'gallery', 'actives' ), true ) );
 	if ( ! $product ) { return; }
 	get_template_part( 'template-parts/fractional/components/product-detail', null, array( 'fragment' => $name, 'product' => $product ) );
 }

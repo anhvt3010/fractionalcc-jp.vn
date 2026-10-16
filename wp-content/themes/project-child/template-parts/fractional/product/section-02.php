@@ -1,4 +1,4 @@
-<?php defined( 'ABSPATH' ) || exit; ?>
+<?php defined( 'ABSPATH' ) || exit; $fcc_is_combo = is_singular( 'fcc_combo' ); ?>
 <section class="section" style="padding-top: 0; padding-bottom: 40px;">
       <div class="container">
         <div class="pd-hero-grid">
@@ -63,7 +63,7 @@
               <span class="pd-cocoon-save-pill" id="pd-save-amount"><?php echo esc_html( project_child_fcc_product_value( 'saving' ) ); ?></span>
             </div>
 
-            <?php $fcc_detail_rating = project_child_fcc_rating_text( project_core_fcc_product( get_queried_object_id(), false ), true ); ?>
+            <?php $fcc_detail_rating = project_child_fcc_rating_text( project_child_fcc_detail_data( false ), true ); ?>
             <?php if ( '' !== $fcc_detail_rating ) : ?>
             <div class="pd-cocoon-rating">
               <span class="pd-stars">★★★★★</span>
@@ -99,7 +99,7 @@
 
             
             <?php
-            $fcc_current_product = function_exists( 'project_core_fcc_product' ) ? project_core_fcc_product( get_queried_object_id(), true ) : array();
+            $fcc_current_product = project_child_fcc_detail_data();
             $fcc_targets         = ! empty( $fcc_current_product['targetUsers'] ) ? (array) $fcc_current_product['targetUsers'] : array();
             if ( empty( $fcc_targets ) ) {
               $fcc_target_sum = project_child_fcc_product_value( 'target_summary' );
@@ -117,10 +117,10 @@
                   <?php echo project_child_fcc_text( 'fcc_ui_2cacb01c3941c0', 'shared' ); ?>
                 </button>
                 <button type="button" role="tab" class="pd-tab-btn" id="pd-tab-actives-btn" aria-selected="false" aria-controls="pd-tab-actives-pane">
-                  <?php echo project_child_fcc_text( 'fcc_ui_b2f2c633e021b5', 'shared' ); ?>
+                  <?php echo $fcc_is_combo ? esc_html( 'Sản phẩm trong combo' ) : project_child_fcc_text( 'fcc_ui_b2f2c633e021b5', 'shared' ); ?>
                 </button>
                 <button type="button" role="tab" class="pd-tab-btn" id="pd-tab-usps-btn" aria-selected="false" aria-controls="pd-tab-usps-pane">
-                  <?php $tab_usp_label = project_child_fcc_text( 'fcc_ui_tab_usps', 'shared' ); echo $tab_usp_label ? $tab_usp_label : esc_html( 'Điểm Nổi Bật' ); ?>
+                  <?php $tab_usp_label = project_child_fcc_text( 'fcc_ui_tab_usps', 'shared' ); echo $fcc_is_combo ? esc_html( 'Hướng dẫn & quà tặng' ) : ( $tab_usp_label ?: esc_html( 'Điểm Nổi Bật' ) ); ?>
                 </button>
               </div>
 
@@ -193,13 +193,15 @@
               </div>
             </div>
 
+            <?php if ( ! $fcc_is_combo ) : ?>
             <div class="pd-cocoon-meta-line">
               <span><strong><?php echo project_child_fcc_text( 'fcc_ui_7c2ab4b4eda5ba', 'shared' ); ?></strong> <span id="pd-volume"><?php echo esc_html( project_child_fcc_product_value( 'volume' ) ); ?></span></span>
               <span>•</span>
               <span><strong><?php echo project_child_fcc_text( 'fcc_ui_09caa8fe5fdc81', 'shared' ); ?></strong> <span id="pd-spec-cbmp" class="text-gold"><?php echo esc_html( project_child_fcc_product_value( 'cbmp' ) ); ?></span></span>
             </div>
 
-            <button class="btn-pd-cocoon-buy" data-open-order data-product-select="prod_<?php echo esc_attr( get_queried_object_id() ); ?>" id="pd-buy-now-btn">
+            <?php endif; ?>
+            <button class="btn-pd-cocoon-buy" data-open-order data-product-select="<?php echo esc_attr( project_child_fcc_detail_order_code() ); ?>" id="pd-buy-now-btn">
               <span id="pd-buy-btn-label"><?php echo esc_html( project_child_fcc_product_value( 'buy' ) ); ?></span>
               <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
             </button>
@@ -224,6 +226,9 @@
 
 
         
+        <?php if ( $fcc_is_combo ) : ?>
+        <?php get_template_part( 'template-parts/fractional/components/combo-detail-products', null, array( 'combo' => $fcc_current_product ) ); ?>
+        <?php else : ?>
         <div class="pd-dossier-section" id="pd-dossier">
           <div class="pd-dossier-header">
             <div>
@@ -319,6 +324,7 @@
           </div>
           <div class="combos-grid" id="pd-related-combos"><?php project_child_fcc_fragment( 'combos' ); ?></div>
         </div>
+        <?php endif; ?>
         <?php endif; ?>
       </div>
     </section>

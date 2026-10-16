@@ -279,8 +279,33 @@ function project_child_fcc_rating_text( $data, $detail = false ) {
 	return $text;
 }
 
+/** Adapt combo content to the shared detail layout without inventing product facts. */
+function project_child_fcc_detail_data( $with_details = true ) {
+	$id = get_queried_object_id();
+	if ( 'fcc_combo' !== get_post_type( $id ) ) { return project_core_fcc_product( $id, $with_details ); }
+	$data = project_core_fcc_combo( $id, $with_details );
+	if ( ! $data ) { return array(); }
+	$data['tagline'] = (string) get_post_meta( $id, 'fcc_spotlightDescription', true ) ?: $data['idealFor'];
+	$data['category'] = 'Combo';
+	$data['brand'] = '';
+	$data['origin'] = $data['code'];
+	$data['targetUsers'] = project_core_fcc_lines( $data['idealFor'] );
+	$data['uspBullets'] = array_values( array_filter( array( $data['routine'], $data['gift'] ? 'Quà tặng: ' . $data['gift'] : '' ) ) );
+	$data['actives'] = array();
+	if ( $with_details ) {
+		foreach ( project_core_fcc_combo_contents( $data )['products'] as $product ) {
+			$data['actives'][] = array( 'name' => $product['name'] );
+		}
+	}
+	return $data;
+}
+
+function project_child_fcc_detail_order_code() {
+	return ( 'fcc_combo' === get_post_type( get_queried_object_id() ) ? 'combo_' : 'prod_' ) . get_queried_object_id();
+}
+
 function project_child_fcc_product_value( $name ) {
-	$data = project_core_fcc_product( get_queried_object_id(), 'active_summary' === $name );
+	$data = project_child_fcc_detail_data( 'active_summary' === $name );
 	if ( ! $data ) { return ''; }
 	if ( 'price' === $name ) { return project_child_fcc_price( $data['salePrice'] ); }
 	if ( 'original' === $name ) { return $data['originalPrice'] ? project_child_fcc_price( $data['originalPrice'] ) : ''; }
@@ -288,15 +313,15 @@ function project_child_fcc_product_value( $name ) {
 	if ( 'buy' === $name ) { $label = project_child_fcc_raw_text( 'fcc_ui_buy_prefix', 'shared' ); return $data['salePrice'] ? $label . ' – ' . project_child_fcc_price( $data['salePrice'] ) : $label; }
 	if ( 'target_summary' === $name ) { return implode( ' • ', $data['targetUsers'] ); }
 	if ( 'active_summary' === $name ) { return implode( ' • ', wp_list_pluck( $data['actives'], 'name' ) ); }
-	if ( 'callout_title' === $name ) { return get_post_meta( $data['id'], 'fcc_detail_callout_title', true ) ?: ( $data['spiculeCount'] ? project_child_fcc_raw_text( 'fcc_ui_callout_technology', 'shared' ) : project_child_fcc_raw_text( 'fcc_ui_callout_default_title', 'shared' ) ); }
-	if ( 'callout_subtitle' === $name ) { return get_post_meta( $data['id'], 'fcc_detail_callout_subtitle', true ) ?: ( $data['spiculeCount'] ?: project_child_fcc_raw_text( 'fcc_ui_callout_default_subtitle', 'shared' ) ); }
+	if ( 'callout_title' === $name ) { return get_post_meta( $data['id'], 'fcc_detail_callout_title', true ) ?: ( 'fcc_combo' === get_post_type( $data['id'] ) ? $data['badge'] : ( $data['spiculeCount'] ? project_child_fcc_raw_text( 'fcc_ui_callout_technology', 'shared' ) : project_child_fcc_raw_text( 'fcc_ui_callout_default_title', 'shared' ) ) ); }
+	if ( 'callout_subtitle' === $name ) { return get_post_meta( $data['id'], 'fcc_detail_callout_subtitle', true ) ?: ( 'fcc_combo' === get_post_type( $data['id'] ) ? $data['shortName'] : ( $data['spiculeCount'] ?: project_child_fcc_raw_text( 'fcc_ui_callout_default_subtitle', 'shared' ) ) ); }
 	return isset( $data[ $name ] ) && is_scalar( $data[ $name ] ) ? (string) $data[ $name ] : '';
 }
 
 function project_child_fcc_order_options() {
 	echo '<option value="">' . esc_html( project_child_fcc_raw_text( 'fcc_ui_choose_item', 'shared' ) ) . '</option>';
 	$data = project_core_fcc_frontend_data();
-	foreach ( $data['combos'] as $combo ) { echo '<option value="combo_' . esc_attr( $combo['id'] ) . '">' . esc_html( $combo['name'] . ' – ' . project_child_fcc_price( $combo['salePrice'] ) ) . '</option>'; }
+	foreach ( $data['combos'] as $combo ) { echo '<option value="combo_' . esc_attr( $combo['id'] ) . '"' . selected( get_queried_object_id(), $combo['id'], false ) . '>' . esc_html( $combo['name'] . ' – ' . project_child_fcc_price( $combo['salePrice'] ) ) . '</option>'; }
 	foreach ( $data['products'] as $product ) { echo '<option value="prod_' . esc_attr( $product['id'] ) . '"' . selected( get_queried_object_id(), $product['id'], false ) . '>' . esc_html( $product['shortName'] . ' – ' . project_child_fcc_price( $product['salePrice'] ) ) . '</option>'; }
 }
 

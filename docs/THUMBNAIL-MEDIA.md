@@ -1,5 +1,7 @@
 # Bộ ảnh Thumbnail – 1.0.5
 
+> Cập nhật **[2.2.0](../release/v2.2.0/RELEASE.md)**, 16/10/2026: combo có trang chi tiết `/combo/{slug}/`, dùng chung bố cục, dải thumbnail và popup ảnh với sản phẩm. Vào **Nội dung website → Combo → Sửa combo → Ảnh sản phẩm / combo – đại diện & thứ tự** để chọn nhiều ảnh, đặt đại diện/hover, kéo thả hoặc dùng ↑/↓, rồi nhấn **Cập nhật**. Khung quản lý hỗ trợ tối đa 50 ảnh; thay thế hai trường ảnh ACF cũ. Combo C–CX4 giữ ảnh đại diện cũ và thêm 3 ảnh người dùng gửi, tổng 4 thumbnail. Bản ghi Media hiện có được giữ; gallery đã sửa/xóa không bị đặt lại khi khởi tạo lại. Các hướng dẫn ACF combo bên dưới là lịch sử.
+
 > Bản chốt **[2.0.0](../release/v2.0.0/RELEASE.md)** xuất lại dữ liệu hiện tại: 71 Media; Mandelic có 5 ảnh gồm ảnh hover mới, các sản phẩm còn lại có 4 ảnh. Khung quản lý ảnh cho phép chọn ảnh hover độc lập với ảnh đại diện/thứ tự. Ảnh hover lưu ở `fcc_hoverImage`, được exporter đóng gói và initializer ánh xạ sang ID trên site mới; giữ lựa chọn đã sửa/xóa khi chạy lại. Nhãn và ảnh hover combo chỉnh trong ACF của combo. Các số liệu 1.0.5 bên dưới là lịch sử. Xem hạn chế popup gallery tại 320–375 px trong release notes.
 
 Nguồn do người dùng cung cấp ngày 15/10/2026: `template/Thumbnail/AVT KH` và `template/Thumbnail/ẢNH SẢN PHẨM`. Thay avatar nhỏ của 7 thẻ feedback; dùng 40 ảnh sản phẩm cho đại diện và thư viện thumbnail. Nội dung đánh giá, tên, giá, combo và ảnh lớn bên trong thẻ feedback giữ nguyên.

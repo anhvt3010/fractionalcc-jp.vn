@@ -45,7 +45,7 @@ function project_child_fcc_metadata() {
 	if ( ! project_child_fcc_seo_context() || project_child_fcc_external_seo() ) { return; }
 	$kind        = project_child_fcc_kind();
 	$description = project_child_fcc_seo_value( 'description' );
-	$product     = 'product' === $kind ? project_core_fcc_product( get_queried_object_id(), false ) : array();
+	$product     = 'product' === $kind ? project_child_fcc_detail_data( false ) : array();
 	if ( ! $description && $product ) { $description = wp_strip_all_tags( $product['tagline'] ); }
 	$url      = project_child_fcc_seo_url();
 	$title    = wp_get_document_title();

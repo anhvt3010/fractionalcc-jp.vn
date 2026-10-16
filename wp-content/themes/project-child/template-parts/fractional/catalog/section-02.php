@@ -15,9 +15,9 @@ if ( '' === $fcc_combo_description ) { $fcc_combo_description = $fcc_combo['idea
         </div>
 
         <div class="brief-brand">
-          <div class="brand-visual-wrap">
+          <a class="brand-visual-wrap" href="<?php echo esc_url( $fcc_combo['url'] ); ?>" aria-label="<?php echo esc_attr( $fcc_combo['name'] ); ?>">
             <?php echo project_child_fcc_picture_html( $fcc_combo['image'], project_child_fcc_hero_product_image_alt(), '', array( 'loading' => 'lazy' ) ); ?>
-          </div>
+          </a>
           <div class="brand-content-wrap">
             <h3 class="brand-content-quote combo-spotlight-title"><?php echo esc_html( $fcc_combo['name'] ); ?></h3>
             <p class="brand-content-desc"><?php echo esc_html( $fcc_combo_description ); ?></p>

@@ -480,13 +480,16 @@ function initCatalogFilter() {
 }
 
 function initProductDetailView() {
-  const product = window.FCC_DATA?.products.find(item => item.id === window.FCC_CONFIG?.productId);
+  const id = window.FCC_CONFIG?.productId;
+  const combo = window.FCC_DATA?.combos.find(item => item.id === id);
+  const product = combo || window.FCC_DATA?.products.find(item => item.id === id);
   if (!product) return;
+  const orderCode = (combo ? 'combo_' : 'prod_') + product.id;
   document.querySelectorAll('#pd-buy-now-btn,#pd-mobile-buy-btn,#pd-header-order-btn,#pd-header-order-btn-mob').forEach(button => {
-    button.dataset.productSelect = 'prod_' + product.id;
+    button.dataset.productSelect = orderCode;
   });
   const inlineSelect = document.getElementById('inline-product-select');
-  if (inlineSelect) inlineSelect.value = 'prod_' + product.id;
+  if (inlineSelect) inlineSelect.value = orderCode;
   initProductImageGallery();
 }
 

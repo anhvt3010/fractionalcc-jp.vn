@@ -11,7 +11,7 @@ $right = array(
 	array( 'field' => 'fcc_nav_concerns', 'url' => project_core_fcc_url( 'concerns' ), 'current' => 'concerns' === $kind ? 'page' : '' ),
 	array( 'field' => 'fcc_nav_legal', 'url' => project_core_fcc_url( 'home', '#cam-ket-phap-ly' ), 'current' => '' ),
 );
-$order_code = 'product' === $kind ? 'prod_' . get_queried_object_id() : project_child_fcc_featured_combo_order_code();
+$order_code = 'product' === $kind ? project_child_fcc_detail_order_code() : project_child_fcc_featured_combo_order_code();
 get_template_part( 'template-parts/fractional/shared/part-8fe73eaef545' );
 ?>
 <header class="site-header fcc-unified-header">

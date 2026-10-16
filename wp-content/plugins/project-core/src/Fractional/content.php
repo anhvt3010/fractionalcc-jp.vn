@@ -24,7 +24,7 @@ function project_core_fcc_normalize_card_tags( $value ) {
 function project_core_fcc_register_content() {
 	$types = array(
 		'fcc_product'    => array( 'Sản phẩm', 'Sản phẩm', true ),
-		'fcc_combo'      => array( 'Combo', 'Combo', false ),
+		'fcc_combo'      => array( 'Combo', 'Combo', true ),
 		'fcc_ingredient' => array( 'Hoạt chất', 'Hoạt chất', false ),
 		'fcc_site'       => array( 'Thông tin chung', 'Thông tin chung', false ),
 	);
@@ -35,7 +35,7 @@ function project_core_fcc_register_content() {
 				'labels' => array( 'name' => $definition[0], 'singular_name' => $definition[1], 'add_new_item' => 'Thêm ' . mb_strtolower( $definition[1] ), 'edit_item' => 'Sửa ' . mb_strtolower( $definition[1] ) ),
 				'public' => $definition[2], 'show_ui' => true, 'show_in_rest' => 'fcc_product' === $type,
 				'show_in_menu' => 'project-website-content', 'has_archive' => false,
-				'rewrite' => $definition[2] ? array( 'slug' => 'san-pham', 'with_front' => false ) : false,
+				'rewrite' => $definition[2] ? array( 'slug' => 'fcc_combo' === $type ? 'combo' : 'san-pham', 'with_front' => false ) : false,
 				// Product copy uses ACF; the unified media box edits the existing gallery blocks.
 				'supports' => array( 'title', 'page-attributes', 'revisions' ),
 				'capability_type' => 'page', 'map_meta_cap' => true,
@@ -44,6 +44,15 @@ function project_core_fcc_register_content() {
 	}
 }
 add_action( 'init', 'project_core_fcc_register_content' );
+
+/** Refresh routes once when the public combo detail route is introduced. */
+function project_core_fcc_combo_detail_routes() {
+	if ( '1' !== get_option( 'project_core_fcc_combo_detail_routes' ) ) {
+		flush_rewrite_rules( false );
+		update_option( 'project_core_fcc_combo_detail_routes', '1', false );
+	}
+}
+add_action( 'init', 'project_core_fcc_combo_detail_routes', 20 );
 
 function project_core_fcc_page_id( $kind ) {
 	$ids = get_option( 'project_core_fcc_pages', array() );
@@ -124,6 +133,23 @@ function project_core_fcc_product( $post_id, $with_details = true ) {
 	$data['hoverImage'] = $hover_image_id ? wp_get_attachment_image_url( $hover_image_id, 'full' ) : '';
 	$data['hoverImageAlt'] = $hover_image_id ? ( (string) get_post_meta( $hover_image_id, '_wp_attachment_image_alt', true ) ?: $data['name'] ) : '';
 	if ( ! $with_details ) { return $data; }
+	$data = project_core_fcc_gallery_data( $post_id, $data );
+	$data['actives'] = array();
+	$ingredient_ids = array_filter( array_map( 'absint', (array) get_post_meta( $post->ID, 'fcc_actives', true ) ) );
+	$ingredients = $ingredient_ids ? get_posts( array( 'post_type' => 'fcc_ingredient', 'post_status' => 'publish', 'post__in' => $ingredient_ids, 'posts_per_page' => count( $ingredient_ids ), 'orderby' => 'post__in', 'no_found_rows' => true ) ) : array();
+	foreach ( $ingredients as $ingredient ) {
+		if ( $ingredient ) {
+			$data['actives'][] = array( 'name' => get_the_title( $ingredient ), 'tag' => (string) get_post_meta( $ingredient->ID, 'fcc_tag', true ), 'desc' => (string) get_post_meta( $ingredient->ID, 'fcc_description', true ) );
+		}
+	}
+	return $data;
+}
+
+/** Product and combo galleries use the same ordered blocks and image metadata. */
+function project_core_fcc_gallery_data( $post_id, $data ) {
+	$image_id = absint( get_post_meta( $post_id, 'fcc_image', true ) );
+	$data['imageAlt'] = $image_id ? (string) get_post_meta( $image_id, '_wp_attachment_image_alt', true ) : '';
+	if ( '' === $data['imageAlt'] ) { $data['imageAlt'] = $data['name']; }
 	$data['gallery'] = array();
 	$data['galleryAlts'] = array();
 	$data['galleryThumbs'] = array();
@@ -139,14 +165,6 @@ function project_core_fcc_product( $post_id, $with_details = true ) {
 	if ( $data['image'] && ! in_array( $data['image'], $data['gallery'], true ) ) { array_unshift( $data['gallery'], $data['image'] ); }
 	if ( $data['image'] ) { $data['galleryAlts'][ $data['image'] ] = $data['imageAlt']; $data['galleryThumbs'][ $data['image'] ] = wp_get_attachment_image_url( $image_id, 'thumbnail' ) ?: $data['image']; }
 	$data['gallery'] = array_values( array_unique( $data['gallery'] ) );
-	$data['actives'] = array();
-	$ingredient_ids = array_filter( array_map( 'absint', (array) get_post_meta( $post->ID, 'fcc_actives', true ) ) );
-	$ingredients = $ingredient_ids ? get_posts( array( 'post_type' => 'fcc_ingredient', 'post_status' => 'publish', 'post__in' => $ingredient_ids, 'posts_per_page' => count( $ingredient_ids ), 'orderby' => 'post__in', 'no_found_rows' => true ) ) : array();
-	foreach ( $ingredients as $ingredient ) {
-		if ( $ingredient ) {
-			$data['actives'][] = array( 'name' => get_the_title( $ingredient ), 'tag' => (string) get_post_meta( $ingredient->ID, 'fcc_tag', true ), 'desc' => (string) get_post_meta( $ingredient->ID, 'fcc_description', true ) );
-		}
-	}
 	return $data;
 }
 
@@ -165,10 +183,10 @@ function project_core_fcc_combo_contents( $combo ) {
 function project_core_fcc_combos() {
 	$data = array();
 	foreach ( project_core_fcc_posts( 'fcc_combo' ) as $combo ) {
-		$item = array( 'id' => $combo->ID, 'name' => get_the_title( $combo ), 'productIds' => array_map( 'absint', (array) get_post_meta( $combo->ID, 'fcc_productIds', true ) ) );
+		$item = array( 'id' => $combo->ID, 'name' => get_the_title( $combo ), 'url' => get_permalink( $combo ), 'productIds' => array_map( 'absint', (array) get_post_meta( $combo->ID, 'fcc_productIds', true ) ) );
 		foreach ( array( 'code', 'shortName', 'badge', 'idealFor', 'routine', 'gift' ) as $name ) { $item[ $name ] = (string) get_post_meta( $combo->ID, 'fcc_' . $name, true ); }
 		foreach ( array( 'originalPrice', 'salePrice', 'rating', 'reviewCount' ) as $name ) { $value = get_post_meta( $combo->ID, 'fcc_' . $name, true ); $item[ $name ] = '' === $value ? null : (float) $value; }
-		$item['saveAmount'] = max( 0, (float) $item['originalPrice'] - (float) $item['salePrice'] );
+		$item['saveAmount'] = null !== $item['salePrice'] && null !== $item['originalPrice'] ? max( 0, $item['originalPrice'] - $item['salePrice'] ) : 0;
 		$item['productsIncluded'] = project_core_fcc_lines( get_post_meta( $combo->ID, 'fcc_productsIncluded', true ) );
 		$item['image'] = wp_get_attachment_image_url( absint( get_post_meta( $combo->ID, 'fcc_image', true ) ), 'full' );
 		$hover_image_id = absint( get_post_meta( $combo->ID, 'fcc_hoverImage', true ) );
@@ -179,6 +197,16 @@ function project_core_fcc_combos() {
 		$data[] = $item;
 	}
 	return $data;
+}
+
+/** Read one published combo, including its optional detail gallery. */
+function project_core_fcc_combo( $post_id, $with_details = true ) {
+	foreach ( project_core_fcc_combos() as $combo ) {
+		if ( (int) $post_id === $combo['id'] ) {
+			return $with_details ? project_core_fcc_gallery_data( $post_id, $combo ) : $combo;
+		}
+	}
+	return array();
 }
 
 function project_core_fcc_frontend_data( $with_products = true ) {

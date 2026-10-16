@@ -3,9 +3,10 @@
 defined( 'ABSPATH' ) || exit;
 
 function project_core_fcc_product_media_box() {
-	add_meta_box( 'fcc-product-media', 'Ảnh sản phẩm – đại diện & thứ tự', 'project_core_fcc_render_product_media', 'fcc_product', 'normal', 'high' );
+	add_meta_box( 'fcc-product-media', 'Ảnh sản phẩm / combo – đại diện & thứ tự', 'project_core_fcc_render_product_media', array( 'fcc_product', 'fcc_combo' ), 'normal', 'high' );
 }
 add_action( 'add_meta_boxes_fcc_product', 'project_core_fcc_product_media_box' );
+add_action( 'add_meta_boxes_fcc_combo', 'project_core_fcc_product_media_box' );
 
 function project_core_fcc_render_product_media( $post ) {
 	$ids = project_core_fcc_gallery_ids( $post->ID );
@@ -35,7 +36,7 @@ function project_core_fcc_render_product_media( $post ) {
 
 function project_core_fcc_product_media_assets( $hook ) {
 	$screen = get_current_screen();
-	if ( ! in_array( $hook, array( 'post.php', 'post-new.php' ), true ) || ! $screen || 'fcc_product' !== $screen->post_type ) { return; }
+	if ( ! in_array( $hook, array( 'post.php', 'post-new.php' ), true ) || ! $screen || ! in_array( $screen->post_type, array( 'fcc_product', 'fcc_combo' ), true ) ) { return; }
 	wp_enqueue_media();
 	$root = dirname( __DIR__, 2 );
 	wp_enqueue_script( 'fcc-product-media', plugins_url( 'assets/product-media.js', $root . '/project-core.php' ), array( 'jquery', 'jquery-ui-sortable', 'media-views' ), (string) filemtime( $root . '/assets/product-media.js' ), true );
@@ -66,14 +67,16 @@ function project_core_fcc_save_product_media( $post_id ) {
 		$updated = wp_update_post( wp_slash( array( 'ID' => $post_id, 'post_content' => project_core_fcc_gallery_content( $content, $ids ) ) ), true );
 		if ( is_wp_error( $updated ) ) { set_transient( 'fcc_media_error_' . get_current_user_id(), 1, MINUTE_IN_SECONDS ); return; }
 		update_post_meta( $post_id, 'fcc_image', $primary );
-		update_post_meta( $post_id, '_fcc_image', 'field_fcc_image' );
+		$is_combo = 'fcc_combo' === get_post_type( $post_id );
+		update_post_meta( $post_id, '_fcc_image', $is_combo ? 'field_fcc_combo_image' : 'field_fcc_image' );
 		update_post_meta( $post_id, 'fcc_hoverImage', $hover );
-		update_post_meta( $post_id, '_fcc_hoverImage', 'field_fcc_hoverImage' );
+		update_post_meta( $post_id, '_fcc_hoverImage', $is_combo ? 'field_fcc_combo_hoverImage' : 'field_fcc_hoverImage' );
 		update_post_meta( $post_id, '_fcc_gallery_initialized', 1 );
 		update_post_meta( $post_id, '_fcc_product_media_customized', 1 );
 	} finally { $saving = false; }
 }
 add_action( 'save_post_fcc_product', 'project_core_fcc_save_product_media', 20 );
+add_action( 'save_post_fcc_combo', 'project_core_fcc_save_product_media', 20 );
 
 function project_core_fcc_product_media_notice() {
 	$key = 'fcc_media_error_' . get_current_user_id();

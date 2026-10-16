@@ -1,0 +1,16 @@
+[
+    {
+        "package": "project-core-v2.2.0.zip",
+        "files": 28,
+        "bytes": 141088,
+        "sha256": "798ea1a2a78ebe60359fe8900fba515738a061cc4347844330435fdc51cb7e9c",
+        "crcAndSourceMatch": true
+    },
+    {
+        "package": "project-child-v2.2.0.zip",
+        "files": 300,
+        "bytes": 26487768,
+        "sha256": "4f8809051e6203c6ad9a125021556b8d7fe50b14a021bc07902045588dc1c266",
+        "crcAndSourceMatch": true
+    }
+]

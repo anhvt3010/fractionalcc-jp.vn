@@ -30,7 +30,7 @@ if ( in_array( 'fcc_combo', wp_list_pluck( $posts, 'post_type' ), true ) ) {
 					</div>
 					<div class="combo-compact-actions">
 						<button class="btn-card-buy" data-open-order data-product-select="combo_<?php echo esc_attr( $combo['id'] ); ?>"><?php echo project_child_fcc_text( 'fcc_ui_m_13f5d50dabf4', 'shared' ); ?></button>
-						<a href="<?php echo esc_url( project_core_fcc_url( 'catalog', '#danh-sach-combo' ) ); ?>" class="btn-card-view"><?php echo project_child_fcc_text( 'fcc_ui_m_d377ac936d0f', 'shared' ); ?></a>
+						<a href="<?php echo esc_url( $combo['url'] ); ?>" class="btn-card-view"><?php echo project_child_fcc_text( 'fcc_ui_m_d377ac936d0f', 'shared' ); ?></a>
 					</div>
 				</div>
 			</div>

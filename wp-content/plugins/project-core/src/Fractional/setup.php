@@ -212,6 +212,16 @@ function project_core_fcc_import_document( $data, $content_status, $update_catal
 	foreach ( $data['combos'] as $combo ) {
 		$id = project_core_fcc_seed_post( 'fcc_combo', 'combo_' . $combo['id'], $combo['name'], $combo['slug'] ?? sanitize_title( $combo['code'] ), $combo['menuOrder'] ?? 0, false, $combo );
 		if ( is_wp_error( $id ) ) { return $id; }
+		// Upgrade the former image-only combo once; never replace an edited or cleared gallery.
+		if ( ! metadata_exists( 'post', $id, '_fcc_gallery_initialized' ) ) {
+			if ( '' === get_post_field( 'post_content', $id ) && ! empty( $combo['content'] ) ) {
+				$content = project_core_fcc_resolve_default( $combo['content'] );
+				if ( is_wp_error( $content ) ) { return $content; }
+				$updated = wp_update_post( wp_slash( array( 'ID' => $id, 'post_content' => $content ) ), true );
+				if ( is_wp_error( $updated ) ) { return $updated; }
+			}
+			add_post_meta( $id, '_fcc_gallery_initialized', 1, true );
+		}
 		foreach ( $combo as $name => $value ) {
 			if ( in_array( $name, array( 'id', 'name', 'slug', 'menuOrder', 'content', 'excerpt', 'fields' ), true ) ) { continue; }
 			$replace = $update_catalog && in_array( $name, $combo_fields, true );

@@ -1,5 +1,5 @@
 {
-    "version": "2.1.0",
+    "version": "2.2.1",
     "pages": {
         "shared": {
             "title": "Thông tin và giao diện chung Fractional CC",
@@ -7089,7 +7089,7 @@
             "name": "Combo Siêu tinh chất vi kim giảm thâm Fractional CC | Serum C–CX4",
             "slug": "c-cx4",
             "menuOrder": 0,
-            "content": "",
+            "content": "<!-- wp:gallery {\"linkTo\":\"none\"} --><figure class=\"wp-block-gallery has-nested-images columns-default is-cropped\"><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/banner/combo-c-cx4-gold.png}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/banner/combo-c-cx4-gold.png}}\" alt=\"\" class=\"wp-image-{{fcc_media_id:assets/images/banner/combo-c-cx4-gold.png}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-01.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/combo-c-cx4-detail-01.webp}}\" alt=\"Combo Serum C–CX4 – ảnh chi tiết 1\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-01.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-02.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/combo-c-cx4-detail-02.webp}}\" alt=\"Combo Serum C–CX4 – ảnh chi tiết 2\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-02.webp}}\"/></figure><!-- /wp:image --><!-- wp:image {\"id\":\"{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-03.webp}}\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} --><figure class=\"wp-block-image size-full\"><img src=\"{{fcc_media_url:assets/images/thumbnail/combo-c-cx4-detail-03.webp}}\" alt=\"Combo Serum C–CX4 – ảnh chi tiết 3\" class=\"wp-image-{{fcc_media_id:assets/images/thumbnail/combo-c-cx4-detail-03.webp}}\"/></figure><!-- /wp:image --></figure><!-- /wp:gallery -->",
             "excerpt": "",
             "fields": {
                 "fcc_spotlightDescription": {
@@ -7155,7 +7155,7 @@
             "originalPrice": "1700000",
             "salePrice": "1237500",
             "saveAmount": "462500",
-            "gift": "Serum dưỡng môi PDRN Shot theo ảnh combo trong brief; xác nhận quà tặng khi đặt hàng.",
+            "gift": "Serum dưỡng môi PDRN Shot theo ảnh combo; xác nhận khi đặt hàng.",
             "image": "assets/images/banner/combo-c-cx4-gold.png",
             "rating": "5",
             "reviewCount": "1200"
@@ -8047,6 +8047,27 @@
             "sha256": "497b2c703e610b15bf8b7d6d642e97cc6df480430afbae0ae023278c399cd02e",
             "title": "fractional-cc-logo-3",
             "alt": "",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/combo-c-cx4-detail-01.webp": {
+            "sha256": "388d587bdf8f0d018853f381baf3cc347185070636102db80f96d204519db186",
+            "title": "Combo Serum C–CX4 – ảnh chi tiết 1",
+            "alt": "Combo Serum C–CX4 – ảnh chi tiết 1",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/combo-c-cx4-detail-02.webp": {
+            "sha256": "7e46e46164556fffc199654404fb934668d07b9a259dcfcf13e9a33ddf9f94be",
+            "title": "Combo Serum C–CX4 – ảnh chi tiết 2",
+            "alt": "Combo Serum C–CX4 – ảnh chi tiết 2",
+            "caption": "",
+            "description": ""
+        },
+        "assets/images/thumbnail/combo-c-cx4-detail-03.webp": {
+            "sha256": "954c061209f3bcc7f370c93bbb0b8ba0fcb7f843c11acb532a2324b782a3926c",
+            "title": "Combo Serum C–CX4 – ảnh chi tiết 3",
+            "alt": "Combo Serum C–CX4 – ảnh chi tiết 3",
             "caption": "",
             "description": ""
         }

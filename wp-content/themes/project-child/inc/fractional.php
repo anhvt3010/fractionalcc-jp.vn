@@ -8,7 +8,7 @@ require_once __DIR__ . '/fractional-admin.php';
 require_once __DIR__ . '/seo.php';
 
 function project_child_fcc_kind() {
-	if ( is_singular( 'fcc_product' ) ) { return 'product'; }
+	if ( is_singular( array( 'fcc_product', 'fcc_combo' ) ) ) { return 'product'; }
 	$template = get_page_template_slug();
 	if ( preg_match( '#^templates/fractional-(home|catalog|policies|thankyou|concerns)\.php$#', (string) $template, $match ) ) { return $match[1]; }
 	return '';

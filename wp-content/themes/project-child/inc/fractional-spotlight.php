@@ -36,7 +36,7 @@ function project_child_fcc_product_presentation_fields() {
 		if ( 'image' === $definition[1] ) { $field += array( 'return_format' => 'id', 'preview_size' => 'medium', 'mime_types' => 'jpg,jpeg,png,webp' ); }
 		$fields[] = $field;
 	}
-	acf_add_local_field_group( array( 'key' => 'group_fcc_product_presentation', 'title' => 'SEO & nhãn ảnh trang sản phẩm', 'fields' => $fields, 'menu_order' => 21, 'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ) ) ) );
+	acf_add_local_field_group( array( 'key' => 'group_fcc_product_presentation', 'title' => 'SEO & nhãn ảnh trang sản phẩm / combo', 'fields' => $fields, 'menu_order' => 21, 'location' => array( array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_product' ) ), array( array( 'param' => 'post_type', 'operator' => '==', 'value' => 'fcc_combo' ) ) ) ) );
 }
 add_action( 'acf/init', 'project_child_fcc_product_presentation_fields' );
 
@@ -44,7 +44,7 @@ function project_child_fcc_spotlight_data( $post, $combos ) {
 	$is_combo = 'fcc_combo' === $post->post_type;
 	$data = $is_combo ? ( isset( $combos[ $post->ID ] ) ? $combos[ $post->ID ] : array() ) : project_core_fcc_product( $post->ID, true );
 	if ( ! $data ) { return array(); }
-	$data['url'] = $is_combo ? project_core_fcc_url( 'catalog' ) : $data['url'];
+	$data['url'] = get_permalink( $post );
 	$data['order_code'] = ( $is_combo ? 'combo_' : 'prod_' ) . $post->ID;
 	$image_id = absint( get_post_meta( $post->ID, 'fcc_image', true ) );
 	$data['alt'] = get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ?: $data['name'];

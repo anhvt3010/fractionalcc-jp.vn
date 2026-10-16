@@ -37,7 +37,7 @@ $search_attr = mb_strtolower( implode( ' ', array_filter( $search_parts ) ) );
 $concerns_attr = implode( ' ', array_unique( $concerns ) );
 $order_select  = 'combo_' . $combo['id'];
 $badge_text    = ! empty( $combo['badge'] ) ? $combo['badge'] : 'COMBO TIẾT KIỆM';
-$detail_url    = ! empty( $args['home'] ) ? project_core_fcc_url( 'catalog' ) . '#danh-sach-combo' : '#danh-sach-combo';
+$detail_url    = $combo['url'];
 $rating        = ! empty( $args['home'] ) ? (string) get_post_meta( $combo['id'], 'fcc_spotlightRating', true ) : project_child_fcc_rating_text( $combo );
 if ( '' === $rating ) { $rating = project_child_fcc_rating_text( $combo ); }
 $has_hover     = ! empty( $combo['hoverImage'] );
