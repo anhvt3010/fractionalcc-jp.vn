@@ -52,10 +52,15 @@ foreach ( $records as $id => $kind ) {
 		$p = project_core_fcc_product( $id, false );
 		$node = $graph['Product'] ?? array();
 		fcc_seo_check( $p['name'] === ( $node['name'] ?? '' ) && $p['image'] === ( $node['image'] ?? '' ), 'Product identity/image match CMS: ' . $id );
-		fcc_seo_check( (float) $p['salePrice'] === (float) ( $node['offers']['price'] ?? -1 ) && 'VND' === $node['offers']['priceCurrency'], 'Offer price/currency match CMS: ' . $id );
+		if ( null !== $p['salePrice'] && $p['salePrice'] > 0 ) {
+			fcc_seo_check( (float) $p['salePrice'] === (float) ( $node['offers']['price'] ?? -1 ) && 'VND' === $node['offers']['priceCurrency'], 'Offer price/currency match CMS: ' . $id );
+		} else {
+			fcc_seo_check( ! isset( $node['offers'] ), 'Missing/invalid price omits an offer: ' . $id );
+		}
 		fcc_seo_check( ! isset( $node['aggregateRating'] ) && ! isset( $node['review'] ) && ! isset( $node['offers']['availability'] ), 'No invented reviews or stock: ' . $id );
 		fcc_seo_check( isset( $graph['BreadcrumbList'] ) && 3 === count( $graph['BreadcrumbList']['itemListElement'] ), 'Visible product breadcrumb: ' . $id );
-		fcc_seo_check( 1 === $x->query( '//meta[@property="og:image"]' )->length, 'Product social image: ' . $id );
+		$has_social_image = $p['image'] || get_post_meta( $id, 'fcc_product_seo_image', true );
+		fcc_seo_check( ( $has_social_image ? 1 : 0 ) === $x->query( '//meta[@property="og:image"]' )->length, 'Product social image follows the saved image selection: ' . $id );
 	}
 }
 $provider = new WP_Sitemaps_Posts();

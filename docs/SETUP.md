@@ -1,5 +1,7 @@
 # Setup và workflow XAMPP
 
+> Giao diện **[3.0.2](../release/v3.0.2/RELEASE.md)**, 17/10/2026: popup video responsive và các chỉnh sửa combo đã chốt. Chỉ đóng gói theme, giữ Core/defaults 3.0.0 và CMS hiện có. Runtime lần này xác minh ở **D:/xampp/htdocs/fractionalcc-jp.vn**, PHP 8.2.12; Project Child 3.0.2/Kadence và Core/ACF active. ZIP đã kiểm tra cài mới, nâng theme từ 3.0.1 giữ dữ liệu, trình duyệt và SEO trên fixture riêng. Chưa triển khai hosting; các ghi chú C: bên dưới là lịch sử.
+
 > Cập nhật giao diện **[3.0.1](../release/v3.0.1/RELEASE.md)**, 16/10/2026: nền section trang chủ xen kẽ trắng/be; chỉ build child theme theo yêu cầu. Core/defaults vẫn 3.0.0, CMS/seed giữ nguyên. Đã kiểm tra màu nền liền kề desktop/mobile; không chạy lại bộ test đầy đủ.
 
 > Hiện hành **[release 3.0.0](../release/v3.0.0/RELEASE.md)**, 16/10/2026: runtime nguồn đã xác minh ở **C:/xampp/htdocs/fractionalcc-jp.vn**, URL `http://localhost/fractionalcc-jp.vn`, PHP 8.0.30, WordPress 7.1.3, Project Child/Kadence 1.5.2 và Core/ACF 6.8.10 active. Source/defaults 3.0.0; seed nguồn giữ 2.1.0 vì không chạy initializer trên site làm việc. Hai ZIP đã kiểm tra cài mới và nâng từ 2.2.1 trên fixture/database riêng, giữ edits và giá trị trống; browser khớp nguồn. Giữ hạn chế popup ảnh Mandelic 320–375 px. Chưa triển khai hosting. Các ghi chú môi trường/phiên bản bên dưới là lịch sử.

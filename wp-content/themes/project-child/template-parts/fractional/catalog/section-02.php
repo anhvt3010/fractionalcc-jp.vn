@@ -31,7 +31,9 @@ if ( '' === $fcc_combo_description ) { $fcc_combo_description = $fcc_combo['idea
                         <span class="combo-included-thumb"><?php echo project_child_fcc_picture_html( $fcc_product['image'], $fcc_product['imageAlt'], '', array( 'loading' => 'lazy', 'sizes' => '64px' ) ); ?></span>
                         <span class="combo-included-info">
                           <span class="combo-included-name"><?php echo esc_html( $fcc_product['name'] ); ?></span>
-                          <span class="combo-included-price">Giá mua lẻ: <strong><?php echo esc_html( project_child_fcc_price( $fcc_product['salePrice'] ) ); ?></strong></span>
+                          <?php if ( '' !== trim( $fcc_product['spiculeCount'] ) ) : ?>
+                            <span class="combo-included-spicules"><?php echo esc_html( $fcc_product['spiculeCount'] ); ?></span>
+                          <?php endif; ?>
                         </span>
                       </a>
                     </li>

@@ -6,6 +6,9 @@ import zlib from 'node:zlib';
 
 const version = process.argv[2];
 if (!/^\d+\.\d+\.\d+$/.test(version || '')) throw new Error('Version required.');
+const selectedPackage = process.argv[3] || 'all';
+if (!['all', 'project-core', 'project-child'].includes(selectedPackage)) throw new Error('Unsupported package selection.');
+const packages = [['project-core', 'plugins'], ['project-child', 'themes']].filter(([slug]) => selectedPackage === 'all' || selectedPackage === slug);
 const root = process.cwd();
 const release = path.join(root, 'release', 'v' + version);
 const table = Array.from({ length: 256 }, (_, i) => {
@@ -21,9 +24,9 @@ function crc32(bytes) {
 const sha256 = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const listFiles = directory => fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? listFiles(path.join(directory, entry.name)) : [path.join(directory, entry.name)]);
 const zips = fs.readdirSync(release).filter(file => file.endsWith('.zip')).sort();
-if (zips.length !== 2) throw new Error('Exactly two installable ZIPs required.');
+if (zips.length !== packages.length) throw new Error('Installable ZIP count differs from package selection.');
 const results = [];
-for (const [slug, directory] of [['project-core', 'plugins'], ['project-child', 'themes']]) {
+for (const [slug, directory] of packages) {
   const name = slug + '-v' + version + '.zip';
   if (!zips.includes(name)) throw new Error('Required package missing.');
   const buffer = fs.readFileSync(path.join(release, name));
@@ -61,7 +64,8 @@ for (const [slug, directory] of [['project-core', 'plugins'], ['project-child', 
   results.push({ name, bytes: buffer.length, files: count, sha256: sha256(buffer), root: slug + '/', crc: 'PASS', sourceParity: 'PASS', privateFiles: 'NONE', localUrls: 'NONE' });
 }
 const defaults = JSON.parse(fs.readFileSync('wp-content/plugins/project-core/defaults/fractional.json', 'utf8'));
-if (defaults.version !== version || defaults.approval.status !== 'approved') throw new Error('Approved defaults version mismatch.');
-const report = { passed: true, version, packages: results, defaults: { products: defaults.products.length, combos: defaults.combos.length, media: Object.keys(defaults.media).length, fields: Object.values(defaults.pages).reduce((sum, page) => sum + Object.keys(page.fields).length, 0) } };
+if ((selectedPackage !== 'project-child' && defaults.version !== version) || defaults.approval.status !== 'approved') throw new Error('Approved defaults version mismatch.');
+const report = { passed: true, version, selection: selectedPackage, packages: results, defaults: { version: defaults.version, products: defaults.products.length, combos: defaults.combos.length, media: Object.keys(defaults.media).length, fields: Object.values(defaults.pages).reduce((sum, page) => sum + Object.keys(page.fields).length, 0) } };
+fs.mkdirSync(path.join(release, 'qa'), { recursive: true });
 fs.writeFileSync(path.join(release, 'qa/packages.json'), JSON.stringify(report, null, 2));
 console.log(JSON.stringify(report, null, 2));

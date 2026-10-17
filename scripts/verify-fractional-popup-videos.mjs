@@ -8,15 +8,7 @@ const base = new URL(process.argv[2] || 'http://localhost/fractionalcc-jp.vn/');
 if (!['localhost', '127.0.0.1'].includes(base.hostname)) throw new Error('Local site required.');
 const out = path.resolve(process.argv[3] || 'scratch/popup-video-qa');
 fs.mkdirSync(out, { recursive: true });
-const mediaFile = path.join(out, 'fixture.mp4');
-if (!fs.existsSync(mediaFile)) {
-  const response = await fetch('https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4');
-  if (!response.ok) throw new Error('Could not download the CC0 video fixture.');
-  fs.writeFileSync(mediaFile, Buffer.from(await response.arrayBuffer()));
-}
-const relativeMedia = path.relative(process.cwd(), mediaFile).split(path.sep).map(encodeURIComponent).join('/');
-if (relativeMedia.startsWith('..')) throw new Error('QA output must be inside the local WordPress directory.');
-const fixtureUrl = new URL(relativeMedia, process.env.FCC_QA_ASSET_BASE || base).href;
+const viewports = [[1440, 900], [1024, 768], [768, 1024], [320, 568], [375, 667], [390, 844], [844, 390]];
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'fcc-video-qa-'));
 const exe = ['C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'].find(fs.existsSync);
 if (!exe) throw new Error('Chromium browser required.');
@@ -25,6 +17,7 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 let socket;
 let checks = 0;
 const errors = [];
+const configuredVideos = [];
 function check(ok, message) { if (!ok) throw new Error(message); checks++; }
 try {
   const portFile = path.join(profile, 'DevToolsActivePort');
@@ -63,6 +56,21 @@ try {
     if (result.exceptionDetails) throw new Error(result.exceptionDetails.exception?.description || result.exceptionDetails.text);
     return result.result.value;
   }
+  async function checkLayout(label) {
+    await delay(400);
+    const layout = await evaluate(`(() => {
+      const modal = document.querySelector('#fcc-video-modal');
+      const selectors = ['.fcc-video-modal-container', '.fcc-video-modal-header', '.fcc-video-modal-close', 'video, iframe'];
+      const boxes = selectors.map(selector => {
+        const box = modal.querySelector(selector).getBoundingClientRect();
+        return {selector, x:box.x, y:box.y, width:box.width, height:box.height, right:box.right, bottom:box.bottom};
+      });
+      const overlay = modal.getBoundingClientRect();
+      return {boxes, viewport:[innerWidth, innerHeight, visualViewport.width, visualViewport.height], overlay:[overlay.width, overlay.height], covers:overlay.width >= innerWidth - 1 && overlay.height >= innerHeight - 1, fits:boxes.every(box => box.width > 0 && box.height > 0 && box.x >= 0 && box.y >= 0 && box.right <= innerWidth + 1 && box.bottom <= innerHeight + 1)};
+    })()`);
+    check(layout.fits, 'Player, heading and close button fit: ' + label + ' ' + JSON.stringify(layout));
+    check(layout.covers, 'Backdrop covers viewport: ' + label + ' ' + JSON.stringify(layout));
+  }
   await cdp('Page.enable');
   await cdp('Runtime.enable');
   await cdp('Fetch.enable', { patterns: [{ urlPattern: 'https://drive.google.com/*' }, { urlPattern: 'https://www.youtube-nocookie.com/*' }] });
@@ -76,51 +84,114 @@ try {
   check(ready, 'Both homepage video triggers initialized.');
   check(await evaluate(`!document.querySelector('#fcc-video-modal video, #fcc-video-modal iframe')`), 'No player loads before opening.');
 
-  for (const width of [1440, 375]) {
-    await cdp('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 });
+  for (const [width, height] of viewports) {
+    await cdp('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: width < 600 });
     for (const selector of ['.brand-video-play-badge', '.review-video-preview-stage']) {
       const initial = await evaluate(`(async () => {
         const trigger = document.querySelector(${JSON.stringify(selector)});
         trigger.scrollIntoView({block:'center'}); trigger.focus(); trigger.click();
-        await new Promise(resolve=>setTimeout(resolve,100));
-        const modal = document.querySelector('#fcc-video-modal'), player = modal.querySelector('iframe');
+        await new Promise(resolve=>setTimeout(resolve,400));
+        const modal = document.querySelector('#fcc-video-modal'), player = modal.querySelector('video, iframe');
+        if (player?.tagName === 'VIDEO') { player.muted = true; await player.play(); player.pause(); player.currentTime = Math.min(1, player.duration / 2); }
         const box = modal.querySelector('.fcc-video-modal-container').getBoundingClientRect();
-        return {active:modal.classList.contains('active'), iframe:!!player, src:player?.src, expected:trigger.dataset.fccVideoModal, title:player?.title, focused:document.activeElement.classList.contains('fcc-video-modal-close'), fits:box.width <= innerWidth && box.left >= 0 && box.right <= innerWidth};
+        return {active:modal.classList.contains('active'), player:!!player, type:player?.tagName, dimensions:player?.tagName === 'VIDEO' ? [player.videoWidth, player.videoHeight] : null, src:player?.src, expected:trigger.dataset.fccVideoModal, title:player?.title || player?.getAttribute('aria-label'), focused:document.activeElement.classList.contains('fcc-video-modal-close'), fits:box.width <= innerWidth && box.left >= 0 && box.right <= innerWidth};
       })()`);
-      check(initial.active && initial.iframe && initial.src === initial.expected && initial.title, 'Correct embedded video: ' + width + selector);
+      check(initial.active && initial.player && initial.src === initial.expected && initial.title, 'Correct configured video: ' + width + selector);
+      if (width === viewports[0][0]) configuredVideos.push({selector, type:initial.type, src:initial.src, dimensions:initial.dimensions});
       check(initial.focused && initial.fits, 'Popup fits and receives keyboard focus: ' + width + ' ' + JSON.stringify(initial));
+      await checkLayout('configured ' + width + 'x' + height + selector);
+      const png = await cdp('Page.captureScreenshot', { format: 'png' });
+      fs.writeFileSync(path.join(out, 'uploaded-' + (selector.includes('brand') ? 'brand-' : 'review-') + width + 'x' + height + '.png'), Buffer.from(png.data, 'base64'));
       await cdp('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
-      check(await evaluate(`!document.querySelector('#fcc-video-modal').classList.contains('active') && !document.querySelector('#fcc-video-modal iframe') && document.activeElement === document.querySelector(${JSON.stringify(selector)})`), 'Escape unloads iframe and restores focus.');
+      check(await evaluate(`!document.querySelector('#fcc-video-modal').classList.contains('active') && !document.querySelector('#fcc-video-modal video, #fcc-video-modal iframe') && document.activeElement === document.querySelector(${JSON.stringify(selector)})`), 'Escape unloads player and restores focus.');
     }
   }
 
-  // Play a local CC0 MP4 without uploading or changing CMS content.
-  await evaluate(`for (const trigger of document.querySelectorAll('[data-fcc-video-modal]')) { trigger.dataset.fccVideoModal=${JSON.stringify(fixtureUrl)}; trigger.dataset.videoType='file'; }`);
-  for (const width of [1440, 375]) {
-    await cdp('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 });
-    for (const selector of ['.brand-video-play-badge', '.review-video-preview-stage']) {
-      check(await evaluate(`(async () => {
-        document.querySelector(${JSON.stringify(selector)}).click();
-        const video=document.querySelector('#fcc-video-modal video');
-        if (!video || !video.controls || !video.playsInline) return false;
-        video.muted=true; await video.play(); video.pause();
-        return video.readyState >= 2 && video.videoWidth > 0 && !document.querySelector('#fcc-video-modal iframe');
-      })()`), 'Native video decodes and plays: ' + width + selector);
-      check(await evaluate(`(() => { const box=document.querySelector('#fcc-video-modal video').getBoundingClientRect(); return box.width > 0 && box.width <= innerWidth && box.height > 0; })()`), 'Native player fits viewport.');
-      await delay(300);
-      if (selector === '.brand-video-play-badge') {
-        const png = await cdp('Page.captureScreenshot', { format: 'png' });
-        fs.writeFileSync(path.join(out, 'native-video-' + width + '.png'), Buffer.from(png.data, 'base64'));
+  // Keep provider embeds working when an editor uses the URL fallback.
+  await evaluate(`(async () => { for (const trigger of document.querySelectorAll('[data-fcc-video-modal]')) {
+    trigger.dataset.fccVideoModal = 'https://drive.google.com/file/d/fixture/preview'; trigger.dataset.videoType = 'embed';
+    trigger.click();
+    const frame = document.querySelector('#fcc-video-modal iframe');
+    if (!frame || frame.title !== trigger.dataset.videoTitle) throw new Error('Embed fallback missing.');
+    await new Promise(resolve => frame.addEventListener('load', resolve, {once:true}));
+    document.querySelector('.fcc-video-modal-close').click();
+  } })()`);
+  check(true, 'Both triggers support the embedded URL fallback.');
+
+  // Record local portrait/landscape fixtures; no external media or CMS writes.
+  for (const [name, mediaWidth, mediaHeight] of [['portrait', 360, 640], ['landscape', 640, 360]]) {
+    const base64 = await evaluate(`(async () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = ${mediaWidth}; canvas.height = ${mediaHeight};
+      const context = canvas.getContext('2d');
+      function draw() {
+        context.fillStyle = '#1a1815'; context.fillRect(0, 0, canvas.width, canvas.height);
+        context.strokeStyle = '#c5a059'; context.lineWidth = 8;
+        context.strokeRect(8, 8, canvas.width - 16, canvas.height - 16);
+        context.fillStyle = '#fff'; context.font = '24px sans-serif'; context.textAlign = 'center';
+        context.fillText('VIDEO ${mediaWidth} × ${mediaHeight}', canvas.width / 2, 60);
+        context.fillText('FULL FRAME', canvas.width / 2, canvas.height / 2);
+        context.fillText('BOTTOM EDGE', canvas.width / 2, canvas.height - 60);
       }
-      check(await evaluate(`(() => {
-        const oldVideo=document.querySelector('#fcc-video-modal video');
-        document.querySelector('.fcc-video-modal-close').click();
-        return oldVideo.paused && !oldVideo.getAttribute('src') && !document.querySelector('#fcc-video-modal video') && !document.body.classList.contains('fcc-video-modal-open');
-      })()`), 'Closing stops playback and unloads native media.');
+      draw();
+      const stream = canvas.captureStream(10);
+      const recorder = new MediaRecorder(stream, {mimeType:'video/webm;codecs=vp8'});
+      const chunks = [];
+      recorder.ondataavailable = event => chunks.push(event.data);
+      const stopped = new Promise(resolve => recorder.onstop = resolve);
+      recorder.start();
+      const timer = setInterval(draw, 100);
+      await new Promise(resolve => setTimeout(resolve, 800));
+      recorder.stop(); await stopped; clearInterval(timer); stream.getTracks().forEach(track => track.stop());
+      const bytes = new Uint8Array(await new Blob(chunks).arrayBuffer());
+      let binary = '';
+      for (let index = 0; index < bytes.length; index += 32768) binary += String.fromCharCode(...bytes.subarray(index, index + 32768));
+      return btoa(binary);
+    })()`);
+    const mediaFile = path.join(out, name + '.webm');
+    fs.writeFileSync(mediaFile, Buffer.from(base64, 'base64'));
+    const relativeMedia = path.relative(process.cwd(), mediaFile).split(path.sep).map(encodeURIComponent).join('/');
+    if (relativeMedia.startsWith('..')) throw new Error('QA output must be inside the local WordPress directory.');
+    const fixtureUrl = new URL(relativeMedia, process.env.FCC_QA_ASSET_BASE || base).href;
+    await evaluate(`for (const trigger of document.querySelectorAll('[data-fcc-video-modal]')) { trigger.dataset.fccVideoModal=${JSON.stringify(fixtureUrl)}; trigger.dataset.videoType='file'; }`);
+    for (const [width, height] of viewports) {
+      await cdp('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: width < 600 });
+      for (const selector of ['.brand-video-play-badge', '.review-video-preview-stage']) {
+        check(await evaluate(`(async () => {
+          document.querySelector(${JSON.stringify(selector)}).click();
+          const video=document.querySelector('#fcc-video-modal video');
+          if (!video || !video.controls || !video.playsInline) return false;
+          video.muted=true; await video.play(); video.pause();
+          return video.readyState >= 2 && video.videoWidth === ${mediaWidth} && video.videoHeight === ${mediaHeight} && !document.querySelector('#fcc-video-modal iframe');
+        })()`), 'Native ' + name + ' video decodes and plays: ' + width + selector);
+        await checkLayout(name + ' ' + width + 'x' + height + selector);
+        check(await evaluate(`getComputedStyle(document.querySelector('#fcc-video-modal video')).objectFit === 'contain'`), 'Full video displayed without cropping.');
+        if (selector === '.brand-video-play-badge') {
+          const png = await cdp('Page.captureScreenshot', { format: 'png' });
+          fs.writeFileSync(path.join(out, name + '-' + width + 'x' + height + '.png'), Buffer.from(png.data, 'base64'));
+        }
+        check(await evaluate(`(() => {
+          const oldVideo=document.querySelector('#fcc-video-modal video');
+          document.querySelector('.fcc-video-modal-close').click();
+          return oldVideo.paused && !oldVideo.getAttribute('src') && !document.querySelector('#fcc-video-modal video') && !document.body.classList.contains('fcc-video-modal-open');
+        })()`), 'Closing stops playback and unloads native media.');
+      }
     }
+    // Resize while the player is open, as when a phone rotates.
+    await evaluate(`document.querySelector('.brand-video-play-badge').click()`);
+    for (const [width, height] of [[390, 844], [844, 390], [768, 1024]]) {
+      await cdp('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: width < 600 });
+      await checkLayout(name + ' resize ' + width + 'x' + height);
+    }
+    await cdp('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9, modifiers: 8 });
+    check(await evaluate(`document.activeElement === document.querySelector('#fcc-video-modal video')`), 'Shift+Tab stays inside dialog.');
+    await cdp('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 });
+    check(await evaluate(`document.activeElement === document.querySelector('.fcc-video-modal-close')`), 'Tab returns to close button.');
+    await evaluate(`document.querySelector('.fcc-video-modal-backdrop').click()`);
+    check(await evaluate(`!document.querySelector('#fcc-video-modal video') && document.querySelector('#fcc-video-modal').getAttribute('aria-hidden') === 'true'`), 'Backdrop closes and unloads video.');
   }
   check(errors.length === 0, 'No browser script errors: ' + errors.join('; '));
-  fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify({ passed: true, checks, errors, widths: [1440, 375], providerRequests: 'stubbed', nativePlayback: 'local CC0 MP4 fixture' }, null, 2));
+  fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify({ passed: true, checks, errors, viewports, configuredVideos, providerRequests: 'stubbed', nativePlayback: 'configured uploads and local generated 360x640 and 640x360 WebM fixtures' }, null, 2));
   console.log('PASS: ' + checks + ' popup/browser checks. Screenshots: ' + out);
 } finally {
   if (socket?.readyState === 1) { socket.send(JSON.stringify({ id: 999999, method: 'Browser.close' })); socket.close(); }

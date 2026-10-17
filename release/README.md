@@ -1,5 +1,7 @@
 # Build và release Fractional CC
 
+Cập nhật giao diện **[Project Child 3.0.2](v3.0.2/RELEASE.md)**, 17/10/2026: popup video dọc/ngang responsive; bỏ giá lẻ trong hai mục combo; thêm thông tin vi kim màu vàng đậm; ảnh combo hiển thị đủ, không hở khung. Chỉ build ZIP theme theo yêu cầu, dùng cùng **Core/defaults 3.0.0**. Đã kiểm tra ZIP, cài mới, nâng từ theme 3.0.1 giữ edits/giá trị trống, responsive và SEO trên fixture riêng. Không xuất lại CMS; media riêng ở local cần upload/chọn trên hosting nếu chưa có. [Gói cài và hướng dẫn cập nhật](v3.0.2/RELEASE.md).
+
 Cập nhật giao diện **[Project Child 3.0.1](v3.0.1/RELEASE.md)**: nền các section trang chủ xen kẽ trắng/be, không còn hai section liền nhau trùng nền. Theo yêu cầu chỉ build một ZIP theme, dùng cùng **Core/defaults 3.0.0**; chỉ kiểm tra màu nền, không chạy lại bộ test đầy đủ. Cập nhật hosting chỉ cần thay gói theme này. Build riêng theme bằng `scripts/build-release.ps1 -Version 3.0.1 -Package project-child`; mặc định script vẫn build cả hai gói.
 
 Hiện hành **[3.0.0](v3.0.0/RELEASE.md)**, ngày 16/10/2026: chốt CMS và code hiện tại theo yêu cầu. Hai ZIP gồm 10 sản phẩm, 1 combo, 35 hoạt chất, 75 Media và 1.104 field; quản lý hai popup video bằng Media/URL, xuất/nhập video portable. Đã kiểm tra cài mới, nâng từ 2.2.1 giữ edits, dữ liệu, quyền/nonce, SEO, form, desktop/mobile và đối chiếu giao diện nguồn. [Hướng dẫn cập nhật hosting, checksum và kết quả](v3.0.0/RELEASE.md). Giữ hạn chế cũ popup ảnh Mandelic tại 320–375 px. Chưa triển khai hosting; các mốc dưới đây là lịch sử.

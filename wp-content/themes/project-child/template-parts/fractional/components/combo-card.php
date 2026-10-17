@@ -84,7 +84,6 @@ if ( $is_home ) :
 					<div class="synergy-list-item" data-combo-product-id="<?php echo esc_attr( $included_product['id'] ); ?>">
 						<span class="synergy-bullet">✓</span>
 						<span class="synergy-name"><?php echo esc_html( $included_product['name'] ); ?></span>
-						<span class="synergy-orig-price"><?php echo esc_html( project_child_fcc_price( $included_product['salePrice'] ) ); ?></span>
 					</div>
 					<?php endforeach; ?>
 					<?php if ( $combo['gift'] ) : ?>

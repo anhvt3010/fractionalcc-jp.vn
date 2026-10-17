@@ -1,0 +1,21 @@
+{
+  "contentUnchanged": true,
+  "beforeContentSha256": "c71c646ebba4ca10078fe4259c75a48b2205a3404d707bc5ac60492d41d4a2ef",
+  "afterContentSha256": "c71c646ebba4ca10078fe4259c75a48b2205a3404d707bc5ac60492d41d4a2ef",
+  "runtime": {
+    "root": "D:\\xampp\\htdocs\\fractionalcc-jp.vn/",
+    "url": "http://localhost/fractionalcc-jp.vn",
+    "php": "8.2.12",
+    "wordpress": "7.1.3",
+    "core": "3.0.0",
+    "child": "3.0.2",
+    "kadence": "1.5.2",
+    "acf": "6.8.10",
+    "active_plugins": [
+      "advanced-custom-fields/acf.php",
+      "project-core/project-core.php"
+    ],
+    "stylesheet": "project-child",
+    "template": "kadence"
+  }
+}

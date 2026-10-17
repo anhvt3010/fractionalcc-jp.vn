@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "theme": "3.0.2",
+  "core": "3.0.0",
+  "freshInitializationChecks": 3057,
+  "themeUpgradePreservationChecks": 7230,
+  "videoIntegrationChecks": 49,
+  "comboIntegrationChecks": 29,
+  "popupBrowserChecks": 232,
+  "comboBrowserChecks": 19,
+  "comboImageViewports": [1440, 1183, 1180, 1179, 1101, 1024, 768, 375, 320],
+  "seoChecks": 290,
+  "seoPages": 15,
+  "themePhpLint": "PASS: every packaged PHP file",
+  "mainJavaScriptSyntax": "PASS: source and compiled",
+  "workingCmsChanged": false,
+  "exportedNewDefaults": false,
+  "deployedToHosting": false,
+  "fullBusinessRegressionSuiteRerun": false,
+  "providerEmbeds": "stubbed for browser checks",
+  "knownPriorLimitation": "Mandelic product image popup at 320-375px remains outside this release scope."
+}

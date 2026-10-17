@@ -1,0 +1,311 @@
+{
+  "layouts": [
+    {
+      "width": 1440,
+      "src": "http://localhost/fcc-release-qa-302/wp-content/themes/project-child/assets/fractional/assets/images/approved/e444c335b9011e92-PQA-4.webp?ver=a1565660a221",
+      "natural": [
+        1200,
+        1200
+      ],
+      "fit": "contain",
+      "position": "50% 50%",
+      "wrap": {
+        "x": 21,
+        "y": 103.875,
+        "width": 691.5,
+        "height": 691.5,
+        "right": 712.5,
+        "bottom": 795.375
+      },
+      "picture": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "image": {
+        "x": 21,
+        "y": 103.875,
+        "width": 691.5,
+        "height": 691.5,
+        "right": 712.5,
+        "bottom": 795.375
+      }
+    },
+    {
+      "width": 1183,
+      "src": "http://localhost/fcc-release-qa-302/wp-content/themes/project-child/assets/fractional/assets/images/approved/e444c335b9011e92-PQA-4.webp?ver=a1565660a221",
+      "natural": [
+        1183,
+        1183
+      ],
+      "fit": "contain",
+      "position": "50% 50%",
+      "wrap": {
+        "x": 21,
+        "y": 168.875,
+        "width": 563,
+        "height": 563,
+        "right": 584,
+        "bottom": 731.875
+      },
+      "picture": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "image": {
+        "x": 21,
+        "y": 168.875,
+        "width": 563,
+        "height": 563,
+        "right": 584,
+        "bottom": 731.875
+      }
+    },
+    {
+      "width": 1180,
+      "src": "http://localhost/fcc-release-qa-302/wp-content/themes/project-child/assets/fractional/assets/images/approved/e444c335b9011e92-PQA-4.webp?ver=a1565660a221",
+      "natural": [
+        1180,
+        1180
+      ],
+      "fit": "contain",
+      "position": "50% 50%",
+      "wrap": {
+        "x": 21,
+        "y": 168.875,
+        "width": 561.5,
+        "height": 561.5,
+        "right": 582.5,
+        "bottom": 730.375
+      },
+      "picture": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "image": {
+        "x": 21,
+        "y": 168.875,
+        "width": 561.5,
+        "height": 561.5,
+        "right": 582.5,
+        "bottom": 730.375
+      }
+    },
+    {
+      "width": 1179,
+      "src": "http://localhost/fcc-release-qa-302/wp-content/themes/project-child/assets/fractional/assets/images/approved/e444c335b9011e92-PQA-4.webp?ver=a1565660a221",
+      "natural": [
+        1179,
+        1179
+      ],
+      "fit": "contain",
+      "position": "50% 50%",
+      "wrap": {
+        "x": 21,
+        "y": -111.125,
+        "width": 1122,
+        "height": 1122,
+        "right": 1143,
+        "bottom": 1010.875
+      },
+      "picture": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "image": {
+        "x": 21,
+        "y": -111.125,
+        "width": 1122,
+        "height": 1122,
+        "right": 1143,
+        "bottom": 1010.875
+      }
+    },
+    {
+      "width": 1101,
+      "src": "http://localhost/fcc-release-qa-302/wp-content/themes/project-child/assets/fractional/assets/images/approved/e444c335b9011e92-PQA-4.webp?ver=a1565660a221",
+      "natural": [
+        1101,
+        1101
+      ],
+      "fit": "contain",
+      "position": "50% 50%",
+      "wrap": {
+        "x": 21,
+        "y": -72.125,
+        "width": 1044,
+        "height": 1044,
+        "right": 1065,
+        "bottom": 971.875
+      },
+      "picture": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "image": {
+        "x": 21,
+        "y": -72.125,
+        "width": 1044,
+        "height": 1044,
+        "right": 1065,
+        "bottom": 971.875
+      }
+    },
+    {
+      "width": 1024,
+      "src": "http://localhost/fcc-release-qa-302/wp-content/themes/project-child/assets/fractional/assets/images/approved/e444c335b9011e92-PQA-4.webp?ver=a1565660a221",
+      "natural": [
+        1024,
+        1024
+      ],
+      "fit": "contain",
+      "position": "50% 50%",
+      "wrap": {
+        "x": 21,
+        "y": -33.671875,
+        "width": 967,
+        "height": 967,
+        "right": 988,
+        "bottom": 933.328125
+      },
+      "picture": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "image": {
+        "x": 21,
+        "y": -33.671875,
+        "width": 967,
+        "height": 967,
+        "right": 988,
+        "bottom": 933.328125
+      }
+    },
+    {
+      "width": 768,
+      "src": "http://localhost/fcc-release-qa-302/wp-content/themes/project-child/assets/fractional/assets/images/approved/e444c335b9011e92-PQA-4.webp?ver=a1565660a221",
+      "natural": [
+        768,
+        768
+      ],
+      "fit": "contain",
+      "position": "50% 50%",
+      "wrap": {
+        "x": 21,
+        "y": 94.015625,
+        "width": 711,
+        "height": 711,
+        "right": 732,
+        "bottom": 805.015625
+      },
+      "picture": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "image": {
+        "x": 21,
+        "y": 94.015625,
+        "width": 711,
+        "height": 711,
+        "right": 732,
+        "bottom": 805.015625
+      }
+    },
+    {
+      "width": 375,
+      "src": "http://localhost/fcc-release-qa-302/wp-content/themes/project-child/assets/fractional/assets/images/approved/e444c335b9011e92-PQA-4.webp?ver=a1565660a221",
+      "natural": [
+        375,
+        375
+      ],
+      "fit": "contain",
+      "position": "50% 50%",
+      "wrap": {
+        "x": 21,
+        "y": 283.875,
+        "width": 333,
+        "height": 333,
+        "right": 354,
+        "bottom": 616.875
+      },
+      "picture": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "image": {
+        "x": 21,
+        "y": 283.875,
+        "width": 333,
+        "height": 333,
+        "right": 354,
+        "bottom": 616.875
+      }
+    },
+    {
+      "width": 320,
+      "src": "http://localhost/fcc-release-qa-302/wp-content/themes/project-child/assets/fractional/assets/images/approved/e444c335b9011e92-PQA-4.webp?ver=a1565660a221",
+      "natural": [
+        320,
+        320
+      ],
+      "fit": "contain",
+      "position": "50% 50%",
+      "wrap": {
+        "x": 21,
+        "y": 310.875,
+        "width": 278,
+        "height": 278,
+        "right": 299,
+        "bottom": 588.875
+      },
+      "picture": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "image": {
+        "x": 21,
+        "y": 310.875,
+        "width": 278,
+        "height": 278,
+        "right": 299,
+        "bottom": 588.875
+      }
+    }
+  ],
+  "errors": []
+}

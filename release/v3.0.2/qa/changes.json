@@ -1,0 +1,32 @@
+{
+  "contentChanged": [
+    "project-child/assets/fractional/assets/css/style.css",
+    "project-child/assets/fractional/assets/css/style.min.css",
+    "project-child/assets/fractional/catalog.css",
+    "project-child/assets/fractional/main.js",
+    "project-child/assets/fractional/main.min.js",
+    "project-child/assets/fractional/site.min.css",
+    "project-child/style.css",
+    "project-child/template-parts/fractional/catalog/section-02.php",
+    "project-child/template-parts/fractional/components/combo-card.php"
+  ],
+  "lineEndingsOnly": [
+    "project-child/assets/css/fractional-content-editor.css",
+    "project-child/assets/css/fractional-customizer.css",
+    "project-child/assets/fractional/.htaccess",
+    "project-child/assets/fractional/assets/css/responsive.css",
+    "project-child/assets/fractional/assets/fonts/lora-OFL.txt",
+    "project-child/assets/fractional/assets/fonts/plusjakartasans-OFL.txt",
+    "project-child/assets/fractional/home.css",
+    "project-child/assets/fractional/policies.css",
+    "project-child/assets/fractional/product.css",
+    "project-child/assets/fractional/thankyou.css",
+    "project-child/assets/fractional/wordpress.css",
+    "project-child/assets/js/fractional-content-editor.js",
+    "project-child/inc/fractional-admin-map.json",
+    "project-child/inc/fractional-fields.json",
+    "project-child/template-parts/fractional/catalog/section-03.php"
+  ],
+  "added": [],
+  "removed": []
+}

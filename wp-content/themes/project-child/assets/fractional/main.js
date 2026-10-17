@@ -1067,13 +1067,15 @@ function initVideoModal() {
 
   let modal = document.getElementById('fcc-video-modal');
   let activeTrigger = null;
+  let videoRatio = 9 / 16;
   if (!modal) {
     modal = document.createElement('div');
     modal.id = 'fcc-video-modal';
     modal.className = 'fcc-video-modal';
+    modal.setAttribute('aria-hidden', 'true');
     modal.innerHTML = `
       <div class="fcc-video-modal-backdrop"></div>
-      <div class="fcc-video-modal-container" role="dialog" aria-modal="true" aria-label="Trình phát video sự kiện">
+      <div class="fcc-video-modal-container" role="dialog" aria-modal="true" aria-labelledby="fcc-video-modal-title">
         <button type="button" class="fcc-video-modal-close" aria-label="Đóng video">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -1082,7 +1084,7 @@ function initVideoModal() {
         </button>
         <div class="fcc-video-modal-header">
           <span class="fcc-video-modal-tag">Beauty Istanbul 2025</span>
-          <h4 class="fcc-video-modal-title">Gian Hàng Fractional CC Tokyo</h4>
+          <h4 id="fcc-video-modal-title" class="fcc-video-modal-title">Gian Hàng Fractional CC Tokyo</h4>
         </div>
         <div class="fcc-video-modal-frame-wrap"></div>
       </div>
@@ -1094,6 +1096,7 @@ function initVideoModal() {
 
     function closeModal() {
       modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('fcc-video-modal-open');
       const video = modal.querySelector('video');
       if (video) {
@@ -1124,6 +1127,23 @@ function initVideoModal() {
     });
   }
 
+  const container = modal.querySelector('.fcc-video-modal-container');
+  const header = modal.querySelector('.fcc-video-modal-header');
+  function fitVideoModal() {
+    if (!modal.classList.contains('active')) return;
+    const style = getComputedStyle(modal);
+    const availableWidth = modal.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+    const availableHeight = modal.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+    const border = container.offsetWidth - container.clientWidth;
+    const videoHeight = Math.max(0, availableHeight - header.offsetHeight - border);
+    // Keep the heading readable in landscape; object-fit contains the full video.
+    const width = Math.max(280, videoHeight * videoRatio + border);
+    container.style.width = Math.floor(Math.min(availableWidth, videoRatio < 1 ? 480 : 820, width)) + 'px';
+  }
+  const resizeObserver = new ResizeObserver(fitVideoModal);
+  resizeObserver.observe(modal);
+  resizeObserver.observe(header);
+
   triggers.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -1141,11 +1161,19 @@ function initVideoModal() {
       if (tagEl) tagEl.textContent = videoTag;
       const isFile = btn.getAttribute('data-video-type') === 'file';
       const player = document.createElement(isFile ? 'video' : 'iframe');
+      videoRatio = 9 / 16;
+      frameWrap.style.aspectRatio = String(videoRatio);
       if (isFile) {
         player.controls = true;
         player.playsInline = true;
         player.preload = 'metadata';
         player.setAttribute('aria-label', videoTitle);
+        player.addEventListener('loadedmetadata', function () {
+          if (frameWrap.firstElementChild !== player || !player.videoWidth || !player.videoHeight) return;
+          videoRatio = player.videoWidth / player.videoHeight;
+          frameWrap.style.aspectRatio = String(videoRatio);
+          fitVideoModal();
+        });
       } else {
         player.id = 'fcc-video-modal-iframe';
         player.title = videoTitle;
@@ -1157,8 +1185,10 @@ function initVideoModal() {
       frameWrap.replaceChildren(player);
 
       activeTrigger = btn;
+      modal.setAttribute('aria-hidden', 'false');
       modal.classList.add('active');
       document.body.classList.add('fcc-video-modal-open');
+      fitVideoModal();
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
           if (modal.classList.contains('active')) modal.querySelector('.fcc-video-modal-close').focus({ preventScroll: true });

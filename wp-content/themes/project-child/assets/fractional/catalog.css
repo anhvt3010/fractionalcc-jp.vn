@@ -4,7 +4,49 @@
    - Properly centered and balanced section header
    ========================================================================== */
 
-/* Live constituent products in the featured combo. */
+/* Keep the featured combo image at its natural ratio and balance its details. */
+#danh-sach-combo .brand-visual-wrap {
+  height: auto;
+  display: block;
+}
+
+#danh-sach-combo .brand-visual-wrap img {
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 1180px) {
+  #danh-sach-combo .brief-brand {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  #danh-sach-combo .brand-content-wrap {
+    padding: 20px 24px;
+    gap: 6px;
+  }
+
+  #danh-sach-combo .combo-included-products,
+  #danh-sach-combo .combo-gift-box {
+    margin-bottom: 0;
+  }
+
+  #danh-sach-combo .combo-included-product {
+    padding: 8px 12px;
+  }
+
+  #danh-sach-combo .combo-included-thumb {
+    flex-basis: 56px;
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 1179px) {
+  #danh-sach-combo .brief-brand {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .combo-included-products {
   margin: 0 0 18px;
 }
@@ -65,14 +107,13 @@
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
-.combo-included-price {
-  font-size: 12px;
-  color: var(--color-text-muted);
-}
-.combo-included-price strong {
-  color: var(--color-accent-red);
-  font-size: 15px;
+
+.combo-included-spicules {
+  color: #8A641D;
+  font-size: 13px;
   font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 /* Catalog Hero Header (Section 01) */

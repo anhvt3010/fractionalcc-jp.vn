@@ -28,8 +28,8 @@ $html = fcc_combo_render( $combo );
 foreach ( $contents['products'] as $product ) {
 	fcc_combo_check( false !== strpos( $html, 'data-combo-product-id="' . $product['id'] . '"' ), 'Linked product must render.' );
 	fcc_combo_check( false !== strpos( $html, esc_html( $product['name'] ) ), 'Product title must come from CMS.' );
-	fcc_combo_check( false !== strpos( $html, esc_html( project_child_fcc_price( $product['salePrice'] ) ) ), 'Product price must come from CMS.' );
 }
+fcc_combo_check( false === strpos( $html, 'synergy-orig-price' ), 'Constituent retail prices must remain hidden in the homepage combo.' );
 fcc_combo_check( false !== strpos( $html, esc_html( project_child_fcc_price( $combo['saveAmount'] ) ) ), 'Savings must use combo pricing.' );
 fcc_combo_check( false !== strpos( $html, esc_html( $combo['gift'] ) ), 'Gift must retain the saved qualification.' );
 
@@ -81,13 +81,13 @@ try {
 	$updated = project_core_fcc_combo_contents( $combo );
 	fcc_combo_check( (float) $test_price === $updated['products'][0]['salePrice'], 'A CMS price edit must update the linked product.' );
 	$html = fcc_combo_render( $combo );
-	fcc_combo_check( false !== strpos( $html, esc_html( project_child_fcc_price( $test_price ) ) ), 'Edited price must render immediately.' );
+	fcc_combo_check( false === strpos( $html, esc_html( project_child_fcc_price( $test_price ) ) ), 'A retail price edit must not reintroduce the hidden price.' );
 	fcc_combo_check( false !== strpos( $html, '&lt;script&gt;CMS title&lt;/script&gt;' ) && false === strpos( $html, '<script>CMS title</script>' ), 'Edited titles must render escaped.' );
 	$test_price = '';
 	fcc_combo_check( null === project_core_fcc_combo_contents( $combo )['products'][0]['salePrice'], 'Unknown product prices must not become zero.' );
 	$html = fcc_combo_render( $combo );
 	fcc_combo_check( false === strpos( $html, 'synergy-total-summary' ), 'The removed total must remain absent.' );
-	fcc_combo_check( false !== strpos( $html, esc_html( project_child_fcc_price( null ) ) ), 'An unknown price must show the existing contact label.' );
+	fcc_combo_check( false === strpos( $html, 'synergy-orig-price' ), 'An unknown retail price must not add a price row.' );
 	$test_price = 0;
 	fcc_combo_check( 0.0 === project_core_fcc_combo_contents( $combo )['products'][0]['salePrice'], 'An explicit zero price must remain distinct from unknown.' );
 } finally {

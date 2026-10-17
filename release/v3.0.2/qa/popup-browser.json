@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "checks": 232,
+  "errors": [],
+  "viewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      320,
+      568
+    ],
+    [
+      375,
+      667
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "configuredVideos": [
+    {
+      "selector": ".brand-video-play-badge",
+      "type": "IFRAME",
+      "src": "https://drive.google.com/file/d/1OGBTCSUTvzjI4kulOUmRqrY9mgB0m8TY/preview",
+      "dimensions": null
+    },
+    {
+      "selector": ".review-video-preview-stage",
+      "type": "IFRAME",
+      "src": "https://drive.google.com/file/d/1zQq81OnZVzq3EmrQOU8UP_Gz0ccaxSBo/preview",
+      "dimensions": null
+    }
+  ],
+  "providerRequests": "stubbed",
+  "nativePlayback": "configured uploads and local generated 360x640 and 640x360 WebM fixtures"
+}

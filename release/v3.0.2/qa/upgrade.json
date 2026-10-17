@@ -1,0 +1,12 @@
+{
+    "passed": true,
+    "checks": 7230,
+    "from": "3.0.1",
+    "to": "3.0.2",
+    "core": "3.0.0",
+    "posts": 131,
+    "metadata": 3472,
+    "settings": 12,
+    "initializerReruns": 2,
+    "editedAndClearedValues": "preserved"
+}

@@ -1,0 +1,93 @@
+{
+  "checks": 19,
+  "errors": [],
+  "results": [
+    {
+      "page": "home",
+      "width": 1440,
+      "names": [
+        "Serum dưỡng da FractionalCC Needle Serum C",
+        "Serum dưỡng da FractionalCC Needle Serum CX4",
+        "Quà tặng: Chọn 1 trong 2 quà tặng trong ảnh. Xác nhận khi đặt hàng"
+      ],
+      "retail": false,
+      "label": false,
+      "price": "1.689.000 đ",
+      "expectedPrice": 1689000,
+      "buy": true,
+      "fits": true
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "names": [
+        "Serum dưỡng da FractionalCC Needle Serum C",
+        "Serum dưỡng da FractionalCC Needle Serum CX4",
+        "Quà tặng: Chọn 1 trong 2 quà tặng trong ảnh. Xác nhận khi đặt hàng"
+      ],
+      "retail": false,
+      "label": false,
+      "price": "1.689.000 đ",
+      "expectedPrice": 1689000,
+      "buy": true,
+      "fits": true
+    },
+    {
+      "page": "home",
+      "width": 375,
+      "names": [
+        "Serum dưỡng da FractionalCC Needle Serum C",
+        "Serum dưỡng da FractionalCC Needle Serum CX4",
+        "Quà tặng: Chọn 1 trong 2 quà tặng trong ảnh. Xác nhận khi đặt hàng"
+      ],
+      "retail": false,
+      "label": false,
+      "price": "1.689.000 đ",
+      "expectedPrice": 1689000,
+      "buy": true,
+      "fits": true
+    },
+    {
+      "page": "san-pham/",
+      "width": 1440,
+      "names": [
+        "Serum dưỡng da FractionalCC Needle Serum C",
+        "Serum dưỡng da FractionalCC Needle Serum CX4"
+      ],
+      "retail": false,
+      "label": false,
+      "price": "1.689.000 đ",
+      "expectedPrice": 1689000,
+      "buy": true,
+      "fits": true
+    },
+    {
+      "page": "san-pham/",
+      "width": 768,
+      "names": [
+        "Serum dưỡng da FractionalCC Needle Serum C",
+        "Serum dưỡng da FractionalCC Needle Serum CX4"
+      ],
+      "retail": false,
+      "label": false,
+      "price": "1.689.000 đ",
+      "expectedPrice": 1689000,
+      "buy": true,
+      "fits": true
+    },
+    {
+      "page": "san-pham/",
+      "width": 375,
+      "names": [
+        "Serum dưỡng da FractionalCC Needle Serum C",
+        "Serum dưỡng da FractionalCC Needle Serum CX4"
+      ],
+      "retail": false,
+      "label": false,
+      "price": "1.689.000 đ",
+      "expectedPrice": 1689000,
+      "buy": true,
+      "fits": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "version": "3.0.2",
+  "selection": "project-child",
+  "packages": [
+    {
+      "name": "project-child-v3.0.2.zip",
+      "bytes": 29172333,
+      "files": 306,
+      "sha256": "22aee57d5a436e84332fc4c51efcb6a8602c7ad1af670da0e832cdfc2edbe89f",
+      "root": "project-child/",
+      "crc": "PASS",
+      "sourceParity": "PASS",
+      "privateFiles": "NONE",
+      "localUrls": "NONE"
+    }
+  ],
+  "defaults": {
+    "version": "3.0.0",
+    "products": 10,
+    "combos": 1,
+    "media": 75,
+    "fields": 1104
+  }
+}
